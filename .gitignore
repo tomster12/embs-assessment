@@ -1,0 +1,14 @@
+# Generated output
+.vscode
+.Xil
+logs/*
+
+# Projects
+vitis/.metadata
+vitis/RemoteSystemsTempFiles
+vitis/zybo_design_wrapper
+vitis/**/_ide
+
+vivado/vivado.cache
+vivado/vivado.gen
+vivado/vivado.runs

@@ -1,0 +1,61 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.955282",
+   "Default View_TopLeft":"1725,-183",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -lvl 5 -x 2980 -y 80 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 5 -x 2980 -y 100 -defaultsOSRD
+preplace port hdmi_out -pg 1 -lvl 5 -x 2980 -y 250 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 4 -x 2730 -y 130 -defaultsOSRD
+preplace inst hdmi -pg 1 -lvl 3 -x 980 -y 262 -defaultsOSRD
+preplace inst ps7_0_axi_periph -pg 1 -lvl 2 -x 550 -y 240 -defaultsOSRD
+preplace inst rst_ps7_0_100M -pg 1 -lvl 1 -x 210 -y 110 -defaultsOSRD
+preplace inst hdmi|axi_dynclk_0 -pg 1 -lvl 1 -x 1110 -y 592 -defaultsOSRD
+preplace inst hdmi|axi_vdma_0 -pg 1 -lvl 1 -x 1110 -y 392 -defaultsOSRD
+preplace inst hdmi|v_tc_0 -pg 1 -lvl 2 -x 1510 -y 672 -defaultsOSRD
+preplace inst hdmi|v_axi4s_vid_out_0 -pg 1 -lvl 3 -x 1870 -y 652 -defaultsOSRD
+preplace inst hdmi|rgb2dvi_0 -pg 1 -lvl 4 -x 2210 -y 612 -defaultsOSRD
+preplace inst hdmi|axis_subset_converter_0 -pg 1 -lvl 2 -x 1510 -y 402 -defaultsOSRD
+preplace inst hdmi|xlconstant_0 -pg 1 -lvl 1 -x 1110 -y 252 -defaultsOSRD
+preplace inst hdmi|axi_mem_intercon -pg 1 -lvl 4 -x 2210 -y 382 -defaultsOSRD
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 5 30 210 400 400 730 160 2510 240 2950
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 5 20 10 NJ 10 NJ 10 NJ 10 2960
+preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 1 2 390 410 700J
+preplace netloc processing_system7_0_DDR 1 4 1 NJ 80
+preplace netloc processing_system7_0_FIXED_IO 1 4 1 NJ 100
+preplace netloc hdmi_hdmi_out 1 3 2 2510J 250 NJ
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 4 390 20 NJ 20 NJ 20 2950
+preplace netloc ps7_0_axi_periph_M00_AXI 1 2 1 740 220n
+preplace netloc ps7_0_axi_periph_M01_AXI 1 2 1 720 240n
+preplace netloc ps7_0_axi_periph_M02_AXI 1 2 1 710 260n
+preplace netloc hdmi_M00_AXI 1 3 1 2500 120n
+preplace netloc hdmi|Net 1 0 4 910 502 1320 482 1700 422 2050
+preplace netloc hdmi|axi_dynclk_0_PXL_CLK_O 1 1 3 1350 512 1670 792 2060J
+preplace netloc hdmi|axi_dynclk_0_PXL_CLK_5X_O 1 1 3 1310J 492 NJ 492 2050
+preplace netloc hdmi|axi_dynclk_0_LOCKED_O 1 1 3 1330J 502 NJ 502 2040
+preplace netloc hdmi|xlconstant_0_dout 1 1 1 1350 252n
+preplace netloc hdmi|s00_axi_aresetn_1 1 0 4 920 682 1340 522 1680J 512 2030
+preplace netloc hdmi|v_tc_0_vtiming_out 1 2 1 1710 592n
+preplace netloc hdmi|axi_vdma_0_M_AXIS_MM2S 1 1 1 N 382
+preplace netloc hdmi|axis_subset_converter_0_M_AXIS 1 2 1 1690 402n
+preplace netloc hdmi|v_axi4s_vid_out_0_vid_io_out 1 3 1 N 582
+preplace netloc hdmi|rgb2dvi_0_TMDS 1 4 1 2360 362n
+preplace netloc hdmi|Conn1 1 0 1 900 332n
+preplace netloc hdmi|Conn2 1 0 1 N 352
+preplace netloc hdmi|Conn3 1 0 2 NJ 492 1300
+preplace netloc hdmi|axi_vdma_0_M_AXI_MM2S 1 1 3 1320 322 NJ 322 NJ
+preplace netloc hdmi|Conn4 1 4 1 N 382
+levelinfo -pg 1 0 210 550 980 2730 2980
+levelinfo -hier hdmi * 1110 1510 1870 2210 *
+pagesize -pg 1 -db -bbox -sgen 0 0 3100 850
+pagesize -hier hdmi -db -bbox -sgen 870 192 2390 822
+"
+}
+{
+   "da_axi4_cnt":"13",
+   "da_board_cnt":"2",
+   "da_clkrst_cnt":"6",
+   "da_ps7_cnt":"3"
+}
