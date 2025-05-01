@@ -8,6 +8,8 @@ vitis/.metadata
 vitis/RemoteSystemsTempFiles
 vitis/zybo_design_wrapper
 vitis/**/_ide
+vitis/.analytics
+vitis/IDE.log
 
 vivado/vivado.cache
 vivado/vivado.gen
