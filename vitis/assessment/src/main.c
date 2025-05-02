@@ -19,21 +19,11 @@
 
 // ================================= DECLARATION =================================
 
-// 7 bytes = { type:1, seed:4, size:2 }
-typedef struct __attribute__((packed)) {
-    uint8_t msg_type;
-    uint32_t seed;
-    uint16_t world_size;
-} WSRequestMsg;
-
 // Platform
 #define THREAD_STACKSIZE 1024
 TaskHandle_t h_lwip_startup_task, h_lwip_dhcp_task, h_lwip_input_task, h_app_task;
 
 // Networking
-#define RECV_PORT 51050
-#define WS_PORT 51050
-#define WS_IPV4_ADDR(v) IP4_ADDR(&(v), 192, 168, 10, 1)
 uint8_t nw_mac_addr[] = { 0x00, 0x11, 0x22, 0x33, 0x00, 0x52 };
 struct netif nw_server_netif;
 struct udp_pcb *nw_udp_pcb;
@@ -47,14 +37,29 @@ void *gx_frame_ptrs[DISPLAY_NUM_FRAMES];
 DisplayCtrl gx_dsp_ctrl;
 
 // App
-#define MAX_WS_RES_BUF (1 << 12) // 4096 bytes
+#define MAX_UDP_RES_BUF (1 << 12) // 4096 bytes (max response is 8 + 240 * 6 = 1448 bytes)
 #define MAX_UART_IN_BUF (1 << 10) // 1024 bytes
-SemaphoreHandle_t ws_res_sem;
-uint8_t ws_res_buf[MAX_WS_RES_BUF];
-uint16_t ws_res_len;
+SemaphoreHandle_t udp_res_sem;
+uint8_t udp_res_buf[MAX_UDP_RES_BUF];
+uint16_t udp_res_buf_len;
 char uart_in_buf[MAX_UART_IN_BUF];
 uint16_t uart_in_buf_len;
-WSRequestMsg ws_req_msg;
+
+#define RECV_PORT 51050
+#define WS_PORT 51050
+#define WS_IPV4_ADDR(v) IP4_ADDR(&(v), 192, 168, 10, 1)
+#define WORLD_MAX_WALLS 240
+#define WORLD_MAX_WAYPOINTS 16
+typedef struct __attribute__((packed)) { uint8_t type; uint32_t seed; uint16_t size; } WorldRequest;
+typedef struct __attribute__((packed)) { uint16_t x; uint16_t y; uint8_t length; uint8_t direction; } WorldWall;
+typedef struct __attribute__((packed)) { uint16_t x; uint16_t y; } WorldWaypoint;
+typedef struct __attribute__((packed)) { uint8_t type; uint32_t seed; uint16_t size; uint8_t num_walls; WorldWall walls[WORLD_MAX_WALLS]; } WorldWalls;
+typedef struct __attribute__((packed)) { uint8_t type; uint32_t seed; uint16_t size; uint8_t num_waypoints; WorldWaypoint waypoints[WORLD_MAX_WAYPOINTS]; } WorldWaypoints;
+typedef struct __attribute__((packed)) { uint8_t type; uint32_t seed; uint16_t size; uint32_t answer; } SolutionAttempt;
+typedef struct __attribute__((packed)) { uint8_t type; uint32_t seed; uint16_t size; uint8_t answer; } SolutionResponse;
+WorldRequest world_request;
+WorldWalls world_walls;
+WorldWaypoints world_waypoints;
 
 // Hardware
 #define MAX_HW_MEM 5
@@ -65,18 +70,19 @@ void lwip_init();
 void lwip_startup_task();
 void lwip_dhcp_task();
 void print_ip(const char *msg, const ip_addr_t *ip);
+
 void app_task();
-void uart_read_line(char *msg);
-int block_until_recv(uint16_t time);
-void udp_send_msg(struct udp_pcb *pcb, ip_addr_t *ip, uint16_t port, void *msg, uint16_t len);
+void read_uart_line(char *msg);
+int parse_world_walls(uint8_t *data, uint8_t data_len, WorldWalls *res);
+int parse_world_waypoints(uint8_t *data, uint8_t data_len, WorldWaypoints *res);
+int udp_recv_block(uint16_t time);
+int udp_send_msg(struct udp_pcb *pcb, ip_addr_t *ip, uint16_t port, void *msg, uint16_t len);
 void udp_recv_msg(void *arg, struct udp_pcb *pcb, struct pbuf *p, const ip_addr_t *addr, uint16_t port);
-void handle_wall_response();
-void handle_waypoint_response();
 
 // ================================= DEFINITION/MAIN =================================
 
 int main(void) {
-	xil_printf("\nAssessment program started\n\r");
+	xil_printf("\r\n==== Assessment program started ====\r\n");
 
 	// Start lwip_startup_task which will startup lwip_main_task and app_task
 	xTaskCreate(lwip_startup_task, "lwip_startup_task", THREAD_STACKSIZE, NULL, DEFAULT_THREAD_PRIO, &h_lwip_startup_task);
@@ -84,11 +90,11 @@ int main(void) {
 	// Then start scheduler and run until finished
 	vTaskStartScheduler();
 
-	xil_printf("Assessment program finished\n\r");
+	xil_printf("====Assessment program finished ====\r\n");
 	return 0;
 }
 
-// ================================= DEFINITION/NETWORKING =================================
+// ================================= DEFINITION/NETWORK =================================
 
 void lwip_startup_task()
 {
@@ -166,43 +172,40 @@ void app_task() {
 		xil_printf("Error creating UDP PCB\r\n");
 		return;
 	}
+	WS_IPV4_ADDR(nw_ws_ip);
 	udp_bind(nw_udp_pcb, IP_ADDR_ANY, RECV_PORT);
 	udp_recv(nw_udp_pcb, udp_recv_msg, NULL);
-	WS_IPV4_ADDR(nw_ws_ip);
-	ws_res_sem = xSemaphoreCreateBinary();
+	udp_res_sem = xSemaphoreCreateBinary();
 	xil_printf("App communicating over port %d\r\n", RECV_PORT);
 
 	while (1) {
 		// Prompt the user for world params
-		xil_printf("Getting user world params\r\n");
-		ws_req_msg.msg_type = (uint8_t)0x01;
-		uart_read_line("Seed: ");
-		ws_req_msg.seed = (uint32_t)strtoul((char *)uart_in_buf, NULL, 10);
-		uart_read_line("World Size: ");
-		ws_req_msg.world_size = (uint16_t)strtoul((char *)uart_in_buf, NULL, 10);
+		xil_printf("\r\n-- Starting World Request --\r\n");
+		read_uart_line("Seed: ");
+		uint32_t world_seed = (uint32_t)strtoul((char *)uart_in_buf, NULL, 10);
+		read_uart_line("World Size: ");
+		uint16_t world_size = (uint16_t)strtoul((char *)uart_in_buf, NULL, 10);
 
-		xil_printf("Type: %u, Seed: %u, World Size: %u\r\n", ws_req_msg.msg_type, ws_req_msg.seed, ws_req_msg.world_size);
+		// Send world request for walls
+		world_request.type = 0x01;
+		world_request.seed = htonl(world_seed);
+		world_request.size = htons(world_size);
+		if (udp_send_msg(nw_udp_pcb, &nw_ws_ip, WS_PORT, &world_request, sizeof(world_request)) == -1) continue;
+		if (udp_recv_block(5000) == 1) continue;
+		if (parse_world_walls(udp_res_buf, udp_res_buf_len, &world_walls) == -1) continue;
 
-		// Request and receive walls
-//		xil_printf("Requesting wall data\r\n");
-//		uint8_t data[7] = { 0x01, 0x00, 0x00, 0x00, 0x01, 0x00, 0x10 };
-//		udp_send_msg(nw_udp_pcb, &nw_ws_ip, WS_PORT, data, sizeof(data));
-//		if (block_until_recv(5000) == 1) return;
-//		handle_wall_response(ws_res_buf, ws_res_len);
-
-		// Request and receive waypoints
-//		xil_printf("Requesting waypoint data\r\n");
-//		data[0] = 0x03;
-//		udp_send_msg(nw_udp_pcb, &nw_ws_ip, WS_PORT, data, sizeof(data));
-//		if (block_until_recv(5000) == 1) return;
-//		handle_waypoint_response(ws_res_buf, ws_res_len);
+		// Send world request for waypoints
+		world_request.type = 0x03;
+		if (udp_send_msg(nw_udp_pcb, &nw_ws_ip, WS_PORT, &world_request, sizeof(world_request)) == -1) continue;
+		if (udp_recv_block(5000) == 1) continue;
+		if (parse_world_waypoints(udp_res_buf, udp_res_buf_len, &world_waypoints) == -1) continue;
 	}
 
 	// Finally free up this task
 	vTaskDelete(NULL);
 }
 
-void uart_read_line(char *msg)
+void read_uart_line(char *msg)
 {
 	xil_printf("%s", msg);
     uart_in_buf_len = 0;
@@ -217,97 +220,81 @@ void uart_read_line(char *msg)
     }
     uart_in_buf[uart_in_buf_len] = '\0';
     xil_printf("\r\n");
-    xil_printf("Received value: %s\r\n", uart_in_buf);
 }
 
-void handle_wall_response() {
-//    if (len < 8 || data[0] != 0x02) {
-//        xil_printf("Invalid wall response: len=%u, data[0]=%u\r\n", len, data[0]);
-//        return;
-//    }
-//
-//    uint32_t seed = (data[1] << 24) | (data[2] << 16) | (data[3] << 8) | data[4];
-//    uint16_t size = (data[5] << 8) | data[6];
-//    uint8_t num_walls = data[7];
-//
-//    xil_printf("Wall response\r\n");
-//    xil_printf("- Seed: %lu\r\n", seed);
-//    xil_printf("- Size: %u\r\n", size);
-//    xil_printf("- Num walls: %u\r\n", num_walls);
-//
-//    if (len < 8 + num_walls * 6) {
-//        xil_printf("- Incomplete wall data\r\n");
-//        return;
-//    }
-//
-//	for (int i = 0; i < num_walls; i++) {
-//		int offset = 8 + i * 6;
-//		uint16_t x = (data[offset] << 8) | data[offset + 1];
-//		uint16_t y = (data[offset + 2] << 8) | data[offset + 3];
-//		uint8_t length = data[offset + 4];
-//		uint8_t direction = data[offset + 5];
-//
-//		xil_printf("- Wall %d: x=%u, y=%u, len=%u, dir=%s\r\n", i,
-//			x, y, length, direction == 0 ? "vertical" : "horizontal");
-//	}
-}
+int parse_world_walls(uint8_t *data, uint8_t data_len, WorldWalls *res) {
+	xil_printf("Parsing walls...\r\n");
 
-void handle_waypoint_response() {
-//    if (len < 8 || data[0] != 0x04) {
-//        xil_printf("Invalid waypoint response: len=%u, data[0]=%u\r\n", len, data[0]);
-//        return;
-//    }
-//
-//    uint32_t seed = (data[1] << 24) | (data[2] << 16) | (data[3] << 8) | data[4];
-//    uint16_t size = (data[5] << 8) | data[6];
-//    uint8_t num_waypoints = data[7];
-//
-//    xil_printf("Waypoint response\r\n");
-//    xil_printf("- Seed: %lu\r\n", seed);
-//    xil_printf("- Size: %u\r\n", size);
-//    xil_printf("- Num waypoints: %u\r\n", num_waypoints);
-//
-//    if (len < 8 + num_waypoints * 4) {
-//        xil_printf("- Incomplete waypoint data\r\n");
-//        return;
-//    }
-//
-//	for (int i = 0; i < num_waypoints; i++) {
-//		int offset = 8 + i * 4;
-//		uint16_t x = (data[offset] << 8) | data[offset + 1];
-//		uint16_t y = (data[offset + 2] << 8) | data[offset + 3];
-//		xil_printf("- Waypoint %d: x=%u, y=%u\r\n", i, x, y);
-//	}
-}
-
-int block_until_recv(uint16_t time) {
-	if (xSemaphoreTake(ws_res_sem, pdMS_TO_TICKS(time)) == pdTRUE) {
-		xil_printf("Semaphore wait success\r\n");
-		return 0;
-	} else {
-		xil_printf("Semamphore wait timeout (%us)\r\n", time);
-		return 1;
+	if (data_len < 8) {
+    	xil_printf("Error: parse_world_walls data_len < 8, actual = %lu\r\n", data_len);
+		return -1;
 	}
+	if (data[0] != 2) {
+    	xil_printf("Error: parse_world_walls type != 2, actual = %lu\r\n", data[0]);
+		return -1;
+	}
+
+	res->type = data[0];
+    res->seed = ntohl(*(uint32_t *)(data + 1)); // Dereference data[1] as a uint32_t then flip endian-ness
+    res->size = ntohs(*(uint16_t *)(data + 5)); // Dereference data[5] as a uint16_t then flip endian-ness
+	res->num_walls = data[7];
+
+	xil_printf("World walls parsed: { %lu, %lu, %lu, %lu }\r\n", res->type, res->seed, res->size, res->num_walls);
+	return 0;
 }
 
-void udp_send_msg(struct udp_pcb *pcb, ip_addr_t *ip, uint16_t port, void *msg, u16_t len) {
-	struct pbuf *p = pbuf_alloc(PBUF_TRANSPORT, len, PBUF_RAM);
-    if (p == NULL) return;
+int parse_world_waypoints(uint8_t *data, uint8_t data_len, WorldWaypoints *res) {
+	xil_printf("Parsing waypoints...\r\n");
 
+	if (data_len < 8) {
+    	xil_printf("Error: parse_world_waypoints data_len < 8, actual = %lu\r\n", data_len);
+		return -1;
+	}
+	if (data[0] != 4) {
+    	xil_printf("Error: parse_world_waypoints type != 4, actual = %lu\r\n", data[0]);
+		return -1;
+	}
+
+	res->type = data[0];
+    res->seed = ntohl(*(uint32_t *)(data + 1)); // Dereference data[1] as a uint32_t then flip endian-ness
+    res->size = ntohs(*(uint16_t *)(data + 5)); // Dereference data[5] as a uint16_t then flip endian-ness
+	res->num_waypoints = data[7];
+
+	xil_printf("World waypoints parsed: { %lu, %lu, %lu, %lu }\r\n", res->type, res->seed, res->size, res->num_waypoints);
+	return 0;
+}
+
+int udp_recv_block(uint16_t time) {
+	if (xSemaphoreTake(udp_res_sem, pdMS_TO_TICKS(time)) != pdTRUE) {
+		xil_printf("Error: Semamphore timeout (%us)\r\n", time);
+		return -1;
+	}
+	return 0;
+}
+
+int udp_send_msg(struct udp_pcb *pcb, ip_addr_t *ip, uint16_t port, void *msg, u16_t len) {
+	struct pbuf *p = pbuf_alloc(PBUF_TRANSPORT, len, PBUF_RAM);
+    if (p == NULL) {
+    	xil_printf("Error: udp_send_msg pbuf == NULL");
+    	return -1;
+    }
     memcpy(p->payload, msg, len);
 	udp_sendto(pcb, p, ip, port);
 	pbuf_free(p);
-    xil_printf("Sent %u bytes\r\n", len);
+    xil_printf("(->) Sent %u bytes\r\n", len);
+    return 0;
 }
 
 void udp_recv_msg(void *arg, struct udp_pcb *pcb, struct pbuf *p, const ip_addr_t *addr, uint16_t port) {
-    if (p == NULL) return;
-
-    xil_printf("Received %u bytes\r\n", p->len);
-    ws_res_len = p->len > MAX_WS_RES_BUF ? MAX_WS_RES_BUF : p->len;
-    memcpy(ws_res_buf, p->payload, ws_res_len);
+    if (p == NULL) {
+    	xil_printf("Error: udp_recv_msg pbuf == NULL");
+    	return;
+    }
+    udp_res_buf_len = p->len > MAX_UDP_RES_BUF ? MAX_UDP_RES_BUF : p->len;
+    memcpy(udp_res_buf, p->payload, udp_res_buf_len);
     pbuf_free(p);
-    xSemaphoreGiveFromISR(ws_res_sem, NULL);
+    xil_printf("(<-) Received %lu bytes\r\n", udp_res_buf_len);
+    xSemaphoreGiveFromISR(udp_res_sem, NULL);
 }
 
 // ================================= DEFINITION/GRAPHICS =================================
