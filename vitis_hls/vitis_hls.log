@@ -1,0 +1,42 @@
+INFO: Applying HLS Y2K22 patch v1.2 for IP revision
+INFO: [HLS 200-10] Running '/opt/Xilinx/Vitis_HLS/2020.2/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'tomster12' on host 'DESKTOP-Q62E4QT.' (Linux_x86_64 version 5.15.167.4-microsoft-standard-WSL2) on Fri May 02 16:52:25 BST 2025
+INFO: [HLS 200-10] On os Ubuntu 22.04.5 LTS
+INFO: [HLS 200-10] In directory '/home/tomster12/files/EMBS/vitis_hls'
+Sourcing Tcl script '/home/tomster12/files/EMBS/vitis_hls/assessment/solution1/export.tcl'
+INFO: [HLS 200-1510] Running: open_project assessment 
+INFO: [HLS 200-10] Opening project '/home/tomster12/files/EMBS/vitis_hls/assessment'.
+INFO: [HLS 200-1510] Running: set_top toplevel 
+INFO: [HLS 200-1510] Running: add_files assessment/toplevel.h 
+INFO: [HLS 200-10] Adding design file 'assessment/toplevel.h' to the project
+INFO: [HLS 200-1510] Running: add_files assessment/toplevel.cpp 
+INFO: [HLS 200-10] Adding design file 'assessment/toplevel.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb assessment/testbench.cpp -cflags -Wno-unknown-pragmas -csimflags -Wno-unknown-pragmas 
+INFO: [HLS 200-10] Adding test bench file 'assessment/testbench.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado 
+INFO: [HLS 200-10] Opening solution '/home/tomster12/files/EMBS/vitis_hls/assessment/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z010-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-1464] Running solution command: config_export -format=sysgen
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+INFO: [HLS 200-1510] Running: set_part xc7z010-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: config_export -format sysgen -rtl verilog 
+INFO: [HLS 200-1510] Running: set_directive_top -name toplevel toplevel 
+INFO: [HLS 200-1510] Running: export_design -rtl verilog -format sysgen 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source run_ippack.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2020.2/data/ip'.
+INFO: [Common 17-206] Exiting Vivado at Fri May  2 16:52:35 2025...
+INFO: [HLS 200-802] Generated output file assessment/solution1/impl/export.zip
+INFO: [HLS 200-111] Finished Command export_design CPU user time: 9.06 seconds. CPU system time: 0.87 seconds. Elapsed time: 17.55 seconds; current allocated memory: 85.695 MB.

@@ -1,0 +1,29 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+| Date         : Fri May  2 16:53:39 2025
+| Host         : DESKTOP-Q62E4QT running 64-bit Ubuntu 22.04.5 LTS
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zybo_design_toplevel_0_1'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of zybo_design_toplevel_0_1 (xilinx.com:hls:toplevel:1.0) from (Rev. 2114065708) to (Rev. 2114065792)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'zybo_design_toplevel_0_1'. These changes may impact your design.
+
+
+-Upgraded port 's_axi_AXILiteS_ARADDR' width 4 differs from original width 7
+
+-Upgraded port 's_axi_AXILiteS_AWADDR' width 4 differs from original width 7
+
+
