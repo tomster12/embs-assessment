@@ -1,5 +1,5 @@
 #pragma once
 
-typedef unsigned int uint32;
+#include <stdint.h>
 
-void toplevel(uint32 *ram);
+void toplevel(uint32_t *ram);

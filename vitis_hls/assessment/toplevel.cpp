@@ -1,8 +1,10 @@
 #include "toplevel.h"
 
-void toplevel(uint32 *ram) {
+#define INF 0xFFFFFFFF
+
+void toplevel(uint32_t *ram) {
 	#pragma HLS INTERFACE m_axi port=ram offset=slave bundle=MAXI
 	#pragma HLS INTERFACE s_axilite port=return bundle=AXILiteS
-
-	ram[0] = ram[1] + ram[2];
+    ram[0] = INF;
+    return;
 }
