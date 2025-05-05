@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
 -- Date        : Fri May  2 16:21:56 2025
 -- Host        : DESKTOP-Q62E4QT running 64-bit Ubuntu 22.04.5 LTS
--- Command     : write_vhdl -force -mode funcsim
---               /home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/ip/zybo_design_s00_mmu_0/zybo_design_s00_mmu_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top zybo_design_s00_mmu_0 -prefix
+--               zybo_design_s00_mmu_0_ zybo_design_s00_mmu_0_sim_netlist.vhdl
 -- Design      : zybo_design_s00_mmu_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -51,8 +51,6 @@ entity zybo_design_s00_mmu_0_axi_mmu_v2_1_20_decerr_slave is
     \gen_axi.gen_write.s_axi_awready_i_reg_0\ : in STD_LOGIC;
     \gen_axi.gen_read.s_axi_rlast_i_reg_1\ : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of zybo_design_s00_mmu_0_axi_mmu_v2_1_20_decerr_slave : entity is "axi_mmu_v2_1_20_decerr_slave";
 end zybo_design_s00_mmu_0_axi_mmu_v2_1_20_decerr_slave;
 
 architecture STRUCTURE of zybo_design_s00_mmu_0_axi_mmu_v2_1_20_decerr_slave is
@@ -694,8 +692,6 @@ entity zybo_design_s00_mmu_0_axi_register_slice_v2_1_22_axic_register_slice is
     s_ready_i_reg_2 : in STD_LOGIC;
     s_ready_i_reg_3 : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of zybo_design_s00_mmu_0_axi_register_slice_v2_1_22_axic_register_slice : entity is "axi_register_slice_v2_1_22_axic_register_slice";
 end zybo_design_s00_mmu_0_axi_register_slice_v2_1_22_axic_register_slice;
 
 architecture STRUCTURE of zybo_design_s00_mmu_0_axi_register_slice_v2_1_22_axic_register_slice is
@@ -3130,8 +3126,6 @@ entity zybo_design_s00_mmu_0_axi_register_slice_v2_1_22_axi_register_slice is
     \FSM_sequential_gen_read.r_state_reg[1]_0\ : in STD_LOGIC;
     s_ready_i_reg_0 : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of zybo_design_s00_mmu_0_axi_register_slice_v2_1_22_axi_register_slice : entity is "axi_register_slice_v2_1_22_axi_register_slice";
 end zybo_design_s00_mmu_0_axi_register_slice_v2_1_22_axi_register_slice;
 
 architecture STRUCTURE of zybo_design_s00_mmu_0_axi_register_slice_v2_1_22_axi_register_slice is
@@ -3361,8 +3355,6 @@ entity zybo_design_s00_mmu_0_axi_mmu_v2_1_20_top is
   attribute C_USES_DEST of zybo_design_s00_mmu_0_axi_mmu_v2_1_20_top : entity is 0;
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of zybo_design_s00_mmu_0_axi_mmu_v2_1_20_top : entity is "yes";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of zybo_design_s00_mmu_0_axi_mmu_v2_1_20_top : entity is "axi_mmu_v2_1_20_top";
   attribute P_AXI3 : integer;
   attribute P_AXI3 of zybo_design_s00_mmu_0_axi_mmu_v2_1_20_top : entity is 1;
   attribute P_AXI4 : integer;

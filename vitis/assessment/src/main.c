@@ -15,19 +15,32 @@
 // ================================= DECLARATION =================================
 
 #define THREAD_STACKSIZE 1024
-#define UDP_RECV_BUF_MAX (1 << 12) // 4096 bytes (max response is 8 + 240 * 6 = 1448 bytes)
-#define UART_IN_BUF_MAX (1 << 10) // 1024 bytes
+#define FRAME_RES (1440*900) // 1440x900 based on 4x8 bits for 32-bit colours
+#define FRAME_STRIDE (1440*4)
+#define UDP_RECV_BUF_MAX (1 << 11) // 2048 bytes (max response is 8 + 240 * 6 = 1448 bytes)
+#define UART_IN_BUF_MAX (1 << 9) // 512 bytes
 #define RECV_PORT 51050
 #define WORLD_SERVER_PORT 51050
 #define WS_IPV4_ADDR(v) IP4_ADDR(&(v), 192, 168, 10, 1)
 #define WORLD_MAX_WALLS 240
-#define WORLD_MAX_WAYPOINTS 16
-#define WORLD_MAX_SIZE 2000
-#define HW_MEM_MAX 5
-#define FRAME_RES (1440*900) // 1440x800 based on 4x8 bits for 32-bit colours
-#define FRAME_STRIDE (1440*4)
+#define WORLD_MAX_WAYPOINTS 12
+#define WORLD_MAX_SIZE 500
 
-typedef struct __attribute__((packed)) { uint8_t type; uint32_t seed; uint16_t size; } WorldRequest;
+// RAM Layout (32-bit words)
+// -----------------------------
+// [0]     = world_size
+// [1]     = waypoint_count
+// [2..A]  = waypoints (WORLD_MAX_WAYPOINTS)
+// [A..B]  = world bitmask (1 bit per cell, row-major order, WORLD_MAX_SIZE * WORLD_MAX_SIZE)
+//
+// For a 500x500 world this is meta (2 words) + waypoints (12 words) + grid (ceil(250000 / 32) = 7813 words) 7827 words
+
+#define HW_META_WORDS 2
+#define HW_WAYPOINT_WORDS WORLD_MAX_WAYPOINTS
+#define HW_WORLD_WORDS ((WORLD_MAX_SIZE * WORLD_MAX_SIZE + 31) / 32)
+#define HW_MAX_WORDS (HW_META_WORDS + HW_WAYPOINT_WORDS + HW_WORLD_WORDS)
+
+typedef struct __attribute__((packed)) { uint8_t type; uint32_t seed; uint16_t size; } WorldRequest; // Big-endian data required
 typedef struct __attribute__((packed)) { uint16_t x; uint16_t y; uint8_t length; uint8_t direction; } WorldWall;
 typedef struct __attribute__((packed)) { uint16_t x; uint16_t y; } WorldWaypoint;
 typedef struct __attribute__((packed)) { uint8_t type; uint32_t seed; uint16_t size; uint8_t num_walls; WorldWall walls[WORLD_MAX_WALLS]; } WorldWalls;
@@ -50,7 +63,8 @@ WorldWalls world_walls;
 WorldWaypoints world_waypoints;
 WorldSolutionAttempt world_solution_attempt;
 WorldSolutionResponse world_solution_response;
-uint32_t hw_mem[HW_MEM_MAX];
+XToplevel hls;
+uint32_t hw_ram[HW_MAX_WORDS];
 DisplayCtrl gx_dsp_ctrl;
 uint32_t gx_frame_buf[DISPLAY_NUM_FRAMES][FRAME_RES] __attribute__((aligned(0x20))); // 2 frame buffers of size FRAME_RES aligned to 32-bits + pointers
 void *gx_frame_ptrs[DISPLAY_NUM_FRAMES];
@@ -58,15 +72,20 @@ void *gx_frame_ptrs[DISPLAY_NUM_FRAMES];
 void lwip_init();
 void lwip_startup_task();
 void lwip_dhcp_task();
-void print_ip(const char *msg, const ip_addr_t *ip);
+void print_ip(char *msg, ip_addr_t *ip);
 void app_task();
+int udp_send_msg(struct udp_pcb *pcb, const ip_addr_t *ip, uint16_t port, void *msg, uint16_t len);
+void udp_recv_msg(void *arg, struct udp_pcb *pcb, struct pbuf *p, const ip_addr_t *addr, uint16_t port);
+int udp_recv_block(uint16_t time);
 void read_uart_line(char *msg);
 int parse_world_walls(uint8_t *data, uint8_t data_len, WorldWalls *res);
 int parse_world_waypoints(uint8_t *data, uint8_t data_len, WorldWaypoints *res);
 int parse_world_solution_response(uint8_t *data, uint8_t data_len, WorldSolutionResponse *res);
-int udp_recv_block(uint16_t time);
-int udp_send_msg(struct udp_pcb *pcb, ip_addr_t *ip, uint16_t port, void *msg, uint16_t len);
-void udp_recv_msg(void *arg, struct udp_pcb *pcb, struct pbuf *p, const ip_addr_t *addr, uint16_t port);
+int write_world_to_mem(uint32_t *ram, WorldWalls *walls, WorldWaypoints *waypoints);
+int get_world_bit(uint32_t *world, uint16_t world_size, uint16_t x, uint16_t y);
+int set_world_bit(uint32_t *world, uint16_t world_size, uint16_t x, uint16_t y, uint8_t value);
+void debug_print_world_bitmap(uint32_t *ram);
+int perform_pathfinding(uint32_t *ram);
 
 // ================================= DEFINITION/MAIN =================================
 
@@ -97,10 +116,12 @@ void lwip_startup_task()
 	ipaddr.addr = 0;
 	netmask.addr = 0;
 	gw.addr = 0;
+
 	if (!xemac_add(&my_net_if, &ipaddr, &netmask, &gw, my_mac_addr, XPAR_XEMACPS_0_BASEADDR)) {
     	xil_printf("Error adding network interface\n\r");
     	return;
     }
+
     netif_set_default(&my_net_if);
     netif_set_up(&my_net_if);
 
@@ -144,7 +165,7 @@ void lwip_dhcp_task()
 	}
 }
 
-void print_ip(const char *msg, const ip_addr_t *ip)
+void print_ip(char *msg, ip_addr_t *ip)
 {
 	xil_printf(msg);
 	xil_printf("%d.%d.%d.%d\n\r", ip4_addr1(ip), ip4_addr2(ip), ip4_addr3(ip), ip4_addr4(ip));
@@ -161,15 +182,20 @@ void app_task() {
 		xil_printf("Error creating UDP PCB\r\n");
 		return;
 	}
+
 	WS_IPV4_ADDR(world_server_ip);
 	udp_bind(udp_pcb, IP_ADDR_ANY, RECV_PORT);
 	udp_recv(udp_pcb, udp_recv_msg, NULL);
 	udp_recv_sem = xSemaphoreCreateBinary();
-	xil_printf("App communicating over port %d\r\n", RECV_PORT);
+
+    Xil_DCacheDisable();
+    XToplevel_Initialize(&hls, XPAR_TOPLEVEL_0_DEVICE_ID);
+
+	xil_printf("App setup and communicating over port %d\r\n", RECV_PORT);
 
 	while (1) {
 		// Prompt the user for world params
-		xil_printf("\r\n-- Starting World Request --\r\n");
+		xil_printf("\r\n-- World Request --\r\n");
 		read_uart_line("Seed: ");
 		uint32_t world_seed = (uint32_t)strtoul((char *)uart_in_buf, NULL, 10);
 		read_uart_line("World Size: ");
@@ -193,6 +219,8 @@ void app_task() {
 
 		// Try to solve the world using hardware acceleration
 		xil_printf(": Pathfinding...\r\n");
+		write_world_to_mem(hw_ram, &world_walls, &world_waypoints);
+		perform_pathfinding(hw_ram);
 
 		// Send world solution attempt
 		world_solution_attempt.type =  0x05;
@@ -208,6 +236,39 @@ void app_task() {
 
 	// Finally free up this task
 	vTaskDelete(NULL);
+}
+
+int udp_send_msg(struct udp_pcb *pcb, const ip_addr_t *ip, uint16_t port, void *msg, u16_t len) {
+	struct pbuf *p = pbuf_alloc(PBUF_TRANSPORT, len, PBUF_RAM);
+    if (p == NULL) {
+    	xil_printf("Error: udp_send_msg pbuf == NULL");
+    	return -1;
+    }
+    memcpy(p->payload, msg, len);
+    xil_printf("(->) Sending %u bytes\r\n", len);
+	udp_sendto(pcb, p, ip, port);
+	pbuf_free(p);
+    return 0;
+}
+
+void udp_recv_msg(void *arg, struct udp_pcb *pcb, struct pbuf *p, const ip_addr_t *addr, uint16_t port) {
+    if (p == NULL) {
+    	xil_printf("Error: udp_recv_msg pbuf == NULL");
+    	return;
+    }
+    udp_recv_buf_len = p->len > UDP_RECV_BUF_MAX ? UDP_RECV_BUF_MAX : p->len;
+    memcpy(udp_recv_buf, p->payload, udp_recv_buf_len);
+    pbuf_free(p);
+    xil_printf("(<-) Received %lu bytes\r\n", udp_recv_buf_len);
+    xSemaphoreGiveFromISR(udp_recv_sem, NULL);
+}
+
+int udp_recv_block(uint16_t time) {
+	if (xSemaphoreTake(udp_recv_sem, pdMS_TO_TICKS(time)) != pdTRUE) {
+		xil_printf("Error: Semamphore timeout (%us)\r\n", time);
+		return -1;
+	}
+	return 0;
 }
 
 void read_uart_line(char *msg)
@@ -238,9 +299,16 @@ int parse_world_walls(uint8_t *data, uint8_t data_len, WorldWalls *res) {
 	}
 
 	res->type = data[0];
-    res->seed = ntohl(*(uint32_t *)(data + 1)); // Dereference data[1] as a uint32_t then flip endian-ness
-    res->size = ntohs(*(uint16_t *)(data + 5)); // Dereference data[5] as a uint16_t then flip endian-ness
+    res->seed = ntohl(*(uint32_t *)(data + 1));
+    res->size = ntohs(*(uint16_t *)(data + 5));
 	res->num_walls = data[7];
+
+	for (uint8_t i = 0; i < res->num_walls; ++i) {
+		res->walls[i].x = ntohs(*(uint16_t *)(data + 8 + i * 6 + 0));
+		res->walls[i].y = ntohs(*(uint16_t *)(data + 8 + i * 6 + 2));
+		res->walls[i].length = data[8 + i * 6 + 4];
+		res->walls[i].direction = data[8 + i * 6 + 5];
+	}
 
 	xil_printf("World walls parsed: { %lu, %lu, %lu, %lu }\r\n", res->type, res->seed, res->size, res->num_walls);
 	return 0;
@@ -257,9 +325,14 @@ int parse_world_waypoints(uint8_t *data, uint8_t data_len, WorldWaypoints *res) 
 	}
 
 	res->type = data[0];
-    res->seed = ntohl(*(uint32_t *)(data + 1)); // Dereference data[1] as a uint32_t then flip endian-ness
-    res->size = ntohs(*(uint16_t *)(data + 5)); // Dereference data[5] as a uint16_t then flip endian-ness
+    res->seed = ntohl(*(uint32_t *)(data + 1));
+    res->size = ntohs(*(uint16_t *)(data + 5));
 	res->num_waypoints = data[7];
+
+	for (uint8_t i = 0; i < res->num_waypoints; ++i) {
+		res->waypoints[i].x = ntohs(*(uint16_t *)(data + 8 + i * 6 + 0));
+		res->waypoints[i].y = ntohs(*(uint16_t *)(data + 8 + i * 6 + 2));
+	}
 
 	xil_printf("World waypoints parsed: { %lu, %lu, %lu, %lu }\r\n", res->type, res->seed, res->size, res->num_waypoints);
 	return 0;
@@ -276,61 +349,99 @@ int parse_world_solution_response(uint8_t *data, uint8_t data_len, WorldSolution
 	}
 
 	res->type = data[0];
-    res->seed = ntohl(*(uint32_t *)(data + 1)); // Dereference data[1] as a uint32_t then flip endian-ness
-    res->size = ntohs(*(uint16_t *)(data + 5)); // Dereference data[5] as a uint16_t then flip endian-ness
+    res->seed = ntohl(*(uint32_t *)(data + 1));
+    res->size = ntohs(*(uint16_t *)(data + 5));
 	res->answer = data[7];
 
 	xil_printf("World solution response parsed: { %lu, %lu, %lu, %lu }\r\n", res->type, res->seed, res->size, res->answer);
 	return 0;
 }
 
-int udp_recv_block(uint16_t time) {
-	if (xSemaphoreTake(udp_recv_sem, pdMS_TO_TICKS(time)) != pdTRUE) {
-		xil_printf("Error: Semamphore timeout (%us)\r\n", time);
-		return -1;
+int write_world_to_mem(uint32_t *ram, WorldWalls *walls, WorldWaypoints *waypoints) {
+	memset(ram, 0, HW_MAX_WORDS * sizeof(uint32_t));
+
+	// See RAM schema in definitions section
+    uint16_t world_size = waypoints->size;
+    ram[0] = world_size;
+    ram[1] = waypoints->num_waypoints;
+
+    uint32_t *ram_waypoints = &ram[HW_META_WORDS];
+	for (uint8_t i = 0; i < waypoints->num_waypoints; ++i) {
+        uint16_t x = waypoints->waypoints[i].x;
+        uint16_t y = waypoints->waypoints[i].y;
+        ram_waypoints[i] = (x << 16) | (y);
 	}
+
+    uint32_t *ram_world = &ram[HW_META_WORDS + HW_WAYPOINT_WORDS];
+    for (uint8_t i = 0; i < walls->num_walls; ++i) {
+        uint16_t x = walls->walls[i].x;
+        uint16_t y = walls->walls[i].y;
+        uint8_t len = walls->walls[i].length;
+        uint8_t dir = walls->walls[i].direction;
+        for (uint8_t j = 0; j < len; j++) {
+            uint16_t px = x + (dir == 1 ? 0 : j);
+            uint16_t py = y + (dir == 1 ? j : 0);
+            set_world_bit(ram_world, world_size, px, py, 1);
+        }
+    }
+
 	return 0;
 }
 
-int udp_send_msg(struct udp_pcb *pcb, ip_addr_t *ip, uint16_t port, void *msg, u16_t len) {
-	struct pbuf *p = pbuf_alloc(PBUF_TRANSPORT, len, PBUF_RAM);
-    if (p == NULL) {
-    	xil_printf("Error: udp_send_msg pbuf == NULL");
-    	return -1;
+int get_world_bit(uint32_t *world, uint16_t world_size, uint16_t x, uint16_t y) {
+    if (x >= world_size || y >= world_size) {
+    	xil_printf("Error: get_world_bit coord out of bounds, %lu, %lu outside world of size %lu\r\n", x, y, world_size);
+    	return 1;
     }
-    memcpy(p->payload, msg, len);
-    xil_printf("(->) Sending %u bytes\r\n", len);
-	udp_sendto(pcb, p, ip, port);
-	pbuf_free(p);
+
+    uint32_t idx = x + y * world_size;
+    uint16_t word = idx / 32;
+    uint8_t bit = idx % 32;
+    return (world[word] >> bit) & 1;
+}
+
+int set_world_bit(uint32_t *world, uint16_t world_size, uint16_t x, uint16_t y, uint8_t value) {
+	// This is an expected error case
+    if (x >= world_size || y >= world_size) return 1;
+
+    uint32_t idx = x + y * world_size;
+    uint16_t word = idx / 32;
+    uint8_t bit = idx % 32;
+    world[word] |= (value << bit);
     return 0;
 }
 
-void udp_recv_msg(void *arg, struct udp_pcb *pcb, struct pbuf *p, const ip_addr_t *addr, uint16_t port) {
-    if (p == NULL) {
-    	xil_printf("Error: udp_recv_msg pbuf == NULL");
-    	return;
+void debug_print_world_bitmap(uint32_t *ram) {
+	uint16_t world_size = ram[0];
+    xil_printf("World Bitmap (%u x %u)\r\n", world_size, world_size);
+
+    // Iterate over each row of the world bitmap
+    uint32_t *ram_world = &ram[HW_META_WORDS + HW_WAYPOINT_WORDS];
+    for (uint16_t y = 0; y < world_size; ++y) {
+        for (uint16_t x = 0; x < world_size; ++x) {
+            int bit = get_world_bit(ram_world, world_size, x, y);
+            if (bit == -1) {
+                xil_printf("Error reading world bit at (%u, %u)\n", x, y);
+                return;
+            }
+            xil_printf("%c", bit ? 'X' : '.');
+        }
+        xil_printf("\r\n");
     }
-    udp_recv_buf_len = p->len > UDP_RECV_BUF_MAX ? UDP_RECV_BUF_MAX : p->len;
-    memcpy(udp_recv_buf, p->payload, udp_recv_buf_len);
-    pbuf_free(p);
-    xil_printf("(<-) Received %lu bytes\r\n", udp_recv_buf_len);
-    xSemaphoreGiveFromISR(udp_recv_sem, NULL);
+}
+
+int perform_pathfinding(uint32_t *ram) {
+    xil_printf("Hardware started: %lu\r\n", ram[0]);
+
+    XToplevel_Set_ram(&hls, (u64)ram);
+    XToplevel_Start(&hls);
+    while(!XToplevel_IsDone(&hls));
+
+    xil_printf("Hardware finished: %lu\r\n", ram[0]);
+    return 0;
 }
 
 // ================================= EXAMPLES =================================
-
-void hw_example() {
-	XToplevel hls;
-    Xil_DCacheDisable();
-    XToplevel_Initialize(&hls, XPAR_TOPLEVEL_0_DEVICE_ID);
-    hw_mem[0] = 0;
-    hw_mem[1] = 5;
-    hw_mem[2] = 7;
-    XToplevel_Set_ram(&hls, (uint32_t) hw_mem);
-    XToplevel_Start(&hls);
-    while(!XToplevel_IsDone(&hls));
-    printf("hw_mem[0]=%lu, hw_mem[1]=%lu, hw_mem[2]=%lu\r\n", hw_mem[0], hw_mem[1], hw_mem[2]);
-}
 
 void display_example() {
 	// Initialize an array of pointers to the 2 frame buffers
