@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-//Date        : Mon May  5 19:46:20 2025
+//Date        : Tue May  6 00:58:37 2025
 //Host        : DESKTOP-Q62E4QT running 64-bit Ubuntu 22.04.5 LTS
 //Command     : generate_target zybo_design.bd
 //Design      : zybo_design
@@ -3588,10 +3588,10 @@ module zybo_design
         .m_axi_MAXI_WREADY(toplevel_0_m_axi_MAXI_WREADY),
         .m_axi_MAXI_WSTRB(toplevel_0_m_axi_MAXI_WSTRB),
         .m_axi_MAXI_WVALID(toplevel_0_m_axi_MAXI_WVALID),
-        .s_axi_AXILiteS_ARADDR(ps7_0_axi_periph_M00_AXI_ARADDR[3:0]),
+        .s_axi_AXILiteS_ARADDR(ps7_0_axi_periph_M00_AXI_ARADDR[4:0]),
         .s_axi_AXILiteS_ARREADY(ps7_0_axi_periph_M00_AXI_ARREADY),
         .s_axi_AXILiteS_ARVALID(ps7_0_axi_periph_M00_AXI_ARVALID),
-        .s_axi_AXILiteS_AWADDR(ps7_0_axi_periph_M00_AXI_AWADDR[3:0]),
+        .s_axi_AXILiteS_AWADDR(ps7_0_axi_periph_M00_AXI_AWADDR[4:0]),
         .s_axi_AXILiteS_AWREADY(ps7_0_axi_periph_M00_AXI_AWREADY),
         .s_axi_AXILiteS_AWVALID(ps7_0_axi_periph_M00_AXI_AWVALID),
         .s_axi_AXILiteS_BREADY(ps7_0_axi_periph_M00_AXI_BREADY),

@@ -188,8 +188,9 @@ void app_task() {
 	udp_recv(udp_pcb, udp_recv_msg, NULL);
 	udp_recv_sem = xSemaphoreCreateBinary();
 
-    Xil_DCacheDisable();
+	Xil_DCacheDisable();
     XToplevel_Initialize(&hls, XPAR_TOPLEVEL_0_DEVICE_ID);
+    XToplevel_Set_ram(&hls, (u32) hw_ram);
 
 	xil_printf("App setup and communicating over port %d\r\n", RECV_PORT);
 
@@ -220,6 +221,7 @@ void app_task() {
 		// Try to solve the world using hardware acceleration
 		xil_printf(": Pathfinding...\r\n");
 		write_world_to_mem(hw_ram, &world_walls, &world_waypoints);
+		debug_print_world_bitmap(hw_ram);
 		perform_pathfinding(hw_ram);
 
 		// Send world solution attempt
@@ -362,8 +364,8 @@ int write_world_to_mem(uint32_t *ram, WorldWalls *walls, WorldWaypoints *waypoin
 
 	// See RAM schema in definitions section
     uint16_t world_size = waypoints->size;
-    ram[0] = world_size;
-    ram[1] = waypoints->num_waypoints;
+    ram[0] = (uint32_t)world_size;
+    ram[1] = (uint32_t)waypoints->num_waypoints;
 
     uint32_t *ram_waypoints = &ram[HW_META_WORDS];
 	for (uint8_t i = 0; i < waypoints->num_waypoints; ++i) {
@@ -379,8 +381,8 @@ int write_world_to_mem(uint32_t *ram, WorldWalls *walls, WorldWaypoints *waypoin
         uint8_t len = walls->walls[i].length;
         uint8_t dir = walls->walls[i].direction;
         for (uint8_t j = 0; j < len; j++) {
-            uint16_t px = x + (dir == 1 ? 0 : j);
-            uint16_t py = y + (dir == 1 ? j : 0);
+            uint16_t px = x + (dir == 0 ? 0 : j);
+            uint16_t py = y + (dir == 0 ? j : 0);
             set_world_bit(ram_world, world_size, px, py, 1);
         }
     }
@@ -413,7 +415,17 @@ int set_world_bit(uint32_t *world, uint16_t world_size, uint16_t x, uint16_t y, 
 
 void debug_print_world_bitmap(uint32_t *ram) {
 	uint16_t world_size = ram[0];
+	uint16_t num_waypoints = ram[1];
+
     xil_printf("World Bitmap (%u x %u)\r\n", world_size, world_size);
+
+    // Print waypoint locations
+    uint32_t *ram_waypoints = &ram[HW_META_WORDS];
+	for (uint8_t i = 0; i < num_waypoints; ++i) {
+        uint16_t x = (ram_waypoints[i] >> 16) & 0xFFFF;
+        uint16_t y = (ram_waypoints[i]) & 0xFFFF;
+        xil_printf("Waypoint %lu at %lu, %lu\r\n", i, x, y);
+	}
 
     // Iterate over each row of the world bitmap
     uint32_t *ram_world = &ram[HW_META_WORDS + HW_WAYPOINT_WORDS];
@@ -424,20 +436,21 @@ void debug_print_world_bitmap(uint32_t *ram) {
                 xil_printf("Error reading world bit at (%u, %u)\n", x, y);
                 return;
             }
-            xil_printf("%c", bit ? 'X' : '.');
+            xil_printf("%c", bit == 1 ? 'X' : '.');
         }
         xil_printf("\r\n");
     }
 }
 
 int perform_pathfinding(uint32_t *ram) {
-    xil_printf("Hardware started: %lu\r\n", ram[0]);
+    xil_printf("Hardware started: ram[0] = %lu\r\n", ram[0]);
 
-    XToplevel_Set_ram(&hls, (u64)ram);
+    XToplevel_Set_ram(&hls, (u32) hw_ram);
     XToplevel_Start(&hls);
     while(!XToplevel_IsDone(&hls));
+    uint32_t code = XToplevel_Get_code(&hls);
 
-    xil_printf("Hardware finished: %lu\r\n", ram[0]);
+    xil_printf("Hardware finished: ram[0] = %lu, code = %lu\r\n", ram[0], code);
     return 0;
 }
 
@@ -482,3 +495,4 @@ void display_example() {
 	Xil_DCacheFlush();
 	printf("Done.\n\r");
 }
+

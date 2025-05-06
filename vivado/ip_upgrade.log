@@ -1,6 +1,292 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+| Date         : Tue May  6 00:58:16 2025
+| Host         : DESKTOP-Q62E4QT running 64-bit Ubuntu 22.04.5 LTS
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zybo_design_toplevel_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of zybo_design_toplevel_0_1 (xilinx.com:hls:toplevel:1.0) from (Rev. 2114070582) to (Rev. 2114070598)
+
+
+
+
+
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+| Date         : Tue May  6 00:42:58 2025
+| Host         : DESKTOP-Q62E4QT running 64-bit Ubuntu 22.04.5 LTS
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zybo_design_toplevel_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of zybo_design_toplevel_0_1 (xilinx.com:hls:toplevel:1.0) from (Rev. 2114070565) to (Rev. 2114070582)
+
+
+
+
+
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+| Date         : Tue May  6 00:26:28 2025
+| Host         : DESKTOP-Q62E4QT running 64-bit Ubuntu 22.04.5 LTS
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zybo_design_toplevel_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of zybo_design_toplevel_0_1 (xilinx.com:hls:toplevel:1.0) from (Rev. 2114070561) to (Rev. 2114070565)
+
+
+
+
+
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+| Date         : Tue May  6 00:21:38 2025
+| Host         : DESKTOP-Q62E4QT running 64-bit Ubuntu 22.04.5 LTS
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zybo_design_toplevel_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of zybo_design_toplevel_0_1 (xilinx.com:hls:toplevel:1.0) from (Rev. 2114070544) to (Rev. 2114070561)
+
+
+
+
+
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+| Date         : Tue May  6 00:04:33 2025
+| Host         : DESKTOP-Q62E4QT running 64-bit Ubuntu 22.04.5 LTS
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zybo_design_toplevel_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of zybo_design_toplevel_0_1 (xilinx.com:hls:toplevel:1.0) from (Rev. 2114070526) to (Rev. 2114070544)
+
+
+
+
+
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+| Date         : Mon May  5 23:46:53 2025
+| Host         : DESKTOP-Q62E4QT running 64-bit Ubuntu 22.04.5 LTS
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zybo_design_toplevel_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of zybo_design_toplevel_0_1 (xilinx.com:hls:toplevel:1.0) from (Rev. 2114070491) to (Rev. 2114070526)
+
+
+
+
+
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+| Date         : Mon May  5 23:12:51 2025
+| Host         : DESKTOP-Q62E4QT running 64-bit Ubuntu 22.04.5 LTS
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zybo_design_toplevel_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of zybo_design_toplevel_0_1 (xilinx.com:hls:toplevel:1.0) from (Rev. 2114070453) to (Rev. 2114070491)
+
+
+
+
+
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+| Date         : Mon May  5 22:33:35 2025
+| Host         : DESKTOP-Q62E4QT running 64-bit Ubuntu 22.04.5 LTS
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zybo_design_toplevel_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of zybo_design_toplevel_0_1 (xilinx.com:hls:toplevel:1.0) from (Rev. 2114070431) to (Rev. 2114070453)
+
+
+
+
+
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+| Date         : Mon May  5 22:12:19 2025
+| Host         : DESKTOP-Q62E4QT running 64-bit Ubuntu 22.04.5 LTS
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zybo_design_toplevel_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of zybo_design_toplevel_0_1 (xilinx.com:hls:toplevel:1.0) from (Rev. 2114070415) to (Rev. 2114070431)
+
+
+
+
+
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+| Date         : Mon May  5 21:56:21 2025
+| Host         : DESKTOP-Q62E4QT running 64-bit Ubuntu 22.04.5 LTS
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zybo_design_toplevel_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of zybo_design_toplevel_0_1 (xilinx.com:hls:toplevel:1.0) from (Rev. 2114070401) to (Rev. 2114070415)
+
+
+
+
+
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+| Date         : Mon May  5 21:42:28 2025
+| Host         : DESKTOP-Q62E4QT running 64-bit Ubuntu 22.04.5 LTS
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zybo_design_toplevel_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of zybo_design_toplevel_0_1 (xilinx.com:hls:toplevel:1.0) from (Rev. 2114070367) to (Rev. 2114070401)
+
+
+
+
+
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+| Date         : Mon May  5 21:09:14 2025
+| Host         : DESKTOP-Q62E4QT running 64-bit Ubuntu 22.04.5 LTS
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zybo_design_toplevel_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of zybo_design_toplevel_0_1 (xilinx.com:hls:toplevel:1.0) from (Rev. 2114070354) to (Rev. 2114070367)
+
+
+
+
+
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+| Date         : Mon May  5 20:54:48 2025
+| Host         : DESKTOP-Q62E4QT running 64-bit Ubuntu 22.04.5 LTS
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zybo_design_toplevel_0_1'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of zybo_design_toplevel_0_1 (xilinx.com:hls:toplevel:1.0) from (Rev. 2114070285) to (Rev. 2114070354)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'zybo_design_toplevel_0_1'. These changes may impact your design.
+
+
+-Upgraded port 's_axi_AXILiteS_ARADDR' width 5 differs from original width 4
+
+-Upgraded port 's_axi_AXILiteS_AWADDR' width 5 differs from original width 4
+
+
+
+
+
+
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
 | Date         : Mon May  5 19:45:54 2025
 | Host         : DESKTOP-Q62E4QT running 64-bit Ubuntu 22.04.5 LTS
 | Command      : upgrade_ip
