@@ -1,0 +1,491 @@
+/*
+
+Xilinx Vitis v2020.2.0 (64-bit) [Major: 2020, Minor: 2]
+SW Build 3064172 on 2020-11-18-06:24:19
+
+Process ID (PID): 59771
+License: Customer
+
+Current time: 	Thu May 01 14:15:41 BST 2025
+Time zone: 	Greenwich Mean Time (Europe/London)
+
+OS: Ubuntu
+OS Version: 5.15.167.4-microsoft-standard-WSL2
+OS Architecture: amd64
+Available processors (cores): 16
+
+Display: :0
+Screen size: 2560x1440
+Available screens: 2
+Available disk space: 856 GB
+
+Java version: 	11.0.2 64-bit
+Java home: 	/opt/Xilinx/Vitis/2020.2/tps/lnx64/jre11.0.2
+Java executable location: 	/opt/Xilinx/Vitis/2020.2/tps/lnx64/jre11.0.2/bin/java
+Java initial memory (-Xms): 	64 MB
+Java maximum memory (-Xmx):	 1,024 MB
+
+Java library paths: /opt/Xilinx/Vitis/2020.2/tps/lnx64/javafx-sdk-11.0.2/lib:/opt/Xilinx/Vitis/2020.2/lib/lnx64.o/Ubuntu:/opt/Xilinx/Vitis/2020.2/lib/lnx64.o:/opt/Xilinx/Vitis/2020.2/tps/lnx64/jre11.0.2/lib/:/opt/Xilinx/Vitis/2020.2/tps/lnx64/jre11.0.2/lib//server:/opt/Xilinx/Vitis/2020.2/lib/lnx64.o:/opt/Xilinx/Vitis/2020.2/lib/lnx64.o/Ubuntu:/opt/Xilinx/Vitis/2020.2/lib/lnx64.o:/opt/Xilinx/Vitis/2020.2/tps/lnx64/python-3.8.3/lib:/home/tomster12/files/AURO/auro_ws/install/solution_interfaces/lib:/home/tomster12/files/AURO/auro_ws/install/auro_interfaces/lib:/home/tomster12/files/AURO/auro_ws/install/assessment_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/Xilinx/Vivado/2020.2/bin/../lnx64/tools/dot/lib:/opt/Xilinx/Vitis/2020.2/bin/../lnx64/tools/dot/lib:/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib
+
+Java class paths: /opt/Xilinx/Vitis/2020.2/eclipse/lnx64.o//plugins/org.eclipse.equinox.launcher_1.5.700.v20200207-2156.jar
+LD_LIBRARY_PATH: /opt/Xilinx/Vitis
+
+User name: 	tomster12
+User home directory: /home/tomster12
+User working directory: /home/tomster12/files/EMBS/logs
+User country: 	null
+User language: 	en
+User locale: 	en
+
+RDI_BASEROOT: /opt/Xilinx/Vitis
+HDI_APPROOT: /opt/Xilinx/Vitis/2020.2
+RDI_DATADIR: /opt/Xilinx/Vitis/2020.2/data
+RDI_BINDIR: /opt/Xilinx/Vitis/2020.2/bin
+
+Vitis preferences directory: /home/tomster12/.Xilinx/Vitis/2020.2/
+Vitis workspace directory: /home/tomster12/files/EMBS/vitis
+Vitis workspace log file location: /home/tomster12/files/EMBS/vitis/.metadata/.log
+Engine tmp dir: 	
+
+Xilinx Environment Variables
+----------------------------
+XILINX_DSP: 
+XILINX_HLS: /opt/Xilinx/Vitis_HLS/2020.2
+XILINX_PLANAHEAD: /opt/Xilinx/Vitis/2020.2
+XILINX_SDK: /opt/Xilinx/Vitis/2020.2
+XILINX_VITIS: /opt/Xilinx/Vitis/2020.2
+XILINX_VIVADO: /opt/Xilinx/Vivado/2020.2
+XILINX_VIVADO_HLS: /opt/Xilinx/Vivado/2020.2
+_RDI_DONT_SET_XILINX_AS_PATH: True
+
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+selectTreeTable("Debug", "assessment_system > assessment", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectTreeTable("assessment_system", "assessment_system > assessment", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectToolBarButton("Run Debug for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_DEBUG_FOR_PROJECT");
+selectMenuItem("Assessment System", "Assistant", "SDXAssistantView", "MenuItem.ASSESSMENT_SYSTEM");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectTreeTable("main.c", "assessment_system > assessment > src", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("src", "assessment_system > assessment", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectToolBarButton("Minimize", "Console", "ConsoleView", "ToolItem.MINIMIZE");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectTreeTable("Debug", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectTreeTable("src", "assessment_system > assessment", EventType.POPUP_TRIGGER_CLICK, "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectMenuItem("New", "Explorer", "ProjectExplorer", "MenuItem.NEW");
+selectMenuItem("File", "assessment", "WorkbenchWindow", "MenuItem.FILE");
+selectTreeTable("main.c", "assessment_system > assessment > src", EventType.DOUBLE_CLICK, "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("main.c", "assessment_system > assessment > src", "main.c", "CEditor", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectTreeTable("src", "assessment_system > assessment", EventType.POPUP_TRIGGER_CLICK, "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectMenuItem("New", "Explorer", "ProjectExplorer", "MenuItem.NEW");
+selectMenuItem("File", "assessment", "WorkbenchWindow", "MenuItem.FILE");
+selectButton("Finish", "Create New File (File)", "BasicNewFileResourceWizard", "Button.FINISH");
+activateView("main.c", "assessment/src/main.c", "CEditor", "CTabItem.MAIN_C");
+selectTreeTable("main.c", "assessment_system > assessment > src", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectTreeTable("zybo_z7_hdmi", "assessment_system > assessment > src", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("network.c", "assessment_system > assessment > src", EventType.DOUBLE_CLICK, "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("network.c", "assessment/src/network.c", "CEditor", "CTabItem.NETWORK_C");
+activateView("main.c", "assessment/src/main.c", "CEditor", "CTabItem.MAIN_C");
+selectTreeTable("network.c", "assessment_system > assessment > src", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("main.c", "assessment_system > assessment > src", EventType.DOUBLE_CLICK, "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTable("xil_printf", "Open Declaration", "Table", "Table");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Build Debug for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_DEBUG_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Debug", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("Debug", "assessment_system > assessment", "main.c", "CEditor", "TreeViewer.NavigatorContentServiceContentProvider");
+selectToolBarButton("Restore", "assessment", "WorkbenchWindow", "ToolItem.RESTORE");
+activateView("Outline", "ContentOutline", "CTabItem.OUTLINE");
+selectToolBarButton("Minimize", "Outline", "ContentOutline", "ToolItem.MINIMIZE");
+selectToolBarButton("Restore", "assessment", "WorkbenchWindow", "ToolItem.RESTORE");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectProblemsView("Errors", "ProblemsView", "TreeViewer.MarkerViewerContentProvider");
+selectProblemsView("DEFAULT_THREAD_PRIO undeclared", "Errors", EventType.DOUBLE_CLICK, "ProblemsView", "TreeViewer.MarkerViewerContentProvider");
+selectProblemsView("DEFAULT_THREAD_PRIO undeclared", "Errors", "CEditor", "TreeViewer.MarkerViewerContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Build Debug for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_DEBUG_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Debug", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectTreeTable("Debug", "assessment_system > assessment", "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectTreeTable("Debug", "assessment_system > assessment", "Assistant", "SDXAssistantView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectTreeTable("assessment", "assessment_system", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectMenuItem("Build", "Assistant", "SDXAssistantView", "MenuItem.BUILD");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Debug", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Problems", "ProblemsView", "CTabItem.PROBLEMS");
+activateView("Problems", "176 errors 7 warnings 0 others", "ProblemsView", "CTabItem.PROBLEMS");
+selectTreeTable("assessment", "assessment_system", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectMenuItem("Build", "Assistant", "WorkbenchWindow", "MenuItem.BUILD");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Debug", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Problems", "ProblemsView", "CTabItem.PROBLEMS");
+selectProblemsView("DEFAULT_THREAD_PRIO undeclared", "Errors", "ProblemsView", "TreeViewer.MarkerViewerContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectTreeTable("assessment", "assessment_system", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectMenuItem("Build", "Assistant", "WorkbenchWindow", "MenuItem.BUILD");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Debug", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectTreeTable("assessment", "assessment_system", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectMenuItem("Build", "Assistant", "WorkbenchWindow", "MenuItem.BUILD");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Debug", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectTreeTable("assessment", "assessment_system", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectMenuItem("Build", "Assistant", "WorkbenchWindow", "MenuItem.BUILD");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Debug", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Problems", "ProblemsView", "CTabItem.PROBLEMS");
+selectTreeTable("assessment", "assessment_system", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectMenuItem("Build", "Assistant", "WorkbenchWindow", "MenuItem.BUILD");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Debug", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Problems", "ProblemsView", "CTabItem.PROBLEMS");
+selectProblemsView("fatal error xtoplevel.h No such file or directory", "Errors", "ProblemsView", "TreeViewer.MarkerViewerContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectTreeTable("assessment", "assessment_system", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectMenuItem("Build", "Assistant", "WorkbenchWindow", "MenuItem.BUILD");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Debug", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectTreeTable("assessment", "assessment_system", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectMenuItem("Build", "Assistant", "WorkbenchWindow", "MenuItem.BUILD");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Debug", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectTreeTable("assessment", "assessment_system", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectMenuItem("Build", "Assistant", "WorkbenchWindow", "MenuItem.BUILD");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Debug", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("*main.c", "assessment/src/main.c", "Editor", "CTabItem.*MAIN_C");
+closeView("xil_printf.h", "zybo_design_wrapper/export/zybo_design_wrapper/sw/zybo_design_wrapper/freertos10_xilinx_ps7_cortexa9_0/bspinclude/include/xil_printf.h", "CEditor", "CTabItem.XIL_PRINTF_H");
+closeView("network.c", "assessment/src/network.c", "CEditor", "CTabItem.NETWORK_C");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectTreeTable("assessment", "assessment_system", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectMenuItem("Build", "Assistant", "WorkbenchWindow", "MenuItem.BUILD");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Debug", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Problems", "ProblemsView", "CTabItem.PROBLEMS");
+selectTreeTable("assessment", "assessment_system", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectMenuItem("Build", "Assistant", "WorkbenchWindow", "MenuItem.BUILD");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Debug", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectTreeTable("assessment", "assessment_system", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectMenuItem("Build", "Assistant", "WorkbenchWindow", "MenuItem.BUILD");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Debug", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Problems", "ProblemsView", "CTabItem.PROBLEMS");
+selectTreeTable("assessment", "assessment_system", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectMenuItem("Build", "Assistant", "WorkbenchWindow", "MenuItem.BUILD");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Debug", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Problems", "ProblemsView", "CTabItem.PROBLEMS");
+activateView("Problems", "3 errors 5 warnings 3 others", "ProblemsView", "CTabItem.PROBLEMS");
+selectProblemsView("DEFAULT_THREAD_PRIO undeclared", "Errors", EventType.DOUBLE_CLICK, "ProblemsView", "TreeViewer.MarkerViewerContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectTreeTable("assessment", "assessment_system", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectMenuItem("Build", "Assistant", "SDXAssistantView", "MenuItem.BUILD");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Debug", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectTreeTable("assessment", "assessment_system", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectMenuItem("Build", "Assistant", "WorkbenchWindow", "MenuItem.BUILD");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Debug", "assessment_system > assessment", "main.c", "CEditor", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("main.c", "assessment/src/main.c", "CEditor", "CTabItem.MAIN_C");
+selectTreeTable("assessment", "assessment_system", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectMenuItem("Build", "Assistant", "WorkbenchWindow", "MenuItem.BUILD");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Debug", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Problems", "ProblemsView", "CTabItem.PROBLEMS");
+selectProblemsView("control reaches end of non-void function", "Warnings", EventType.DOUBLE_CLICK, "ProblemsView", "TreeViewer.MarkerViewerContentProvider");
+selectProblemsView("control reaches end of non-void function", "Warnings", "CEditor", "TreeViewer.MarkerViewerContentProvider");
+activateView("Problems", "ProblemsView", "CTabItem.PROBLEMS");
+selectProblemsView("implicit declaration of function Xil_DCacheFlush", "Warnings", EventType.DOUBLE_CLICK, "ProblemsView", "TreeViewer.MarkerViewerContentProvider");
+selectProblemsView("implicit declaration of function Xil_DCacheFlush", "Warnings", "CEditor", "TreeViewer.MarkerViewerContentProvider");
+selectTable("Xil_DCacheFlush", "Open Declaration", "Table", "Table");
+activateView("main.c", "assessment/src/main.c", "CEditor", "CTabItem.MAIN_C");
+selectTreeTable("assessment", "assessment_system", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectMenuItem("Build", "Assistant", "WorkbenchWindow", "MenuItem.BUILD");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Debug", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Problems", "ProblemsView", "CTabItem.PROBLEMS");
+activateView("Problems", "4 errors 1 warning 3 others", "ProblemsView", "CTabItem.PROBLEMS");
+selectProblemsView("Errors", "ProblemsView", "TreeViewer.MarkerViewerContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectTreeTable("assessment", "assessment_system", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectMenuItem("Build", "Assistant", "WorkbenchWindow", "MenuItem.BUILD");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Debug", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Problems", "ProblemsView", "CTabItem.PROBLEMS");
+selectToolBarButton("Minimize", "Problems", "ProblemsView", "ToolItem.MINIMIZE");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectTreeTable("zybo_design_wrapper", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("main.c", "assessment_system > assessment > src", EventType.DOUBLE_CLICK, "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("main.c", "assessment_system > assessment > src", "main.c", "CEditor", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTextEditor("main.c", "assessment/src/main.c", EventType.POPUP_TRIGGER_CLICK, "CEditor", "StyledText.MAIN_C");
+selectMenuItem("Quick Fix", "main.c", "WorkbenchWindow", "MenuItem.QUICK_FIX");
+setText("// Platform", "assessment", "StyledText", "StyledText");
+setCombo("Initialise", "Search", "SearchDialog", "Combo.SEARCH_STRING_(*_=_ANY_STRING,_?_=_ANY_CHARACTER)");
+selectTab("File Search", "Search", "SearchDialog", "CTabItem.FILE_SEARCH");
+selectTab("C/C++ Search", "Search", "SearchDialog", "CTabItem.C_C++_SEARCH");
+selectMenuItem("Edit", "assessment", "WorkbenchWindow", "MenuItem.EDIT");
+selectMenuItem("Find/Replace", "assessment", "WorkbenchWindow", "MenuItem.FIND_REPLACE");
+setCombo("Initialize", "Find/Replace", "FindReplaceDialog", "Combo.REPLACE_WITH");
+selectCheckBox("Case sensitive", Boolean.TRUE, "Find/Replace", "FindReplaceDialog", "Button.CASE_SENSITIVE");
+selectButton("Replace All", "Find/Replace", "FindReplaceDialog", "Button.REPLACE_ALL");
+setCombo("initialise", "Find/Replace", "FindReplaceDialog", "Combo.FIND");
+setCombo("initialize", "Find/Replace", "FindReplaceDialog", "Combo.REPLACE_WITH");
+selectButton("Replace All", "Find/Replace", "FindReplaceDialog", "Button.REPLACE_ALL");
+selectButton("Close", "Find/Replace", "FindReplaceDialog", "Button.CLOSE");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectTreeTable("assessment_system", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectMenuItem("Build", "Assistant", "SDXAssistantView", "MenuItem.BUILD");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Debug", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectToolBarButton("Run Debug for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_DEBUG_FOR_PROJECT");
+selectMenuItem("Assessment System", "Assistant", "SDXAssistantView", "MenuItem.ASSESSMENT_SYSTEM");
+selectToolBarButton("Restore", "assessment_system", "WorkbenchWindow", "ToolItem.RESTORE");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectTreeTable("network.c", "assessment_system > assessment > src", EventType.DOUBLE_CLICK, "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("network.c", "assessment_system > assessment > src", "network.c", "CEditor", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("main.c", "assessment/src/main.c", "CEditor", "CTabItem.MAIN_C");
+selectToolBarButton("Minimize", "Console", "ConsoleView", "ToolItem.MINIMIZE");
+selectTextEditor("main.c", "assessment/src/main.c", EventType.POPUP_TRIGGER_CLICK, "CEditor", "StyledText.MAIN_C");
+setText("// Platform", "Find/Replace", "FindReplaceDialog", "StyledText");
+setCombo("disp_ctrl", "Find/Replace", "FindReplaceDialog", "Combo.REPLACE_WITH");
+selectButton("Replace All", "Find/Replace", "FindReplaceDialog", "Button.REPLACE_ALL");
+selectButton("Replace All", "Find/Replace", "FindReplaceDialog", "Button.REPLACE_ALL");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+setCombo("nw", "Find/Replace", "FindReplaceDialog", "Combo.REPLACE_WITH");
+selectButton("Replace All", "Find/Replace", "FindReplaceDialog", "Button.REPLACE_ALL");
+selectButton("Close", "Find/Replace", "FindReplaceDialog", "Button.CLOSE");
+selectTable("xTaskCreate", "Open Declaration", "Table", "Table");
+selectButton("Yes", "Editor Scalability", "Button", "YES");
+selectButton("Apply and Close", "Preferences", "WorkbenchPreferenceDialog", "Button.APPLY_AND_CLOSE");
+activateView("*network.c", "assessment/src/network.c", "Editor", "CTabItem.*NETWORK_C");
+activateView("main.c", "assessment/src/main.c", "CEditor", "CTabItem.MAIN_C");
+closeView("tasks.c", "zybo_design_wrapper/ps7_cortexa9_0/freertos10_xilinx_ps7_cortexa9_0/bsp/ps7_cortexa9_0/libsrc/freertos10_xilinx_v1_7/src/Source/tasks.c", "CEditor", "CTabItem.TASKS_C");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectTextEditor("main.c", "assessment/src/main.c", EventType.POPUP_TRIGGER_CLICK, "CEditor", "StyledText.MAIN_C");
+selectMenuItem("File", "assessment", "WorkbenchWindow", "MenuItem.FILE");
+selectMenuItem("Properties", "assessment", "WorkbenchWindow", "MenuItem.PROPERTIES");
+selectMenuItem("Window", "assessment", "WorkbenchWindow", "MenuItem.WINDOW");
+selectMenuItem("Preferences", "assessment", "WorkbenchWindow", "MenuItem.PREFERENCES");
+selectTree("Editors", "Additional > General", "Preferences", "CustomPreferenceDialog", "Tree.WorkbenchPreferenceManager");
+selectTree("Additional", "Additional > General", "Preferences", "CustomPreferenceDialog", "Tree.WorkbenchPreferenceManager");
+setTextField("spell", "Preferences", "CustomPreferenceDialog", "Text");
+selectTree("Spelling", "Additional > General > Editors > Text Editors", "Preferences", "CustomPreferenceDialog", "Tree.WorkbenchPreferenceManager");
+selectCheckBox("Ignore words with digits", Boolean.TRUE, "Preferences", "CustomPreferenceDialog", "Button.IGNORE_WORDS_WITH");
+selectCheckBox("Ignore mixed case words", Boolean.TRUE, "Preferences", "CustomPreferenceDialog", "Button.IGNORE_MIXED_CASE");
+selectCheckBox("Ignore sentence capitalization", Boolean.TRUE, "Preferences", "CustomPreferenceDialog", "Button.IGNORE_SENTENCE");
+selectCheckBox("Ignore upper case words", Boolean.TRUE, "Preferences", "CustomPreferenceDialog", "Button.IGNORE_UPPER_CASE");
+selectCheckBox("Ignore internet addresses", Boolean.TRUE, "Preferences", "CustomPreferenceDialog", "Button.IGNORE_INTERNET");
+selectCheckBox("Ignore non-letters at word boundaries", Boolean.TRUE, "Preferences", "CustomPreferenceDialog", "Button.IGNORE_NON_LETTERS");
+selectCheckBox("Ignore single letters", Boolean.TRUE, "Preferences", "CustomPreferenceDialog", "Button.IGNORE_SINGLE_LETTERS");
+selectCheckBox("Ignore Java string literals", Boolean.TRUE, "Preferences", "CustomPreferenceDialog", "Button.IGNORE_JAVA_STRING");
+selectCheckBox("Ignore  in Java properties files", Boolean.TRUE, "Preferences", "CustomPreferenceDialog", "Button.IGNORE_IN_JAVA");
+selectCheckBox("Enable spell checking", Boolean.FALSE, "Preferences", "CustomPreferenceDialog", "Button.ENABLE_SPELL_CHECKING");
+selectButton("Apply and Close", "Preferences", "CustomPreferenceDialog", "Button.APPLY_AND_CLOSE");
+activateView("*network.c", "assessment/src/network.c", "Editor", "CTabItem.*NETWORK_C");
+activateView("main.c", "assessment/src/main.c", "CEditor", "CTabItem.MAIN_C");
+setCombo("server_netif", "Find/Replace", "FindReplaceDialog", "Combo.REPLACE_WITH");
+selectButton("Replace/Find", "Find/Replace", "FindReplaceDialog", "Button.REPLACE_FIND");
+selectButton("Replace/Find", "Find/Replace", "FindReplaceDialog", "Button.REPLACE_FIND");
+selectButton("Replace/Find", "Find/Replace", "FindReplaceDialog", "Button.REPLACE_FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Replace/Find", "Find/Replace", "FindReplaceDialog", "Button.REPLACE_FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Replace/Find", "Find/Replace", "FindReplaceDialog", "Button.REPLACE_FIND");
+selectButton("Replace/Find", "Find/Replace", "FindReplaceDialog", "Button.REPLACE_FIND");
+selectButton("Replace/Find", "Find/Replace", "FindReplaceDialog", "Button.REPLACE_FIND");
+selectButton("Close", "Find/Replace", "FindReplaceDialog", "Button.CLOSE");
+selectTable("DHCP_FINE_TIMER_MSECS - /zybo_design_wrapper/export", "Open Declaration", "Table", "Table");
+activateView("main.c", "assessment/src/main.c", "CEditor", "CTabItem.MAIN_C");
+closeView("FreeRTOS.h", "zybo_design_wrapper/export/zybo_design_wrapper/sw/zybo_design_wrapper/freertos10_xilinx_ps7_cortexa9_0/bspinclude/include/FreeRTOS.h", "CEditor", "CTabItem.FREERTOS_H");
+closeView("dhcp.h", "zybo_design_wrapper/export/zybo_design_wrapper/sw/zybo_design_wrapper/freertos10_xilinx_ps7_cortexa9_0/bspinclude/include/lwip/dhcp.h", "CEditor", "CTabItem.DHCP_H");
+activateView("*network.c", "assessment/src/network.c", "Editor", "CTabItem.*NETWORK_C");
+selectTreeTable("network.c", "assessment_system > assessment > src", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectButton("OK", "Delete Resources", "RefactoringWizardDialog2", "Button.OK");
+selectTable("File assessment/src/network.c has unsaved changes", "Delete Resources", "RefactoringStatusDialog", "Table");
+selectButton("Continue", "Delete Resources", "RefactoringStatusDialog", "Button.CONTINUE");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectTreeTable("assessment", "assessment_system", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectMenuItem("Build", "Assistant", "SDXAssistantView", "MenuItem.BUILD");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectToolBarButton("Restore", "Console", "ConsoleView", "ToolItem.RESTORE");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectTreeTable("assessment", "assessment_system", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectMenuItem("Build", "Assistant", "WorkbenchWindow", "MenuItem.BUILD");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+activateView("Problems", "5 errors 1 warning 1 other", "ProblemsView", "CTabItem.PROBLEMS");
+selectProblemsView("nw_main_task undeclared", "Errors", EventType.DOUBLE_CLICK, "ProblemsView", "TreeViewer.MarkerViewerContentProvider");
+selectProblemsView("nw_main_task undeclared", "Errors", "CEditor", "TreeViewer.MarkerViewerContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectTreeTable("assessment", "assessment_system", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectMenuItem("Build", "Assistant", "WorkbenchWindow", "MenuItem.BUILD");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("assessment", "assessment_system", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectMenuItem("Build", "Assistant", "WorkbenchWindow", "MenuItem.BUILD");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("assessment", "assessment_system", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectMenuItem("Build", "Assistant", "WorkbenchWindow", "MenuItem.BUILD");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Debug", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Problems", "ProblemsView", "CTabItem.PROBLEMS");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("assessment_system", "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectToolBarButton("Run Debug for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_DEBUG_FOR_PROJECT");
+selectMenuItem("Assessment System", "Assistant", "SDXAssistantView", "MenuItem.ASSESSMENT_SYSTEM");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+setCombo("\n\r", "Find/Replace", "FindReplaceDialog", "Combo.REPLACE_WITH");
+selectButton("Replace All", "Find/Replace", "FindReplaceDialog", "Button.REPLACE_ALL");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Run Debug for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_DEBUG_FOR_PROJECT");
+selectMenuItem("Assessment System", "Assistant", "WorkbenchWindow", "MenuItem.ASSESSMENT_SYSTEM");
+activateView("main.c", "assessment/src/main.c", "CEditor", "CTabItem.MAIN_C");
+closeView("init.c", "zybo_design_wrapper/ps7_cortexa9_0/freertos10_xilinx_ps7_cortexa9_0/bsp/ps7_cortexa9_0/libsrc/lwip211_v1_3/src/lwip-2.1.1/src/core/init.c", "CEditor", "CTabItem.INIT_C");
+closeView("lwipopts.h", "zybo_design_wrapper/export/zybo_design_wrapper/sw/zybo_design_wrapper/freertos10_xilinx_ps7_cortexa9_0/bspinclude/include/lwipopts.h", "CEditor", "CTabItem.LWIPOPTS_H");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectTreeTable("assessment", "assessment_system", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectMenuItem("Build", "Assistant", "SDXAssistantView", "MenuItem.BUILD");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Debug", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectTreeTable("assessment", "assessment_system", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectMenuItem("Build", "Assistant", "WorkbenchWindow", "MenuItem.BUILD");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Debug", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectToolBarButton("Minimize", "Console", "ConsoleView", "ToolItem.MINIMIZE");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Restore", "assessment", "WorkbenchWindow", "ToolItem.RESTORE");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+activateView("Problems", "17 errors 14 warnings 3 others", "ProblemsView", "CTabItem.PROBLEMS");
+selectProblemsView("Errors", "ProblemsView", "TreeViewer.MarkerViewerContentProvider");
+selectProblemsView("DHCP_COARSE_TIMER_SECS undeclared", "Errors", "ProblemsView", "TreeViewer.MarkerViewerContentProvider");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectTreeTable("assessment", "assessment_system", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectMenuItem("Build", "Assistant", "SDXAssistantView", "MenuItem.BUILD");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+activateView("Problems", "ProblemsView", "CTabItem.PROBLEMS");
+selectTreeTable("Debug", "assessment_system > assessment", "Problems", "ProblemsView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectTreeTable("assessment", "assessment_system", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectMenuItem("Build", "Assistant", "WorkbenchWindow", "MenuItem.BUILD");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Debug", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Problems", "ProblemsView", "CTabItem.PROBLEMS");
+activateView("Problems", "3 errors 3 warnings 2 others", "ProblemsView", "CTabItem.PROBLEMS");
+selectProblemsView("excess elements in scalar initializer", "Warnings", EventType.DOUBLE_CLICK, "ProblemsView", "TreeViewer.MarkerViewerContentProvider");
+selectProblemsView("excess elements in scalar initializer", "Warnings", "CEditor", "TreeViewer.MarkerViewerContentProvider");
+activateView("Problems", "ProblemsView", "CTabItem.PROBLEMS");
+selectProblemsView("implicit declaration of function lwip_init did you", "Warnings", EventType.DOUBLE_CLICK, "ProblemsView", "TreeViewer.MarkerViewerContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectTreeTable("assessment", "assessment_system", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectMenuItem("Build", "Assistant", "WorkbenchWindow", "MenuItem.BUILD");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectToolBarButton("Minimize", "Console", "ConsoleView", "ToolItem.MINIMIZE");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectTreeTable("assessment", "assessment_system", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectMenuItem("Build", "Assistant", "WorkbenchWindow", "MenuItem.BUILD");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Debug", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+selectToolBarButton("Restore", "Console", "ConsoleView", "ToolItem.RESTORE");
+activateView("Problems", "ProblemsView", "CTabItem.PROBLEMS");
+selectProblemsView("Errors", "ProblemsView", "TreeViewer.MarkerViewerContentProvider");
+selectProblemsView("nw_dhcp_task undeclared", "Errors", EventType.DOUBLE_CLICK, "ProblemsView", "TreeViewer.MarkerViewerContentProvider");
+selectProblemsView("nw_dhcp_task undeclared", "Errors", "CEditor", "TreeViewer.MarkerViewerContentProvider");
+activateView("Problems", "ProblemsView", "CTabItem.PROBLEMS");
+selectProblemsView("h_nw_dhcp_task undeclared", "Errors", EventType.DOUBLE_CLICK, "ProblemsView", "TreeViewer.MarkerViewerContentProvider");
+selectProblemsView("h_nw_dhcp_task undeclared", "Errors", "CEditor", "TreeViewer.MarkerViewerContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectTreeTable("assessment", "assessment_system", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectMenuItem("Build", "Assistant", "WorkbenchWindow", "MenuItem.BUILD");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Debug", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Problems", "ProblemsView", "CTabItem.PROBLEMS");
+selectTreeTable("Debug", "assessment_system > assessment", "Problems", "ProblemsView", "TreeViewer.NavigatorContentServiceContentProvider");
+selectProblemsView("nw_dhcp_task undeclared", "Errors", EventType.DOUBLE_CLICK, "ProblemsView", "TreeViewer.MarkerViewerContentProvider");
+selectProblemsView("nw_dhcp_task undeclared", "Errors", "CEditor", "TreeViewer.MarkerViewerContentProvider");
+activateView("Problems", "ProblemsView", "CTabItem.PROBLEMS");
+selectProblemsView("nw_dhcp_task undeclared", "Errors", "ProblemsView", "TreeViewer.MarkerViewerContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectTreeTable("assessment", "assessment_system", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectMenuItem("Build", "Assistant", "WorkbenchWindow", "MenuItem.BUILD");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Debug", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Problems", "ProblemsView", "CTabItem.PROBLEMS");
+activateView("Problems", "0 items", "ProblemsView", "CTabItem.PROBLEMS");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+setText("// ---- Platform", "Explorer", "ProjectExplorer", "StyledText");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectTreeTable("assessment", "assessment_system", "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectTreeTable("assessment_system", "assessment_system", "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectToolBarButton("Build Debug for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_DEBUG_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectToolBarButton("Run Debug for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_DEBUG_FOR_PROJECT");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Debug", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectTreeTable("assessment_system", "assessment_system > assessment", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectToolBarButton("Run Debug for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_DEBUG_FOR_PROJECT");
+selectMenuItem("Assessment System", "Assistant", "SDXAssistantView", "MenuItem.ASSESSMENT_SYSTEM");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectTreeTable("src", "assessment_system > assessment", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectToolBarButton("Minimize", "Console", "ConsoleView", "ToolItem.MINIMIZE");
+selectMenuItem("Window", "assessment", "WorkbenchWindow", "MenuItem.WINDOW");
+selectMenuItem("Preferences", "assessment", "WorkbenchWindow", "MenuItem.PREFERENCES");
+selectCheckBox("Ignore words with digits", Boolean.TRUE, "main.c", "CEditor", "Button.IGNORE_WORDS_WITH");
+selectCheckBox("Ignore mixed case words", Boolean.TRUE, "main.c", "CEditor", "Button.IGNORE_MIXED_CASE");
+selectCheckBox("Ignore sentence capitalization", Boolean.TRUE, "main.c", "CEditor", "Button.IGNORE_SENTENCE");
+selectCheckBox("Ignore upper case words", Boolean.TRUE, "main.c", "CEditor", "Button.IGNORE_UPPER_CASE");
+selectCheckBox("Ignore internet addresses", Boolean.TRUE, "main.c", "CEditor", "Button.IGNORE_INTERNET");
+selectCheckBox("Ignore non-letters at word boundaries", Boolean.TRUE, "main.c", "CEditor", "Button.IGNORE_NON_LETTERS");
+selectCheckBox("Ignore single letters", Boolean.TRUE, "main.c", "CEditor", "Button.IGNORE_SINGLE_LETTERS");
+selectCheckBox("Ignore Java string literals", Boolean.TRUE, "main.c", "CEditor", "Button.IGNORE_JAVA_STRING");
+selectCheckBox("Ignore  in Java properties files", Boolean.TRUE, "main.c", "CEditor", "Button.IGNORE_IN_JAVA");
+setText("// ---- Platform", "Preferences", "CustomPreferenceDialog", "StyledText");
+selectTree("Additional", "Preferences", "CustomPreferenceDialog", "Tree.WorkbenchPreferenceManager");
+selectTree("Appearance", "Additional > General", "Preferences", "CustomPreferenceDialog", "Tree.WorkbenchPreferenceManager");
+selectTree("Additional", "Additional > General", "Preferences", "CustomPreferenceDialog", "Tree.WorkbenchPreferenceManager");
+selectTree("Appearance", "Additional > General", "Preferences", "CustomPreferenceDialog", "Tree.WorkbenchPreferenceManager");
+selectTree("Colors and Fonts", "Additional > General > Appearance", "Preferences", "CustomPreferenceDialog", "Tree.WorkbenchPreferenceManager");
+selectTree("Appearance", "Additional > General", "Preferences", "CustomPreferenceDialog", "Tree.WorkbenchPreferenceManager");
+selectCombo("Classic Theme", "Preferences", "CustomPreferenceDialog", "Combo.COLOR_AND_FONT_THEME");
+selectCombo("Default", "Preferences", "CustomPreferenceDialog", "Combo.COLOR_AND_FONT_THEME");
+selectCombo("Classic Theme", "Preferences", "CustomPreferenceDialog", "Combo.COLOR_AND_FONT_THEME");
+selectCombo("Default", "Preferences", "CustomPreferenceDialog", "Combo.COLOR_AND_FONT_THEME");
+selectCombo("Reduced Palette", "Preferences", "CustomPreferenceDialog", "Combo.COLOR_AND_FONT_THEME");
+selectCombo("Default", "Preferences", "CustomPreferenceDialog", "Combo.COLOR_AND_FONT_THEME");
+selectCombo("Dark", "Preferences", "CustomPreferenceDialog", "Combo.THEME");
+selectCheckBox("Enable animations", Boolean.TRUE, "Preferences", "CustomPreferenceDialog", "Button.ENABLE_ANIMATIONS");
+selectCheckBox("Enable animations", Boolean.FALSE, "Preferences", "CustomPreferenceDialog", "Button.ENABLE_ANIMATIONS");
+selectCombo("Dark", "Preferences", "CustomPreferenceDialog", "Combo.THEME");
+selectButton("Apply", "Preferences", "CustomPreferenceDialog", "Button.APPLY");
+selectButton("OK", "Theme change", "MessageDialog", "Button.OK");
+selectCombo("Dark", "Preferences", "CustomPreferenceDialog", "Combo.THEME");
+selectButton("Apply", "Preferences", "CustomPreferenceDialog", "Button.APPLY");
+selectButton("OK", "Theme change", "MessageDialog", "Button.OK");
+selectButton("Apply and Close", "Preferences", "CustomPreferenceDialog", "Button.APPLY_AND_CLOSE");
+// Exiting Xilinx Vitis with a status code '0' at 5/1/25, 4:18:15 PM BST
+// Elapsed time: 02:02:33
+

@@ -1,0 +1,823 @@
+
+
+================================================================
+== Vitis HLS Report for 'a_star_len'
+================================================================
+* Date:           Tue May  6 00:57:41 2025
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:47 MST 2020)
+* Project:        assessment
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z010-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.271 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|     none|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +---------------------------+---------+---------+----------+-----------+-----------+-------+----------+
+        |                           |  Latency (cycles) | Iteration|  Initiation Interval  |  Trip |          |
+        |         Loop Name         |   min   |   max   |  Latency |  achieved |   target  | Count | Pipelined|
+        +---------------------------+---------+---------+----------+-----------+-----------+-------+----------+
+        |- Loop 1                   |     7813|     7813|         1|          1|          1|   7813|       yes|
+        |- Loop 2                   |     8192|     8192|         1|          1|          1|   8192|       yes|
+        |- AS_SEARCH_LOOP           |        ?|        ?|         ?|          -|          -|      ?|        no|
+        | + AS_SEARCH_LOOP          |        ?|        ?|         ?|          -|          -|      ?|        no|
+        |  ++ SIFT_DOWN_LOOP        |        ?|        ?|         6|          6|          1|      ?|       yes|
+        | + EXPLORE_NEIGHBORS_LOOP  |        ?|        ?|         ?|          -|          -|  1 ~ 4|        no|
+        |  ++ SIFT_UP_LOOP          |        ?|        ?|         5|          4|          1|      ?|       yes|
+        +---------------------------+---------+---------+----------+-----------+-----------+-------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 1
+  * Pipeline-1: initiation interval (II) = 1, depth = 1
+  * Pipeline-2: initiation interval (II) = 6, depth = 6
+  * Pipeline-3: initiation interval (II) = 4, depth = 5
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 41
+* Pipeline : 4
+  Pipeline-0 : II = 1, D = 1, States = { 2 }
+  Pipeline-1 : II = 1, D = 1, States = { 4 }
+  Pipeline-2 : II = 6, D = 6, States = { 11 12 13 38 39 40 }
+  Pipeline-3 : II = 4, D = 5, States = { 31 32 33 34 35 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 2 
+3 --> 4 
+4 --> 5 4 
+5 --> 6 
+6 --> 7 41 
+7 --> 8 
+8 --> 9 
+9 --> 10 41 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 38 
+14 --> 15 41 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 9 
+19 --> 20 
+20 --> 37 21 8 
+21 --> 22 37 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 26 
+26 --> 27 
+27 --> 28 37 
+28 --> 29 
+29 --> 37 30 41 
+30 --> 31 
+31 --> 32 
+32 --> 33 
+33 --> 36 34 
+34 --> 35 
+35 --> 31 
+36 --> 37 
+37 --> 20 
+38 --> 39 
+39 --> 40 
+40 --> 11 
+41 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.58>
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i32 %local_ram, i64 666, i64 30, i64 18446744073709551615"   --->   Operation 42 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i16 %open_set_heap_f_score, i16 %open_set_heap_g_score, i16 %open_set_heap_x, i16 %open_set_heap_y, i64 666, i64 30, i64 18446744073709551615"   --->   Operation 43 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i32 %closed_set, i64 666, i64 30, i64 18446744073709551615"   --->   Operation 44 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%goal_y_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %goal_y" [assessment/toplevel.cpp:157]   --->   Operation 45 'read' 'goal_y_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%goal_x_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %goal_x" [assessment/toplevel.cpp:157]   --->   Operation 46 'read' 'goal_x_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%start_y_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %start_y" [assessment/toplevel.cpp:157]   --->   Operation 47 'read' 'start_y_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%start_x_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %start_x" [assessment/toplevel.cpp:157]   --->   Operation 48 'read' 'start_x_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 49 [1/1] (1.58ns)   --->   "%br_ln157 = br void %memset.loop57" [assessment/toplevel.cpp:157]   --->   Operation 49 'br' 'br_ln157' <Predicate = true> <Delay = 1.58>
+
+State 2 <SV = 1> <Delay = 5.35>
+ST_2 : Operation 50 [1/1] (0.00ns)   --->   "%empty = phi i13 0, void %_ZL7abs_subtt.exit.i, i13 %empty_30, void %memset.loop57.split"   --->   Operation 50 'phi' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 51 [1/1] (1.67ns)   --->   "%empty_30 = add i13 %empty, i13 1"   --->   Operation 51 'add' 'empty_30' <Predicate = true> <Delay = 1.67> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 52 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 52 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 53 [1/1] (2.09ns)   --->   "%exitcond7016 = icmp_eq  i13 %empty, i13 7813"   --->   Operation 53 'icmp' 'exitcond7016' <Predicate = true> <Delay = 2.09> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 54 [1/1] (0.00ns)   --->   "%empty_31 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 7813, i64 7813, i64 7813"   --->   Operation 54 'speclooptripcount' 'empty_31' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 55 [1/1] (0.00ns)   --->   "%br_ln0 = br i1 %exitcond7016, void %memset.loop57.split, void %memset.loop.preheader"   --->   Operation 55 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 56 [1/1] (0.00ns)   --->   "%p_cast = zext i13 %empty"   --->   Operation 56 'zext' 'p_cast' <Predicate = (!exitcond7016)> <Delay = 0.00>
+ST_2 : Operation 57 [1/1] (0.00ns)   --->   "%closed_set_addr = getelementptr i32 %closed_set, i64 0, i64 %p_cast"   --->   Operation 57 'getelementptr' 'closed_set_addr' <Predicate = (!exitcond7016)> <Delay = 0.00>
+ST_2 : Operation 58 [1/1] (3.25ns)   --->   "%store_ln0 = store i32 0, i13 %closed_set_addr"   --->   Operation 58 'store' 'store_ln0' <Predicate = (!exitcond7016)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 7813> <RAM>
+ST_2 : Operation 59 [1/1] (0.00ns)   --->   "%br_ln0 = br void %memset.loop57"   --->   Operation 59 'br' 'br_ln0' <Predicate = (!exitcond7016)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 1.58>
+ST_3 : Operation 60 [1/1] (1.58ns)   --->   "%br_ln0 = br void %memset.loop"   --->   Operation 60 'br' 'br_ln0' <Predicate = true> <Delay = 1.58>
+
+State 4 <SV = 3> <Delay = 5.46>
+ST_4 : Operation 61 [1/1] (0.00ns)   --->   "%empty_32 = phi i14 %empty_33, void %memset.loop.split, i14 0, void %memset.loop.preheader"   --->   Operation 61 'phi' 'empty_32' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 62 [1/1] (1.81ns)   --->   "%empty_33 = add i14 %empty_32, i14 1"   --->   Operation 62 'add' 'empty_33' <Predicate = true> <Delay = 1.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 63 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 63 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 64 [1/1] (2.20ns)   --->   "%exitcond15 = icmp_eq  i14 %empty_32, i14 8192"   --->   Operation 64 'icmp' 'exitcond15' <Predicate = true> <Delay = 2.20> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 65 [1/1] (0.00ns)   --->   "%empty_34 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 8192, i64 8192, i64 8192"   --->   Operation 65 'speclooptripcount' 'empty_34' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 66 [1/1] (0.00ns)   --->   "%br_ln0 = br i1 %exitcond15, void %memset.loop.split, void %split"   --->   Operation 66 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 67 [1/1] (0.00ns)   --->   "%p_cast3 = zext i14 %empty_32"   --->   Operation 67 'zext' 'p_cast3' <Predicate = (!exitcond15)> <Delay = 0.00>
+ST_4 : Operation 68 [1/1] (0.00ns)   --->   "%open_set_heap_f_score_addr = getelementptr i16 %open_set_heap_f_score, i64 0, i64 %p_cast3"   --->   Operation 68 'getelementptr' 'open_set_heap_f_score_addr' <Predicate = (!exitcond15)> <Delay = 0.00>
+ST_4 : Operation 69 [1/1] (3.25ns)   --->   "%store_ln0 = store i16 0, i13 %open_set_heap_f_score_addr"   --->   Operation 69 'store' 'store_ln0' <Predicate = (!exitcond15)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_4 : Operation 70 [1/1] (0.00ns)   --->   "%open_set_heap_g_score_addr = getelementptr i16 %open_set_heap_g_score, i64 0, i64 %p_cast3"   --->   Operation 70 'getelementptr' 'open_set_heap_g_score_addr' <Predicate = (!exitcond15)> <Delay = 0.00>
+ST_4 : Operation 71 [1/1] (3.25ns)   --->   "%store_ln0 = store i16 0, i13 %open_set_heap_g_score_addr"   --->   Operation 71 'store' 'store_ln0' <Predicate = (!exitcond15)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_4 : Operation 72 [1/1] (0.00ns)   --->   "%open_set_heap_x_addr = getelementptr i16 %open_set_heap_x, i64 0, i64 %p_cast3"   --->   Operation 72 'getelementptr' 'open_set_heap_x_addr' <Predicate = (!exitcond15)> <Delay = 0.00>
+ST_4 : Operation 73 [1/1] (3.25ns)   --->   "%store_ln0 = store i16 0, i13 %open_set_heap_x_addr"   --->   Operation 73 'store' 'store_ln0' <Predicate = (!exitcond15)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_4 : Operation 74 [1/1] (0.00ns)   --->   "%open_set_heap_y_addr = getelementptr i16 %open_set_heap_y, i64 0, i64 %p_cast3"   --->   Operation 74 'getelementptr' 'open_set_heap_y_addr' <Predicate = (!exitcond15)> <Delay = 0.00>
+ST_4 : Operation 75 [1/1] (3.25ns)   --->   "%store_ln0 = store i16 0, i13 %open_set_heap_y_addr"   --->   Operation 75 'store' 'store_ln0' <Predicate = (!exitcond15)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_4 : Operation 76 [1/1] (0.00ns)   --->   "%br_ln0 = br void %memset.loop"   --->   Operation 76 'br' 'br_ln0' <Predicate = (!exitcond15)> <Delay = 0.00>
+
+State 5 <SV = 4> <Delay = 4.50>
+ST_5 : Operation 77 [1/1] (2.42ns)   --->   "%icmp_ln70 = icmp_ugt  i16 %start_x_read, i16 %goal_x_read" [assessment/toplevel.cpp:70]   --->   Operation 77 'icmp' 'icmp_ln70' <Predicate = true> <Delay = 2.42> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 78 [1/1] (2.07ns)   --->   "%sub_ln70 = sub i16 %start_x_read, i16 %goal_x_read" [assessment/toplevel.cpp:70]   --->   Operation 78 'sub' 'sub_ln70' <Predicate = true> <Delay = 2.07> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 79 [1/1] (2.07ns)   --->   "%sub_ln70_1 = sub i16 %goal_x_read, i16 %start_x_read" [assessment/toplevel.cpp:70]   --->   Operation 79 'sub' 'sub_ln70_1' <Predicate = true> <Delay = 2.07> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 80 [1/1] (0.00ns) (grouped into LUT with out node h_start)   --->   "%select_ln70 = select i1 %icmp_ln70, i16 %sub_ln70, i16 %sub_ln70_1" [assessment/toplevel.cpp:70]   --->   Operation 80 'select' 'select_ln70' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_5 : Operation 81 [1/1] (2.42ns)   --->   "%icmp_ln70_1 = icmp_ugt  i16 %start_y_read, i16 %goal_y_read" [assessment/toplevel.cpp:70]   --->   Operation 81 'icmp' 'icmp_ln70_1' <Predicate = true> <Delay = 2.42> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 82 [1/1] (2.07ns)   --->   "%sub_ln70_2 = sub i16 %start_y_read, i16 %goal_y_read" [assessment/toplevel.cpp:70]   --->   Operation 82 'sub' 'sub_ln70_2' <Predicate = true> <Delay = 2.07> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 83 [1/1] (2.07ns)   --->   "%sub_ln70_3 = sub i16 %goal_y_read, i16 %start_y_read" [assessment/toplevel.cpp:70]   --->   Operation 83 'sub' 'sub_ln70_3' <Predicate = true> <Delay = 2.07> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 84 [1/1] (0.00ns) (grouped into LUT with out node h_start)   --->   "%select_ln70_1 = select i1 %icmp_ln70_1, i16 %sub_ln70_2, i16 %sub_ln70_3" [assessment/toplevel.cpp:70]   --->   Operation 84 'select' 'select_ln70_1' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_5 : Operation 85 [1/1] (2.07ns) (out node of the LUT)   --->   "%h_start = add i16 %select_ln70_1, i16 %select_ln70" [assessment/toplevel.cpp:76]   --->   Operation 85 'add' 'h_start' <Predicate = true> <Delay = 2.07> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 86 [1/1] (3.25ns)   --->   "%store_ln132 = store i16 0, i16 0" [assessment/toplevel.cpp:132]   --->   Operation 86 'store' 'store_ln132' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_5 : Operation 87 [1/1] (3.25ns)   --->   "%store_ln132 = store i16 %start_x_read, i16 0" [assessment/toplevel.cpp:132]   --->   Operation 87 'store' 'store_ln132' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_5 : Operation 88 [1/1] (3.25ns)   --->   "%store_ln132 = store i16 %start_y_read, i16 0" [assessment/toplevel.cpp:132]   --->   Operation 88 'store' 'store_ln132' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+
+State 6 <SV = 5> <Delay = 6.91>
+ST_6 : Operation 89 [1/1] (3.25ns)   --->   "%store_ln132 = store i16 %h_start, i16 0" [assessment/toplevel.cpp:132]   --->   Operation 89 'store' 'store_ln132' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_6 : Operation 90 [1/1] (0.00ns)   --->   "%error_flag_load = load i32 %error_flag" [assessment/toplevel.cpp:165]   --->   Operation 90 'load' 'error_flag_load' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 91 [1/1] (2.47ns)   --->   "%icmp_ln165 = icmp_eq  i32 %error_flag_load, i32 0" [assessment/toplevel.cpp:165]   --->   Operation 91 'icmp' 'icmp_ln165' <Predicate = true> <Delay = 2.47> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 92 [1/1] (1.58ns)   --->   "%br_ln165 = br i1 %icmp_ln165, void %.loopexit, void" [assessment/toplevel.cpp:165]   --->   Operation 92 'br' 'br_ln165' <Predicate = true> <Delay = 1.58>
+ST_6 : Operation 93 [1/1] (0.00ns)   --->   "%world_size_load = load i32 %world_size" [assessment/toplevel.cpp:168]   --->   Operation 93 'load' 'world_size_load' <Predicate = (icmp_ln165)> <Delay = 0.00>
+ST_6 : Operation 94 [2/2] (6.91ns)   --->   "%mul_ln168 = mul i32 %world_size_load, i32 %world_size_load" [assessment/toplevel.cpp:168]   --->   Operation 94 'mul' 'mul_ln168' <Predicate = (icmp_ln165)> <Delay = 6.91> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 1> <II = 1> <Delay = 6.91> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 95 [1/1] (0.00ns)   --->   "%trunc_ln52 = trunc i32 %world_size_load" [assessment/toplevel.cpp:52]   --->   Operation 95 'trunc' 'trunc_ln52' <Predicate = (icmp_ln165)> <Delay = 0.00>
+
+State 7 <SV = 6> <Delay = 6.91>
+ST_7 : Operation 96 [1/2] (6.91ns)   --->   "%mul_ln168 = mul i32 %world_size_load, i32 %world_size_load" [assessment/toplevel.cpp:168]   --->   Operation 96 'mul' 'mul_ln168' <Predicate = true> <Delay = 6.91> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 1> <II = 1> <Delay = 6.91> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 97 [1/1] (0.00ns)   --->   "%iteration_limit = shl i32 %mul_ln168, i32 1" [assessment/toplevel.cpp:168]   --->   Operation 97 'shl' 'iteration_limit' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 98 [1/1] (1.58ns)   --->   "%br_ln170 = br void %.outer" [assessment/toplevel.cpp:170]   --->   Operation 98 'br' 'br_ln170' <Predicate = true> <Delay = 1.58>
+
+State 8 <SV = 7> <Delay = 2.55>
+ST_8 : Operation 99 [1/1] (0.00ns)   --->   "%empty_35 = phi i32 %empty_37, void, i32 1, void" [assessment/toplevel.cpp:144]   --->   Operation 99 'phi' 'empty_35' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 100 [1/1] (0.00ns)   --->   "%iteration_count = phi i32 %iteration_count_1, void, i32 0, void"   --->   Operation 100 'phi' 'iteration_count' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 101 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @empty"   --->   Operation 101 'specloopname' 'specloopname_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 102 [1/1] (2.47ns)   --->   "%cmp8 = icmp_ult  i32 %iteration_count, i32 %iteration_limit" [assessment/toplevel.cpp:209]   --->   Operation 102 'icmp' 'cmp8' <Predicate = true> <Delay = 2.47> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 103 [1/1] (2.55ns)   --->   "%iteration_count_1 = add i32 %iteration_count, i32 1" [assessment/toplevel.cpp:209]   --->   Operation 103 'add' 'iteration_count_1' <Predicate = true> <Delay = 2.55> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 104 [1/1] (1.58ns)   --->   "%br_ln170 = br void" [assessment/toplevel.cpp:170]   --->   Operation 104 'br' 'br_ln170' <Predicate = true> <Delay = 1.58>
+
+State 9 <SV = 8> <Delay = 5.80>
+ST_9 : Operation 105 [1/1] (0.00ns)   --->   "%empty_36 = phi i32 %empty_35, void %.outer, i32 %add_ln144, void" [assessment/toplevel.cpp:144]   --->   Operation 105 'phi' 'empty_36' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 106 [1/1] (2.47ns)   --->   "%icmp_ln170 = icmp_ne  i32 %empty_36, i32 0" [assessment/toplevel.cpp:170]   --->   Operation 106 'icmp' 'icmp_ln170' <Predicate = true> <Delay = 2.47> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 107 [1/1] (0.97ns)   --->   "%and_ln170 = and i1 %icmp_ln170, i1 %cmp8" [assessment/toplevel.cpp:170]   --->   Operation 107 'and' 'and_ln170' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 108 [1/1] (0.00ns)   --->   "%br_ln170 = br i1 %and_ln170, void, void" [assessment/toplevel.cpp:170]   --->   Operation 108 'br' 'br_ln170' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 109 [2/2] (3.25ns)   --->   "%open_set_heap_g_score_load = load i16 0" [assessment/toplevel.cpp:141]   --->   Operation 109 'load' 'open_set_heap_g_score_load' <Predicate = (and_ln170)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_9 : Operation 110 [2/2] (3.25ns)   --->   "%current_y = load i16 0" [assessment/toplevel.cpp:141]   --->   Operation 110 'load' 'current_y' <Predicate = (and_ln170)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_9 : Operation 111 [2/2] (3.25ns)   --->   "%current_x = load i16 0" [assessment/toplevel.cpp:141]   --->   Operation 111 'load' 'current_x' <Predicate = (and_ln170)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_9 : Operation 112 [1/1] (2.55ns)   --->   "%add_ln144 = add i32 %empty_36, i32 4294967295" [assessment/toplevel.cpp:144]   --->   Operation 112 'add' 'add_ln144' <Predicate = (and_ln170)> <Delay = 2.55> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 113 [1/1] (0.00ns)   --->   "%zext_ln144 = zext i32 %add_ln144" [assessment/toplevel.cpp:144]   --->   Operation 113 'zext' 'zext_ln144' <Predicate = (and_ln170)> <Delay = 0.00>
+ST_9 : Operation 114 [1/1] (0.00ns)   --->   "%open_set_heap_f_score_addr_1 = getelementptr i16 %open_set_heap_f_score, i64 0, i64 %zext_ln144" [assessment/toplevel.cpp:144]   --->   Operation 114 'getelementptr' 'open_set_heap_f_score_addr_1' <Predicate = (and_ln170)> <Delay = 0.00>
+ST_9 : Operation 115 [2/2] (3.25ns)   --->   "%open_set_heap_f_score_load = load i13 %open_set_heap_f_score_addr_1" [assessment/toplevel.cpp:144]   --->   Operation 115 'load' 'open_set_heap_f_score_load' <Predicate = (and_ln170)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_9 : Operation 116 [1/1] (0.00ns)   --->   "%open_set_heap_g_score_addr_1 = getelementptr i16 %open_set_heap_g_score, i64 0, i64 %zext_ln144" [assessment/toplevel.cpp:144]   --->   Operation 116 'getelementptr' 'open_set_heap_g_score_addr_1' <Predicate = (and_ln170)> <Delay = 0.00>
+ST_9 : Operation 117 [2/2] (3.25ns)   --->   "%open_set_heap_g_score_load_1 = load i13 %open_set_heap_g_score_addr_1" [assessment/toplevel.cpp:144]   --->   Operation 117 'load' 'open_set_heap_g_score_load_1' <Predicate = (and_ln170)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_9 : Operation 118 [1/1] (0.00ns)   --->   "%open_set_heap_x_addr_1 = getelementptr i16 %open_set_heap_x, i64 0, i64 %zext_ln144" [assessment/toplevel.cpp:144]   --->   Operation 118 'getelementptr' 'open_set_heap_x_addr_1' <Predicate = (and_ln170)> <Delay = 0.00>
+ST_9 : Operation 119 [2/2] (3.25ns)   --->   "%open_set_heap_x_load = load i13 %open_set_heap_x_addr_1" [assessment/toplevel.cpp:144]   --->   Operation 119 'load' 'open_set_heap_x_load' <Predicate = (and_ln170)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_9 : Operation 120 [1/1] (0.00ns)   --->   "%open_set_heap_y_addr_1 = getelementptr i16 %open_set_heap_y, i64 0, i64 %zext_ln144" [assessment/toplevel.cpp:144]   --->   Operation 120 'getelementptr' 'open_set_heap_y_addr_1' <Predicate = (and_ln170)> <Delay = 0.00>
+ST_9 : Operation 121 [2/2] (3.25ns)   --->   "%open_set_heap_y_load = load i13 %open_set_heap_y_addr_1" [assessment/toplevel.cpp:144]   --->   Operation 121 'load' 'open_set_heap_y_load' <Predicate = (and_ln170)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_9 : Operation 122 [1/1] (2.47ns)   --->   "%icmp_ln213 = icmp_eq  i32 %empty_36, i32 0" [assessment/toplevel.cpp:213]   --->   Operation 122 'icmp' 'icmp_ln213' <Predicate = (!and_ln170)> <Delay = 2.47> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 123 [1/1] (0.00ns)   --->   "%br_ln213 = br i1 %icmp_ln213, void, void" [assessment/toplevel.cpp:213]   --->   Operation 123 'br' 'br_ln213' <Predicate = (!and_ln170)> <Delay = 0.00>
+ST_9 : Operation 124 [1/1] (0.00ns)   --->   "%br_ln215 = br i1 %cmp8, void, void" [assessment/toplevel.cpp:215]   --->   Operation 124 'br' 'br_ln215' <Predicate = (!and_ln170 & !icmp_ln213)> <Delay = 0.00>
+ST_9 : Operation 125 [1/1] (1.82ns)   --->   "%store_ln216 = store i32 400, i32 %error_flag" [assessment/toplevel.cpp:216]   --->   Operation 125 'store' 'store_ln216' <Predicate = (!and_ln170 & !icmp_ln213 & !cmp8)> <Delay = 1.82>
+ST_9 : Operation 126 [1/1] (1.58ns)   --->   "%br_ln217 = br void %.loopexit" [assessment/toplevel.cpp:217]   --->   Operation 126 'br' 'br_ln217' <Predicate = (!and_ln170 & !icmp_ln213 & !cmp8)> <Delay = 1.58>
+ST_9 : Operation 127 [1/1] (1.82ns)   --->   "%store_ln218 = store i32 500, i32 %error_flag" [assessment/toplevel.cpp:218]   --->   Operation 127 'store' 'store_ln218' <Predicate = (!and_ln170 & !icmp_ln213 & cmp8)> <Delay = 1.82>
+ST_9 : Operation 128 [1/1] (1.58ns)   --->   "%br_ln0 = br void %.loopexit"   --->   Operation 128 'br' 'br_ln0' <Predicate = (!and_ln170 & !icmp_ln213 & cmp8)> <Delay = 1.58>
+ST_9 : Operation 129 [1/1] (2.55ns)   --->   "%add_ln214 = add i32 %iteration_count, i32 300" [assessment/toplevel.cpp:214]   --->   Operation 129 'add' 'add_ln214' <Predicate = (!and_ln170 & icmp_ln213)> <Delay = 2.55> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 130 [1/1] (1.82ns)   --->   "%store_ln214 = store i32 %add_ln214, i32 %error_flag" [assessment/toplevel.cpp:214]   --->   Operation 130 'store' 'store_ln214' <Predicate = (!and_ln170 & icmp_ln213)> <Delay = 1.82>
+ST_9 : Operation 131 [1/1] (1.58ns)   --->   "%br_ln215 = br void %.loopexit" [assessment/toplevel.cpp:215]   --->   Operation 131 'br' 'br_ln215' <Predicate = (!and_ln170 & icmp_ln213)> <Delay = 1.58>
+
+State 10 <SV = 9> <Delay = 6.50>
+ST_10 : Operation 132 [1/1] (0.00ns)   --->   "%specloopname_ln141 = specloopname void @_ssdm_op_SpecLoopName, void @empty" [assessment/toplevel.cpp:141]   --->   Operation 132 'specloopname' 'specloopname_ln141' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 133 [1/2] (3.25ns)   --->   "%open_set_heap_g_score_load = load i16 0" [assessment/toplevel.cpp:141]   --->   Operation 133 'load' 'open_set_heap_g_score_load' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_10 : Operation 134 [1/2] (3.25ns)   --->   "%current_y = load i16 0" [assessment/toplevel.cpp:141]   --->   Operation 134 'load' 'current_y' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_10 : Operation 135 [1/2] (3.25ns)   --->   "%current_x = load i16 0" [assessment/toplevel.cpp:141]   --->   Operation 135 'load' 'current_x' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_10 : Operation 136 [1/2] (3.25ns)   --->   "%open_set_heap_f_score_load = load i13 %open_set_heap_f_score_addr_1" [assessment/toplevel.cpp:144]   --->   Operation 136 'load' 'open_set_heap_f_score_load' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_10 : Operation 137 [1/1] (3.25ns)   --->   "%store_ln144 = store i16 %open_set_heap_f_score_load, i16 0" [assessment/toplevel.cpp:144]   --->   Operation 137 'store' 'store_ln144' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_10 : Operation 138 [1/2] (3.25ns)   --->   "%open_set_heap_g_score_load_1 = load i13 %open_set_heap_g_score_addr_1" [assessment/toplevel.cpp:144]   --->   Operation 138 'load' 'open_set_heap_g_score_load_1' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_10 : Operation 139 [1/1] (3.25ns)   --->   "%store_ln144 = store i16 %open_set_heap_g_score_load_1, i16 0" [assessment/toplevel.cpp:144]   --->   Operation 139 'store' 'store_ln144' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_10 : Operation 140 [1/2] (3.25ns)   --->   "%open_set_heap_x_load = load i13 %open_set_heap_x_addr_1" [assessment/toplevel.cpp:144]   --->   Operation 140 'load' 'open_set_heap_x_load' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_10 : Operation 141 [1/1] (3.25ns)   --->   "%store_ln144 = store i16 %open_set_heap_x_load, i16 0" [assessment/toplevel.cpp:144]   --->   Operation 141 'store' 'store_ln144' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_10 : Operation 142 [1/2] (3.25ns)   --->   "%open_set_heap_y_load = load i13 %open_set_heap_y_addr_1" [assessment/toplevel.cpp:144]   --->   Operation 142 'load' 'open_set_heap_y_load' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_10 : Operation 143 [1/1] (3.25ns)   --->   "%store_ln144 = store i16 %open_set_heap_y_load, i16 0" [assessment/toplevel.cpp:144]   --->   Operation 143 'store' 'store_ln144' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_10 : Operation 144 [1/1] (1.58ns)   --->   "%br_ln84 = br void" [assessment/toplevel.cpp:84]   --->   Operation 144 'br' 'br_ln84' <Predicate = true> <Delay = 1.58>
+
+State 11 <SV = 10> <Delay = 3.25>
+ST_11 : Operation 145 [1/1] (0.00ns)   --->   "%smallest = phi i15 0, void, i15 %smallest_1, void %._crit_edge51"   --->   Operation 145 'phi' 'smallest' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 146 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 146 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 147 [1/1] (0.00ns)   --->   "%specloopname_ln81 = specloopname void @_ssdm_op_SpecLoopName, void @empty_3" [assessment/toplevel.cpp:81]   --->   Operation 147 'specloopname' 'specloopname_ln81' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 148 [1/1] (0.00ns)   --->   "%shl_ln = bitconcatenate i16 @_ssdm_op_BitConcatenate.i16.i15.i1, i15 %smallest, i1 0" [assessment/toplevel.cpp:88]   --->   Operation 148 'bitconcatenate' 'shl_ln' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 149 [1/1] (0.00ns)   --->   "%left = or i16 %shl_ln, i16 1" [assessment/toplevel.cpp:88]   --->   Operation 149 'or' 'left' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 150 [1/1] (2.07ns)   --->   "%right = add i16 %shl_ln, i16 2" [assessment/toplevel.cpp:89]   --->   Operation 150 'add' 'right' <Predicate = true> <Delay = 2.07> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 151 [1/1] (0.00ns)   --->   "%zext_ln92 = zext i16 %left" [assessment/toplevel.cpp:92]   --->   Operation 151 'zext' 'zext_ln92' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 152 [1/1] (2.47ns)   --->   "%icmp_ln92 = icmp_ult  i32 %zext_ln92, i32 %add_ln144" [assessment/toplevel.cpp:92]   --->   Operation 152 'icmp' 'icmp_ln92' <Predicate = true> <Delay = 2.47> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 153 [1/1] (0.00ns)   --->   "%br_ln92 = br i1 %icmp_ln92, void %._crit_edge, void" [assessment/toplevel.cpp:92]   --->   Operation 153 'br' 'br_ln92' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 154 [1/1] (0.00ns)   --->   "%zext_ln92_1 = zext i16 %left" [assessment/toplevel.cpp:92]   --->   Operation 154 'zext' 'zext_ln92_1' <Predicate = (icmp_ln92)> <Delay = 0.00>
+ST_11 : Operation 155 [1/1] (0.00ns)   --->   "%open_set_heap_f_score_addr_2 = getelementptr i16 %open_set_heap_f_score, i64 0, i64 %zext_ln92_1" [assessment/toplevel.cpp:92]   --->   Operation 155 'getelementptr' 'open_set_heap_f_score_addr_2' <Predicate = (icmp_ln92)> <Delay = 0.00>
+ST_11 : Operation 156 [2/2] (3.25ns)   --->   "%open_set_heap_f_score_load_1 = load i13 %open_set_heap_f_score_addr_2" [assessment/toplevel.cpp:92]   --->   Operation 156 'load' 'open_set_heap_f_score_load_1' <Predicate = (icmp_ln92)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_11 : Operation 157 [1/1] (0.00ns)   --->   "%zext_ln92_2 = zext i15 %smallest" [assessment/toplevel.cpp:92]   --->   Operation 157 'zext' 'zext_ln92_2' <Predicate = (icmp_ln92)> <Delay = 0.00>
+ST_11 : Operation 158 [1/1] (0.00ns)   --->   "%open_set_heap_f_score_addr_3 = getelementptr i16 %open_set_heap_f_score, i64 0, i64 %zext_ln92_2" [assessment/toplevel.cpp:92]   --->   Operation 158 'getelementptr' 'open_set_heap_f_score_addr_3' <Predicate = (icmp_ln92)> <Delay = 0.00>
+ST_11 : Operation 159 [2/2] (3.25ns)   --->   "%open_set_heap_f_score_load_2 = load i13 %open_set_heap_f_score_addr_3" [assessment/toplevel.cpp:92]   --->   Operation 159 'load' 'open_set_heap_f_score_load_2' <Predicate = (icmp_ln92)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+
+State 12 <SV = 11> <Delay = 7.27>
+ST_12 : Operation 160 [1/2] (3.25ns)   --->   "%open_set_heap_f_score_load_1 = load i13 %open_set_heap_f_score_addr_2" [assessment/toplevel.cpp:92]   --->   Operation 160 'load' 'open_set_heap_f_score_load_1' <Predicate = (icmp_ln92)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_12 : Operation 161 [1/2] (3.25ns)   --->   "%open_set_heap_f_score_load_2 = load i13 %open_set_heap_f_score_addr_3" [assessment/toplevel.cpp:92]   --->   Operation 161 'load' 'open_set_heap_f_score_load_2' <Predicate = (icmp_ln92)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_12 : Operation 162 [1/1] (2.42ns)   --->   "%icmp_ln92_1 = icmp_ult  i16 %open_set_heap_f_score_load_1, i16 %open_set_heap_f_score_load_2" [assessment/toplevel.cpp:92]   --->   Operation 162 'icmp' 'icmp_ln92_1' <Predicate = (icmp_ln92)> <Delay = 2.42> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 163 [1/1] (1.58ns)   --->   "%br_ln92 = br i1 %icmp_ln92_1, void %._crit_edge, void %._crit_edge51" [assessment/toplevel.cpp:92]   --->   Operation 163 'br' 'br_ln92' <Predicate = (icmp_ln92)> <Delay = 1.58>
+ST_12 : Operation 164 [1/1] (0.00ns)   --->   "%zext_ln93 = zext i16 %right" [assessment/toplevel.cpp:93]   --->   Operation 164 'zext' 'zext_ln93' <Predicate = (!icmp_ln92_1) | (!icmp_ln92)> <Delay = 0.00>
+ST_12 : Operation 165 [1/1] (2.47ns)   --->   "%icmp_ln93 = icmp_ult  i32 %zext_ln93, i32 %add_ln144" [assessment/toplevel.cpp:93]   --->   Operation 165 'icmp' 'icmp_ln93' <Predicate = (!icmp_ln92_1) | (!icmp_ln92)> <Delay = 2.47> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 166 [1/1] (0.00ns)   --->   "%br_ln93 = br i1 %icmp_ln93, void %_Z11os_heap_popv.exit, void" [assessment/toplevel.cpp:93]   --->   Operation 166 'br' 'br_ln93' <Predicate = (!icmp_ln92_1) | (!icmp_ln92)> <Delay = 0.00>
+ST_12 : Operation 167 [1/1] (0.00ns)   --->   "%zext_ln93_1 = zext i16 %right" [assessment/toplevel.cpp:93]   --->   Operation 167 'zext' 'zext_ln93_1' <Predicate = (!icmp_ln92_1 & icmp_ln93) | (!icmp_ln92 & icmp_ln93)> <Delay = 0.00>
+ST_12 : Operation 168 [1/1] (0.00ns)   --->   "%open_set_heap_f_score_addr_4 = getelementptr i16 %open_set_heap_f_score, i64 0, i64 %zext_ln93_1" [assessment/toplevel.cpp:93]   --->   Operation 168 'getelementptr' 'open_set_heap_f_score_addr_4' <Predicate = (!icmp_ln92_1 & icmp_ln93) | (!icmp_ln92 & icmp_ln93)> <Delay = 0.00>
+ST_12 : Operation 169 [2/2] (3.25ns)   --->   "%open_set_heap_f_score_load_3 = load i13 %open_set_heap_f_score_addr_4" [assessment/toplevel.cpp:93]   --->   Operation 169 'load' 'open_set_heap_f_score_load_3' <Predicate = (!icmp_ln92_1 & icmp_ln93) | (!icmp_ln92 & icmp_ln93)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_12 : Operation 170 [1/1] (0.00ns)   --->   "%zext_ln93_2 = zext i15 %smallest" [assessment/toplevel.cpp:93]   --->   Operation 170 'zext' 'zext_ln93_2' <Predicate = (!icmp_ln92_1 & icmp_ln93) | (!icmp_ln92 & icmp_ln93)> <Delay = 0.00>
+ST_12 : Operation 171 [1/1] (0.00ns)   --->   "%open_set_heap_f_score_addr_5 = getelementptr i16 %open_set_heap_f_score, i64 0, i64 %zext_ln93_2" [assessment/toplevel.cpp:93]   --->   Operation 171 'getelementptr' 'open_set_heap_f_score_addr_5' <Predicate = (!icmp_ln92_1 & icmp_ln93) | (!icmp_ln92 & icmp_ln93)> <Delay = 0.00>
+ST_12 : Operation 172 [2/2] (3.25ns)   --->   "%open_set_heap_f_score_load_4 = load i13 %open_set_heap_f_score_addr_5" [assessment/toplevel.cpp:93]   --->   Operation 172 'load' 'open_set_heap_f_score_load_4' <Predicate = (!icmp_ln92_1 & icmp_ln93) | (!icmp_ln92 & icmp_ln93)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+
+State 13 <SV = 12> <Delay = 7.27>
+ST_13 : Operation 173 [1/2] (3.25ns)   --->   "%open_set_heap_f_score_load_3 = load i13 %open_set_heap_f_score_addr_4" [assessment/toplevel.cpp:93]   --->   Operation 173 'load' 'open_set_heap_f_score_load_3' <Predicate = (!icmp_ln92_1 & icmp_ln93) | (!icmp_ln92 & icmp_ln93)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_13 : Operation 174 [1/2] (3.25ns)   --->   "%open_set_heap_f_score_load_4 = load i13 %open_set_heap_f_score_addr_5" [assessment/toplevel.cpp:93]   --->   Operation 174 'load' 'open_set_heap_f_score_load_4' <Predicate = (!icmp_ln92_1 & icmp_ln93) | (!icmp_ln92 & icmp_ln93)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_13 : Operation 175 [1/1] (2.42ns)   --->   "%icmp_ln93_1 = icmp_ult  i16 %open_set_heap_f_score_load_3, i16 %open_set_heap_f_score_load_4" [assessment/toplevel.cpp:93]   --->   Operation 175 'icmp' 'icmp_ln93_1' <Predicate = (!icmp_ln92_1 & icmp_ln93) | (!icmp_ln92 & icmp_ln93)> <Delay = 2.42> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 176 [1/1] (1.58ns)   --->   "%br_ln93 = br i1 %icmp_ln93_1, void %_Z11os_heap_popv.exit, void %._crit_edge51" [assessment/toplevel.cpp:93]   --->   Operation 176 'br' 'br_ln93' <Predicate = (!icmp_ln92_1 & icmp_ln93) | (!icmp_ln92 & icmp_ln93)> <Delay = 1.58>
+ST_13 : Operation 177 [1/1] (0.00ns)   --->   "%trunc_ln93 = trunc i15 %smallest" [assessment/toplevel.cpp:93]   --->   Operation 177 'trunc' 'trunc_ln93' <Predicate = (icmp_ln93 & icmp_ln93_1) | (icmp_ln92 & icmp_ln92_1)> <Delay = 0.00>
+
+State 14 <SV = 13> <Delay = 3.40>
+ST_14 : Operation 178 [1/1] (0.00ns)   --->   "%zext_ln176 = zext i16 %current_x" [assessment/toplevel.cpp:176]   --->   Operation 178 'zext' 'zext_ln176' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 179 [1/1] (2.42ns)   --->   "%icmp_ln176 = icmp_eq  i16 %current_x, i16 %goal_x_read" [assessment/toplevel.cpp:176]   --->   Operation 179 'icmp' 'icmp_ln176' <Predicate = true> <Delay = 2.42> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 180 [1/1] (2.42ns)   --->   "%icmp_ln176_1 = icmp_eq  i16 %current_y, i16 %goal_y_read" [assessment/toplevel.cpp:176]   --->   Operation 180 'icmp' 'icmp_ln176_1' <Predicate = true> <Delay = 2.42> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 181 [1/1] (0.97ns)   --->   "%and_ln176 = and i1 %icmp_ln176, i1 %icmp_ln176_1" [assessment/toplevel.cpp:176]   --->   Operation 181 'and' 'and_ln176' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 182 [1/1] (0.00ns)   --->   "%br_ln176 = br i1 %and_ln176, void, void %.loopexit.loopexit" [assessment/toplevel.cpp:176]   --->   Operation 182 'br' 'br_ln176' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 183 [1/1] (0.00ns)   --->   "%zext_ln52 = zext i16 %current_y" [assessment/toplevel.cpp:52]   --->   Operation 183 'zext' 'zext_ln52' <Predicate = (!and_ln176)> <Delay = 0.00>
+ST_14 : Operation 184 [3/3] (1.05ns) (grouped into DSP with root node idx)   --->   "%mul_ln52 = mul i18 %trunc_ln52, i18 %zext_ln52" [assessment/toplevel.cpp:52]   --->   Operation 184 'mul' 'mul_ln52' <Predicate = (!and_ln176)> <Delay = 1.05> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 3> <II = 1> <Delay = 2.15> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_14 : Operation 185 [1/1] (1.58ns)   --->   "%br_ln0 = br void %.loopexit"   --->   Operation 185 'br' 'br_ln0' <Predicate = (and_ln176)> <Delay = 1.58>
+
+State 15 <SV = 14> <Delay = 1.05>
+ST_15 : Operation 186 [2/3] (1.05ns) (grouped into DSP with root node idx)   --->   "%mul_ln52 = mul i18 %trunc_ln52, i18 %zext_ln52" [assessment/toplevel.cpp:52]   --->   Operation 186 'mul' 'mul_ln52' <Predicate = true> <Delay = 1.05> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 3> <II = 1> <Delay = 2.15> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 16 <SV = 15> <Delay = 2.10>
+ST_16 : Operation 187 [1/3] (0.00ns) (grouped into DSP with root node idx)   --->   "%mul_ln52 = mul i18 %trunc_ln52, i18 %zext_ln52" [assessment/toplevel.cpp:52]   --->   Operation 187 'mul' 'mul_ln52' <Predicate = true> <Delay = 0.00> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 3> <II = 1> <Delay = 2.15> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_16 : Operation 188 [2/2] (2.10ns) (root node of the DSP)   --->   "%idx = add i18 %mul_ln52, i18 %zext_ln176" [assessment/toplevel.cpp:52]   --->   Operation 188 'add' 'idx' <Predicate = true> <Delay = 2.10> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 3> <II = 1> <Delay = 2.15> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 17 <SV = 16> <Delay = 5.35>
+ST_17 : Operation 189 [1/2] (2.10ns) (root node of the DSP)   --->   "%idx = add i18 %mul_ln52, i18 %zext_ln176" [assessment/toplevel.cpp:52]   --->   Operation 189 'add' 'idx' <Predicate = true> <Delay = 2.10> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 3> <II = 1> <Delay = 2.15> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_17 : Operation 190 [1/1] (0.00ns)   --->   "%bit_idx = trunc i18 %idx" [assessment/toplevel.cpp:52]   --->   Operation 190 'trunc' 'bit_idx' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 191 [1/1] (0.00ns)   --->   "%word_idx = partselect i13 @_ssdm_op_PartSelect.i13.i18.i32.i32, i18 %idx, i32 5, i32 17" [assessment/toplevel.cpp:53]   --->   Operation 191 'partselect' 'word_idx' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 192 [1/1] (0.00ns)   --->   "%zext_ln55 = zext i13 %word_idx" [assessment/toplevel.cpp:55]   --->   Operation 192 'zext' 'zext_ln55' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 193 [1/1] (0.00ns)   --->   "%closed_set_addr_1 = getelementptr i32 %closed_set, i64 0, i64 %zext_ln55" [assessment/toplevel.cpp:55]   --->   Operation 193 'getelementptr' 'closed_set_addr_1' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 194 [2/2] (3.25ns)   --->   "%closed_set_load = load i13 %closed_set_addr_1" [assessment/toplevel.cpp:55]   --->   Operation 194 'load' 'closed_set_load' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 7813> <RAM>
+
+State 18 <SV = 17> <Delay = 5.72>
+ST_18 : Operation 195 [1/1] (0.00ns)   --->   "%zext_ln54 = zext i5 %bit_idx" [assessment/toplevel.cpp:54]   --->   Operation 195 'zext' 'zext_ln54' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 196 [1/2] (3.25ns)   --->   "%closed_set_load = load i13 %closed_set_addr_1" [assessment/toplevel.cpp:55]   --->   Operation 196 'load' 'closed_set_load' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 7813> <RAM>
+ST_18 : Operation 197 [1/1] (2.66ns)   --->   "%shl_ln179 = shl i32 1, i32 %zext_ln54" [assessment/toplevel.cpp:179]   --->   Operation 197 'shl' 'shl_ln179' <Predicate = true> <Delay = 2.66> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 2.66> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 198 [1/1] (0.00ns) (grouped into LUT with out node icmp_ln179)   --->   "%and_ln179 = and i32 %closed_set_load, i32 %shl_ln179" [assessment/toplevel.cpp:179]   --->   Operation 198 'and' 'and_ln179' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 199 [1/1] (2.47ns) (out node of the LUT)   --->   "%icmp_ln179 = icmp_eq  i32 %and_ln179, i32 0" [assessment/toplevel.cpp:179]   --->   Operation 199 'icmp' 'icmp_ln179' <Predicate = true> <Delay = 2.47> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 200 [1/1] (0.00ns)   --->   "%br_ln179 = br i1 %icmp_ln179, void, void" [assessment/toplevel.cpp:179]   --->   Operation 200 'br' 'br_ln179' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 201 [1/1] (0.00ns)   --->   "%br_ln179 = br void" [assessment/toplevel.cpp:179]   --->   Operation 201 'br' 'br_ln179' <Predicate = (!icmp_ln179)> <Delay = 0.00>
+ST_18 : Operation 202 [1/1] (0.99ns)   --->   "%or_ln64 = or i32 %closed_set_load, i32 %shl_ln179" [assessment/toplevel.cpp:64]   --->   Operation 202 'or' 'or_ln64' <Predicate = (icmp_ln179)> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+
+State 19 <SV = 18> <Delay = 3.25>
+ST_19 : Operation 203 [1/1] (3.25ns)   --->   "%store_ln64 = store i32 %or_ln64, i13 %closed_set_addr_1" [assessment/toplevel.cpp:64]   --->   Operation 203 'store' 'store_ln64' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 7813> <RAM>
+ST_19 : Operation 204 [1/1] (2.42ns)   --->   "%cmp29 = icmp_eq  i16 %current_x, i16 0" [assessment/toplevel.cpp:141]   --->   Operation 204 'icmp' 'cmp29' <Predicate = true> <Delay = 2.42> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 205 [1/1] (2.42ns)   --->   "%cmp33 = icmp_eq  i16 %current_y, i16 0" [assessment/toplevel.cpp:141]   --->   Operation 205 'icmp' 'cmp33' <Predicate = true> <Delay = 2.42> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 206 [1/1] (2.07ns)   --->   "%n_g_score_tentative = add i16 %open_set_heap_g_score_load, i16 1" [assessment/toplevel.cpp:141]   --->   Operation 206 'add' 'n_g_score_tentative' <Predicate = true> <Delay = 2.07> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 207 [1/1] (1.58ns)   --->   "%br_ln187 = br void" [assessment/toplevel.cpp:187]   --->   Operation 207 'br' 'br_ln187' <Predicate = true> <Delay = 1.58>
+
+State 20 <SV = 19> <Delay = 6.37>
+ST_20 : Operation 208 [1/1] (0.00ns)   --->   "%i = phi i3 0, void, i3 %add_ln187, void %._crit_edge55" [assessment/toplevel.cpp:187]   --->   Operation 208 'phi' 'i' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 209 [1/1] (0.00ns)   --->   "%empty_37 = phi i32 %add_ln144, void, i32 %empty_39, void %._crit_edge55" [assessment/toplevel.cpp:144]   --->   Operation 209 'phi' 'empty_37' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 210 [1/1] (0.00ns)   --->   "%tmp = bitselect i1 @_ssdm_op_BitSelect.i1.i3.i32, i3 %i, i32 2" [assessment/toplevel.cpp:187]   --->   Operation 210 'bitselect' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 211 [1/1] (0.00ns)   --->   "%empty_38 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 1, i64 4, i64 2"   --->   Operation 211 'speclooptripcount' 'empty_38' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 212 [1/1] (1.65ns)   --->   "%add_ln187 = add i3 %i, i3 1" [assessment/toplevel.cpp:187]   --->   Operation 212 'add' 'add_ln187' <Predicate = true> <Delay = 1.65> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 213 [1/1] (0.00ns)   --->   "%br_ln187 = br i1 %tmp, void %.split, void" [assessment/toplevel.cpp:187]   --->   Operation 213 'br' 'br_ln187' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 214 [1/1] (0.00ns)   --->   "%specloopname_ln187 = specloopname void @_ssdm_op_SpecLoopName, void @empty_14" [assessment/toplevel.cpp:187]   --->   Operation 214 'specloopname' 'specloopname_ln187' <Predicate = (!tmp)> <Delay = 0.00>
+ST_20 : Operation 215 [1/1] (1.13ns)   --->   "%icmp_ln190 = icmp_eq  i3 %i, i3 2" [assessment/toplevel.cpp:190]   --->   Operation 215 'icmp' 'icmp_ln190' <Predicate = (!tmp)> <Delay = 1.13> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 216 [1/1] (0.97ns)   --->   "%and_ln190_1 = and i1 %cmp29, i1 %icmp_ln190" [assessment/toplevel.cpp:190]   --->   Operation 216 'and' 'and_ln190_1' <Predicate = (!tmp)> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 217 [1/1] (1.58ns)   --->   "%br_ln190 = br i1 %and_ln190_1, void %.split._crit_edge, void %._crit_edge55" [assessment/toplevel.cpp:190]   --->   Operation 217 'br' 'br_ln190' <Predicate = (!tmp)> <Delay = 1.58>
+ST_20 : Operation 218 [1/1] (0.00ns)   --->   "%trunc_ln190 = trunc i3 %i" [assessment/toplevel.cpp:190]   --->   Operation 218 'trunc' 'trunc_ln190' <Predicate = (!tmp & !and_ln190_1)> <Delay = 0.00>
+ST_20 : Operation 219 [1/1] (1.82ns)   --->   "%tmp_1 = mux i32 @_ssdm_op_Mux.ap_auto.4i32.i2, i32 4294967295, i32 1, i32 0, i32 0, i2 %trunc_ln190" [assessment/toplevel.cpp:190]   --->   Operation 219 'mux' 'tmp_1' <Predicate = (!tmp & !and_ln190_1)> <Delay = 1.82> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 220 [1/1] (1.13ns)   --->   "%icmp_ln190_1 = icmp_eq  i3 %i, i3 0" [assessment/toplevel.cpp:190]   --->   Operation 220 'icmp' 'icmp_ln190_1' <Predicate = (!tmp & !and_ln190_1)> <Delay = 1.13> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 221 [1/1] (0.97ns)   --->   "%and_ln190 = and i1 %cmp33, i1 %icmp_ln190_1" [assessment/toplevel.cpp:190]   --->   Operation 221 'and' 'and_ln190' <Predicate = (!tmp & !and_ln190_1)> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 222 [1/1] (1.58ns)   --->   "%br_ln190 = br i1 %and_ln190, void, void %._crit_edge55" [assessment/toplevel.cpp:190]   --->   Operation 222 'br' 'br_ln190' <Predicate = (!tmp & !and_ln190_1)> <Delay = 1.58>
+ST_20 : Operation 223 [1/1] (0.00ns) (grouped into LUT with out node n_x)   --->   "%tmp_2 = mux i32 @_ssdm_op_Mux.ap_auto.4i32.i2, i32 0, i32 0, i32 4294967295, i32 1, i2 %trunc_ln190" [assessment/toplevel.cpp:191]   --->   Operation 223 'mux' 'tmp_2' <Predicate = (!tmp & !and_ln190_1 & !and_ln190)> <Delay = 0.00> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 224 [1/1] (0.00ns) (grouped into LUT with out node n_x)   --->   "%trunc_ln191 = trunc i32 %tmp_2" [assessment/toplevel.cpp:191]   --->   Operation 224 'trunc' 'trunc_ln191' <Predicate = (!tmp & !and_ln190_1 & !and_ln190)> <Delay = 0.00>
+ST_20 : Operation 225 [1/1] (2.07ns) (out node of the LUT)   --->   "%n_x = add i16 %current_x, i16 %trunc_ln191" [assessment/toplevel.cpp:191]   --->   Operation 225 'add' 'n_x' <Predicate = (!tmp & !and_ln190_1 & !and_ln190)> <Delay = 2.07> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 226 [1/1] (0.00ns)   --->   "%trunc_ln192 = trunc i32 %tmp_1" [assessment/toplevel.cpp:192]   --->   Operation 226 'trunc' 'trunc_ln192' <Predicate = (!tmp & !and_ln190_1 & !and_ln190)> <Delay = 0.00>
+ST_20 : Operation 227 [1/1] (2.07ns)   --->   "%n_y = add i16 %current_y, i16 %trunc_ln192" [assessment/toplevel.cpp:192]   --->   Operation 227 'add' 'n_y' <Predicate = (!tmp & !and_ln190_1 & !and_ln190)> <Delay = 2.07> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 228 [1/1] (0.00ns)   --->   "%zext_ln193 = zext i16 %n_x" [assessment/toplevel.cpp:193]   --->   Operation 228 'zext' 'zext_ln193' <Predicate = (!tmp & !and_ln190_1 & !and_ln190)> <Delay = 0.00>
+ST_20 : Operation 229 [1/1] (2.47ns)   --->   "%icmp_ln193 = icmp_ult  i32 %zext_ln193, i32 %world_size_load" [assessment/toplevel.cpp:193]   --->   Operation 229 'icmp' 'icmp_ln193' <Predicate = (!tmp & !and_ln190_1 & !and_ln190)> <Delay = 2.47> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 230 [1/1] (0.00ns)   --->   "%zext_ln193_1 = zext i16 %n_y" [assessment/toplevel.cpp:193]   --->   Operation 230 'zext' 'zext_ln193_1' <Predicate = (!tmp & !and_ln190_1 & !and_ln190)> <Delay = 0.00>
+ST_20 : Operation 231 [1/1] (2.47ns)   --->   "%icmp_ln193_1 = icmp_ult  i32 %zext_ln193_1, i32 %world_size_load" [assessment/toplevel.cpp:193]   --->   Operation 231 'icmp' 'icmp_ln193_1' <Predicate = (!tmp & !and_ln190_1 & !and_ln190)> <Delay = 2.47> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 232 [1/1] (0.00ns)   --->   "%br_ln170 = br void %.outer" [assessment/toplevel.cpp:170]   --->   Operation 232 'br' 'br_ln170' <Predicate = (tmp)> <Delay = 0.00>
+
+State 21 <SV = 20> <Delay = 2.56>
+ST_21 : Operation 233 [1/1] (0.00ns)   --->   "%zext_ln193_2 = zext i16 %n_x" [assessment/toplevel.cpp:193]   --->   Operation 233 'zext' 'zext_ln193_2' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 234 [1/1] (0.00ns) (grouped into LUT with out node or_ln193)   --->   "%xor_ln193 = xor i1 %icmp_ln193, i1 1" [assessment/toplevel.cpp:193]   --->   Operation 234 'xor' 'xor_ln193' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 235 [1/1] (0.00ns) (grouped into LUT with out node or_ln193)   --->   "%xor_ln193_1 = xor i1 %icmp_ln193_1, i1 1" [assessment/toplevel.cpp:193]   --->   Operation 235 'xor' 'xor_ln193_1' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 236 [1/1] (0.97ns) (out node of the LUT)   --->   "%or_ln193 = or i1 %xor_ln193, i1 %xor_ln193_1" [assessment/toplevel.cpp:193]   --->   Operation 236 'or' 'or_ln193' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 237 [1/1] (1.58ns)   --->   "%br_ln193 = br i1 %or_ln193, void, void %._crit_edge55" [assessment/toplevel.cpp:193]   --->   Operation 237 'br' 'br_ln193' <Predicate = true> <Delay = 1.58>
+ST_21 : Operation 238 [1/1] (0.00ns)   --->   "%zext_ln43 = zext i16 %n_y" [assessment/toplevel.cpp:43]   --->   Operation 238 'zext' 'zext_ln43' <Predicate = (!or_ln193)> <Delay = 0.00>
+ST_21 : Operation 239 [3/3] (1.05ns) (grouped into DSP with root node idx_1)   --->   "%mul_ln43 = mul i18 %trunc_ln52, i18 %zext_ln43" [assessment/toplevel.cpp:43]   --->   Operation 239 'mul' 'mul_ln43' <Predicate = (!or_ln193)> <Delay = 1.05> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 3> <II = 1> <Delay = 2.15> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 22 <SV = 21> <Delay = 1.05>
+ST_22 : Operation 240 [2/3] (1.05ns) (grouped into DSP with root node idx_1)   --->   "%mul_ln43 = mul i18 %trunc_ln52, i18 %zext_ln43" [assessment/toplevel.cpp:43]   --->   Operation 240 'mul' 'mul_ln43' <Predicate = true> <Delay = 1.05> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 3> <II = 1> <Delay = 2.15> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 23 <SV = 22> <Delay = 2.10>
+ST_23 : Operation 241 [1/3] (0.00ns) (grouped into DSP with root node idx_1)   --->   "%mul_ln43 = mul i18 %trunc_ln52, i18 %zext_ln43" [assessment/toplevel.cpp:43]   --->   Operation 241 'mul' 'mul_ln43' <Predicate = true> <Delay = 0.00> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 3> <II = 1> <Delay = 2.15> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_23 : Operation 242 [2/2] (2.10ns) (root node of the DSP)   --->   "%idx_1 = add i18 %mul_ln43, i18 %zext_ln193_2" [assessment/toplevel.cpp:43]   --->   Operation 242 'add' 'idx_1' <Predicate = true> <Delay = 2.10> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 3> <II = 1> <Delay = 2.15> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 24 <SV = 23> <Delay = 2.10>
+ST_24 : Operation 243 [1/2] (2.10ns) (root node of the DSP)   --->   "%idx_1 = add i18 %mul_ln43, i18 %zext_ln193_2" [assessment/toplevel.cpp:43]   --->   Operation 243 'add' 'idx_1' <Predicate = true> <Delay = 2.10> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 3> <II = 1> <Delay = 2.15> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_24 : Operation 244 [1/1] (0.00ns)   --->   "%bit_idx_1 = trunc i18 %idx_1" [assessment/toplevel.cpp:43]   --->   Operation 244 'trunc' 'bit_idx_1' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 245 [1/1] (0.00ns)   --->   "%word_idx_1 = partselect i13 @_ssdm_op_PartSelect.i13.i18.i32.i32, i18 %idx_1, i32 5, i32 17" [assessment/toplevel.cpp:44]   --->   Operation 245 'partselect' 'word_idx_1' <Predicate = true> <Delay = 0.00>
+
+State 25 <SV = 24> <Delay = 4.93>
+ST_25 : Operation 246 [1/1] (1.67ns)   --->   "%add_ln46 = add i13 %word_idx_1, i13 14" [assessment/toplevel.cpp:46]   --->   Operation 246 'add' 'add_ln46' <Predicate = true> <Delay = 1.67> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 247 [1/1] (0.00ns)   --->   "%zext_ln46 = zext i13 %add_ln46" [assessment/toplevel.cpp:46]   --->   Operation 247 'zext' 'zext_ln46' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 248 [1/1] (0.00ns)   --->   "%local_ram_addr = getelementptr i32 %local_ram, i64 0, i64 %zext_ln46" [assessment/toplevel.cpp:46]   --->   Operation 248 'getelementptr' 'local_ram_addr' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 249 [2/2] (3.25ns)   --->   "%local_ram_load = load i13 %local_ram_addr" [assessment/toplevel.cpp:46]   --->   Operation 249 'load' 'local_ram_load' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 7827> <RAM>
+
+State 26 <SV = 25> <Delay = 5.72>
+ST_26 : Operation 250 [1/1] (0.00ns)   --->   "%zext_ln45 = zext i5 %bit_idx_1" [assessment/toplevel.cpp:45]   --->   Operation 250 'zext' 'zext_ln45' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 251 [1/2] (3.25ns)   --->   "%local_ram_load = load i13 %local_ram_addr" [assessment/toplevel.cpp:46]   --->   Operation 251 'load' 'local_ram_load' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 7827> <RAM>
+ST_26 : Operation 252 [1/1] (2.66ns)   --->   "%shl_ln194 = shl i32 1, i32 %zext_ln45" [assessment/toplevel.cpp:194]   --->   Operation 252 'shl' 'shl_ln194' <Predicate = true> <Delay = 2.66> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 2.66> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 253 [1/1] (0.00ns) (grouped into LUT with out node icmp_ln194)   --->   "%and_ln194 = and i32 %local_ram_load, i32 %shl_ln194" [assessment/toplevel.cpp:194]   --->   Operation 253 'and' 'and_ln194' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 254 [1/1] (2.47ns) (out node of the LUT)   --->   "%icmp_ln194 = icmp_eq  i32 %and_ln194, i32 0" [assessment/toplevel.cpp:194]   --->   Operation 254 'icmp' 'icmp_ln194' <Predicate = true> <Delay = 2.47> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+
+State 27 <SV = 26> <Delay = 3.25>
+ST_27 : Operation 255 [1/1] (1.58ns)   --->   "%br_ln194 = br i1 %icmp_ln194, void %._crit_edge55, void" [assessment/toplevel.cpp:194]   --->   Operation 255 'br' 'br_ln194' <Predicate = true> <Delay = 1.58>
+ST_27 : Operation 256 [1/1] (0.00ns)   --->   "%zext_ln55_1 = zext i13 %word_idx_1" [assessment/toplevel.cpp:55]   --->   Operation 256 'zext' 'zext_ln55_1' <Predicate = (icmp_ln194)> <Delay = 0.00>
+ST_27 : Operation 257 [1/1] (0.00ns)   --->   "%closed_set_addr_2 = getelementptr i32 %closed_set, i64 0, i64 %zext_ln55_1" [assessment/toplevel.cpp:55]   --->   Operation 257 'getelementptr' 'closed_set_addr_2' <Predicate = (icmp_ln194)> <Delay = 0.00>
+ST_27 : Operation 258 [2/2] (3.25ns)   --->   "%closed_set_load_1 = load i13 %closed_set_addr_2" [assessment/toplevel.cpp:55]   --->   Operation 258 'load' 'closed_set_load_1' <Predicate = (icmp_ln194)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 7813> <RAM>
+
+State 28 <SV = 27> <Delay = 5.72>
+ST_28 : Operation 259 [1/2] (3.25ns)   --->   "%closed_set_load_1 = load i13 %closed_set_addr_2" [assessment/toplevel.cpp:55]   --->   Operation 259 'load' 'closed_set_load_1' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 7813> <RAM>
+ST_28 : Operation 260 [1/1] (0.00ns) (grouped into LUT with out node icmp_ln195)   --->   "%and_ln195 = and i32 %closed_set_load_1, i32 %shl_ln194" [assessment/toplevel.cpp:195]   --->   Operation 260 'and' 'and_ln195' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 261 [1/1] (2.47ns) (out node of the LUT)   --->   "%icmp_ln195 = icmp_eq  i32 %and_ln195, i32 0" [assessment/toplevel.cpp:195]   --->   Operation 261 'icmp' 'icmp_ln195' <Predicate = true> <Delay = 2.47> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+
+State 29 <SV = 28> <Delay = 7.13>
+ST_29 : Operation 262 [1/1] (1.58ns)   --->   "%br_ln195 = br i1 %icmp_ln195, void %._crit_edge55, void %_ZL7abs_subtt.exit.i29" [assessment/toplevel.cpp:195]   --->   Operation 262 'br' 'br_ln195' <Predicate = true> <Delay = 1.58>
+ST_29 : Operation 263 [1/1] (2.42ns)   --->   "%icmp_ln70_2 = icmp_ugt  i16 %n_x, i16 %goal_x_read" [assessment/toplevel.cpp:70]   --->   Operation 263 'icmp' 'icmp_ln70_2' <Predicate = (icmp_ln195)> <Delay = 2.42> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 264 [1/1] (2.07ns)   --->   "%sub_ln70_4 = sub i16 %n_x, i16 %goal_x_read" [assessment/toplevel.cpp:70]   --->   Operation 264 'sub' 'sub_ln70_4' <Predicate = (icmp_ln195)> <Delay = 2.07> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 265 [1/1] (2.07ns)   --->   "%sub_ln70_5 = sub i16 %goal_x_read, i16 %n_x" [assessment/toplevel.cpp:70]   --->   Operation 265 'sub' 'sub_ln70_5' <Predicate = (icmp_ln195)> <Delay = 2.07> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 266 [1/1] (0.80ns)   --->   "%select_ln70_2 = select i1 %icmp_ln70_2, i16 %sub_ln70_4, i16 %sub_ln70_5" [assessment/toplevel.cpp:70]   --->   Operation 266 'select' 'select_ln70_2' <Predicate = (icmp_ln195)> <Delay = 0.80> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_29 : Operation 267 [1/1] (2.42ns)   --->   "%icmp_ln70_3 = icmp_ugt  i16 %n_y, i16 %goal_y_read" [assessment/toplevel.cpp:70]   --->   Operation 267 'icmp' 'icmp_ln70_3' <Predicate = (icmp_ln195)> <Delay = 2.42> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 268 [1/1] (2.07ns)   --->   "%sub_ln70_6 = sub i16 %n_y, i16 %goal_y_read" [assessment/toplevel.cpp:70]   --->   Operation 268 'sub' 'sub_ln70_6' <Predicate = (icmp_ln195)> <Delay = 2.07> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 269 [1/1] (2.07ns)   --->   "%sub_ln70_7 = sub i16 %goal_y_read, i16 %n_y" [assessment/toplevel.cpp:70]   --->   Operation 269 'sub' 'sub_ln70_7' <Predicate = (icmp_ln195)> <Delay = 2.07> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 270 [1/1] (0.80ns)   --->   "%select_ln70_3 = select i1 %icmp_ln70_3, i16 %sub_ln70_6, i16 %sub_ln70_7" [assessment/toplevel.cpp:70]   --->   Operation 270 'select' 'select_ln70_3' <Predicate = (icmp_ln195)> <Delay = 0.80> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_29 : Operation 271 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln201 = add i16 %n_g_score_tentative, i16 %select_ln70_2" [assessment/toplevel.cpp:201]   --->   Operation 271 'add' 'add_ln201' <Predicate = (icmp_ln195)> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.95> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync>
+ST_29 : Operation 272 [1/1] (3.90ns) (root node of TernaryAdder)   --->   "%n_f_score = add i16 %add_ln201, i16 %select_ln70_3" [assessment/toplevel.cpp:201]   --->   Operation 272 'add' 'n_f_score' <Predicate = (icmp_ln195)> <Delay = 3.90> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.95> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync>
+ST_29 : Operation 273 [1/1] (0.00ns)   --->   "%tmp_3 = partselect i19 @_ssdm_op_PartSelect.i19.i32.i32.i32, i32 %empty_37, i32 13, i32 31" [assessment/toplevel.cpp:126]   --->   Operation 273 'partselect' 'tmp_3' <Predicate = (icmp_ln195)> <Delay = 0.00>
+ST_29 : Operation 274 [1/1] (2.43ns)   --->   "%icmp_ln126 = icmp_eq  i19 %tmp_3, i19 0" [assessment/toplevel.cpp:126]   --->   Operation 274 'icmp' 'icmp_ln126' <Predicate = (icmp_ln195)> <Delay = 2.43> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 275 [1/1] (0.00ns)   --->   "%br_ln126 = br i1 %icmp_ln126, void %_Z12os_heap_push6ASNode.exit.thread, void" [assessment/toplevel.cpp:126]   --->   Operation 275 'br' 'br_ln126' <Predicate = (icmp_ln195)> <Delay = 0.00>
+ST_29 : Operation 276 [1/1] (1.82ns)   --->   "%store_ln127 = store i32 200, i32 %error_flag" [assessment/toplevel.cpp:127]   --->   Operation 276 'store' 'store_ln127' <Predicate = (icmp_ln195 & !icmp_ln126)> <Delay = 1.82>
+ST_29 : Operation 277 [1/1] (1.58ns)   --->   "%br_ln206 = br void %.loopexit" [assessment/toplevel.cpp:206]   --->   Operation 277 'br' 'br_ln206' <Predicate = (icmp_ln195 & !icmp_ln126)> <Delay = 1.58>
+
+State 30 <SV = 29> <Delay = 3.25>
+ST_30 : Operation 278 [1/1] (0.00ns)   --->   "%zext_ln132 = zext i32 %empty_37" [assessment/toplevel.cpp:132]   --->   Operation 278 'zext' 'zext_ln132' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 279 [1/1] (0.00ns)   --->   "%open_set_heap_f_score_addr_8 = getelementptr i16 %open_set_heap_f_score, i64 0, i64 %zext_ln132" [assessment/toplevel.cpp:132]   --->   Operation 279 'getelementptr' 'open_set_heap_f_score_addr_8' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 280 [1/1] (3.25ns)   --->   "%store_ln132 = store i16 %n_f_score, i13 %open_set_heap_f_score_addr_8" [assessment/toplevel.cpp:132]   --->   Operation 280 'store' 'store_ln132' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_30 : Operation 281 [1/1] (0.00ns)   --->   "%open_set_heap_g_score_addr_4 = getelementptr i16 %open_set_heap_g_score, i64 0, i64 %zext_ln132" [assessment/toplevel.cpp:132]   --->   Operation 281 'getelementptr' 'open_set_heap_g_score_addr_4' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 282 [1/1] (3.25ns)   --->   "%store_ln132 = store i16 %n_g_score_tentative, i13 %open_set_heap_g_score_addr_4" [assessment/toplevel.cpp:132]   --->   Operation 282 'store' 'store_ln132' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_30 : Operation 283 [1/1] (0.00ns)   --->   "%open_set_heap_x_addr_4 = getelementptr i16 %open_set_heap_x, i64 0, i64 %zext_ln132" [assessment/toplevel.cpp:132]   --->   Operation 283 'getelementptr' 'open_set_heap_x_addr_4' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 284 [1/1] (3.25ns)   --->   "%store_ln132 = store i16 %n_x, i13 %open_set_heap_x_addr_4" [assessment/toplevel.cpp:132]   --->   Operation 284 'store' 'store_ln132' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_30 : Operation 285 [1/1] (0.00ns)   --->   "%open_set_heap_y_addr_4 = getelementptr i16 %open_set_heap_y, i64 0, i64 %zext_ln132" [assessment/toplevel.cpp:132]   --->   Operation 285 'getelementptr' 'open_set_heap_y_addr_4' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 286 [1/1] (3.25ns)   --->   "%store_ln132 = store i16 %n_y, i13 %open_set_heap_y_addr_4" [assessment/toplevel.cpp:132]   --->   Operation 286 'store' 'store_ln132' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_30 : Operation 287 [1/1] (2.55ns)   --->   "%add_ln133 = add i32 %empty_37, i32 1" [assessment/toplevel.cpp:133]   --->   Operation 287 'add' 'add_ln133' <Predicate = true> <Delay = 2.55> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 288 [1/1] (0.00ns)   --->   "%trunc_ln134 = trunc i32 %empty_37" [assessment/toplevel.cpp:134]   --->   Operation 288 'trunc' 'trunc_ln134' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 289 [1/1] (0.00ns)   --->   "%zext_ln134 = zext i13 %trunc_ln134" [assessment/toplevel.cpp:134]   --->   Operation 289 'zext' 'zext_ln134' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 290 [1/1] (1.58ns)   --->   "%br_ln107 = br void" [assessment/toplevel.cpp:107]   --->   Operation 290 'br' 'br_ln107' <Predicate = true> <Delay = 1.58>
+
+State 31 <SV = 30> <Delay = 2.42>
+ST_31 : Operation 291 [1/1] (0.00ns)   --->   "%idx_assign_2 = phi i16 %zext_ln134, void, i16 %parent, void"   --->   Operation 291 'phi' 'idx_assign_2' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 292 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 292 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 293 [1/1] (2.42ns)   --->   "%icmp_ln107 = icmp_eq  i16 %idx_assign_2, i16 0" [assessment/toplevel.cpp:107]   --->   Operation 293 'icmp' 'icmp_ln107' <Predicate = true> <Delay = 2.42> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 294 [1/1] (0.00ns)   --->   "%br_ln107 = br i1 %icmp_ln107, void, void %_Z12os_heap_push6ASNode.exit" [assessment/toplevel.cpp:107]   --->   Operation 294 'br' 'br_ln107' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 295 [1/1] (0.00ns)   --->   "%zext_ln111 = zext i16 %idx_assign_2" [assessment/toplevel.cpp:111]   --->   Operation 295 'zext' 'zext_ln111' <Predicate = (!icmp_ln107)> <Delay = 0.00>
+ST_31 : Operation 296 [1/1] (2.07ns)   --->   "%sub_ln111 = sub i17 1, i17 %zext_ln111" [assessment/toplevel.cpp:111]   --->   Operation 296 'sub' 'sub_ln111' <Predicate = (!icmp_ln107)> <Delay = 2.07> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 297 [1/1] (0.00ns)   --->   "%trunc_ln111_1 = partselect i16 @_ssdm_op_PartSelect.i16.i17.i32.i32, i17 %sub_ln111, i32 1, i32 16" [assessment/toplevel.cpp:111]   --->   Operation 297 'partselect' 'trunc_ln111_1' <Predicate = (!icmp_ln107)> <Delay = 0.00>
+
+State 32 <SV = 31> <Delay = 6.13>
+ST_32 : Operation 298 [1/1] (2.07ns)   --->   "%add_ln111 = add i17 %zext_ln111, i17 131071" [assessment/toplevel.cpp:111]   --->   Operation 298 'add' 'add_ln111' <Predicate = (!icmp_ln107)> <Delay = 2.07> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 299 [1/1] (0.00ns)   --->   "%tmp_4 = bitselect i1 @_ssdm_op_BitSelect.i1.i17.i32, i17 %add_ln111, i32 16" [assessment/toplevel.cpp:111]   --->   Operation 299 'bitselect' 'tmp_4' <Predicate = (!icmp_ln107)> <Delay = 0.00>
+ST_32 : Operation 300 [1/1] (2.07ns)   --->   "%sub_ln111_1 = sub i16 0, i16 %trunc_ln111_1" [assessment/toplevel.cpp:111]   --->   Operation 300 'sub' 'sub_ln111_1' <Predicate = (!icmp_ln107)> <Delay = 2.07> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 301 [1/1] (0.00ns)   --->   "%trunc_ln111_2 = partselect i16 @_ssdm_op_PartSelect.i16.i17.i32.i32, i17 %add_ln111, i32 1, i32 16" [assessment/toplevel.cpp:111]   --->   Operation 301 'partselect' 'trunc_ln111_2' <Predicate = (!icmp_ln107)> <Delay = 0.00>
+ST_32 : Operation 302 [1/1] (0.80ns)   --->   "%parent = select i1 %tmp_4, i16 %sub_ln111_1, i16 %trunc_ln111_2" [assessment/toplevel.cpp:111]   --->   Operation 302 'select' 'parent' <Predicate = (!icmp_ln107)> <Delay = 0.80> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_32 : Operation 303 [1/1] (0.00ns)   --->   "%zext_ln112 = zext i16 %idx_assign_2" [assessment/toplevel.cpp:112]   --->   Operation 303 'zext' 'zext_ln112' <Predicate = (!icmp_ln107)> <Delay = 0.00>
+ST_32 : Operation 304 [1/1] (0.00ns)   --->   "%open_set_heap_f_score_addr_9 = getelementptr i16 %open_set_heap_f_score, i64 0, i64 %zext_ln112" [assessment/toplevel.cpp:112]   --->   Operation 304 'getelementptr' 'open_set_heap_f_score_addr_9' <Predicate = (!icmp_ln107)> <Delay = 0.00>
+ST_32 : Operation 305 [2/2] (3.25ns)   --->   "%open_set_heap_f_score_load_6 = load i13 %open_set_heap_f_score_addr_9" [assessment/toplevel.cpp:112]   --->   Operation 305 'load' 'open_set_heap_f_score_load_6' <Predicate = (!icmp_ln107)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_32 : Operation 306 [1/1] (0.00ns)   --->   "%zext_ln112_1 = zext i16 %parent" [assessment/toplevel.cpp:112]   --->   Operation 306 'zext' 'zext_ln112_1' <Predicate = (!icmp_ln107)> <Delay = 0.00>
+ST_32 : Operation 307 [1/1] (0.00ns)   --->   "%open_set_heap_f_score_addr_10 = getelementptr i16 %open_set_heap_f_score, i64 0, i64 %zext_ln112_1" [assessment/toplevel.cpp:112]   --->   Operation 307 'getelementptr' 'open_set_heap_f_score_addr_10' <Predicate = (!icmp_ln107)> <Delay = 0.00>
+ST_32 : Operation 308 [2/2] (3.25ns)   --->   "%open_set_heap_f_score_load_7 = load i13 %open_set_heap_f_score_addr_10" [assessment/toplevel.cpp:112]   --->   Operation 308 'load' 'open_set_heap_f_score_load_7' <Predicate = (!icmp_ln107)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+
+State 33 <SV = 32> <Delay = 5.68>
+ST_33 : Operation 309 [1/1] (0.00ns)   --->   "%specloopname_ln111 = specloopname void @_ssdm_op_SpecLoopName, void @empty_0" [assessment/toplevel.cpp:111]   --->   Operation 309 'specloopname' 'specloopname_ln111' <Predicate = (!icmp_ln107)> <Delay = 0.00>
+ST_33 : Operation 310 [1/2] (3.25ns)   --->   "%open_set_heap_f_score_load_6 = load i13 %open_set_heap_f_score_addr_9" [assessment/toplevel.cpp:112]   --->   Operation 310 'load' 'open_set_heap_f_score_load_6' <Predicate = (!icmp_ln107)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_33 : Operation 311 [1/2] (3.25ns)   --->   "%open_set_heap_f_score_load_7 = load i13 %open_set_heap_f_score_addr_10" [assessment/toplevel.cpp:112]   --->   Operation 311 'load' 'open_set_heap_f_score_load_7' <Predicate = (!icmp_ln107)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_33 : Operation 312 [1/1] (2.42ns)   --->   "%icmp_ln112 = icmp_ult  i16 %open_set_heap_f_score_load_6, i16 %open_set_heap_f_score_load_7" [assessment/toplevel.cpp:112]   --->   Operation 312 'icmp' 'icmp_ln112' <Predicate = (!icmp_ln107)> <Delay = 2.42> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_33 : Operation 313 [1/1] (0.00ns)   --->   "%br_ln112 = br i1 %icmp_ln112, void %_Z12os_heap_push6ASNode.exit, void" [assessment/toplevel.cpp:112]   --->   Operation 313 'br' 'br_ln112' <Predicate = (!icmp_ln107)> <Delay = 0.00>
+ST_33 : Operation 314 [1/1] (0.00ns)   --->   "%open_set_heap_g_score_addr_5 = getelementptr i16 %open_set_heap_g_score, i64 0, i64 %zext_ln112_1" [assessment/toplevel.cpp:116]   --->   Operation 314 'getelementptr' 'open_set_heap_g_score_addr_5' <Predicate = (!icmp_ln107 & icmp_ln112)> <Delay = 0.00>
+ST_33 : Operation 315 [2/2] (3.25ns)   --->   "%open_set_heap_g_score_load_3 = load i13 %open_set_heap_g_score_addr_5" [assessment/toplevel.cpp:116]   --->   Operation 315 'load' 'open_set_heap_g_score_load_3' <Predicate = (!icmp_ln107 & icmp_ln112)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_33 : Operation 316 [1/1] (0.00ns)   --->   "%open_set_heap_x_addr_5 = getelementptr i16 %open_set_heap_x, i64 0, i64 %zext_ln112_1" [assessment/toplevel.cpp:116]   --->   Operation 316 'getelementptr' 'open_set_heap_x_addr_5' <Predicate = (!icmp_ln107 & icmp_ln112)> <Delay = 0.00>
+ST_33 : Operation 317 [2/2] (3.25ns)   --->   "%open_set_heap_x_load_2 = load i13 %open_set_heap_x_addr_5" [assessment/toplevel.cpp:116]   --->   Operation 317 'load' 'open_set_heap_x_load_2' <Predicate = (!icmp_ln107 & icmp_ln112)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_33 : Operation 318 [1/1] (0.00ns)   --->   "%open_set_heap_y_addr_5 = getelementptr i16 %open_set_heap_y, i64 0, i64 %zext_ln112_1" [assessment/toplevel.cpp:116]   --->   Operation 318 'getelementptr' 'open_set_heap_y_addr_5' <Predicate = (!icmp_ln107 & icmp_ln112)> <Delay = 0.00>
+ST_33 : Operation 319 [2/2] (3.25ns)   --->   "%open_set_heap_y_load_2 = load i13 %open_set_heap_y_addr_5" [assessment/toplevel.cpp:116]   --->   Operation 319 'load' 'open_set_heap_y_load_2' <Predicate = (!icmp_ln107 & icmp_ln112)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+
+State 34 <SV = 33> <Delay = 6.50>
+ST_34 : Operation 320 [1/1] (3.25ns)   --->   "%store_ln116 = store i16 %open_set_heap_f_score_load_7, i13 %open_set_heap_f_score_addr_9" [assessment/toplevel.cpp:116]   --->   Operation 320 'store' 'store_ln116' <Predicate = (!icmp_ln107 & icmp_ln112)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_34 : Operation 321 [1/2] (3.25ns)   --->   "%open_set_heap_g_score_load_3 = load i13 %open_set_heap_g_score_addr_5" [assessment/toplevel.cpp:116]   --->   Operation 321 'load' 'open_set_heap_g_score_load_3' <Predicate = (!icmp_ln107 & icmp_ln112)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_34 : Operation 322 [1/1] (0.00ns)   --->   "%open_set_heap_g_score_addr_6 = getelementptr i16 %open_set_heap_g_score, i64 0, i64 %zext_ln112" [assessment/toplevel.cpp:116]   --->   Operation 322 'getelementptr' 'open_set_heap_g_score_addr_6' <Predicate = (!icmp_ln107 & icmp_ln112)> <Delay = 0.00>
+ST_34 : Operation 323 [1/1] (3.25ns)   --->   "%store_ln116 = store i16 %open_set_heap_g_score_load_3, i13 %open_set_heap_g_score_addr_6" [assessment/toplevel.cpp:116]   --->   Operation 323 'store' 'store_ln116' <Predicate = (!icmp_ln107 & icmp_ln112)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_34 : Operation 324 [1/2] (3.25ns)   --->   "%open_set_heap_x_load_2 = load i13 %open_set_heap_x_addr_5" [assessment/toplevel.cpp:116]   --->   Operation 324 'load' 'open_set_heap_x_load_2' <Predicate = (!icmp_ln107 & icmp_ln112)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_34 : Operation 325 [1/1] (0.00ns)   --->   "%open_set_heap_x_addr_6 = getelementptr i16 %open_set_heap_x, i64 0, i64 %zext_ln112" [assessment/toplevel.cpp:116]   --->   Operation 325 'getelementptr' 'open_set_heap_x_addr_6' <Predicate = (!icmp_ln107 & icmp_ln112)> <Delay = 0.00>
+ST_34 : Operation 326 [1/1] (3.25ns)   --->   "%store_ln116 = store i16 %open_set_heap_x_load_2, i13 %open_set_heap_x_addr_6" [assessment/toplevel.cpp:116]   --->   Operation 326 'store' 'store_ln116' <Predicate = (!icmp_ln107 & icmp_ln112)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_34 : Operation 327 [1/2] (3.25ns)   --->   "%open_set_heap_y_load_2 = load i13 %open_set_heap_y_addr_5" [assessment/toplevel.cpp:116]   --->   Operation 327 'load' 'open_set_heap_y_load_2' <Predicate = (!icmp_ln107 & icmp_ln112)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_34 : Operation 328 [1/1] (0.00ns)   --->   "%open_set_heap_y_addr_6 = getelementptr i16 %open_set_heap_y, i64 0, i64 %zext_ln112" [assessment/toplevel.cpp:116]   --->   Operation 328 'getelementptr' 'open_set_heap_y_addr_6' <Predicate = (!icmp_ln107 & icmp_ln112)> <Delay = 0.00>
+ST_34 : Operation 329 [1/1] (3.25ns)   --->   "%store_ln116 = store i16 %open_set_heap_y_load_2, i13 %open_set_heap_y_addr_6" [assessment/toplevel.cpp:116]   --->   Operation 329 'store' 'store_ln116' <Predicate = (!icmp_ln107 & icmp_ln112)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+
+State 35 <SV = 34> <Delay = 3.25>
+ST_35 : Operation 330 [1/1] (3.25ns)   --->   "%store_ln117 = store i16 %open_set_heap_f_score_load_7, i13 %open_set_heap_f_score_addr_10" [assessment/toplevel.cpp:117]   --->   Operation 330 'store' 'store_ln117' <Predicate = (!icmp_ln107 & icmp_ln112)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_35 : Operation 331 [1/1] (3.25ns)   --->   "%store_ln117 = store i16 %open_set_heap_g_score_load_3, i13 %open_set_heap_g_score_addr_5" [assessment/toplevel.cpp:117]   --->   Operation 331 'store' 'store_ln117' <Predicate = (!icmp_ln107 & icmp_ln112)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_35 : Operation 332 [1/1] (3.25ns)   --->   "%store_ln117 = store i16 %open_set_heap_x_load_2, i13 %open_set_heap_x_addr_5" [assessment/toplevel.cpp:117]   --->   Operation 332 'store' 'store_ln117' <Predicate = (!icmp_ln107 & icmp_ln112)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_35 : Operation 333 [1/1] (3.25ns)   --->   "%store_ln117 = store i16 %open_set_heap_y_load_2, i13 %open_set_heap_y_addr_5" [assessment/toplevel.cpp:117]   --->   Operation 333 'store' 'store_ln117' <Predicate = (!icmp_ln107 & icmp_ln112)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_35 : Operation 334 [1/1] (0.00ns)   --->   "%br_ln107 = br void" [assessment/toplevel.cpp:107]   --->   Operation 334 'br' 'br_ln107' <Predicate = (!icmp_ln107 & icmp_ln112)> <Delay = 0.00>
+
+State 36 <SV = 33> <Delay = 1.58>
+ST_36 : Operation 335 [1/1] (1.58ns)   --->   "%br_ln206 = br void %._crit_edge55" [assessment/toplevel.cpp:206]   --->   Operation 335 'br' 'br_ln206' <Predicate = true> <Delay = 1.58>
+
+State 37 <SV = 34> <Delay = 0.00>
+ST_37 : Operation 336 [1/1] (0.00ns)   --->   "%empty_39 = phi i32 %add_ln133, void %_Z12os_heap_push6ASNode.exit, i32 %empty_37, void %.split._crit_edge, i32 %empty_37, void, i32 %empty_37, void, i32 %empty_37, void, i32 %empty_37, void %.split" [assessment/toplevel.cpp:133]   --->   Operation 336 'phi' 'empty_39' <Predicate = true> <Delay = 0.00>
+ST_37 : Operation 337 [1/1] (0.00ns)   --->   "%br_ln0 = br void"   --->   Operation 337 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+
+State 38 <SV = 13> <Delay = 3.25>
+ST_38 : Operation 338 [1/1] (0.00ns)   --->   "%smallest_in_in = phi i16 %left, void, i16 %right, void"   --->   Operation 338 'phi' 'smallest_in_in' <Predicate = (icmp_ln93 & icmp_ln93_1) | (icmp_ln92 & icmp_ln92_1)> <Delay = 0.00>
+ST_38 : Operation 339 [1/1] (0.00ns)   --->   "%smallest_1 = trunc i16 %smallest_in_in" [assessment/toplevel.cpp:89]   --->   Operation 339 'trunc' 'smallest_1' <Predicate = (icmp_ln93 & icmp_ln93_1) | (icmp_ln92 & icmp_ln92_1)> <Delay = 0.00>
+ST_38 : Operation 340 [1/1] (0.00ns)   --->   "%zext_ln98 = zext i15 %smallest_1" [assessment/toplevel.cpp:98]   --->   Operation 340 'zext' 'zext_ln98' <Predicate = (icmp_ln93 & icmp_ln93_1) | (icmp_ln92 & icmp_ln92_1)> <Delay = 0.00>
+ST_38 : Operation 341 [1/1] (0.00ns)   --->   "%open_set_heap_f_score_addr_6 = getelementptr i16 %open_set_heap_f_score, i64 0, i64 %zext_ln98" [assessment/toplevel.cpp:98]   --->   Operation 341 'getelementptr' 'open_set_heap_f_score_addr_6' <Predicate = (icmp_ln93 & icmp_ln93_1) | (icmp_ln92 & icmp_ln92_1)> <Delay = 0.00>
+ST_38 : Operation 342 [2/2] (3.25ns)   --->   "%open_set_heap_f_score_load_5 = load i13 %open_set_heap_f_score_addr_6" [assessment/toplevel.cpp:98]   --->   Operation 342 'load' 'open_set_heap_f_score_load_5' <Predicate = (icmp_ln93 & icmp_ln93_1) | (icmp_ln92 & icmp_ln92_1)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_38 : Operation 343 [1/1] (0.00ns)   --->   "%open_set_heap_g_score_addr_2 = getelementptr i16 %open_set_heap_g_score, i64 0, i64 %zext_ln98" [assessment/toplevel.cpp:98]   --->   Operation 343 'getelementptr' 'open_set_heap_g_score_addr_2' <Predicate = (icmp_ln93 & icmp_ln93_1) | (icmp_ln92 & icmp_ln92_1)> <Delay = 0.00>
+ST_38 : Operation 344 [2/2] (3.25ns)   --->   "%open_set_heap_g_score_load_2 = load i13 %open_set_heap_g_score_addr_2" [assessment/toplevel.cpp:98]   --->   Operation 344 'load' 'open_set_heap_g_score_load_2' <Predicate = (icmp_ln93 & icmp_ln93_1) | (icmp_ln92 & icmp_ln92_1)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_38 : Operation 345 [1/1] (0.00ns)   --->   "%open_set_heap_x_addr_2 = getelementptr i16 %open_set_heap_x, i64 0, i64 %zext_ln98" [assessment/toplevel.cpp:98]   --->   Operation 345 'getelementptr' 'open_set_heap_x_addr_2' <Predicate = (icmp_ln93 & icmp_ln93_1) | (icmp_ln92 & icmp_ln92_1)> <Delay = 0.00>
+ST_38 : Operation 346 [2/2] (3.25ns)   --->   "%open_set_heap_x_load_1 = load i13 %open_set_heap_x_addr_2" [assessment/toplevel.cpp:98]   --->   Operation 346 'load' 'open_set_heap_x_load_1' <Predicate = (icmp_ln93 & icmp_ln93_1) | (icmp_ln92 & icmp_ln92_1)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_38 : Operation 347 [1/1] (0.00ns)   --->   "%open_set_heap_y_addr_2 = getelementptr i16 %open_set_heap_y, i64 0, i64 %zext_ln98" [assessment/toplevel.cpp:98]   --->   Operation 347 'getelementptr' 'open_set_heap_y_addr_2' <Predicate = (icmp_ln93 & icmp_ln93_1) | (icmp_ln92 & icmp_ln92_1)> <Delay = 0.00>
+ST_38 : Operation 348 [2/2] (3.25ns)   --->   "%open_set_heap_y_load_1 = load i13 %open_set_heap_y_addr_2" [assessment/toplevel.cpp:98]   --->   Operation 348 'load' 'open_set_heap_y_load_1' <Predicate = (icmp_ln93 & icmp_ln93_1) | (icmp_ln92 & icmp_ln92_1)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+
+State 39 <SV = 14> <Delay = 6.50>
+ST_39 : Operation 349 [1/1] (0.00ns)   --->   "%zext_ln87 = zext i13 %trunc_ln93" [assessment/toplevel.cpp:87]   --->   Operation 349 'zext' 'zext_ln87' <Predicate = (icmp_ln93 & icmp_ln93_1) | (icmp_ln92 & icmp_ln92_1)> <Delay = 0.00>
+ST_39 : Operation 350 [1/2] (3.25ns)   --->   "%open_set_heap_f_score_load_5 = load i13 %open_set_heap_f_score_addr_6" [assessment/toplevel.cpp:98]   --->   Operation 350 'load' 'open_set_heap_f_score_load_5' <Predicate = (icmp_ln93 & icmp_ln93_1) | (icmp_ln92 & icmp_ln92_1)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_39 : Operation 351 [1/1] (0.00ns)   --->   "%open_set_heap_f_score_addr_7 = getelementptr i16 %open_set_heap_f_score, i64 0, i64 %zext_ln87" [assessment/toplevel.cpp:98]   --->   Operation 351 'getelementptr' 'open_set_heap_f_score_addr_7' <Predicate = (icmp_ln93 & icmp_ln93_1) | (icmp_ln92 & icmp_ln92_1)> <Delay = 0.00>
+ST_39 : Operation 352 [1/1] (3.25ns)   --->   "%store_ln98 = store i16 %open_set_heap_f_score_load_5, i13 %open_set_heap_f_score_addr_7" [assessment/toplevel.cpp:98]   --->   Operation 352 'store' 'store_ln98' <Predicate = (icmp_ln93 & icmp_ln93_1) | (icmp_ln92 & icmp_ln92_1)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_39 : Operation 353 [1/2] (3.25ns)   --->   "%open_set_heap_g_score_load_2 = load i13 %open_set_heap_g_score_addr_2" [assessment/toplevel.cpp:98]   --->   Operation 353 'load' 'open_set_heap_g_score_load_2' <Predicate = (icmp_ln93 & icmp_ln93_1) | (icmp_ln92 & icmp_ln92_1)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_39 : Operation 354 [1/1] (0.00ns)   --->   "%open_set_heap_g_score_addr_3 = getelementptr i16 %open_set_heap_g_score, i64 0, i64 %zext_ln87" [assessment/toplevel.cpp:98]   --->   Operation 354 'getelementptr' 'open_set_heap_g_score_addr_3' <Predicate = (icmp_ln93 & icmp_ln93_1) | (icmp_ln92 & icmp_ln92_1)> <Delay = 0.00>
+ST_39 : Operation 355 [1/1] (3.25ns)   --->   "%store_ln98 = store i16 %open_set_heap_g_score_load_2, i13 %open_set_heap_g_score_addr_3" [assessment/toplevel.cpp:98]   --->   Operation 355 'store' 'store_ln98' <Predicate = (icmp_ln93 & icmp_ln93_1) | (icmp_ln92 & icmp_ln92_1)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_39 : Operation 356 [1/2] (3.25ns)   --->   "%open_set_heap_x_load_1 = load i13 %open_set_heap_x_addr_2" [assessment/toplevel.cpp:98]   --->   Operation 356 'load' 'open_set_heap_x_load_1' <Predicate = (icmp_ln93 & icmp_ln93_1) | (icmp_ln92 & icmp_ln92_1)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_39 : Operation 357 [1/1] (0.00ns)   --->   "%open_set_heap_x_addr_3 = getelementptr i16 %open_set_heap_x, i64 0, i64 %zext_ln87" [assessment/toplevel.cpp:98]   --->   Operation 357 'getelementptr' 'open_set_heap_x_addr_3' <Predicate = (icmp_ln93 & icmp_ln93_1) | (icmp_ln92 & icmp_ln92_1)> <Delay = 0.00>
+ST_39 : Operation 358 [1/1] (3.25ns)   --->   "%store_ln98 = store i16 %open_set_heap_x_load_1, i13 %open_set_heap_x_addr_3" [assessment/toplevel.cpp:98]   --->   Operation 358 'store' 'store_ln98' <Predicate = (icmp_ln93 & icmp_ln93_1) | (icmp_ln92 & icmp_ln92_1)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_39 : Operation 359 [1/2] (3.25ns)   --->   "%open_set_heap_y_load_1 = load i13 %open_set_heap_y_addr_2" [assessment/toplevel.cpp:98]   --->   Operation 359 'load' 'open_set_heap_y_load_1' <Predicate = (icmp_ln93 & icmp_ln93_1) | (icmp_ln92 & icmp_ln92_1)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_39 : Operation 360 [1/1] (0.00ns)   --->   "%open_set_heap_y_addr_3 = getelementptr i16 %open_set_heap_y, i64 0, i64 %zext_ln87" [assessment/toplevel.cpp:98]   --->   Operation 360 'getelementptr' 'open_set_heap_y_addr_3' <Predicate = (icmp_ln93 & icmp_ln93_1) | (icmp_ln92 & icmp_ln92_1)> <Delay = 0.00>
+ST_39 : Operation 361 [1/1] (3.25ns)   --->   "%store_ln98 = store i16 %open_set_heap_y_load_1, i13 %open_set_heap_y_addr_3" [assessment/toplevel.cpp:98]   --->   Operation 361 'store' 'store_ln98' <Predicate = (icmp_ln93 & icmp_ln93_1) | (icmp_ln92 & icmp_ln92_1)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+
+State 40 <SV = 15> <Delay = 3.25>
+ST_40 : Operation 362 [1/1] (3.25ns)   --->   "%store_ln99 = store i16 %open_set_heap_f_score_load_5, i13 %open_set_heap_f_score_addr_6" [assessment/toplevel.cpp:99]   --->   Operation 362 'store' 'store_ln99' <Predicate = (icmp_ln93 & icmp_ln93_1) | (icmp_ln92 & icmp_ln92_1)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_40 : Operation 363 [1/1] (3.25ns)   --->   "%store_ln99 = store i16 %open_set_heap_g_score_load_2, i13 %open_set_heap_g_score_addr_2" [assessment/toplevel.cpp:99]   --->   Operation 363 'store' 'store_ln99' <Predicate = (icmp_ln93 & icmp_ln93_1) | (icmp_ln92 & icmp_ln92_1)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_40 : Operation 364 [1/1] (3.25ns)   --->   "%store_ln99 = store i16 %open_set_heap_x_load_1, i13 %open_set_heap_x_addr_2" [assessment/toplevel.cpp:99]   --->   Operation 364 'store' 'store_ln99' <Predicate = (icmp_ln93 & icmp_ln93_1) | (icmp_ln92 & icmp_ln92_1)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_40 : Operation 365 [1/1] (3.25ns)   --->   "%store_ln99 = store i16 %open_set_heap_y_load_1, i13 %open_set_heap_y_addr_2" [assessment/toplevel.cpp:99]   --->   Operation 365 'store' 'store_ln99' <Predicate = (icmp_ln93 & icmp_ln93_1) | (icmp_ln92 & icmp_ln92_1)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8192> <RAM>
+ST_40 : Operation 366 [1/1] (0.00ns)   --->   "%br_ln84 = br void" [assessment/toplevel.cpp:84]   --->   Operation 366 'br' 'br_ln84' <Predicate = (icmp_ln93 & icmp_ln93_1) | (icmp_ln92 & icmp_ln92_1)> <Delay = 0.00>
+
+State 41 <SV = 29> <Delay = 0.00>
+ST_41 : Operation 367 [1/1] (0.00ns)   --->   "%retval_0 = phi i16 65535, void, i16 65535, void, i16 65535, void, i16 65535, void %_Z12os_heap_push6ASNode.exit.thread, i16 65535, void %split, i16 %open_set_heap_g_score_load, void %.loopexit.loopexit" [assessment/toplevel.cpp:141]   --->   Operation 367 'phi' 'retval_0' <Predicate = true> <Delay = 0.00>
+ST_41 : Operation 368 [1/1] (0.00ns)   --->   "%ret_ln221 = ret i16 %retval_0" [assessment/toplevel.cpp:221]   --->   Operation 368 'ret' 'ret_ln221' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 1.59ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('empty') with incoming values : ('empty_30') [26]  (1.59 ns)
+
+ <State 2>: 5.35ns
+The critical path consists of the following:
+	'phi' operation ('empty') with incoming values : ('empty_30') [26]  (0 ns)
+	'getelementptr' operation ('closed_set_addr') [34]  (0 ns)
+	'store' operation ('store_ln0') of constant 0 on array 'closed_set' [35]  (3.25 ns)
+	blocking operation 2.1 ns on control path)
+
+ <State 3>: 1.59ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('empty_32') with incoming values : ('empty_33') [40]  (1.59 ns)
+
+ <State 4>: 5.46ns
+The critical path consists of the following:
+	'phi' operation ('empty_32') with incoming values : ('empty_33') [40]  (0 ns)
+	'getelementptr' operation ('open_set_heap_f_score_addr') [48]  (0 ns)
+	'store' operation ('store_ln0') of constant 0 on array 'open_set_heap_f_score' [49]  (3.25 ns)
+	blocking operation 2.21 ns on control path)
+
+ <State 5>: 4.51ns
+The critical path consists of the following:
+	'icmp' operation ('icmp_ln70', assessment/toplevel.cpp:70) [58]  (2.43 ns)
+	'select' operation ('select_ln70', assessment/toplevel.cpp:70) [61]  (0 ns)
+	'add' operation ('h_start', assessment/toplevel.cpp:76) [66]  (2.08 ns)
+
+ <State 6>: 6.91ns
+The critical path consists of the following:
+	'load' operation ('world_size_load', assessment/toplevel.cpp:168) on static variable 'world_size' [75]  (0 ns)
+	'mul' operation ('mul_ln168', assessment/toplevel.cpp:168) [76]  (6.91 ns)
+
+ <State 7>: 6.91ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln168', assessment/toplevel.cpp:168) [76]  (6.91 ns)
+
+ <State 8>: 2.55ns
+The critical path consists of the following:
+	'phi' operation ('iteration_count') with incoming values : ('iteration_count', assessment/toplevel.cpp:209) [82]  (0 ns)
+	'add' operation ('iteration_count', assessment/toplevel.cpp:209) [85]  (2.55 ns)
+
+ <State 9>: 5.81ns
+The critical path consists of the following:
+	'phi' operation ('empty_36', assessment/toplevel.cpp:144) with incoming values : ('add_ln144', assessment/toplevel.cpp:144) ('add_ln133', assessment/toplevel.cpp:133) [88]  (0 ns)
+	'add' operation ('add_ln144', assessment/toplevel.cpp:144) [97]  (2.55 ns)
+	'getelementptr' operation ('open_set_heap_f_score_addr_1', assessment/toplevel.cpp:144) [99]  (0 ns)
+	'load' operation ('open_set_heap_f_score_load', assessment/toplevel.cpp:144) on array 'open_set_heap_f_score' [100]  (3.25 ns)
+
+ <State 10>: 6.51ns
+The critical path consists of the following:
+	'load' operation ('open_set_heap_f_score_load', assessment/toplevel.cpp:144) on array 'open_set_heap_f_score' [100]  (3.25 ns)
+	'store' operation ('store_ln144', assessment/toplevel.cpp:144) of variable 'open_set_heap_f_score_load', assessment/toplevel.cpp:144 on array 'open_set_heap_f_score' [101]  (3.25 ns)
+
+ <State 11>: 3.25ns
+The critical path consists of the following:
+	'phi' operation ('smallest') with incoming values : ('smallest', assessment/toplevel.cpp:89) [113]  (0 ns)
+	'or' operation ('left', assessment/toplevel.cpp:88) [117]  (0 ns)
+	'getelementptr' operation ('open_set_heap_f_score_addr_2', assessment/toplevel.cpp:92) [124]  (0 ns)
+	'load' operation ('open_set_heap_f_score_load_1', assessment/toplevel.cpp:92) on array 'open_set_heap_f_score' [125]  (3.25 ns)
+
+ <State 12>: 7.27ns
+The critical path consists of the following:
+	'load' operation ('open_set_heap_f_score_load_1', assessment/toplevel.cpp:92) on array 'open_set_heap_f_score' [125]  (3.25 ns)
+	'icmp' operation ('icmp_ln92_1', assessment/toplevel.cpp:92) [129]  (2.43 ns)
+	multiplexor before 'phi' operation ('left') with incoming values : ('left', assessment/toplevel.cpp:88) ('right', assessment/toplevel.cpp:89) [311]  (1.59 ns)
+
+ <State 13>: 7.27ns
+The critical path consists of the following:
+	'load' operation ('open_set_heap_f_score_load_3', assessment/toplevel.cpp:93) on array 'open_set_heap_f_score' [138]  (3.25 ns)
+	'icmp' operation ('icmp_ln93_1', assessment/toplevel.cpp:93) [142]  (2.43 ns)
+	multiplexor before 'phi' operation ('left') with incoming values : ('left', assessment/toplevel.cpp:88) ('right', assessment/toplevel.cpp:89) [311]  (1.59 ns)
+
+ <State 14>: 3.41ns
+The critical path consists of the following:
+	'icmp' operation ('icmp_ln176', assessment/toplevel.cpp:176) [146]  (2.43 ns)
+	'and' operation ('and_ln176', assessment/toplevel.cpp:176) [148]  (0.978 ns)
+
+ <State 15>: 1.05ns
+The critical path consists of the following:
+	'mul' operation of DSP[153] ('mul_ln52', assessment/toplevel.cpp:52) [152]  (1.05 ns)
+
+ <State 16>: 2.1ns
+The critical path consists of the following:
+	'mul' operation of DSP[153] ('mul_ln52', assessment/toplevel.cpp:52) [152]  (0 ns)
+	'add' operation of DSP[153] ('idx', assessment/toplevel.cpp:52) [153]  (2.1 ns)
+
+ <State 17>: 5.35ns
+The critical path consists of the following:
+	'add' operation of DSP[153] ('idx', assessment/toplevel.cpp:52) [153]  (2.1 ns)
+	'getelementptr' operation ('closed_set_addr_1', assessment/toplevel.cpp:55) [158]  (0 ns)
+	'load' operation ('closed_set_load', assessment/toplevel.cpp:55) on array 'closed_set' [159]  (3.25 ns)
+
+ <State 18>: 5.73ns
+The critical path consists of the following:
+	'load' operation ('closed_set_load', assessment/toplevel.cpp:55) on array 'closed_set' [159]  (3.25 ns)
+	'and' operation ('and_ln179', assessment/toplevel.cpp:179) [161]  (0 ns)
+	'icmp' operation ('icmp_ln179', assessment/toplevel.cpp:179) [162]  (2.47 ns)
+
+ <State 19>: 3.25ns
+The critical path consists of the following:
+	'store' operation ('store_ln64', assessment/toplevel.cpp:64) of variable 'or_ln64', assessment/toplevel.cpp:64 on array 'closed_set' [168]  (3.25 ns)
+
+ <State 20>: 6.38ns
+The critical path consists of the following:
+	'phi' operation ('i', assessment/toplevel.cpp:187) with incoming values : ('add_ln187', assessment/toplevel.cpp:187) [174]  (0 ns)
+	'mux' operation ('tmp_1', assessment/toplevel.cpp:190) [187]  (1.83 ns)
+	'add' operation ('n_y', assessment/toplevel.cpp:192) [196]  (2.08 ns)
+	'icmp' operation ('icmp_ln193_1', assessment/toplevel.cpp:193) [202]  (2.47 ns)
+
+ <State 21>: 2.57ns
+The critical path consists of the following:
+	'xor' operation ('xor_ln193', assessment/toplevel.cpp:193) [200]  (0 ns)
+	'or' operation ('or_ln193', assessment/toplevel.cpp:193) [204]  (0.978 ns)
+	multiplexor before 'phi' operation ('empty_39', assessment/toplevel.cpp:133) with incoming values : ('add_ln144', assessment/toplevel.cpp:144) ('add_ln133', assessment/toplevel.cpp:133) [304]  (1.59 ns)
+
+ <State 22>: 1.05ns
+The critical path consists of the following:
+	'mul' operation of DSP[209] ('mul_ln43', assessment/toplevel.cpp:43) [208]  (1.05 ns)
+
+ <State 23>: 2.1ns
+The critical path consists of the following:
+	'mul' operation of DSP[209] ('mul_ln43', assessment/toplevel.cpp:43) [208]  (0 ns)
+	'add' operation of DSP[209] ('idx', assessment/toplevel.cpp:43) [209]  (2.1 ns)
+
+ <State 24>: 2.1ns
+The critical path consists of the following:
+	'add' operation of DSP[209] ('idx', assessment/toplevel.cpp:43) [209]  (2.1 ns)
+
+ <State 25>: 4.93ns
+The critical path consists of the following:
+	'add' operation ('add_ln46', assessment/toplevel.cpp:46) [213]  (1.68 ns)
+	'getelementptr' operation ('local_ram_addr', assessment/toplevel.cpp:46) [215]  (0 ns)
+	'load' operation ('local_ram_load', assessment/toplevel.cpp:46) on array 'local_ram' [216]  (3.25 ns)
+
+ <State 26>: 5.73ns
+The critical path consists of the following:
+	'load' operation ('local_ram_load', assessment/toplevel.cpp:46) on array 'local_ram' [216]  (3.25 ns)
+	'and' operation ('and_ln194', assessment/toplevel.cpp:194) [218]  (0 ns)
+	'icmp' operation ('icmp_ln194', assessment/toplevel.cpp:194) [219]  (2.47 ns)
+
+ <State 27>: 3.25ns
+The critical path consists of the following:
+	'getelementptr' operation ('closed_set_addr_2', assessment/toplevel.cpp:55) [223]  (0 ns)
+	'load' operation ('closed_set_load_1', assessment/toplevel.cpp:55) on array 'closed_set' [224]  (3.25 ns)
+
+ <State 28>: 5.73ns
+The critical path consists of the following:
+	'load' operation ('closed_set_load_1', assessment/toplevel.cpp:55) on array 'closed_set' [224]  (3.25 ns)
+	'and' operation ('and_ln195', assessment/toplevel.cpp:195) [225]  (0 ns)
+	'icmp' operation ('icmp_ln195', assessment/toplevel.cpp:195) [226]  (2.47 ns)
+
+ <State 29>: 7.14ns
+The critical path consists of the following:
+	'icmp' operation ('icmp_ln70_2', assessment/toplevel.cpp:70) [229]  (2.43 ns)
+	'select' operation ('select_ln70_2', assessment/toplevel.cpp:70) [232]  (0.805 ns)
+	'add' operation ('add_ln201', assessment/toplevel.cpp:201) [237]  (0 ns)
+	'add' operation ('n_f_score', assessment/toplevel.cpp:201) [238]  (3.9 ns)
+
+ <State 30>: 3.25ns
+The critical path consists of the following:
+	'getelementptr' operation ('open_set_heap_f_score_addr_8', assessment/toplevel.cpp:132) [244]  (0 ns)
+	'store' operation ('store_ln132', assessment/toplevel.cpp:132) of variable 'n_f_score', assessment/toplevel.cpp:201 on array 'open_set_heap_f_score' [245]  (3.25 ns)
+
+ <State 31>: 2.43ns
+The critical path consists of the following:
+	'phi' operation ('parent') with incoming values : ('zext_ln134', assessment/toplevel.cpp:134) ('parent', assessment/toplevel.cpp:111) [257]  (0 ns)
+	'icmp' operation ('icmp_ln107', assessment/toplevel.cpp:107) [259]  (2.43 ns)
+
+ <State 32>: 6.14ns
+The critical path consists of the following:
+	'add' operation ('add_ln111', assessment/toplevel.cpp:111) [264]  (2.08 ns)
+	'select' operation ('parent', assessment/toplevel.cpp:111) [270]  (0.805 ns)
+	'getelementptr' operation ('open_set_heap_f_score_addr_10', assessment/toplevel.cpp:112) [275]  (0 ns)
+	'load' operation ('open_set_heap_f_score_load_7', assessment/toplevel.cpp:112) on array 'open_set_heap_f_score' [276]  (3.25 ns)
+
+ <State 33>: 5.68ns
+The critical path consists of the following:
+	'load' operation ('open_set_heap_f_score_load_6', assessment/toplevel.cpp:112) on array 'open_set_heap_f_score' [273]  (3.25 ns)
+	'icmp' operation ('icmp_ln112', assessment/toplevel.cpp:112) [277]  (2.43 ns)
+
+ <State 34>: 6.51ns
+The critical path consists of the following:
+	'load' operation ('open_set_heap_g_score_load_3', assessment/toplevel.cpp:116) on array 'open_set_heap_g_score' [282]  (3.25 ns)
+	'store' operation ('store_ln116', assessment/toplevel.cpp:116) of variable 'open_set_heap_g_score_load_3', assessment/toplevel.cpp:116 on array 'open_set_heap_g_score' [284]  (3.25 ns)
+
+ <State 35>: 3.25ns
+The critical path consists of the following:
+	'store' operation ('store_ln117', assessment/toplevel.cpp:117) of variable 'open_set_heap_f_score_load_7', assessment/toplevel.cpp:112 on array 'open_set_heap_f_score' [293]  (3.25 ns)
+
+ <State 36>: 1.59ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('empty_39', assessment/toplevel.cpp:133) with incoming values : ('add_ln144', assessment/toplevel.cpp:144) ('add_ln133', assessment/toplevel.cpp:133) [304]  (1.59 ns)
+
+ <State 37>: 0ns
+The critical path consists of the following:
+
+ <State 38>: 3.25ns
+The critical path consists of the following:
+	'phi' operation ('left') with incoming values : ('left', assessment/toplevel.cpp:88) ('right', assessment/toplevel.cpp:89) [311]  (0 ns)
+	'getelementptr' operation ('open_set_heap_f_score_addr_6', assessment/toplevel.cpp:98) [316]  (0 ns)
+	'load' operation ('open_set_heap_f_score_load_5', assessment/toplevel.cpp:98) on array 'open_set_heap_f_score' [317]  (3.25 ns)
+
+ <State 39>: 6.51ns
+The critical path consists of the following:
+	'load' operation ('open_set_heap_f_score_load_5', assessment/toplevel.cpp:98) on array 'open_set_heap_f_score' [317]  (3.25 ns)
+	'store' operation ('store_ln98', assessment/toplevel.cpp:98) of variable 'open_set_heap_f_score_load_5', assessment/toplevel.cpp:98 on array 'open_set_heap_f_score' [319]  (3.25 ns)
+
+ <State 40>: 3.25ns
+The critical path consists of the following:
+	'store' operation ('store_ln99', assessment/toplevel.cpp:99) of variable 'open_set_heap_f_score_load_5', assessment/toplevel.cpp:98 on array 'open_set_heap_f_score' [332]  (3.25 ns)
+
+ <State 41>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

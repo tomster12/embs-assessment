@@ -1,0 +1,559 @@
+
+
+================================================================
+== Vitis HLS Report for 'toplevel'
+================================================================
+* Date:           Tue May  6 00:57:41 2025
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:47 MST 2020)
+* Project:        assessment
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z010-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.300 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|     none|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                         |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |        Loop Name        |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- Loop 1                 |     7828|     7828|         3|          1|          1|  7827|       yes|
+        |- WAYPOINT_EXTRACT_LOOP  |        ?|        ?|         2|          1|          1|     ?|       yes|
+        |- PATHFINDING_LOOP       |        ?|        ?|         ?|          -|          -|     ?|        no|
+        +-------------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 3
+  * Pipeline-1: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 37
+* Pipeline : 2
+  Pipeline-0 : II = 1, D = 3, States = { 9 10 11 }
+  Pipeline-1 : II = 1, D = 2, States = { 15 16 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 12 10 
+10 --> 11 
+11 --> 9 
+12 --> 13 
+13 --> 14 
+14 --> 31 15 
+15 --> 17 16 
+16 --> 15 
+17 --> 24 18 
+18 --> 19 24 
+19 --> 20 
+20 --> 21 
+21 --> 22 18 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 26 
+26 --> 27 
+27 --> 28 
+28 --> 29 
+29 --> 30 
+30 --> 
+31 --> 32 
+32 --> 33 
+33 --> 34 
+34 --> 35 
+35 --> 36 
+36 --> 37 
+37 --> 30 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.58>
+ST_1 : Operation 38 [1/1] (1.00ns)   --->   "%ram_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %ram"   --->   Operation 38 'read' 'ram_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%waypoints_x = alloca i64 1" [assessment/toplevel.cpp:252]   --->   Operation 39 'alloca' 'waypoints_x' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 12> <RAM>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%waypoints_y = alloca i64 1" [assessment/toplevel.cpp:252]   --->   Operation 40 'alloca' 'waypoints_y' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 12> <RAM>
+ST_1 : Operation 41 [1/1] (1.00ns)   --->   "%write_ln232 = write void @_ssdm_op_Write.s_axilite.volatile.i32P0A, i32 %code, i32 0" [assessment/toplevel.cpp:232]   --->   Operation 41 'write' 'write_ln232' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 42 [1/1] (1.58ns)   --->   "%store_ln233 = store i32 0, i32 %error_flag" [assessment/toplevel.cpp:233]   --->   Operation 42 'store' 'store_ln233' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%trunc_ln = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %ram_read, i32 2, i32 63" [assessment/toplevel.cpp:238]   --->   Operation 43 'partselect' 'trunc_ln' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%sext_ln238 = sext i62 %trunc_ln" [assessment/toplevel.cpp:238]   --->   Operation 44 'sext' 'sext_ln238' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%MAXI_addr = getelementptr i32 %MAXI, i64 %sext_ln238" [assessment/toplevel.cpp:238]   --->   Operation 45 'getelementptr' 'MAXI_addr' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 7.30>
+ST_2 : Operation 46 [7/7] (7.30ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %MAXI_addr, i32 7827" [assessment/toplevel.cpp:238]   --->   Operation 46 'readreq' 'empty' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 3 <SV = 2> <Delay = 7.30>
+ST_3 : Operation 47 [6/7] (7.30ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %MAXI_addr, i32 7827" [assessment/toplevel.cpp:238]   --->   Operation 47 'readreq' 'empty' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 4 <SV = 3> <Delay = 7.30>
+ST_4 : Operation 48 [5/7] (7.30ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %MAXI_addr, i32 7827" [assessment/toplevel.cpp:238]   --->   Operation 48 'readreq' 'empty' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 5 <SV = 4> <Delay = 7.30>
+ST_5 : Operation 49 [4/7] (7.30ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %MAXI_addr, i32 7827" [assessment/toplevel.cpp:238]   --->   Operation 49 'readreq' 'empty' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 6 <SV = 5> <Delay = 7.30>
+ST_6 : Operation 50 [3/7] (7.30ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %MAXI_addr, i32 7827" [assessment/toplevel.cpp:238]   --->   Operation 50 'readreq' 'empty' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 7 <SV = 6> <Delay = 7.30>
+ST_7 : Operation 51 [2/7] (7.30ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %MAXI_addr, i32 7827" [assessment/toplevel.cpp:238]   --->   Operation 51 'readreq' 'empty' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 8 <SV = 7> <Delay = 7.30>
+ST_8 : Operation 52 [1/1] (0.00ns)   --->   "%spectopmodule_ln0 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_12"   --->   Operation 52 'spectopmodule' 'spectopmodule_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 53 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %MAXI, void @empty_15, i32 0, i32 0, void @empty_11, i32 0, i32 7827, void @empty_7, void @empty_6, void @empty_11, i32 16, i32 16, i32 16, i32 16, void @empty_11, void @empty_11"   --->   Operation 53 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 54 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %MAXI"   --->   Operation 54 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 55 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %ram, void @empty_5, i32 0, i32 0, void @empty_11, i32 0, i32 0, void @empty_13, void @empty_10, void @empty_11, i32 0, i32 0, i32 0, i32 0, void @empty_11, void @empty_2"   --->   Operation 55 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 56 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %ram, void @empty_1, i32 0, i32 0, void @empty_11, i32 0, i32 0, void @empty_11, void @empty_11, void @empty_11, i32 0, i32 0, i32 0, i32 0, void @empty_11, void @empty_2"   --->   Operation 56 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 57 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %code"   --->   Operation 57 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 58 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %code, void @empty_5, i32 0, i32 0, void @empty_11, i32 0, i32 0, void @empty_4, void @empty_10, void @empty_11, i32 0, i32 0, i32 0, i32 0, void @empty_11, void @empty_11"   --->   Operation 58 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 59 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 0, void @empty_5, i32 0, i32 0, void @empty_11, i32 0, i32 0, void @empty_4, void @empty_11, void @empty_11, i32 0, i32 0, i32 0, i32 0, void @empty_11, void @empty_11"   --->   Operation 59 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 60 [1/1] (0.00ns)   --->   "%specmemcore_ln223 = specmemcore void @_ssdm_op_SpecMemCore, i32 %closed_set, i64 666, i64 30, i64 18446744073709551615" [assessment/toplevel.cpp:223]   --->   Operation 60 'specmemcore' 'specmemcore_ln223' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 61 [1/1] (0.00ns)   --->   "%specmemcore_ln227 = specmemcore void @_ssdm_op_SpecMemCore, i16 %open_set_heap_f_score, i16 %open_set_heap_g_score, i16 %open_set_heap_x, i16 %open_set_heap_y, i64 666, i64 30, i64 18446744073709551615" [assessment/toplevel.cpp:227]   --->   Operation 61 'specmemcore' 'specmemcore_ln227' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 62 [1/1] (0.00ns)   --->   "%specmemcore_ln228 = specmemcore void @_ssdm_op_SpecMemCore, i32 %local_ram, i64 666, i64 30, i64 18446744073709551615" [assessment/toplevel.cpp:228]   --->   Operation 62 'specmemcore' 'specmemcore_ln228' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 63 [1/7] (7.30ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %MAXI_addr, i32 7827" [assessment/toplevel.cpp:238]   --->   Operation 63 'readreq' 'empty' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 64 [1/1] (1.58ns)   --->   "%br_ln238 = br void %load-store-loop" [assessment/toplevel.cpp:238]   --->   Operation 64 'br' 'br_ln238' <Predicate = true> <Delay = 1.58>
+
+State 9 <SV = 8> <Delay = 2.09>
+ST_9 : Operation 65 [1/1] (0.00ns)   --->   "%loop_index = phi i13 0, void, i13 %empty_27, void %load-store-loop.split"   --->   Operation 65 'phi' 'loop_index' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 66 [1/1] (1.67ns)   --->   "%empty_27 = add i13 %loop_index, i13 1"   --->   Operation 66 'add' 'empty_27' <Predicate = true> <Delay = 1.67> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.34> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 67 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 67 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 68 [1/1] (2.09ns)   --->   "%exitcond10 = icmp_eq  i13 %loop_index, i13 7827"   --->   Operation 68 'icmp' 'exitcond10' <Predicate = true> <Delay = 2.09> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 69 [1/1] (0.00ns)   --->   "%empty_28 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 7827, i64 7827, i64 7827"   --->   Operation 69 'speclooptripcount' 'empty_28' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 70 [1/1] (0.00ns)   --->   "%br_ln0 = br i1 %exitcond10, void %load-store-loop.split, void %memcpy-split"   --->   Operation 70 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+
+State 10 <SV = 9> <Delay = 7.30>
+ST_10 : Operation 71 [1/1] (7.30ns)   --->   "%MAXI_addr_read = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %MAXI_addr" [assessment/toplevel.cpp:238]   --->   Operation 71 'read' 'MAXI_addr_read' <Predicate = (!exitcond10)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 11 <SV = 10> <Delay = 3.25>
+ST_11 : Operation 72 [1/1] (0.00ns)   --->   "%loop_index_cast = zext i13 %loop_index"   --->   Operation 72 'zext' 'loop_index_cast' <Predicate = (!exitcond10)> <Delay = 0.00>
+ST_11 : Operation 73 [1/1] (0.00ns)   --->   "%local_ram_addr = getelementptr i32 %local_ram, i64 0, i64 %loop_index_cast"   --->   Operation 73 'getelementptr' 'local_ram_addr' <Predicate = (!exitcond10)> <Delay = 0.00>
+ST_11 : Operation 74 [1/1] (3.25ns)   --->   "%store_ln238 = store i32 %MAXI_addr_read, i13 %local_ram_addr" [assessment/toplevel.cpp:238]   --->   Operation 74 'store' 'store_ln238' <Predicate = (!exitcond10)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 7827> <RAM>
+ST_11 : Operation 75 [1/1] (0.00ns)   --->   "%br_ln0 = br void %load-store-loop"   --->   Operation 75 'br' 'br_ln0' <Predicate = (!exitcond10)> <Delay = 0.00>
+
+State 12 <SV = 9> <Delay = 3.25>
+ST_12 : Operation 76 [2/2] (3.25ns)   --->   "%local_ram_load = load i32 0" [assessment/toplevel.cpp:241]   --->   Operation 76 'load' 'local_ram_load' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 7827> <RAM>
+ST_12 : Operation 77 [2/2] (3.25ns)   --->   "%waypoint_count = load i32 1" [assessment/toplevel.cpp:242]   --->   Operation 77 'load' 'waypoint_count' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 7827> <RAM>
+
+State 13 <SV = 10> <Delay = 3.25>
+ST_13 : Operation 78 [1/2] (3.25ns)   --->   "%local_ram_load = load i32 0" [assessment/toplevel.cpp:241]   --->   Operation 78 'load' 'local_ram_load' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 7827> <RAM>
+ST_13 : Operation 79 [1/1] (0.00ns)   --->   "%store_ln241 = store i32 %local_ram_load, i32 %world_size" [assessment/toplevel.cpp:241]   --->   Operation 79 'store' 'store_ln241' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 80 [1/2] (3.25ns)   --->   "%waypoint_count = load i32 1" [assessment/toplevel.cpp:242]   --->   Operation 80 'load' 'waypoint_count' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 7827> <RAM>
+ST_13 : Operation 81 [1/1] (0.00ns)   --->   "%trunc_ln242 = trunc i32 %waypoint_count" [assessment/toplevel.cpp:242]   --->   Operation 81 'trunc' 'trunc_ln242' <Predicate = true> <Delay = 0.00>
+
+State 14 <SV = 11> <Delay = 6.00>
+ST_14 : Operation 82 [1/1] (2.55ns)   --->   "%add_ln245 = add i32 %local_ram_load, i32 4294967295" [assessment/toplevel.cpp:245]   --->   Operation 82 'add' 'add_ln245' <Predicate = true> <Delay = 2.55> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.34> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 83 [1/1] (2.47ns)   --->   "%icmp_ln245 = icmp_ugt  i32 %add_ln245, i32 499" [assessment/toplevel.cpp:245]   --->   Operation 83 'icmp' 'icmp_ln245' <Predicate = true> <Delay = 2.47> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 84 [1/1] (2.55ns)   --->   "%add_ln245_1 = add i32 %waypoint_count, i32 4294967294" [assessment/toplevel.cpp:245]   --->   Operation 84 'add' 'add_ln245_1' <Predicate = true> <Delay = 2.55> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.34> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 85 [1/1] (2.47ns)   --->   "%icmp_ln245_1 = icmp_ugt  i32 %add_ln245_1, i32 10" [assessment/toplevel.cpp:245]   --->   Operation 85 'icmp' 'icmp_ln245_1' <Predicate = true> <Delay = 2.47> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 86 [1/1] (0.97ns)   --->   "%or_ln245 = or i1 %icmp_ln245_1, i1 %icmp_ln245" [assessment/toplevel.cpp:245]   --->   Operation 86 'or' 'or_ln245' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 87 [1/1] (0.00ns)   --->   "%br_ln245 = br i1 %or_ln245, void %.lr.ph17.preheader, void" [assessment/toplevel.cpp:245]   --->   Operation 87 'br' 'br_ln245' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 88 [1/1] (1.58ns)   --->   "%br_ln0 = br void %.lr.ph17"   --->   Operation 88 'br' 'br_ln0' <Predicate = (!or_ln245)> <Delay = 1.58>
+
+State 15 <SV = 12> <Delay = 5.16>
+ST_15 : Operation 89 [1/1] (0.00ns)   --->   "%i = phi i8 %i_1, void %.split6, i8 0, void %.lr.ph17.preheader"   --->   Operation 89 'phi' 'i' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 90 [1/1] (1.91ns)   --->   "%i_1 = add i8 %i, i8 1" [assessment/toplevel.cpp:253]   --->   Operation 90 'add' 'i_1' <Predicate = true> <Delay = 1.91> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.34> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 91 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 91 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 92 [1/1] (0.00ns)   --->   "%zext_ln253 = zext i8 %i" [assessment/toplevel.cpp:253]   --->   Operation 92 'zext' 'zext_ln253' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 93 [1/1] (2.47ns)   --->   "%icmp_ln253 = icmp_ult  i32 %zext_ln253, i32 %waypoint_count" [assessment/toplevel.cpp:253]   --->   Operation 93 'icmp' 'icmp_ln253' <Predicate = true> <Delay = 2.47> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 94 [1/1] (0.00ns)   --->   "%br_ln253 = br i1 %icmp_ln253, void %._crit_edge.loopexit, void %.split6" [assessment/toplevel.cpp:253]   --->   Operation 94 'br' 'br_ln253' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 95 [1/1] (0.00ns)   --->   "%zext_ln253_1 = zext i8 %i" [assessment/toplevel.cpp:253]   --->   Operation 95 'zext' 'zext_ln253_1' <Predicate = (icmp_ln253)> <Delay = 0.00>
+ST_15 : Operation 96 [1/1] (1.91ns)   --->   "%add_ln254 = add i9 %zext_ln253_1, i9 2" [assessment/toplevel.cpp:254]   --->   Operation 96 'add' 'add_ln254' <Predicate = (icmp_ln253)> <Delay = 1.91> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.34> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 97 [1/1] (0.00ns)   --->   "%zext_ln254 = zext i9 %add_ln254" [assessment/toplevel.cpp:254]   --->   Operation 97 'zext' 'zext_ln254' <Predicate = (icmp_ln253)> <Delay = 0.00>
+ST_15 : Operation 98 [1/1] (0.00ns)   --->   "%local_ram_addr_1 = getelementptr i32 %local_ram, i64 0, i64 %zext_ln254" [assessment/toplevel.cpp:254]   --->   Operation 98 'getelementptr' 'local_ram_addr_1' <Predicate = (icmp_ln253)> <Delay = 0.00>
+ST_15 : Operation 99 [2/2] (3.25ns)   --->   "%wp = load i13 %local_ram_addr_1" [assessment/toplevel.cpp:254]   --->   Operation 99 'load' 'wp' <Predicate = (icmp_ln253)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 7827> <RAM>
+
+State 16 <SV = 13> <Delay = 5.57>
+ST_16 : Operation 100 [1/1] (0.00ns)   --->   "%specloopname_ln253 = specloopname void @_ssdm_op_SpecLoopName, void @empty_9" [assessment/toplevel.cpp:253]   --->   Operation 100 'specloopname' 'specloopname_ln253' <Predicate = (icmp_ln253)> <Delay = 0.00>
+ST_16 : Operation 101 [1/2] (3.25ns)   --->   "%wp = load i13 %local_ram_addr_1" [assessment/toplevel.cpp:254]   --->   Operation 101 'load' 'wp' <Predicate = (icmp_ln253)> <Delay = 3.25> <CoreInst = "RAM_T2P_BRAM">   --->   Core 94 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 7827> <RAM>
+ST_16 : Operation 102 [1/1] (0.00ns)   --->   "%trunc_ln2 = partselect i16 @_ssdm_op_PartSelect.i16.i32.i32.i32, i32 %wp, i32 16, i32 31" [assessment/toplevel.cpp:255]   --->   Operation 102 'partselect' 'trunc_ln2' <Predicate = (icmp_ln253)> <Delay = 0.00>
+ST_16 : Operation 103 [1/1] (0.00ns)   --->   "%zext_ln255 = zext i8 %i" [assessment/toplevel.cpp:255]   --->   Operation 103 'zext' 'zext_ln255' <Predicate = (icmp_ln253)> <Delay = 0.00>
+ST_16 : Operation 104 [1/1] (0.00ns)   --->   "%waypoints_x_addr = getelementptr i16 %waypoints_x, i64 0, i64 %zext_ln255" [assessment/toplevel.cpp:255]   --->   Operation 104 'getelementptr' 'waypoints_x_addr' <Predicate = (icmp_ln253)> <Delay = 0.00>
+ST_16 : Operation 105 [1/1] (2.32ns)   --->   "%store_ln255 = store i16 %trunc_ln2, i4 %waypoints_x_addr" [assessment/toplevel.cpp:255]   --->   Operation 105 'store' 'store_ln255' <Predicate = (icmp_ln253)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 12> <RAM>
+ST_16 : Operation 106 [1/1] (0.00ns)   --->   "%trunc_ln256 = trunc i32 %wp" [assessment/toplevel.cpp:256]   --->   Operation 106 'trunc' 'trunc_ln256' <Predicate = (icmp_ln253)> <Delay = 0.00>
+ST_16 : Operation 107 [1/1] (0.00ns)   --->   "%waypoints_y_addr = getelementptr i16 %waypoints_y, i64 0, i64 %zext_ln255" [assessment/toplevel.cpp:256]   --->   Operation 107 'getelementptr' 'waypoints_y_addr' <Predicate = (icmp_ln253)> <Delay = 0.00>
+ST_16 : Operation 108 [1/1] (2.32ns)   --->   "%store_ln256 = store i16 %trunc_ln256, i4 %waypoints_y_addr" [assessment/toplevel.cpp:256]   --->   Operation 108 'store' 'store_ln256' <Predicate = (icmp_ln253)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 12> <RAM>
+ST_16 : Operation 109 [1/1] (0.00ns)   --->   "%br_ln0 = br void %.lr.ph17"   --->   Operation 109 'br' 'br_ln0' <Predicate = (icmp_ln253)> <Delay = 0.00>
+
+State 17 <SV = 13> <Delay = 5.07>
+ST_17 : Operation 110 [1/1] (1.82ns)   --->   "%add_ln261 = add i9 %trunc_ln242, i9 511" [assessment/toplevel.cpp:261]   --->   Operation 110 'add' 'add_ln261' <Predicate = true> <Delay = 1.82> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.34> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 111 [1/1] (1.66ns)   --->   "%icmp_ln261 = icmp_eq  i9 %add_ln261, i9 0" [assessment/toplevel.cpp:261]   --->   Operation 111 'icmp' 'icmp_ln261' <Predicate = true> <Delay = 1.66> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 112 [1/1] (1.58ns)   --->   "%br_ln261 = br i1 %icmp_ln261, void %.lr.ph.preheader, void %.loopexit" [assessment/toplevel.cpp:261]   --->   Operation 112 'br' 'br_ln261' <Predicate = true> <Delay = 1.58>
+ST_17 : Operation 113 [1/1] (1.58ns)   --->   "%br_ln261 = br void %.lr.ph" [assessment/toplevel.cpp:261]   --->   Operation 113 'br' 'br_ln261' <Predicate = (!icmp_ln261)> <Delay = 1.58>
+
+State 18 <SV = 14> <Delay = 4.05>
+ST_18 : Operation 114 [1/1] (0.00ns)   --->   "%i_2 = phi i8 %i_3, void, i8 0, void %.lr.ph.preheader"   --->   Operation 114 'phi' 'i_2' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 115 [1/1] (0.00ns)   --->   "%total_len = phi i25 %total_len_1, void, i25 0, void %.lr.ph.preheader"   --->   Operation 115 'phi' 'total_len' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 116 [1/1] (0.00ns)   --->   "%trunc_ln261 = trunc i8 %i_2" [assessment/toplevel.cpp:261]   --->   Operation 116 'trunc' 'trunc_ln261' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 117 [1/1] (0.00ns)   --->   "%zext_ln261 = zext i8 %i_2" [assessment/toplevel.cpp:261]   --->   Operation 117 'zext' 'zext_ln261' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 118 [1/1] (1.66ns)   --->   "%icmp_ln261_1 = icmp_ult  i9 %zext_ln261, i9 %add_ln261" [assessment/toplevel.cpp:261]   --->   Operation 118 'icmp' 'icmp_ln261_1' <Predicate = true> <Delay = 1.66> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 119 [1/1] (1.91ns)   --->   "%i_3 = add i8 %i_2, i8 1" [assessment/toplevel.cpp:261]   --->   Operation 119 'add' 'i_3' <Predicate = true> <Delay = 1.91> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.34> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 120 [1/1] (0.00ns)   --->   "%br_ln261 = br i1 %icmp_ln261_1, void %.loopexit.loopexit, void %.split" [assessment/toplevel.cpp:261]   --->   Operation 120 'br' 'br_ln261' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 121 [1/1] (0.00ns)   --->   "%zext_ln262 = zext i8 %i_2" [assessment/toplevel.cpp:262]   --->   Operation 121 'zext' 'zext_ln262' <Predicate = (icmp_ln261_1)> <Delay = 0.00>
+ST_18 : Operation 122 [1/1] (0.00ns)   --->   "%waypoints_x_addr_1 = getelementptr i16 %waypoints_x, i64 0, i64 %zext_ln262" [assessment/toplevel.cpp:262]   --->   Operation 122 'getelementptr' 'waypoints_x_addr_1' <Predicate = (icmp_ln261_1)> <Delay = 0.00>
+ST_18 : Operation 123 [1/1] (0.00ns)   --->   "%waypoints_y_addr_1 = getelementptr i16 %waypoints_y, i64 0, i64 %zext_ln262" [assessment/toplevel.cpp:262]   --->   Operation 123 'getelementptr' 'waypoints_y_addr_1' <Predicate = (icmp_ln261_1)> <Delay = 0.00>
+ST_18 : Operation 124 [2/2] (2.32ns)   --->   "%waypoints_x_load = load i4 %waypoints_x_addr_1" [assessment/toplevel.cpp:262]   --->   Operation 124 'load' 'waypoints_x_load' <Predicate = (icmp_ln261_1)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 12> <RAM>
+ST_18 : Operation 125 [2/2] (2.32ns)   --->   "%waypoints_y_load = load i4 %waypoints_y_addr_1" [assessment/toplevel.cpp:262]   --->   Operation 125 'load' 'waypoints_y_load' <Predicate = (icmp_ln261_1)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 12> <RAM>
+ST_18 : Operation 126 [1/1] (1.73ns)   --->   "%add_ln262 = add i4 %trunc_ln261, i4 1" [assessment/toplevel.cpp:262]   --->   Operation 126 'add' 'add_ln262' <Predicate = (icmp_ln261_1)> <Delay = 1.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.34> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 127 [1/1] (0.00ns)   --->   "%zext_ln262_1 = zext i4 %add_ln262" [assessment/toplevel.cpp:262]   --->   Operation 127 'zext' 'zext_ln262_1' <Predicate = (icmp_ln261_1)> <Delay = 0.00>
+ST_18 : Operation 128 [1/1] (0.00ns)   --->   "%waypoints_x_addr_2 = getelementptr i16 %waypoints_x, i64 0, i64 %zext_ln262_1" [assessment/toplevel.cpp:262]   --->   Operation 128 'getelementptr' 'waypoints_x_addr_2' <Predicate = (icmp_ln261_1)> <Delay = 0.00>
+ST_18 : Operation 129 [1/1] (0.00ns)   --->   "%waypoints_y_addr_2 = getelementptr i16 %waypoints_y, i64 0, i64 %zext_ln262_1" [assessment/toplevel.cpp:262]   --->   Operation 129 'getelementptr' 'waypoints_y_addr_2' <Predicate = (icmp_ln261_1)> <Delay = 0.00>
+ST_18 : Operation 130 [2/2] (2.32ns)   --->   "%waypoints_x_load_1 = load i4 %waypoints_x_addr_2" [assessment/toplevel.cpp:262]   --->   Operation 130 'load' 'waypoints_x_load_1' <Predicate = (icmp_ln261_1)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 12> <RAM>
+ST_18 : Operation 131 [2/2] (2.32ns)   --->   "%waypoints_y_load_1 = load i4 %waypoints_y_addr_2" [assessment/toplevel.cpp:262]   --->   Operation 131 'load' 'waypoints_y_load_1' <Predicate = (icmp_ln261_1)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 12> <RAM>
+ST_18 : Operation 132 [1/1] (1.58ns)   --->   "%br_ln0 = br void %.loopexit"   --->   Operation 132 'br' 'br_ln0' <Predicate = (!icmp_ln261_1)> <Delay = 1.58>
+
+State 19 <SV = 15> <Delay = 2.32>
+ST_19 : Operation 133 [1/2] (2.32ns)   --->   "%waypoints_x_load = load i4 %waypoints_x_addr_1" [assessment/toplevel.cpp:262]   --->   Operation 133 'load' 'waypoints_x_load' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 12> <RAM>
+ST_19 : Operation 134 [1/2] (2.32ns)   --->   "%waypoints_y_load = load i4 %waypoints_y_addr_1" [assessment/toplevel.cpp:262]   --->   Operation 134 'load' 'waypoints_y_load' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 12> <RAM>
+ST_19 : Operation 135 [1/2] (2.32ns)   --->   "%waypoints_x_load_1 = load i4 %waypoints_x_addr_2" [assessment/toplevel.cpp:262]   --->   Operation 135 'load' 'waypoints_x_load_1' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 12> <RAM>
+ST_19 : Operation 136 [1/2] (2.32ns)   --->   "%waypoints_y_load_1 = load i4 %waypoints_y_addr_2" [assessment/toplevel.cpp:262]   --->   Operation 136 'load' 'waypoints_y_load_1' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 12> <RAM>
+ST_19 : Operation 137 [2/2] (0.00ns)   --->   "%ret = call i16 @a_star_len, i16 %waypoints_x_load, i16 %waypoints_y_load, i16 %waypoints_x_load_1, i16 %waypoints_y_load_1, i32 %closed_set, i16 %open_set_heap_f_score, i16 %open_set_heap_g_score, i16 %open_set_heap_x, i16 %open_set_heap_y, i32 %error_flag, i32 %world_size, i32 %local_ram" [assessment/toplevel.cpp:262]   --->   Operation 137 'call' 'ret' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 20 <SV = 16> <Delay = 0.00>
+ST_20 : Operation 138 [1/2] (0.00ns)   --->   "%ret = call i16 @a_star_len, i16 %waypoints_x_load, i16 %waypoints_y_load, i16 %waypoints_x_load_1, i16 %waypoints_y_load_1, i32 %closed_set, i16 %open_set_heap_f_score, i16 %open_set_heap_g_score, i16 %open_set_heap_x, i16 %open_set_heap_y, i32 %error_flag, i32 %world_size, i32 %local_ram" [assessment/toplevel.cpp:262]   --->   Operation 138 'call' 'ret' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 21 <SV = 17> <Delay = 2.47>
+ST_21 : Operation 139 [1/1] (0.00ns)   --->   "%specloopname_ln260 = specloopname void @_ssdm_op_SpecLoopName, void @empty_8" [assessment/toplevel.cpp:260]   --->   Operation 139 'specloopname' 'specloopname_ln260' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 140 [1/1] (0.00ns)   --->   "%zext_ln262_2 = zext i16 %ret" [assessment/toplevel.cpp:262]   --->   Operation 140 'zext' 'zext_ln262_2' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 141 [1/1] (0.00ns)   --->   "%error_flag_load = load i32 %error_flag" [assessment/toplevel.cpp:263]   --->   Operation 141 'load' 'error_flag_load' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 142 [1/1] (2.47ns)   --->   "%icmp_ln263 = icmp_eq  i32 %error_flag_load, i32 0" [assessment/toplevel.cpp:263]   --->   Operation 142 'icmp' 'icmp_ln263' <Predicate = true> <Delay = 2.47> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 143 [1/1] (0.00ns)   --->   "%br_ln263 = br i1 %icmp_ln263, void, void" [assessment/toplevel.cpp:263]   --->   Operation 143 'br' 'br_ln263' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 144 [1/1] (2.34ns)   --->   "%total_len_1 = add i25 %zext_ln262_2, i25 %total_len" [assessment/toplevel.cpp:267]   --->   Operation 144 'add' 'total_len_1' <Predicate = (icmp_ln263)> <Delay = 2.34> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.34> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 145 [1/1] (0.00ns)   --->   "%br_ln0 = br void %.lr.ph"   --->   Operation 145 'br' 'br_ln0' <Predicate = (icmp_ln263)> <Delay = 0.00>
+ST_21 : Operation 146 [1/1] (0.00ns)   --->   "%zext_ln261_1 = zext i8 %i_2" [assessment/toplevel.cpp:261]   --->   Operation 146 'zext' 'zext_ln261_1' <Predicate = (!icmp_ln263)> <Delay = 0.00>
+ST_21 : Operation 147 [3/3] (1.05ns) (grouped into DSP with root node add_ln264)   --->   "%mul_ln264 = mul i18 %zext_ln261_1, i18 1000" [assessment/toplevel.cpp:264]   --->   Operation 147 'mul' 'mul_ln264' <Predicate = (!icmp_ln263)> <Delay = 1.05> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 3> <II = 1> <Delay = 2.15> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 22 <SV = 18> <Delay = 1.05>
+ST_22 : Operation 148 [2/3] (1.05ns) (grouped into DSP with root node add_ln264)   --->   "%mul_ln264 = mul i18 %zext_ln261_1, i18 1000" [assessment/toplevel.cpp:264]   --->   Operation 148 'mul' 'mul_ln264' <Predicate = true> <Delay = 1.05> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 3> <II = 1> <Delay = 2.15> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 23 <SV = 19> <Delay = 2.10>
+ST_23 : Operation 149 [1/3] (0.00ns) (grouped into DSP with root node add_ln264)   --->   "%mul_ln264 = mul i18 %zext_ln261_1, i18 1000" [assessment/toplevel.cpp:264]   --->   Operation 149 'mul' 'mul_ln264' <Predicate = true> <Delay = 0.00> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 3> <II = 1> <Delay = 2.15> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_23 : Operation 150 [1/1] (0.00ns) (grouped into DSP with root node add_ln264)   --->   "%zext_ln264 = zext i18 %mul_ln264" [assessment/toplevel.cpp:264]   --->   Operation 150 'zext' 'zext_ln264' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 151 [2/2] (2.10ns) (root node of the DSP)   --->   "%add_ln264 = add i32 %error_flag_load, i32 %zext_ln264" [assessment/toplevel.cpp:264]   --->   Operation 151 'add' 'add_ln264' <Predicate = true> <Delay = 2.10> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 3> <II = 1> <Delay = 2.15> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 24 <SV = 20> <Delay = 7.30>
+ST_24 : Operation 152 [1/2] (2.10ns) (root node of the DSP)   --->   "%add_ln264 = add i32 %error_flag_load, i32 %zext_ln264" [assessment/toplevel.cpp:264]   --->   Operation 152 'add' 'add_ln264' <Predicate = (!icmp_ln261 & icmp_ln261_1)> <Delay = 2.10> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 3> <II = 1> <Delay = 2.15> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_24 : Operation 153 [1/1] (1.58ns)   --->   "%store_ln264 = store i32 %add_ln264, i32 %error_flag" [assessment/toplevel.cpp:264]   --->   Operation 153 'store' 'store_ln264' <Predicate = (!icmp_ln261 & icmp_ln261_1)> <Delay = 1.58>
+ST_24 : Operation 154 [1/1] (1.58ns)   --->   "%br_ln265 = br void %.loopexit" [assessment/toplevel.cpp:265]   --->   Operation 154 'br' 'br_ln265' <Predicate = (!icmp_ln261 & icmp_ln261_1)> <Delay = 1.58>
+ST_24 : Operation 155 [1/1] (7.30ns)   --->   "%MAXI_addr_req = writereq i1 @_ssdm_op_WriteReq.m_axi.i32P1A, i32 %MAXI_addr, i32 1" [assessment/toplevel.cpp:271]   --->   Operation 155 'writereq' 'MAXI_addr_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 25 <SV = 21> <Delay = 7.30>
+ST_25 : Operation 156 [1/1] (0.00ns)   --->   "%empty_29 = phi i32 %add_ln264, void, i32 0, void %._crit_edge.loopexit, i32 0, void %.loopexit.loopexit" [assessment/toplevel.cpp:264]   --->   Operation 156 'phi' 'empty_29' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 157 [1/1] (0.00ns)   --->   "%total_len_011 = phi i25 %total_len, void, i25 0, void %._crit_edge.loopexit, i25 %total_len, void %.loopexit.loopexit"   --->   Operation 157 'phi' 'total_len_011' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 158 [1/1] (0.00ns)   --->   "%zext_ln271 = zext i25 %total_len_011" [assessment/toplevel.cpp:271]   --->   Operation 158 'zext' 'zext_ln271' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 159 [1/1] (7.30ns)   --->   "%write_ln271 = write void @_ssdm_op_Write.m_axi.i32P1A, i32 %MAXI_addr, i32 %zext_ln271, i4 15" [assessment/toplevel.cpp:271]   --->   Operation 159 'write' 'write_ln271' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_25 : Operation 160 [1/1] (1.00ns)   --->   "%write_ln272 = write void @_ssdm_op_Write.s_axilite.volatile.i32P0A, i32 %code, i32 %empty_29" [assessment/toplevel.cpp:272]   --->   Operation 160 'write' 'write_ln272' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+
+State 26 <SV = 22> <Delay = 7.30>
+ST_26 : Operation 161 [5/5] (7.30ns)   --->   "%MAXI_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %MAXI_addr" [assessment/toplevel.cpp:271]   --->   Operation 161 'writeresp' 'MAXI_addr_resp' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 27 <SV = 23> <Delay = 7.30>
+ST_27 : Operation 162 [4/5] (7.30ns)   --->   "%MAXI_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %MAXI_addr" [assessment/toplevel.cpp:271]   --->   Operation 162 'writeresp' 'MAXI_addr_resp' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 28 <SV = 24> <Delay = 7.30>
+ST_28 : Operation 163 [3/5] (7.30ns)   --->   "%MAXI_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %MAXI_addr" [assessment/toplevel.cpp:271]   --->   Operation 163 'writeresp' 'MAXI_addr_resp' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 29 <SV = 25> <Delay = 7.30>
+ST_29 : Operation 164 [2/5] (7.30ns)   --->   "%MAXI_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %MAXI_addr" [assessment/toplevel.cpp:271]   --->   Operation 164 'writeresp' 'MAXI_addr_resp' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 30 <SV = 26> <Delay = 7.30>
+ST_30 : Operation 165 [1/5] (7.30ns)   --->   "%MAXI_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %MAXI_addr" [assessment/toplevel.cpp:271]   --->   Operation 165 'writeresp' 'MAXI_addr_resp' <Predicate = (!or_ln245)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_30 : Operation 166 [1/1] (0.00ns)   --->   "%br_ln273 = br void" [assessment/toplevel.cpp:273]   --->   Operation 166 'br' 'br_ln273' <Predicate = (!or_ln245)> <Delay = 0.00>
+ST_30 : Operation 167 [1/1] (0.00ns)   --->   "%ret_ln273 = ret" [assessment/toplevel.cpp:273]   --->   Operation 167 'ret' 'ret_ln273' <Predicate = true> <Delay = 0.00>
+
+State 31 <SV = 12> <Delay = 7.30>
+ST_31 : Operation 168 [1/1] (7.30ns)   --->   "%MAXI_addr_req9 = writereq i1 @_ssdm_op_WriteReq.m_axi.i32P1A, i32 %MAXI_addr, i32 1" [assessment/toplevel.cpp:246]   --->   Operation 168 'writereq' 'MAXI_addr_req9' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 32 <SV = 13> <Delay = 7.30>
+ST_32 : Operation 169 [1/1] (7.30ns)   --->   "%write_ln246 = write void @_ssdm_op_Write.m_axi.i32P1A, i32 %MAXI_addr, i32 65535, i4 15" [assessment/toplevel.cpp:246]   --->   Operation 169 'write' 'write_ln246' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_32 : Operation 170 [1/1] (1.00ns)   --->   "%write_ln247 = write void @_ssdm_op_Write.s_axilite.volatile.i32P0A, i32 %code, i32 100" [assessment/toplevel.cpp:247]   --->   Operation 170 'write' 'write_ln247' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+
+State 33 <SV = 14> <Delay = 7.30>
+ST_33 : Operation 171 [5/5] (7.30ns)   --->   "%MAXI_addr_resp10 = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %MAXI_addr" [assessment/toplevel.cpp:246]   --->   Operation 171 'writeresp' 'MAXI_addr_resp10' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 34 <SV = 15> <Delay = 7.30>
+ST_34 : Operation 172 [4/5] (7.30ns)   --->   "%MAXI_addr_resp10 = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %MAXI_addr" [assessment/toplevel.cpp:246]   --->   Operation 172 'writeresp' 'MAXI_addr_resp10' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 35 <SV = 16> <Delay = 7.30>
+ST_35 : Operation 173 [3/5] (7.30ns)   --->   "%MAXI_addr_resp10 = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %MAXI_addr" [assessment/toplevel.cpp:246]   --->   Operation 173 'writeresp' 'MAXI_addr_resp10' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 36 <SV = 17> <Delay = 7.30>
+ST_36 : Operation 174 [2/5] (7.30ns)   --->   "%MAXI_addr_resp10 = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %MAXI_addr" [assessment/toplevel.cpp:246]   --->   Operation 174 'writeresp' 'MAXI_addr_resp10' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 37 <SV = 18> <Delay = 7.30>
+ST_37 : Operation 175 [1/5] (7.30ns)   --->   "%MAXI_addr_resp10 = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %MAXI_addr" [assessment/toplevel.cpp:246]   --->   Operation 175 'writeresp' 'MAXI_addr_resp10' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_37 : Operation 176 [1/1] (0.00ns)   --->   "%br_ln248 = br void" [assessment/toplevel.cpp:248]   --->   Operation 176 'br' 'br_ln248' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 1.59ns
+The critical path consists of the following:
+	'store' operation ('store_ln233', assessment/toplevel.cpp:233) of constant 0 on static variable 'error_flag' [31]  (1.59 ns)
+
+ <State 2>: 7.3ns
+The critical path consists of the following:
+	bus request on port 'MAXI' (assessment/toplevel.cpp:238) [35]  (7.3 ns)
+
+ <State 3>: 7.3ns
+The critical path consists of the following:
+	bus request on port 'MAXI' (assessment/toplevel.cpp:238) [35]  (7.3 ns)
+
+ <State 4>: 7.3ns
+The critical path consists of the following:
+	bus request on port 'MAXI' (assessment/toplevel.cpp:238) [35]  (7.3 ns)
+
+ <State 5>: 7.3ns
+The critical path consists of the following:
+	bus request on port 'MAXI' (assessment/toplevel.cpp:238) [35]  (7.3 ns)
+
+ <State 6>: 7.3ns
+The critical path consists of the following:
+	bus request on port 'MAXI' (assessment/toplevel.cpp:238) [35]  (7.3 ns)
+
+ <State 7>: 7.3ns
+The critical path consists of the following:
+	bus request on port 'MAXI' (assessment/toplevel.cpp:238) [35]  (7.3 ns)
+
+ <State 8>: 7.3ns
+The critical path consists of the following:
+	bus request on port 'MAXI' (assessment/toplevel.cpp:238) [35]  (7.3 ns)
+
+ <State 9>: 2.1ns
+The critical path consists of the following:
+	'phi' operation ('loop_index') with incoming values : ('empty_27') [38]  (0 ns)
+	'icmp' operation ('exitcond10') [41]  (2.1 ns)
+
+ <State 10>: 7.3ns
+The critical path consists of the following:
+	bus read on port 'MAXI' (assessment/toplevel.cpp:238) [46]  (7.3 ns)
+
+ <State 11>: 3.25ns
+The critical path consists of the following:
+	'getelementptr' operation ('local_ram_addr') [47]  (0 ns)
+	'store' operation ('store_ln238', assessment/toplevel.cpp:238) of variable 'MAXI_addr_read', assessment/toplevel.cpp:238 on array 'local_ram' [48]  (3.25 ns)
+
+ <State 12>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('local_ram_load', assessment/toplevel.cpp:241) on array 'local_ram' [51]  (3.25 ns)
+
+ <State 13>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('local_ram_load', assessment/toplevel.cpp:241) on array 'local_ram' [51]  (3.25 ns)
+
+ <State 14>: 6ns
+The critical path consists of the following:
+	'add' operation ('add_ln245', assessment/toplevel.cpp:245) [55]  (2.55 ns)
+	'icmp' operation ('icmp_ln245', assessment/toplevel.cpp:245) [56]  (2.47 ns)
+	'or' operation ('or_ln245', assessment/toplevel.cpp:245) [59]  (0.978 ns)
+
+ <State 15>: 5.17ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', assessment/toplevel.cpp:253) [64]  (0 ns)
+	'add' operation ('add_ln254', assessment/toplevel.cpp:254) [73]  (1.92 ns)
+	'getelementptr' operation ('local_ram_addr_1', assessment/toplevel.cpp:254) [75]  (0 ns)
+	'load' operation ('wp', assessment/toplevel.cpp:254) on array 'local_ram' [76]  (3.25 ns)
+
+ <State 16>: 5.58ns
+The critical path consists of the following:
+	'load' operation ('wp', assessment/toplevel.cpp:254) on array 'local_ram' [76]  (3.25 ns)
+	'store' operation ('store_ln255', assessment/toplevel.cpp:255) of variable 'trunc_ln2', assessment/toplevel.cpp:255 on array 'waypoints.x', assessment/toplevel.cpp:252 [80]  (2.32 ns)
+
+ <State 17>: 5.07ns
+The critical path consists of the following:
+	'add' operation ('add_ln261', assessment/toplevel.cpp:261) [86]  (1.82 ns)
+	'icmp' operation ('icmp_ln261', assessment/toplevel.cpp:261) [87]  (1.66 ns)
+	multiplexor before 'phi' operation ('empty_29', assessment/toplevel.cpp:264) with incoming values : ('add_ln264', assessment/toplevel.cpp:264) [130]  (1.59 ns)
+
+ <State 18>: 4.06ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', assessment/toplevel.cpp:261) [92]  (0 ns)
+	'add' operation ('add_ln262', assessment/toplevel.cpp:262) [106]  (1.74 ns)
+	'getelementptr' operation ('waypoints_x_addr_2', assessment/toplevel.cpp:262) [108]  (0 ns)
+	'load' operation ('waypoints_x_load_1', assessment/toplevel.cpp:262) on array 'waypoints.x', assessment/toplevel.cpp:252 [110]  (2.32 ns)
+
+ <State 19>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('waypoints_x_load', assessment/toplevel.cpp:262) on array 'waypoints.x', assessment/toplevel.cpp:252 [104]  (2.32 ns)
+
+ <State 20>: 0ns
+The critical path consists of the following:
+
+ <State 21>: 2.47ns
+The critical path consists of the following:
+	'load' operation ('error_flag_load', assessment/toplevel.cpp:263) on static variable 'error_flag' [114]  (0 ns)
+	'icmp' operation ('icmp_ln263', assessment/toplevel.cpp:263) [115]  (2.47 ns)
+
+ <State 22>: 1.05ns
+The critical path consists of the following:
+	'mul' operation of DSP[124] ('mul_ln264', assessment/toplevel.cpp:264) [122]  (1.05 ns)
+
+ <State 23>: 2.1ns
+The critical path consists of the following:
+	'mul' operation of DSP[124] ('mul_ln264', assessment/toplevel.cpp:264) [122]  (0 ns)
+	'add' operation of DSP[124] ('add_ln264', assessment/toplevel.cpp:264) [124]  (2.1 ns)
+
+ <State 24>: 7.3ns
+The critical path consists of the following:
+	bus request on port 'MAXI' (assessment/toplevel.cpp:271) [133]  (7.3 ns)
+
+ <State 25>: 7.3ns
+The critical path consists of the following:
+	'phi' operation ('total_len') with incoming values : ('total_len', assessment/toplevel.cpp:267) [131]  (0 ns)
+	bus write on port 'MAXI' (assessment/toplevel.cpp:271) [134]  (7.3 ns)
+
+ <State 26>: 7.3ns
+The critical path consists of the following:
+	bus response on port 'MAXI' (assessment/toplevel.cpp:271) [135]  (7.3 ns)
+
+ <State 27>: 7.3ns
+The critical path consists of the following:
+	bus response on port 'MAXI' (assessment/toplevel.cpp:271) [135]  (7.3 ns)
+
+ <State 28>: 7.3ns
+The critical path consists of the following:
+	bus response on port 'MAXI' (assessment/toplevel.cpp:271) [135]  (7.3 ns)
+
+ <State 29>: 7.3ns
+The critical path consists of the following:
+	bus response on port 'MAXI' (assessment/toplevel.cpp:271) [135]  (7.3 ns)
+
+ <State 30>: 7.3ns
+The critical path consists of the following:
+	bus response on port 'MAXI' (assessment/toplevel.cpp:271) [135]  (7.3 ns)
+
+ <State 31>: 7.3ns
+The critical path consists of the following:
+	bus request on port 'MAXI' (assessment/toplevel.cpp:246) [139]  (7.3 ns)
+
+ <State 32>: 7.3ns
+The critical path consists of the following:
+	bus write on port 'MAXI' (assessment/toplevel.cpp:246) [140]  (7.3 ns)
+
+ <State 33>: 7.3ns
+The critical path consists of the following:
+	bus response on port 'MAXI' (assessment/toplevel.cpp:246) [141]  (7.3 ns)
+
+ <State 34>: 7.3ns
+The critical path consists of the following:
+	bus response on port 'MAXI' (assessment/toplevel.cpp:246) [141]  (7.3 ns)
+
+ <State 35>: 7.3ns
+The critical path consists of the following:
+	bus response on port 'MAXI' (assessment/toplevel.cpp:246) [141]  (7.3 ns)
+
+ <State 36>: 7.3ns
+The critical path consists of the following:
+	bus response on port 'MAXI' (assessment/toplevel.cpp:246) [141]  (7.3 ns)
+
+ <State 37>: 7.3ns
+The critical path consists of the following:
+	bus response on port 'MAXI' (assessment/toplevel.cpp:246) [141]  (7.3 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="true"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<item key="selection" value=""/>
+		<list key="findhistory">
+			<item value="Error se"/>
+			<item value="bit map"/>
+			<item value="bitmap"/>
+			<item value="const "/>
+			<item value="const"/>
+			<item value="hw_mem"/>
+			<item value="HW_MAX_WAYPOINT_WORDS"/>
+			<item value="HW_MEM_WORDS_MAX"/>
+			<item value="HW_MEM_MAX"/>
+			<item value="words_per_row"/>
+			<item value="tes"/>
+			<item value="WS_PORT"/>
+			<item value="nw_ws_ip"/>
+			<item value="udp_res_sem"/>
+			<item value="udp_netif"/>
+		</list>
+		<list key="replacehistory">
+			<item value=""/>
+			<item value="hw_ram"/>
+			<item value="HW_WORDS_MAX"/>
+			<item value="HW_MEM_WORDS_MAX"/>
+			<item value="WORLD_SERVER_PORT"/>
+			<item value="world_server_ip"/>
+			<item value="udp_recv_sem"/>
+			<item value="my_net_if"/>
+			<item value="my_mac_addr"/>
+			<item value="udp_netif"/>
+			<item value="udp_pcb"/>
+			<item value="HW_MEM_MAX"/>
+			<item value="UART_IN_BUF_MAX"/>
+			<item value="FRAME_RES"/>
+			<item value="UDP_RECV_BUF_MAX"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="-2592"/>
+		<item key="DIALOG_Y_ORIGIN" value="-32"/>
+		<item key="DIALOG_WIDTH" value="341"/>
+		<item key="DIALOG_HEIGHT" value="408"/>
+		<item key="DIALOG_FONT_NAME" value="1|Sans|10.0|0|GTK|1|"/>
+	</section>
+</section>

@@ -1,0 +1,1 @@
+set ::AESL_AUTOSIM::gTopFileName /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/./sim/autowrap/testbench/toplevel.cpp_pre.cpp.tb.cpp

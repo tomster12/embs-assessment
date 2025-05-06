@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.jlox": "bat",
+        "*.lox": "ruby",
+        "xil_types.h": "c",
+        "display_ctrl.h": "c"
+    }
+}

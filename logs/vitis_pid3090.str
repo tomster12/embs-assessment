@@ -1,0 +1,278 @@
+/*
+
+Xilinx Vitis v2020.2.0 (64-bit) [Major: 2020, Minor: 2]
+SW Build 3064172 on 2020-11-18-06:24:19
+
+Process ID (PID): 3090
+License: Customer
+
+Current time: 	Thu May 01 11:09:19 BST 2025
+Time zone: 	Greenwich Mean Time (Europe/London)
+
+OS: Ubuntu
+OS Version: 5.15.167.4-microsoft-standard-WSL2
+OS Architecture: amd64
+Available processors (cores): 16
+
+Display: :0
+Screen size: 2560x1440
+Available screens: 2
+Available disk space: 856 GB
+
+Java version: 	11.0.2 64-bit
+Java home: 	/opt/Xilinx/Vitis/2020.2/tps/lnx64/jre11.0.2
+Java executable location: 	/opt/Xilinx/Vitis/2020.2/tps/lnx64/jre11.0.2/bin/java
+Java initial memory (-Xms): 	64 MB
+Java maximum memory (-Xmx):	 1,024 MB
+
+Java library paths: /opt/Xilinx/Vitis/2020.2/tps/lnx64/javafx-sdk-11.0.2/lib:/opt/Xilinx/Vitis/2020.2/lib/lnx64.o/Ubuntu:/opt/Xilinx/Vitis/2020.2/lib/lnx64.o:/opt/Xilinx/Vitis/2020.2/tps/lnx64/jre11.0.2/lib/:/opt/Xilinx/Vitis/2020.2/tps/lnx64/jre11.0.2/lib//server:/opt/Xilinx/Vitis/2020.2/lib/lnx64.o:/opt/Xilinx/Vitis/2020.2/lib/lnx64.o/Ubuntu:/opt/Xilinx/Vitis/2020.2/lib/lnx64.o:/opt/Xilinx/Vitis/2020.2/tps/lnx64/python-3.8.3/lib:/home/tomster12/files/AURO/auro_ws/install/solution_interfaces/lib:/home/tomster12/files/AURO/auro_ws/install/auro_interfaces/lib:/home/tomster12/files/AURO/auro_ws/install/assessment_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/Xilinx/Vivado/2020.2/bin/../lnx64/tools/dot/lib:/opt/Xilinx/Vitis/2020.2/bin/../lnx64/tools/dot/lib:/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib
+
+Java class paths: /opt/Xilinx/Vitis/2020.2/eclipse/lnx64.o//plugins/org.eclipse.equinox.launcher_1.5.700.v20200207-2156.jar
+LD_LIBRARY_PATH: /opt/Xilinx/Vitis
+
+User name: 	tomster12
+User home directory: /home/tomster12
+User working directory: /home/tomster12/files/EMBS/logs
+User country: 	null
+User language: 	en
+User locale: 	en
+
+RDI_BASEROOT: /opt/Xilinx/Vitis
+HDI_APPROOT: /opt/Xilinx/Vitis/2020.2
+RDI_DATADIR: /opt/Xilinx/Vitis/2020.2/data
+RDI_BINDIR: /opt/Xilinx/Vitis/2020.2/bin
+
+Vitis preferences directory: /home/tomster12/.Xilinx/Vitis/2020.2/
+Vitis workspace directory: /home/tomster12/files/EMBS/vitis
+Vitis workspace log file location: /home/tomster12/files/EMBS/vitis/.metadata/.log
+Engine tmp dir: 	
+
+Xilinx Environment Variables
+----------------------------
+XILINX_DSP: 
+XILINX_HLS: /opt/Xilinx/Vitis_HLS/2020.2
+XILINX_PLANAHEAD: /opt/Xilinx/Vitis/2020.2
+XILINX_SDK: /opt/Xilinx/Vitis/2020.2
+XILINX_VITIS: /opt/Xilinx/Vitis/2020.2
+XILINX_VIVADO: /opt/Xilinx/Vivado/2020.2
+XILINX_VIVADO_HLS: /opt/Xilinx/Vivado/2020.2
+_RDI_DONT_SET_XILINX_AS_PATH: True
+
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+selectMenuItem("File", "WorkbenchWindow", "MenuItem.FILE");
+selectMenuItem("New", "WorkbenchWindow", "MenuItem.NEW");
+selectMenuItem("Application Project", "WorkbenchWindow", "MenuItem.APPLICATION_PROJECT");
+selectCheckBox("Skip welcome page next time", Boolean.TRUE, "New Application Project (Create a New Application Project)", "NewAppProjectWizard", "Button.SKIP_WELCOME_PAGE");
+selectButton("Next", "New Application Project (Create a New Application Project)", "NewAppProjectWizard", "Button.NEXT");
+selectTab("Create a new platform from hardware", "New Application Project (Platform)", "NewAppProjectWizard", "CTabItem.CREATE_A_NEW_PLATFORM");
+selectButton("Browse", "New Application Project (Platform)", "NewAppProjectWizard", "Button.BROWSE");
+setFileDialog("/home/tomster12/files/EMBS/vivado/zybo_design_wrapper.xsa", "Create Platform from XSA", "SDXFileDialog", "Button.OK");
+selectButton("Next", "New Application Project (Platform)", "NewAppProjectWizard", "Button.NEXT");
+setTextField("assessment", "New Application Project (Application Project Details)", "NewAppProjectWizard", "Text.APPLICATION_PROJECT_NAME");
+selectButton("Next", "New Application Project (Application Project Details)", "NewAppProjectWizard", "Button.NEXT");
+selectTable("Create new", "New Application Project (Domain)", "NewAppProjectWizard", "Table");
+selectCombo("freertos10_xilinx", "New Application Project (Domain)", "NewAppProjectWizard", "ComboViewer.OPERATING_SYSTEM");
+selectButton("Next", "New Application Project (Domain)", "NewAppProjectWizard", "Button.NEXT");
+selectTreeTable("Empty Application", "SW development templates", "New Application Project (Templates)", "NewAppProjectWizard", "TreeViewer.TemplateContentProvider");
+selectButton("Finish", "New Application Project (Templates)", "NewAppProjectWizard", "Button.FINISH");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectTreeTable("assessment.prj", "assessment_system > assessment", EventType.DOUBLE_CLICK, "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("assessment.prj", "assessment_system > assessment", "assessment", "SDXSettingsEditor", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("assessment_system", "assessment_system/assessment_system.sprj", "SystemSettingsEditor", "CTabItem.ASSESSMENT_SYSTEM");
+closeView("assessment", "assessment/assessment.prj", "SDXSettingsEditor", "CTabItem.ASSESSMENT");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+closeView("assessment_system", "assessment_system/assessment_system.sprj", "SystemSettingsEditor", "CTabItem.ASSESSMENT_SYSTEM");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectToolBarButton("Minimize", "Console", "ConsoleView", "ToolItem.MINIMIZE");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectToolBarButton("Console", "assessment_system", "WorkbenchWindow", "ToolItem.CONSOLE");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectToolBarButton("Restore", "WorkbenchWindow", "ToolItem.RESTORE");
+selectToolBarButton("Minimize", "Console", "ConsoleView", "ToolItem.MINIMIZE");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectToolBarButton("Minimize", "Outline", "ContentOutline", "ToolItem.MINIMIZE");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectToolBarButton("Restore", "assessment_system", "WorkbenchWindow", "ToolItem.RESTORE");
+activateView("Outline", "ContentOutline", "CTabItem.OUTLINE");
+selectToolBarButton("Minimize", "Outline", "ContentOutline", "ToolItem.MINIMIZE");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectTreeTable("src", "assessment_system > assessment", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("assessment", "assessment_system", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("assessment_system.sprj", "assessment_system", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("assessment_system", "assessment_system", EventType.DOUBLE_CLICK, "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("zybo_design_wrapper", "assessment_system", EventType.DOUBLE_CLICK, "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("assessment", "assessment_system", EventType.DOUBLE_CLICK, "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("assessment.prj", "assessment_system > assessment", EventType.DOUBLE_CLICK, "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("assessment.prj", "assessment_system > assessment", "assessment", "SDXSettingsEditor", "TreeViewer.NavigatorContentServiceContentProvider");
+selectButton("Navigate to BSP Settings", "assessment", "SDXSettingsEditor", "Button.NAVIGATE_TO_BSP");
+selectTab("Drivers", "Drivers", "ScwEditor", "TabItem.DRIVERS");
+selectTree("Board Support Package", "zybo_design_wrapper > ps7_cortexa9_0 > freertos10_xilinx_ps7_cortexa9_0", "zybo_design_wrapper", "ScwEditor", "Tree");
+selectButton("Modify BSP Settings", "zybo_design_wrapper", "ScwEditor", "Button.MODIFY_BSP_SETTINGS");
+selectTreeTable("Overview", "Board Support Package Settings", "BspSettingsView", "TreeViewer.NavInfoProvider");
+selectTreeTable("lwip211", "Overview > freertos10_xilinx", "Board Support Package Settings", "BspSettingsView", "TreeViewer.NavInfoProvider");
+selectTreeTable("api_mode", "Overview > freertos10_xilinx", EventType.DOUBLE_CLICK, "Board Support Package Settings", "BspSettingsView", "TreeViewer.PropertyProvider");
+selectTreeTable("lwip_dhcp", "dhcp_options", "Board Support Package Settings", "BspSettingsView", "TreeViewer.PropertyProvider");
+selectButton("OK", "Board Support Package Settings", "BspSettingsView", "Button.OK");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectTreeTable("bitstream", "assessment_system > assessment > _ide", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("zybo_design_wrapper.bit", "assessment_system > assessment > _ide > bitstream", EventType.DOUBLE_CLICK, "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("psinit", "assessment_system > assessment > _ide", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("zybo_design_wrapper.bit", "assessment_system > assessment > _ide > bitstream", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("psinit", "assessment_system > assessment > _ide", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("zybo_design_wrapper.bit", "assessment_system > assessment > _ide > bitstream", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("bitstream", "assessment_system > assessment > _ide", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("_ide", "assessment_system > assessment", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("assessment.prj", "assessment_system > assessment", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("_ide", "assessment_system > assessment", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("src", "assessment_system > assessment", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("Includes", "assessment_system > assessment", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectTreeTable("/opt/Xilinx/Vitis/2020.2/gnu/aarch32/lin/gcc-arm-no", "assessment_system > assessment > Includes", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+closeView("assessment", "assessment/assessment.prj", "SDXSettingsEditor", "CTabItem.ASSESSMENT");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+closeView("zybo_design_wrapper", "zybo_design_wrapper/platform.spr", "ScwEditor", "CTabItem.ZYBO_DESIGN_WRAPPER");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectTreeTable("src", "assessment_system > assessment", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("lscript.ld", "assessment_system > assessment > src", EventType.DOUBLE_CLICK, "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("lscript.ld", "assessment_system > assessment > src", "lscript.ld", "LscriptEditor", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+closeView("lscript.ld", "assessment/src/lscript.ld", "LscriptEditor", "CTabItem.LSCRIPT_LD");
+selectTreeTable("README.txt", "assessment_system > assessment > src", EventType.DOUBLE_CLICK, "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("Xilinx.spec", "assessment_system > assessment > src", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("README.txt", "assessment_system > assessment > src", EventType.DOUBLE_CLICK, "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("README.txt", "assessment_system > assessment > src", "README.txt", "TextEditor", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectTreeTable("README.txt", "assessment_system > assessment > src", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectButton("OK", "Delete Resources", "RefactoringWizardDialog2", "Button.OK");
+selectTreeTable("Xilinx.spec", "assessment_system > assessment > src", EventType.DOUBLE_CLICK, "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("Xilinx.spec", "assessment_system > assessment > src", "Xilinx.spec", "TextEditor", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+closeView("Xilinx.spec", "assessment/src/Xilinx.spec", "TextEditor", "CTabItem.XILINX_SPEC");
+selectTreeTable("lscript.ld", "assessment_system > assessment > src", EventType.POPUP_TRIGGER_CLICK, "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("src", "assessment_system > assessment", EventType.POPUP_TRIGGER_CLICK, "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectMenuItem("New", "Explorer", "ProjectExplorer", "MenuItem.NEW");
+selectMenuItem("File", "assessment", "WorkbenchWindow", "MenuItem.FILE");
+selectButton("Finish", "Create New File (File)", "BasicNewFileResourceWizard", "Button.FINISH");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectTreeTable("lscript.ld", "assessment_system > assessment > src", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("main.c", "assessment_system > assessment > src", EventType.DOUBLE_CLICK, "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("main.c", "assessment_system > assessment > src", "main.c", "CEditor", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectTreeTable("src", "assessment_system > assessment", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("assessment", "assessment_system", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("assessment_system", "assessment_system", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("main.c", "assessment_system > assessment > src", EventType.DOUBLE_CLICK, "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("main.c", "assessment_system > assessment > src", "main.c", "CEditor", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectTreeTable("assessment", "assessment_system", EventType.POPUP_TRIGGER_CLICK, "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectToolBarMenuButton("Run", "assessment", "WorkbenchWindow", "ToolItem.RUN");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectTreeTable("Release", "assessment_system", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectTreeTable("assessment", "assessment_system", "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectTreeTable("assessment_system", "assessment_system", "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectToolBarButton("View Menu", "Assistant", "SDXAssistantView", "ToolItem.VIEW_MENU");
+selectToolBarButton("Build Debug for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_DEBUG_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectToolBarButton("Restore", "assessment", "WorkbenchWindow", "ToolItem.RESTORE");
+selectTreeTable("Debug", "assessment_system > assessment", "User Operation is Waiting", "BlockedJobsDialog", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Debug", "assessment_system > assessment", "User Operation is Waiting", "BlockedJobsDialog", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("Debug", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectTreeTable("Release", "assessment_system > assessment", EventType.DOUBLE_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectTreeTable("Debug", "assessment_system > assessment", "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectTreeTable("Release", "assessment_system > assessment", "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectTreeTable("Debug", "assessment_system > assessment", "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectTreeTable("assessment_system", "assessment_system > assessment", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectToolBarButton("Run Debug for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_DEBUG_FOR_PROJECT");
+selectMenuItem("Launch Hardware", "Assistant", "SDXAssistantView", "MenuItem.LAUNCH_HARDWARE");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Run Debug for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_DEBUG_FOR_PROJECT");
+selectMenuItem("SystemDebugger_assessment_system", "Assistant", "WorkbenchWindow", "MenuItem.SYSTEMDEBUGGER_ASSESSMENT_SYSTEM");
+activateView("Vitis Log", "SdkLogView", "CTabItem.VITIS_LOG");
+selectToolBarButton("Shows background operations in Progress view", "assessment", "WorkbenchWindow", "ToolItem.SHOWS_BACKGROUND");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectButton("OK", "Error Launching Program", "ErrorDialog", "Button.OK");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectTreeTable("main.c", "assessment_system > assessment > src", "main.c", "CEditor", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Run Debug for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_DEBUG_FOR_PROJECT");
+selectMenuItem("SystemDebugger_assessment_system", "Assistant", "WorkbenchWindow", "MenuItem.SYSTEMDEBUGGER_ASSESSMENT_SYSTEM");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectButton("Details", "Error Launching Program", "ErrorDialog", "Button.DETAILS");
+selectButton("OK", "Error Launching Program", "ErrorDialog", "Button.OK");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectToolBarButton("Build Debug for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_DEBUG_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Debug", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectToolBarButton("Run Debug for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_DEBUG_FOR_PROJECT");
+selectMenuItem("Launch Hardware", "Assistant", "SDXAssistantView", "MenuItem.LAUNCH_HARDWARE");
+selectToolBarButton("Run Debug for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_DEBUG_FOR_PROJECT");
+selectMenuItem("Run Configurations", "Assistant", "SDXAssistantView", "MenuItem.RUN_CONFIGURATIONS");
+selectButton("OK", "Error Launching Program", "ErrorDialog", "Button.OK");
+selectTree("SystemDebugger_assessment_system_1", "System Project Debug", "Run Configurations", "LaunchConfigurationsDialog", "Tree");
+selectTree("SystemDebugger_assessment_system", "System Project Debug", "Run Configurations", "LaunchConfigurationsDialog", "Tree");
+selectTree("SystemDebugger_assessment_system_1", "System Project Debug", "Run Configurations", "LaunchConfigurationsDialog", "Tree");
+selectTree("SystemDebugger_assessment_system", "System Project Debug", "Run Configurations", "LaunchConfigurationsDialog", "Tree");
+selectTab("Target Setup", "Run Configurations", "LaunchConfigurationsDialog", "CTabItem.TARGET_SETUP");
+selectTab("Environment", "Run Configurations", "LaunchConfigurationsDialog", "CTabItem.ENVIRONMENT");
+selectTab("Common", "Run Configurations", "LaunchConfigurationsDialog", "CTabItem.COMMON");
+selectTab("Main", "Run Configurations", "LaunchConfigurationsDialog", "CTabItem.MAIN");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectToolBarButton("Run Debug for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_DEBUG_FOR_PROJECT");
+selectTreeTable("assessment_system", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectMenuItem("Window", "assessment", "WorkbenchWindow", "MenuItem.WINDOW");
+selectMenuItem("Show view", "assessment", "WorkbenchWindow", "MenuItem.SHOW_VIEW");
+selectTree("Other", EventType.DOUBLE_CLICK, "Show View", "ShowViewDialog", "Tree.ApplicationImpl");
+selectButton("Cancel", "Show View", "ShowViewDialog", "Button.CANCEL");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Run Debug for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_DEBUG_FOR_PROJECT");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectTreeTable("assessment_system", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectMenuItem("Run", "Assistant", "SDXAssistantView", "MenuItem.RUN");
+selectMenuItem("Run Configurations", "assessment_system", "WorkbenchWindow", "MenuItem.RUN_CONFIGURATIONS");
+selectTree("SystemDebugger_assessment_system_1", "System Project Debug", EventType.POPUP_TRIGGER_CLICK, "Run Configurations", "LaunchConfigurationsDialog", "Tree");
+selectMenuItem("Delete", "Run Configurations", "LaunchConfigurationsDialog", "MenuItem.DELETE");
+selectButton("Delete", "Confirm Launch Configuration Deletion", "MessageDialog", "Button.DELETE");
+selectTree("SystemDebugger_assessment_system", "System Project Debug", "Run Configurations", "LaunchConfigurationsDialog", "Tree");
+setTextField("Assessment System", "Run Configurations", "LaunchConfigurationsDialog", "Text.NAME");
+selectCheckBox("Disable build before launch", Boolean.FALSE, "Run Configurations", "LaunchConfigurationsDialog", "Button.DISABLE_BUILD_BEFORE");
+selectButton("New", "Run Configurations", "LaunchConfigurationsDialog", "Button.NEW");
+setTextField("localhost", "Target Connection Details", "NewTargetDialogue", "Text.HOST");
+setTextField("12345", "Target Connection Details", "NewTargetDialogue", "Text.PORT");
+setTextField("VLAB", "Target Connection Details", "NewTargetDialogue", "Text.TARGET_NAME");
+selectButton("Test Connection", "Target Connection Details", "NewTargetDialogue", "Button.TEST_CONNECTION");
+selectButton("OK", "Connection successful", "MessageDialog", "Button.OK");
+selectButton("OK", "Target Connection Details", "NewTargetDialogue", "Button.OK");
+selectCombo("VLAB", "Run Configurations", "LaunchConfigurationsDialog", "Combo.HARDWARE_SERVER");
+selectButton("Apply", "Run Configurations", "LaunchConfigurationsDialog", "Button.APPLY");
+selectButton("Run", "Run Configurations", "LaunchConfigurationsDialog", "Button.RUN");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectTreeTable("src", "assessment_system > assessment", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectTreeTable("src", "assessment_system > assessment", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Problems", "ProblemsView", "CTabItem.PROBLEMS");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+activateView("Vitis Log", "SDKLogView", "CTabItem.VITIS_LOG");
+activateView("Guidance", "SDXDrcView", "CTabItem.GUIDANCE");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("main.c", "assessment_system > assessment > src", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Run Debug for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_DEBUG_FOR_PROJECT");
+selectMenuItem("Assessment System", "Assistant", "SDXAssistantView", "MenuItem.ASSESSMENT_SYSTEM");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectTreeTable("main.c", "assessment_system > assessment > src", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("src", "assessment_system > assessment", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectButton("Exit", "Confirm Exit", "MessageDialogWithToggle", "Button.EXIT");
+// Exiting Xilinx Vitis with a status code '0' at 5/1/25, 12:13:56 PM BST
+// Elapsed time: 01:04:36
+

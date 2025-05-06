@@ -1,0 +1,79 @@
+/*
+
+Xilinx Vivado v2020.2 (64-bit) [Major: 2020, Minor: 2]
+SW Build: 3064766 on Wed Nov 18 09:12:47 MST 2020
+IP Build: 3064653 on Wed Nov 18 14:17:31 MST 2020
+
+Process ID (PID): 1086
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Fri May 02 10:53:12 BST 2025
+Time zone: 	Greenwich Mean Time (Europe/London)
+
+OS: Ubuntu
+OS Version: 5.15.167.4-microsoft-standard-WSL2
+OS Architecture: amd64
+Available processors (cores): 16
+
+Display: 0
+Screen size: 2560x1440
+Screen resolution (DPI): 100
+Available screens: 2
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+Scale size: 12
+
+Java version: 	11.0.2 64-bit
+Java home: 	/opt/Xilinx/Vivado/2020.2/tps/lnx64/jre11.0.2
+Java executable location: 	/opt/Xilinx/Vivado/2020.2/tps/lnx64/jre11.0.2/bin/java
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	tomster12
+User home directory: /home/tomster12
+User working directory: /home/tomster12/files/EMBS/logs
+User country: 	null
+User language: 	en
+User locale: 	en
+
+RDI_BASEROOT: /opt/Xilinx/Vivado
+HDI_APPROOT: /opt/Xilinx/Vivado/2020.2
+RDI_DATADIR: /opt/Xilinx/Vivado/2020.2/data
+RDI_BINDIR: /opt/Xilinx/Vivado/2020.2/bin
+
+Vivado preferences file location: /home/tomster12/.Xilinx/Vivado/2020.2/vivado.xml
+Vivado preferences directory: /home/tomster12/.Xilinx/Vivado/2020.2/
+Vivado layouts directory: /home/tomster12/.Xilinx/Vivado/2020.2/data/layouts
+PlanAhead jar file location: 	/opt/Xilinx/Vivado/2020.2/lib/classes/planAhead.jar
+Vivado log file location: 	/home/tomster12/files/EMBS/logs/vivado.log
+Vivado journal file location: 	/home/tomster12/files/EMBS/logs/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-1086-DESKTOP-Q62E4QT
+
+Xilinx Environment Variables
+----------------------------
+XILINX: /opt/Xilinx/Vivado/2020.2/ids_lite/ISE
+XILINX_DSP: /opt/Xilinx/Vivado/2020.2/ids_lite/ISE
+XILINX_HLS: /opt/Xilinx/Vitis_HLS/2020.2
+XILINX_PLANAHEAD: /opt/Xilinx/Vivado/2020.2
+XILINX_SDK: /opt/Xilinx/Vitis/2020.2
+XILINX_VITIS: /opt/Xilinx/Vitis/2020.2
+XILINX_VIVADO: /opt/Xilinx/Vivado/2020.2
+XILINX_VIVADO_HLS: /opt/Xilinx/Vivado/2020.2
+
+
+GUI allocated memory:	154 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 1,468 MB
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// Tcl Command: 'rdi::info_commands {device::*}'
+// Tcl Command: 'rdi::info_commands {debug::*}'
+// Tcl Command: 'rdi::info_commands {*}'
+// WARNING: HEventQueue.dispatchEvent() is taking  1002 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,468 MB. GUI used memory: 64 MB. Current time: 5/2/25, 10:53:13 AM BST

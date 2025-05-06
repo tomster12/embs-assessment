@@ -1,0 +1,15 @@
+#
+# An unexpected error has occurred (6)
+#
+Stack:
+/lib/x86_64-linux-gnu/libc.so.6(+0x42520) [0x7fce9b019520]
+/lib/x86_64-linux-gnu/libc.so.6(pthread_kill+0x12c) [0x7fce9b06d9fc]
+/lib/x86_64-linux-gnu/libc.so.6(raise+0x16) [0x7fce9b019476]
+/lib/x86_64-linux-gnu/libc.so.6(abort+0xd3) [0x7fce9afff7f3]
+/opt/Xilinx/Vivado/2020.2/lib/lnx64.o/Ubuntu/libstdc++.so.6(_ZN9__gnu_cxx27__verbose_terminate_handlerEv+0x15d) [0x7fce9b69033d]
+/opt/Xilinx/Vivado/2020.2/lib/lnx64.o/Ubuntu/libstdc++.so.6(+0x8e316) [0x7fce9b68e316]
+/opt/Xilinx/Vivado/2020.2/lib/lnx64.o/Ubuntu/libstdc++.so.6(+0x8e361) [0x7fce9b68e361]
+/opt/Xilinx/Vivado/2020.2/lib/lnx64.o/Ubuntu/libstdc++.so.6(+0x8ee2f) [0x7fce9b68ee2f]
+/opt/Xilinx/Vivado/2020.2/lib/lnx64.o/librdi_coregen.so(HRSBMoNamedObject::getFullName[abi:cxx11]() const+0xf9) [0x7fce8516a5b9]
+/opt/Xilinx/Vivado/2020.2/lib/lnx64.o/librdi_rsb.so(Java_ui_data_rsbi_RSBBlockInterface_1getFullName+0x49) [0x7fce5a181269]
+[0x7fce244678b0]

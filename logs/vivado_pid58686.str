@@ -1,0 +1,226 @@
+/*
+
+Xilinx Vivado v2020.2 (64-bit) [Major: 2020, Minor: 2]
+SW Build: 3064766 on Wed Nov 18 09:12:47 MST 2020
+IP Build: 3064653 on Wed Nov 18 14:17:31 MST 2020
+
+Process ID (PID): 58686
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Thu May 01 14:14:22 BST 2025
+Time zone: 	Greenwich Mean Time (Europe/London)
+
+OS: Ubuntu
+OS Version: 5.15.167.4-microsoft-standard-WSL2
+OS Architecture: amd64
+Available processors (cores): 16
+
+Display: 0
+Screen size: 2560x1440
+Screen resolution (DPI): 100
+Available screens: 2
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+Scale size: 12
+
+Java version: 	11.0.2 64-bit
+Java home: 	/opt/Xilinx/Vivado/2020.2/tps/lnx64/jre11.0.2
+Java executable location: 	/opt/Xilinx/Vivado/2020.2/tps/lnx64/jre11.0.2/bin/java
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	tomster12
+User home directory: /home/tomster12
+User working directory: /home/tomster12/files/EMBS/logs
+User country: 	null
+User language: 	en
+User locale: 	en
+
+RDI_BASEROOT: /opt/Xilinx/Vivado
+HDI_APPROOT: /opt/Xilinx/Vivado/2020.2
+RDI_DATADIR: /opt/Xilinx/Vivado/2020.2/data
+RDI_BINDIR: /opt/Xilinx/Vivado/2020.2/bin
+
+Vivado preferences file location: /home/tomster12/.Xilinx/Vivado/2020.2/vivado.xml
+Vivado preferences directory: /home/tomster12/.Xilinx/Vivado/2020.2/
+Vivado layouts directory: /home/tomster12/.Xilinx/Vivado/2020.2/data/layouts
+PlanAhead jar file location: 	/opt/Xilinx/Vivado/2020.2/lib/classes/planAhead.jar
+Vivado log file location: 	/home/tomster12/files/EMBS/logs/vivado.log
+Vivado journal file location: 	/home/tomster12/files/EMBS/logs/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-58686-DESKTOP-Q62E4QT
+
+Xilinx Environment Variables
+----------------------------
+XILINX: /opt/Xilinx/Vivado/2020.2/ids_lite/ISE
+XILINX_DSP: /opt/Xilinx/Vivado/2020.2/ids_lite/ISE
+XILINX_HLS: /opt/Xilinx/Vitis_HLS/2020.2
+XILINX_PLANAHEAD: /opt/Xilinx/Vivado/2020.2
+XILINX_SDK: /opt/Xilinx/Vitis/2020.2
+XILINX_VITIS: /opt/Xilinx/Vitis/2020.2
+XILINX_VIVADO: /opt/Xilinx/Vivado/2020.2
+XILINX_VIVADO_HLS: /opt/Xilinx/Vivado/2020.2
+
+
+GUI allocated memory:	154 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 1,463 MB
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// Tcl Command: 'rdi::info_commands {device::*}'
+// Tcl Command: 'rdi::info_commands {debug::*}'
+// Tcl Command: 'rdi::info_commands {*}'
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,463 MB. GUI used memory: 64 MB. Current time: 5/1/25, 2:14:23 PM BST
+// WARNING: HEventQueue.dispatchEvent() is taking  1003 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1005 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1002 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1002 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1003 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1002 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1009 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+selectList(PAResourceQtoS.SyntheticaGettingStartedView_RECENT_PROJECTS, "/home/tomster12/files/EMBS/vivado/vivado.xpr", 0); // r
+// bz (cr):  Open Project : addNotify
+// Opening Vivado Project: /home/tomster12/files/EMBS/vivado/vivado.xpr. Version: Vivado v2020.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project /home/tomster12/files/EMBS/vivado/vivado.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 83 MB (+84711kb) [00:00:35]
+// [Engine Memory]: 1,487 MB (+1408002kb) [00:00:35]
+// [GUI Memory]: 96 MB (+8723kb) [00:00:35]
+// [GUI Memory]: 112 MB (+11695kb) [00:00:36]
+// [Engine Memory]: 1,574 MB (+12795kb) [00:00:36]
+// [GUI Memory]: 128 MB (+11421kb) [00:00:36]
+// WARNING: HEventQueue.dispatchEvent() is taking  2246 ms.
+// Tcl Message: open_project /home/tomster12/files/EMBS/vivado/vivado.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/tomster12/files/EMBS/zybo-z7-hdmi/hardware/zybo_z7_hdmi_repo'. INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2020.2/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,587 MB. GUI used memory: 82 MB. Current time: 5/1/25, 2:14:54 PM BST
+// Project name: vivado; location: /home/tomster12/files/EMBS/vivado; part: xc7z010clg400-1
+dismissDialog("Open Project"); // bz
+// [GUI Memory]: 142 MB (+7765kb) [00:00:42]
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 34 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_HELP, "Help"); // ac
+dismissMenu(PAResourceItoN.MainMenuMgr_HELP, "Help"); // ac
+selectMenu(PAResourceItoN.MainMenuMgr_VIEW, "View"); // ac
+dismissMenu(PAResourceItoN.MainMenuMgr_VIEW, "View"); // ac
+selectMenu(PAResourceItoN.MainMenuMgr_HELP, "Help"); // ac
+dismissMenu(PAResourceItoN.MainMenuMgr_HELP, "Help"); // ac
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ac
+selectMenu(RDIResourceCommand.RDICommands_CUSTOM_COMMANDS, "Custom Commands"); // ah
+selectMenu(RDIResourceCommand.RDICommands_CUSTOM_COMMANDS, "Custom Commands"); // ah
+selectMenuItem((HResource) null, "Launch Vitis IDE"); // ak
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ac
+// bz (cr):  Launch Vitis IDE : addNotify
+dismissDialog("Launch Vitis IDE"); // bz
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager]", 21, true); // u - Node
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// Tcl Command: 'load_features labtools'
+// TclEventType: LOAD_FEATURE
+// bz (cr):  Open Hardware Manager : addNotify
+// TclEventType: HW_SESSION_OPEN
+// WARNING: HEventQueue.dispatchEvent() is taking  1614 ms.
+// Tcl Message: open_hw_manager 
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+// [Engine Memory]: 1,661 MB (+9271kb) [00:01:21]
+dismissDialog("Open Hardware Manager"); // bz
+// HMemoryUtils.trashcanNow. Engine heap size: 1,661 MB. GUI used memory: 84 MB. Current time: 5/1/25, 2:15:37 PM BST
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // h
+selectMenu(PAResourceOtoP.ProgramDebugTab_OPEN_RECENTLY_OPENED_TARGET, "Recent Targets"); // ah
+selectMenuItem((HResource) null, "localhost:12345,xilinx_tcf/Digilent/210351A7809BA,PARAM.FREQUENCY:15000000"); // ak
+// bz (cr):  Open Hardware Target : addNotify
+// Tcl Message: connect_hw_server -url localhost:12345 -allow_non_jtag 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:12345 
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042 INFO: [Labtools 27-3417] Launching cs_server... 
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:   ******** Xilinx cs_server v2020.2   ****** Build date   : Nov 03 2020-21:02:56     **** Build number : 2020.2.1604437376       ** Copyright 2017-2020 Xilinx, Inc. All Rights Reserved.    
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: current_hw_target [get_hw_targets */xilinx_tcf/Digilent/210351A7809BA] 
+// Tcl Message: ERROR: [Labtoolstcl 44-199] No matching targets found on connected servers: localhost Resolution: If needed connect the desired target to a server and use command refresh_hw_server. Then rerun the get_hw_targets command. 
+// Tcl Message: ERROR: [Common 17-39] 'get_hw_targets' failed due to earlier errors. 
+// CommandFailedException: ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'get_hw_targets' failed due to earlier errors.  
+// cN (cr): Critical Messages: addNotify
+dismissDialog("Open Hardware Target"); // bz
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f
+dismissDialog("Critical Messages"); // cN
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "xilinx_tcf/Digilent/210351A780DAA (0) ; Closed", 1, "xilinx_tcf/Digilent/210351A780DAA (0)", 0, false, false, false, false, true, false); // t - Popup Trigger
+selectMenuItem(PAResourceCommand.PACommandNames_OPEN_TARGET, "Open Target"); // ak
+// Run Command: PAResourceCommand.PACommandNames_OPEN_TARGET
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// Tcl Message: open_hw_target {localhost:12345/xilinx_tcf/Digilent/210351A780DAA} 
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:12345/xilinx_tcf/Digilent/210351A780DAA 
+// bz (cr):  Open Target : addNotify
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// WARNING: HEventQueue.dispatchEvent() is taking  1932 ms.
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {/home/tomster12/files/EMBS/vivado/vivado.runs/impl_1/zybo_design_wrapper.bit} [get_hw_devices xc7z010_1] 
+// Tcl Message: current_hw_device [get_hw_devices xc7z010_1] 
+// Tcl Message: refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7z010_1] 0] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// [Engine Memory]: 2,481 MB (+772456kb) [00:01:36]
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-1435] Device xc7z010 (JTAG device index = 1) is not programmed (DONE status = 0). 
+dismissDialog("Open Target"); // bz
+// HMemoryUtils.trashcanNow. Engine heap size: 2,523 MB. GUI used memory: 87 MB. Current time: 5/1/25, 2:29:10 PM BST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,523 MB. GUI used memory: 86 MB. Current time: 5/1/25, 2:59:15 PM BST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,523 MB. GUI used memory: 76 MB. Current time: 5/1/25, 3:29:17 PM BST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,523 MB. GUI used memory: 76 MB. Current time: 5/1/25, 3:59:18 PM BST
