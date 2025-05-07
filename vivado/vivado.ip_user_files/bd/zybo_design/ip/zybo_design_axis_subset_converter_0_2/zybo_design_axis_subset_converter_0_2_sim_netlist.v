@@ -1,16 +1,102 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-// Date        : Fri May  2 16:21:53 2025
+// Date        : Fri May  2 16:21:52 2025
 // Host        : DESKTOP-Q62E4QT running 64-bit Ubuntu 22.04.5 LTS
-// Command     : write_verilog -force -mode funcsim
-//               /home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/ip/zybo_design_axis_subset_converter_0_2/zybo_design_axis_subset_converter_0_2_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top zybo_design_axis_subset_converter_0_2 -prefix
+//               zybo_design_axis_subset_converter_0_2_ zybo_design_axis_subset_converter_0_2_sim_netlist.v
 // Design      : zybo_design_axis_subset_converter_0_2
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
 // Device      : xc7z010clg400-1
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
+
+(* C_DEFAULT_TLAST = "0" *) (* C_FAMILY = "zynq" *) (* C_M_AXIS_SIGNAL_SET = "155" *) 
+(* C_M_AXIS_TDATA_WIDTH = "24" *) (* C_M_AXIS_TDEST_WIDTH = "1" *) (* C_M_AXIS_TID_WIDTH = "1" *) 
+(* C_M_AXIS_TUSER_WIDTH = "1" *) (* C_S_AXIS_SIGNAL_SET = "155" *) (* C_S_AXIS_TDATA_WIDTH = "32" *) 
+(* C_S_AXIS_TDEST_WIDTH = "1" *) (* C_S_AXIS_TID_WIDTH = "1" *) (* C_S_AXIS_TUSER_WIDTH = "1" *) 
+(* G_INDX_SS_TDATA = "1" *) (* G_INDX_SS_TDEST = "6" *) (* G_INDX_SS_TID = "5" *) 
+(* G_INDX_SS_TKEEP = "3" *) (* G_INDX_SS_TLAST = "4" *) (* G_INDX_SS_TREADY = "0" *) 
+(* G_INDX_SS_TSTRB = "2" *) (* G_INDX_SS_TUSER = "7" *) (* G_MASK_SS_TDATA = "2" *) 
+(* G_MASK_SS_TDEST = "64" *) (* G_MASK_SS_TID = "32" *) (* G_MASK_SS_TKEEP = "8" *) 
+(* G_MASK_SS_TLAST = "16" *) (* G_MASK_SS_TREADY = "1" *) (* G_MASK_SS_TSTRB = "4" *) 
+(* G_MASK_SS_TUSER = "128" *) (* G_TASK_SEVERITY_ERR = "2" *) (* G_TASK_SEVERITY_INFO = "0" *) 
+(* G_TASK_SEVERITY_WARNING = "1" *) 
+module zybo_design_axis_subset_converter_0_2_top_zybo_design_axis_subset_converter_0_2
+   (aclk,
+    aresetn,
+    aclken,
+    s_axis_tvalid,
+    s_axis_tready,
+    s_axis_tdata,
+    s_axis_tstrb,
+    s_axis_tkeep,
+    s_axis_tlast,
+    s_axis_tid,
+    s_axis_tdest,
+    s_axis_tuser,
+    m_axis_tvalid,
+    m_axis_tready,
+    m_axis_tdata,
+    m_axis_tstrb,
+    m_axis_tkeep,
+    m_axis_tlast,
+    m_axis_tid,
+    m_axis_tdest,
+    m_axis_tuser,
+    transfer_dropped,
+    sparse_tkeep_removed);
+  input aclk;
+  input aresetn;
+  input aclken;
+  input s_axis_tvalid;
+  output s_axis_tready;
+  input [31:0]s_axis_tdata;
+  input [3:0]s_axis_tstrb;
+  input [3:0]s_axis_tkeep;
+  input s_axis_tlast;
+  input [0:0]s_axis_tid;
+  input [0:0]s_axis_tdest;
+  input [0:0]s_axis_tuser;
+  output m_axis_tvalid;
+  input m_axis_tready;
+  output [23:0]m_axis_tdata;
+  output [2:0]m_axis_tstrb;
+  output [2:0]m_axis_tkeep;
+  output m_axis_tlast;
+  output [0:0]m_axis_tid;
+  output [0:0]m_axis_tdest;
+  output [0:0]m_axis_tuser;
+  output transfer_dropped;
+  output sparse_tkeep_removed;
+
+  wire \<const0> ;
+  wire m_axis_tready;
+  wire [31:0]s_axis_tdata;
+  wire [3:0]s_axis_tkeep;
+  wire s_axis_tlast;
+  wire [0:0]s_axis_tuser;
+  wire s_axis_tvalid;
+
+  assign m_axis_tdata[23:16] = s_axis_tdata[23:16];
+  assign m_axis_tdata[15:8] = s_axis_tdata[7:0];
+  assign m_axis_tdata[7:0] = s_axis_tdata[15:8];
+  assign m_axis_tdest[0] = \<const0> ;
+  assign m_axis_tid[0] = \<const0> ;
+  assign m_axis_tkeep[2:0] = s_axis_tkeep[2:0];
+  assign m_axis_tlast = s_axis_tlast;
+  assign m_axis_tstrb[2] = \<const0> ;
+  assign m_axis_tstrb[1] = \<const0> ;
+  assign m_axis_tstrb[0] = \<const0> ;
+  assign m_axis_tuser[0] = s_axis_tuser;
+  assign m_axis_tvalid = s_axis_tvalid;
+  assign s_axis_tready = m_axis_tready;
+  assign sparse_tkeep_removed = \<const0> ;
+  assign transfer_dropped = \<const0> ;
+  GND GND
+       (.G(\<const0> ));
+endmodule
 
 (* CHECK_LICENSE_TYPE = "zybo_design_axis_subset_converter_0_2,top_zybo_design_axis_subset_converter_0_2,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* X_CORE_INFO = "top_zybo_design_axis_subset_converter_0_2,Vivado 2020.2" *) 
 (* NotValidForBitStream *)
@@ -117,92 +203,6 @@ module zybo_design_axis_subset_converter_0_2
         .s_axis_tvalid(s_axis_tvalid),
         .sparse_tkeep_removed(NLW_inst_sparse_tkeep_removed_UNCONNECTED),
         .transfer_dropped(NLW_inst_transfer_dropped_UNCONNECTED));
-endmodule
-
-(* C_DEFAULT_TLAST = "0" *) (* C_FAMILY = "zynq" *) (* C_M_AXIS_SIGNAL_SET = "155" *) 
-(* C_M_AXIS_TDATA_WIDTH = "24" *) (* C_M_AXIS_TDEST_WIDTH = "1" *) (* C_M_AXIS_TID_WIDTH = "1" *) 
-(* C_M_AXIS_TUSER_WIDTH = "1" *) (* C_S_AXIS_SIGNAL_SET = "155" *) (* C_S_AXIS_TDATA_WIDTH = "32" *) 
-(* C_S_AXIS_TDEST_WIDTH = "1" *) (* C_S_AXIS_TID_WIDTH = "1" *) (* C_S_AXIS_TUSER_WIDTH = "1" *) 
-(* G_INDX_SS_TDATA = "1" *) (* G_INDX_SS_TDEST = "6" *) (* G_INDX_SS_TID = "5" *) 
-(* G_INDX_SS_TKEEP = "3" *) (* G_INDX_SS_TLAST = "4" *) (* G_INDX_SS_TREADY = "0" *) 
-(* G_INDX_SS_TSTRB = "2" *) (* G_INDX_SS_TUSER = "7" *) (* G_MASK_SS_TDATA = "2" *) 
-(* G_MASK_SS_TDEST = "64" *) (* G_MASK_SS_TID = "32" *) (* G_MASK_SS_TKEEP = "8" *) 
-(* G_MASK_SS_TLAST = "16" *) (* G_MASK_SS_TREADY = "1" *) (* G_MASK_SS_TSTRB = "4" *) 
-(* G_MASK_SS_TUSER = "128" *) (* G_TASK_SEVERITY_ERR = "2" *) (* G_TASK_SEVERITY_INFO = "0" *) 
-(* G_TASK_SEVERITY_WARNING = "1" *) (* ORIG_REF_NAME = "top_zybo_design_axis_subset_converter_0_2" *) 
-module zybo_design_axis_subset_converter_0_2_top_zybo_design_axis_subset_converter_0_2
-   (aclk,
-    aresetn,
-    aclken,
-    s_axis_tvalid,
-    s_axis_tready,
-    s_axis_tdata,
-    s_axis_tstrb,
-    s_axis_tkeep,
-    s_axis_tlast,
-    s_axis_tid,
-    s_axis_tdest,
-    s_axis_tuser,
-    m_axis_tvalid,
-    m_axis_tready,
-    m_axis_tdata,
-    m_axis_tstrb,
-    m_axis_tkeep,
-    m_axis_tlast,
-    m_axis_tid,
-    m_axis_tdest,
-    m_axis_tuser,
-    transfer_dropped,
-    sparse_tkeep_removed);
-  input aclk;
-  input aresetn;
-  input aclken;
-  input s_axis_tvalid;
-  output s_axis_tready;
-  input [31:0]s_axis_tdata;
-  input [3:0]s_axis_tstrb;
-  input [3:0]s_axis_tkeep;
-  input s_axis_tlast;
-  input [0:0]s_axis_tid;
-  input [0:0]s_axis_tdest;
-  input [0:0]s_axis_tuser;
-  output m_axis_tvalid;
-  input m_axis_tready;
-  output [23:0]m_axis_tdata;
-  output [2:0]m_axis_tstrb;
-  output [2:0]m_axis_tkeep;
-  output m_axis_tlast;
-  output [0:0]m_axis_tid;
-  output [0:0]m_axis_tdest;
-  output [0:0]m_axis_tuser;
-  output transfer_dropped;
-  output sparse_tkeep_removed;
-
-  wire \<const0> ;
-  wire m_axis_tready;
-  wire [31:0]s_axis_tdata;
-  wire [3:0]s_axis_tkeep;
-  wire s_axis_tlast;
-  wire [0:0]s_axis_tuser;
-  wire s_axis_tvalid;
-
-  assign m_axis_tdata[23:16] = s_axis_tdata[23:16];
-  assign m_axis_tdata[15:8] = s_axis_tdata[7:0];
-  assign m_axis_tdata[7:0] = s_axis_tdata[15:8];
-  assign m_axis_tdest[0] = \<const0> ;
-  assign m_axis_tid[0] = \<const0> ;
-  assign m_axis_tkeep[2:0] = s_axis_tkeep[2:0];
-  assign m_axis_tlast = s_axis_tlast;
-  assign m_axis_tstrb[2] = \<const0> ;
-  assign m_axis_tstrb[1] = \<const0> ;
-  assign m_axis_tstrb[0] = \<const0> ;
-  assign m_axis_tuser[0] = s_axis_tuser;
-  assign m_axis_tvalid = s_axis_tvalid;
-  assign s_axis_tready = m_axis_tready;
-  assign sparse_tkeep_removed = \<const0> ;
-  assign transfer_dropped = \<const0> ;
-  GND GND
-       (.G(\<const0> ));
 endmodule
 `ifndef GLBL
 `define GLBL

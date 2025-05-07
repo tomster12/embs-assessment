@@ -74,7 +74,7 @@
     <stringAttribute key="multilaunch.linux_remote_work_dir" value="/mnt/sd-mmcblk0p1/"/>
     <stringAttribute key="multilaunch.project_name" value="assessment_system"/>
     <stringAttribute key="multilaunch.selected_apps" value=""/>
-    <stringAttribute key="multilaunch.standalone_peer_id" value="VLAB"/>
+    <stringAttribute key="multilaunch.standalone_peer_id" value="VLAB2"/>
     <stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="assessment_system"/>
     <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
         <listEntry value="/assessment_system"/>

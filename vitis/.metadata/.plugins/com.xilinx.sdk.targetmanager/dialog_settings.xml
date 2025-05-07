@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item key="devices_info_VLAB" value="{&quot;cables&quot;:[{&quot;name&quot;:&quot;Digilent Zybo Z7 210351A7809BA&quot;,&quot;indexContextMap&quot;:{&quot;2&quot;:&quot;jsn-Zybo Z7-210351A7809BA-4ba00477-0&quot;,&quot;3&quot;:&quot;jsn-Zybo Z7-210351A7809BA-13722093-0&quot;}}]}"/>
+	<item key="devices_info_VLAB" value="{&quot;cables&quot;:[{&quot;name&quot;:&quot;Digilent Zybo Z7 210351A780DAA&quot;,&quot;indexContextMap&quot;:{&quot;2&quot;:&quot;jsn-Zybo Z7-210351A780DAA-4ba00477-0&quot;,&quot;3&quot;:&quot;jsn-Zybo Z7-210351A780DAA-13722093-0&quot;}}]}"/>
+	<item key="devices_info_VLAB2" value="{&quot;cables&quot;:[{&quot;name&quot;:&quot;Digilent Zybo Z7 210351A78131A&quot;,&quot;indexContextMap&quot;:{&quot;2&quot;:&quot;jsn-Zybo Z7-210351A78131A-4ba00477-0&quot;,&quot;3&quot;:&quot;jsn-Zybo Z7-210351A78131A-13722093-0&quot;}}]}"/>
 </section>

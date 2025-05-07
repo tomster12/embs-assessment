@@ -7,7 +7,7 @@ module toplevel_waypoints_x_ram (addr0, ce0, d0, we0, q0, addr1, ce1, q1,  clk);
 
 parameter DWIDTH = 16;
 parameter AWIDTH = 4;
-parameter MEM_SIZE = 12;
+parameter MEM_SIZE = 16;
 
 input[AWIDTH-1:0] addr0;
 input ce0;
@@ -58,7 +58,7 @@ module toplevel_waypoints_x(
     q1);
 
 parameter DataWidth = 32'd16;
-parameter AddressRange = 32'd12;
+parameter AddressRange = 32'd16;
 parameter AddressWidth = 32'd4;
 input reset;
 input clk;

@@ -92,3 +92,29 @@ platform config -updatehw {/home/tomster12/files/EMBS/vivado/zybo_design_wrapper
 platform generate -domains 
 platform config -updatehw {/home/tomster12/files/EMBS/vivado/zybo_design_wrapper.xsa}
 platform generate -domains 
+platform generate -domains freertos10_xilinx_ps7_cortexa9_0,zynq_fsbl 
+platform active {zybo_design_wrapper}
+platform config -updatehw {/home/tomster12/files/EMBS/vivado/zybo_design_wrapper.xsa}
+platform generate -domains 
+platform active {zybo_design_wrapper}
+platform config -updatehw {/home/tomster12/files/EMBS/vivado/zybo_design_wrapper.xsa}
+platform generate -domains 
+platform active {zybo_design_wrapper}
+platform config -updatehw {/home/tomster12/files/EMBS/vivado/zybo_design_wrapper.xsa}
+platform generate -domains 
+platform active {zybo_design_wrapper}
+platform config -updatehw {/home/tomster12/files/EMBS/vivado/zybo_design_wrapper.xsa}
+platform config -updatehw {/home/tomster12/files/EMBS/vivado/zybo_design_wrapper.xsa}
+platform generate -domains 
+platform config -updatehw {/home/tomster12/files/EMBS/vivado/zybo_design_wrapper.xsa}
+platform generate -domains 
+platform config -updatehw {/home/tomster12/files/EMBS/vivado/zybo_design_wrapper.xsa}
+platform generate -domains 
+platform config -updatehw {/home/tomster12/files/EMBS/vivado/zybo_design_wrapper.xsa}
+platform generate -domains 
+platform config -updatehw {/home/tomster12/files/EMBS/vivado/zybo_design_wrapper.xsa}
+platform generate -domains 
+platform config -updatehw {/home/tomster12/files/EMBS/vivado/zybo_design_wrapper.xsa}
+platform generate -domains 
+platform config -updatehw {/home/tomster12/files/EMBS/vivado/zybo_design_wrapper.xsa}
+platform generate -domains 

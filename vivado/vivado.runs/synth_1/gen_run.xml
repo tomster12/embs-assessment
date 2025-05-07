@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1746489545">
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1746635908">
   <File Type="VDS-TIMING-PB" Name="zybo_design_wrapper_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="zybo_design_wrapper_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="zybo_design_wrapper.dcp"/>
@@ -52,14 +52,11 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
     <Step Id="synth_design"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="zybo_design_auto_pc_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="zybo_design_auto_us_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="zybo_design_auto_pc_0"/>
   <BlockFileSet Type="BlockSrcs" Name="zybo_design_toplevel_0_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="zybo_design_xbar_3"/>
-  <BlockFileSet Type="BlockSrcs" Name="zybo_design_processing_system7_0_3"/>
-  <BlockFileSet Type="BlockSrcs" Name="zybo_design_axis_subset_converter_0_2"/>
-  <BlockFileSet Type="BlockSrcs" Name="zybo_design_xbar_4"/>
 </GenRun>

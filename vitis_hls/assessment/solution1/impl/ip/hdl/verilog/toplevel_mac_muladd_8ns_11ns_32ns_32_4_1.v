@@ -4,7 +4,7 @@
 // ==============================================================
 `timescale 1 ns / 1 ps
 
-module toplevel_mac_muladd_8ns_11ns_32ns_32_4_1_DSP48_1(
+module toplevel_mac_muladd_8ns_11ns_32ns_32_4_1_DSP48_2(
     input clk,
     input rst,
     input ce,
@@ -68,7 +68,7 @@ output[dout_WIDTH - 1:0] dout;
 
 
 
-toplevel_mac_muladd_8ns_11ns_32ns_32_4_1_DSP48_1 toplevel_mac_muladd_8ns_11ns_32ns_32_4_1_DSP48_1_U(
+toplevel_mac_muladd_8ns_11ns_32ns_32_4_1_DSP48_2 toplevel_mac_muladd_8ns_11ns_32ns_32_4_1_DSP48_2_U(
     .clk( clk ),
     .rst( reset ),
     .ce( ce ),

@@ -13,7 +13,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_a_star_len_fu_370/grp_a_star_len_fu_370_activity": {
+				"grp_a_star_len_fu_372/grp_a_star_len_fu_372_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},

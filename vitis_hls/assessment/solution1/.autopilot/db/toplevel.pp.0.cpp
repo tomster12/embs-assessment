@@ -390,7 +390,7 @@ typedef __uintmax_t uintmax_t;
 # 64 "/opt/Xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/lib/clang/7.0.0/include/stdint.h" 2 3
 # 4 "assessment/toplevel.h" 2
 
-__attribute__((sdx_kernel("toplevel", 0))) void toplevel(uint32_t *ram, volatile uint32_t *code);
+__attribute__((sdx_kernel("toplevel", 0))) void toplevel(uint32_t *ram, uint32_t *code);
 # 2 "assessment/toplevel.cpp" 2
 # 1 "/usr/include/string.h" 1 3 4
 # 26 "/usr/include/string.h" 3 4
@@ -821,7 +821,7 @@ extern "C++" const char *basename (const char *__filename)
 # 539 "/usr/include/string.h" 3 4
 }
 # 3 "assessment/toplevel.cpp" 2
-# 18 "assessment/toplevel.cpp"
+# 35 "assessment/toplevel.cpp"
 struct Coord {
     uint16_t x;
     uint16_t y;
@@ -834,28 +834,26 @@ struct ASNode {
     uint16_t y;
 };
 
-static ASNode open_set_heap[8192];
+static ASNode open_set_heap[40000];
 static uint32_t closed_set[((500 * 500 + 31) / 32)];
-static uint32_t local_ram[(2 + 12 + ((500 * 500 + 31) / 32))];
+static uint32_t local_ram[(2 + 16 + ((500 * 500 + 31) / 32))];
 static uint32_t open_set_size;
 static uint32_t *world_ram_ptr;
-static uint32_t world_size;
+static uint16_t world_size;
 static int error_flag;
 
 
 
 int get_world_bit(uint16_t x, uint16_t y) {
 #pragma HLS INLINE
-
  uint32_t idx = x + y * world_size;
     uint32_t word_idx = idx / 32;
     uint32_t bit_idx = idx % 32;
-    return (local_ram[(2 + 12) + word_idx] >> bit_idx) & 1;
+    return (local_ram[(2 + 16) + word_idx] >> bit_idx) & 1;
 }
 
 int is_closed(uint16_t x, uint16_t y) {
 #pragma HLS INLINE
-
  uint32_t idx = x + y * world_size;
     uint32_t word_idx = idx / 32;
     uint32_t bit_idx = idx % 32;
@@ -864,7 +862,6 @@ int is_closed(uint16_t x, uint16_t y) {
 
 void set_closed(uint16_t x, uint16_t y) {
 #pragma HLS INLINE
-
  uint32_t idx = x + y * world_size;
     uint32_t word_idx = idx / 32;
     uint32_t bit_idx = idx % 32;
@@ -873,72 +870,170 @@ void set_closed(uint16_t x, uint16_t y) {
 
 static inline uint16_t abs_sub(uint16_t a, uint16_t b) {
 #pragma HLS INLINE
-
  return (a > b) ? (a - b) : (b - a);
 }
 
 uint16_t heuristic(Coord node, Coord goal) {
 #pragma HLS INLINE
-
  return abs_sub(node.x, goal.x) + abs_sub(node.y, goal.y);
 }
 
 
 
+void copy_as_node(ASNode *a, ASNode *b) {
+#pragma HLS INLINE
+ a->f_score = b->f_score;
+ a->g_score = b->g_score;
+ a->x = b->x;
+ a->y = b->y;
+}
+
+void dump_os_to_dbg_list() {
+ ((void)0);
+ VITIS_LOOP_103_1: for (uint16_t i = 0; i < open_set_size; ++i) {
+  ((void)0);
+  ((void)0);
+  ((void)0);
+ }
+}
+
 void os_sift_down(uint16_t idx) {
 #pragma HLS INLINE
 
- SIFT_DOWN_LOOP: while (true) {
+ uint16_t previous = idx;
+ ASNode node;
+ copy_as_node(&node, &open_set_heap[idx]);
+ uint16_t node_f = node.f_score;
 
 
-        uint16_t smallest = idx;
-        uint16_t left = 2 * idx + 1;
-        uint16_t right = 2 * idx + 2;
+ SIFT_DOWN_LOOP: for (uint8_t depth = 0; depth < 16; ++depth) {
+#pragma HLS LOOP_TRIPCOUNT min=1 max=16
 
 
-        if (left < open_set_size && open_set_heap[left].f_score < open_set_heap[smallest].f_score) smallest = left;
-        else if (right < open_set_size && open_set_heap[right].f_score < open_set_heap[smallest].f_score) smallest = right;
-        else return;
+ uint16_t smallest = idx;
+  uint16_t left = 2 * idx + 1;
+  uint16_t right = 2 * idx + 2;
+  uint16_t left_f = (65535);
+  uint16_t right_f = (65535);
+  if (left < open_set_size) left_f = open_set_heap[left].f_score;
+  if (right < open_set_size) right_f = open_set_heap[right].f_score;
 
 
-        ASNode temp = open_set_heap[idx];
-  open_set_heap[idx] = open_set_heap[smallest];
-  open_set_heap[smallest] = temp;
-  idx = smallest;
-    }
+  if (node_f < left_f && node_f < right_f) {
+   if (idx != previous) {
+    copy_as_node(&open_set_heap[idx], &node);
+   }
+   ((void)0);
+      dump_os_to_dbg_list();
+   break;
+  }
+
+
+  else if (left_f < right_f) {
+   copy_as_node(&open_set_heap[idx], &open_set_heap[left]);
+   ((void)0);
+      ((void)0);
+      ((void)0);
+      ((void)0);
+   idx = left;
+  }
+  else {
+   copy_as_node(&open_set_heap[idx], &open_set_heap[right]);
+   ((void)0);
+      ((void)0);
+   ((void)0);
+   ((void)0);
+   idx = right;
+  }
+ }
 }
 
 void os_sift_up(uint16_t idx) {
 #pragma HLS INLINE
 
- SIFT_UP_LOOP: while (idx > 0) {
+ uint16_t previous = idx;
+ ASNode node;
+ copy_as_node(&node, &open_set_heap[idx]);
+ uint16_t node_f = node.f_score;
+
+    ((void)0);
+    ((void)0);
+ ((void)0);
+ ((void)0);
+ ((void)0);
 
 
+ SIFT_UP_LOOP: for (uint8_t depth = 0; depth < 16; depth++) {
+#pragma HLS LOOP_TRIPCOUNT min=1 max=16
+#pragma HLS PIPELINE II=1
+
+
+ if (idx == 0) {
+   if (idx != previous) {
+       ((void)0);
+    ((void)0);
+    ((void)0);
+    ((void)0);
+    ((void)0);
+    copy_as_node(&open_set_heap[idx], &node);
+    dump_os_to_dbg_list();
+   }
+   ((void)0);
+   break;
+  }
 
         uint16_t parent = (idx - 1) / 2;
-        if (open_set_heap[idx].f_score >= open_set_heap[parent].f_score) return;
+        ASNode parent_node = open_set_heap[parent];
 
 
-  ASNode temp = open_set_heap[idx];
-  open_set_heap[idx] = open_set_heap[parent];
-  open_set_heap[parent] = temp;
+        if (parent_node.f_score < node_f) {
+   if (idx != previous) {
+       ((void)0);
+    ((void)0);
+    ((void)0);
+    ((void)0);
+    ((void)0);
+    copy_as_node(&open_set_heap[idx], &node);
+    dump_os_to_dbg_list();
+   }
+         ((void)0);
+         break;
+        }
+
+
+     ((void)0);
+     ((void)0);
+  ((void)0);
+  ((void)0);
+  copy_as_node(&open_set_heap[idx], &parent_node);
   idx = parent;
-    }
+ }
 }
 
 void os_heap_push(ASNode node) {
 #pragma HLS INLINE
 
 
- if (open_set_size >= 8192) {
-     error_flag = 200;
+ if (open_set_size >= 40000) {
+     error_flag = 20000;
      return;
     }
 
 
     open_set_heap[open_set_size] = node;
     open_set_size++;
-    os_sift_up(open_set_size - 1);
+    ((void)0);
+    ((void)0);
+ ((void)0);
+    ((void)0);
+    ((void)0);
+    ((void)0);
+
+    if (open_set_size > 1) {
+        os_sift_up(open_set_size - 1);
+    }
+
+    dump_os_to_dbg_list();
 }
 
 ASNode os_heap_pop() {
@@ -950,7 +1045,17 @@ ASNode os_heap_pop() {
 
     open_set_heap[0] = open_set_heap[open_set_size - 1];
     open_set_size--;
-    os_sift_down(0);
+
+ ((void)0);
+    ((void)0);
+ ((void)0);
+
+ if (open_set_size > 1) {
+     os_sift_down(0);
+ }
+
+    dump_os_to_dbg_list();
+
     return min_node;
 }
 
@@ -962,7 +1067,7 @@ int a_star_len(Coord start, Coord goal) {
 
  uint32_t closed_words = (world_size * world_size + 31) / 32;
     memset(closed_set, 0, ((500 * 500 + 31) / 32) * sizeof(uint32_t));
-    memset(open_set_heap, 0, 8192 * sizeof(ASNode));
+    memset(open_set_heap, 0, 40000 * sizeof(ASNode));
     open_set_size = 0;
 
 
@@ -979,33 +1084,65 @@ int a_star_len(Coord start, Coord goal) {
 
         ASNode current = os_heap_pop();
 
+        ((void)0);
+        ((void)0);
+        ((void)0);
+        ((void)0);
+        ((void)0);
+
 
         if (current.x == goal.x && current.y == goal.y) return current.g_score;
 
 
-        if (is_closed(current.x, current.y)) continue;
+        if (is_closed(current.x, current.y)) {
+      ((void)0);
+         ((void)0);
+         continue;
+        }
 
 
         set_closed(current.x, current.y);
 
 
+        ((void)0);
         const int dx[] = {0, 0, -1, 1};
         const int dy[] = {-1, 1, 0, 0};
         EXPLORE_NEIGHBORS_LOOP: for (uint8_t i = 0; i < 4; ++i) {
 
 
-         if ((current.x == 0 && dx[i] < 0) || (current.y == 0 && dy[i] < 0)) continue;
+         if ((current.x == 0 && dx[i] < 0) || (current.y == 0 && dy[i] < 0)) {
+          ((void)0);
+          ((void)0);
+          continue;
+         }
+
             uint16_t n_x = current.x + dx[i];
             uint16_t n_y = current.y + dy[i];
-            if (n_x >= world_size || n_y >= world_size) continue;
-            if (get_world_bit(n_x, n_y)) continue;
-            if (is_closed(n_x, n_y)) continue;
+
+            if (n_x >= world_size || n_y >= world_size) {
+          ((void)0);
+          ((void)0);
+             continue;
+            }
+            if (get_world_bit(n_x, n_y)) {
+          ((void)0);
+          ((void)0);
+             continue;
+            }
+            if (is_closed(n_x, n_y)) {
+          ((void)0);
+          ((void)0);
+             continue;
+            }
 
 
             Coord n_pos = {n_x, n_y};
             uint16_t n_g_score_tentative = current.g_score + 1;
             uint16_t n_h_score = heuristic(n_pos, goal);
             uint16_t n_f_score = n_g_score_tentative + n_h_score;
+
+            ((void)0);
+            ((void)0);
 
 
             ASNode neighbour_node = {n_f_score, n_g_score_tentative, n_x, n_y};
@@ -1018,66 +1155,71 @@ int a_star_len(Coord start, Coord goal) {
 
 
     if (open_set_size == 0) {
-     error_flag = 300 + iteration_count;
+     error_flag = 30000;
     } else if (iteration_count >= iteration_limit) {
-     error_flag = 400;
+     error_flag = 40000;
     } else {
-     error_flag = 500;
+     error_flag = 50000;
     }
     return (65535);
 }
 
-__attribute__((sdx_kernel("toplevel", 0))) void toplevel(uint32_t *ram, volatile uint32_t *code) {
+__attribute__((sdx_kernel("toplevel", 0))) void toplevel(uint32_t *ram, uint32_t *code) {
 #pragma HLS TOP name=toplevel
-# 223 "assessment/toplevel.cpp"
+# 377 "assessment/toplevel.cpp"
 
 #pragma HLS INTERFACE m_axi port=ram offset=slave bundle=MAXI max_widen_bitwidth=32 depth=7827
 #pragma HLS INTERFACE s_axilite port=code bundle=AXILiteS
 #pragma HLS INTERFACE s_axilite port=return bundle=AXILiteS
 #pragma HLS BIND_STORAGE variable=closed_set type=RAM_T2P impl=BRAM
-#pragma HLS BIND_STORAGE variable=open_set_heap type=RAM_T2P impl=BRAM
+#pragma HLS BIND_STORAGE variable=open_set_heap type=RAM_2P impl=BRAM
 #pragma HLS BIND_STORAGE variable=local_ram type=RAM_T2P impl=BRAM
 
+ ((void)0);
 
- *code = 0;
+
+    *code = 0;
     error_flag = 0;
     open_set_size = 0;
     world_size = 0;
-
-
-    memcpy(local_ram, ram, (2 + 12 + ((500 * 500 + 31) / 32)) * sizeof(uint32_t));
-
-
-    world_size = local_ram[0];
-    uint32_t waypoint_count = local_ram[1];
-
-
-    if (world_size == 0 || world_size > 500 || waypoint_count < 2 || waypoint_count > 12) {
+# 401 "assessment/toplevel.cpp"
+    COPY_LOOP: for (uint16_t i = 0; i < (2 + 16 + ((500 * 500 + 31) / 32)); ++i) {
+     local_ram[i] = ram[i];
+    }
+    world_size = (uint16_t) local_ram[0];
+    uint16_t waypoint_count = (uint16_t) local_ram[1];
+    if (world_size == 0 || world_size > 500 || waypoint_count < 2 || waypoint_count > 16) {
      ram[0] = (65535);
-     *code = 100;
+     *code = 10000;
      return;
     }
-
-
-    Coord waypoints[12];
+    Coord waypoints[16];
     WAYPOINT_EXTRACT_LOOP: for (uint8_t i = 0; i < waypoint_count; ++i) {
         uint32_t wp = local_ram[2 + i];
         waypoints[i].x = (wp >> 16) & 0xFFFF;
         waypoints[i].y = wp & 0xFFFF;
     }
 
+    ((void)0);
+    ((void)0);
+
+    VITIS_LOOP_421_1: for (uint8_t i = 0; i < (world_size * world_size + 31) / 32; ++i) {
+     ((void)0);
+    }
+
 
     uint32_t total_len = 0;
     PATHFINDING_LOOP: for (uint8_t i = 0; i < waypoint_count - 1; ++i) {
+     ((void)0);
+        ((void)0);
         int ret = a_star_len(waypoints[i], waypoints[i + 1]);
         if (error_flag != 0) {
-         error_flag += i * 1000;
+         error_flag += (i + 1) * 1000;
             break;
         }
         total_len += ret;
     }
-
-
+# 445 "assessment/toplevel.cpp"
     ram[0] = total_len;
     *code = error_flag;
 }

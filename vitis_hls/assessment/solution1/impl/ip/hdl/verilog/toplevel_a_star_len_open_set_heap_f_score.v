@@ -3,16 +3,14 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // ==============================================================
 `timescale 1 ns / 1 ps
-module toplevel_a_star_len_open_set_heap_f_score_ram (addr0, ce0, d0, we0, q0, addr1, ce1, d1, we1, q1,  clk);
+module toplevel_a_star_len_open_set_heap_f_score_ram (addr0, ce0, q0, addr1, ce1, d1, we1, q1,  clk);
 
 parameter DWIDTH = 16;
-parameter AWIDTH = 13;
-parameter MEM_SIZE = 8192;
+parameter AWIDTH = 16;
+parameter MEM_SIZE = 40000;
 
 input[AWIDTH-1:0] addr0;
 input ce0;
-input[DWIDTH-1:0] d0;
-input we0;
 output reg[DWIDTH-1:0] q0;
 input[AWIDTH-1:0] addr1;
 input ce1;
@@ -32,8 +30,6 @@ end
 always @(posedge clk)  
 begin 
     if (ce0) begin
-        if (we0) 
-            ram[addr0] <= d0; 
         q0 <= ram[addr0];
     end
 end
@@ -57,8 +53,6 @@ module toplevel_a_star_len_open_set_heap_f_score(
     clk,
     address0,
     ce0,
-    we0,
-    d0,
     q0,
     address1,
     ce1,
@@ -67,14 +61,12 @@ module toplevel_a_star_len_open_set_heap_f_score(
     q1);
 
 parameter DataWidth = 32'd16;
-parameter AddressRange = 32'd8192;
-parameter AddressWidth = 32'd13;
+parameter AddressRange = 32'd40000;
+parameter AddressWidth = 32'd16;
 input reset;
 input clk;
 input[AddressWidth - 1:0] address0;
 input ce0;
-input we0;
-input[DataWidth - 1:0] d0;
 output[DataWidth - 1:0] q0;
 input[AddressWidth - 1:0] address1;
 input ce1;
@@ -88,8 +80,6 @@ toplevel_a_star_len_open_set_heap_f_score_ram toplevel_a_star_len_open_set_heap_
     .clk( clk ),
     .addr0( address0 ),
     .ce0( ce0 ),
-    .we0( we0 ),
-    .d0( d0 ),
     .q0( q0 ),
     .addr1( address1 ),
     .ce1( ce1 ),

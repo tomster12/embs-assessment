@@ -1,10 +1,10 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
--- Date        : Fri May  2 16:22:18 2025
+-- Date        : Fri May  2 16:22:17 2025
 -- Host        : DESKTOP-Q62E4QT running 64-bit Ubuntu 22.04.5 LTS
--- Command     : write_vhdl -force -mode funcsim
---               /home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/ip/zybo_design_xbar_3/zybo_design_xbar_3_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top zybo_design_xbar_3 -prefix
+--               zybo_design_xbar_3_ zybo_design_xbar_3_sim_netlist.vhdl
 -- Design      : zybo_design_xbar_3
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -80,8 +80,6 @@ entity zybo_design_xbar_3_axi_crossbar_v2_1_23_addr_arbiter_sasd is
     mi_wready : in STD_LOGIC_VECTOR ( 0 to 0 );
     mi_bvalid : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of zybo_design_xbar_3_axi_crossbar_v2_1_23_addr_arbiter_sasd : entity is "axi_crossbar_v2_1_23_addr_arbiter_sasd";
 end zybo_design_xbar_3_axi_crossbar_v2_1_23_addr_arbiter_sasd;
 
 architecture STRUCTURE of zybo_design_xbar_3_axi_crossbar_v2_1_23_addr_arbiter_sasd is
@@ -1676,8 +1674,6 @@ entity zybo_design_xbar_3_axi_crossbar_v2_1_23_decerr_slave is
     \gen_axilite.s_axi_awready_i_reg_2\ : in STD_LOGIC;
     \gen_axilite.s_axi_awready_i_reg_3\ : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of zybo_design_xbar_3_axi_crossbar_v2_1_23_decerr_slave : entity is "axi_crossbar_v2_1_23_decerr_slave";
 end zybo_design_xbar_3_axi_crossbar_v2_1_23_decerr_slave;
 
 architecture STRUCTURE of zybo_design_xbar_3_axi_crossbar_v2_1_23_decerr_slave is
@@ -1898,8 +1894,6 @@ entity zybo_design_xbar_3_axi_crossbar_v2_1_23_splitter is
     \m_ready_d_reg[0]_2\ : in STD_LOGIC;
     aclk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of zybo_design_xbar_3_axi_crossbar_v2_1_23_splitter : entity is "axi_crossbar_v2_1_23_splitter";
 end zybo_design_xbar_3_axi_crossbar_v2_1_23_splitter;
 
 architecture STRUCTURE of zybo_design_xbar_3_axi_crossbar_v2_1_23_splitter is
@@ -2256,8 +2250,6 @@ entity zybo_design_xbar_3_axi_register_slice_v2_1_22_axic_register_slice is
     SR : in STD_LOGIC_VECTOR ( 0 to 0 );
     E : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of zybo_design_xbar_3_axi_register_slice_v2_1_22_axic_register_slice : entity is "axi_register_slice_v2_1_22_axic_register_slice";
 end zybo_design_xbar_3_axi_register_slice_v2_1_22_axic_register_slice;
 
 architecture STRUCTURE of zybo_design_xbar_3_axi_register_slice_v2_1_22_axic_register_slice is
@@ -4811,8 +4803,6 @@ entity zybo_design_xbar_3_axi_crossbar_v2_1_23_crossbar_sasd is
     s_axi_araddr : in STD_LOGIC_VECTOR ( 31 downto 0 );
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of zybo_design_xbar_3_axi_crossbar_v2_1_23_crossbar_sasd : entity is "axi_crossbar_v2_1_23_crossbar_sasd";
 end zybo_design_xbar_3_axi_crossbar_v2_1_23_crossbar_sasd;
 
 architecture STRUCTURE of zybo_design_xbar_3_axi_crossbar_v2_1_23_crossbar_sasd is
@@ -5400,8 +5390,6 @@ entity zybo_design_xbar_3_axi_crossbar_v2_1_23_axi_crossbar is
   attribute C_S_AXI_WRITE_ACCEPTANCE of zybo_design_xbar_3_axi_crossbar_v2_1_23_axi_crossbar : entity is 1;
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of zybo_design_xbar_3_axi_crossbar_v2_1_23_axi_crossbar : entity is "yes";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of zybo_design_xbar_3_axi_crossbar_v2_1_23_axi_crossbar : entity is "axi_crossbar_v2_1_23_axi_crossbar";
   attribute P_ADDR_DECODE : integer;
   attribute P_ADDR_DECODE of zybo_design_xbar_3_axi_crossbar_v2_1_23_axi_crossbar : entity is 1;
   attribute P_AXI3 : integer;

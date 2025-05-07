@@ -6,8 +6,12 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value=""/>
+		<item key="selection" value="DBG_LIST_MAX"/>
 		<list key="findhistory">
+			<item value="DBG_LIST_LENGTH"/>
+			<item value="Set"/>
+			<item value="direction"/>
+			<item value="%x"/>
 			<item value="Error se"/>
 			<item value="bit map"/>
 			<item value="bitmap"/>
@@ -19,12 +23,9 @@
 			<item value="HW_MEM_MAX"/>
 			<item value="words_per_row"/>
 			<item value="tes"/>
-			<item value="WS_PORT"/>
-			<item value="nw_ws_ip"/>
-			<item value="udp_res_sem"/>
-			<item value="udp_netif"/>
 		</list>
 		<list key="replacehistory">
+			<item value="DBG_LIST_MAX"/>
 			<item value=""/>
 			<item value="hw_ram"/>
 			<item value="HW_WORDS_MAX"/>
@@ -39,7 +40,6 @@
 			<item value="HW_MEM_MAX"/>
 			<item value="UART_IN_BUF_MAX"/>
 			<item value="FRAME_RES"/>
-			<item value="UDP_RECV_BUF_MAX"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

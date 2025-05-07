@@ -1,255 +1,237 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1746489463323">
-  <ports id="1" name="MAXI" type="PortType" coreId="778855798" bitwidth="32" direction="DirInOut" iftype="IfTypeFifo">
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1746635774547">
+  <ports id="1" name="MAXI" type="PortType" coreId="0" bitwidth="32" direction="DirInOut" iftype="IfTypeFifo">
     <dataInputObjs>getelementptr</dataInputObjs>
     <dataOutputObjs>getelementptr</dataOutputObjs>
   </ports>
-  <ports id="2" name="ram" type="PortType" originalName="ram" coreId="1885548140" bitwidth="64">
+  <ports id="2" name="ram" type="PortType" originalName="ram" coreId="0" bitwidth="64">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="3" name="code" type="PortType" originalName="code" coreId="1885548140" bitwidth="32" direction="DirOut">
-    <dataInputObjs>write</dataInputObjs>
-    <dataInputObjs>write</dataInputObjs>
+  <ports id="3" name="code" type="PortType" originalName="code" coreId="49" bitwidth="32" direction="DirOut">
     <dataInputObjs>write</dataInputObjs>
   </ports>
-  <edges id="149" source_obj="//@ports.1" sink_obj="//@blocks.0/@node_objs.0"/>
-  <edges id="155" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@ports.2"/>
-  <edges id="158" sink_obj="//@blocks.0/@node_objs.4"/>
-  <edges id="161" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.0/@node_objs.5"/>
-  <edges id="166" source_obj="//@blocks.0/@node_objs.5" sink_obj="//@blocks.0/@node_objs.6"/>
-  <edges id="167" source_obj="//@ports.0" sink_obj="//@blocks.0/@node_objs.7"/>
-  <edges id="168" source_obj="//@blocks.0/@node_objs.6" sink_obj="//@blocks.0/@node_objs.7"/>
-  <edges id="171" source_obj="//@blocks.0/@node_objs.7" sink_obj="//@blocks.0/@node_objs.8"/>
-  <edges id="174" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.0/@node_objs.9"/>
-  <edges id="177" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
-  <edges id="178" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0" is_back_edge="1"/>
-  <edges id="179" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0" is_back_edge="1"/>
-  <edges id="180" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
-  <edges id="183" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
-  <edges id="186" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
-  <edges id="187" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
-  <edges id="188" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
-  <edges id="189" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
-  <edges id="192" source_obj="//@blocks.0/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.1"/>
-  <edges id="193" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.2"/>
-  <edges id="196" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.2"/>
-  <edges id="197" source_obj="//@regions.0/@basic_blocks.1/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.3"/>
-  <edges id="198" source_obj="//@regions.0/@basic_blocks.1/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.3"/>
-  <edges id="199" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.4"/>
-  <edges id="203" source_obj="//@blocks.1/@node_objs.0" sink_obj="//@blocks.1/@node_objs.1"/>
-  <edges id="204" sink_obj="//@blocks.1/@node_objs.1"/>
-  <edges id="208" source_obj="//@blocks.1/@node_objs.2" sink_obj="//@blocks.1/@node_objs.3"/>
-  <edges id="209" source_obj="//@blocks.1/@node_objs.0" sink_obj="//@blocks.1/@node_objs.4"/>
-  <edges id="212" source_obj="//@blocks.1/@node_objs.4" sink_obj="//@blocks.1/@node_objs.5"/>
-  <edges id="215" source_obj="//@blocks.1/@node_objs.2" sink_obj="//@blocks.1/@node_objs.6"/>
-  <edges id="218" source_obj="//@blocks.1/@node_objs.6" sink_obj="//@blocks.1/@node_objs.7"/>
-  <edges id="221" source_obj="//@blocks.1/@node_objs.7" sink_obj="//@blocks.1/@node_objs.8"/>
-  <edges id="222" source_obj="//@blocks.1/@node_objs.5" sink_obj="//@blocks.1/@node_objs.8"/>
-  <edges id="223" source_obj="//@blocks.1/@node_objs.8" sink_obj="//@blocks.1/@node_objs.9"/>
-  <edges id="224" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@blocks.1/@node_objs.9"/>
-  <edges id="225" edge_type="CtrlEdge" source_obj="//@blocks.11" sink_obj="//@blocks.1/@node_objs.9"/>
-  <edges id="226" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.0" sink_obj="//@blocks.2/@node_objs.0"/>
-  <edges id="229" source_obj="//@blocks.0/@node_objs.7" sink_obj="//@blocks.11/@node_objs.0"/>
-  <edges id="234" source_obj="//@blocks.0/@node_objs.7" sink_obj="//@blocks.11/@node_objs.1"/>
-  <edges id="241" source_obj="//@blocks.0/@node_objs.7" sink_obj="//@blocks.11/@node_objs.2"/>
-  <edges id="243" source_obj="//@blocks.11/@node_objs.3" sink_obj="//@ports.2"/>
-  <edges id="246" edge_type="CtrlEdge" source_obj="//@blocks.12" sink_obj="//@blocks.11/@node_objs.4"/>
-  <edges id="247" source_obj="//@regions.1/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.0" is_back_edge="1"/>
-  <edges id="248" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.1" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.0" is_back_edge="1"/>
-  <edges id="251" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.0"/>
-  <edges id="252" source_obj="//@regions.1/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.1"/>
-  <edges id="255" source_obj="//@regions.1/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.2"/>
-  <edges id="256" source_obj="//@regions.1/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.3"/>
-  <edges id="257" source_obj="//@blocks.1/@node_objs.2" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.3"/>
-  <edges id="258" source_obj="//@regions.1/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.4"/>
-  <edges id="259" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.4"/>
-  <edges id="260" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.1" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.4"/>
-  <edges id="261" source_obj="//@regions.1/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.0"/>
-  <edges id="262" source_obj="//@regions.1/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.1"/>
-  <edges id="265" source_obj="//@regions.1/@basic_blocks.1/@node_objs.1" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.2"/>
-  <edges id="266" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.3"/>
-  <edges id="268" source_obj="//@regions.1/@basic_blocks.1/@node_objs.2" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.3"/>
-  <edges id="269" source_obj="//@regions.1/@basic_blocks.1/@node_objs.3" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.4"/>
-  <edges id="272" source_obj="//@regions.1/@basic_blocks.1/@node_objs.4" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.5"/>
-  <edges id="277" source_obj="//@regions.1/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.6"/>
-  <edges id="278" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.7"/>
-  <edges id="280" source_obj="//@regions.1/@basic_blocks.1/@node_objs.6" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.7"/>
-  <edges id="281" source_obj="//@regions.1/@basic_blocks.1/@node_objs.5" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.8"/>
-  <edges id="282" source_obj="//@regions.1/@basic_blocks.1/@node_objs.7" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.8"/>
-  <edges id="283" source_obj="//@regions.1/@basic_blocks.1/@node_objs.4" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.9"/>
-  <edges id="284" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.10"/>
-  <edges id="286" source_obj="//@regions.1/@basic_blocks.1/@node_objs.6" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.10"/>
-  <edges id="287" source_obj="//@regions.1/@basic_blocks.1/@node_objs.9" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.11"/>
-  <edges id="288" source_obj="//@regions.1/@basic_blocks.1/@node_objs.10" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.11"/>
-  <edges id="289" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.0" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.12"/>
-  <edges id="290" source_obj="//@blocks.1/@node_objs.3" sink_obj="//@blocks.3/@node_objs.0"/>
-  <edges id="293" source_obj="//@blocks.3/@node_objs.0" sink_obj="//@blocks.3/@node_objs.1"/>
-  <edges id="296" source_obj="//@blocks.3/@node_objs.1" sink_obj="//@blocks.3/@node_objs.2"/>
-  <edges id="297" edge_type="CtrlEdge" source_obj="//@blocks.4" sink_obj="//@blocks.3/@node_objs.2"/>
-  <edges id="298" edge_type="CtrlEdge" source_obj="//@blocks.10" sink_obj="//@blocks.3/@node_objs.2"/>
-  <edges id="299" edge_type="CtrlEdge" source_obj="//@blocks.5" sink_obj="//@blocks.4/@node_objs.0"/>
-  <edges id="300" source_obj="//@blocks.5/@node_objs.5" sink_obj="//@blocks.5/@node_objs.0" is_back_edge="1"/>
-  <edges id="301" edge_type="CtrlEdge" source_obj="//@blocks.7" sink_obj="//@blocks.5/@node_objs.0" is_back_edge="1"/>
-  <edges id="303" edge_type="CtrlEdge" source_obj="//@blocks.4" sink_obj="//@blocks.5/@node_objs.0"/>
-  <edges id="304" source_obj="//@blocks.7/@node_objs.0" sink_obj="//@blocks.5/@node_objs.1" is_back_edge="1"/>
-  <edges id="305" edge_type="CtrlEdge" source_obj="//@blocks.7" sink_obj="//@blocks.5/@node_objs.1" is_back_edge="1"/>
-  <edges id="308" edge_type="CtrlEdge" source_obj="//@blocks.4" sink_obj="//@blocks.5/@node_objs.1"/>
-  <edges id="309" source_obj="//@blocks.5/@node_objs.0" sink_obj="//@blocks.5/@node_objs.2"/>
-  <edges id="310" source_obj="//@blocks.5/@node_objs.0" sink_obj="//@blocks.5/@node_objs.3"/>
-  <edges id="311" source_obj="//@blocks.5/@node_objs.3" sink_obj="//@blocks.5/@node_objs.4"/>
-  <edges id="312" source_obj="//@blocks.3/@node_objs.0" sink_obj="//@blocks.5/@node_objs.4"/>
-  <edges id="313" source_obj="//@blocks.5/@node_objs.0" sink_obj="//@blocks.5/@node_objs.5"/>
-  <edges id="315" source_obj="//@blocks.5/@node_objs.4" sink_obj="//@blocks.5/@node_objs.6"/>
-  <edges id="316" edge_type="CtrlEdge" source_obj="//@blocks.9" sink_obj="//@blocks.5/@node_objs.6"/>
-  <edges id="317" edge_type="CtrlEdge" source_obj="//@blocks.6" sink_obj="//@blocks.5/@node_objs.6"/>
-  <edges id="318" source_obj="//@blocks.5/@node_objs.0" sink_obj="//@blocks.6/@node_objs.0"/>
-  <edges id="319" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.6/@node_objs.1"/>
-  <edges id="321" source_obj="//@blocks.6/@node_objs.0" sink_obj="//@blocks.6/@node_objs.1"/>
-  <edges id="322" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@blocks.6/@node_objs.2"/>
-  <edges id="324" source_obj="//@blocks.6/@node_objs.0" sink_obj="//@blocks.6/@node_objs.2"/>
-  <edges id="325" source_obj="//@blocks.6/@node_objs.1" sink_obj="//@blocks.6/@node_objs.3"/>
-  <edges id="326" source_obj="//@blocks.6/@node_objs.2" sink_obj="//@blocks.6/@node_objs.4"/>
-  <edges id="327" source_obj="//@blocks.5/@node_objs.2" sink_obj="//@blocks.6/@node_objs.5"/>
-  <edges id="330" source_obj="//@blocks.6/@node_objs.5" sink_obj="//@blocks.6/@node_objs.6"/>
-  <edges id="331" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.6/@node_objs.7"/>
-  <edges id="333" source_obj="//@blocks.6/@node_objs.6" sink_obj="//@blocks.6/@node_objs.7"/>
-  <edges id="334" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@blocks.6/@node_objs.8"/>
-  <edges id="336" source_obj="//@blocks.6/@node_objs.6" sink_obj="//@blocks.6/@node_objs.8"/>
-  <edges id="337" source_obj="//@blocks.6/@node_objs.7" sink_obj="//@blocks.6/@node_objs.9"/>
-  <edges id="338" source_obj="//@blocks.6/@node_objs.8" sink_obj="//@blocks.6/@node_objs.10"/>
-  <edges id="341" source_obj="//@blocks.6/@node_objs.3" sink_obj="//@blocks.6/@node_objs.11"/>
-  <edges id="342" source_obj="//@blocks.6/@node_objs.4" sink_obj="//@blocks.6/@node_objs.11"/>
-  <edges id="343" source_obj="//@blocks.6/@node_objs.9" sink_obj="//@blocks.6/@node_objs.11"/>
-  <edges id="344" source_obj="//@blocks.6/@node_objs.10" sink_obj="//@blocks.6/@node_objs.11"/>
-  <edges id="345" source_obj="//@blocks.6/@node_objs.11" sink_obj="//@blocks.6/@node_objs.12"/>
-  <edges id="346" sink_obj="//@blocks.6/@node_objs.13"/>
-  <edges id="347" source_obj="//@blocks.6/@node_objs.13" sink_obj="//@blocks.6/@node_objs.14"/>
-  <edges id="349" source_obj="//@blocks.6/@node_objs.14" sink_obj="//@blocks.6/@node_objs.15"/>
-  <edges id="350" edge_type="CtrlEdge" source_obj="//@blocks.8" sink_obj="//@blocks.6/@node_objs.15"/>
-  <edges id="351" edge_type="CtrlEdge" source_obj="//@blocks.7" sink_obj="//@blocks.6/@node_objs.15"/>
-  <edges id="352" source_obj="//@blocks.5/@node_objs.0" sink_obj="//@blocks.8/@node_objs.0"/>
-  <edges id="353" source_obj="//@blocks.8/@node_objs.0" sink_obj="//@blocks.8/@node_objs.1"/>
-  <edges id="356" source_obj="//@blocks.8/@node_objs.1" sink_obj="//@blocks.8/@node_objs.2"/>
-  <edges id="357" source_obj="//@blocks.6/@node_objs.13" sink_obj="//@blocks.8/@node_objs.3"/>
-  <edges id="358" source_obj="//@blocks.8/@node_objs.2" sink_obj="//@blocks.8/@node_objs.3"/>
-  <edges id="359" source_obj="//@blocks.8/@node_objs.3" sink_obj="//@blocks.8/@node_objs.4"/>
-  <edges id="360" sink_obj="//@blocks.8/@node_objs.4"/>
-  <edges id="361" edge_type="CtrlEdge" source_obj="//@blocks.10" sink_obj="//@blocks.8/@node_objs.5"/>
-  <edges id="362" source_obj="//@blocks.6/@node_objs.12" sink_obj="//@blocks.7/@node_objs.0"/>
-  <edges id="363" source_obj="//@blocks.5/@node_objs.1" sink_obj="//@blocks.7/@node_objs.0"/>
-  <edges id="364" edge_type="CtrlEdge" source_obj="//@blocks.5" sink_obj="//@blocks.7/@node_objs.1"/>
-  <edges id="365" edge_type="CtrlEdge" source_obj="//@blocks.10" sink_obj="//@blocks.9/@node_objs.0"/>
-  <edges id="366" source_obj="//@blocks.8/@node_objs.3" sink_obj="//@blocks.10/@node_objs.0"/>
-  <edges id="367" edge_type="CtrlEdge" source_obj="//@blocks.8" sink_obj="//@blocks.10/@node_objs.0"/>
-  <edges id="369" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@blocks.10/@node_objs.0"/>
-  <edges id="371" edge_type="CtrlEdge" source_obj="//@blocks.9" sink_obj="//@blocks.10/@node_objs.0"/>
-  <edges id="372" source_obj="//@blocks.5/@node_objs.1" sink_obj="//@blocks.10/@node_objs.1"/>
-  <edges id="373" edge_type="CtrlEdge" source_obj="//@blocks.8" sink_obj="//@blocks.10/@node_objs.1"/>
-  <edges id="375" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@blocks.10/@node_objs.1"/>
-  <edges id="376" source_obj="//@blocks.5/@node_objs.1" sink_obj="//@blocks.10/@node_objs.1"/>
-  <edges id="377" edge_type="CtrlEdge" source_obj="//@blocks.9" sink_obj="//@blocks.10/@node_objs.1"/>
-  <edges id="378" source_obj="//@blocks.10/@node_objs.1" sink_obj="//@blocks.10/@node_objs.2"/>
-  <edges id="380" source_obj="//@blocks.0/@node_objs.7" sink_obj="//@blocks.10/@node_objs.3"/>
-  <edges id="383" source_obj="//@blocks.0/@node_objs.7" sink_obj="//@blocks.10/@node_objs.4"/>
-  <edges id="384" source_obj="//@blocks.10/@node_objs.2" sink_obj="//@blocks.10/@node_objs.4"/>
-  <edges id="387" source_obj="//@blocks.0/@node_objs.7" sink_obj="//@blocks.10/@node_objs.5"/>
-  <edges id="389" source_obj="//@blocks.10/@node_objs.6" sink_obj="//@ports.2"/>
-  <edges id="390" source_obj="//@blocks.10/@node_objs.0" sink_obj="//@blocks.10/@node_objs.6"/>
-  <edges id="391" edge_type="CtrlEdge" source_obj="//@blocks.12" sink_obj="//@blocks.10/@node_objs.7"/>
-  <edges id="392" sink_obj="//@blocks.6/@node_objs.11"/>
-  <edges id="393" sink_obj="//@blocks.6/@node_objs.11"/>
-  <edges id="394" sink_obj="//@blocks.6/@node_objs.11"/>
-  <edges id="395" sink_obj="//@blocks.6/@node_objs.11"/>
-  <edges id="396" sink_obj="//@blocks.6/@node_objs.11"/>
-  <edges id="397" sink_obj="//@blocks.6/@node_objs.11"/>
-  <edges id="398" sink_obj="//@blocks.6/@node_objs.11"/>
-  <edges id="399" sink_obj="//@blocks.6/@node_objs.11"/>
-  <edges id="567" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0"/>
-  <edges id="568" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.1"/>
-  <edges id="569" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1"/>
-  <edges id="570" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0" is_back_edge="1"/>
-  <edges id="571" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.11"/>
-  <edges id="572" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.2"/>
-  <edges id="573" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@regions.1/@basic_blocks.0"/>
-  <edges id="574" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.0" sink_obj="//@regions.1/@basic_blocks.1"/>
-  <edges id="575" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.0" sink_obj="//@blocks.3"/>
-  <edges id="576" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.1" sink_obj="//@regions.1/@basic_blocks.0" is_back_edge="1"/>
-  <edges id="577" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@blocks.10"/>
-  <edges id="578" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@blocks.4"/>
-  <edges id="579" edge_type="CtrlEdge" source_obj="//@blocks.4" sink_obj="//@blocks.5"/>
-  <edges id="580" edge_type="CtrlEdge" source_obj="//@blocks.5" sink_obj="//@blocks.6"/>
-  <edges id="581" edge_type="CtrlEdge" source_obj="//@blocks.5" sink_obj="//@blocks.9"/>
-  <edges id="582" edge_type="CtrlEdge" source_obj="//@blocks.6" sink_obj="//@blocks.7"/>
-  <edges id="583" edge_type="CtrlEdge" source_obj="//@blocks.6" sink_obj="//@blocks.8"/>
-  <edges id="584" edge_type="CtrlEdge" source_obj="//@blocks.7" sink_obj="//@blocks.5" is_back_edge="1"/>
-  <edges id="585" edge_type="CtrlEdge" source_obj="//@blocks.8" sink_obj="//@blocks.10"/>
-  <edges id="586" edge_type="CtrlEdge" source_obj="//@blocks.9" sink_obj="//@blocks.10"/>
-  <edges id="587" edge_type="CtrlEdge" source_obj="//@blocks.10" sink_obj="//@blocks.12"/>
-  <edges id="588" edge_type="CtrlEdge" source_obj="//@blocks.11" sink_obj="//@blocks.12"/>
-  <edges id="589" edge_type="VirtEdge" source_obj="//@blocks.6/@node_objs.11" sink_obj="//@blocks.6/@node_objs.13"/>
-  <edges id="590" edge_type="VirtEdge" source_obj="//@blocks.10/@node_objs.4" sink_obj="//@blocks.10/@node_objs.5"/>
-  <edges id="591" edge_type="VirtEdge" source_obj="//@blocks.10/@node_objs.3" sink_obj="//@blocks.10/@node_objs.4"/>
-  <edges id="592" edge_type="VirtEdge" source_obj="//@blocks.11/@node_objs.1" sink_obj="//@blocks.11/@node_objs.2"/>
-  <edges id="593" edge_type="VirtEdge" source_obj="//@blocks.11/@node_objs.0" sink_obj="//@blocks.11/@node_objs.1"/>
-  <edges id="594" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.8" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.1"/>
-  <edges id="595" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@blocks.11/@node_objs.3"/>
-  <edges id="596" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.8" sink_obj="//@blocks.11/@node_objs.0"/>
-  <edges id="597" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.8" sink_obj="//@blocks.11/@node_objs.1"/>
-  <edges id="598" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.8" sink_obj="//@blocks.11/@node_objs.2"/>
-  <edges id="599" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@blocks.10/@node_objs.6"/>
-  <edges id="600" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.8" sink_obj="//@blocks.10/@node_objs.3"/>
-  <edges id="601" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.8" sink_obj="//@blocks.10/@node_objs.4"/>
-  <edges id="602" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.8" sink_obj="//@blocks.10/@node_objs.5"/>
-  <edges id="603" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@blocks.6/@node_objs.11"/>
-  <edges id="604" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@blocks.6/@node_objs.13"/>
-  <edges id="605" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@blocks.8/@node_objs.4"/>
-  <edges id="606" edge_type="VirtEdge" source_obj="//@blocks.1/@node_objs.1" sink_obj="//@blocks.6/@node_objs.11"/>
-  <edges id="607" edge_type="VirtEdge" source_obj="//@blocks.6/@node_objs.11" sink_obj="//@blocks.8/@node_objs.4"/>
-  <edges id="608" edge_type="VirtEdge" source_obj="//@blocks.6/@node_objs.13" sink_obj="//@blocks.8/@node_objs.4"/>
-  <edges id="-167" source_obj="//@blocks.0/@node_objs.7" sink_obj="//@ports.0"/>
+  <edges id="144" source_obj="//@ports.1" sink_obj="//@blocks.0/@node_objs.0"/>
+  <edges id="149" sink_obj="//@blocks.0/@node_objs.3"/>
+  <edges id="152" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.0/@node_objs.4"/>
+  <edges id="157" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@blocks.0/@node_objs.5"/>
+  <edges id="158" source_obj="//@ports.0" sink_obj="//@blocks.0/@node_objs.6"/>
+  <edges id="159" source_obj="//@blocks.0/@node_objs.5" sink_obj="//@blocks.0/@node_objs.6"/>
+  <edges id="162" source_obj="//@blocks.0/@node_objs.6" sink_obj="//@blocks.0/@node_objs.7"/>
+  <edges id="165" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.0/@node_objs.8"/>
+  <edges id="168" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="169" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0" is_back_edge="1"/>
+  <edges id="170" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0" is_back_edge="1"/>
+  <edges id="171" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="174" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="177" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="178" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="179" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="180" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="183" source_obj="//@blocks.0/@node_objs.6" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.1"/>
+  <edges id="184" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.2"/>
+  <edges id="187" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.2"/>
+  <edges id="188" source_obj="//@regions.0/@basic_blocks.1/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.3"/>
+  <edges id="189" source_obj="//@regions.0/@basic_blocks.1/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.3"/>
+  <edges id="190" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.4"/>
+  <edges id="194" source_obj="//@blocks.1/@node_objs.0" sink_obj="//@blocks.1/@node_objs.1"/>
+  <edges id="195" source_obj="//@blocks.1/@node_objs.1" sink_obj="//@blocks.1/@node_objs.2"/>
+  <edges id="196" sink_obj="//@blocks.1/@node_objs.2"/>
+  <edges id="200" source_obj="//@blocks.1/@node_objs.3" sink_obj="//@blocks.1/@node_objs.4"/>
+  <edges id="201" source_obj="//@blocks.1/@node_objs.3" sink_obj="//@blocks.1/@node_objs.5"/>
+  <edges id="202" source_obj="//@blocks.1/@node_objs.1" sink_obj="//@blocks.1/@node_objs.6"/>
+  <edges id="204" source_obj="//@blocks.1/@node_objs.1" sink_obj="//@blocks.1/@node_objs.7"/>
+  <edges id="207" source_obj="//@blocks.1/@node_objs.4" sink_obj="//@blocks.1/@node_objs.8"/>
+  <edges id="208" source_obj="//@blocks.1/@node_objs.8" sink_obj="//@blocks.1/@node_objs.9"/>
+  <edges id="211" source_obj="//@blocks.1/@node_objs.9" sink_obj="//@blocks.1/@node_objs.10"/>
+  <edges id="214" source_obj="//@blocks.1/@node_objs.7" sink_obj="//@blocks.1/@node_objs.11"/>
+  <edges id="215" source_obj="//@blocks.1/@node_objs.10" sink_obj="//@blocks.1/@node_objs.11"/>
+  <edges id="216" source_obj="//@blocks.1/@node_objs.11" sink_obj="//@blocks.1/@node_objs.12"/>
+  <edges id="217" source_obj="//@blocks.1/@node_objs.6" sink_obj="//@blocks.1/@node_objs.12"/>
+  <edges id="218" source_obj="//@blocks.1/@node_objs.12" sink_obj="//@blocks.1/@node_objs.13"/>
+  <edges id="219" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@blocks.1/@node_objs.13"/>
+  <edges id="220" edge_type="CtrlEdge" source_obj="//@blocks.10" sink_obj="//@blocks.1/@node_objs.13"/>
+  <edges id="221" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.0" sink_obj="//@blocks.2/@node_objs.0"/>
+  <edges id="222" source_obj="//@regions.1/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.0" is_back_edge="1"/>
+  <edges id="223" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.1" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.0" is_back_edge="1"/>
+  <edges id="226" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.0"/>
+  <edges id="227" source_obj="//@regions.1/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.1"/>
+  <edges id="230" source_obj="//@regions.1/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.2"/>
+  <edges id="231" source_obj="//@regions.1/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.3"/>
+  <edges id="232" source_obj="//@blocks.1/@node_objs.4" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.3"/>
+  <edges id="233" source_obj="//@regions.1/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.4"/>
+  <edges id="234" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.4"/>
+  <edges id="235" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.1" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.4"/>
+  <edges id="236" source_obj="//@regions.1/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.0"/>
+  <edges id="237" source_obj="//@regions.1/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.1"/>
+  <edges id="240" source_obj="//@regions.1/@basic_blocks.1/@node_objs.1" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.2"/>
+  <edges id="241" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.3"/>
+  <edges id="243" source_obj="//@regions.1/@basic_blocks.1/@node_objs.2" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.3"/>
+  <edges id="244" source_obj="//@regions.1/@basic_blocks.1/@node_objs.3" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.4"/>
+  <edges id="247" source_obj="//@regions.1/@basic_blocks.1/@node_objs.4" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.5"/>
+  <edges id="252" source_obj="//@regions.1/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.6"/>
+  <edges id="253" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.7"/>
+  <edges id="255" source_obj="//@regions.1/@basic_blocks.1/@node_objs.6" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.7"/>
+  <edges id="256" source_obj="//@regions.1/@basic_blocks.1/@node_objs.5" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.8"/>
+  <edges id="257" source_obj="//@regions.1/@basic_blocks.1/@node_objs.7" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.8"/>
+  <edges id="258" source_obj="//@regions.1/@basic_blocks.1/@node_objs.4" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.9"/>
+  <edges id="259" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.10"/>
+  <edges id="261" source_obj="//@regions.1/@basic_blocks.1/@node_objs.6" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.10"/>
+  <edges id="262" source_obj="//@regions.1/@basic_blocks.1/@node_objs.9" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.11"/>
+  <edges id="263" source_obj="//@regions.1/@basic_blocks.1/@node_objs.10" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.11"/>
+  <edges id="264" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.0" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.12"/>
+  <edges id="265" source_obj="//@blocks.1/@node_objs.5" sink_obj="//@blocks.3/@node_objs.0"/>
+  <edges id="268" source_obj="//@blocks.3/@node_objs.0" sink_obj="//@blocks.3/@node_objs.1"/>
+  <edges id="271" source_obj="//@blocks.3/@node_objs.1" sink_obj="//@blocks.3/@node_objs.2"/>
+  <edges id="272" edge_type="CtrlEdge" source_obj="//@blocks.10" sink_obj="//@blocks.3/@node_objs.2"/>
+  <edges id="273" edge_type="CtrlEdge" source_obj="//@blocks.4" sink_obj="//@blocks.3/@node_objs.2"/>
+  <edges id="274" edge_type="CtrlEdge" source_obj="//@blocks.5" sink_obj="//@blocks.4/@node_objs.0"/>
+  <edges id="275" source_obj="//@blocks.5/@node_objs.4" sink_obj="//@blocks.5/@node_objs.0" is_back_edge="1"/>
+  <edges id="276" edge_type="CtrlEdge" source_obj="//@blocks.7" sink_obj="//@blocks.5/@node_objs.0" is_back_edge="1"/>
+  <edges id="278" edge_type="CtrlEdge" source_obj="//@blocks.4" sink_obj="//@blocks.5/@node_objs.0"/>
+  <edges id="279" source_obj="//@blocks.7/@node_objs.0" sink_obj="//@blocks.5/@node_objs.1" is_back_edge="1"/>
+  <edges id="280" edge_type="CtrlEdge" source_obj="//@blocks.7" sink_obj="//@blocks.5/@node_objs.1" is_back_edge="1"/>
+  <edges id="283" edge_type="CtrlEdge" source_obj="//@blocks.4" sink_obj="//@blocks.5/@node_objs.1"/>
+  <edges id="284" source_obj="//@blocks.5/@node_objs.0" sink_obj="//@blocks.5/@node_objs.2"/>
+  <edges id="285" source_obj="//@blocks.5/@node_objs.2" sink_obj="//@blocks.5/@node_objs.3"/>
+  <edges id="286" source_obj="//@blocks.3/@node_objs.0" sink_obj="//@blocks.5/@node_objs.3"/>
+  <edges id="287" source_obj="//@blocks.5/@node_objs.0" sink_obj="//@blocks.5/@node_objs.4"/>
+  <edges id="289" source_obj="//@blocks.5/@node_objs.3" sink_obj="//@blocks.5/@node_objs.5"/>
+  <edges id="290" edge_type="CtrlEdge" source_obj="//@blocks.9" sink_obj="//@blocks.5/@node_objs.5"/>
+  <edges id="291" edge_type="CtrlEdge" source_obj="//@blocks.6" sink_obj="//@blocks.5/@node_objs.5"/>
+  <edges id="292" source_obj="//@blocks.5/@node_objs.0" sink_obj="//@blocks.6/@node_objs.0"/>
+  <edges id="293" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.6/@node_objs.1"/>
+  <edges id="295" source_obj="//@blocks.6/@node_objs.0" sink_obj="//@blocks.6/@node_objs.1"/>
+  <edges id="296" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@blocks.6/@node_objs.2"/>
+  <edges id="298" source_obj="//@blocks.6/@node_objs.0" sink_obj="//@blocks.6/@node_objs.2"/>
+  <edges id="299" source_obj="//@blocks.6/@node_objs.1" sink_obj="//@blocks.6/@node_objs.3"/>
+  <edges id="300" source_obj="//@blocks.6/@node_objs.2" sink_obj="//@blocks.6/@node_objs.4"/>
+  <edges id="301" source_obj="//@blocks.5/@node_objs.4" sink_obj="//@blocks.6/@node_objs.5"/>
+  <edges id="302" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.6/@node_objs.6"/>
+  <edges id="304" source_obj="//@blocks.6/@node_objs.5" sink_obj="//@blocks.6/@node_objs.6"/>
+  <edges id="305" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@blocks.6/@node_objs.7"/>
+  <edges id="307" source_obj="//@blocks.6/@node_objs.5" sink_obj="//@blocks.6/@node_objs.7"/>
+  <edges id="308" source_obj="//@blocks.6/@node_objs.6" sink_obj="//@blocks.6/@node_objs.8"/>
+  <edges id="309" source_obj="//@blocks.6/@node_objs.7" sink_obj="//@blocks.6/@node_objs.9"/>
+  <edges id="312" source_obj="//@blocks.6/@node_objs.3" sink_obj="//@blocks.6/@node_objs.10"/>
+  <edges id="313" source_obj="//@blocks.6/@node_objs.4" sink_obj="//@blocks.6/@node_objs.10"/>
+  <edges id="314" source_obj="//@blocks.6/@node_objs.8" sink_obj="//@blocks.6/@node_objs.10"/>
+  <edges id="315" source_obj="//@blocks.6/@node_objs.9" sink_obj="//@blocks.6/@node_objs.10"/>
+  <edges id="316" source_obj="//@blocks.6/@node_objs.10" sink_obj="//@blocks.6/@node_objs.11"/>
+  <edges id="317" sink_obj="//@blocks.6/@node_objs.12"/>
+  <edges id="318" source_obj="//@blocks.6/@node_objs.12" sink_obj="//@blocks.6/@node_objs.13"/>
+  <edges id="320" source_obj="//@blocks.6/@node_objs.13" sink_obj="//@blocks.6/@node_objs.14"/>
+  <edges id="321" edge_type="CtrlEdge" source_obj="//@blocks.8" sink_obj="//@blocks.6/@node_objs.14"/>
+  <edges id="322" edge_type="CtrlEdge" source_obj="//@blocks.7" sink_obj="//@blocks.6/@node_objs.14"/>
+  <edges id="323" source_obj="//@blocks.5/@node_objs.4" sink_obj="//@blocks.8/@node_objs.0"/>
+  <edges id="324" source_obj="//@blocks.8/@node_objs.0" sink_obj="//@blocks.8/@node_objs.1"/>
+  <edges id="327" source_obj="//@blocks.8/@node_objs.1" sink_obj="//@blocks.8/@node_objs.2"/>
+  <edges id="328" source_obj="//@blocks.6/@node_objs.12" sink_obj="//@blocks.8/@node_objs.3"/>
+  <edges id="329" source_obj="//@blocks.8/@node_objs.2" sink_obj="//@blocks.8/@node_objs.3"/>
+  <edges id="330" source_obj="//@blocks.8/@node_objs.3" sink_obj="//@blocks.8/@node_objs.4"/>
+  <edges id="331" sink_obj="//@blocks.8/@node_objs.4"/>
+  <edges id="332" edge_type="CtrlEdge" source_obj="//@blocks.10" sink_obj="//@blocks.8/@node_objs.5"/>
+  <edges id="333" source_obj="//@blocks.6/@node_objs.11" sink_obj="//@blocks.7/@node_objs.0"/>
+  <edges id="334" source_obj="//@blocks.5/@node_objs.1" sink_obj="//@blocks.7/@node_objs.0"/>
+  <edges id="335" edge_type="CtrlEdge" source_obj="//@blocks.5" sink_obj="//@blocks.7/@node_objs.1"/>
+  <edges id="336" edge_type="CtrlEdge" source_obj="//@blocks.10" sink_obj="//@blocks.9/@node_objs.0"/>
+  <edges id="337" source_obj="//@blocks.5/@node_objs.1" sink_obj="//@blocks.10/@node_objs.0"/>
+  <edges id="338" edge_type="CtrlEdge" source_obj="//@blocks.8" sink_obj="//@blocks.10/@node_objs.0"/>
+  <edges id="341" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.10/@node_objs.0"/>
+  <edges id="343" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@blocks.10/@node_objs.0"/>
+  <edges id="344" source_obj="//@blocks.5/@node_objs.1" sink_obj="//@blocks.10/@node_objs.0"/>
+  <edges id="345" edge_type="CtrlEdge" source_obj="//@blocks.9" sink_obj="//@blocks.10/@node_objs.0"/>
+  <edges id="346" source_obj="//@blocks.8/@node_objs.3" sink_obj="//@blocks.10/@node_objs.1"/>
+  <edges id="347" edge_type="CtrlEdge" source_obj="//@blocks.8" sink_obj="//@blocks.10/@node_objs.1"/>
+  <edges id="350" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.10/@node_objs.1"/>
+  <edges id="352" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@blocks.10/@node_objs.1"/>
+  <edges id="354" edge_type="CtrlEdge" source_obj="//@blocks.9" sink_obj="//@blocks.10/@node_objs.1"/>
+  <edges id="355" source_obj="//@blocks.10/@node_objs.0" sink_obj="//@blocks.10/@node_objs.2"/>
+  <edges id="358" source_obj="//@blocks.0/@node_objs.6" sink_obj="//@blocks.10/@node_objs.3"/>
+  <edges id="363" source_obj="//@blocks.0/@node_objs.6" sink_obj="//@blocks.10/@node_objs.4"/>
+  <edges id="364" source_obj="//@blocks.10/@node_objs.2" sink_obj="//@blocks.10/@node_objs.4"/>
+  <edges id="369" source_obj="//@blocks.0/@node_objs.6" sink_obj="//@blocks.10/@node_objs.5"/>
+  <edges id="372" source_obj="//@blocks.10/@node_objs.6" sink_obj="//@ports.2"/>
+  <edges id="373" source_obj="//@blocks.10/@node_objs.1" sink_obj="//@blocks.10/@node_objs.6"/>
+  <edges id="374" sink_obj="//@blocks.6/@node_objs.10"/>
+  <edges id="375" sink_obj="//@blocks.6/@node_objs.10"/>
+  <edges id="376" sink_obj="//@blocks.6/@node_objs.10"/>
+  <edges id="377" sink_obj="//@blocks.6/@node_objs.10"/>
+  <edges id="378" sink_obj="//@blocks.6/@node_objs.10"/>
+  <edges id="379" sink_obj="//@blocks.6/@node_objs.10"/>
+  <edges id="380" sink_obj="//@blocks.6/@node_objs.10"/>
+  <edges id="381" sink_obj="//@blocks.6/@node_objs.10"/>
+  <edges id="556" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0"/>
+  <edges id="557" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.1"/>
+  <edges id="558" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1"/>
+  <edges id="559" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0" is_back_edge="1"/>
+  <edges id="560" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.10"/>
+  <edges id="561" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.2"/>
+  <edges id="562" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@regions.1/@basic_blocks.0"/>
+  <edges id="563" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.0" sink_obj="//@regions.1/@basic_blocks.1"/>
+  <edges id="564" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.0" sink_obj="//@blocks.3"/>
+  <edges id="565" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.1" sink_obj="//@regions.1/@basic_blocks.0" is_back_edge="1"/>
+  <edges id="566" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@blocks.4"/>
+  <edges id="567" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@blocks.10"/>
+  <edges id="568" edge_type="CtrlEdge" source_obj="//@blocks.4" sink_obj="//@blocks.5"/>
+  <edges id="569" edge_type="CtrlEdge" source_obj="//@blocks.5" sink_obj="//@blocks.6"/>
+  <edges id="570" edge_type="CtrlEdge" source_obj="//@blocks.5" sink_obj="//@blocks.9"/>
+  <edges id="571" edge_type="CtrlEdge" source_obj="//@blocks.6" sink_obj="//@blocks.7"/>
+  <edges id="572" edge_type="CtrlEdge" source_obj="//@blocks.6" sink_obj="//@blocks.8"/>
+  <edges id="573" edge_type="CtrlEdge" source_obj="//@blocks.7" sink_obj="//@blocks.5" is_back_edge="1"/>
+  <edges id="574" edge_type="CtrlEdge" source_obj="//@blocks.8" sink_obj="//@blocks.10"/>
+  <edges id="575" edge_type="CtrlEdge" source_obj="//@blocks.9" sink_obj="//@blocks.10"/>
+  <edges id="576" edge_type="VirtEdge" source_obj="//@blocks.6/@node_objs.10" sink_obj="//@blocks.6/@node_objs.12"/>
+  <edges id="577" edge_type="VirtEdge" source_obj="//@blocks.10/@node_objs.4" sink_obj="//@blocks.10/@node_objs.5"/>
+  <edges id="578" edge_type="VirtEdge" source_obj="//@blocks.10/@node_objs.3" sink_obj="//@blocks.10/@node_objs.4"/>
+  <edges id="579" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.1"/>
+  <edges id="580" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.7" sink_obj="//@blocks.10/@node_objs.3"/>
+  <edges id="581" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.7" sink_obj="//@blocks.10/@node_objs.4"/>
+  <edges id="582" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.7" sink_obj="//@blocks.10/@node_objs.5"/>
+  <edges id="583" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@blocks.6/@node_objs.10"/>
+  <edges id="584" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@blocks.6/@node_objs.12"/>
+  <edges id="585" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@blocks.8/@node_objs.4"/>
+  <edges id="586" edge_type="VirtEdge" source_obj="//@blocks.1/@node_objs.2" sink_obj="//@blocks.6/@node_objs.10"/>
+  <edges id="587" edge_type="VirtEdge" source_obj="//@blocks.6/@node_objs.10" sink_obj="//@blocks.8/@node_objs.4"/>
+  <edges id="588" edge_type="VirtEdge" source_obj="//@blocks.6/@node_objs.12" sink_obj="//@blocks.8/@node_objs.4"/>
+  <edges id="-158" source_obj="//@blocks.0/@node_objs.6" sink_obj="//@ports.0"/>
   <blocks id="37" name="block_37" type="BlockType">
     <controlOutputObjs>phi</controlOutputObjs>
-    <controlOutputObjs>load-store-loop</controlOutputObjs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="24" name="ram_read" originalName="ram" coreName="s_axilite" implIndex="UNSUPPORTED" control="auto" coreId="114" bitwidth="64" opcode="read" m_display="0" m_delay="1.0" m_topoIndex="1" m_clusterGroupNumber="-1">
+    <controlOutputObjs>block_44</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="25" name="ram_read" originalName="ram" coreName="s_axilite" implIndex="UNSUPPORTED" control="auto" coreId="114" bitwidth="64" opcode="read" m_display="0" m_delay="1.0" m_topoIndex="1" m_clusterGroupNumber="-1">
       <dataInputObjs>ram</dataInputObjs>
       <dataOutputObjs>partselect</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="25" name="waypoints_x" lineNumber="252" originalName="waypoints.x" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="waypoints_x_U" coreName="RAM" implIndex="auto" control="auto" opType="ram" coreId="82" contextFuncName="toplevel" bitwidth="16" opcode="alloca" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="252" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="26" name="waypoints_x" lineNumber="411" originalName="waypoints.x" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="waypoints_x_U" coreName="RAM" implIndex="auto" control="auto" opType="ram" coreId="82" contextFuncName="toplevel" bitwidth="16" opcode="alloca" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="411" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <dataOutputObjs>getelementptr</dataOutputObjs>
       <dataOutputObjs>getelementptr</dataOutputObjs>
       <dataOutputObjs>getelementptr</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="26" name="waypoints_y" lineNumber="252" originalName="waypoints.y" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="waypoints_y_U" coreName="RAM" implIndex="auto" control="auto" opType="ram" coreId="82" contextFuncName="toplevel" bitwidth="16" opcode="alloca" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="252" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="27" name="waypoints_y" lineNumber="411" originalName="waypoints.y" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="waypoints_y_U" coreName="RAM" implIndex="auto" control="auto" opType="ram" coreId="82" contextFuncName="toplevel" bitwidth="16" opcode="alloca" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="411" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <dataOutputObjs>getelementptr</dataOutputObjs>
       <dataOutputObjs>getelementptr</dataOutputObjs>
       <dataOutputObjs>getelementptr</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="30" name="code_write_ln232" lineNumber="232" fileName="assessment/toplevel.cpp" fileDirectory=".." coreName="s_axilite" implIndex="UNSUPPORTED" control="auto" coreId="114" contextFuncName="toplevel" opcode="write" m_display="0" m_delay="1.0" m_topoIndex="4" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="232" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
-      <dataOutputObjs>code</dataOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="31" name="error_flag_write_ln389" lineNumber="389" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="0" contextFuncName="toplevel" opcode="store" m_display="0" m_delay="1.58" m_topoIndex="4" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="389" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="31" name="error_flag_write_ln233" lineNumber="233" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="132" contextFuncName="toplevel" opcode="store" m_display="0" m_delay="1.58" m_topoIndex="5" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="233" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
-      <constName>empty</constName>
-    </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="32" name="trunc_ln" lineNumber="238" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="trunc_ln_fu_404_p4" coreId="2617246080" contextFuncName="toplevel" bitwidth="62" opcode="partselect" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="238" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="32" name="trunc_ln" lineNumber="401" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="trunc_ln_fu_406_p4" coreId="0" contextFuncName="toplevel" bitwidth="62" opcode="partselect" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="401" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>sext</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="33" name="sext_ln238" lineNumber="238" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="sext_ln238_fu_414_p1" coreId="49" contextFuncName="toplevel" bitwidth="64" opcode="sext" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="238" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="33" name="sext_ln401" lineNumber="401" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="sext_ln401_fu_416_p1" coreId="129" contextFuncName="toplevel" bitwidth="64" opcode="sext" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="401" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <dataInputObjs>partselect</dataInputObjs>
       <dataOutputObjs>getelementptr</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="34" name="MAXI_addr" lineNumber="238" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="49" contextFuncName="toplevel" bitwidth="32" opcode="getelementptr" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="238" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="34" name="MAXI_addr" lineNumber="401" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="177" contextFuncName="toplevel" bitwidth="32" opcode="getelementptr" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="401" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <dataInputObjs>MAXI</dataInputObjs>
       <dataInputObjs>sext</dataInputObjs>
       <dataOutputObjs>readreq</dataOutputObjs>
@@ -257,281 +239,291 @@
       <dataOutputObjs>writereq</dataOutputObjs>
       <dataOutputObjs>write</dataOutputObjs>
       <dataOutputObjs>writeresp</dataOutputObjs>
-      <dataOutputObjs>writereq</dataOutputObjs>
-      <dataOutputObjs>write</dataOutputObjs>
-      <dataOutputObjs>writeresp</dataOutputObjs>
       <dataOutputObjs>MAXI</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="35" name="empty" lineNumber="238" fileName="assessment/toplevel.cpp" fileDirectory=".." coreName="m_axi" implIndex="m_axi" control="auto" opType="readreq" coreId="113" contextFuncName="toplevel" bitwidth="1" opcode="readreq" nodeLabel="1.0" nodeLatency="6" m_display="0" m_delay="7.3" m_topoIndex="9" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="238" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="35" name="empty" lineNumber="401" fileName="assessment/toplevel.cpp" fileDirectory=".." coreName="m_axi" implIndex="m_axi" control="auto" opType="readreq" coreId="113" contextFuncName="toplevel" bitwidth="1" opcode="readreq" nodeLabel="1.0" nodeLatency="6" m_display="0" m_delay="7.3" m_topoIndex="8" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="401" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <dataInputObjs>getelementptr</dataInputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="36" name="br_ln238" lineNumber="238" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="433" contextFuncName="toplevel" opcode="br" nodeLabel="7.0" m_display="0" m_delay="1.58" m_topoIndex="10" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="238" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
-      <controlInputObjs>load-store-loop</controlInputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="36" name="br_ln401" lineNumber="401" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="257" contextFuncName="toplevel" opcode="br" nodeLabel="7.0" m_display="0" m_delay="1.58" m_topoIndex="9" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="401" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+      <controlInputObjs>block_44</controlInputObjs>
     </node_objs>
     <fileValidLineNumbers fileName="assessment/toplevel.cpp">
-      <validLinenumbers>252</validLinenumbers>
-      <validLinenumbers>232</validLinenumbers>
-      <validLinenumbers>233</validLinenumbers>
-      <validLinenumbers>238</validLinenumbers>
+      <validLinenumbers>411</validLinenumbers>
+      <validLinenumbers>389</validLinenumbers>
+      <validLinenumbers>401</validLinenumbers>
     </fileValidLineNumbers>
   </blocks>
-  <blocks id="61" name="memcpy-split" type="BlockType">
-    <controlInputObjs>load-store-loop</controlInputObjs>
-    <controlOutputObjs>br</controlOutputObjs>
-    <controlOutputObjs>block_144</controlOutputObjs>
-    <controlOutputObjs>.lr.ph17.preheader</controlOutputObjs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="51" name="local_ram_load" lineNumber="241" fileName="assessment/toplevel.cpp" fileDirectory=".." coreName="RAM_T2P_BRAM" implIndex="bram" control="auto" opType="ram_t2p" coreId="94" contextFuncName="toplevel" bitwidth="32" opcode="load" nodeLabel="11.0" nodeLatency="1" m_display="0" m_delay="3.25" m_topoIndex="20" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="241" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
-      <dataOutputObjs>store</dataOutputObjs>
-      <dataOutputObjs>add</dataOutputObjs>
-      <constName>empty</constName>
-    </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="52" name="world_size_write_ln241" lineNumber="241" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="0" contextFuncName="toplevel" opcode="store" nodeLabel="12.0" m_display="0" m_topoIndex="22" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="241" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
-      <dataInputObjs>load</dataInputObjs>
-    </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="53" name="waypoint_count" lineNumber="242" originalName="waypoint_count" fileName="assessment/toplevel.cpp" fileDirectory=".." coreName="RAM_T2P_BRAM" implIndex="bram" control="auto" opType="ram_t2p" coreId="94" contextFuncName="toplevel" bitwidth="32" opcode="load" nodeLabel="11.0" nodeLatency="1" m_display="0" m_delay="3.25" m_topoIndex="21" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="242" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
-      <dataOutputObjs>trunc</dataOutputObjs>
-      <dataOutputObjs>add</dataOutputObjs>
-      <dataOutputObjs>icmp</dataOutputObjs>
-      <constName>empty</constName>
-    </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="54" name="trunc_ln242" lineNumber="242" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="trunc_ln242_fu_447_p1" coreId="0" contextFuncName="toplevel" bitwidth="9" opcode="trunc" nodeLabel="12.0" m_display="0" m_topoIndex="23" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="242" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
-      <dataInputObjs>load</dataInputObjs>
-      <dataOutputObjs>add</dataOutputObjs>
-    </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="55" name="add_ln245" lineNumber="245" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="add_ln245_fu_451_p2" coreName="Adder" implIndex="fabric" control="auto" opType="add" coreId="1" contextFuncName="toplevel" bitwidth="32" opcode="add" nodeLabel="13.0" m_display="0" m_delay="2.55" m_topoIndex="24" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="245" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
-      <dataInputObjs>load</dataInputObjs>
-      <dataOutputObjs>icmp</dataOutputObjs>
-      <constName>empty</constName>
-    </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="56" name="icmp_ln245" lineNumber="245" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="icmp_ln245_fu_456_p2" opType="icmp" coreId="1662209792" contextFuncName="toplevel" bitwidth="1" opcode="icmp" nodeLabel="13.0" m_display="0" m_delay="2.47" m_topoIndex="25" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="245" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
-      <dataInputObjs>add</dataInputObjs>
-      <dataOutputObjs>or</dataOutputObjs>
-      <constName>empty</constName>
-    </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="57" name="add_ln245_1" lineNumber="245" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="add_ln245_1_fu_462_p2" coreName="Adder" implIndex="fabric" control="auto" opType="add" coreId="1" contextFuncName="toplevel" bitwidth="32" opcode="add" nodeLabel="13.0" m_display="0" m_delay="2.55" m_topoIndex="26" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="245" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
-      <dataInputObjs>load</dataInputObjs>
-      <dataOutputObjs>icmp</dataOutputObjs>
-      <constName>empty</constName>
-    </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="58" name="icmp_ln245_1" lineNumber="245" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="icmp_ln245_1_fu_467_p2" opType="icmp" coreId="1662211840" contextFuncName="toplevel" bitwidth="1" opcode="icmp" nodeLabel="13.0" m_display="0" m_delay="2.47" m_topoIndex="27" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="245" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
-      <dataInputObjs>add</dataInputObjs>
-      <dataOutputObjs>or</dataOutputObjs>
-      <constName>empty</constName>
-    </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="59" name="or_ln245" lineNumber="245" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="or_ln245_fu_473_p2" opType="or" coreId="2617245840" contextFuncName="toplevel" bitwidth="1" opcode="or" nodeLabel="13.0" m_display="0" m_delay="0.97" m_topoIndex="28" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="245" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
-      <dataInputObjs>icmp</dataInputObjs>
-      <dataInputObjs>icmp</dataInputObjs>
-      <dataOutputObjs>br</dataOutputObjs>
-    </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="60" name="br_ln245" lineNumber="245" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="0" contextFuncName="toplevel" opcode="br" nodeLabel="13.0" m_display="0" m_topoIndex="29" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="245" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
-      <dataInputObjs>or</dataInputObjs>
-      <controlInputObjs>.lr.ph17.preheader</controlInputObjs>
-      <controlInputObjs>block_144</controlInputObjs>
-    </node_objs>
-    <fileValidLineNumbers fileName="assessment/toplevel.cpp">
-      <validLinenumbers>241</validLinenumbers>
-      <validLinenumbers>242</validLinenumbers>
-      <validLinenumbers>245</validLinenumbers>
-    </fileValidLineNumbers>
-  </blocks>
-  <blocks id="63" name=".lr.ph17.preheader" type="BlockType">
-    <controlInputObjs>memcpy-split</controlInputObjs>
-    <controlOutputObjs>br</controlOutputObjs>
-    <controlOutputObjs>phi</controlOutputObjs>
-    <controlOutputObjs>.lr.ph17</controlOutputObjs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="62" name="br_ln0" coreId="0" opcode="br" nodeLabel="13.0" m_display="0" m_delay="1.58" m_topoIndex="30" m_clusterGroupNumber="-1">
-      <controlInputObjs>.lr.ph17</controlInputObjs>
-    </node_objs>
-  </blocks>
-  <blocks id="89" name="._crit_edge.loopexit" type="BlockType">
-    <controlInputObjs>.lr.ph17</controlInputObjs>
+  <blocks id="66" name="block_66" type="BlockType">
+    <controlInputObjs>block_44</controlInputObjs>
     <controlOutputObjs>br</controlOutputObjs>
     <controlOutputObjs>phi</controlOutputObjs>
     <controlOutputObjs>phi</controlOutputObjs>
     <controlOutputObjs>.loopexit</controlOutputObjs>
+    <controlOutputObjs>.lr.ph21.preheader</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="52" name="local_ram_load" lineNumber="404" fileName="assessment/toplevel.cpp" fileDirectory=".." coreName="RAM_T2P_BRAM" implIndex="bram" control="auto" opType="ram_t2p" coreId="94" contextFuncName="toplevel" bitwidth="32" opcode="load" nodeLabel="11.0" nodeLatency="1" m_display="0" m_delay="3.25" m_topoIndex="19" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="404" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+      <dataOutputObjs>trunc</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="53" name="trunc_ln404" lineNumber="404" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="trunc_ln404_fu_443_p1" coreId="1265" contextFuncName="toplevel" bitwidth="16" opcode="trunc" nodeLabel="12.0" m_display="0" m_topoIndex="21" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="404" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="54" name="world_size_write_ln404" lineNumber="404" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="883818524" contextFuncName="toplevel" opcode="store" nodeLabel="12.0" m_display="0" m_topoIndex="22" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="404" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+      <dataInputObjs>trunc</dataInputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="55" name="local_ram_load_1" lineNumber="405" fileName="assessment/toplevel.cpp" fileDirectory=".." coreName="RAM_T2P_BRAM" implIndex="bram" control="auto" opType="ram_t2p" coreId="94" contextFuncName="toplevel" bitwidth="32" opcode="load" nodeLabel="11.0" nodeLatency="1" m_display="0" m_delay="3.25" m_topoIndex="20" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="405" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+      <dataOutputObjs>trunc</dataOutputObjs>
+      <dataOutputObjs>trunc</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="56" name="waypoint_count" lineNumber="405" originalName="waypoint_count" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="waypoint_count_fu_453_p1" coreId="0" contextFuncName="toplevel" bitwidth="16" opcode="trunc" nodeLabel="12.0" m_display="0" m_topoIndex="23" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="405" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>zext</dataOutputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="57" name="trunc_ln405_1" lineNumber="405" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="trunc_ln405_1_fu_457_p1" coreId="49" contextFuncName="toplevel" bitwidth="9" opcode="trunc" nodeLabel="12.0" m_display="0" m_topoIndex="24" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="405" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="58" name="icmp_ln406" lineNumber="406" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="icmp_ln406_fu_461_p2" opType="icmp" coreId="132" contextFuncName="toplevel" bitwidth="1" opcode="icmp" nodeLabel="12.0" m_display="0" m_delay="2.42" m_topoIndex="25" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="406" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+      <dataInputObjs>trunc</dataInputObjs>
+      <dataOutputObjs>or</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="59" name="icmp_ln406_1" lineNumber="406" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="icmp_ln406_1_fu_467_p2" opType="icmp" coreId="0" contextFuncName="toplevel" bitwidth="1" opcode="icmp" nodeLabel="12.0" m_display="0" m_delay="2.42" m_topoIndex="26" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="406" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+      <dataInputObjs>trunc</dataInputObjs>
+      <dataOutputObjs>or</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="60" name="zext_ln406" lineNumber="406" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="zext_ln406_fu_473_p1" coreId="0" contextFuncName="toplevel" bitwidth="17" opcode="zext" nodeLabel="13.0" m_display="0" m_topoIndex="27" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="406" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+      <dataInputObjs>trunc</dataInputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="61" name="add_ln406" lineNumber="406" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="add_ln406_fu_476_p2" coreName="Adder" implIndex="fabric" control="auto" opType="add" coreId="1" contextFuncName="toplevel" bitwidth="17" opcode="add" nodeLabel="13.0" m_display="0" m_delay="2.07" m_topoIndex="28" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="406" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+      <dataInputObjs>zext</dataInputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="62" name="icmp_ln406_2" lineNumber="406" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="icmp_ln406_2_fu_482_p2" opType="icmp" coreId="889697760" contextFuncName="toplevel" bitwidth="1" opcode="icmp" nodeLabel="13.0" m_display="0" m_delay="2.43" m_topoIndex="29" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="406" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+      <dataInputObjs>add</dataInputObjs>
+      <dataOutputObjs>or</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="63" name="or_ln406" lineNumber="406" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="or_ln406_fu_488_p2" opType="or" coreId="49" contextFuncName="toplevel" bitwidth="1" opcode="or" nodeLabel="13.0" m_display="0" m_topoIndex="30" m_clusterGroupNumber="1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="406" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+      <dataInputObjs>icmp</dataInputObjs>
+      <dataInputObjs>icmp</dataInputObjs>
+      <dataOutputObjs>or</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="64" name="or_ln406_1" lineNumber="406" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="or_ln406_1_fu_493_p2" opType="or" coreId="132" contextFuncName="toplevel" bitwidth="1" opcode="or" nodeLabel="13.0" m_display="0" m_delay="0.97" m_topoIndex="31" m_clusterGroupNumber="1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="406" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+      <dataInputObjs>or</dataInputObjs>
+      <dataInputObjs>icmp</dataInputObjs>
+      <dataOutputObjs>br</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="65" name="br_ln406" lineNumber="406" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="0" contextFuncName="toplevel" opcode="br" nodeLabel="13.0" m_display="0" m_delay="1.7" m_topoIndex="32" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="406" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+      <dataInputObjs>or</dataInputObjs>
+      <controlInputObjs>.lr.ph21.preheader</controlInputObjs>
+      <controlInputObjs>.loopexit</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="assessment/toplevel.cpp">
+      <validLinenumbers>404</validLinenumbers>
+      <validLinenumbers>405</validLinenumbers>
+      <validLinenumbers>406</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="68" name=".lr.ph21.preheader" type="BlockType">
+    <controlInputObjs>block_66</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>.lr.ph21</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="67" name="br_ln0" coreId="177" opcode="br" nodeLabel="13.0" m_display="0" m_delay="1.58" m_topoIndex="33" m_clusterGroupNumber="-1">
+      <controlInputObjs>.lr.ph21</controlInputObjs>
+    </node_objs>
+  </blocks>
+  <blocks id="94" name="._crit_edge.loopexit" type="BlockType">
+    <controlInputObjs>.lr.ph21</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
     <controlOutputObjs>.lr.ph.preheader</controlOutputObjs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="86" name="add_ln261" lineNumber="261" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="add_ln261_fu_531_p2" coreName="Adder" implIndex="fabric" control="auto" opType="add" coreId="1" contextFuncName="toplevel" bitwidth="9" opcode="add" nodeLabel="16.0" m_display="0" m_delay="1.82" m_topoIndex="49" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="261" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <controlOutputObjs>.loopexit</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="91" name="add_ln427" lineNumber="427" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="add_ln427_fu_550_p2" coreName="Adder" implIndex="fabric" control="auto" opType="add" coreId="1" contextFuncName="toplevel" bitwidth="9" opcode="add" nodeLabel="16.0" m_display="0" m_delay="1.82" m_topoIndex="52" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="427" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <dataInputObjs>trunc</dataInputObjs>
       <dataOutputObjs>icmp</dataOutputObjs>
       <dataOutputObjs>icmp</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="87" name="icmp_ln261" lineNumber="261" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="icmp_ln261_fu_536_p2" opType="icmp" coreId="1662284688" contextFuncName="toplevel" bitwidth="1" opcode="icmp" nodeLabel="16.0" m_display="0" m_delay="1.66" m_topoIndex="50" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="261" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="92" name="icmp_ln427" lineNumber="427" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="icmp_ln427_fu_555_p2" opType="icmp" coreId="0" contextFuncName="toplevel" bitwidth="1" opcode="icmp" nodeLabel="16.0" m_display="0" m_delay="1.66" m_topoIndex="53" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="427" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <dataInputObjs>add</dataInputObjs>
       <dataOutputObjs>br</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="88" name="br_ln261" lineNumber="261" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="1662285424" contextFuncName="toplevel" opcode="br" nodeLabel="16.0" m_display="0" m_delay="1.58" m_topoIndex="51" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="261" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="93" name="br_ln427" lineNumber="427" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="879922992" contextFuncName="toplevel" opcode="br" nodeLabel="16.0" m_display="0" m_delay="1.7" m_topoIndex="54" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="427" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <dataInputObjs>icmp</dataInputObjs>
-      <controlInputObjs>.lr.ph.preheader</controlInputObjs>
       <controlInputObjs>.loopexit</controlInputObjs>
+      <controlInputObjs>.lr.ph.preheader</controlInputObjs>
     </node_objs>
     <fileValidLineNumbers fileName="assessment/toplevel.cpp">
-      <validLinenumbers>261</validLinenumbers>
+      <validLinenumbers>427</validLinenumbers>
     </fileValidLineNumbers>
   </blocks>
-  <blocks id="91" name=".lr.ph.preheader" type="BlockType">
+  <blocks id="96" name=".lr.ph.preheader" type="BlockType">
     <controlInputObjs>._crit_edge.loopexit</controlInputObjs>
     <controlOutputObjs>br</controlOutputObjs>
     <controlOutputObjs>phi</controlOutputObjs>
     <controlOutputObjs>phi</controlOutputObjs>
     <controlOutputObjs>.lr.ph</controlOutputObjs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="90" name="br_ln261" lineNumber="261" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="0" contextFuncName="toplevel" opcode="br" nodeLabel="16.0" m_display="0" m_delay="1.58" m_topoIndex="52" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="261" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="95" name="br_ln427" lineNumber="427" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="3521" contextFuncName="toplevel" opcode="br" nodeLabel="16.0" m_display="0" m_delay="1.58" m_topoIndex="55" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="427" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <controlInputObjs>.lr.ph</controlInputObjs>
     </node_objs>
     <fileValidLineNumbers fileName="assessment/toplevel.cpp">
-      <validLinenumbers>261</validLinenumbers>
+      <validLinenumbers>427</validLinenumbers>
     </fileValidLineNumbers>
   </blocks>
-  <blocks id="99" name=".lr.ph" type="BlockType">
+  <blocks id="103" name=".lr.ph" type="BlockType">
     <controlInputObjs>.lr.ph.preheader</controlInputObjs>
-    <controlInputObjs>block_120</controlInputObjs>
+    <controlInputObjs>block_123</controlInputObjs>
     <controlOutputObjs>br</controlOutputObjs>
     <controlOutputObjs>br</controlOutputObjs>
     <controlOutputObjs>.split</controlOutputObjs>
     <controlOutputObjs>.loopexit.loopexit</controlOutputObjs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="92" name="i_2" originalName="i" coreId="0" bitwidth="8" opcode="phi" nodeLabel="17.0" m_display="0" m_topoIndex="53" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="97" name="i_4" originalName="i" coreId="0" bitwidth="8" opcode="phi" nodeLabel="17.0" m_display="0" m_topoIndex="56" m_clusterGroupNumber="-1">
       <dataInputObjs>add</dataInputObjs>
-      <dataOutputObjs>trunc</dataOutputObjs>
       <dataOutputObjs>zext</dataOutputObjs>
       <dataOutputObjs>add</dataOutputObjs>
       <dataOutputObjs>zext</dataOutputObjs>
-      <dataOutputObjs>zext</dataOutputObjs>
-      <controlInputObjs>block_120</controlInputObjs>
+      <controlInputObjs>block_123</controlInputObjs>
       <controlInputObjs>.lr.ph.preheader</controlInputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="93" name="total_len" originalName="total_len" coreId="0" bitwidth="25" opcode="phi" nodeLabel="17.0" m_display="0" m_topoIndex="54" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="98" name="total_len" originalName="total_len" coreId="1543504016" bitwidth="24" opcode="phi" nodeLabel="17.0" m_display="0" m_topoIndex="57" m_clusterGroupNumber="-1">
       <dataInputObjs>add</dataInputObjs>
       <dataOutputObjs>add</dataOutputObjs>
       <dataOutputObjs>phi</dataOutputObjs>
       <dataOutputObjs>phi</dataOutputObjs>
-      <controlInputObjs>block_120</controlInputObjs>
+      <controlInputObjs>block_123</controlInputObjs>
       <controlInputObjs>.lr.ph.preheader</controlInputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="94" name="trunc_ln261" lineNumber="261" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="trunc_ln261_fu_542_p1" coreId="0" contextFuncName="toplevel" bitwidth="4" opcode="trunc" nodeLabel="17.0" m_display="0" m_topoIndex="55" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="261" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
-      <dataInputObjs>phi</dataInputObjs>
-      <dataOutputObjs>add</dataOutputObjs>
-    </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="95" name="zext_ln261" lineNumber="261" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="zext_ln261_fu_546_p1" coreId="1662290872" contextFuncName="toplevel" bitwidth="9" opcode="zext" nodeLabel="17.0" m_display="0" m_topoIndex="56" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="261" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="99" name="zext_ln427" lineNumber="427" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="zext_ln427_fu_561_p1" coreId="0" contextFuncName="toplevel" bitwidth="9" opcode="zext" nodeLabel="17.0" m_display="0" m_topoIndex="58" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="427" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <dataInputObjs>phi</dataInputObjs>
       <dataOutputObjs>icmp</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="96" name="icmp_ln261_1" lineNumber="261" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="icmp_ln261_1_fu_550_p2" opType="icmp" coreId="1662290392" contextFuncName="toplevel" bitwidth="1" opcode="icmp" nodeLabel="17.0" m_display="0" m_delay="1.66" m_topoIndex="57" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="261" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="100" name="icmp_ln427_1" lineNumber="427" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="icmp_ln427_1_fu_565_p2" opType="icmp" coreId="49" contextFuncName="toplevel" bitwidth="1" opcode="icmp" nodeLabel="17.0" m_display="0" m_delay="1.66" m_topoIndex="59" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="427" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <dataInputObjs>zext</dataInputObjs>
       <dataInputObjs>add</dataInputObjs>
       <dataOutputObjs>br</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="97" name="i_3" lineNumber="261" originalName="i" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="i_3_fu_555_p2" coreName="Adder" implIndex="fabric" control="auto" opType="add" coreId="1" contextFuncName="toplevel" bitwidth="8" opcode="add" nodeLabel="17.0" m_display="0" m_delay="1.91" m_topoIndex="58" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="261" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="101" name="i_5" lineNumber="430" originalName="i" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="i_5_fu_570_p2" coreName="Adder" implIndex="fabric" control="auto" opType="add" coreId="1" contextFuncName="toplevel" bitwidth="8" opcode="add" nodeLabel="17.0" m_display="0" m_delay="1.91" m_topoIndex="60" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="430" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <dataInputObjs>phi</dataInputObjs>
       <dataOutputObjs>phi</dataOutputObjs>
+      <dataOutputObjs>zext</dataOutputObjs>
+      <dataOutputObjs>zext</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="98" name="br_ln261" lineNumber="261" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="42" contextFuncName="toplevel" opcode="br" nodeLabel="17.0" m_display="0" m_topoIndex="59" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="261" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="102" name="br_ln427" lineNumber="427" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="880839776" contextFuncName="toplevel" opcode="br" nodeLabel="17.0" m_display="0" m_topoIndex="61" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="427" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <dataInputObjs>icmp</dataInputObjs>
       <controlInputObjs>.loopexit.loopexit</controlInputObjs>
       <controlInputObjs>.split</controlInputObjs>
     </node_objs>
     <fileValidLineNumbers fileName="assessment/toplevel.cpp">
-      <validLinenumbers>261</validLinenumbers>
+      <validLinenumbers>427</validLinenumbers>
+      <validLinenumbers>430</validLinenumbers>
     </fileValidLineNumbers>
   </blocks>
-  <blocks id="117" name=".split" type="BlockType">
+  <blocks id="120" name=".split" type="BlockType">
     <controlInputObjs>.lr.ph</controlInputObjs>
     <controlOutputObjs>br</controlOutputObjs>
-    <controlOutputObjs>block_120</controlOutputObjs>
-    <controlOutputObjs>block_127</controlOutputObjs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="101" name="zext_ln262" lineNumber="262" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="zext_ln262_fu_561_p1" coreId="2617245840" contextFuncName="toplevel" bitwidth="64" opcode="zext" nodeLabel="17.0" m_display="0" m_topoIndex="60" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="262" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <controlOutputObjs>block_123</controlOutputObjs>
+    <controlOutputObjs>block_130</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="105" name="zext_ln430" lineNumber="430" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="zext_ln430_fu_576_p1" coreId="49" contextFuncName="toplevel" bitwidth="64" opcode="zext" nodeLabel="17.0" m_display="0" m_topoIndex="62" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="430" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <dataInputObjs>phi</dataInputObjs>
       <dataOutputObjs>getelementptr</dataOutputObjs>
       <dataOutputObjs>getelementptr</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="102" name="waypoints_x_addr_1" lineNumber="262" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="0" contextFuncName="toplevel" bitwidth="4" opcode="getelementptr" nodeLabel="17.0" m_display="0" m_topoIndex="61" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="262" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="106" name="waypoints_x_addr_1" lineNumber="430" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="886039272" contextFuncName="toplevel" bitwidth="4" opcode="getelementptr" nodeLabel="17.0" m_display="0" m_topoIndex="63" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="430" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <dataInputObjs>alloca</dataInputObjs>
       <dataInputObjs>zext</dataInputObjs>
       <dataOutputObjs>load</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="103" name="waypoints_y_addr_1" lineNumber="262" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="1662298040" contextFuncName="toplevel" bitwidth="4" opcode="getelementptr" nodeLabel="17.0" m_display="0" m_topoIndex="62" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="262" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="107" name="waypoints_y_addr_1" lineNumber="430" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="886040208" contextFuncName="toplevel" bitwidth="4" opcode="getelementptr" nodeLabel="17.0" m_display="0" m_topoIndex="64" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="430" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <dataInputObjs>alloca</dataInputObjs>
       <dataInputObjs>zext</dataInputObjs>
       <dataOutputObjs>load</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="104" name="waypoints_x_load" lineNumber="262" fileName="assessment/toplevel.cpp" fileDirectory=".." coreName="RAM" implIndex="auto" control="auto" opType="ram" coreId="82" contextFuncName="toplevel" bitwidth="16" opcode="load" nodeLabel="17.0" nodeLatency="1" m_display="0" m_delay="2.32" m_topoIndex="63" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="262" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="108" name="waypoints_x_load" lineNumber="430" fileName="assessment/toplevel.cpp" fileDirectory=".." coreName="RAM" implIndex="auto" control="auto" opType="ram" coreId="82" contextFuncName="toplevel" bitwidth="16" opcode="load" nodeLabel="17.0" nodeLatency="1" m_display="0" m_delay="2.32" m_topoIndex="65" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="430" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <dataInputObjs>getelementptr</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="105" name="waypoints_y_load" lineNumber="262" fileName="assessment/toplevel.cpp" fileDirectory=".." coreName="RAM" implIndex="auto" control="auto" opType="ram" coreId="82" contextFuncName="toplevel" bitwidth="16" opcode="load" nodeLabel="17.0" nodeLatency="1" m_display="0" m_delay="2.32" m_topoIndex="64" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="262" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="109" name="waypoints_y_load" lineNumber="430" fileName="assessment/toplevel.cpp" fileDirectory=".." coreName="RAM" implIndex="auto" control="auto" opType="ram" coreId="82" contextFuncName="toplevel" bitwidth="16" opcode="load" nodeLabel="17.0" nodeLatency="1" m_display="0" m_delay="2.32" m_topoIndex="66" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="430" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <dataInputObjs>getelementptr</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="106" name="add_ln262" lineNumber="262" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="add_ln262_fu_567_p2" coreName="Adder" implIndex="fabric" control="auto" opType="add" coreId="1" contextFuncName="toplevel" bitwidth="4" opcode="add" nodeLabel="17.0" m_display="0" m_delay="1.73" m_topoIndex="65" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="262" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
-      <dataInputObjs>trunc</dataInputObjs>
-      <dataOutputObjs>zext</dataOutputObjs>
-      <constName>empty</constName>
-    </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="107" name="zext_ln262_1" lineNumber="262" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="zext_ln262_1_fu_573_p1" coreId="0" contextFuncName="toplevel" bitwidth="64" opcode="zext" nodeLabel="17.0" m_display="0" m_topoIndex="66" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="262" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="110" name="zext_ln430_1" lineNumber="430" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="zext_ln430_1_fu_582_p1" coreId="0" contextFuncName="toplevel" bitwidth="64" opcode="zext" nodeLabel="17.0" m_display="0" m_topoIndex="67" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="430" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <dataInputObjs>add</dataInputObjs>
       <dataOutputObjs>getelementptr</dataOutputObjs>
       <dataOutputObjs>getelementptr</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="108" name="waypoints_x_addr_2" lineNumber="262" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="1662302824" contextFuncName="toplevel" bitwidth="4" opcode="getelementptr" nodeLabel="17.0" m_display="0" m_topoIndex="67" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="262" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="111" name="waypoints_x_addr_2" lineNumber="430" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="0" contextFuncName="toplevel" bitwidth="4" opcode="getelementptr" nodeLabel="17.0" m_display="0" m_topoIndex="68" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="430" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <dataInputObjs>alloca</dataInputObjs>
       <dataInputObjs>zext</dataInputObjs>
       <dataOutputObjs>load</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="109" name="waypoints_y_addr_2" lineNumber="262" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="1662304240" contextFuncName="toplevel" bitwidth="4" opcode="getelementptr" nodeLabel="17.0" m_display="0" m_topoIndex="68" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="262" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="112" name="waypoints_y_addr_2" lineNumber="430" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="132" contextFuncName="toplevel" bitwidth="4" opcode="getelementptr" nodeLabel="17.0" m_display="0" m_topoIndex="69" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="430" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <dataInputObjs>alloca</dataInputObjs>
       <dataInputObjs>zext</dataInputObjs>
       <dataOutputObjs>load</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="110" name="waypoints_x_load_1" lineNumber="262" fileName="assessment/toplevel.cpp" fileDirectory=".." coreName="RAM" implIndex="auto" control="auto" opType="ram" coreId="82" contextFuncName="toplevel" bitwidth="16" opcode="load" nodeLabel="17.0" nodeLatency="1" m_display="0" m_delay="2.32" m_topoIndex="69" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="262" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="113" name="waypoints_x_load_1" lineNumber="430" fileName="assessment/toplevel.cpp" fileDirectory=".." coreName="RAM" implIndex="auto" control="auto" opType="ram" coreId="82" contextFuncName="toplevel" bitwidth="16" opcode="load" nodeLabel="17.0" nodeLatency="1" m_display="0" m_delay="2.32" m_topoIndex="70" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="430" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <dataInputObjs>getelementptr</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="111" name="waypoints_y_load_1" lineNumber="262" fileName="assessment/toplevel.cpp" fileDirectory=".." coreName="RAM" implIndex="auto" control="auto" opType="ram" coreId="82" contextFuncName="toplevel" bitwidth="16" opcode="load" nodeLabel="17.0" nodeLatency="1" m_display="0" m_delay="2.32" m_topoIndex="70" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="262" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="114" name="waypoints_y_load_1" lineNumber="430" fileName="assessment/toplevel.cpp" fileDirectory=".." coreName="RAM" implIndex="auto" control="auto" opType="ram" coreId="82" contextFuncName="toplevel" bitwidth="16" opcode="load" nodeLabel="17.0" nodeLatency="1" m_display="0" m_delay="2.32" m_topoIndex="71" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="430" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <dataInputObjs>getelementptr</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="112" name="ret" lineNumber="262" originalName="ret" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="grp_a_star_len_fu_370" coreId="0" contextFuncName="toplevel" bitwidth="16" opcode="call" nodeLabel="18.0" nodeLatency="1" m_display="0" m_topoIndex="72" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="262" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="115" name="ret" lineNumber="430" originalName="ret" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="grp_a_star_len_fu_372" coreId="880787881" contextFuncName="toplevel" bitwidth="16" opcode="call" nodeLabel="18.0" nodeLatency="1" m_display="0" m_topoIndex="73" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="430" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <dataInputObjs>load</dataInputObjs>
       <dataInputObjs>load</dataInputObjs>
       <dataInputObjs>load</dataInputObjs>
@@ -539,404 +531,369 @@
       <dataOutputObjs>zext</dataOutputObjs>
       <constName>a_star_len</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="113" name="zext_ln262_2" lineNumber="262" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="zext_ln262_2_fu_579_p1" coreId="0" contextFuncName="toplevel" bitwidth="25" opcode="zext" nodeLabel="20.0" m_display="0" m_topoIndex="73" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="262" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="116" name="zext_ln430_3" lineNumber="430" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="zext_ln430_3_fu_588_p1" coreId="3569" contextFuncName="toplevel" bitwidth="24" opcode="zext" nodeLabel="20.0" m_display="0" m_topoIndex="74" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="430" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <dataInputObjs>call</dataInputObjs>
       <dataOutputObjs>add</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="114" name="error_flag_load" lineNumber="263" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="1662307560" contextFuncName="toplevel" bitwidth="32" opcode="load" nodeLabel="20.0" m_display="0" m_topoIndex="74" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="263" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="117" name="error_flag_load" lineNumber="431" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="49" contextFuncName="toplevel" bitwidth="32" opcode="load" nodeLabel="20.0" m_display="0" m_topoIndex="75" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="431" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <dataOutputObjs>icmp</dataOutputObjs>
       <dataOutputObjs>add</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="115" name="icmp_ln263" lineNumber="263" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="icmp_ln263_fu_586_p2" opType="icmp" coreId="0" contextFuncName="toplevel" bitwidth="1" opcode="icmp" nodeLabel="20.0" m_display="0" m_delay="2.47" m_topoIndex="75" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="263" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="118" name="icmp_ln431" lineNumber="431" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="icmp_ln431_fu_595_p2" opType="icmp" coreId="879925993" contextFuncName="toplevel" bitwidth="1" opcode="icmp" nodeLabel="20.0" m_display="0" m_delay="2.47" m_topoIndex="76" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="431" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <dataInputObjs>load</dataInputObjs>
       <dataOutputObjs>br</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="116" name="br_ln263" lineNumber="263" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="0" contextFuncName="toplevel" opcode="br" nodeLabel="20.0" m_display="0" m_topoIndex="76" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="263" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="119" name="br_ln431" lineNumber="431" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="1543504016" contextFuncName="toplevel" opcode="br" nodeLabel="20.0" m_display="0" m_topoIndex="77" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="431" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <dataInputObjs>icmp</dataInputObjs>
-      <controlInputObjs>block_127</controlInputObjs>
-      <controlInputObjs>block_120</controlInputObjs>
+      <controlInputObjs>block_130</controlInputObjs>
+      <controlInputObjs>block_123</controlInputObjs>
     </node_objs>
     <fileValidLineNumbers fileName="assessment/toplevel.cpp">
-      <validLinenumbers>262</validLinenumbers>
-      <validLinenumbers>263</validLinenumbers>
+      <validLinenumbers>430</validLinenumbers>
+      <validLinenumbers>431</validLinenumbers>
     </fileValidLineNumbers>
   </blocks>
-  <blocks id="120" name="block_120" type="BlockType">
+  <blocks id="123" name="block_123" type="BlockType">
     <controlInputObjs>.split</controlInputObjs>
     <controlOutputObjs>phi</controlOutputObjs>
     <controlOutputObjs>phi</controlOutputObjs>
     <controlOutputObjs>br</controlOutputObjs>
     <controlOutputObjs>.lr.ph</controlOutputObjs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="118" name="total_len_1" lineNumber="267" originalName="total_len" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="total_len_1_fu_592_p2" coreName="Adder" implIndex="fabric" control="auto" opType="add" coreId="1" contextFuncName="toplevel" bitwidth="25" opcode="add" nodeLabel="20.0" m_display="0" m_delay="2.34" m_topoIndex="77" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="267" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="121" name="total_len_1" lineNumber="435" originalName="total_len" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="total_len_1_fu_601_p2" coreName="Adder" implIndex="fabric" control="auto" opType="add" coreId="1" contextFuncName="toplevel" bitwidth="24" opcode="add" nodeLabel="20.0" m_display="0" m_delay="2.31" m_topoIndex="78" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="435" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <dataInputObjs>zext</dataInputObjs>
       <dataInputObjs>phi</dataInputObjs>
       <dataOutputObjs>phi</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="119" name="br_ln0" coreId="0" opcode="br" nodeLabel="20.0" m_display="0" m_topoIndex="78" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="122" name="br_ln0" coreId="0" opcode="br" nodeLabel="20.0" m_display="0" m_topoIndex="79" m_clusterGroupNumber="-1">
       <controlInputObjs>.lr.ph</controlInputObjs>
     </node_objs>
     <fileValidLineNumbers fileName="assessment/toplevel.cpp">
-      <validLinenumbers>267</validLinenumbers>
+      <validLinenumbers>435</validLinenumbers>
     </fileValidLineNumbers>
   </blocks>
-  <blocks id="127" name="block_127" type="BlockType">
+  <blocks id="130" name="block_130" type="BlockType">
     <controlInputObjs>.split</controlInputObjs>
     <controlOutputObjs>br</controlOutputObjs>
     <controlOutputObjs>phi</controlOutputObjs>
     <controlOutputObjs>phi</controlOutputObjs>
     <controlOutputObjs>.loopexit</controlOutputObjs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="121" name="zext_ln261_1" lineNumber="261" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="grp_fu_612_p00" coreId="1662314656" contextFuncName="toplevel" bitwidth="18" opcode="zext" nodeLabel="20.0" m_display="0" m_topoIndex="79" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="261" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
-      <dataInputObjs>phi</dataInputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="124" name="zext_ln430_2" lineNumber="430" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="grp_fu_620_p00" coreId="880765072" contextFuncName="toplevel" bitwidth="18" opcode="zext" nodeLabel="20.0" m_display="0" m_topoIndex="80" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="430" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+      <dataInputObjs>add</dataInputObjs>
       <dataOutputObjs>mul</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="122" name="mul_ln264" lineNumber="264" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="mac_muladd_8ns_11ns_32ns_32_4_1_U19" coreName="DSP48" implIndex="dsp" control="auto" opType="add" coreId="119" contextFuncName="toplevel" bitwidth="18" opcode="mul" nodeLabel="20.0" nodeLatency="2" m_display="0" m_delay="1.05" m_topoIndex="80" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="264" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="125" name="mul_ln432" lineNumber="432" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="mac_muladd_8ns_11ns_32ns_32_4_1_U19" coreName="DSP48" implIndex="dsp" control="auto" opType="add" coreId="119" contextFuncName="toplevel" bitwidth="18" opcode="mul" nodeLabel="20.0" nodeLatency="2" m_display="0" m_delay="1.05" m_topoIndex="81" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="432" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <dataInputObjs>zext</dataInputObjs>
       <dataOutputObjs>zext</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="123" name="zext_ln264" lineNumber="264" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="mac_muladd_8ns_11ns_32ns_32_4_1_U19" coreName="DSP48" implIndex="dsp" control="auto" opType="add" coreId="119" contextFuncName="toplevel" bitwidth="32" opcode="zext" nodeLabel="22.0" m_display="0" m_topoIndex="81" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="264" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="126" name="zext_ln432" lineNumber="432" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="mac_muladd_8ns_11ns_32ns_32_4_1_U19" coreName="DSP48" implIndex="dsp" control="auto" opType="add" coreId="119" contextFuncName="toplevel" bitwidth="32" opcode="zext" nodeLabel="22.0" m_display="0" m_topoIndex="82" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="432" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <dataInputObjs>mul</dataInputObjs>
       <dataOutputObjs>add</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="124" name="add_ln264" lineNumber="264" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="mac_muladd_8ns_11ns_32ns_32_4_1_U19" coreName="DSP48" implIndex="dsp" control="auto" opType="add" coreId="119" contextFuncName="toplevel" bitwidth="32" opcode="add" nodeLabel="22.0" nodeLatency="1" m_display="0" m_delay="2.1" m_topoIndex="82" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="264" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="127" name="add_ln432" lineNumber="432" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="mac_muladd_8ns_11ns_32ns_32_4_1_U19" coreName="DSP48" implIndex="dsp" control="auto" opType="add" coreId="119" contextFuncName="toplevel" bitwidth="32" opcode="add" nodeLabel="22.0" nodeLatency="1" m_display="0" m_delay="2.1" m_topoIndex="83" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="432" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <dataInputObjs>load</dataInputObjs>
       <dataInputObjs>zext</dataInputObjs>
       <dataOutputObjs>store</dataOutputObjs>
       <dataOutputObjs>phi</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="125" name="error_flag_write_ln264" lineNumber="264" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="2617245840" contextFuncName="toplevel" opcode="store" nodeLabel="23.0" m_display="0" m_delay="1.58" m_topoIndex="83" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="264" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="128" name="error_flag_write_ln432" lineNumber="432" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="1569" contextFuncName="toplevel" opcode="store" nodeLabel="23.0" m_display="0" m_delay="1.58" m_topoIndex="84" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="432" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <dataInputObjs>add</dataInputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="126" name="br_ln265" lineNumber="265" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="132" contextFuncName="toplevel" opcode="br" nodeLabel="23.0" m_display="0" m_delay="1.58" m_topoIndex="84" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="265" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="129" name="br_ln433" lineNumber="433" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="1769169250" contextFuncName="toplevel" opcode="br" nodeLabel="23.0" m_display="0" m_delay="1.7" m_topoIndex="85" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="433" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <controlInputObjs>.loopexit</controlInputObjs>
     </node_objs>
     <fileValidLineNumbers fileName="assessment/toplevel.cpp">
-      <validLinenumbers>261</validLinenumbers>
-      <validLinenumbers>264</validLinenumbers>
-      <validLinenumbers>265</validLinenumbers>
+      <validLinenumbers>430</validLinenumbers>
+      <validLinenumbers>432</validLinenumbers>
+      <validLinenumbers>433</validLinenumbers>
     </fileValidLineNumbers>
   </blocks>
-  <blocks id="129" name=".loopexit.loopexit" type="BlockType">
+  <blocks id="132" name=".loopexit.loopexit" type="BlockType">
     <controlInputObjs>.lr.ph</controlInputObjs>
     <controlOutputObjs>br</controlOutputObjs>
     <controlOutputObjs>phi</controlOutputObjs>
     <controlOutputObjs>phi</controlOutputObjs>
     <controlOutputObjs>.loopexit</controlOutputObjs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="128" name="br_ln0" coreId="49" opcode="br" nodeLabel="17.0" m_display="0" m_delay="1.58" m_topoIndex="71" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="131" name="br_ln0" coreId="132" opcode="br" nodeLabel="17.0" m_display="0" m_delay="1.7" m_topoIndex="72" m_clusterGroupNumber="-1">
       <controlInputObjs>.loopexit</controlInputObjs>
     </node_objs>
   </blocks>
-  <blocks id="138" name=".loopexit" type="BlockType">
+  <blocks id="141" name=".loopexit" type="BlockType">
+    <controlInputObjs>block_66</controlInputObjs>
     <controlInputObjs>._crit_edge.loopexit</controlInputObjs>
-    <controlInputObjs>block_127</controlInputObjs>
+    <controlInputObjs>block_130</controlInputObjs>
     <controlInputObjs>.loopexit.loopexit</controlInputObjs>
     <controlOutputObjs>br</controlOutputObjs>
     <controlOutputObjs>br</controlOutputObjs>
     <controlOutputObjs>br</controlOutputObjs>
-    <controlOutputObjs>block_146</controlOutputObjs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="130" name="empty_29" lineNumber="264" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="0" contextFuncName="toplevel" bitwidth="32" opcode="phi" nodeLabel="24.0" m_display="0" m_topoIndex="86" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="264" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
-      <dataInputObjs>add</dataInputObjs>
-      <dataOutputObjs>write</dataOutputObjs>
-      <controlInputObjs>block_127</controlInputObjs>
-      <controlInputObjs>._crit_edge.loopexit</controlInputObjs>
-      <controlInputObjs>.loopexit.loopexit</controlInputObjs>
-      <constName>empty</constName>
-    </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="131" name="total_len_011" originalName="total_len" coreId="49" bitwidth="25" opcode="phi" nodeLabel="24.0" m_display="0" m_topoIndex="87" m_clusterGroupNumber="-1">
+    <controlOutputObjs>br</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="133" name="storemerge3" originalName="total_len" coreId="879240872" bitwidth="24" opcode="phi" nodeLabel="24.0" m_display="0" m_topoIndex="87" m_clusterGroupNumber="-1">
       <dataInputObjs>phi</dataInputObjs>
       <dataInputObjs>phi</dataInputObjs>
       <dataOutputObjs>zext</dataOutputObjs>
-      <controlInputObjs>block_127</controlInputObjs>
+      <controlInputObjs>block_130</controlInputObjs>
+      <controlInputObjs>block_66</controlInputObjs>
       <controlInputObjs>._crit_edge.loopexit</controlInputObjs>
       <controlInputObjs>.loopexit.loopexit</controlInputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="132" name="zext_ln271" lineNumber="271" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="zext_ln271_fu_607_p1" coreId="1661473792" contextFuncName="toplevel" bitwidth="32" opcode="zext" nodeLabel="24.0" m_display="0" m_topoIndex="88" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="271" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="134" name="storemerge" lineNumber="432" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="0" contextFuncName="toplevel" bitwidth="32" opcode="phi" nodeLabel="24.0" m_display="0" m_topoIndex="88" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="432" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+      <dataInputObjs>add</dataInputObjs>
+      <dataOutputObjs>write</dataOutputObjs>
+      <controlInputObjs>block_130</controlInputObjs>
+      <controlInputObjs>block_66</controlInputObjs>
+      <controlInputObjs>._crit_edge.loopexit</controlInputObjs>
+      <controlInputObjs>.loopexit.loopexit</controlInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="135" name="zext_ln445" lineNumber="445" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="MAXI_WDATA" coreId="10" contextFuncName="toplevel" bitwidth="32" opcode="zext" nodeLabel="24.0" m_display="0" m_topoIndex="89" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="445" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <dataInputObjs>phi</dataInputObjs>
       <dataOutputObjs>write</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="133" name="MAXI_addr_req" lineNumber="271" fileName="assessment/toplevel.cpp" fileDirectory=".." coreName="m_axi" implIndex="m_axi" control="auto" opType="readreq" coreId="113" contextFuncName="toplevel" bitwidth="1" opcode="writereq" nodeLabel="23.0" m_display="0" m_delay="7.3" m_topoIndex="85" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="271" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="136" name="MAXI_addr_req" lineNumber="445" fileName="assessment/toplevel.cpp" fileDirectory=".." coreName="m_axi" implIndex="m_axi" control="auto" opType="readreq" coreId="113" contextFuncName="toplevel" bitwidth="1" opcode="writereq" nodeLabel="23.0" m_display="0" m_delay="7.3" m_topoIndex="86" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="445" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <dataInputObjs>getelementptr</dataInputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="134" name="MAXI_addr_write_ln271" lineNumber="271" fileName="assessment/toplevel.cpp" fileDirectory=".." coreName="m_axi" implIndex="UNSUPPORTED" control="auto" coreId="113" contextFuncName="toplevel" opcode="write" nodeLabel="24.0" m_display="0" m_delay="7.3" m_topoIndex="89" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="271" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="137" name="MAXI_addr_write_ln445" lineNumber="445" fileName="assessment/toplevel.cpp" fileDirectory=".." coreName="m_axi" implIndex="UNSUPPORTED" control="auto" coreId="113" contextFuncName="toplevel" opcode="write" nodeLabel="24.0" m_display="0" m_delay="7.3" m_topoIndex="90" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="445" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <dataInputObjs>getelementptr</dataInputObjs>
       <dataInputObjs>zext</dataInputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="135" name="MAXI_addr_resp" lineNumber="271" fileName="assessment/toplevel.cpp" fileDirectory=".." coreName="m_axi" implIndex="m_axi" control="auto" opType="readreq" coreId="113" contextFuncName="toplevel" bitwidth="1" opcode="writeresp" nodeLabel="25.0" nodeLatency="4" m_display="0" m_delay="7.3" m_topoIndex="91" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="271" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="138" name="MAXI_addr_resp" lineNumber="445" fileName="assessment/toplevel.cpp" fileDirectory=".." coreName="m_axi" implIndex="m_axi" control="auto" opType="readreq" coreId="113" contextFuncName="toplevel" bitwidth="1" opcode="writeresp" nodeLabel="25.0" nodeLatency="4" m_display="0" m_delay="7.3" m_topoIndex="92" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="445" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <dataInputObjs>getelementptr</dataInputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="136" name="code_write_ln272" lineNumber="272" fileName="assessment/toplevel.cpp" fileDirectory=".." coreName="s_axilite" implIndex="UNSUPPORTED" control="auto" coreId="114" contextFuncName="toplevel" opcode="write" nodeLabel="24.0" m_display="0" m_delay="1.0" m_topoIndex="90" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="272" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="139" name="code_write_ln408" lineNumber="408" fileName="assessment/toplevel.cpp" fileDirectory=".." coreName="s_axilite" implIndex="UNSUPPORTED" control="auto" coreId="114" contextFuncName="toplevel" opcode="write" nodeLabel="24.0" m_display="0" m_delay="1.0" m_topoIndex="91" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="408" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
       <dataInputObjs>phi</dataInputObjs>
       <dataOutputObjs>code</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="137" name="br_ln273" lineNumber="273" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="1661478297" contextFuncName="toplevel" opcode="br" nodeLabel="29.0" m_display="0" m_topoIndex="92" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="273" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
-      <controlInputObjs>block_146</controlInputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="140" name="_ln447" lineNumber="447" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="888306480" contextFuncName="toplevel" opcode="ret" nodeLabel="29.0" m_display="0" m_topoIndex="93" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="447" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
     </node_objs>
     <fileValidLineNumbers fileName="assessment/toplevel.cpp">
-      <validLinenumbers>264</validLinenumbers>
-      <validLinenumbers>271</validLinenumbers>
-      <validLinenumbers>272</validLinenumbers>
-      <validLinenumbers>273</validLinenumbers>
+      <validLinenumbers>432</validLinenumbers>
+      <validLinenumbers>445</validLinenumbers>
+      <validLinenumbers>408</validLinenumbers>
+      <validLinenumbers>447</validLinenumbers>
     </fileValidLineNumbers>
   </blocks>
-  <blocks id="144" name="block_144" type="BlockType">
-    <controlInputObjs>memcpy-split</controlInputObjs>
-    <controlOutputObjs>br</controlOutputObjs>
-    <controlOutputObjs>block_146</controlOutputObjs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="139" name="MAXI_addr_req9" lineNumber="246" fileName="assessment/toplevel.cpp" fileDirectory=".." coreName="m_axi" implIndex="m_axi" control="auto" opType="readreq" coreId="113" contextFuncName="toplevel" bitwidth="1" opcode="writereq" nodeLabel="30.0" m_display="0" m_delay="7.3" m_topoIndex="94" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="246" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
-      <dataInputObjs>getelementptr</dataInputObjs>
-      <constName>empty</constName>
-    </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="140" name="MAXI_addr_write_ln246" lineNumber="246" fileName="assessment/toplevel.cpp" fileDirectory=".." coreName="m_axi" implIndex="UNSUPPORTED" control="auto" coreId="113" contextFuncName="toplevel" opcode="write" nodeLabel="31.0" m_display="0" m_delay="7.3" m_topoIndex="95" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="246" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
-      <dataInputObjs>getelementptr</dataInputObjs>
-      <constName>empty</constName>
-    </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="141" name="MAXI_addr_resp10" lineNumber="246" fileName="assessment/toplevel.cpp" fileDirectory=".." coreName="m_axi" implIndex="m_axi" control="auto" opType="readreq" coreId="113" contextFuncName="toplevel" bitwidth="1" opcode="writeresp" nodeLabel="32.0" nodeLatency="4" m_display="0" m_delay="7.3" m_topoIndex="97" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="246" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
-      <dataInputObjs>getelementptr</dataInputObjs>
-    </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="142" name="code_write_ln247" lineNumber="247" fileName="assessment/toplevel.cpp" fileDirectory=".." coreName="s_axilite" implIndex="UNSUPPORTED" control="auto" coreId="114" contextFuncName="toplevel" opcode="write" nodeLabel="31.0" m_display="0" m_delay="1.0" m_topoIndex="96" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="247" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
-      <dataOutputObjs>code</dataOutputObjs>
-      <constName>empty</constName>
-    </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="143" name="br_ln248" lineNumber="248" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="132" contextFuncName="toplevel" opcode="br" nodeLabel="36.0" m_display="0" m_topoIndex="98" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="248" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
-      <controlInputObjs>block_146</controlInputObjs>
-    </node_objs>
-    <fileValidLineNumbers fileName="assessment/toplevel.cpp">
-      <validLinenumbers>246</validLinenumbers>
-      <validLinenumbers>247</validLinenumbers>
-      <validLinenumbers>248</validLinenumbers>
-    </fileValidLineNumbers>
-  </blocks>
-  <blocks id="146" name="block_146" type="BlockType">
-    <controlInputObjs>.loopexit</controlInputObjs>
-    <controlInputObjs>block_144</controlInputObjs>
-    <controlOutputObjs>br</controlOutputObjs>
-    <controlOutputObjs>br</controlOutputObjs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="145" name="_ln273" lineNumber="273" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="1661487840" contextFuncName="toplevel" opcode="ret" nodeLabel="29.0" m_display="0" m_topoIndex="93" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="273" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
-    </node_objs>
-    <fileValidLineNumbers fileName="assessment/toplevel.cpp">
-      <validLinenumbers>273</validLinenumbers>
-    </fileValidLineNumbers>
-  </blocks>
-  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" id="623" pipe_depth="3" RegionName="Loop 1">
-    <basic_blocks id="44" name="load-store-loop" type="BlockType">
+  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" id="577" pipe_depth="3" RegionName="COPY_LOOP">
+    <basic_blocks id="44" name="block_44" type="BlockType">
       <controlInputObjs>block_37</controlInputObjs>
-      <controlInputObjs>load-store-loop.split</controlInputObjs>
+      <controlInputObjs>.split12</controlInputObjs>
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>br</controlOutputObjs>
-      <controlOutputObjs>memcpy-split</controlOutputObjs>
-      <controlOutputObjs>load-store-loop.split</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="38" name="loop_index" coreId="1089" bitwidth="13" opcode="phi" nodeLabel="8.0" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
+      <controlOutputObjs>block_66</controlOutputObjs>
+      <controlOutputObjs>.split12</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="38" name="i" originalName="i" coreId="305" bitwidth="13" opcode="phi" nodeLabel="8.0" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
         <dataInputObjs>add</dataInputObjs>
         <dataOutputObjs>add</dataOutputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
         <dataOutputObjs>zext</dataOutputObjs>
         <controlInputObjs>block_37</controlInputObjs>
-        <controlInputObjs>load-store-loop.split</controlInputObjs>
+        <controlInputObjs>.split12</controlInputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="39" name="empty_27" rtlName="empty_27_fu_424_p2" coreName="Adder" implIndex="fabric" control="auto" opType="add" coreId="1" bitwidth="13" opcode="add" nodeLabel="8.0" m_display="0" m_delay="1.67" m_topoIndex="12" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="39" name="i_1" lineNumber="401" originalName="i" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="i_1_fu_426_p2" coreName="Adder" implIndex="fabric" control="auto" opType="add" coreId="1" contextFuncName="toplevel" bitwidth="13" opcode="add" nodeLabel="8.0" m_display="0" m_delay="1.67" m_topoIndex="11" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="401" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
         <dataInputObjs>phi</dataInputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="41" name="exitcond10" rtlName="exitcond10_fu_430_p2" opType="icmp" coreId="0" bitwidth="1" opcode="icmp" nodeLabel="8.0" m_display="0" m_delay="2.09" m_topoIndex="13" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="41" name="icmp_ln401" lineNumber="401" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="icmp_ln401_fu_432_p2" opType="icmp" coreId="0" contextFuncName="toplevel" bitwidth="1" opcode="icmp" nodeLabel="8.0" m_display="0" m_delay="2.09" m_topoIndex="12" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="401" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
         <dataInputObjs>phi</dataInputObjs>
         <dataOutputObjs>br</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="43" name="br_ln0" coreId="0" opcode="br" nodeLabel="8.0" m_display="0" m_topoIndex="14" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="43" name="br_ln401" lineNumber="401" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="882621792" contextFuncName="toplevel" opcode="br" nodeLabel="8.0" m_display="0" m_topoIndex="13" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="401" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
         <dataInputObjs>icmp</dataInputObjs>
-        <controlInputObjs>load-store-loop.split</controlInputObjs>
-        <controlInputObjs>memcpy-split</controlInputObjs>
+        <controlInputObjs>.split12</controlInputObjs>
+        <controlInputObjs>block_66</controlInputObjs>
       </node_objs>
+      <fileValidLineNumbers fileName="assessment/toplevel.cpp">
+        <validLinenumbers>401</validLinenumbers>
+      </fileValidLineNumbers>
     </basic_blocks>
-    <basic_blocks id="50" name="load-store-loop.split" type="BlockType">
-      <controlInputObjs>load-store-loop</controlInputObjs>
+    <basic_blocks id="51" name=".split12" type="BlockType">
+      <controlInputObjs>block_44</controlInputObjs>
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>br</controlOutputObjs>
-      <controlOutputObjs>load-store-loop</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="45" name="loop_index_cast" rtlName="loop_index_cast_fu_436_p1" coreId="0" bitwidth="64" opcode="zext" nodeLabel="10.0" m_display="0" m_topoIndex="16" m_clusterGroupNumber="-1">
+      <controlOutputObjs>block_44</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="46" name="zext_ln402" lineNumber="402" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="zext_ln402_fu_438_p1" coreId="0" contextFuncName="toplevel" bitwidth="64" opcode="zext" nodeLabel="10.0" m_display="0" m_topoIndex="15" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="402" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
         <dataInputObjs>phi</dataInputObjs>
         <dataOutputObjs>getelementptr</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="46" name="MAXI_addr_read" lineNumber="238" fileName="assessment/toplevel.cpp" fileDirectory=".." coreName="m_axi" implIndex="UNSUPPORTED" control="auto" coreId="113" contextFuncName="toplevel" bitwidth="32" opcode="read" nodeLabel="9.0" m_display="0" m_delay="7.3" m_topoIndex="15" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="238" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="47" name="MAXI_addr_read" lineNumber="402" fileName="assessment/toplevel.cpp" fileDirectory=".." coreName="m_axi" implIndex="UNSUPPORTED" control="auto" coreId="113" contextFuncName="toplevel" bitwidth="32" opcode="read" nodeLabel="9.0" m_display="0" m_delay="7.3" m_topoIndex="14" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="402" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
         <dataInputObjs>getelementptr</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="47" name="local_ram_addr" coreId="0" bitwidth="13" opcode="getelementptr" nodeLabel="10.0" m_display="0" m_topoIndex="17" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="48" name="local_ram_addr" lineNumber="402" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="49" contextFuncName="toplevel" bitwidth="13" opcode="getelementptr" nodeLabel="10.0" m_display="0" m_topoIndex="16" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="402" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="48" name="local_ram_addr_write_ln238" lineNumber="238" fileName="assessment/toplevel.cpp" fileDirectory=".." coreName="RAM_T2P_BRAM" implIndex="bram" control="auto" opType="ram_t2p" coreId="94" contextFuncName="toplevel" opcode="store" nodeLabel="10.0" m_display="0" m_delay="3.25" m_topoIndex="18" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="238" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="49" name="local_ram_addr_write_ln402" lineNumber="402" fileName="assessment/toplevel.cpp" fileDirectory=".." coreName="RAM_T2P_BRAM" implIndex="bram" control="auto" opType="ram_t2p" coreId="94" contextFuncName="toplevel" opcode="store" nodeLabel="10.0" m_display="0" m_delay="3.25" m_topoIndex="17" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="402" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
         <dataInputObjs>read</dataInputObjs>
         <dataInputObjs>getelementptr</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="49" name="br_ln0" coreId="0" opcode="br" nodeLabel="10.0" m_display="0" m_topoIndex="19" m_clusterGroupNumber="-1">
-        <controlInputObjs>load-store-loop</controlInputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="50" name="br_ln0" coreId="961" opcode="br" nodeLabel="10.0" m_display="0" m_topoIndex="18" m_clusterGroupNumber="-1">
+        <controlInputObjs>block_44</controlInputObjs>
       </node_objs>
       <fileValidLineNumbers fileName="assessment/toplevel.cpp">
-        <validLinenumbers>238</validLinenumbers>
+        <validLinenumbers>402</validLinenumbers>
       </fileValidLineNumbers>
     </basic_blocks>
   </regions>
-  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" id="624" pipe_depth="2" RegionName="WAYPOINT_EXTRACT_LOOP">
-    <basic_blocks id="70" name=".lr.ph17" type="BlockType">
-      <controlInputObjs>.lr.ph17.preheader</controlInputObjs>
-      <controlInputObjs>.split6</controlInputObjs>
+  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" id="578" pipe_depth="2" RegionName="WAYPOINT_EXTRACT_LOOP">
+    <basic_blocks id="75" name=".lr.ph21" type="BlockType">
+      <controlInputObjs>.lr.ph21.preheader</controlInputObjs>
+      <controlInputObjs>.split9</controlInputObjs>
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>br</controlOutputObjs>
-      <controlOutputObjs>.split6</controlOutputObjs>
+      <controlOutputObjs>.split9</controlOutputObjs>
       <controlOutputObjs>._crit_edge.loopexit</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="64" name="i" originalName="i" coreId="0" bitwidth="8" opcode="phi" nodeLabel="14.0" m_display="0" m_topoIndex="31" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="69" name="i_2" originalName="i" coreId="49" bitwidth="8" opcode="phi" nodeLabel="14.0" m_display="0" m_topoIndex="34" m_clusterGroupNumber="-1">
         <dataInputObjs>add</dataInputObjs>
         <dataOutputObjs>add</dataOutputObjs>
         <dataOutputObjs>zext</dataOutputObjs>
         <dataOutputObjs>zext</dataOutputObjs>
         <dataOutputObjs>zext</dataOutputObjs>
-        <controlInputObjs>.split6</controlInputObjs>
-        <controlInputObjs>.lr.ph17.preheader</controlInputObjs>
+        <controlInputObjs>.split9</controlInputObjs>
+        <controlInputObjs>.lr.ph21.preheader</controlInputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="65" name="i_1" lineNumber="253" originalName="i" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="i_1_fu_479_p2" coreName="Adder" implIndex="fabric" control="auto" opType="add" coreId="1" contextFuncName="toplevel" bitwidth="8" opcode="add" nodeLabel="14.0" m_display="0" m_delay="1.91" m_topoIndex="32" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="253" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="70" name="i_3" lineNumber="412" originalName="i" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="i_3_fu_498_p2" coreName="Adder" implIndex="fabric" control="auto" opType="add" coreId="1" contextFuncName="toplevel" bitwidth="8" opcode="add" nodeLabel="14.0" m_display="0" m_delay="1.91" m_topoIndex="35" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="412" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
         <dataInputObjs>phi</dataInputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="67" name="zext_ln253" lineNumber="253" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="zext_ln253_fu_485_p1" coreId="2617245840" contextFuncName="toplevel" bitwidth="32" opcode="zext" nodeLabel="14.0" m_display="0" m_topoIndex="33" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="253" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="72" name="zext_ln412_1" lineNumber="412" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="zext_ln412_1_fu_504_p1" coreId="0" contextFuncName="toplevel" bitwidth="16" opcode="zext" nodeLabel="14.0" m_display="0" m_topoIndex="36" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="412" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
         <dataInputObjs>phi</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="68" name="icmp_ln253" lineNumber="253" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="icmp_ln253_fu_489_p2" opType="icmp" coreId="49" contextFuncName="toplevel" bitwidth="1" opcode="icmp" nodeLabel="14.0" m_display="0" m_delay="2.47" m_topoIndex="34" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="253" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="73" name="icmp_ln412" lineNumber="412" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="icmp_ln412_fu_508_p2" opType="icmp" coreId="49" contextFuncName="toplevel" bitwidth="1" opcode="icmp" nodeLabel="14.0" m_display="0" m_delay="2.42" m_topoIndex="37" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="412" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
         <dataInputObjs>zext</dataInputObjs>
-        <dataInputObjs>load</dataInputObjs>
+        <dataInputObjs>trunc</dataInputObjs>
         <dataOutputObjs>br</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="69" name="br_ln253" lineNumber="253" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="1661382584" contextFuncName="toplevel" opcode="br" nodeLabel="14.0" m_display="0" m_topoIndex="35" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="253" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="74" name="br_ln412" lineNumber="412" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="1543504016" contextFuncName="toplevel" opcode="br" nodeLabel="14.0" m_display="0" m_topoIndex="38" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="412" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
         <dataInputObjs>icmp</dataInputObjs>
         <controlInputObjs>._crit_edge.loopexit</controlInputObjs>
-        <controlInputObjs>.split6</controlInputObjs>
+        <controlInputObjs>.split9</controlInputObjs>
       </node_objs>
       <fileValidLineNumbers fileName="assessment/toplevel.cpp">
-        <validLinenumbers>253</validLinenumbers>
+        <validLinenumbers>412</validLinenumbers>
       </fileValidLineNumbers>
     </basic_blocks>
-    <basic_blocks id="85" name=".split6" type="BlockType">
-      <controlInputObjs>.lr.ph17</controlInputObjs>
+    <basic_blocks id="90" name=".split9" type="BlockType">
+      <controlInputObjs>.lr.ph21</controlInputObjs>
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>br</controlOutputObjs>
-      <controlOutputObjs>.lr.ph17</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="71" name="zext_ln253_1" lineNumber="253" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="zext_ln253_1_fu_494_p1" coreId="4294967295" contextFuncName="toplevel" bitwidth="9" opcode="zext" nodeLabel="14.0" m_display="0" m_topoIndex="36" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="253" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+      <controlOutputObjs>.lr.ph21</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="76" name="zext_ln412" lineNumber="412" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="zext_ln412_fu_513_p1" coreId="0" contextFuncName="toplevel" bitwidth="9" opcode="zext" nodeLabel="14.0" m_display="0" m_topoIndex="39" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="412" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
         <dataInputObjs>phi</dataInputObjs>
         <dataOutputObjs>add</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="73" name="add_ln254" lineNumber="254" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="add_ln254_fu_498_p2" coreName="Adder" implIndex="fabric" control="auto" opType="add" coreId="1" contextFuncName="toplevel" bitwidth="9" opcode="add" nodeLabel="14.0" m_display="0" m_delay="1.91" m_topoIndex="37" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="254" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="78" name="add_ln413" lineNumber="413" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="add_ln413_fu_517_p2" coreName="Adder" implIndex="fabric" control="auto" opType="add" coreId="1" contextFuncName="toplevel" bitwidth="9" opcode="add" nodeLabel="14.0" m_display="0" m_delay="1.91" m_topoIndex="40" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="413" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>zext</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="74" name="zext_ln254" lineNumber="254" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="zext_ln254_fu_504_p1" coreId="0" contextFuncName="toplevel" bitwidth="64" opcode="zext" nodeLabel="14.0" m_display="0" m_topoIndex="38" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="254" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="79" name="zext_ln413" lineNumber="413" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="zext_ln413_fu_523_p1" coreId="1543504016" contextFuncName="toplevel" bitwidth="64" opcode="zext" nodeLabel="14.0" m_display="0" m_topoIndex="41" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="413" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
         <dataInputObjs>add</dataInputObjs>
         <dataOutputObjs>getelementptr</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="75" name="local_ram_addr_1" lineNumber="254" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="0" contextFuncName="toplevel" bitwidth="13" opcode="getelementptr" nodeLabel="14.0" m_display="0" m_topoIndex="39" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="254" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="80" name="local_ram_addr_1" lineNumber="413" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="880783232" contextFuncName="toplevel" bitwidth="13" opcode="getelementptr" nodeLabel="14.0" m_display="0" m_topoIndex="42" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="413" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>load</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="76" name="wp" lineNumber="254" originalName="wp" fileName="assessment/toplevel.cpp" fileDirectory=".." coreName="RAM_T2P_BRAM" implIndex="bram" control="auto" opType="ram_t2p" coreId="94" contextFuncName="toplevel" bitwidth="32" opcode="load" nodeLabel="14.0" nodeLatency="1" m_display="0" m_delay="3.25" m_topoIndex="40" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="254" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="81" name="wp" lineNumber="413" originalName="wp" fileName="assessment/toplevel.cpp" fileDirectory=".." coreName="RAM_T2P_BRAM" implIndex="bram" control="auto" opType="ram_t2p" coreId="94" contextFuncName="toplevel" bitwidth="32" opcode="load" nodeLabel="14.0" nodeLatency="1" m_display="0" m_delay="3.25" m_topoIndex="43" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="413" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
         <dataInputObjs>getelementptr</dataInputObjs>
         <dataOutputObjs>partselect</dataOutputObjs>
         <dataOutputObjs>trunc</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="77" name="trunc_ln2" lineNumber="255" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="waypoints_x_d0" coreId="0" contextFuncName="toplevel" bitwidth="16" opcode="partselect" nodeLabel="15.0" m_display="0" m_topoIndex="41" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="255" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="82" name="trunc_ln2" lineNumber="414" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="waypoints_x_d0" coreId="132" contextFuncName="toplevel" bitwidth="16" opcode="partselect" nodeLabel="15.0" m_display="0" m_topoIndex="44" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="414" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="78" name="zext_ln255" lineNumber="255" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="zext_ln255_fu_520_p1" coreId="132" contextFuncName="toplevel" bitwidth="64" opcode="zext" nodeLabel="15.0" m_display="0" m_topoIndex="42" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="255" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="83" name="zext_ln414" lineNumber="414" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="zext_ln414_fu_539_p1" coreId="0" contextFuncName="toplevel" bitwidth="64" opcode="zext" nodeLabel="15.0" m_display="0" m_topoIndex="45" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="414" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
         <dataInputObjs>phi</dataInputObjs>
         <dataOutputObjs>getelementptr</dataOutputObjs>
         <dataOutputObjs>getelementptr</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="79" name="waypoints_x_addr" lineNumber="255" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="0" contextFuncName="toplevel" bitwidth="4" opcode="getelementptr" nodeLabel="15.0" m_display="0" m_topoIndex="43" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="255" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="84" name="waypoints_x_addr" lineNumber="414" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="875698352" contextFuncName="toplevel" bitwidth="4" opcode="getelementptr" nodeLabel="15.0" m_display="0" m_topoIndex="46" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="414" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
         <dataInputObjs>alloca</dataInputObjs>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="80" name="waypoints_x_addr_write_ln255" lineNumber="255" fileName="assessment/toplevel.cpp" fileDirectory=".." coreName="RAM" implIndex="auto" control="auto" opType="ram" coreId="82" contextFuncName="toplevel" opcode="store" nodeLabel="15.0" m_display="0" m_delay="2.32" m_topoIndex="44" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="255" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="85" name="waypoints_x_addr_write_ln414" lineNumber="414" fileName="assessment/toplevel.cpp" fileDirectory=".." coreName="RAM" implIndex="auto" control="auto" opType="ram" coreId="82" contextFuncName="toplevel" opcode="store" nodeLabel="15.0" m_display="0" m_delay="2.32" m_topoIndex="47" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="414" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
         <dataInputObjs>partselect</dataInputObjs>
         <dataInputObjs>getelementptr</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="81" name="trunc_ln256" lineNumber="256" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="waypoints_y_d0" coreId="2617245840" contextFuncName="toplevel" bitwidth="16" opcode="trunc" nodeLabel="15.0" m_display="0" m_topoIndex="45" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="256" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="86" name="trunc_ln415" lineNumber="415" fileName="assessment/toplevel.cpp" fileDirectory=".." rtlName="waypoints_y_d0" coreId="0" contextFuncName="toplevel" bitwidth="16" opcode="trunc" nodeLabel="15.0" m_display="0" m_topoIndex="48" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="415" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="82" name="waypoints_y_addr" lineNumber="256" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="0" contextFuncName="toplevel" bitwidth="4" opcode="getelementptr" nodeLabel="15.0" m_display="0" m_topoIndex="46" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="256" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="87" name="waypoints_y_addr" lineNumber="415" fileName="assessment/toplevel.cpp" fileDirectory=".." coreId="0" contextFuncName="toplevel" bitwidth="4" opcode="getelementptr" nodeLabel="15.0" m_display="0" m_topoIndex="49" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="415" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
         <dataInputObjs>alloca</dataInputObjs>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="83" name="waypoints_y_addr_write_ln256" lineNumber="256" fileName="assessment/toplevel.cpp" fileDirectory=".." coreName="RAM" implIndex="auto" control="auto" opType="ram" coreId="82" contextFuncName="toplevel" opcode="store" nodeLabel="15.0" m_display="0" m_delay="2.32" m_topoIndex="47" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="256" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="88" name="waypoints_y_addr_write_ln415" lineNumber="415" fileName="assessment/toplevel.cpp" fileDirectory=".." coreName="RAM" implIndex="auto" control="auto" opType="ram" coreId="82" contextFuncName="toplevel" opcode="store" nodeLabel="15.0" m_display="0" m_delay="2.32" m_topoIndex="50" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="assessment/toplevel.cpp" linenumber="415" fileDirectory="/home/tomster12/files/EMBS/vitis_hls" functionName="toplevel"/>
         <dataInputObjs>trunc</dataInputObjs>
         <dataInputObjs>getelementptr</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="84" name="br_ln0" coreId="0" opcode="br" nodeLabel="15.0" m_display="0" m_topoIndex="48" m_clusterGroupNumber="-1">
-        <controlInputObjs>.lr.ph17</controlInputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="89" name="br_ln0" coreId="3489" opcode="br" nodeLabel="15.0" m_display="0" m_topoIndex="51" m_clusterGroupNumber="-1">
+        <controlInputObjs>.lr.ph21</controlInputObjs>
       </node_objs>
       <fileValidLineNumbers fileName="assessment/toplevel.cpp">
-        <validLinenumbers>253</validLinenumbers>
-        <validLinenumbers>254</validLinenumbers>
-        <validLinenumbers>255</validLinenumbers>
-        <validLinenumbers>256</validLinenumbers>
+        <validLinenumbers>412</validLinenumbers>
+        <validLinenumbers>413</validLinenumbers>
+        <validLinenumbers>414</validLinenumbers>
+        <validLinenumbers>415</validLinenumbers>
       </fileValidLineNumbers>
     </basic_blocks>
   </regions>
@@ -970,368 +927,360 @@
   <ScheduleInfo time="27"/>
   <ScheduleInfo time="28"/>
   <ScheduleInfo time="29"/>
-  <ScheduleInfo time="30"/>
-  <ScheduleInfo time="31"/>
-  <ScheduleInfo time="32"/>
-  <ScheduleInfo time="33"/>
-  <ScheduleInfo time="34"/>
-  <ScheduleInfo time="35"/>
-  <ScheduleInfo time="36"/>
-  <regnodes realName="empty_27_reg_628">
-    <nodeIds>39</nodeIds>
+  <regnodes realName="waypoints_x_load_1_reg_737">
+    <nodeIds>113</nodeIds>
   </regnodes>
-  <regnodes realName="zext_ln261_1_reg_750">
-    <nodeIds>121</nodeIds>
+  <regnodes realName="icmp_ln406_reg_660">
+    <nodeIds>58</nodeIds>
   </regnodes>
-  <regnodes realName="add_ln261_reg_676">
-    <nodeIds>86</nodeIds>
+  <regnodes realName="trunc_ln405_1_reg_655">
+    <nodeIds>57</nodeIds>
   </regnodes>
-  <regnodes realName="total_len_011_reg_355">
-    <nodeIds>131</nodeIds>
+  <regnodes realName="waypoints_x_addr_1_reg_707">
+    <nodeIds>106</nodeIds>
   </regnodes>
-  <regnodes realName="icmp_ln253_reg_667">
-    <nodeIds>68</nodeIds>
-  </regnodes>
-  <regnodes realName="local_ram_load_reg_642">
-    <nodeIds>51</nodeIds>
-  </regnodes>
-  <regnodes realName="i_1_reg_662">
-    <nodeIds>65</nodeIds>
-  </regnodes>
-  <regnodes realName="icmp_ln261_1_reg_685">
-    <nodeIds>96</nodeIds>
-  </regnodes>
-  <regnodes realName="total_len_1_reg_745">
-    <nodeIds>118</nodeIds>
-  </regnodes>
-  <regnodes realName="waypoints_y_addr_2_reg_709">
-    <nodeIds>109</nodeIds>
-  </regnodes>
-  <regnodes realName="exitcond10_reg_633">
-    <nodeIds>41</nodeIds>
-  </regnodes>
-  <regnodes realName="waypoints_x_addr_1_reg_694">
-    <nodeIds>102</nodeIds>
-  </regnodes>
-  <regnodes realName="ret_reg_734">
+  <regnodes realName="waypoints_y_addr_2_reg_722">
     <nodeIds>112</nodeIds>
   </regnodes>
-  <regnodes realName="waypoints_x_addr_2_reg_704">
-    <nodeIds>108</nodeIds>
-  </regnodes>
-  <regnodes realName="local_ram_addr_1_reg_671">
-    <nodeIds>75</nodeIds>
-  </regnodes>
-  <regnodes realName="MAXI_addr_read_reg_637">
-    <nodeIds>46</nodeIds>
-  </regnodes>
-  <regnodes realName="waypoints_y_addr_1_reg_699">
-    <nodeIds>103</nodeIds>
-  </regnodes>
-  <regnodes realName="i_3_reg_689">
-    <nodeIds>97</nodeIds>
-  </regnodes>
-  <regnodes realName="waypoints_y_load_reg_719">
-    <nodeIds>105</nodeIds>
-  </regnodes>
-  <regnodes realName="waypoints_x_load_reg_714">
-    <nodeIds>104</nodeIds>
-  </regnodes>
-  <regnodes realName="or_ln245_reg_658">
-    <nodeIds>59</nodeIds>
-  </regnodes>
-  <regnodes realName="loop_index_reg_292">
-    <nodeIds>38</nodeIds>
-  </regnodes>
-  <regnodes realName="waypoints_x_load_1_reg_724">
-    <nodeIds>110</nodeIds>
-  </regnodes>
-  <regnodes realName="waypoint_count_reg_647">
-    <nodeIds>53</nodeIds>
-  </regnodes>
-  <regnodes realName="total_len_reg_328">
-    <nodeIds>93</nodeIds>
-  </regnodes>
-  <regnodes realName="i_reg_304">
-    <nodeIds>64</nodeIds>
-  </regnodes>
-  <regnodes realName="waypoints_y_load_1_reg_729">
-    <nodeIds>111</nodeIds>
-  </regnodes>
-  <regnodes realName="empty_29_reg_340">
-    <nodeIds>130</nodeIds>
-  </regnodes>
-  <regnodes realName="add_ln264_reg_755">
-    <nodeIds>124</nodeIds>
-  </regnodes>
-  <regnodes realName="MAXI_addr_reg_620">
-    <nodeIds>34</nodeIds>
-  </regnodes>
-  <regnodes realName="i_2_reg_316">
+  <regnodes realName="icmp_ln427_reg_693">
     <nodeIds>92</nodeIds>
   </regnodes>
-  <regnodes realName="trunc_ln242_reg_653">
-    <nodeIds>54</nodeIds>
+  <regnodes realName="icmp_ln406_1_reg_665">
+    <nodeIds>59</nodeIds>
   </regnodes>
-  <regnodes realName="icmp_ln261_reg_681">
-    <nodeIds>87</nodeIds>
+  <regnodes realName="icmp_ln412_reg_679">
+    <nodeIds>73</nodeIds>
   </regnodes>
-  <expressionNodes realName="icmp_ln253_fu_489">
-    <nodeIds>68</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="trunc_ln261_fu_542">
-    <nodeIds>94</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="zext_ln261_1_fu_598">
+  <regnodes realName="zext_ln430_2_reg_763">
+    <nodeIds>124</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln427_1_reg_697">
+    <nodeIds>100</nodeIds>
+  </regnodes>
+  <regnodes realName="waypoints_y_load_reg_732">
+    <nodeIds>109</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln401_reg_640">
+    <nodeIds>41</nodeIds>
+  </regnodes>
+  <regnodes realName="add_ln427_reg_688">
+    <nodeIds>91</nodeIds>
+  </regnodes>
+  <regnodes realName="waypoints_y_addr_1_reg_712">
+    <nodeIds>107</nodeIds>
+  </regnodes>
+  <regnodes realName="or_ln406_1_reg_670">
+    <nodeIds>64</nodeIds>
+  </regnodes>
+  <regnodes realName="storemerge_reg_353">
+    <nodeIds>134</nodeIds>
+  </regnodes>
+  <regnodes realName="i_1_reg_635">
+    <nodeIds>39</nodeIds>
+  </regnodes>
+  <regnodes realName="total_len_reg_322">
+    <nodeIds>98</nodeIds>
+  </regnodes>
+  <regnodes realName="waypoints_y_load_1_reg_742">
+    <nodeIds>114</nodeIds>
+  </regnodes>
+  <regnodes realName="i_reg_287">
+    <nodeIds>38</nodeIds>
+  </regnodes>
+  <regnodes realName="total_len_1_reg_758">
     <nodeIds>121</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="sext_ln238_fu_414">
-    <nodeIds>33</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="trunc_ln256_fu_526">
-    <nodeIds>81</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="trunc_ln_fu_404">
+  </regnodes>
+  <regnodes realName="ret_reg_747">
+    <nodeIds>115</nodeIds>
+  </regnodes>
+  <regnodes realName="i_5_reg_701">
+    <nodeIds>101</nodeIds>
+  </regnodes>
+  <regnodes realName="waypoint_count_reg_649">
+    <nodeIds>56</nodeIds>
+  </regnodes>
+  <regnodes realName="MAXI_addr_read_reg_644">
+    <nodeIds>47</nodeIds>
+  </regnodes>
+  <regnodes realName="i_3_reg_674">
+    <nodeIds>70</nodeIds>
+  </regnodes>
+  <regnodes realName="add_ln432_reg_768">
+    <nodeIds>127</nodeIds>
+  </regnodes>
+  <regnodes realName="storemerge3_reg_334">
+    <nodeIds>133</nodeIds>
+  </regnodes>
+  <regnodes realName="i_2_reg_299">
+    <nodeIds>69</nodeIds>
+  </regnodes>
+  <regnodes realName="local_ram_addr_1_reg_683">
+    <nodeIds>80</nodeIds>
+  </regnodes>
+  <regnodes realName="waypoints_x_load_reg_727">
+    <nodeIds>108</nodeIds>
+  </regnodes>
+  <regnodes realName="waypoints_x_addr_2_reg_717">
+    <nodeIds>111</nodeIds>
+  </regnodes>
+  <regnodes realName="MAXI_addr_reg_628">
+    <nodeIds>34</nodeIds>
+  </regnodes>
+  <regnodes realName="i_4_reg_311">
+    <nodeIds>97</nodeIds>
+  </regnodes>
+  <expressionNodes realName="trunc_ln_fu_406">
     <nodeIds>32</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="zext_ln262_fu_561">
-    <nodeIds>101</nodeIds>
+  <expressionNodes realName="icmp_ln427_1_fu_565">
+    <nodeIds>100</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="icmp_ln263_fu_586">
-    <nodeIds>115</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="i_phi_fu_308">
-    <nodeIds>64</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="waypoints_y_addr_gep_fu_244">
-    <nodeIds>82</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="icmp_ln245_1_fu_467">
-    <nodeIds>58</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="total_len_011_phi_fu_359">
-    <nodeIds>131</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="icmp_ln261_1_fu_550">
-    <nodeIds>96</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="zext_ln262_2_fu_579">
-    <nodeIds>113</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="zext_ln254_fu_504">
-    <nodeIds>74</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="waypoints_x_addr_2_gep_fu_278">
-    <nodeIds>108</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="zext_ln253_1_fu_494">
-    <nodeIds>71</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="i_2_phi_fu_320">
-    <nodeIds>92</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="zext_ln262_1_fu_573">
-    <nodeIds>107</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="add_ln245_fu_451">
-    <nodeIds>55</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="MAXI_addr_fu_418">
-    <nodeIds>34</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="trunc_ln2_fu_509">
-    <nodeIds>77</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="i_1_fu_479">
-    <nodeIds>65</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="add_ln261_fu_531">
-    <nodeIds>86</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="i_3_fu_555">
-    <nodeIds>97</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="empty_29_phi_fu_344">
-    <nodeIds>130</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="or_ln245_fu_473">
-    <nodeIds>59</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="add_ln254_fu_498">
+  <expressionNodes realName="icmp_ln412_fu_508">
     <nodeIds>73</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="zext_ln255_fu_520">
-    <nodeIds>78</nodeIds>
+  <expressionNodes realName="i_5_fu_570">
+    <nodeIds>101</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="waypoints_y_alloca_fu_154">
-    <nodeIds>26</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="zext_ln253_fu_485">
-    <nodeIds>67</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="waypoints_y_addr_2_gep_fu_284">
-    <nodeIds>109</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="add_ln262_fu_567">
-    <nodeIds>106</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="empty_27_fu_424">
-    <nodeIds>39</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="zext_ln271_fu_607">
-    <nodeIds>132</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="total_len_phi_fu_332">
-    <nodeIds>93</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="trunc_ln242_fu_447">
-    <nodeIds>54</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="waypoints_y_addr_1_gep_fu_262">
-    <nodeIds>103</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="waypoints_x_alloca_fu_150">
-    <nodeIds>25</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="zext_ln261_fu_546">
-    <nodeIds>95</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="loop_index_phi_fu_296">
-    <nodeIds>38</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="local_ram_addr_gep_fu_205">
-    <nodeIds>47</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="local_ram_addr_1_gep_fu_224">
-    <nodeIds>75</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="add_ln245_1_fu_462">
-    <nodeIds>57</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="waypoints_x_addr_1_gep_fu_256">
-    <nodeIds>102</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="icmp_ln245_fu_456">
-    <nodeIds>56</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="icmp_ln261_fu_536">
-    <nodeIds>87</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="total_len_1_fu_592">
-    <nodeIds>118</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="waypoints_x_addr_gep_fu_232">
+  <expressionNodes realName="zext_ln413_fu_523">
     <nodeIds>79</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="exitcond10_fu_430">
+  <expressionNodes realName="trunc_ln415_fu_545">
+    <nodeIds>86</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln431_fu_595">
+    <nodeIds>118</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="storemerge_phi_fu_358">
+    <nodeIds>134</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="waypoints_x_addr_gep_fu_227">
+    <nodeIds>84</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln406_fu_473">
+    <nodeIds>60</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="total_len_1_fu_601">
+    <nodeIds>121</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="waypoints_x_addr_2_gep_fu_273">
+    <nodeIds>111</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="or_ln406_1_fu_493">
+    <nodeIds>64</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln414_fu_539">
+    <nodeIds>83</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="waypoints_x_alloca_fu_156">
+    <nodeIds>26</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln402_fu_438">
+    <nodeIds>46</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="waypoints_y_addr_2_gep_fu_279">
+    <nodeIds>112</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln427_fu_550">
+    <nodeIds>91</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="waypoint_count_fu_453">
+    <nodeIds>56</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln445_fu_615">
+    <nodeIds>135</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="waypoints_y_addr_gep_fu_239">
+    <nodeIds>87</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln406_1_fu_467">
+    <nodeIds>59</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln405_1_fu_457">
+    <nodeIds>57</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln404_fu_443">
+    <nodeIds>53</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln430_fu_576">
+    <nodeIds>105</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln406_2_fu_482">
+    <nodeIds>62</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="MAXI_addr_fu_420">
+    <nodeIds>34</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="i_4_phi_fu_315">
+    <nodeIds>97</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="local_ram_addr_1_gep_fu_219">
+    <nodeIds>80</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln412_1_fu_504">
+    <nodeIds>72</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln427_fu_555">
+    <nodeIds>92</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="or_ln406_fu_488">
+    <nodeIds>63</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln406_fu_461">
+    <nodeIds>58</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln430_1_fu_582">
+    <nodeIds>110</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln427_fu_561">
+    <nodeIds>99</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln430_3_fu_588">
+    <nodeIds>116</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="i_1_fu_426">
+    <nodeIds>39</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="waypoints_y_alloca_fu_160">
+    <nodeIds>27</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="local_ram_addr_gep_fu_200">
+    <nodeIds>48</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="i_2_phi_fu_303">
+    <nodeIds>69</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="storemerge3_phi_fu_339">
+    <nodeIds>133</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="i_phi_fu_291">
+    <nodeIds>38</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln401_fu_432">
     <nodeIds>41</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="loop_index_cast_fu_436">
-    <nodeIds>45</nodeIds>
+  <expressionNodes realName="zext_ln412_fu_513">
+    <nodeIds>76</nodeIds>
   </expressionNodes>
-  <moduleNodes realName="grp_a_star_len_fu_370">
-    <nodeIds>112</nodeIds>
-  </moduleNodes>
-  <moduleNodes realName="grp_fu_612">
-    <nodeIds>122</nodeIds>
-    <nodeIds>123</nodeIds>
+  <expressionNodes realName="total_len_phi_fu_326">
+    <nodeIds>98</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln406_fu_476">
+    <nodeIds>61</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="waypoints_x_addr_1_gep_fu_251">
+    <nodeIds>106</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln430_2_fu_607">
     <nodeIds>124</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln2_fu_528">
+    <nodeIds>82</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="sext_ln401_fu_416">
+    <nodeIds>33</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln413_fu_517">
+    <nodeIds>78</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="i_3_fu_498">
+    <nodeIds>70</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="waypoints_y_addr_1_gep_fu_257">
+    <nodeIds>107</nodeIds>
+  </expressionNodes>
+  <moduleNodes realName="grp_a_star_len_fu_372">
+    <nodeIds>115</nodeIds>
   </moduleNodes>
-  <ioNodes realName="write_ln246_write_fu_195">
-    <nodeIds>140</nodeIds>
-  </ioNodes>
-  <ioNodes realName="grp_writeresp_fu_172">
-    <nodeIds>35</nodeIds>
-    <nodeIds>133</nodeIds>
-    <nodeIds>135</nodeIds>
-    <nodeIds>139</nodeIds>
-    <nodeIds>141</nodeIds>
-  </ioNodes>
-  <ioNodes realName="MAXI_addr_read_read_fu_179">
-    <nodeIds>46</nodeIds>
-  </ioNodes>
-  <ioNodes realName="store_ln264_store_fu_602">
+  <moduleNodes realName="grp_fu_620">
     <nodeIds>125</nodeIds>
+    <nodeIds>126</nodeIds>
+    <nodeIds>127</nodeIds>
+  </moduleNodes>
+  <ioNodes realName="ram_read_read_fu_164">
+    <nodeIds>25</nodeIds>
   </ioNodes>
-  <ioNodes realName="error_flag_load_load_fu_582">
-    <nodeIds>114</nodeIds>
+  <ioNodes realName="MAXI_addr_read_read_fu_177">
+    <nodeIds>47</nodeIds>
   </ioNodes>
-  <ioNodes realName="grp_write_fu_164">
-    <nodeIds>30</nodeIds>
+  <ioNodes realName="grp_writeresp_fu_170">
+    <nodeIds>35</nodeIds>
     <nodeIds>136</nodeIds>
-    <nodeIds>142</nodeIds>
+    <nodeIds>138</nodeIds>
   </ioNodes>
-  <ioNodes realName="ram_read_read_fu_158">
-    <nodeIds>24</nodeIds>
+  <ioNodes realName="store_ln432_store_fu_610">
+    <nodeIds>128</nodeIds>
   </ioNodes>
-  <ioNodes realName="store_ln241_store_fu_441">
-    <nodeIds>52</nodeIds>
+  <ioNodes realName="write_ln408_write_fu_192">
+    <nodeIds>139</nodeIds>
   </ioNodes>
-  <ioNodes realName="store_ln233_store_fu_398">
+  <ioNodes realName="error_flag_load_load_fu_591">
+    <nodeIds>117</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln404_store_fu_447">
+    <nodeIds>54</nodeIds>
+  </ioNodes>
+  <ioNodes realName="write_ln445_write_fu_184">
+    <nodeIds>137</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln389_store_fu_400">
     <nodeIds>31</nodeIds>
   </ioNodes>
-  <ioNodes realName="write_ln271_write_fu_186">
-    <nodeIds>134</nodeIds>
-  </ioNodes>
   <memoryPorts dataString="closed_set" portID="100">
-    <nodeIds>112</nodeIds>
+    <nodeIds>115</nodeIds>
   </memoryPorts>
   <memoryPorts dataString="local_ram">
-    <nodeIds>48</nodeIds>
-    <nodeIds>53</nodeIds>
+    <nodeIds>49</nodeIds>
+    <nodeIds>55</nodeIds>
   </memoryPorts>
   <memoryPorts dataString="local_ram" portID="1">
-    <nodeIds>51</nodeIds>
-    <nodeIds>76</nodeIds>
+    <nodeIds>52</nodeIds>
+    <nodeIds>81</nodeIds>
   </memoryPorts>
   <memoryPorts dataString="local_ram" portID="100">
-    <nodeIds>112</nodeIds>
+    <nodeIds>115</nodeIds>
   </memoryPorts>
   <memoryPorts dataString="open_set_heap_f_score" portID="100">
-    <nodeIds>112</nodeIds>
+    <nodeIds>115</nodeIds>
   </memoryPorts>
   <memoryPorts dataString="open_set_heap_g_score" portID="100">
-    <nodeIds>112</nodeIds>
+    <nodeIds>115</nodeIds>
   </memoryPorts>
   <memoryPorts dataString="open_set_heap_x" portID="100">
-    <nodeIds>112</nodeIds>
+    <nodeIds>115</nodeIds>
   </memoryPorts>
   <memoryPorts dataString="open_set_heap_y" portID="100">
-    <nodeIds>112</nodeIds>
+    <nodeIds>115</nodeIds>
   </memoryPorts>
   <memoryPorts dataString="waypoints_x">
-    <nodeIds>80</nodeIds>
-    <nodeIds>110</nodeIds>
+    <nodeIds>85</nodeIds>
+    <nodeIds>113</nodeIds>
   </memoryPorts>
   <memoryPorts dataString="waypoints_x" portID="1">
-    <nodeIds>104</nodeIds>
+    <nodeIds>108</nodeIds>
   </memoryPorts>
   <memoryPorts dataString="waypoints_y">
-    <nodeIds>83</nodeIds>
-    <nodeIds>111</nodeIds>
+    <nodeIds>88</nodeIds>
+    <nodeIds>114</nodeIds>
   </memoryPorts>
   <memoryPorts dataString="waypoints_y" portID="1">
-    <nodeIds>105</nodeIds>
+    <nodeIds>109</nodeIds>
   </memoryPorts>
   <ioPorts name="MAXI"/>
   <ioPorts name="code">
     <contents name="write">
-      <nodeIds>30</nodeIds>
-      <nodeIds>142</nodeIds>
-      <nodeIds>136</nodeIds>
+      <nodeIds>139</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="ram">
     <contents name="read">
-      <nodeIds>24</nodeIds>
+      <nodeIds>25</nodeIds>
     </contents>
   </ioPorts>
   <fsm>
     <states id="1">
-      <operations id="24" stage="1" latency="1"/>
       <operations id="25" stage="1" latency="1"/>
       <operations id="26" stage="1" latency="1"/>
-      <operations id="30" stage="1" latency="1"/>
+      <operations id="27" stage="1" latency="1"/>
       <operations id="31" stage="1" latency="1"/>
       <operations id="32" stage="1" latency="1"/>
       <operations id="33" stage="1" latency="1"/>
@@ -1356,7 +1305,6 @@
       <operations id="35" stage="2" latency="7"/>
     </states>
     <states id="8">
-      <operations id="16" stage="1" latency="1"/>
       <operations id="17" stage="1" latency="1"/>
       <operations id="18" stage="1" latency="1"/>
       <operations id="19" stage="1" latency="1"/>
@@ -1364,9 +1312,10 @@
       <operations id="21" stage="1" latency="1"/>
       <operations id="22" stage="1" latency="1"/>
       <operations id="23" stage="1" latency="1"/>
-      <operations id="27" stage="1" latency="1"/>
+      <operations id="24" stage="1" latency="1"/>
       <operations id="28" stage="1" latency="1"/>
       <operations id="29" stage="1" latency="1"/>
+      <operations id="30" stage="1" latency="1"/>
       <operations id="35" stage="1" latency="7"/>
       <operations id="36" stage="1" latency="1"/>
     </states>
@@ -1379,166 +1328,145 @@
       <operations id="43" stage="1" latency="1"/>
     </states>
     <states id="10">
-      <operations id="46" stage="1" latency="1"/>
+      <operations id="47" stage="1" latency="1"/>
     </states>
     <states id="11">
       <operations id="45" stage="1" latency="1"/>
-      <operations id="47" stage="1" latency="1"/>
+      <operations id="46" stage="1" latency="1"/>
       <operations id="48" stage="1" latency="1"/>
       <operations id="49" stage="1" latency="1"/>
+      <operations id="50" stage="1" latency="1"/>
     </states>
     <states id="12">
-      <operations id="51" stage="2" latency="2"/>
-      <operations id="53" stage="2" latency="2"/>
+      <operations id="52" stage="2" latency="2"/>
+      <operations id="55" stage="2" latency="2"/>
     </states>
     <states id="13">
-      <operations id="51" stage="1" latency="2"/>
-      <operations id="52" stage="1" latency="1"/>
-      <operations id="53" stage="1" latency="2"/>
+      <operations id="52" stage="1" latency="2"/>
+      <operations id="53" stage="1" latency="1"/>
       <operations id="54" stage="1" latency="1"/>
-    </states>
-    <states id="14">
-      <operations id="55" stage="1" latency="1"/>
+      <operations id="55" stage="1" latency="2"/>
       <operations id="56" stage="1" latency="1"/>
       <operations id="57" stage="1" latency="1"/>
       <operations id="58" stage="1" latency="1"/>
       <operations id="59" stage="1" latency="1"/>
-      <operations id="60" stage="1" latency="1"/>
-      <operations id="62" stage="1" latency="1"/>
     </states>
-    <states id="15">
+    <states id="14">
+      <operations id="60" stage="1" latency="1"/>
+      <operations id="61" stage="1" latency="1"/>
+      <operations id="62" stage="1" latency="1"/>
+      <operations id="63" stage="1" latency="1"/>
       <operations id="64" stage="1" latency="1"/>
       <operations id="65" stage="1" latency="1"/>
-      <operations id="66" stage="1" latency="1"/>
       <operations id="67" stage="1" latency="1"/>
-      <operations id="68" stage="1" latency="1"/>
+    </states>
+    <states id="15">
       <operations id="69" stage="1" latency="1"/>
+      <operations id="70" stage="1" latency="1"/>
       <operations id="71" stage="1" latency="1"/>
+      <operations id="72" stage="1" latency="1"/>
       <operations id="73" stage="1" latency="1"/>
       <operations id="74" stage="1" latency="1"/>
-      <operations id="75" stage="1" latency="1"/>
-      <operations id="76" stage="2" latency="2"/>
-    </states>
-    <states id="16">
-      <operations id="72" stage="1" latency="1"/>
-      <operations id="76" stage="1" latency="2"/>
-      <operations id="77" stage="1" latency="1"/>
+      <operations id="76" stage="1" latency="1"/>
       <operations id="78" stage="1" latency="1"/>
       <operations id="79" stage="1" latency="1"/>
       <operations id="80" stage="1" latency="1"/>
-      <operations id="81" stage="1" latency="1"/>
+      <operations id="81" stage="2" latency="2"/>
+    </states>
+    <states id="16">
+      <operations id="77" stage="1" latency="1"/>
+      <operations id="81" stage="1" latency="2"/>
       <operations id="82" stage="1" latency="1"/>
       <operations id="83" stage="1" latency="1"/>
       <operations id="84" stage="1" latency="1"/>
-    </states>
-    <states id="17">
+      <operations id="85" stage="1" latency="1"/>
       <operations id="86" stage="1" latency="1"/>
       <operations id="87" stage="1" latency="1"/>
       <operations id="88" stage="1" latency="1"/>
-      <operations id="90" stage="1" latency="1"/>
+      <operations id="89" stage="1" latency="1"/>
     </states>
-    <states id="18">
+    <states id="17">
+      <operations id="91" stage="1" latency="1"/>
       <operations id="92" stage="1" latency="1"/>
       <operations id="93" stage="1" latency="1"/>
-      <operations id="94" stage="1" latency="1"/>
       <operations id="95" stage="1" latency="1"/>
-      <operations id="96" stage="1" latency="1"/>
+    </states>
+    <states id="18">
       <operations id="97" stage="1" latency="1"/>
       <operations id="98" stage="1" latency="1"/>
+      <operations id="99" stage="1" latency="1"/>
+      <operations id="100" stage="1" latency="1"/>
       <operations id="101" stage="1" latency="1"/>
       <operations id="102" stage="1" latency="1"/>
-      <operations id="103" stage="1" latency="1"/>
-      <operations id="104" stage="2" latency="2"/>
-      <operations id="105" stage="2" latency="2"/>
+      <operations id="105" stage="1" latency="1"/>
       <operations id="106" stage="1" latency="1"/>
       <operations id="107" stage="1" latency="1"/>
-      <operations id="108" stage="1" latency="1"/>
-      <operations id="109" stage="1" latency="1"/>
-      <operations id="110" stage="2" latency="2"/>
-      <operations id="111" stage="2" latency="2"/>
-      <operations id="128" stage="1" latency="1"/>
+      <operations id="108" stage="2" latency="2"/>
+      <operations id="109" stage="2" latency="2"/>
+      <operations id="110" stage="1" latency="1"/>
+      <operations id="111" stage="1" latency="1"/>
+      <operations id="112" stage="1" latency="1"/>
+      <operations id="113" stage="2" latency="2"/>
+      <operations id="114" stage="2" latency="2"/>
+      <operations id="131" stage="1" latency="1"/>
     </states>
     <states id="19">
-      <operations id="104" stage="1" latency="2"/>
-      <operations id="105" stage="1" latency="2"/>
-      <operations id="110" stage="1" latency="2"/>
-      <operations id="111" stage="1" latency="2"/>
-      <operations id="112" stage="2" latency="2"/>
+      <operations id="108" stage="1" latency="2"/>
+      <operations id="109" stage="1" latency="2"/>
+      <operations id="113" stage="1" latency="2"/>
+      <operations id="114" stage="1" latency="2"/>
+      <operations id="115" stage="2" latency="2"/>
     </states>
     <states id="20">
-      <operations id="112" stage="1" latency="2"/>
+      <operations id="115" stage="1" latency="2"/>
     </states>
     <states id="21">
-      <operations id="100" stage="1" latency="1"/>
-      <operations id="113" stage="1" latency="1"/>
-      <operations id="114" stage="1" latency="1"/>
-      <operations id="115" stage="1" latency="1"/>
+      <operations id="104" stage="1" latency="1"/>
       <operations id="116" stage="1" latency="1"/>
+      <operations id="117" stage="1" latency="1"/>
       <operations id="118" stage="1" latency="1"/>
       <operations id="119" stage="1" latency="1"/>
       <operations id="121" stage="1" latency="1"/>
-      <operations id="122" stage="3" latency="3"/>
+      <operations id="122" stage="1" latency="1"/>
+      <operations id="124" stage="1" latency="1"/>
+      <operations id="125" stage="3" latency="3"/>
     </states>
     <states id="22">
-      <operations id="122" stage="2" latency="3"/>
+      <operations id="125" stage="2" latency="3"/>
     </states>
     <states id="23">
-      <operations id="122" stage="1" latency="3"/>
-      <operations id="123" stage="1" latency="1"/>
-      <operations id="124" stage="2" latency="2"/>
+      <operations id="125" stage="1" latency="3"/>
+      <operations id="126" stage="1" latency="1"/>
+      <operations id="127" stage="2" latency="2"/>
     </states>
     <states id="24">
-      <operations id="124" stage="1" latency="2"/>
-      <operations id="125" stage="1" latency="1"/>
-      <operations id="126" stage="1" latency="1"/>
-      <operations id="133" stage="1" latency="1"/>
-    </states>
-    <states id="25">
-      <operations id="130" stage="1" latency="1"/>
-      <operations id="131" stage="1" latency="1"/>
-      <operations id="132" stage="1" latency="1"/>
-      <operations id="134" stage="1" latency="1"/>
+      <operations id="127" stage="1" latency="2"/>
+      <operations id="128" stage="1" latency="1"/>
+      <operations id="129" stage="1" latency="1"/>
       <operations id="136" stage="1" latency="1"/>
     </states>
-    <states id="26">
-      <operations id="135" stage="5" latency="5"/>
-    </states>
-    <states id="27">
-      <operations id="135" stage="4" latency="5"/>
-    </states>
-    <states id="28">
-      <operations id="135" stage="3" latency="5"/>
-    </states>
-    <states id="29">
-      <operations id="135" stage="2" latency="5"/>
-    </states>
-    <states id="30">
-      <operations id="135" stage="1" latency="5"/>
+    <states id="25">
+      <operations id="133" stage="1" latency="1"/>
+      <operations id="134" stage="1" latency="1"/>
+      <operations id="135" stage="1" latency="1"/>
       <operations id="137" stage="1" latency="1"/>
-      <operations id="145" stage="1" latency="1"/>
-    </states>
-    <states id="31">
       <operations id="139" stage="1" latency="1"/>
     </states>
-    <states id="32">
+    <states id="26">
+      <operations id="138" stage="5" latency="5"/>
+    </states>
+    <states id="27">
+      <operations id="138" stage="4" latency="5"/>
+    </states>
+    <states id="28">
+      <operations id="138" stage="3" latency="5"/>
+    </states>
+    <states id="29">
+      <operations id="138" stage="2" latency="5"/>
+    </states>
+    <states id="30">
+      <operations id="138" stage="1" latency="5"/>
       <operations id="140" stage="1" latency="1"/>
-      <operations id="142" stage="1" latency="1"/>
-    </states>
-    <states id="33">
-      <operations id="141" stage="5" latency="5"/>
-    </states>
-    <states id="34">
-      <operations id="141" stage="4" latency="5"/>
-    </states>
-    <states id="35">
-      <operations id="141" stage="3" latency="5"/>
-    </states>
-    <states id="36">
-      <operations id="141" stage="2" latency="5"/>
-    </states>
-    <states id="37">
-      <operations id="141" stage="1" latency="5"/>
-      <operations id="143" stage="1" latency="1"/>
     </states>
     <transitions inState="1" outState="2">
       <condition id="-1"/>
@@ -1570,7 +1498,7 @@
     <transitions inState="13" outState="14">
       <condition id="-1"/>
     </transitions>
-    <transitions inState="14" outState="31">
+    <transitions inState="14" outState="24">
       <condition id="-1"/>
     </transitions>
     <transitions inState="14" outState="15">
@@ -1624,27 +1552,6 @@
     <transitions inState="29" outState="30">
       <condition id="-1"/>
     </transitions>
-    <transitions inState="31" outState="32">
-      <condition id="-1"/>
-    </transitions>
-    <transitions inState="32" outState="33">
-      <condition id="-1"/>
-    </transitions>
-    <transitions inState="33" outState="34">
-      <condition id="-1"/>
-    </transitions>
-    <transitions inState="34" outState="35">
-      <condition id="-1"/>
-    </transitions>
-    <transitions inState="35" outState="36">
-      <condition id="-1"/>
-    </transitions>
-    <transitions inState="36" outState="37">
-      <condition id="-1"/>
-    </transitions>
-    <transitions inState="37" outState="30">
-      <condition id="-1"/>
-    </transitions>
     <transitions inState="10" outState="11">
       <condition id="-1"/>
     </transitions>
@@ -1678,54 +1585,48 @@
       <subRegions>8</subRegions>
       <subRegions>9</subRegions>
       <subRegions>10</subRegions>
-      <subRegions>11</subRegions>
       <mDfPipe/>
     </cfgRegions>
     <cfgRegions mId="2" mTag="Entry" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="7" mMaxLatency="7">
       <basicBlocks>37</basicBlocks>
       <mDfPipe/>
     </cfgRegions>
-    <cfgRegions mId="3" mTag="Loop_1" mII="1" mDepth="3" mMinTripCount="7827" mMaxTripCount="7827" mMinLatency="7828" mMaxLatency="7828" mType="1">
+    <cfgRegions mId="3" mTag="COPY_LOOP" mII="1" mDepth="3" mMinTripCount="7831" mMaxTripCount="7831" mMinLatency="7832" mMaxLatency="7832" mType="1">
       <basicBlocks>44</basicBlocks>
-      <basicBlocks>50</basicBlocks>
+      <basicBlocks>51</basicBlocks>
       <mDfPipe/>
     </cfgRegions>
-    <cfgRegions mId="4" mTag="Region 1" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="2" mMaxLatency="9">
-      <basicBlocks>61</basicBlocks>
-      <basicBlocks>63</basicBlocks>
-      <basicBlocks>144</basicBlocks>
+    <cfgRegions mId="4" mTag="Region 1" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="2" mMaxLatency="2">
+      <basicBlocks>66</basicBlocks>
+      <basicBlocks>68</basicBlocks>
       <mDfPipe/>
     </cfgRegions>
     <cfgRegions mId="5" mTag="WAYPOINT_EXTRACT_LOOP" mII="1" mDepth="2" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="-1" mMaxLatency="-1" mType="1">
-      <basicBlocks>70</basicBlocks>
-      <basicBlocks>85</basicBlocks>
+      <basicBlocks>75</basicBlocks>
+      <basicBlocks>90</basicBlocks>
       <mDfPipe/>
     </cfgRegions>
     <cfgRegions mId="6" mTag="Region 2" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
-      <basicBlocks>89</basicBlocks>
-      <basicBlocks>91</basicBlocks>
+      <basicBlocks>94</basicBlocks>
+      <basicBlocks>96</basicBlocks>
       <mDfPipe/>
     </cfgRegions>
     <cfgRegions mId="7" mTag="PATHFINDING_LOOP" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="-1" mMaxLatency="-1" mType="1">
-      <basicBlocks>99</basicBlocks>
-      <basicBlocks>117</basicBlocks>
+      <basicBlocks>103</basicBlocks>
       <basicBlocks>120</basicBlocks>
+      <basicBlocks>123</basicBlocks>
       <mDfPipe/>
     </cfgRegions>
     <cfgRegions mId="8" mTag="Region 3" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="3" mMaxLatency="3">
-      <basicBlocks>127</basicBlocks>
+      <basicBlocks>130</basicBlocks>
       <mDfPipe/>
     </cfgRegions>
     <cfgRegions mId="9" mTag="Region 4" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
-      <basicBlocks>129</basicBlocks>
+      <basicBlocks>132</basicBlocks>
       <mDfPipe/>
     </cfgRegions>
-    <cfgRegions mId="10" mTag="Region 5" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="6" mMaxLatency="6">
-      <basicBlocks>138</basicBlocks>
-      <mDfPipe/>
-    </cfgRegions>
-    <cfgRegions mId="11" mTag="Return" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
-      <basicBlocks>146</basicBlocks>
+    <cfgRegions mId="10" mTag="Return" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="6" mMaxLatency="6">
+      <basicBlocks>141</basicBlocks>
       <mDfPipe/>
     </cfgRegions>
   </CFGRegionsRoot>

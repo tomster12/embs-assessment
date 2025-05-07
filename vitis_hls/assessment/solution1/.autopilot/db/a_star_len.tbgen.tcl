@@ -17,8 +17,8 @@ set C_modelArgList {
 	{ goal_x int 16 regular  }
 	{ goal_y int 16 regular  }
 	{ error_flag int 32 regular {pointer 2} {global 2}  }
-	{ world_size int 32 regular {pointer 0} {global 0}  }
-	{ local_ram int 32 regular {array 7827 { 1 3 } 1 1 } {global 0}  }
+	{ world_size int 16 regular {pointer 0} {global 0}  }
+	{ local_ram int 32 regular {array 7831 { 1 3 } 1 1 } {global 0}  }
 }
 set C_modelArgMapList {[ 
 	{ "Name" : "start_x", "interface" : "wire", "bitwidth" : 16, "direction" : "READONLY"} , 
@@ -26,7 +26,7 @@ set C_modelArgMapList {[
  	{ "Name" : "goal_x", "interface" : "wire", "bitwidth" : 16, "direction" : "READONLY"} , 
  	{ "Name" : "goal_y", "interface" : "wire", "bitwidth" : 16, "direction" : "READONLY"} , 
  	{ "Name" : "error_flag", "interface" : "wire", "bitwidth" : 32, "direction" : "READWRITE", "extern" : 0} , 
- 	{ "Name" : "world_size", "interface" : "wire", "bitwidth" : 32, "direction" : "READONLY", "extern" : 0} , 
+ 	{ "Name" : "world_size", "interface" : "wire", "bitwidth" : 16, "direction" : "READONLY", "extern" : 0} , 
  	{ "Name" : "local_ram", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY", "extern" : 0} , 
  	{ "Name" : "ap_return", "interface" : "wire", "bitwidth" : 16} ]}
 # RTL Port declarations: 
@@ -45,7 +45,7 @@ set portList {
 	{ error_flag_i sc_in sc_lv 32 signal 4 } 
 	{ error_flag_o sc_out sc_lv 32 signal 4 } 
 	{ error_flag_o_ap_vld sc_out sc_logic 1 outvld 4 } 
-	{ world_size sc_in sc_lv 32 signal 5 } 
+	{ world_size sc_in sc_lv 16 signal 5 } 
 	{ local_ram_address0 sc_out sc_lv 13 signal 6 } 
 	{ local_ram_ce0 sc_out sc_logic 1 signal 6 } 
 	{ local_ram_q0 sc_in sc_lv 32 signal 6 } 
@@ -65,7 +65,7 @@ set NewPortList {[
  	{ "name": "error_flag_i", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "error_flag", "role": "i" }} , 
  	{ "name": "error_flag_o", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "error_flag", "role": "o" }} , 
  	{ "name": "error_flag_o_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "error_flag", "role": "o_ap_vld" }} , 
- 	{ "name": "world_size", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "world_size", "role": "default" }} , 
+ 	{ "name": "world_size", "direction": "in", "datatype": "sc_lv", "bitwidth":16, "type": "signal", "bundle":{"name": "world_size", "role": "default" }} , 
  	{ "name": "local_ram_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":13, "type": "signal", "bundle":{"name": "local_ram", "role": "address0" }} , 
  	{ "name": "local_ram_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "local_ram", "role": "ce0" }} , 
  	{ "name": "local_ram_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "local_ram", "role": "q0" }} , 
@@ -103,11 +103,11 @@ set RtlHierarchyInfo {[
 	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.open_set_heap_g_score_U", "Parent" : "0"},
 	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.open_set_heap_x_U", "Parent" : "0"},
 	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.open_set_heap_y_U", "Parent" : "0"},
-	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_32s_32s_32_2_1_U1", "Parent" : "0"},
+	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_42_32_1_1_U1", "Parent" : "0"},
 	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_42_32_1_1_U2", "Parent" : "0"},
-	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_42_32_1_1_U3", "Parent" : "0"},
-	{"ID" : "9", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_18s_16ns_16ns_18_4_1_U4", "Parent" : "0"},
-	{"ID" : "10", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_18s_16ns_16ns_18_4_1_U5", "Parent" : "0"}]}
+	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_mul_16ns_16ns_31_4_1_U3", "Parent" : "0"},
+	{"ID" : "9", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_16ns_16ns_16ns_18_4_1_U4", "Parent" : "0"},
+	{"ID" : "10", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_16ns_16ns_16ns_18_4_1_U5", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
@@ -121,9 +121,9 @@ set ArgLastReadFirstWriteLatency {
 		open_set_heap_g_score {Type IO LastRead -1 FirstWrite -1}
 		open_set_heap_x {Type IO LastRead -1 FirstWrite -1}
 		open_set_heap_y {Type IO LastRead -1 FirstWrite -1}
-		error_flag {Type IO LastRead 5 FirstWrite 8}
+		error_flag {Type IO LastRead 5 FirstWrite 11}
 		world_size {Type I LastRead 5 FirstWrite -1}
-		local_ram {Type I LastRead 24 FirstWrite -1}}}
+		local_ram {Type I LastRead 23 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
 
@@ -133,6 +133,7 @@ set PerformanceInfo {[
 ]}
 
 set PipelineEnableSignalInfo {[
+	{"Pipeline" : "2", "EnableSignal" : "ap_enable_pp2"}
 	{"Pipeline" : "3", "EnableSignal" : "ap_enable_pp3"}
 ]}
 
@@ -142,6 +143,6 @@ set Spec2ImplPortList {
 	goal_x { ap_none {  { goal_x in_data 0 16 } } }
 	goal_y { ap_none {  { goal_y in_data 0 16 } } }
 	error_flag { ap_ovld {  { error_flag_i in_data 0 32 }  { error_flag_o out_data 1 32 }  { error_flag_o_ap_vld out_vld 1 1 } } }
-	world_size { ap_none {  { world_size in_data 0 32 } } }
+	world_size { ap_none {  { world_size in_data 0 16 } } }
 	local_ram { ap_memory {  { local_ram_address0 mem_address 1 13 }  { local_ram_ce0 mem_ce 1 1 }  { local_ram_q0 mem_dout 0 32 } } }
 }

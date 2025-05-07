@@ -248,7 +248,7 @@ typedef __uintmax_t uintmax_t;
 
 
 # 5 "/home/tomster12/files/EMBS/vitis_hls/assessment/toplevel.h"
-void toplevel(uint32_t *ram);
+void toplevel(uint32_t *ram, volatile uint32_t *code);
 # 2 "/home/tomster12/files/EMBS/vitis_hls/assessment/toplevel.cpp" 2
 # 1 "/usr/include/string.h" 1 3 4
 # 26 "/usr/include/string.h" 3 4
@@ -693,9 +693,9 @@ extern "C++" const char *basename (const char *__filename)
 # 539 "/usr/include/string.h" 3 4
 }
 # 3 "/home/tomster12/files/EMBS/vitis_hls/assessment/toplevel.cpp" 2
-# 18 "/home/tomster12/files/EMBS/vitis_hls/assessment/toplevel.cpp"
+# 26 "/home/tomster12/files/EMBS/vitis_hls/assessment/toplevel.cpp"
 
-# 18 "/home/tomster12/files/EMBS/vitis_hls/assessment/toplevel.cpp"
+# 26 "/home/tomster12/files/EMBS/vitis_hls/assessment/toplevel.cpp"
 struct Coord {
     uint16_t x;
     uint16_t y;
@@ -708,10 +708,10 @@ struct ASNode {
     uint16_t y;
 };
 
-static uint32_t closed_set[((500 * 500 + 31) / 32)];
 static ASNode open_set_heap[8192];
-static uint32_t local_ram[(2 + 12 + ((500 * 500 + 31) / 32) + 1)];
-static uint16_t open_set_size;
+static uint32_t closed_set[((500 * 500 + 31) / 32)];
+static uint32_t local_ram[(2 + 16 + ((500 * 500 + 31) / 32))];
+static uint32_t open_set_size;
 static uint32_t *world_ram_ptr;
 static uint32_t world_size;
 static int error_flag;
@@ -721,13 +721,10 @@ static int error_flag;
 int get_world_bit(uint16_t x, uint16_t y) {
 #pragma HLS INLINE
 
-
-    if (x >= world_size || y >= world_size) return 1;
-
     uint32_t idx = x + y * world_size;
     uint32_t word_idx = idx / 32;
     uint32_t bit_idx = idx % 32;
-    return (local_ram[(2 + 12) + word_idx] >> bit_idx) & 1;
+    return (local_ram[(2 + 16) + word_idx] >> bit_idx) & 1;
 }
 
 int is_closed(uint16_t x, uint16_t y) {
@@ -766,7 +763,7 @@ void os_sift_down(uint16_t idx) {
 #pragma HLS INLINE
 
  SIFT_DOWN_LOOP: while (true) {
-#pragma HLS LOOP_TRIPCOUNT min=0 max=13
+
 
         uint16_t smallest = idx;
         uint16_t left = 2 * idx + 1;
@@ -774,10 +771,8 @@ void os_sift_down(uint16_t idx) {
 
 
         if (left < open_set_size && open_set_heap[left].f_score < open_set_heap[smallest].f_score) smallest = left;
-        if (right < open_set_size && open_set_heap[right].f_score < open_set_heap[smallest].f_score) smallest = right;
-
-
-        if (smallest == idx) break;
+        else if (right < open_set_size && open_set_heap[right].f_score < open_set_heap[smallest].f_score) smallest = right;
+        else return;
 
 
         ASNode temp = open_set_heap[idx];
@@ -791,12 +786,11 @@ void os_sift_up(uint16_t idx) {
 #pragma HLS INLINE
 
     SIFT_UP_LOOP: while (idx > 0) {
-#pragma HLS LOOP_TRIPCOUNT min=0 max=13
+
+
 
         uint16_t parent = (idx - 1) / 2;
-
-
-        if (open_set_heap[idx].f_score >= open_set_heap[parent].f_score) break;
+        if (open_set_heap[idx].f_score >= open_set_heap[parent].f_score) return;
 
 
   ASNode temp = open_set_heap[idx];
@@ -808,6 +802,8 @@ void os_sift_up(uint16_t idx) {
 
 void os_heap_push(ASNode node) {
 #pragma HLS INLINE
+
+ ((void)0);
 
 
     if (open_set_size >= 8192) {
@@ -841,7 +837,8 @@ int a_star_len(Coord start, Coord goal) {
 
 
     uint32_t closed_words = (world_size * world_size + 31) / 32;
-    memset(closed_set, 0, closed_words * sizeof(uint32_t));
+    memset(closed_set, 0, ((500 * 500 + 31) / 32) * sizeof(uint32_t));
+    memset(open_set_heap, 0, 8192 * sizeof(ASNode));
     open_set_size = 0;
 
 
@@ -849,19 +846,19 @@ int a_star_len(Coord start, Coord goal) {
     ASNode start_node = {h_start, 0, start.x, start.y};
     os_heap_push(start_node);
     if (error_flag != 0) return 
-# 170 "/home/tomster12/files/EMBS/vitis_hls/assessment/toplevel.cpp" 3 4
+# 175 "/home/tomster12/files/EMBS/vitis_hls/assessment/toplevel.cpp" 3 4
                                (65535)
-# 170 "/home/tomster12/files/EMBS/vitis_hls/assessment/toplevel.cpp"
+# 175 "/home/tomster12/files/EMBS/vitis_hls/assessment/toplevel.cpp"
                                   ;
 
 
     const uint32_t iteration_limit = (uint32_t)(world_size * world_size * 2);
     uint32_t iteration_count = 0;
     AS_SEARCH_LOOP: while (open_set_size > 0 && iteration_count < iteration_limit) {
-#pragma HLS PIPELINE
 
 
         ASNode current = os_heap_pop();
+        ((void)0);
 
 
         if (current.x == goal.x && current.y == goal.y) return current.g_score;
@@ -875,28 +872,30 @@ int a_star_len(Coord start, Coord goal) {
 
         const int dx[] = {0, 0, -1, 1};
         const int dy[] = {-1, 1, 0, 0};
-        EXPLORE_NEIGHBORS_LOOP: for (int i = 0; i < 4; ++i) {
-#pragma HLS UNROLL
+        EXPLORE_NEIGHBORS_LOOP: for (uint8_t i = 0; i < 4; ++i) {
 
 
-            uint16_t neighbor_x = current.x + dx[i];
-            uint16_t neighbor_y = current.y + dy[i];
-            if (get_world_bit(neighbor_x, neighbor_y)) continue;
-            if (is_closed(neighbor_x, neighbor_y)) continue;
+         if ((current.x == 0 && dx[i] < 0) || (current.y == 0 && dy[i] < 0)) continue;
+            uint16_t n_x = current.x + dx[i];
+            uint16_t n_y = current.y + dy[i];
+            if (n_x >= world_size || n_y >= world_size) continue;
+            if (get_world_bit(n_x, n_y)) continue;
+            if (is_closed(n_x, n_y)) continue;
 
 
-            Coord neighborCoord = {neighbor_x, neighbor_y};
-            uint16_t tentative_g_score = current.g_score + 1;
-            uint16_t h_neighbor = heuristic(neighborCoord, goal);
-            uint16_t new_f_score = tentative_g_score + h_neighbor;
+            Coord n_pos = {n_x, n_y};
+            uint16_t n_g_score_tentative = current.g_score + 1;
+            uint16_t n_h_score = heuristic(n_pos, goal);
+            uint16_t n_f_score = n_g_score_tentative + n_h_score;
 
 
-            ASNode neighborNode = {new_f_score, tentative_g_score, neighbor_x, neighbor_y};
-            os_heap_push(neighborNode);
+
+            ASNode neighbour_node = {n_f_score, n_g_score_tentative, n_x, n_y};
+            os_heap_push(neighbour_node);
             if (error_flag != 0) return 
-# 211 "/home/tomster12/files/EMBS/vitis_hls/assessment/toplevel.cpp" 3 4
+# 218 "/home/tomster12/files/EMBS/vitis_hls/assessment/toplevel.cpp" 3 4
                                        (65535)
-# 211 "/home/tomster12/files/EMBS/vitis_hls/assessment/toplevel.cpp"
+# 218 "/home/tomster12/files/EMBS/vitis_hls/assessment/toplevel.cpp"
                                           ;
         }
 
@@ -904,69 +903,76 @@ int a_star_len(Coord start, Coord goal) {
     }
 
 
-    error_flag = 1;
+    if (open_set_size == 0) {
+     error_flag = 3;
+    } else if (iteration_count >= iteration_limit) {
+     error_flag = 4;
+    } else {
+     error_flag = 5;
+    }
     return 
-# 219 "/home/tomster12/files/EMBS/vitis_hls/assessment/toplevel.cpp" 3 4
+# 232 "/home/tomster12/files/EMBS/vitis_hls/assessment/toplevel.cpp" 3 4
           (65535)
-# 219 "/home/tomster12/files/EMBS/vitis_hls/assessment/toplevel.cpp"
+# 232 "/home/tomster12/files/EMBS/vitis_hls/assessment/toplevel.cpp"
              ;
 }
 
 void toplevel(uint32_t *ram, volatile uint32_t *code) {
-#pragma HLS INTERFACE m_axi port=ram offset=slave bundle=MAXI depth=8400
+#pragma HLS INTERFACE m_axi port=ram offset=slave bundle=MAXI max_widen_bitwidth=32 depth=7827
 #pragma HLS INTERFACE s_axilite port=code bundle=AXILiteS
 #pragma HLS INTERFACE s_axilite port=return bundle=AXILiteS
-
 #pragma HLS BIND_STORAGE variable=closed_set type=RAM_T2P impl=BRAM
 #pragma HLS BIND_STORAGE variable=open_set_heap type=RAM_T2P impl=BRAM
 #pragma HLS BIND_STORAGE variable=local_ram type=RAM_T2P impl=BRAM
 
+ ((void)0);
+
 
     *code = 0;
     error_flag = 0;
+    open_set_size = 0;
+    world_size = 0;
 
 
-    memcpy(local_ram, ram, (2 + 12 + ((500 * 500 + 31) / 32) + 1) * sizeof(uint32_t));
+    memcpy(local_ram, ram, (2 + 16 + ((500 * 500 + 31) / 32)) * sizeof(uint32_t));
 
 
     world_size = local_ram[0];
     uint32_t waypoint_count = local_ram[1];
 
 
-    if (world_size == 0 || world_size > 500 || waypoint_count < 2 || waypoint_count > 12) {
+    if (world_size == 0 || world_size > 500 || waypoint_count < 2 || waypoint_count > 16) {
      ram[0] = 
-# 244 "/home/tomster12/files/EMBS/vitis_hls/assessment/toplevel.cpp" 3 4
+# 260 "/home/tomster12/files/EMBS/vitis_hls/assessment/toplevel.cpp" 3 4
              (65535)
-# 244 "/home/tomster12/files/EMBS/vitis_hls/assessment/toplevel.cpp"
+# 260 "/home/tomster12/files/EMBS/vitis_hls/assessment/toplevel.cpp"
                 ;
-     *code = 3;
+     *code = 1;
      return;
     }
 
 
-    Coord waypoints[12];
-    WAYPOINT_EXTRACT_LOOP: for (int i = 0; i < waypoint_count; ++i) {
-#pragma HLS PIPELINE
+    Coord waypoints[16];
+    WAYPOINT_EXTRACT_LOOP: for (uint8_t i = 0; i < waypoint_count; ++i) {
         uint32_t wp = local_ram[2 + i];
         waypoints[i].x = (wp >> 16) & 0xFFFF;
         waypoints[i].y = wp & 0xFFFF;
     }
 
+    ((void)0);
+    ((void)0)
+                                                                                      ;
+    for (uint8_t i = 0; i < (world_size * world_size + 31) / 32; ++i) {
+     ((void)0);
+    }
+
 
     uint32_t total_len = 0;
     PATHFINDING_LOOP: for (uint8_t i = 0; i < waypoint_count - 1; ++i) {
+     ((void)0);
         int ret = a_star_len(waypoints[i], waypoints[i + 1]);
-        if (ret == 
-# 262 "/home/tomster12/files/EMBS/vitis_hls/assessment/toplevel.cpp" 3 4
-                  (65535) 
-# 262 "/home/tomster12/files/EMBS/vitis_hls/assessment/toplevel.cpp"
-                      || error_flag != 0) {
+        if (error_flag != 0) {
          error_flag += i * 100;
-            total_len = 
-# 264 "/home/tomster12/files/EMBS/vitis_hls/assessment/toplevel.cpp" 3 4
-                       (65535)
-# 264 "/home/tomster12/files/EMBS/vitis_hls/assessment/toplevel.cpp"
-                          ;
             break;
         }
         total_len += ret;
@@ -996,5 +1002,5 @@ apatb_toplevel_ir(ram, code);
 return ;
 }
 #endif
-# 273 "/home/tomster12/files/EMBS/vitis_hls/assessment/toplevel.cpp"
+# 295 "/home/tomster12/files/EMBS/vitis_hls/assessment/toplevel.cpp"
 

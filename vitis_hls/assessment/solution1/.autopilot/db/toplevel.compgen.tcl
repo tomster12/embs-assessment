@@ -107,7 +107,7 @@ set MemName toplevel_local_ram
 set CoreName ap_simcore_mem
 set PortList { 2 1 }
 set DataWd 32
-set AddrRange 7827
+set AddrRange 7831
 set AddrWd 13
 set impl_style block
 set TrueReset 0
@@ -193,7 +193,7 @@ set MemName toplevel_waypoints_x
 set CoreName ap_simcore_mem
 set PortList { 2 1 }
 set DataWd 16
-set AddrRange 12
+set AddrRange 16
 set AddrWd 4
 set impl_style auto
 set TrueReset 0

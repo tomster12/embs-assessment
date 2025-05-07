@@ -421,3 +421,78 @@ timestamp=[2025-05-06 00:48:40], mode=BUILD, duration=0:00:05.978, duration_ms=5
 timestamp=[2025-05-06 01:03:15], mode=PLATFORM_GENERATION, duration=0:00:04.745, duration_ms=4745, data={name=zybo_design_wrapper}
 timestamp=[2025-05-06 01:03:17], mode=BUILD, duration=0:00:00.619, duration_ms=619, data={name=assessment, configuration=Debug, clean_build=false}
 timestamp=[2025-05-06 01:03:26], mode=BUILD, duration=0:00:05.878, duration_ms=5878, data={name=assessment_system, configuration=Debug, clean_build=false}
+timestamp=[2025-05-06 21:36:49], mode=WORKBENCH_START, duration=0:00:06.654, duration_ms=6654, data={}
+timestamp=[2025-05-06 21:36:49], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.038, duration_ms=38, data={}
+timestamp=[2025-05-06 21:36:49], mode=WORKBENCH_UI_INIT, duration=0:00:00.672, duration_ms=672, data={editors_count=1, platform_editors_count=0, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,assessment,assessment_system,zybo_design_wrapper}
+timestamp=[2025-05-06 21:41:04], mode=PLATFORM_GENERATION, duration=0:00:09.119, duration_ms=9119, data={name=zybo_design_wrapper}
+timestamp=[2025-05-06 21:41:05], mode=BUILD, duration=0:00:00.786, duration_ms=786, data={name=assessment, configuration=Debug, clean_build=false}
+timestamp=[2025-05-06 21:41:12], mode=BUILD, duration=0:00:06.178, duration_ms=6178, data={name=assessment_system, configuration=Debug, clean_build=false}
+timestamp=[2025-05-06 21:46:33], mode=BUILD, duration=0:00:00.578, duration_ms=578, data={name=assessment, configuration=Debug, clean_build=false}
+timestamp=[2025-05-06 21:46:39], mode=BUILD, duration=0:00:06.101, duration_ms=6101, data={name=assessment_system, configuration=Debug, clean_build=false}
+timestamp=[2025-05-06 21:48:40], mode=BUILD, duration=0:00:00.577, duration_ms=577, data={name=assessment, configuration=Debug, clean_build=false}
+timestamp=[2025-05-06 21:58:31], mode=PLATFORM_GENERATION, duration=0:00:03.789, duration_ms=3789, data={name=zybo_design_wrapper}
+timestamp=[2025-05-06 21:58:32], mode=BUILD, duration=0:00:00.723, duration_ms=723, data={name=assessment, configuration=Debug, clean_build=false}
+timestamp=[2025-05-06 21:58:42], mode=BUILD, duration=0:00:06.234, duration_ms=6234, data={name=assessment_system, configuration=Debug, clean_build=false}
+timestamp=[2025-05-06 22:09:23], mode=BUILD, duration=0:00:00.577, duration_ms=577, data={name=assessment, configuration=Debug, clean_build=false}
+timestamp=[2025-05-06 22:09:30], mode=BUILD, duration=0:00:06.121, duration_ms=6121, data={name=assessment_system, configuration=Debug, clean_build=false}
+timestamp=[2025-05-06 22:10:56], mode=BUILD, duration=0:00:00.572, duration_ms=572, data={name=assessment, configuration=Debug, clean_build=false}
+timestamp=[2025-05-06 22:11:03], mode=BUILD, duration=0:00:06.123, duration_ms=6123, data={name=assessment_system, configuration=Debug, clean_build=false}
+timestamp=[2025-05-07 12:38:03], mode=WORKBENCH_START, duration=0:00:07.059, duration_ms=7059, data={}
+timestamp=[2025-05-07 12:38:03], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.033, duration_ms=33, data={}
+timestamp=[2025-05-07 12:38:04], mode=WORKBENCH_UI_INIT, duration=0:00:00.778, duration_ms=778, data={editors_count=1, platform_editors_count=0, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,assessment,assessment_system,zybo_design_wrapper}
+timestamp=[2025-05-07 12:38:53], mode=PLATFORM_GENERATION, duration=0:00:05.156, duration_ms=5156, data={name=zybo_design_wrapper}
+timestamp=[2025-05-07 12:38:55], mode=BUILD, duration=0:00:00.996, duration_ms=996, data={name=assessment, configuration=Debug, clean_build=false}
+timestamp=[2025-05-07 12:39:05], mode=BUILD, duration=0:00:06.295, duration_ms=6295, data={name=assessment_system, configuration=Debug, clean_build=false}
+timestamp=[2025-05-07 12:45:21], mode=WORKBENCH_START, duration=0:00:05.477, duration_ms=5477, data={}
+timestamp=[2025-05-07 12:45:21], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.028, duration_ms=28, data={}
+timestamp=[2025-05-07 12:45:21], mode=WORKBENCH_UI_INIT, duration=0:00:00.716, duration_ms=716, data={editors_count=1, platform_editors_count=0, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,assessment,assessment_system,zybo_design_wrapper}
+timestamp=[2025-05-07 12:45:38], mode=BUILD, duration=0:00:00.322, duration_ms=322, data={name=assessment, configuration=Debug, clean_build=false}
+timestamp=[2025-05-07 12:45:46], mode=BUILD, duration=0:00:07.691, duration_ms=7691, data={name=assessment_system, configuration=Debug, clean_build=false}
+timestamp=[2025-05-07 13:01:35], mode=PLATFORM_GENERATION, duration=0:00:05.128, duration_ms=5128, data={name=zybo_design_wrapper}
+timestamp=[2025-05-07 13:01:37], mode=BUILD, duration=0:00:00.855, duration_ms=855, data={name=assessment, configuration=Debug, clean_build=false}
+timestamp=[2025-05-07 13:01:46], mode=BUILD, duration=0:00:06.255, duration_ms=6255, data={name=assessment_system, configuration=Debug, clean_build=false}
+timestamp=[2025-05-07 14:07:38], mode=WORKBENCH_START, duration=0:00:05.196, duration_ms=5196, data={}
+timestamp=[2025-05-07 14:07:39], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.042, duration_ms=42, data={}
+timestamp=[2025-05-07 14:07:39], mode=WORKBENCH_UI_INIT, duration=0:00:00.878, duration_ms=878, data={editors_count=1, platform_editors_count=0, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,assessment,assessment_system,zybo_design_wrapper}
+timestamp=[2025-05-07 14:21:41], mode=PLATFORM_GENERATION, duration=0:00:05.132, duration_ms=5132, data={name=zybo_design_wrapper}
+timestamp=[2025-05-07 14:21:43], mode=BUILD, duration=0:00:00.838, duration_ms=838, data={name=assessment, configuration=Debug, clean_build=false}
+timestamp=[2025-05-07 14:21:52], mode=BUILD, duration=0:00:05.190, duration_ms=5190, data={name=assessment_system, configuration=Debug, clean_build=false}
+timestamp=[2025-05-07 14:39:59], mode=PLATFORM_GENERATION, duration=0:00:03.785, duration_ms=3785, data={name=zybo_design_wrapper}
+timestamp=[2025-05-07 14:40:01], mode=BUILD, duration=0:00:00.780, duration_ms=780, data={name=assessment, configuration=Debug, clean_build=false}
+timestamp=[2025-05-07 14:40:11], mode=BUILD, duration=0:00:06.332, duration_ms=6332, data={name=assessment_system, configuration=Debug, clean_build=false}
+timestamp=[2025-05-07 15:05:03], mode=PLATFORM_GENERATION, duration=0:00:04.833, duration_ms=4833, data={name=zybo_design_wrapper}
+timestamp=[2025-05-07 15:05:05], mode=BUILD, duration=0:00:00.724, duration_ms=724, data={name=assessment, configuration=Debug, clean_build=false}
+timestamp=[2025-05-07 15:05:15], mode=BUILD, duration=0:00:06.085, duration_ms=6085, data={name=assessment_system, configuration=Debug, clean_build=false}
+timestamp=[2025-05-07 15:10:53], mode=BUILD, duration=0:00:00.280, duration_ms=280, data={name=assessment, configuration=Debug, clean_build=false}
+timestamp=[2025-05-07 15:11:00], mode=BUILD, duration=0:00:06.365, duration_ms=6365, data={name=assessment_system, configuration=Debug, clean_build=false}
+timestamp=[2025-05-07 15:31:14], mode=PLATFORM_GENERATION, duration=0:00:04.928, duration_ms=4928, data={name=zybo_design_wrapper}
+timestamp=[2025-05-07 15:31:16], mode=BUILD, duration=0:00:00.874, duration_ms=874, data={name=assessment, configuration=Release, clean_build=false}
+timestamp=[2025-05-07 15:31:17], mode=BUILD, duration=0:00:00.271, duration_ms=271, data={name=assessment, configuration=Release, clean_build=false}
+timestamp=[2025-05-07 15:31:27], mode=BUILD, duration=0:00:06.062, duration_ms=6062, data={name=assessment_system, configuration=Release, clean_build=false}
+timestamp=[2025-05-07 16:13:32], mode=PLATFORM_GENERATION, duration=0:00:05.059, duration_ms=5059, data={name=zybo_design_wrapper}
+timestamp=[2025-05-07 16:13:35], mode=BUILD, duration=0:00:00.950, duration_ms=950, data={name=assessment, configuration=Release, clean_build=false}
+timestamp=[2025-05-07 16:13:46], mode=BUILD, duration=0:00:06.336, duration_ms=6336, data={name=assessment_system, configuration=Release, clean_build=false}
+timestamp=[2025-05-07 16:37:15], mode=BUILD, duration=0:00:00.620, duration_ms=620, data={name=assessment, configuration=Release, clean_build=false}
+timestamp=[2025-05-07 16:37:22], mode=BUILD, duration=0:00:06.043, duration_ms=6043, data={name=assessment_system, configuration=Release, clean_build=false}
+timestamp=[2025-05-07 16:41:34], mode=PLATFORM_GENERATION, duration=0:00:04.872, duration_ms=4872, data={name=zybo_design_wrapper}
+timestamp=[2025-05-07 16:41:36], mode=BUILD, duration=0:00:00.823, duration_ms=823, data={name=assessment, configuration=Release, clean_build=false}
+timestamp=[2025-05-07 16:41:45], mode=BUILD, duration=0:00:04.724, duration_ms=4724, data={name=assessment_system, configuration=Release, clean_build=false}
+timestamp=[2025-05-07 16:51:06], mode=BUILD, duration=0:00:00.635, duration_ms=635, data={name=assessment, configuration=Release, clean_build=false}
+timestamp=[2025-05-07 16:51:13], mode=BUILD, duration=0:00:06.133, duration_ms=6133, data={name=assessment_system, configuration=Release, clean_build=false}
+timestamp=[2025-05-07 16:52:08], mode=BUILD, duration=0:00:00.622, duration_ms=622, data={name=assessment, configuration=Release, clean_build=false}
+timestamp=[2025-05-07 16:52:15], mode=BUILD, duration=0:00:06.254, duration_ms=6254, data={name=assessment_system, configuration=Release, clean_build=false}
+timestamp=[2025-05-07 16:54:32], mode=BUILD, duration=0:00:00.625, duration_ms=625, data={name=assessment, configuration=Release, clean_build=false}
+timestamp=[2025-05-07 16:54:38], mode=BUILD, duration=0:00:04.769, duration_ms=4769, data={name=assessment_system, configuration=Release, clean_build=false}
+timestamp=[2025-05-07 17:01:56], mode=BUILD, duration=0:00:00.621, duration_ms=621, data={name=assessment, configuration=Release, clean_build=false}
+timestamp=[2025-05-07 17:02:02], mode=BUILD, duration=0:00:06.085, duration_ms=6085, data={name=assessment_system, configuration=Release, clean_build=false}
+timestamp=[2025-05-07 17:03:53], mode=BUILD, duration=0:00:00.634, duration_ms=634, data={name=assessment, configuration=Release, clean_build=false}
+timestamp=[2025-05-07 17:03:58], mode=BUILD, duration=0:00:04.798, duration_ms=4798, data={name=assessment_system, configuration=Release, clean_build=false}
+timestamp=[2025-05-07 17:07:05], mode=BUILD, duration=0:00:00.270, duration_ms=270, data={name=assessment, configuration=Release, clean_build=false}
+timestamp=[2025-05-07 17:07:11], mode=BUILD, duration=0:00:06.205, duration_ms=6205, data={name=assessment_system, configuration=Release, clean_build=false}
+timestamp=[2025-05-07 17:09:26], mode=BUILD, duration=0:00:00.620, duration_ms=620, data={name=assessment, configuration=Release, clean_build=false}
+timestamp=[2025-05-07 17:09:33], mode=BUILD, duration=0:00:06.017, duration_ms=6017, data={name=assessment_system, configuration=Release, clean_build=false}
+timestamp=[2025-05-07 17:12:19], mode=BUILD, duration=0:00:00.626, duration_ms=626, data={name=assessment, configuration=Release, clean_build=false}
+timestamp=[2025-05-07 17:12:26], mode=BUILD, duration=0:00:06.208, duration_ms=6208, data={name=assessment_system, configuration=Release, clean_build=false}
+timestamp=[2025-05-07 17:30:06], mode=PLATFORM_GENERATION, duration=0:00:05.202, duration_ms=5202, data={name=zybo_design_wrapper}
+timestamp=[2025-05-07 17:30:09], mode=BUILD, duration=0:00:00.878, duration_ms=878, data={name=assessment, configuration=Release, clean_build=false}
+timestamp=[2025-05-07 17:30:20], mode=BUILD, duration=0:00:06.564, duration_ms=6564, data={name=assessment_system, configuration=Release, clean_build=false}

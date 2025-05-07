@@ -1,10 +1,10 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
--- Date        : Fri May  2 16:21:53 2025
+-- Date        : Fri May  2 16:21:52 2025
 -- Host        : DESKTOP-Q62E4QT running 64-bit Ubuntu 22.04.5 LTS
--- Command     : write_vhdl -force -mode funcsim
---               /home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/ip/zybo_design_axis_subset_converter_0_2/zybo_design_axis_subset_converter_0_2_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top zybo_design_axis_subset_converter_0_2 -prefix
+--               zybo_design_axis_subset_converter_0_2_ zybo_design_axis_subset_converter_0_2_sim_netlist.vhdl
 -- Design      : zybo_design_axis_subset_converter_0_2
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -102,8 +102,6 @@ entity zybo_design_axis_subset_converter_0_2_top_zybo_design_axis_subset_convert
   attribute G_TASK_SEVERITY_INFO of zybo_design_axis_subset_converter_0_2_top_zybo_design_axis_subset_converter_0_2 : entity is 0;
   attribute G_TASK_SEVERITY_WARNING : integer;
   attribute G_TASK_SEVERITY_WARNING of zybo_design_axis_subset_converter_0_2_top_zybo_design_axis_subset_converter_0_2 : entity is 1;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of zybo_design_axis_subset_converter_0_2_top_zybo_design_axis_subset_converter_0_2 : entity is "top_zybo_design_axis_subset_converter_0_2";
 end zybo_design_axis_subset_converter_0_2_top_zybo_design_axis_subset_converter_0_2;
 
 architecture STRUCTURE of zybo_design_axis_subset_converter_0_2_top_zybo_design_axis_subset_converter_0_2 is

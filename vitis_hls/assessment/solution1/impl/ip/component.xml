@@ -1239,7 +1239,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>8307862c</spirit:value>
+            <spirit:value>7aa4cf68</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1255,7 +1255,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>51b8e5c0</spirit:value>
+            <spirit:value>e263151e</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1271,7 +1271,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>f1aeef05</spirit:value>
+            <spirit:value>616ecd76</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1287,7 +1287,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>261adb52</spirit:value>
+            <spirit:value>0350d695</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2860,7 +2860,7 @@
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/toplevel_mac_muladd_18s_16ns_16ns_18_4_1.v</spirit:name>
+        <spirit:name>hdl/verilog/toplevel_mac_muladd_16ns_16ns_16ns_18_4_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -2868,7 +2868,7 @@
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/toplevel_mul_32s_32s_32_2_1.v</spirit:name>
+        <spirit:name>hdl/verilog/toplevel_mul_mul_16ns_16ns_31_4_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -2934,7 +2934,7 @@
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/toplevel_mac_muladd_18s_16ns_16ns_18_4_1.v</spirit:name>
+        <spirit:name>hdl/verilog/toplevel_mac_muladd_16ns_16ns_16ns_18_4_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -2944,7 +2944,7 @@
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/toplevel_mul_32s_32s_32_2_1.v</spirit:name>
+        <spirit:name>hdl/verilog/toplevel_mul_mul_16ns_16ns_31_4_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -3000,7 +3000,7 @@
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/toplevel_mac_muladd_18s_16ns_16ns_18_4_1.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/toplevel_mac_muladd_16ns_16ns_16ns_18_4_1.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -3008,7 +3008,7 @@
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/toplevel_mul_32s_32s_32_2_1.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/toplevel_mul_mul_16ns_16ns_31_4_1.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -3022,7 +3022,7 @@
       <spirit:file>
         <spirit:name>hdl/vhdl/toplevel.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_9029bdc3</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_5d282c04</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -3063,7 +3063,7 @@
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/toplevel_mac_muladd_18s_16ns_16ns_18_4_1.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/toplevel_mac_muladd_16ns_16ns_16ns_18_4_1.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -3073,7 +3073,7 @@
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/toplevel_mul_32s_32s_32_2_1.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/toplevel_mul_mul_16ns_16ns_31_4_1.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -3306,8 +3306,8 @@
       </xilinx:taxonomies>
       <xilinx:displayName>Toplevel</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>2114070598</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2025-05-05T23:58:12Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>2114073037</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2025-05-07T16:37:17Z</xilinx:coreCreationDateTime>
       <xilinx:sdxKernelAttributes>
         <xilinx:sdx_kernel>true</xilinx:sdx_kernel>
         <xilinx:sdx_kernel_type>hls</xilinx:sdx_kernel_type>
@@ -3318,7 +3318,7 @@
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="adcd36ef"/>
       <xilinx:checksum xilinx:scope="addressSpaces" xilinx:value="69f1eaac"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="e1c2cb12"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="dd67f28b"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="ddafa33f"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="65a47413"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="012e55f0"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="90a86e00"/>

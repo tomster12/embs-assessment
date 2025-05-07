@@ -1,10 +1,10 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
--- Date        : Fri May  2 16:21:55 2025
+-- Date        : Fri May  2 16:21:54 2025
 -- Host        : DESKTOP-Q62E4QT running 64-bit Ubuntu 22.04.5 LTS
--- Command     : write_vhdl -force -mode synth_stub
---               /home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/ip/zybo_design_processing_system7_0_3/zybo_design_processing_system7_0_3_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top zybo_design_processing_system7_0_3 -prefix
+--               zybo_design_processing_system7_0_3_ zybo_design_processing_system7_0_3_stub.vhdl
 -- Design      : zybo_design_processing_system7_0_3
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z010clg400-1

@@ -11,7 +11,7 @@ entity toplevel_waypoints_x_ram is
     generic(
             DWIDTH     : integer := 16; 
             AWIDTH     : integer := 4; 
-            MEM_SIZE    : integer := 12
+            MEM_SIZE    : integer := 16
     ); 
     port (
           addr0     : in std_logic_vector(AWIDTH-1 downto 0); 
@@ -92,7 +92,7 @@ use IEEE.std_logic_1164.all;
 entity toplevel_waypoints_x is
     generic (
         DataWidth : INTEGER := 16;
-        AddressRange : INTEGER := 12;
+        AddressRange : INTEGER := 16;
         AddressWidth : INTEGER := 4);
     port (
         reset : IN STD_LOGIC;

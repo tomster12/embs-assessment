@@ -11,14 +11,12 @@ entity toplevel_a_star_len_open_set_heap_f_score_ram is
     generic(
             MEM_TYPE    : string := "block"; 
             DWIDTH     : integer := 16; 
-            AWIDTH     : integer := 13; 
-            MEM_SIZE    : integer := 8192
+            AWIDTH     : integer := 16; 
+            MEM_SIZE    : integer := 40000
     ); 
     port (
           addr0     : in std_logic_vector(AWIDTH-1 downto 0); 
           ce0       : in std_logic; 
-          d0        : in std_logic_vector(DWIDTH-1 downto 0); 
-          we0       : in std_logic; 
           q0        : out std_logic_vector(DWIDTH-1 downto 0);
           addr1     : in std_logic_vector(AWIDTH-1 downto 0); 
           ce1       : in std_logic; 
@@ -62,9 +60,6 @@ begin
     if (clk'event and clk = '1') then
         if (ce0 = '1') then 
             q0 <= ram(CONV_INTEGER(addr0_tmp));
-            if (we0 = '1') then 
-                ram(CONV_INTEGER(addr0_tmp)) := d0; 
-            end if;
         end if;
     end if;
 end process;
@@ -102,15 +97,13 @@ use IEEE.std_logic_1164.all;
 entity toplevel_a_star_len_open_set_heap_f_score is
     generic (
         DataWidth : INTEGER := 16;
-        AddressRange : INTEGER := 8192;
-        AddressWidth : INTEGER := 13);
+        AddressRange : INTEGER := 40000;
+        AddressWidth : INTEGER := 16);
     port (
         reset : IN STD_LOGIC;
         clk : IN STD_LOGIC;
         address0 : IN STD_LOGIC_VECTOR(AddressWidth - 1 DOWNTO 0);
         ce0 : IN STD_LOGIC;
-        we0 : IN STD_LOGIC;
-        d0 : IN STD_LOGIC_VECTOR(DataWidth - 1 DOWNTO 0);
         q0 : OUT STD_LOGIC_VECTOR(DataWidth - 1 DOWNTO 0);
         address1 : IN STD_LOGIC_VECTOR(AddressWidth - 1 DOWNTO 0);
         ce1 : IN STD_LOGIC;
@@ -125,8 +118,6 @@ architecture arch of toplevel_a_star_len_open_set_heap_f_score is
             clk : IN STD_LOGIC;
             addr0 : IN STD_LOGIC_VECTOR;
             ce0 : IN STD_LOGIC;
-            we0 : IN STD_LOGIC;
-            d0 : IN STD_LOGIC_VECTOR;
             q0 : OUT STD_LOGIC_VECTOR;
             addr1 : IN STD_LOGIC_VECTOR;
             ce1 : IN STD_LOGIC;
@@ -143,8 +134,6 @@ begin
         clk => clk,
         addr0 => address0,
         ce0 => ce0,
-        we0 => we0,
-        d0 => d0,
         q0 => q0,
         addr1 => address1,
         ce1 => ce1,
