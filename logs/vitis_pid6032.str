@@ -1,0 +1,570 @@
+/*
+
+Xilinx Vitis v2020.2.0 (64-bit) [Major: 2020, Minor: 2]
+SW Build 3064172 on 2020-11-18-06:24:19
+
+Process ID (PID): 6032
+License: Customer
+
+Current time: 	Thu May 08 10:47:15 BST 2025
+Time zone: 	Greenwich Mean Time (Europe/London)
+
+OS: Ubuntu
+OS Version: 5.15.167.4-microsoft-standard-WSL2
+OS Architecture: amd64
+Available processors (cores): 16
+
+Display: :0
+Screen size: 2560x1440
+Available screens: 2
+Available disk space: 855 GB
+
+Java version: 	11.0.2 64-bit
+Java home: 	/opt/Xilinx/Vitis/2020.2/tps/lnx64/jre11.0.2
+Java executable location: 	/opt/Xilinx/Vitis/2020.2/tps/lnx64/jre11.0.2/bin/java
+Java initial memory (-Xms): 	64 MB
+Java maximum memory (-Xmx):	 1,024 MB
+
+Java library paths: /opt/Xilinx/Vitis/2020.2/tps/lnx64/javafx-sdk-11.0.2/lib:/opt/Xilinx/Vitis/2020.2/lib/lnx64.o/Ubuntu:/opt/Xilinx/Vitis/2020.2/lib/lnx64.o:/opt/Xilinx/Vitis/2020.2/tps/lnx64/jre11.0.2/lib/:/opt/Xilinx/Vitis/2020.2/tps/lnx64/jre11.0.2/lib//server:/opt/Xilinx/Vitis/2020.2/lib/lnx64.o:/opt/Xilinx/Vitis/2020.2/lib/lnx64.o/Ubuntu:/opt/Xilinx/Vitis/2020.2/lib/lnx64.o:/opt/Xilinx/Vitis/2020.2/tps/lnx64/python-3.8.3/lib:/home/tomster12/files/AURO/auro_ws/install/solution_interfaces/lib:/home/tomster12/files/AURO/auro_ws/install/auro_interfaces/lib:/home/tomster12/files/AURO/auro_ws/install/assessment_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/Xilinx/Vivado/2020.2/bin/../lnx64/tools/dot/lib:/opt/Xilinx/Vitis/2020.2/bin/../lnx64/tools/dot/lib:/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib
+
+Java class paths: /opt/Xilinx/Vitis/2020.2/eclipse/lnx64.o//plugins/org.eclipse.equinox.launcher_1.5.700.v20200207-2156.jar
+LD_LIBRARY_PATH: /opt/Xilinx/Vitis
+
+User name: 	tomster12
+User home directory: /home/tomster12
+User working directory: /home/tomster12/files/EMBS/logs
+User country: 	null
+User language: 	en
+User locale: 	en
+
+RDI_BASEROOT: /opt/Xilinx/Vitis
+HDI_APPROOT: /opt/Xilinx/Vitis/2020.2
+RDI_DATADIR: /opt/Xilinx/Vitis/2020.2/data
+RDI_BINDIR: /opt/Xilinx/Vitis/2020.2/bin
+
+Vitis preferences directory: /home/tomster12/.Xilinx/Vitis/2020.2/
+Vitis workspace directory: /home/tomster12/files/EMBS/vitis
+Vitis workspace log file location: /home/tomster12/files/EMBS/vitis/.metadata/.log
+Engine tmp dir: 	
+
+Xilinx Environment Variables
+----------------------------
+XILINX_DSP: 
+XILINX_HLS: /opt/Xilinx/Vitis_HLS/2020.2
+XILINX_PLANAHEAD: /opt/Xilinx/Vitis/2020.2
+XILINX_SDK: /opt/Xilinx/Vitis/2020.2
+XILINX_VITIS: /opt/Xilinx/Vitis/2020.2
+XILINX_VIVADO: /opt/Xilinx/Vivado/2020.2
+XILINX_VIVADO_HLS: /opt/Xilinx/Vivado/2020.2
+_RDI_DONT_SET_XILINX_AS_PATH: True
+
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+selectTreeTable("Release", "assessment_system > assessment", "main.c", "CEditor", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectToolBarButton("Minimize", "Console", "ConsoleView", "ToolItem.MINIMIZE");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectTextEditor("main.c", "assessment/src/main.c", EventType.POPUP_TRIGGER_CLICK, "CEditor", "StyledText.MAIN_C");
+closeView("xscutimer.h", "zybo_design_wrapper/zynq_fsbl/zynq_fsbl_bsp/ps7_cortexa9_0/include/xscutimer.h", "CEditor", "CTabItem.XSCUTIMER_H");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectProblemsView("Errors", "ConsoleView", "TreeViewer.MarkerViewerContentProvider");
+selectTreeTable("Release", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectTreeTable("Release", "assessment_system > assessment", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Run Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_RELEASE_FOR");
+selectToolBarButton("Restore", "assessment_system", "WorkbenchWindow", "ToolItem.RESTORE");
+selectToolBarButton("Run Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_RELEASE_FOR");
+selectTreeTable("assessment_system", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectMenuItem("Run", "Assistant", "SDXAssistantView", "MenuItem.RUN");
+selectMenuItem("Assessment System", "assessment_system", "WorkbenchWindow", "MenuItem.ASSESSMENT_SYSTEM");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Release", "assessment_system > assessment", "main.c", "CEditor", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Release", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectToolBarButton("Minimize", "Console", "CTabFolder", "ToolItem.MINIMIZE");
+activateView("Problems", "ProblemsView", "CTabItem.PROBLEMS");
+selectProblemsView("Timer undeclared", "Errors", EventType.DOUBLE_CLICK, "ProblemsView", "TreeViewer.MarkerViewerContentProvider");
+selectProblemsView("Timer undeclared", "Errors", "CEditor", "TreeViewer.MarkerViewerContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Release", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+selectToolBarButton("Maximize", "Console", "CTabFolder", "ToolItem.MAXIMIZE");
+selectToolBarButton("Restore", "WorkbenchWindow", "ToolItem.RESTORE");
+selectTreeTable("Release", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+selectToolBarButton("Restore", "assessment", "WorkbenchWindow", "ToolItem.RESTORE");
+selectToolBarButton("Minimize", "main.c", "CTabFolder", "ToolItem.MINIMIZE");
+selectMenuItem("Restore", "main.c", "WorkbenchWindow", "MenuItem.RESTORE");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+activateView("Problems", "7 errors 1 warning 3 others", "ProblemsView", "CTabItem.PROBLEMS");
+selectProblemsView("expected =, ,, ;, asm or __attribute_ before ++ tok", "Errors", EventType.DOUBLE_CLICK, "ProblemsView", "TreeViewer.MarkerViewerContentProvider");
+selectProblemsView("expected =, ,, ;, asm or __attribute_ before ++ tok", "Errors", "CEditor", "TreeViewer.MarkerViewerContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("assessment_system", "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Release", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Problems", "ProblemsView", "CTabItem.PROBLEMS");
+selectProblemsView("passing argument 2 of XToplevel_Set_ram makes integ", "Warnings", EventType.DOUBLE_CLICK, "ProblemsView", "TreeViewer.MarkerViewerContentProvider");
+selectProblemsView("passing argument 2 of XToplevel_Set_ram makes integ", "Warnings", "CEditor", "TreeViewer.MarkerViewerContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Run Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_RELEASE_FOR");
+selectMenuItem("Assessment System", "Assistant", "WorkbenchWindow", "MenuItem.ASSESSMENT_SYSTEM");
+setText("#include", "Assistant", "SDXAssistantView", "StyledText");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectTreeTable("assessment_system", "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Release", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectProblemsView("this while clause does not guard", "Warnings", EventType.DOUBLE_CLICK, "ProblemsView", "TreeViewer.MarkerViewerContentProvider");
+selectProblemsView("this while clause does not guard", "Warnings", "CEditor", "TreeViewer.MarkerViewerContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Run Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_RELEASE_FOR");
+selectMenuItem("Assessment System", "Assistant", "WorkbenchWindow", "MenuItem.ASSESSMENT_SYSTEM");
+activateView("Problems", "ProblemsView", "CTabItem.PROBLEMS");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+closeView("xparameters.h", "zybo_design_wrapper/export/zybo_design_wrapper/sw/zybo_design_wrapper/freertos10_xilinx_ps7_cortexa9_0/bspinclude/include/xparameters.h", "CEditor", "CTabItem.XPARAMETERS_H");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Release", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectToolBarButton("Run Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_RELEASE_FOR");
+selectMenuItem("Assessment System", "Assistant", "SDXAssistantView", "MenuItem.ASSESSMENT_SYSTEM");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectTreeTable("main.c", "assessment_system > assessment > src", "Assistant", "SDXAssistantView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Release", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Run Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_RELEASE_FOR");
+selectMenuItem("Assessment System", "Assistant", "WorkbenchWindow", "MenuItem.ASSESSMENT_SYSTEM");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectToolBarButton("Run Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_RELEASE_FOR");
+selectMenuItem("Assessment System", "Assistant", "WorkbenchWindow", "MenuItem.ASSESSMENT_SYSTEM");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectProblemsView("this statement but the latter is misleadingly inden", "Infos", EventType.DOUBLE_CLICK, "ProblemsView", "TreeViewer.MarkerViewerContentProvider");
+selectProblemsView("this statement but the latter is misleadingly inden", "Infos", "CEditor", "TreeViewer.MarkerViewerContentProvider");
+activateView("Problems", "ProblemsView", "CTabItem.PROBLEMS");
+selectTreeTable("Release", "assessment_system > assessment", "Problems", "ProblemsView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Run Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_RELEASE_FOR");
+selectMenuItem("Assessment System", "Assistant", "WorkbenchWindow", "MenuItem.ASSESSMENT_SYSTEM");
+activateView("Problems", "ProblemsView", "CTabItem.PROBLEMS");
+selectProblemsView("expected u64 {aka long long unsigned int but argume", "Infos", EventType.DOUBLE_CLICK, "ProblemsView", "TreeViewer.MarkerViewerContentProvider");
+selectProblemsView("expected u64 {aka long long unsigned int but argume", "Infos", "CEditor", "TreeViewer.MarkerViewerContentProvider");
+activateView("Problems", "ProblemsView", "CTabItem.PROBLEMS");
+activateView("main.c", "assessment/src/main.c", "CEditor", "CTabItem.MAIN_C");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Release", "assessment_system > assessment", "main.c", "CEditor", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectProblemsView("cast from pointer to integer of different size", "Warnings", EventType.DOUBLE_CLICK, "ProblemsView", "TreeViewer.MarkerViewerContentProvider");
+selectTreeTable("Release", "assessment_system > assessment", "main.c", "CEditor", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+activateView("Problems", "0 errors 1 warning 0 others", "ProblemsView", "CTabItem.PROBLEMS");
+selectToolBarButton("Run Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_RELEASE_FOR");
+selectMenuItem("Assessment System", "Assistant", "SDXAssistantView", "MenuItem.ASSESSMENT_SYSTEM");
+selectTreeTable("Release", "assessment_system > assessment", "Assistant", "SDXAssistantView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+setText("#include", "Find/Replace", "FindReplaceDialog", "StyledText");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+setText("#include", "Find/Replace", "FindReplaceDialog", "StyledText");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+setText("#include", "Find/Replace", "FindReplaceDialog", "StyledText");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+setText("#include", "Find/Replace", "FindReplaceDialog", "StyledText");
+setCombo("hw_ram", "Find/Replace", "FindReplaceDialog", "Combo.REPLACE_WITH");
+selectButton("Replace/Find", "Find/Replace", "FindReplaceDialog", "Button.REPLACE_FIND");
+selectButton("Replace/Find", "Find/Replace", "FindReplaceDialog", "Button.REPLACE_FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Replace/Find", "Find/Replace", "FindReplaceDialog", "Button.REPLACE_FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Close", "Find/Replace", "FindReplaceDialog", "Button.CLOSE");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectToolBarButton("Minimize", "Progress", "ProgressView", "ToolItem.MINIMIZE");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Release", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+selectToolBarButton("Restore", "Console", "ConsoleView", "ToolItem.RESTORE");
+activateView("Problems", "ProblemsView", "CTabItem.PROBLEMS");
+selectProblemsView("hw_hw undeclared", "Errors", EventType.DOUBLE_CLICK, "ProblemsView", "TreeViewer.MarkerViewerContentProvider");
+selectProblemsView("hw_hw undeclared", "Errors", "CEditor", "TreeViewer.MarkerViewerContentProvider");
+selectTreeTable("Release", "assessment_system > assessment", "main.c", "CEditor", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+activateView("Problems", "ProblemsView", "CTabItem.PROBLEMS");
+selectTreeTable("Release", "assessment_system > assessment", "Problems", "ProblemsView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Problems", "ProblemsView", "CTabItem.PROBLEMS");
+selectProblemsView("ram undeclared", "Errors", EventType.DOUBLE_CLICK, "ProblemsView", "TreeViewer.MarkerViewerContentProvider");
+selectProblemsView("ram undeclared", "Errors", "CEditor", "TreeViewer.MarkerViewerContentProvider");
+selectTreeTable("Release", "assessment_system > assessment", "main.c", "CEditor", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Release", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Problems", "ProblemsView", "CTabItem.PROBLEMS");
+activateView("Problems", "13 errors 0 warnings 1 other", "ProblemsView", "CTabItem.PROBLEMS");
+selectProblemsView("invalid type argument of -", "Errors", EventType.DOUBLE_CLICK, "ProblemsView", "TreeViewer.MarkerViewerContentProvider");
+selectProblemsView("invalid type argument of -", "Errors", "CEditor", "TreeViewer.MarkerViewerContentProvider");
+activateView("Problems", "ProblemsView", "CTabItem.PROBLEMS");
+selectProblemsView("invalid type argument of -", "Errors", EventType.DOUBLE_CLICK, "ProblemsView", "TreeViewer.MarkerViewerContentProvider");
+selectProblemsView("invalid type argument of -", "Errors", "CEditor", "TreeViewer.MarkerViewerContentProvider");
+selectTreeTable("Release", "assessment_system > assessment", "main.c", "CEditor", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectToolBarButton("Run Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_RELEASE_FOR");
+selectMenuItem("Assessment System", "Assistant", "WorkbenchWindow", "MenuItem.ASSESSMENT_SYSTEM");
+selectTreeTable("Release", "assessment_system > assessment", "Assistant", "SDXAssistantView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+activateView("main.c", "assessment/src/main.c", "CEditor", "CTabItem.MAIN_C");
+selectToolBarButton("Minimize", "Console", "ConsoleView", "ToolItem.MINIMIZE");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Release", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Run Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_RELEASE_FOR");
+selectMenuItem("Assessment System", "Assistant", "WorkbenchWindow", "MenuItem.ASSESSMENT_SYSTEM");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("zybo_design_wrapper", EventType.POPUP_TRIGGER_CLICK, "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectMenuItem("Update Hardware Specification", "Explorer", "ProjectExplorer", "MenuItem.UPDATE_HARDWARE");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectButton("OK", "Update Hardware Specification", "ScwSyncHwSpecDialog", "Button.OK");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("zybo_design_wrapper", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectButton("OK", "Update Hardware Specification", "MessageDialog", "Button.OK");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectToolBarButton("Run Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_RELEASE_FOR");
+selectMenuItem("Assessment System", "Assistant", "WorkbenchWindow", "MenuItem.ASSESSMENT_SYSTEM");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectToolBarButton("Run Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_RELEASE_FOR");
+selectMenuItem("Assessment System", "Assistant", "WorkbenchWindow", "MenuItem.ASSESSMENT_SYSTEM");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+activateView("xparameters.h", "zybo_design_wrapper/export/zybo_design_wrapper/sw/z", "CEditor", "CTabItem.XPARAMETERS_H");
+closeView("xtoplevel.h", "zybo_design_wrapper/export/zybo_design_wrapper/sw/zybo_design_wrapper/freertos10_xilinx_ps7_cortexa9_0/bspinclude/include/xtoplevel.h", "CEditor", "CTabItem.XTOPLEVEL_H");
+closeView("xparameters.h", "zybo_design_wrapper/export/zybo_design_wrapper/sw/zybo_design_wrapper/freertos10_xilinx_ps7_cortexa9_0/bspinclude/include/xparameters.h", "CEditor", "CTabItem.XPARAMETERS_H");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectTreeTable("zybo_design_wrapper", EventType.POPUP_TRIGGER_CLICK, "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectMenuItem("Update Hardware Specification", "Explorer", "ProjectExplorer", "MenuItem.UPDATE_HARDWARE");
+selectButton("OK", "Update Hardware Specification", "ScwSyncHwSpecDialog", "Button.OK");
+selectButton("OK", "Update Hardware Specification", "MessageDialog", "Button.OK");
+selectTreeTable("assessment_system", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectToolBarButton("Run Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_RELEASE_FOR");
+selectMenuItem("Assessment System", "Assistant", "WorkbenchWindow", "MenuItem.ASSESSMENT_SYSTEM");
+selectToolBarButton("Restore", "assessment_system", "WorkbenchWindow", "ToolItem.RESTORE");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectToolBarButton("Minimize", "Progress", "ProgressView", "ToolItem.MINIMIZE");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectTable("UINTPTR - /zybo_design_wrapper/export/zybo_design_w", "Open Declaration", "Table", "Table");
+activateView("main.c", "assessment/src/main.c", "CEditor", "CTabItem.MAIN_C");
+closeView("xil_types.h", "zybo_design_wrapper/export/zybo_design_wrapper/sw/zybo_design_wrapper/freertos10_xilinx_ps7_cortexa9_0/bspinclude/include/xil_types.h", "CEditor", "CTabItem.XIL_TYPES_H");
+closeView("_stdint.h", "/opt/Xilinx/Vitis/2020.2/gnu/aarch32/lin/gcc-arm-none-eabi/aarch32-xilinx-eabi/usr/include/sys/_stdint.h", "CEditor", "CTabItem._STDINT_H");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Release", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectTreeTable("src", "assessment_system > assessment", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectToolBarButton("Restore", "assessment", "WorkbenchWindow", "ToolItem.RESTORE");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Run Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_RELEASE_FOR");
+selectMenuItem("Assessment System", "Assistant", "WorkbenchWindow", "MenuItem.ASSESSMENT_SYSTEM");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectTreeTable("main.c", "assessment_system > assessment > src", EventType.POPUP_TRIGGER_CLICK, "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+setCombo(":", "Find/Replace", "FindReplaceDialog", "Combo.FIND");
+selectButton("Close", "Find/Replace", "FindReplaceDialog", "Button.CLOSE");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("main.c", "assessment_system > assessment > src", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Release", "assessment_system > assessment", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectToolBarButton("Run Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_RELEASE_FOR");
+selectMenuItem("Assessment System", "Assistant", "WorkbenchWindow", "MenuItem.ASSESSMENT_SYSTEM");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Release", "assessment_system > assessment", "main.c", "CEditor", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Run Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_RELEASE_FOR");
+selectMenuItem("Assessment System", "Assistant", "WorkbenchWindow", "MenuItem.ASSESSMENT_SYSTEM");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("_profile_timer_hw.h", "zybo_design_wrapper > export > zybo_design_wrapper > sw > zybo_design_wrapper > freertos10_xilinx_ps7_cortexa9_0 > bspinclude > include", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("zybo_design_wrapper", "zybo_design_wrapper > export > zybo_design_wrapper > sw > zybo_design_wrapper > freertos10_xilinx_ps7_cortexa9_0 > bspinclude > include", "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Release", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Run Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_RELEASE_FOR");
+selectMenuItem("Assessment System", "Assistant", "WorkbenchWindow", "MenuItem.ASSESSMENT_SYSTEM");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectToolBarButton("Minimize", "Progress", "ProgressView", "ToolItem.MINIMIZE");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+closeView("xparameters.h", "zybo_design_wrapper/export/zybo_design_wrapper/sw/zybo_design_wrapper/freertos10_xilinx_ps7_cortexa9_0/bspinclude/include/xparameters.h", "CEditor", "CTabItem.XPARAMETERS_H");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectTreeTable("zybo_design_wrapper", EventType.POPUP_TRIGGER_CLICK, "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectMenuItem("Update Hardware Specification", "Explorer", "WorkbenchWindow", "MenuItem.UPDATE_HARDWARE");
+selectButton("OK", "Update Hardware Specification", "ScwSyncHwSpecDialog", "Button.OK");
+selectButton("OK", "Update Hardware Specification", "MessageDialog", "Button.OK");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("main.c", "assessment_system > assessment > src", EventType.POPUP_TRIGGER_CLICK, "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Release", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("XSCT Console", "XSDBConsoleView", "CTabItem.XSCT_CONSOLE");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectToolBarButton("Run Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_RELEASE_FOR");
+selectMenuItem("Assessment System", "Assistant", "WorkbenchWindow", "MenuItem.ASSESSMENT_SYSTEM");
+selectToolBarButton("Progress", "assessment_system", "WorkbenchWindow", "ToolItem.PROGRESS");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Release", "assessment_system > assessment", "User Operation is Waiting", "BlockedJobsDialog", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Run Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_RELEASE_FOR");
+selectMenuItem("Assessment System", "Assistant", "WorkbenchWindow", "MenuItem.ASSESSMENT_SYSTEM");
+selectToolBarButton("Progress", "assessment", "WorkbenchWindow", "ToolItem.PROGRESS");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectToolBarButton("Import Sources", "Explorer", "ProjectExplorer", "ToolItem.IMPORT_SOURCES");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectToolBarButton("XSCT Console", "WorkbenchWindow", "ToolItem.XSCT_CONSOLE");
+activateView("XSCT Console", "XSDBConsoleView", "CTabItem.XSCT_CONSOLE");
+selectToolBarButton("Restore", "XSCT Console", "XSDBConsoleView", "ToolItem.RESTORE");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+activateView("main.c", "assessment/src/main.c", "CEditor", "CTabItem.MAIN_C");
+selectToolBarButton("Minimize", "Progress", "ProgressView", "ToolItem.MINIMIZE");
+selectTable("A conflict was encountered during refactoring Type", "Refactoring", "RefactoringWizardDialog2", "Table");
+selectButton("Preview", "Refactoring", "RefactoringWizardDialog2", "Button.PREVIEW");
+selectButton("OK", "Refactoring", "RefactoringWizardDialog2", "Button.OK");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+setText("#include", "Find/Replace", "FindReplaceDialog", "StyledText");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectTreeTable("zybo_design_wrapper", EventType.POPUP_TRIGGER_CLICK, "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectMenuItem("Update Hardware Specification", "Explorer", "WorkbenchWindow", "MenuItem.UPDATE_HARDWARE");
+setText("#include", "Explorer", "ProjectExplorer", "StyledText");
+selectButton("OK", "Update Hardware Specification", "ScwSyncHwSpecDialog", "Button.OK");
+selectButton("OK", "Update Hardware Specification", "MessageDialog", "Button.OK");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Release", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Release", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectToolBarButton("Run Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_RELEASE_FOR");
+selectMenuItem("Assessment System", "Assistant", "WorkbenchWindow", "MenuItem.ASSESSMENT_SYSTEM");
+selectToolBarButton("Progress", "assessment_system", "WorkbenchWindow", "ToolItem.PROGRESS");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectToolBarButton("Progress", "assessment_system", "WorkbenchWindow", "ToolItem.PROGRESS");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Release", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Run Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_RELEASE_FOR");
+selectMenuItem("Assessment System", "Assistant", "WorkbenchWindow", "MenuItem.ASSESSMENT_SYSTEM");
+selectToolBarButton("Restore", "assessment", "WorkbenchWindow", "ToolItem.RESTORE");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+activateView("XSCT Console", "XSDBConsoleView", "CTabItem.XSCT_CONSOLE");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Release", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Run Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_RELEASE_FOR");
+selectMenuItem("Assessment System", "Assistant", "WorkbenchWindow", "MenuItem.ASSESSMENT_SYSTEM");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+activateView("XSCT Console", "XSDBConsoleView", "CTabItem.XSCT_CONSOLE");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Release", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Run Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_RELEASE_FOR");
+selectMenuItem("Assessment System", "Assistant", "WorkbenchWindow", "MenuItem.ASSESSMENT_SYSTEM");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectToolBarButton("Minimize", "Console", "ConsoleView", "ToolItem.MINIMIZE");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectTreeTable("zybo_design_wrapper", EventType.POPUP_TRIGGER_CLICK, "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectMenuItem("Export Vitis Project", "Assistant", "WorkbenchWindow", "MenuItem.EXPORT_VITIS_PROJECT");
+selectButton("Cancel", "Export Vitis Projects", "SdxArchiveExportDialog", "Button.CANCEL");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectTreeTable("main.c", "assessment_system > assessment > src", EventType.POPUP_TRIGGER_CLICK, "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectTreeTable("zybo_design_wrapper", "assessment_system > assessment > src", EventType.POPUP_TRIGGER_CLICK, "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectMenuItem("Update Hardware Specification", "Explorer", "WorkbenchWindow", "MenuItem.UPDATE_HARDWARE");
+selectButton("OK", "Update Hardware Specification", "ScwSyncHwSpecDialog", "Button.OK");
+selectButton("OK", "Update Hardware Specification", "MessageDialog", "Button.OK");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectTreeTable("assessment_system", "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectToolBarButton("Run Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectMenuItem("Assessment System", "Console", "WorkbenchWindow", "MenuItem.ASSESSMENT_SYSTEM");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectTreeTable("Release", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectToolBarButton("Restore", "WorkbenchWindow", "ToolItem.RESTORE");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+activateView("main.c", "assessment/src/main.c", "CEditor", "CTabItem.MAIN_C");
+selectTreeTable("zybo_design_wrapper", EventType.POPUP_TRIGGER_CLICK, "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectMenuItem("Update Hardware Specification", "Explorer", "WorkbenchWindow", "MenuItem.UPDATE_HARDWARE");
+selectButton("OK", "Update Hardware Specification", "ScwSyncHwSpecDialog", "Button.OK");
+selectButton("OK", "Update Hardware Specification", "MessageDialog", "Button.OK");
+activateView("Explorer", "ProjectExplorer", "CTabItem.EXPLORER");
+selectTreeTable("main.c", "assessment_system > assessment > src", EventType.POPUP_TRIGGER_CLICK, "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectTreeTable("assessment_system", "assessment_system > assessment > src", "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Release", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectToolBarButton("Run Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_RELEASE_FOR");
+selectMenuItem("Assessment System", "Assistant", "WorkbenchWindow", "MenuItem.ASSESSMENT_SYSTEM");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectToolBarButton("Minimize", "Console", "ConsoleView", "ToolItem.MINIMIZE");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectTreeTable("zybo_design_wrapper", EventType.POPUP_TRIGGER_CLICK, "Explorer", "ProjectExplorer", "TreeViewer.NavigatorContentServiceContentProvider");
+selectMenuItem("Update Hardware Specification", "Explorer", "WorkbenchWindow", "MenuItem.UPDATE_HARDWARE");
+selectButton("OK", "Update Hardware Specification", "ScwSyncHwSpecDialog", "Button.OK");
+selectButton("OK", "Update Hardware Specification", "MessageDialog", "Button.OK");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectToolBarButton("Run Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_RELEASE_FOR");
+selectMenuItem("Assessment System", "Assistant", "WorkbenchWindow", "MenuItem.ASSESSMENT_SYSTEM");
+selectToolBarButton("Progress", "assessment_system", "WorkbenchWindow", "ToolItem.PROGRESS");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectTreeTable("Release", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectToolBarButton("Progress", "assessment", "WorkbenchWindow", "ToolItem.PROGRESS");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectTreeTable("Release", "assessment_system > assessment", "Progress", "ProgressView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Run Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_RELEASE_FOR");
+selectMenuItem("Assessment System", "Assistant", "WorkbenchWindow", "MenuItem.ASSESSMENT_SYSTEM");
+selectToolBarButton("Restore", "assessment_system", "WorkbenchWindow", "ToolItem.RESTORE");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectButton("OK", "Open Declaration", "Button", "OK");
+activateView("main.c", "assessment/src/main.c", "CEditor", "CTabItem.MAIN_C");
+closeView("xil_cache.c", "zybo_design_wrapper/ps7_cortexa9_0/freertos10_xilinx_ps7_cortexa9_0/bsp/ps7_cortexa9_0/libsrc/standalone_v7_3/src/arm/ARMv8/32bit/xil_cache.c", "CEditor", "CTabItem.XIL_CACHE_C");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Release", "assessment_system > assessment", "main.c", "CEditor", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+activateView("Problems", "0 items", "ProblemsView", "CTabItem.PROBLEMS");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Release", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Run Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_RELEASE_FOR");
+selectMenuItem("Assessment System", "Assistant", "WorkbenchWindow", "MenuItem.ASSESSMENT_SYSTEM");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectTreeTable("Release", "assessment_system > assessment", "Progress", "ProgressView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectToolBarButton("Run Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_RELEASE_FOR");
+selectMenuItem("Assessment System", "Assistant", "WorkbenchWindow", "MenuItem.ASSESSMENT_SYSTEM");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectToolBarButton("Minimize", "Progress", "ProgressView", "ToolItem.MINIMIZE");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Release", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Run Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_RELEASE_FOR");
+selectMenuItem("Assessment System", "Assistant", "WorkbenchWindow", "MenuItem.ASSESSMENT_SYSTEM");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Release", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Run Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_RELEASE_FOR");
+selectMenuItem("Assessment System", "Assistant", "WorkbenchWindow", "MenuItem.ASSESSMENT_SYSTEM");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");
+selectButton("Find", "Find/Replace", "FindReplaceDialog", "Button.FIND");

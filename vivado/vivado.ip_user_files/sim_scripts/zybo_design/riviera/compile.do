@@ -3,10 +3,10 @@ vlib riviera
 
 vlib riviera/xilinx_vip
 vlib riviera/xpm
+vlib riviera/xil_defaultlib
 vlib riviera/axi_infrastructure_v1_1_0
 vlib riviera/axi_vip_v1_1_8
 vlib riviera/processing_system7_vip_v1_0_10
-vlib riviera/xil_defaultlib
 vlib riviera/generic_baseblocks_v2_1_0
 vlib riviera/axi_register_slice_v2_1_22
 vlib riviera/fifo_generator_v13_2_5
@@ -33,14 +33,13 @@ vlib riviera/xlconstant_v1_1_7
 vlib riviera/axi_protocol_converter_v2_1_22
 vlib riviera/axi_clock_converter_v2_1_21
 vlib riviera/axi_dwidth_converter_v2_1_22
-vlib riviera/axi_mmu_v2_1_20
 
 vmap xilinx_vip riviera/xilinx_vip
 vmap xpm riviera/xpm
+vmap xil_defaultlib riviera/xil_defaultlib
 vmap axi_infrastructure_v1_1_0 riviera/axi_infrastructure_v1_1_0
 vmap axi_vip_v1_1_8 riviera/axi_vip_v1_1_8
 vmap processing_system7_vip_v1_0_10 riviera/processing_system7_vip_v1_0_10
-vmap xil_defaultlib riviera/xil_defaultlib
 vmap generic_baseblocks_v2_1_0 riviera/generic_baseblocks_v2_1_0
 vmap axi_register_slice_v2_1_22 riviera/axi_register_slice_v2_1_22
 vmap fifo_generator_v13_2_5 riviera/fifo_generator_v13_2_5
@@ -67,7 +66,6 @@ vmap xlconstant_v1_1_7 riviera/xlconstant_v1_1_7
 vmap axi_protocol_converter_v2_1_22 riviera/axi_protocol_converter_v2_1_22
 vmap axi_clock_converter_v2_1_21 riviera/axi_clock_converter_v2_1_21
 vmap axi_dwidth_converter_v2_1_22 riviera/axi_dwidth_converter_v2_1_22
-vmap axi_mmu_v2_1_20 riviera/axi_mmu_v2_1_20
 
 vlog -work xilinx_vip  -sv2k12 "+incdir+/opt/Xilinx/Vivado/2020.2/data/xilinx_vip/include" \
 "/opt/Xilinx/Vivado/2020.2/data/xilinx_vip/hdl/axi4stream_vip_axi4streampc.sv" \
@@ -88,6 +86,27 @@ vlog -work xpm  -sv2k12 "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design
 vcom -work xpm -93 \
 "/opt/Xilinx/Vivado/2020.2/data/ip/xpm/xpm_VCOMP.vhd" \
 
+vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ec67/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/34f8/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/7860/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/8713/hdl" "+incdir+/opt/Xilinx/Vivado/2020.2/data/xilinx_vip/include" \
+"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6bcd/hdl/verilog/toplevel_AXILiteS_s_axi.v" \
+"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6bcd/hdl/verilog/toplevel_control_s_axi.v" \
+"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6bcd/hdl/verilog/toplevel_dx.v" \
+"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6bcd/hdl/verilog/toplevel_dy.v" \
+"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6bcd/hdl/verilog/toplevel_grid_info_V.v" \
+"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6bcd/hdl/verilog/toplevel_local_ram.v" \
+"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6bcd/hdl/verilog/toplevel_mac_muladd_16ns_9ns_9ns_18_4_1.v" \
+"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6bcd/hdl/verilog/toplevel_MAXI_m_axi.v" \
+"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6bcd/hdl/verilog/toplevel_mul_mul_16ns_9ns_18_4_1.v" \
+"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6bcd/hdl/verilog/toplevel_mul_mul_16ns_16ns_18_4_1.v" \
+"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6bcd/hdl/verilog/toplevel_open_set_heap_f_score_V.v" \
+"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6bcd/hdl/verilog/toplevel_open_set_heap_x_V.v" \
+"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6bcd/hdl/verilog/toplevel_os_sift_up.v" \
+"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6bcd/hdl/verilog/toplevel_os_sift_up_moves_node_f_score_V.v" \
+"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6bcd/hdl/verilog/toplevel_os_sift_up_moves_node_x_V.v" \
+"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6bcd/hdl/verilog/toplevel_os_sift_up_moves_target.v" \
+"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6bcd/hdl/verilog/toplevel_waypoints_x_V.v" \
+"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6bcd/hdl/verilog/toplevel.v" \
+"../../../bd/zybo_design/ip/zybo_design_toplevel_0_4/sim/zybo_design_toplevel_0_4.v" \
+
 vlog -work axi_infrastructure_v1_1_0  -v2k5 "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ec67/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/34f8/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/7860/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/8713/hdl" "+incdir+/opt/Xilinx/Vivado/2020.2/data/xilinx_vip/include" \
 "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v" \
 
@@ -98,7 +117,7 @@ vlog -work processing_system7_vip_v1_0_10  -sv2k12 "+incdir+../../../../vivado.g
 "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/34f8/hdl/processing_system7_vip_v1_0_vl_rfs.sv" \
 
 vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ec67/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/34f8/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/7860/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/8713/hdl" "+incdir+/opt/Xilinx/Vivado/2020.2/data/xilinx_vip/include" \
-"../../../bd/zybo_design/ip/zybo_design_processing_system7_0_3/sim/zybo_design_processing_system7_0_3.v" \
+"../../../bd/zybo_design/ip/zybo_design_processing_system7_0_6/sim/zybo_design_processing_system7_0_6.v" \
 
 vlog -work generic_baseblocks_v2_1_0  -v2k5 "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ec67/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/34f8/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/7860/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/8713/hdl" "+incdir+/opt/Xilinx/Vivado/2020.2/data/xilinx_vip/include" \
 "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v" \
@@ -122,7 +141,7 @@ vlog -work axi_crossbar_v2_1_23  -v2k5 "+incdir+../../../../vivado.gen/sources_1
 "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/bc0a/hdl/axi_crossbar_v2_1_vl_rfs.v" \
 
 vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ec67/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/34f8/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/7860/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/8713/hdl" "+incdir+/opt/Xilinx/Vivado/2020.2/data/xilinx_vip/include" \
-"../../../bd/zybo_design/ip/zybo_design_xbar_3/sim/zybo_design_xbar_3.v" \
+"../../../bd/zybo_design/ip/zybo_design_xbar_8/sim/zybo_design_xbar_8.v" \
 
 vcom -work lib_cdc_v1_0_2 -93 \
 "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd" \
@@ -131,16 +150,16 @@ vcom -work proc_sys_reset_v5_0_13 -93 \
 "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd" \
 
 vcom -work xil_defaultlib -93 \
-"../../../bd/zybo_design/ip/zybo_design_rst_ps7_0_50M_0/sim/zybo_design_rst_ps7_0_50M_0.vhd" \
+"../../../bd/zybo_design/ip/zybo_design_rst_ps7_0_50M_2/sim/zybo_design_rst_ps7_0_50M_2.vhd" \
 
 vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ec67/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/34f8/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/7860/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/8713/hdl" "+incdir+/opt/Xilinx/Vivado/2020.2/data/xilinx_vip/include" \
-"../../../bd/zybo_design/ip/zybo_design_xbar_4/sim/zybo_design_xbar_4.v" \
+"../../../bd/zybo_design/ip/zybo_design_xbar_7/sim/zybo_design_xbar_7.v" \
 "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/9097/src/mmcme2_drp.v" \
 
 vcom -work xil_defaultlib -93 \
 "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/9097/src/axi_dynclk_S00_AXI.vhd" \
 "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/9097/src/axi_dynclk.vhd" \
-"../../../bd/zybo_design/ip/zybo_design_axi_dynclk_0_2/sim/zybo_design_axi_dynclk_0_2.vhd" \
+"../../../bd/zybo_design/ip/zybo_design_axi_dynclk_0_3/sim/zybo_design_axi_dynclk_0_3.vhd" \
 
 vcom -work lib_pkg_v1_0_2 -93 \
 "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/0513/hdl/lib_pkg_v1_0_rfs.vhd" \
@@ -167,7 +186,7 @@ vcom -work axi_vdma_v6_3_10 -93 \
 "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd" \
 
 vcom -work xil_defaultlib -93 \
-"../../../bd/zybo_design/ip/zybo_design_axi_vdma_0_2/sim/zybo_design_axi_vdma_0_2.vhd" \
+"../../../bd/zybo_design/ip/zybo_design_axi_vdma_0_3/sim/zybo_design_axi_vdma_0_3.vhd" \
 
 vcom -work axi_lite_ipif_v3_0_4 -93 \
 "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd" \
@@ -176,7 +195,7 @@ vcom -work v_tc_v6_2_1 -93 \
 "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/cd2e/hdl/v_tc_v6_2_vh_rfs.vhd" \
 
 vcom -work xil_defaultlib -93 \
-"../../../bd/zybo_design/ip/zybo_design_v_tc_0_2/sim/zybo_design_v_tc_0_2.vhd" \
+"../../../bd/zybo_design/ip/zybo_design_v_tc_0_3/sim/zybo_design_v_tc_0_3.vhd" \
 
 vcom -work v_tc_v6_1_13 -93 \
 "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/b92e/hdl/v_tc_v6_1_vh_rfs.vhd" \
@@ -188,7 +207,7 @@ vlog -work v_axi4s_vid_out_v4_0_11  -v2k5 "+incdir+../../../../vivado.gen/source
 "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/1a1e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v" \
 
 vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ec67/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/34f8/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/7860/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/8713/hdl" "+incdir+/opt/Xilinx/Vivado/2020.2/data/xilinx_vip/include" \
-"../../../bd/zybo_design/ip/zybo_design_v_axi4s_vid_out_0_2/sim/zybo_design_v_axi4s_vid_out_0_2.v" \
+"../../../bd/zybo_design/ip/zybo_design_v_axi4s_vid_out_0_3/sim/zybo_design_v_axi4s_vid_out_0_3.v" \
 
 vcom -work xil_defaultlib -93 \
 "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/20df/src/ClockGen.vhd" \
@@ -198,7 +217,7 @@ vcom -work xil_defaultlib -93 \
 "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/20df/src/OutputSERDES.vhd" \
 "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/20df/src/TMDS_Encoder.vhd" \
 "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/20df/src/rgb2dvi.vhd" \
-"../../../bd/zybo_design/ip/zybo_design_rgb2dvi_0_2/sim/zybo_design_rgb2dvi_0_2.vhd" \
+"../../../bd/zybo_design/ip/zybo_design_rgb2dvi_0_3/sim/zybo_design_rgb2dvi_0_3.vhd" \
 
 vlog -work axis_infrastructure_v1_1_0  -v2k5 "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ec67/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/34f8/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/7860/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/8713/hdl" "+incdir+/opt/Xilinx/Vivado/2020.2/data/xilinx_vip/include" \
 "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/8713/hdl/axis_infrastructure_v1_1_vl_rfs.v" \
@@ -207,51 +226,29 @@ vlog -work axis_register_slice_v1_1_22  -v2k5 "+incdir+../../../../vivado.gen/so
 "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ebcc/hdl/axis_register_slice_v1_1_vl_rfs.v" \
 
 vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ec67/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/34f8/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/7860/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/8713/hdl" "+incdir+/opt/Xilinx/Vivado/2020.2/data/xilinx_vip/include" \
-"../../../bd/zybo_design/ip/zybo_design_axis_subset_converter_0_2/hdl/tdata_zybo_design_axis_subset_converter_0_2.v" \
-"../../../bd/zybo_design/ip/zybo_design_axis_subset_converter_0_2/hdl/tuser_zybo_design_axis_subset_converter_0_2.v" \
-"../../../bd/zybo_design/ip/zybo_design_axis_subset_converter_0_2/hdl/tstrb_zybo_design_axis_subset_converter_0_2.v" \
-"../../../bd/zybo_design/ip/zybo_design_axis_subset_converter_0_2/hdl/tkeep_zybo_design_axis_subset_converter_0_2.v" \
-"../../../bd/zybo_design/ip/zybo_design_axis_subset_converter_0_2/hdl/tid_zybo_design_axis_subset_converter_0_2.v" \
-"../../../bd/zybo_design/ip/zybo_design_axis_subset_converter_0_2/hdl/tdest_zybo_design_axis_subset_converter_0_2.v" \
-"../../../bd/zybo_design/ip/zybo_design_axis_subset_converter_0_2/hdl/tlast_zybo_design_axis_subset_converter_0_2.v" \
+"../../../bd/zybo_design/ip/zybo_design_axis_subset_converter_0_3/hdl/tdata_zybo_design_axis_subset_converter_0_3.v" \
+"../../../bd/zybo_design/ip/zybo_design_axis_subset_converter_0_3/hdl/tuser_zybo_design_axis_subset_converter_0_3.v" \
+"../../../bd/zybo_design/ip/zybo_design_axis_subset_converter_0_3/hdl/tstrb_zybo_design_axis_subset_converter_0_3.v" \
+"../../../bd/zybo_design/ip/zybo_design_axis_subset_converter_0_3/hdl/tkeep_zybo_design_axis_subset_converter_0_3.v" \
+"../../../bd/zybo_design/ip/zybo_design_axis_subset_converter_0_3/hdl/tid_zybo_design_axis_subset_converter_0_3.v" \
+"../../../bd/zybo_design/ip/zybo_design_axis_subset_converter_0_3/hdl/tdest_zybo_design_axis_subset_converter_0_3.v" \
+"../../../bd/zybo_design/ip/zybo_design_axis_subset_converter_0_3/hdl/tlast_zybo_design_axis_subset_converter_0_3.v" \
 
 vlog -work axis_subset_converter_v1_1_22  -v2k5 "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ec67/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/34f8/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/7860/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/8713/hdl" "+incdir+/opt/Xilinx/Vivado/2020.2/data/xilinx_vip/include" \
 "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/69d9/hdl/axis_subset_converter_v1_1_vl_rfs.v" \
 
 vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ec67/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/34f8/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/7860/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/8713/hdl" "+incdir+/opt/Xilinx/Vivado/2020.2/data/xilinx_vip/include" \
-"../../../bd/zybo_design/ip/zybo_design_axis_subset_converter_0_2/hdl/top_zybo_design_axis_subset_converter_0_2.v" \
-"../../../bd/zybo_design/ip/zybo_design_axis_subset_converter_0_2/sim/zybo_design_axis_subset_converter_0_2.v" \
+"../../../bd/zybo_design/ip/zybo_design_axis_subset_converter_0_3/hdl/top_zybo_design_axis_subset_converter_0_3.v" \
+"../../../bd/zybo_design/ip/zybo_design_axis_subset_converter_0_3/sim/zybo_design_axis_subset_converter_0_3.v" \
 
 vlog -work xlconstant_v1_1_7  -v2k5 "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ec67/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/34f8/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/7860/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/8713/hdl" "+incdir+/opt/Xilinx/Vivado/2020.2/data/xilinx_vip/include" \
 "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v" \
 
 vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ec67/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/34f8/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/7860/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/8713/hdl" "+incdir+/opt/Xilinx/Vivado/2020.2/data/xilinx_vip/include" \
-"../../../bd/zybo_design/ip/zybo_design_xlconstant_0_2/sim/zybo_design_xlconstant_0_2.v" \
-"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ba6a/hdl/verilog/toplevel_AXILiteS_s_axi.v" \
-"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ba6a/hdl/verilog/toplevel_closed_set.v" \
-"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ba6a/hdl/verilog/toplevel_control_s_axi.v" \
-"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ba6a/hdl/verilog/toplevel_local_ram.v" \
-"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ba6a/hdl/verilog/toplevel_mac_muladd_9ns_11ns_32ns_32_4_1.v" \
-"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ba6a/hdl/verilog/toplevel_mac_muladd_16ns_9ns_9ns_18_4_1.v" \
-"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ba6a/hdl/verilog/toplevel_MAXI_m_axi.v" \
-"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ba6a/hdl/verilog/toplevel_mul_mul_16ns_9ns_18_4_1.v" \
-"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ba6a/hdl/verilog/toplevel_mul_mul_16ns_16ns_18_4_1.v" \
-"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ba6a/hdl/verilog/toplevel_open_set_heap_f_score_V.v" \
-"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ba6a/hdl/verilog/toplevel_open_set_heap_x_V.v" \
-"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ba6a/hdl/verilog/toplevel_os_heap_pop.v" \
-"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ba6a/hdl/verilog/toplevel_os_heap_push.v" \
-"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ba6a/hdl/verilog/toplevel_os_heap_push_moves_node_f_score_V.v" \
-"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ba6a/hdl/verilog/toplevel_os_heap_push_moves_node_x_V.v" \
-"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ba6a/hdl/verilog/toplevel_os_heap_push_moves_target.v" \
-"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ba6a/hdl/verilog/toplevel_waypoints_x_V.v" \
-"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ba6a/hdl/verilog/toplevel.v" \
-"../../../bd/zybo_design/ip/zybo_design_toplevel_0_1/sim/zybo_design_toplevel_0_1.v" \
+"../../../bd/zybo_design/ip/zybo_design_xlconstant_0_3/sim/zybo_design_xlconstant_0_3.v" \
 
 vlog -work axi_protocol_converter_v2_1_22  -v2k5 "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ec67/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/34f8/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/7860/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/8713/hdl" "+incdir+/opt/Xilinx/Vivado/2020.2/data/xilinx_vip/include" \
 "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/5cee/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
-
-vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ec67/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/34f8/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/7860/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/8713/hdl" "+incdir+/opt/Xilinx/Vivado/2020.2/data/xilinx_vip/include" \
-"../../../bd/zybo_design/ip/zybo_design_auto_pc_0/sim/zybo_design_auto_pc_0.v" \
 
 vlog -work axi_clock_converter_v2_1_21  -v2k5 "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ec67/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/34f8/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/7860/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/8713/hdl" "+incdir+/opt/Xilinx/Vivado/2020.2/data/xilinx_vip/include" \
 "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/1304/hdl/axi_clock_converter_v2_1_vl_rfs.v" \
@@ -261,15 +258,9 @@ vlog -work axi_dwidth_converter_v2_1_22  -v2k5 "+incdir+../../../../vivado.gen/s
 
 vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ec67/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/34f8/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/7860/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/8713/hdl" "+incdir+/opt/Xilinx/Vivado/2020.2/data/xilinx_vip/include" \
 "../../../bd/zybo_design/ip/zybo_design_auto_us_0/sim/zybo_design_auto_us_0.v" \
+"../../../bd/zybo_design/ip/zybo_design_auto_pc_0/sim/zybo_design_auto_pc_0.v" \
 "../../../bd/zybo_design/ip/zybo_design_auto_pc_1/sim/zybo_design_auto_pc_1.v" \
 "../../../bd/zybo_design/ip/zybo_design_auto_pc_2/sim/zybo_design_auto_pc_2.v" \
-
-vlog -work axi_mmu_v2_1_20  -v2k5 "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ec67/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/34f8/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/7860/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/8713/hdl" "+incdir+/opt/Xilinx/Vivado/2020.2/data/xilinx_vip/include" \
-"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/88c9/hdl/axi_mmu_v2_1_vl_rfs.v" \
-
-vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ec67/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/34f8/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/7860/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/8713/hdl" "+incdir+/opt/Xilinx/Vivado/2020.2/data/xilinx_vip/include" \
-"../../../bd/zybo_design/ip/zybo_design_s00_mmu_0/sim/zybo_design_s00_mmu_0.v" \
-"../../../bd/zybo_design/ip/zybo_design_s01_mmu_0/sim/zybo_design_s01_mmu_0.v" \
 "../../../bd/zybo_design/sim/zybo_design.v" \
 
 vlog -work xil_defaultlib \

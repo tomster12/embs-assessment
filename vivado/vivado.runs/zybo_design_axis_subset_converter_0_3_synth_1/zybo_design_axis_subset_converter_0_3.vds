@@ -1,0 +1,320 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Thu May  8 18:55:59 2025
+# Process ID: 485433
+# Current directory: /home/tomster12/files/EMBS/vivado/vivado.runs/zybo_design_axis_subset_converter_0_3_synth_1
+# Command line: vivado -log zybo_design_axis_subset_converter_0_3.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source zybo_design_axis_subset_converter_0_3.tcl
+# Log file: /home/tomster12/files/EMBS/vivado/vivado.runs/zybo_design_axis_subset_converter_0_3_synth_1/zybo_design_axis_subset_converter_0_3.vds
+# Journal file: /home/tomster12/files/EMBS/vivado/vivado.runs/zybo_design_axis_subset_converter_0_3_synth_1/vivado.jou
+#-----------------------------------------------------------
+source zybo_design_axis_subset_converter_0_3.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/tomster12/files/EMBS/zybo-z7-hdmi/hardware/zybo_z7_hdmi_repo'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/tomster12/files/EMBS/vitis_hls/assessment'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2020.2/data/ip'.
+Command: synth_design -top zybo_design_axis_subset_converter_0_3 -part xc7z010clg400-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 485494
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 2318.918 ; gain = 0.000 ; free physical = 132 ; free virtual = 1092
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'zybo_design_axis_subset_converter_0_3' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/ip/zybo_design_axis_subset_converter_0_3/synth/zybo_design_axis_subset_converter_0_3.v:58]
+INFO: [Synth 8-6157] synthesizing module 'top_zybo_design_axis_subset_converter_0_3' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/ip/zybo_design_axis_subset_converter_0_3/hdl/top_zybo_design_axis_subset_converter_0_3.v:60]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_SIGNAL_SET bound to: 155 - type: integer 
+	Parameter C_M_AXIS_TDATA_WIDTH bound to: 24 - type: integer 
+	Parameter C_M_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXIS_SIGNAL_SET bound to: 155 - type: integer 
+	Parameter C_M_AXIS_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_DEFAULT_TLAST bound to: 0 - type: integer 
+	Parameter G_INDX_SS_TREADY bound to: 0 - type: integer 
+	Parameter G_INDX_SS_TDATA bound to: 1 - type: integer 
+	Parameter G_INDX_SS_TSTRB bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TKEEP bound to: 3 - type: integer 
+	Parameter G_INDX_SS_TLAST bound to: 4 - type: integer 
+	Parameter G_INDX_SS_TID bound to: 5 - type: integer 
+	Parameter G_INDX_SS_TDEST bound to: 6 - type: integer 
+	Parameter G_INDX_SS_TUSER bound to: 7 - type: integer 
+	Parameter G_MASK_SS_TREADY bound to: 1 - type: integer 
+	Parameter G_MASK_SS_TDATA bound to: 2 - type: integer 
+	Parameter G_MASK_SS_TSTRB bound to: 4 - type: integer 
+	Parameter G_MASK_SS_TKEEP bound to: 8 - type: integer 
+	Parameter G_MASK_SS_TLAST bound to: 16 - type: integer 
+	Parameter G_MASK_SS_TID bound to: 32 - type: integer 
+	Parameter G_MASK_SS_TDEST bound to: 64 - type: integer 
+	Parameter G_MASK_SS_TUSER bound to: 128 - type: integer 
+	Parameter G_TASK_SEVERITY_ERR bound to: 2 - type: integer 
+	Parameter G_TASK_SEVERITY_WARNING bound to: 1 - type: integer 
+	Parameter G_TASK_SEVERITY_INFO bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axis_subset_converter_v1_1_22_core' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/ipshared/69d9/hdl/axis_subset_converter_v1_1_vl_rfs.v:62]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_SIGNAL_SET bound to: 155 - type: integer 
+	Parameter C_M_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXIS_SIGNAL_SET bound to: 155 - type: integer 
+	Parameter C_DEFAULT_TLAST bound to: 0 - type: integer 
+	Parameter G_INDX_SS_TREADY bound to: 0 - type: integer 
+	Parameter G_INDX_SS_TDATA bound to: 1 - type: integer 
+	Parameter G_INDX_SS_TSTRB bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TKEEP bound to: 3 - type: integer 
+	Parameter G_INDX_SS_TLAST bound to: 4 - type: integer 
+	Parameter G_INDX_SS_TID bound to: 5 - type: integer 
+	Parameter G_INDX_SS_TDEST bound to: 6 - type: integer 
+	Parameter G_INDX_SS_TUSER bound to: 7 - type: integer 
+	Parameter G_MASK_SS_TREADY bound to: 1 - type: integer 
+	Parameter G_MASK_SS_TDATA bound to: 2 - type: integer 
+	Parameter G_MASK_SS_TSTRB bound to: 4 - type: integer 
+	Parameter G_MASK_SS_TKEEP bound to: 8 - type: integer 
+	Parameter G_MASK_SS_TLAST bound to: 16 - type: integer 
+	Parameter G_MASK_SS_TID bound to: 32 - type: integer 
+	Parameter G_MASK_SS_TDEST bound to: 64 - type: integer 
+	Parameter G_MASK_SS_TUSER bound to: 128 - type: integer 
+	Parameter G_TASK_SEVERITY_ERR bound to: 2 - type: integer 
+	Parameter G_TASK_SEVERITY_WARNING bound to: 1 - type: integer 
+	Parameter G_TASK_SEVERITY_INFO bound to: 0 - type: integer 
+	Parameter P_SIGNAL_SET_XOR bound to: 32'b00000000000000000000000000000000 
+	Parameter P_SIGNAL_SET_ADD bound to: 32'b00000000000000000000000000000000 
+	Parameter P_SIGNAL_SET_REM bound to: 32'b00000000000000000000000000000000 
+	Parameter P_TLAST_CNTR_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axis_subset_converter_v1_1_22_core' (1#1) [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/ipshared/69d9/hdl/axis_subset_converter_v1_1_vl_rfs.v:62]
+INFO: [Synth 8-6157] synthesizing module 'tdata_zybo_design_axis_subset_converter_0_3' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/ip/zybo_design_axis_subset_converter_0_3/hdl/tdata_zybo_design_axis_subset_converter_0_3.v:48]
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXIS_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXIS_TDATA_WIDTH bound to: 24 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'tdata_zybo_design_axis_subset_converter_0_3' (2#1) [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/ip/zybo_design_axis_subset_converter_0_3/hdl/tdata_zybo_design_axis_subset_converter_0_3.v:48]
+INFO: [Synth 8-6157] synthesizing module 'tuser_zybo_design_axis_subset_converter_0_3' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/ip/zybo_design_axis_subset_converter_0_3/hdl/tuser_zybo_design_axis_subset_converter_0_3.v:48]
+	Parameter C_S_AXIS_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXIS_TUSER_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'tuser_zybo_design_axis_subset_converter_0_3' (3#1) [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/ip/zybo_design_axis_subset_converter_0_3/hdl/tuser_zybo_design_axis_subset_converter_0_3.v:48]
+INFO: [Synth 8-6157] synthesizing module 'tid_zybo_design_axis_subset_converter_0_3' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/ip/zybo_design_axis_subset_converter_0_3/hdl/tid_zybo_design_axis_subset_converter_0_3.v:48]
+	Parameter C_S_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXIS_TID_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'tid_zybo_design_axis_subset_converter_0_3' (4#1) [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/ip/zybo_design_axis_subset_converter_0_3/hdl/tid_zybo_design_axis_subset_converter_0_3.v:48]
+INFO: [Synth 8-6157] synthesizing module 'tdest_zybo_design_axis_subset_converter_0_3' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/ip/zybo_design_axis_subset_converter_0_3/hdl/tdest_zybo_design_axis_subset_converter_0_3.v:48]
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXIS_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'tdest_zybo_design_axis_subset_converter_0_3' (5#1) [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/ip/zybo_design_axis_subset_converter_0_3/hdl/tdest_zybo_design_axis_subset_converter_0_3.v:48]
+INFO: [Synth 8-6157] synthesizing module 'tstrb_zybo_design_axis_subset_converter_0_3' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/ip/zybo_design_axis_subset_converter_0_3/hdl/tstrb_zybo_design_axis_subset_converter_0_3.v:48]
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXIS_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXIS_TDATA_WIDTH bound to: 24 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'tstrb_zybo_design_axis_subset_converter_0_3' (6#1) [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/ip/zybo_design_axis_subset_converter_0_3/hdl/tstrb_zybo_design_axis_subset_converter_0_3.v:48]
+INFO: [Synth 8-6157] synthesizing module 'tkeep_zybo_design_axis_subset_converter_0_3' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/ip/zybo_design_axis_subset_converter_0_3/hdl/tkeep_zybo_design_axis_subset_converter_0_3.v:48]
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXIS_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXIS_TDATA_WIDTH bound to: 24 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'tkeep_zybo_design_axis_subset_converter_0_3' (7#1) [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/ip/zybo_design_axis_subset_converter_0_3/hdl/tkeep_zybo_design_axis_subset_converter_0_3.v:48]
+INFO: [Synth 8-6157] synthesizing module 'tlast_zybo_design_axis_subset_converter_0_3' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/ip/zybo_design_axis_subset_converter_0_3/hdl/tlast_zybo_design_axis_subset_converter_0_3.v:48]
+	Parameter C_S_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'tlast_zybo_design_axis_subset_converter_0_3' (8#1) [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/ip/zybo_design_axis_subset_converter_0_3/hdl/tlast_zybo_design_axis_subset_converter_0_3.v:48]
+INFO: [Synth 8-6155] done synthesizing module 'top_zybo_design_axis_subset_converter_0_3' (9#1) [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/ip/zybo_design_axis_subset_converter_0_3/hdl/top_zybo_design_axis_subset_converter_0_3.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'zybo_design_axis_subset_converter_0_3' (10#1) [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/ip/zybo_design_axis_subset_converter_0_3/synth/zybo_design_axis_subset_converter_0_3.v:58]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 2318.918 ; gain = 0.000 ; free physical = 3129 ; free virtual = 3812
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 2318.918 ; gain = 0.000 ; free physical = 5069 ; free virtual = 5873
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 2318.918 ; gain = 0.000 ; free physical = 5082 ; free virtual = 5882
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2318.918 ; gain = 0.000 ; free physical = 5377 ; free virtual = 6199
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/ip/zybo_design_axis_subset_converter_0_3/zybo_design_axis_subset_converter_0_3_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/ip/zybo_design_axis_subset_converter_0_3/zybo_design_axis_subset_converter_0_3_ooc.xdc] for cell 'inst'
+Parsing XDC File [/home/tomster12/files/EMBS/vivado/vivado.runs/zybo_design_axis_subset_converter_0_3_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/tomster12/files/EMBS/vivado/vivado.runs/zybo_design_axis_subset_converter_0_3_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2382.816 ; gain = 0.000 ; free physical = 5073 ; free virtual = 5980
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2382.816 ; gain = 0.000 ; free physical = 5149 ; free virtual = 6045
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:12 . Memory (MB): peak = 2382.816 ; gain = 63.898 ; free physical = 5312 ; free virtual = 6243
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:12 . Memory (MB): peak = 2382.816 ; gain = 63.898 ; free physical = 5312 ; free virtual = 6243
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  /home/tomster12/files/EMBS/vivado/vivado.runs/zybo_design_axis_subset_converter_0_3_synth_1/dont_touch.xdc, line 9).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:12 . Memory (MB): peak = 2382.816 ; gain = 63.898 ; free physical = 5311 ; free virtual = 6242
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:12 . Memory (MB): peak = 2382.816 ; gain = 63.898 ; free physical = 5306 ; free virtual = 6239
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:13 . Memory (MB): peak = 2382.816 ; gain = 63.898 ; free physical = 5300 ; free virtual = 6250
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 2382.816 ; gain = 63.898 ; free physical = 5075 ; free virtual = 6073
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 2382.816 ; gain = 63.898 ; free physical = 5075 ; free virtual = 6073
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 2382.816 ; gain = 63.898 ; free physical = 5076 ; free virtual = 6074
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 2382.816 ; gain = 63.898 ; free physical = 4699 ; free virtual = 5727
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 2382.816 ; gain = 63.898 ; free physical = 4699 ; free virtual = 5727
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 2382.816 ; gain = 63.898 ; free physical = 4699 ; free virtual = 5727
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 2382.816 ; gain = 63.898 ; free physical = 4699 ; free virtual = 5727
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 2382.816 ; gain = 63.898 ; free physical = 4699 ; free virtual = 5727
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 2382.816 ; gain = 63.898 ; free physical = 4699 ; free virtual = 5727
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++-+-----+------+
+| |Cell |Count |
++-+-----+------+
++-+-----+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 2382.816 ; gain = 63.898 ; free physical = 4699 ; free virtual = 5727
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 2382.816 ; gain = 0.000 ; free physical = 4746 ; free virtual = 5778
+Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 2382.816 ; gain = 63.898 ; free physical = 4745 ; free virtual = 5778
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2382.816 ; gain = 0.000 ; free physical = 4737 ; free virtual = 5773
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2382.816 ; gain = 0.000 ; free physical = 4692 ; free virtual = 5835
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+36 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 2382.816 ; gain = 64.031 ; free physical = 4725 ; free virtual = 5869
+INFO: [Common 17-1381] The checkpoint '/home/tomster12/files/EMBS/vivado/vivado.runs/zybo_design_axis_subset_converter_0_3_synth_1/zybo_design_axis_subset_converter_0_3.dcp' has been generated.
+WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP zybo_design_axis_subset_converter_0_3, cache-ID = a43aeab1dbcc07f3
+INFO: [Common 17-1381] The checkpoint '/home/tomster12/files/EMBS/vivado/vivado.runs/zybo_design_axis_subset_converter_0_3_synth_1/zybo_design_axis_subset_converter_0_3.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file zybo_design_axis_subset_converter_0_3_utilization_synth.rpt -pb zybo_design_axis_subset_converter_0_3_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu May  8 18:56:30 2025...

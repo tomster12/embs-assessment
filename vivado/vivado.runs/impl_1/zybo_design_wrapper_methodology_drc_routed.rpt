@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date         : Thu May  8 00:22:57 2025
+| Date         : Thu May  8 19:31:49 2025
 | Host         : DESKTOP-Q62E4QT running 64-bit Ubuntu 22.04.5 LTS
 | Command      : report_methodology -file zybo_design_wrapper_methodology_drc_routed.rpt -pb zybo_design_wrapper_methodology_drc_routed.pb -rpx zybo_design_wrapper_methodology_drc_routed.rpx
 | Design       : zybo_design_wrapper
@@ -23,15 +23,14 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 24
-+-----------+----------+---------------------------------------------+------------+
-| Rule      | Severity | Description                                 | Violations |
-+-----------+----------+---------------------------------------------+------------+
-| LUTAR-1   | Warning  | LUT drives async reset alert                | 6          |
-| TIMING-16 | Warning  | Large setup violation                       | 16         |
-| ULMTCS-1  | Warning  | Control Sets use limits recommend reduction | 1          |
-| XDCB-5    | Warning  | Runtime inefficient way to find pin objects | 1          |
-+-----------+----------+---------------------------------------------+------------+
+             Violations found: 8
++----------+----------+---------------------------------------------+------------+
+| Rule     | Severity | Description                                 | Violations |
++----------+----------+---------------------------------------------+------------+
+| LUTAR-1  | Warning  | LUT drives async reset alert                | 6          |
+| ULMTCS-1 | Warning  | Control Sets use limits recommend reduction | 1          |
+| XDCB-5   | Warning  | Runtime inefficient way to find pin objects | 1          |
++----------+----------+---------------------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
@@ -155,95 +154,15 @@ zybo_design_i/axi_mem_intercon/m01_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv
  (the first 15 of 32 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
-TIMING-16#1 Warning
-Large setup violation  
-There is a large setup violation of -1.008 ns between zybo_design_i/toplevel_0/inst/mul_ln67_reg_2039_reg[0]/C (clocked by clk_fpga_0) and zybo_design_i/toplevel_0/inst/local_ram_U/toplevel_local_ram_ram_U/q0_reg[24]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#2 Warning
-Large setup violation  
-There is a large setup violation of -1.024 ns between zybo_design_i/toplevel_0/inst/mul_ln67_reg_2039_reg[0]/C (clocked by clk_fpga_0) and zybo_design_i/toplevel_0/inst/local_ram_U/toplevel_local_ram_ram_U/q0_reg[30]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#3 Warning
-Large setup violation  
-There is a large setup violation of -1.029 ns between zybo_design_i/toplevel_0/inst/mul_ln67_reg_2039_reg[0]/C (clocked by clk_fpga_0) and zybo_design_i/toplevel_0/inst/local_ram_U/toplevel_local_ram_ram_U/q0_reg[8]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#4 Warning
-Large setup violation  
-There is a large setup violation of -1.037 ns between zybo_design_i/toplevel_0/inst/grp_os_heap_pop_fu_572/reg_2523_reg[1]/C (clocked by clk_fpga_0) and zybo_design_i/toplevel_0/inst/open_set_heap_g_score_V_U/toplevel_open_set_heap_f_score_V_ram_U/ram_reg_0_1/ADDRBWRADDR[6] (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#5 Warning
-Large setup violation  
-There is a large setup violation of -1.064 ns between zybo_design_i/toplevel_0/inst/mul_ln67_reg_2039_reg[0]/C (clocked by clk_fpga_0) and zybo_design_i/toplevel_0/inst/local_ram_U/toplevel_local_ram_ram_U/q0_reg[29]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#6 Warning
-Large setup violation  
-There is a large setup violation of -1.069 ns between zybo_design_i/toplevel_0/inst/mul_ln67_reg_2039_reg[0]/C (clocked by clk_fpga_0) and zybo_design_i/toplevel_0/inst/local_ram_U/toplevel_local_ram_ram_U/q0_reg[19]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#7 Warning
-Large setup violation  
-There is a large setup violation of -1.075 ns between zybo_design_i/toplevel_0/inst/mul_ln67_reg_2039_reg[0]/C (clocked by clk_fpga_0) and zybo_design_i/toplevel_0/inst/local_ram_U/toplevel_local_ram_ram_U/q0_reg[28]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#8 Warning
-Large setup violation  
-There is a large setup violation of -1.088 ns between zybo_design_i/toplevel_0/inst/mul_ln67_reg_2039_reg[0]/C (clocked by clk_fpga_0) and zybo_design_i/toplevel_0/inst/local_ram_U/toplevel_local_ram_ram_U/q0_reg[11]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#9 Warning
-Large setup violation  
-There is a large setup violation of -1.118 ns between zybo_design_i/toplevel_0/inst/mul_ln67_reg_2039_reg[0]/C (clocked by clk_fpga_0) and zybo_design_i/toplevel_0/inst/local_ram_U/toplevel_local_ram_ram_U/q0_reg[14]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#10 Warning
-Large setup violation  
-There is a large setup violation of -1.140 ns between zybo_design_i/toplevel_0/inst/mul_ln67_reg_2039_reg[0]/C (clocked by clk_fpga_0) and zybo_design_i/toplevel_0/inst/local_ram_U/toplevel_local_ram_ram_U/q0_reg[2]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#11 Warning
-Large setup violation  
-There is a large setup violation of -1.182 ns between zybo_design_i/toplevel_0/inst/mul_ln67_reg_2039_reg[0]/C (clocked by clk_fpga_0) and zybo_design_i/toplevel_0/inst/local_ram_U/toplevel_local_ram_ram_U/q0_reg[12]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#12 Warning
-Large setup violation  
-There is a large setup violation of -1.205 ns between zybo_design_i/toplevel_0/inst/mul_ln67_reg_2039_reg[0]/C (clocked by clk_fpga_0) and zybo_design_i/toplevel_0/inst/local_ram_U/toplevel_local_ram_ram_U/q0_reg[4]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#13 Warning
-Large setup violation  
-There is a large setup violation of -1.235 ns between zybo_design_i/toplevel_0/inst/mul_ln67_reg_2039_reg[0]/C (clocked by clk_fpga_0) and zybo_design_i/toplevel_0/inst/local_ram_U/toplevel_local_ram_ram_U/q0_reg[9]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#14 Warning
-Large setup violation  
-There is a large setup violation of -1.252 ns between zybo_design_i/toplevel_0/inst/mul_ln67_reg_2039_reg[0]/C (clocked by clk_fpga_0) and zybo_design_i/toplevel_0/inst/local_ram_U/toplevel_local_ram_ram_U/q0_reg[15]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#15 Warning
-Large setup violation  
-There is a large setup violation of -1.297 ns between zybo_design_i/toplevel_0/inst/mul_ln67_reg_2039_reg[0]/C (clocked by clk_fpga_0) and zybo_design_i/toplevel_0/inst/local_ram_U/toplevel_local_ram_ram_U/q0_reg[1]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#16 Warning
-Large setup violation  
-There is a large setup violation of -1.416 ns between zybo_design_i/toplevel_0/inst/mul_ln67_reg_2039_reg[0]/C (clocked by clk_fpga_0) and zybo_design_i/toplevel_0/inst/local_ram_U/toplevel_local_ram_ram_U/q0_reg[13]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
 ULMTCS-1#1 Warning
 Control Sets use limits recommend reduction  
-This design uses 511 control sets (vs. available limit of 4400, determined by 1 control set per CLB). This exceeds the control set use guideline of 7.5 percent. This is at a level where reduction is RECOMMENDED (see UG949). Use report_control_sets to get more details.
+This design uses 518 control sets (vs. available limit of 4400, determined by 1 control set per CLB). This exceeds the control set use guideline of 7.5 percent. This is at a level where reduction is RECOMMENDED (see UG949). Use report_control_sets to get more details.
 Related violations: <none>
 
 XDCB-5#1 Warning
 Runtime inefficient way to find pin objects  
 The option '-through : [get_pins -filter {NAME =~ *SyncAsync*/oSyncStages_reg[0]/D} -hier]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '7' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
-Current XDC: /home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/ip/zybo_design_rgb2dvi_0_2/src/rgb2dvi.xdc (Line: 5)
+Current XDC: /home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/ip/zybo_design_rgb2dvi_0_3/src/rgb2dvi.xdc (Line: 5)
 Related violations: <none>
 
 

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'toplevel'" level="0">
-<item name = "Date">Thu May  8 00:51:04 2025
+<item name = "Date">Thu May  8 19:36:30 2025
 </item>
 <item name = "Version">2020.2 (Build 3064766 on Wed Nov 18 09:12:47 MST 2020)</item>
 <item name = "Project">assessment</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 8.006 ns, 2.70 ns</column>
+<column name="ap_clk">10.00 ns, 7.300 ns, 2.70 ns</column>
 </table>
 </item>
 </section>
@@ -31,17 +31,23 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_os_heap_pop_fu_566">os_heap_pop, 2, 104, 20.000 ns, 1.040 us, 2, 104, none</column>
-<column name="grp_os_heap_push_fu_580">os_heap_push, 2, 90, 20.000 ns, 0.900 us, 2, 90, none</column>
+<column name="grp_os_sift_up_fu_3978">os_sift_up, 9, 74, 90.000 ns, 0.740 us, 9, 74, none</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- COPY_RAM_LOOP">7831, 7831, 3, 1, 1, 7830, yes</column>
+<column name="- COPY_RAM_LOOP">8032, 8032, 3, 1, 1, 8031, yes</column>
 <column name="- WAYPOINT_EXTRACT_LOOP">?, ?, 2, 1, 1, ?, yes</column>
 <column name="- WAYPOINT_LOOP">?, ?, ?, -, -, ?, no</column>
-<column name=" + EMPTY_CLOSED_SET_LOOP">7813, 7813, 1, 1, 1, 7813, yes</column>
-<column name=" + AS_SEARCH_LOOP">?, ?, 11 ~ 503, -, -, ?, no</column>
+<column name=" + EMPTY_GRID_INFO_LOOP">250000, 250000, 1, 1, 1, 250000, yes</column>
+<column name=" + AS_SEARCH_LOOP">?, ?, 13 ~ 60446, -, -, ?, no</column>
+<column name="  ++ SIFT_DOWN_COPY_LOOP">1, 16, 2, 1, 1, 1 ~ 16, yes</column>
+<column name="  ++ OS_FIND_LOOP">3, 15002, 3, -, -, 1 ~ 5000, no</column>
+<column name="  ++ OS_FIND_LOOP">3, 15002, 3, -, -, 1 ~ 5000, no</column>
+<column name="  ++ OS_FIND_LOOP">3, 15002, 3, -, -, 1 ~ 5000, no</column>
+<column name="  ++ OS_FIND_LOOP">3, 15002, 3, -, -, 1 ~ 5000, no</column>
+<column name=" + MAKE_PATH_LOOP">6, 12288, 6, -, -, 1 ~ 2048, no</column>
+<column name="- WRITE_BACK_PATH_LOOP">2, 201, 3, 1, 1, 1 ~ 200, yes</column>
 </table>
 </item>
 </section>

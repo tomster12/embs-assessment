@@ -11,8 +11,8 @@ entity toplevel_open_set_heap_x_V_ram is
     generic(
             MEM_TYPE    : string := "block"; 
             DWIDTH     : integer := 9; 
-            AWIDTH     : integer := 15; 
-            MEM_SIZE    : integer := 25000
+            AWIDTH     : integer := 13; 
+            MEM_SIZE    : integer := 5000
     ); 
     port (
           addr0     : in std_logic_vector(AWIDTH-1 downto 0); 
@@ -102,8 +102,8 @@ use IEEE.std_logic_1164.all;
 entity toplevel_open_set_heap_x_V is
     generic (
         DataWidth : INTEGER := 9;
-        AddressRange : INTEGER := 25000;
-        AddressWidth : INTEGER := 15);
+        AddressRange : INTEGER := 5000;
+        AddressWidth : INTEGER := 13);
     port (
         reset : IN STD_LOGIC;
         clk : IN STD_LOGIC;

@@ -106,8 +106,10 @@
     "CSource": ["..\/toplevel.cpp"],
     "Vhdl": [
       "impl\/vhdl\/toplevel_AXILiteS_s_axi.vhd",
-      "impl\/vhdl\/toplevel_closed_set.vhd",
       "impl\/vhdl\/toplevel_control_s_axi.vhd",
+      "impl\/vhdl\/toplevel_dx.vhd",
+      "impl\/vhdl\/toplevel_dy.vhd",
+      "impl\/vhdl\/toplevel_grid_info_V.vhd",
       "impl\/vhdl\/toplevel_local_ram.vhd",
       "impl\/vhdl\/toplevel_mac_muladd_16ns_9ns_9ns_18_4_1.vhd",
       "impl\/vhdl\/toplevel_MAXI_m_axi.vhd",
@@ -115,19 +117,22 @@
       "impl\/vhdl\/toplevel_mul_mul_16ns_16ns_18_4_1.vhd",
       "impl\/vhdl\/toplevel_open_set_heap_f_score_V.vhd",
       "impl\/vhdl\/toplevel_open_set_heap_x_V.vhd",
-      "impl\/vhdl\/toplevel_os_heap_pop.vhd",
-      "impl\/vhdl\/toplevel_os_heap_push.vhd",
-      "impl\/vhdl\/toplevel_os_heap_push_moves_node_f_score_V.vhd",
-      "impl\/vhdl\/toplevel_os_heap_push_moves_node_x_V.vhd",
-      "impl\/vhdl\/toplevel_os_heap_push_moves_target.vhd",
+      "impl\/vhdl\/toplevel_os_sift_up.vhd",
+      "impl\/vhdl\/toplevel_os_sift_up_moves_node_f_score_V.vhd",
+      "impl\/vhdl\/toplevel_os_sift_up_moves_node_x_V.vhd",
+      "impl\/vhdl\/toplevel_os_sift_up_moves_target.vhd",
       "impl\/vhdl\/toplevel_waypoints_x_V.vhd",
       "impl\/vhdl\/toplevel.vhd"
     ],
     "Verilog": [
       "impl\/verilog\/toplevel_AXILiteS_s_axi.v",
-      "impl\/verilog\/toplevel_closed_set.v",
-      "impl\/verilog\/toplevel_closed_set_ram.dat",
       "impl\/verilog\/toplevel_control_s_axi.v",
+      "impl\/verilog\/toplevel_dx.v",
+      "impl\/verilog\/toplevel_dx_rom.dat",
+      "impl\/verilog\/toplevel_dy.v",
+      "impl\/verilog\/toplevel_dy_rom.dat",
+      "impl\/verilog\/toplevel_grid_info_V.v",
+      "impl\/verilog\/toplevel_grid_info_V_ram.dat",
       "impl\/verilog\/toplevel_local_ram.v",
       "impl\/verilog\/toplevel_local_ram_ram.dat",
       "impl\/verilog\/toplevel_mac_muladd_16ns_9ns_9ns_18_4_1.v",
@@ -138,11 +143,10 @@
       "impl\/verilog\/toplevel_open_set_heap_f_score_V_ram.dat",
       "impl\/verilog\/toplevel_open_set_heap_x_V.v",
       "impl\/verilog\/toplevel_open_set_heap_x_V_ram.dat",
-      "impl\/verilog\/toplevel_os_heap_pop.v",
-      "impl\/verilog\/toplevel_os_heap_push.v",
-      "impl\/verilog\/toplevel_os_heap_push_moves_node_f_score_V.v",
-      "impl\/verilog\/toplevel_os_heap_push_moves_node_x_V.v",
-      "impl\/verilog\/toplevel_os_heap_push_moves_target.v",
+      "impl\/verilog\/toplevel_os_sift_up.v",
+      "impl\/verilog\/toplevel_os_sift_up_moves_node_f_score_V.v",
+      "impl\/verilog\/toplevel_os_sift_up_moves_node_x_V.v",
+      "impl\/verilog\/toplevel_os_sift_up_moves_target.v",
       "impl\/verilog\/toplevel_waypoints_x_V.v",
       "impl\/verilog\/toplevel_waypoints_x_V_ram.dat",
       "impl\/verilog\/toplevel.v"
@@ -939,26 +943,13 @@
   "ModuleInfo": {
     "Hierarchy": {
       "ModuleName": "toplevel",
-      "Instances": [
-        {
-          "ModuleName": "os_heap_pop",
-          "InstanceName": "grp_os_heap_pop_fu_566"
-        },
-        {
-          "ModuleName": "os_heap_push",
-          "InstanceName": "grp_os_heap_push_fu_580"
-        }
-      ]
+      "Instances": [{
+          "ModuleName": "os_sift_up",
+          "InstanceName": "grp_os_sift_up_fu_3978"
+        }]
     },
     "Info": {
-      "os_heap_push": {
-        "FunctionProtocol": "ap_ctrl_hs",
-        "isTaskLevelControl": "0",
-        "isPipelined": "0",
-        "isCombinational": "0",
-        "isOneStateSeq": "0"
-      },
-      "os_heap_pop": {
+      "os_sift_up": {
         "FunctionProtocol": "ap_ctrl_hs",
         "isTaskLevelControl": "0",
         "isPipelined": "0",
@@ -974,84 +965,41 @@
       }
     },
     "Metrics": {
-      "os_heap_push": {
+      "os_sift_up": {
         "Latency": {
-          "LatencyBest": "2",
-          "LatencyAvg": "29",
-          "LatencyWorst": "90",
-          "PipelineIIMin": "2",
-          "PipelineIIMax": "90",
-          "PipelineII": "2 ~ 90",
+          "LatencyBest": "9",
+          "LatencyAvg": "39",
+          "LatencyWorst": "74",
+          "PipelineIIMin": "9",
+          "PipelineIIMax": "74",
+          "PipelineII": "9 ~ 74",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
           "Target": "10.00",
           "Uncertainty": "2.70",
-          "Estimate": "5.683"
+          "Estimate": "5.576"
         },
         "Loops": [{
             "Name": "SIFT_UP_COPY_LOOP",
             "TripCount": "",
-            "LatencyMin": "2",
-            "LatencyMax": "32",
-            "Latency": "2 ~ 32",
-            "PipelineII": "",
+            "LatencyMin": "1",
+            "LatencyMax": "16",
+            "Latency": "1 ~ 16",
+            "PipelineII": "1",
             "PipelineDepth": "2"
           }],
         "Area": {
           "BRAM_18K": "0",
           "AVAIL_BRAM": "120",
           "UTIL_BRAM": "0",
-          "FF": "809",
+          "FF": "733",
           "AVAIL_FF": "35200",
           "UTIL_FF": "2",
-          "LUT": "3818",
+          "LUT": "3607",
           "AVAIL_LUT": "17600",
-          "UTIL_LUT": "21",
-          "DSP": "0",
-          "AVAIL_DSP": "80",
-          "UTIL_DSP": "0",
-          "URAM": "0",
-          "AVAIL_URAM": "0",
-          "UTIL_URAM": "0"
-        }
-      },
-      "os_heap_pop": {
-        "Latency": {
-          "LatencyBest": "2",
-          "LatencyAvg": "34",
-          "LatencyWorst": "104",
-          "PipelineIIMin": "2",
-          "PipelineIIMax": "104",
-          "PipelineII": "2 ~ 104",
-          "PipelineDepth": "",
-          "PipelineType": "none"
-        },
-        "Timing": {
-          "Target": "10.00",
-          "Uncertainty": "2.70",
-          "Estimate": "6.718"
-        },
-        "Loops": [{
-            "Name": "SIFT_DOWN_COPY_LOOP",
-            "TripCount": "",
-            "LatencyMin": "2",
-            "LatencyMax": "32",
-            "Latency": "2 ~ 32",
-            "PipelineII": "",
-            "PipelineDepth": "2"
-          }],
-        "Area": {
-          "BRAM_18K": "0",
-          "AVAIL_BRAM": "120",
-          "UTIL_BRAM": "0",
-          "FF": "1518",
-          "AVAIL_FF": "35200",
-          "UTIL_FF": "4",
-          "LUT": "4514",
-          "AVAIL_LUT": "17600",
-          "UTIL_LUT": "25",
+          "UTIL_LUT": "20",
           "DSP": "0",
           "AVAIL_DSP": "80",
           "UTIL_DSP": "0",
@@ -1072,13 +1020,13 @@
         "Timing": {
           "Target": "10.00",
           "Uncertainty": "2.70",
-          "Estimate": "8.006"
+          "Estimate": "7.300"
         },
         "Loops": [
           {
             "Name": "COPY_RAM_LOOP",
-            "TripCount": "7830",
-            "Latency": "7831",
+            "TripCount": "8031",
+            "Latency": "8032",
             "PipelineII": "1",
             "PipelineDepth": "3"
           },
@@ -1097,9 +1045,9 @@
             "PipelineDepth": "",
             "Loops": [
               {
-                "Name": "EMPTY_CLOSED_SET_LOOP",
-                "TripCount": "7813",
-                "Latency": "7813",
+                "Name": "EMPTY_GRID_INFO_LOOP",
+                "TripCount": "250000",
+                "Latency": "250000",
                 "PipelineII": "1",
                 "PipelineDepth": "1"
               },
@@ -1108,26 +1056,91 @@
                 "TripCount": "",
                 "Latency": "",
                 "PipelineII": "",
-                "PipelineDepthMin": "11",
-                "PipelineDepthMax": "503",
-                "PipelineDepth": "11 ~ 503"
+                "PipelineDepthMin": "13",
+                "PipelineDepthMax": "60446",
+                "PipelineDepth": "13 ~ 60446",
+                "Loops": [
+                  {
+                    "Name": "SIFT_DOWN_COPY_LOOP",
+                    "TripCount": "",
+                    "LatencyMin": "1",
+                    "LatencyMax": "16",
+                    "Latency": "1 ~ 16",
+                    "PipelineII": "1",
+                    "PipelineDepth": "2"
+                  },
+                  {
+                    "Name": "OS_FIND_LOOP",
+                    "TripCount": "",
+                    "LatencyMin": "3",
+                    "LatencyMax": "15002",
+                    "Latency": "3 ~ 15002",
+                    "PipelineII": "",
+                    "PipelineDepth": "3"
+                  },
+                  {
+                    "Name": "OS_FIND_LOOP",
+                    "TripCount": "",
+                    "LatencyMin": "3",
+                    "LatencyMax": "15002",
+                    "Latency": "3 ~ 15002",
+                    "PipelineII": "",
+                    "PipelineDepth": "3"
+                  },
+                  {
+                    "Name": "OS_FIND_LOOP",
+                    "TripCount": "",
+                    "LatencyMin": "3",
+                    "LatencyMax": "15002",
+                    "Latency": "3 ~ 15002",
+                    "PipelineII": "",
+                    "PipelineDepth": "3"
+                  },
+                  {
+                    "Name": "OS_FIND_LOOP",
+                    "TripCount": "",
+                    "LatencyMin": "3",
+                    "LatencyMax": "15002",
+                    "Latency": "3 ~ 15002",
+                    "PipelineII": "",
+                    "PipelineDepth": "3"
+                  }
+                ]
+              },
+              {
+                "Name": "MAKE_PATH_LOOP",
+                "TripCount": "",
+                "LatencyMin": "6",
+                "LatencyMax": "12288",
+                "Latency": "6 ~ 12288",
+                "PipelineII": "",
+                "PipelineDepth": "6"
               }
             ]
+          },
+          {
+            "Name": "WRITE_BACK_PATH_LOOP",
+            "TripCount": "",
+            "LatencyMin": "2",
+            "LatencyMax": "201",
+            "Latency": "2 ~ 201",
+            "PipelineII": "1",
+            "PipelineDepth": "3"
           }
         ],
         "Area": {
-          "BRAM_18K": "114",
+          "BRAM_18K": "88",
           "AVAIL_BRAM": "120",
-          "UTIL_BRAM": "95",
-          "DSP": "4",
+          "UTIL_BRAM": "73",
+          "DSP": "5",
           "AVAIL_DSP": "80",
-          "UTIL_DSP": "5",
-          "FF": "4229",
+          "UTIL_DSP": "6",
+          "FF": "5461",
           "AVAIL_FF": "35200",
-          "UTIL_FF": "12",
-          "LUT": "12507",
+          "UTIL_FF": "15",
+          "LUT": "14431",
           "AVAIL_LUT": "17600",
-          "UTIL_LUT": "71",
+          "UTIL_LUT": "81",
           "URAM": "0",
           "AVAIL_URAM": "0",
           "UTIL_URAM": "0"
@@ -1138,7 +1151,7 @@
   "GenerateBdFiles": "0",
   "GenData": {
     "DataVersion": "0.2",
-    "Time": "2025-05-08 00:51:10 BST",
+    "Time": "2025-05-08 19:36:38 BST",
     "ToolName": "vivado_hls",
     "ToolVersion": "2020.2"
   }

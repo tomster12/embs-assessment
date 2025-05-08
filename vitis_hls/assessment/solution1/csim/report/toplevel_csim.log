@@ -1,10 +1,15 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch GCC as the compiler.
    Compiling ../../../testbench.cpp in debug mode
-   Compiling ../../../toplevel.cpp in debug mode
    Generating csim.exe
 Starting testbench
-World Bitmap (0 x 0)
+Test: 655368
+Test: 0
+Test: 196611
+Test: 458753
+Test: 458757
+Running toplevel from testbench
+World Bitmap (10 x 10), waypoints=8, length=36
 Waypoint 0 at 3, 3
 Waypoint 1 at 7, 1
 Waypoint 2 at 7, 5
@@ -13,7 +18,16 @@ Waypoint 4 at 1, 7
 Waypoint 5 at 1, 0
 Waypoint 6 at 0, 0
 Waypoint 7 at 0, 0
-Running toplevel from testbench
+ .   ...  
+ .O  .O.  
+ .O  .O.O 
+ .O...O.  
+ .O   O.  
+ .O   O.  
+ .O   O.O 
+ .O...O.O 
+ .O.O.O.O 
+ ... ...  
 Total Path Length: 36, code: 0
 Test Passed.
 INFO: [SIM 1] CSim done with 0 errors.

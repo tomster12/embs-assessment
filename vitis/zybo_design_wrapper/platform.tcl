@@ -124,3 +124,18 @@ platform config -updatehw {/home/tomster12/files/EMBS/vivado/zybo_design_wrapper
 platform generate -domains 
 platform config -updatehw {/home/tomster12/files/EMBS/vivado/zybo_design_wrapper.xsa}
 platform generate -domains 
+platform active {zybo_design_wrapper}
+platform config -updatehw {/home/tomster12/files/EMBS/vivado/zybo_design_wrapper.xsa}
+platform generate -domains 
+platform config -updatehw {/home/tomster12/files/EMBS/vivado/zybo_design_wrapper.xsa}
+platform generate -domains 
+platform config -updatehw {/home/tomster12/files/EMBS/vivado/zybo_design_wrapper.xsa}
+platform generate -domains 
+platform config -updatehw {/home/tomster12/files/EMBS/vivado/zybo_design_wrapper.xsa}
+platform generate -domains 
+platform config -updatehw {/home/tomster12/files/EMBS/vivado/zybo_design_wrapper.xsa}
+platform generate -domains 
+platform config -updatehw {/home/tomster12/files/EMBS/vivado/zybo_design_wrapper.xsa}
+platform generate -domains 
+platform config -updatehw {/home/tomster12/files/EMBS/vivado/zybo_design_wrapper.xsa}
+platform generate -domains 

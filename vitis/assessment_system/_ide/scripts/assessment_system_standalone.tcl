@@ -15,7 +15,7 @@ connect -path [list tcp::1534 tcp:localhost:12345]
 targets -set -nocase -filter {name =~"APU*"}
 rst -system
 after 3000
-targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78131A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78131A-13722093-0"}
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A780DAA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A780DAA-13722093-0"}
 fpga -file /home/tomster12/files/EMBS/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
 targets -set -nocase -filter {name =~"APU*"}
 loadhw -hw /home/tomster12/files/EMBS/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs

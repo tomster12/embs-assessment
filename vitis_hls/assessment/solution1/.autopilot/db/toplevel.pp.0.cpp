@@ -392,6 +392,435 @@ typedef __uintmax_t uintmax_t;
 
 __attribute__((sdx_kernel("toplevel", 0))) void toplevel(uint32_t *ram, uint32_t *code);
 # 2 "assessment/toplevel.cpp" 2
+# 1 "/usr/include/string.h" 1 3 4
+# 26 "/usr/include/string.h" 3 4
+# 1 "/usr/include/bits/libc-header-start.h" 1 3 4
+# 27 "/usr/include/string.h" 2 3 4
+
+extern "C" {
+
+
+
+
+
+# 1 "/opt/Xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/lib/clang/7.0.0/include/stddef.h" 1 3 4
+# 62 "/opt/Xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/lib/clang/7.0.0/include/stddef.h" 3 4
+typedef long unsigned int size_t;
+# 34 "/usr/include/string.h" 2 3 4
+# 43 "/usr/include/string.h" 3 4
+extern void *memcpy (void *__restrict __dest, const void *__restrict __src,
+       size_t __n) noexcept (true) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern void *memmove (void *__dest, const void *__src, size_t __n)
+     noexcept (true) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+
+extern void *memccpy (void *__restrict __dest, const void *__restrict __src,
+        int __c, size_t __n)
+    noexcept (true) __attribute__ ((__nonnull__ (1, 2))) ;
+
+
+
+
+extern void *memset (void *__s, int __c, size_t __n) noexcept (true) __attribute__ ((__nonnull__ (1)));
+
+
+extern int memcmp (const void *__s1, const void *__s2, size_t __n)
+     noexcept (true) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+# 80 "/usr/include/string.h" 3 4
+extern int __memcmpeq (const void *__s1, const void *__s2, size_t __n)
+     noexcept (true) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+extern "C++"
+{
+extern void *memchr (void *__s, int __c, size_t __n)
+      noexcept (true) __asm ("memchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+extern const void *memchr (const void *__s, int __c, size_t __n)
+      noexcept (true) __asm ("memchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+# 105 "/usr/include/string.h" 3 4
+}
+# 115 "/usr/include/string.h" 3 4
+extern "C++" void *rawmemchr (void *__s, int __c)
+     noexcept (true) __asm ("rawmemchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+extern "C++" const void *rawmemchr (const void *__s, int __c)
+     noexcept (true) __asm ("rawmemchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+
+extern "C++" void *memrchr (void *__s, int __c, size_t __n)
+      noexcept (true) __asm ("memrchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)))
+                                           ;
+extern "C++" const void *memrchr (const void *__s, int __c, size_t __n)
+      noexcept (true) __asm ("memrchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)))
+                                           ;
+# 141 "/usr/include/string.h" 3 4
+extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+     noexcept (true) __attribute__ ((__nonnull__ (1, 2)));
+
+extern char *strncpy (char *__restrict __dest,
+        const char *__restrict __src, size_t __n)
+     noexcept (true) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern char *strcat (char *__restrict __dest, const char *__restrict __src)
+     noexcept (true) __attribute__ ((__nonnull__ (1, 2)));
+
+extern char *strncat (char *__restrict __dest, const char *__restrict __src,
+        size_t __n) noexcept (true) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int strcmp (const char *__s1, const char *__s2)
+     noexcept (true) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+extern int strncmp (const char *__s1, const char *__s2, size_t __n)
+     noexcept (true) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int strcoll (const char *__s1, const char *__s2)
+     noexcept (true) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+extern size_t strxfrm (char *__restrict __dest,
+         const char *__restrict __src, size_t __n)
+    noexcept (true) __attribute__ ((__nonnull__ (2))) ;
+
+
+
+
+# 1 "/usr/include/bits/types/locale_t.h" 1 3 4
+# 22 "/usr/include/bits/types/locale_t.h" 3 4
+# 1 "/usr/include/bits/types/__locale_t.h" 1 3 4
+# 27 "/usr/include/bits/types/__locale_t.h" 3 4
+struct __locale_struct
+{
+
+  struct __locale_data *__locales[13];
+
+
+  const unsigned short int *__ctype_b;
+  const int *__ctype_tolower;
+  const int *__ctype_toupper;
+
+
+  const char *__names[13];
+};
+
+typedef struct __locale_struct *__locale_t;
+# 23 "/usr/include/bits/types/locale_t.h" 2 3 4
+
+typedef __locale_t locale_t;
+# 173 "/usr/include/string.h" 2 3 4
+
+
+extern int strcoll_l (const char *__s1, const char *__s2, locale_t __l)
+     noexcept (true) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2, 3)));
+
+
+extern size_t strxfrm_l (char *__dest, const char *__src, size_t __n,
+    locale_t __l) noexcept (true) __attribute__ ((__nonnull__ (2, 4)))
+                                           ;
+
+
+
+
+
+extern char *strdup (const char *__s)
+     noexcept (true) __attribute__ ((__malloc__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+extern char *strndup (const char *__string, size_t __n)
+     noexcept (true) __attribute__ ((__malloc__)) __attribute__ ((__nonnull__ (1)));
+# 224 "/usr/include/string.h" 3 4
+extern "C++"
+{
+extern char *strchr (char *__s, int __c)
+     noexcept (true) __asm ("strchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+extern const char *strchr (const char *__s, int __c)
+     noexcept (true) __asm ("strchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+# 244 "/usr/include/string.h" 3 4
+}
+
+
+
+
+
+
+extern "C++"
+{
+extern char *strrchr (char *__s, int __c)
+     noexcept (true) __asm ("strrchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+extern const char *strrchr (const char *__s, int __c)
+     noexcept (true) __asm ("strrchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+# 271 "/usr/include/string.h" 3 4
+}
+# 281 "/usr/include/string.h" 3 4
+extern "C++" char *strchrnul (char *__s, int __c)
+     noexcept (true) __asm ("strchrnul") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+extern "C++" const char *strchrnul (const char *__s, int __c)
+     noexcept (true) __asm ("strchrnul") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+# 293 "/usr/include/string.h" 3 4
+extern size_t strcspn (const char *__s, const char *__reject)
+     noexcept (true) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern size_t strspn (const char *__s, const char *__accept)
+     noexcept (true) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern "C++"
+{
+extern char *strpbrk (char *__s, const char *__accept)
+     noexcept (true) __asm ("strpbrk") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+extern const char *strpbrk (const char *__s, const char *__accept)
+     noexcept (true) __asm ("strpbrk") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+# 321 "/usr/include/string.h" 3 4
+}
+
+
+
+
+
+
+extern "C++"
+{
+extern char *strstr (char *__haystack, const char *__needle)
+     noexcept (true) __asm ("strstr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+extern const char *strstr (const char *__haystack, const char *__needle)
+     noexcept (true) __asm ("strstr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+# 348 "/usr/include/string.h" 3 4
+}
+
+
+
+
+
+
+
+extern char *strtok (char *__restrict __s, const char *__restrict __delim)
+     noexcept (true) __attribute__ ((__nonnull__ (2)));
+
+
+
+extern char *__strtok_r (char *__restrict __s,
+    const char *__restrict __delim,
+    char **__restrict __save_ptr)
+     noexcept (true) __attribute__ ((__nonnull__ (2, 3)));
+
+extern char *strtok_r (char *__restrict __s, const char *__restrict __delim,
+         char **__restrict __save_ptr)
+     noexcept (true) __attribute__ ((__nonnull__ (2, 3)));
+
+
+
+
+
+extern "C++" char *strcasestr (char *__haystack, const char *__needle)
+     noexcept (true) __asm ("strcasestr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+extern "C++" const char *strcasestr (const char *__haystack,
+         const char *__needle)
+     noexcept (true) __asm ("strcasestr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+# 389 "/usr/include/string.h" 3 4
+extern void *memmem (const void *__haystack, size_t __haystacklen,
+       const void *__needle, size_t __needlelen)
+     noexcept (true) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 3)))
+
+                                         ;
+
+
+
+extern void *__mempcpy (void *__restrict __dest,
+   const void *__restrict __src, size_t __n)
+     noexcept (true) __attribute__ ((__nonnull__ (1, 2)));
+extern void *mempcpy (void *__restrict __dest,
+        const void *__restrict __src, size_t __n)
+     noexcept (true) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+extern size_t strlen (const char *__s)
+     noexcept (true) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+extern size_t strnlen (const char *__string, size_t __maxlen)
+     noexcept (true) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+extern char *strerror (int __errnum) noexcept (true);
+# 444 "/usr/include/string.h" 3 4
+extern char *strerror_r (int __errnum, char *__buf, size_t __buflen)
+     noexcept (true) __attribute__ ((__nonnull__ (2))) ;
+
+
+
+
+extern const char *strerrordesc_np (int __err) noexcept (true);
+
+extern const char *strerrorname_np (int __err) noexcept (true);
+
+
+
+
+
+extern char *strerror_l (int __errnum, locale_t __l) noexcept (true);
+
+
+
+
+# 1 "/usr/include/strings.h" 1 3 4
+# 23 "/usr/include/strings.h" 3 4
+# 1 "/opt/Xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/lib/clang/7.0.0/include/stddef.h" 1 3 4
+# 24 "/usr/include/strings.h" 2 3 4
+
+
+
+
+
+
+extern "C" {
+
+
+
+extern int bcmp (const void *__s1, const void *__s2, size_t __n)
+     noexcept (true) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern void bcopy (const void *__src, void *__dest, size_t __n)
+  noexcept (true) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern void bzero (void *__s, size_t __n) noexcept (true) __attribute__ ((__nonnull__ (1)));
+# 68 "/usr/include/strings.h" 3 4
+extern char *index (const char *__s, int __c)
+     noexcept (true) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+# 96 "/usr/include/strings.h" 3 4
+extern char *rindex (const char *__s, int __c)
+     noexcept (true) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+extern int ffs (int __i) noexcept (true) __attribute__ ((__const__));
+
+
+
+
+
+extern int ffsl (long int __l) noexcept (true) __attribute__ ((__const__));
+__extension__ extern int ffsll (long long int __ll)
+     noexcept (true) __attribute__ ((__const__));
+
+
+
+extern int strcasecmp (const char *__s1, const char *__s2)
+     noexcept (true) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int strncasecmp (const char *__s1, const char *__s2, size_t __n)
+     noexcept (true) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+
+
+extern int strcasecmp_l (const char *__s1, const char *__s2, locale_t __loc)
+     noexcept (true) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2, 3)));
+
+
+
+extern int strncasecmp_l (const char *__s1, const char *__s2,
+     size_t __n, locale_t __loc)
+     noexcept (true) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2, 4)));
+
+
+}
+# 463 "/usr/include/string.h" 2 3 4
+
+
+
+extern void explicit_bzero (void *__s, size_t __n) noexcept (true) __attribute__ ((__nonnull__ (1)))
+                                                  ;
+
+
+
+extern char *strsep (char **__restrict __stringp,
+       const char *__restrict __delim)
+     noexcept (true) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+extern char *strsignal (int __sig) noexcept (true);
+
+
+
+extern const char *sigabbrev_np (int __sig) noexcept (true);
+
+
+extern const char *sigdescr_np (int __sig) noexcept (true);
+
+
+
+extern char *__stpcpy (char *__restrict __dest, const char *__restrict __src)
+     noexcept (true) __attribute__ ((__nonnull__ (1, 2)));
+extern char *stpcpy (char *__restrict __dest, const char *__restrict __src)
+     noexcept (true) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+extern char *__stpncpy (char *__restrict __dest,
+   const char *__restrict __src, size_t __n)
+     noexcept (true) __attribute__ ((__nonnull__ (1, 2)));
+extern char *stpncpy (char *__restrict __dest,
+        const char *__restrict __src, size_t __n)
+     noexcept (true) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+extern int strverscmp (const char *__s1, const char *__s2)
+     noexcept (true) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern char *strfry (char *__string) noexcept (true) __attribute__ ((__nonnull__ (1)));
+
+
+extern void *memfrob (void *__s, size_t __n) noexcept (true) __attribute__ ((__nonnull__ (1)))
+                                          ;
+
+
+
+
+
+
+
+extern "C++" char *basename (char *__filename)
+     noexcept (true) __asm ("basename") __attribute__ ((__nonnull__ (1)));
+extern "C++" const char *basename (const char *__filename)
+     noexcept (true) __asm ("basename") __attribute__ ((__nonnull__ (1)));
+# 539 "/usr/include/string.h" 3 4
+}
+# 3 "assessment/toplevel.cpp" 2
 # 1 "/opt/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/ap_int.h" 1
 # 55 "/opt/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/ap_int.h"
 # 1 "/opt/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/ap_common.h" 1
@@ -5817,8 +6246,8 @@ inline bool operator!=(
 }
 # 396 "/opt/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/ap_fixed.h" 2
 # 365 "/opt/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/ap_int.h" 2
-# 3 "assessment/toplevel.cpp" 2
-# 29 "assessment/toplevel.cpp"
+# 4 "assessment/toplevel.cpp" 2
+# 34 "assessment/toplevel.cpp"
 struct Coord {
     ap_uint<9> x;
     ap_uint<9> y;
@@ -5837,41 +6266,47 @@ struct MoveAction {
 };
 
 static Coord waypoints[16];
-static ASNode open_set_heap[25000];
-static uint32_t closed_set[((500 * 500 + 31) / 32)];
-static uint32_t local_ram[(1 + 16 + ((500 * 500 + 31) / 32))];
+static ASNode open_set_heap[5000];
+static ap_uint<3> grid_info[500 * 500];
+static uint32_t local_ram[(2 + 16 + ((500 * 500 + 31) / 32) + (200))];
 static uint16_t open_set_size;
 static uint16_t world_size;
 static uint8_t waypoint_count;
-static int error_flag;
+static uint32_t error_flag;
+const int8_t dx[] = {0, -1, 0, 1};
+const int8_t dy[] = {-1, 0, 1, 0};
 
 
 
-int get_world_bit(ap_uint<9> x, ap_uint<9> y) {
+int get_world_bit(uint16_t x, uint16_t y) {
 #pragma HLS INLINE
- ap_uint<18> idx = x + y * world_size;
- uint16_t word_idx = idx / 32;
- uint16_t bit_idx = idx % 32;
-    return (local_ram[(1 + 16) + word_idx] >> bit_idx) & 1;
+ uint32_t idx = x + y * world_size;
+    uint32_t word = idx / 32;
+    uint32_t bit = idx % 32;
+    return (local_ram[2 + 16 + word] >> bit) & 1;
 }
 
-int is_closed(ap_uint<9> x, ap_uint<9> y) {
+int is_closed(uint16_t x, uint16_t y) {
 #pragma HLS INLINE
- ap_uint<18> idx = x + y * world_size;
-    uint16_t word_idx = idx / 32;
-    uint16_t bit_idx = idx % 32;
-    return (closed_set[word_idx] >> bit_idx) & 1;
+ return grid_info[x + y * world_size] & (ap_uint<3>)0b001;
 }
 
-void set_closed(ap_uint<9> x, ap_uint<9> y) {
+void set_closed(uint16_t x, uint16_t y) {
 #pragma HLS INLINE
- ap_uint<18> idx = x + y * world_size;
-    uint16_t word_idx = idx / 32;
-    uint16_t bit_idx = idx % 32;
-    closed_set[word_idx] |= (1U << bit_idx);
+ grid_info[x + y * world_size] |= (ap_uint<3>)0b001;
 }
 
-static inline ap_uint<9> abs_sub(ap_uint<9> a, ap_uint<9> b) {
+uint8_t get_dir(uint16_t x, uint16_t y) {
+#pragma HLS INLINE
+ return (ap_uint<3>)((grid_info[x + y * world_size] & 0b110) >> 1);
+}
+
+void set_dir(uint16_t x, uint16_t y, uint8_t dir) {
+#pragma HLS INLINE
+ grid_info[x + y * world_size] |= (ap_uint<3>)((dir & 0b011) << 1);
+}
+
+static inline uint16_t abs_sub(uint16_t a, uint16_t b) {
 #pragma HLS INLINE
  return (a > b) ? (a - b) : (b - a);
 }
@@ -5895,11 +6330,12 @@ void copy_asnode(ASNode *a, ASNode *b) {
 void os_sift_down(uint16_t idx) {
 #pragma HLS INLINE
 
- ASNode node = open_set_heap[idx];
+ uint16_t current = idx;
+ ASNode node = open_set_heap[current];
  MoveAction moves[16];
  uint8_t move_count = 0;
 
- VITIS_LOOP_109_1: for (uint8_t i = 0; i < 16; i++) {
+ VITIS_LOOP_121_1: for (uint8_t i = 0; i < 16; i++) {
      moves[i].node.f_score = 0;
      moves[i].node.g_score = 0;
      moves[i].node.x = 0;
@@ -5912,10 +6348,10 @@ void os_sift_down(uint16_t idx) {
 #pragma HLS LOOP_TRIPCOUNT min=1 max=16
 #pragma HLS PIPELINE II=1
 
- uint16_t left = 2 * idx + 1;
-  uint16_t right = 2 * idx + 2;
-  ap_uint<11> left_f = ((2 << 10) - 1);
-  ap_uint<11> right_f = ((2 << 10) - 1);
+ uint16_t left = 2 * current + 1;
+  uint16_t right = 2 * current + 2;
+  ap_uint<11> left_f = ((1 << 11) - 1);
+  ap_uint<11> right_f = ((1 << 11) - 1);
 
   if (left < open_set_size) left_f = open_set_heap[left].f_score;
   if (right < open_set_size) right_f = open_set_heap[right].f_score;
@@ -5929,16 +6365,16 @@ void os_sift_down(uint16_t idx) {
   else if (left_f < right_f) {
          ((void)0);
    copy_asnode(&moves[move_count].node, &open_set_heap[left]);
-   moves[move_count].target = idx;
+   moves[move_count].target = current;
    move_count++;
-   idx = left;
+   current = left;
   }
   else {
          ((void)0);
    copy_asnode(&moves[move_count].node, &open_set_heap[right]);
-   moves[move_count].target = idx;
+   moves[move_count].target = current;
    move_count++;
-   idx = right;
+   current = right;
   }
  }
 
@@ -5946,20 +6382,22 @@ void os_sift_down(uint16_t idx) {
  if (move_count > 0) {
   SIFT_DOWN_COPY_LOOP: for (uint8_t i = 0; i < move_count; ++i) {
 #pragma HLS LOOP_TRIPCOUNT min=1 max=16
+#pragma HLS PIPELINE II=1
  copy_asnode(&open_set_heap[moves[i].target], &moves[i].node);
   }
-  copy_asnode(&open_set_heap[idx], &node);
+  copy_asnode(&open_set_heap[current], &node);
  }
 }
 
 void os_sift_up(uint16_t idx) {
-#pragma HLS INLINE
+#pragma HLS INLINE off
 
- ASNode node = open_set_heap[idx];
+ uint16_t current = idx;
+ ASNode node = open_set_heap[current];
  MoveAction moves[16];
  uint8_t move_count = 0;
 
- VITIS_LOOP_169_1: for (uint8_t i = 0; i < 16; i++) {
+ VITIS_LOOP_183_1: for (uint8_t i = 0; i < 16; i++) {
      moves[i].node.f_score = 0;
      moves[i].node.g_score = 0;
      moves[i].node.x = 0;
@@ -5970,15 +6408,16 @@ void os_sift_up(uint16_t idx) {
 
  SIFT_UP_LOOP: for (uint8_t depth = 0; depth < 16; depth++) {
 #pragma HLS LOOP_TRIPCOUNT min=1 max=16
+#pragma HLS PIPELINE II=1
 
 
- if (idx == 0) {
+ if (current == 0) {
    ((void)0);
    break;
   }
 
 
-        uint16_t parent = (idx - 1) / 2;
+        uint16_t parent = (current - 1) / 2;
         ASNode parent_node = open_set_heap[parent];
         if (parent_node.f_score < node.f_score) {
          ((void)0);
@@ -5988,26 +6427,27 @@ void os_sift_up(uint16_t idx) {
 
      ((void)0);
   copy_asnode(&moves[move_count].node, &parent_node);
-  moves[move_count].target = idx;
+  moves[move_count].target = current;
   move_count++;
-  idx = parent;
+  current = parent;
  }
 
 
  if (move_count > 0) {
   SIFT_UP_COPY_LOOP: for (uint8_t i = 0; i < move_count; ++i) {
 #pragma HLS LOOP_TRIPCOUNT min=1 max=16
+#pragma HLS PIPELINE II=1
  copy_asnode(&open_set_heap[moves[i].target], &moves[i].node);
   }
-  copy_asnode(&open_set_heap[idx], &node);
+  copy_asnode(&open_set_heap[current], &node);
  }
 }
 
 void os_heap_push(ASNode node) {
+#pragma HLS INLINE
 
 
-
-    if (open_set_size >= 25000) {
+ if (open_set_size >= 5000) {
         open_set_heap[open_set_size - 1] = node;
         error_flag = 20000;
     }
@@ -6026,10 +6466,10 @@ void os_heap_push(ASNode node) {
 }
 
 ASNode os_heap_pop() {
+#pragma HLS INLINE
 
 
-
-    ASNode min_node = open_set_heap[0];
+ ASNode min_node = open_set_heap[0];
     open_set_heap[0] = open_set_heap[open_set_size - 1];
     open_set_size--;
 
@@ -6042,13 +6482,26 @@ ASNode os_heap_pop() {
     return min_node;
 }
 
+uint16_t os_find(ap_uint<11> x, ap_uint<11> y) {
+#pragma HLS INLINE
+
+
+ OS_FIND_LOOP: for (uint16_t i = 0; i < open_set_size; ++i) {
+#pragma HLS LOOP_TRIPCOUNT min=1 max=5000
+ if (open_set_heap[i].x == x && open_set_heap[i].y == y) {
+   return i;
+  }
+ }
+ return open_set_size;
+}
+
 
 
 int a_star(Coord start, Coord goal) {
 #pragma HLS INLINE
 
- EMPTY_CLOSED_SET_LOOP: for (uint16_t i = 0; i < ((500 * 500 + 31) / 32); ++i) {
-     closed_set[i] = 0;
+ EMPTY_GRID_INFO_LOOP: for (uint32_t i = 0; i < 500 * 500; ++i) {
+     grid_info[i] = (ap_uint<3>)0;
     }
 
     open_set_size = 0;
@@ -6059,13 +6512,10 @@ int a_star(Coord start, Coord goal) {
     if (error_flag != 0) {
      return 0;
     }
+# 308 "assessment/toplevel.cpp"
+    const uint32_t iteration_limit = world_size * world_size;
 
 
-
-
-
-
-    const uint32_t iteration_limit = (uint32_t)(world_size * world_size * 2);
     uint32_t iteration = 0;
     AS_SEARCH_LOOP: for (; iteration < iteration_limit; ++iteration) {
 #pragma HLS PIPELINE
@@ -6081,26 +6531,19 @@ int a_star(Coord start, Coord goal) {
         if (current.x == goal.x && current.y == goal.y) {
          return current.g_score;
         }
-
-        if (is_closed(current.x, current.y)) {
-         ((void)0);
-         continue;
-        }
-
+# 334 "assessment/toplevel.cpp"
         set_closed(current.x, current.y);
 
         ((void)0);
-        const int8_t dx[] = {0, 0, -1, 1};
-        const int8_t dy[] = {-1, 1, 0, 0};
-        EXPLORE_NEIGHBORS_LOOP: for (uint8_t i = 0; i < 4; ++i) {
+        EXPLORE_NEIGHBORS_LOOP: for (uint8_t dir = 0; dir < 4; ++dir) {
 #pragma HLS UNROLL
 
- if ((current.x == 0 && dx[i] < 0) || (current.y == 0 && dy[i] < 0)) {
+ if ((current.x == 0 && dx[dir] < 0) || (current.y == 0 && dy[dir] < 0)) {
           continue;
          }
 
-         ap_uint<9> n_x = current.x + dx[i];
-         ap_uint<9> n_y = current.y + dy[i];
+         ap_uint<9> n_x = current.x + dx[dir];
+         ap_uint<9> n_y = current.y + dy[dir];
 
             if (n_x >= world_size || n_y >= world_size) {
           ((void)0);
@@ -6118,17 +6561,32 @@ int a_star(Coord start, Coord goal) {
             }
 
             Coord n_pos = {n_x, n_y};
-            ap_uint<11> n_g_score_tentative = current.g_score + 1;
             ap_uint<11> n_h_score = heuristic(n_pos, goal);
-            ap_uint<11> n_f_score = n_g_score_tentative + n_h_score;
+            ap_uint<11> n_g_score = current.g_score + 1;
+            ap_uint<11> n_f_score = n_g_score + n_h_score;
 
-            ((void)0);
 
-            ASNode neighbour_node = {n_f_score, n_g_score_tentative, n_x, n_y};
-            os_heap_push(neighbour_node);
-            if (error_flag != 0) {
-             return 0;
+            uint16_t existing_idx = os_find(n_x, n_y);
+            if (existing_idx < open_set_size) {
+             if (n_f_score < open_set_heap[existing_idx].f_score) {
+                    ((void)0);
+                 open_set_heap[existing_idx].f_score = n_f_score;
+                 open_set_heap[existing_idx].g_score = n_g_score;
+                 set_dir(n_x, n_y, dir);
+                 os_sift_up(existing_idx);
+             } else {
+                    ((void)0);
+             }
+            } else {
+                ((void)0);
+                ASNode neighbour_node = {n_f_score, n_g_score, n_x, n_y};
+             set_dir(n_x, n_y, dir);
+                os_heap_push(neighbour_node);
+                if (error_flag != 0) {
+                 return 0;
+                }
             }
+# 396 "assessment/toplevel.cpp"
         }
     }
 
@@ -6143,14 +6601,14 @@ int a_star(Coord start, Coord goal) {
 
 __attribute__((sdx_kernel("toplevel", 0))) void toplevel(uint32_t *ram, uint32_t *code) {
 #pragma HLS TOP name=toplevel
-# 351 "assessment/toplevel.cpp"
+# 408 "assessment/toplevel.cpp"
 
-#pragma HLS INTERFACE m_axi port=ram offset=slave bundle=MAXI max_widen_bitwidth=32 depth=7827
+#pragma HLS INTERFACE m_axi port=ram offset=slave bundle=MAXI max_widen_bitwidth=32 depth=8031
 #pragma HLS INTERFACE s_axilite port=code bundle=AXILiteS
 #pragma HLS INTERFACE s_axilite port=return bundle=AXILiteS
 
 #pragma HLS BIND_STORAGE variable=local_ram type=RAM_T2P impl=BRAM
-#pragma HLS BIND_STORAGE variable=closed_set type=RAM_T2P impl=BRAM
+#pragma HLS BIND_STORAGE variable=grid_info type=RAM_T2P impl=BRAM
 #pragma HLS BIND_STORAGE variable=open_set_heap type=RAM_T2P impl=BRAM
 
  ((void)0);
@@ -6159,7 +6617,7 @@ __attribute__((sdx_kernel("toplevel", 0))) void toplevel(uint32_t *ram, uint32_t
     error_flag = 0;
     open_set_size = 0;
 
-    COPY_RAM_LOOP: for (uint16_t i = 0; i < (1 + 16 + ((500 * 500 + 31) / 32)); ++i) {
+    COPY_RAM_LOOP: for (uint16_t i = 0; i < (2 + 16 + ((500 * 500 + 31) / 32) + (200)); ++i) {
      local_ram[i] = ram[i];
     }
 
@@ -6167,13 +6625,13 @@ __attribute__((sdx_kernel("toplevel", 0))) void toplevel(uint32_t *ram, uint32_t
     waypoint_count = local_ram[0] & 0xFFFF;
 
     if (world_size == 0 || world_size > 500 || waypoint_count < 2 || waypoint_count > 16) {
-     ram[0] = 0;
+     ram[1] = 0;
      *code = 10000;
      return;
     }
 
     WAYPOINT_EXTRACT_LOOP: for (uint8_t i = 0; i < waypoint_count; ++i) {
-        uint32_t wp = local_ram[1 + i];
+        uint32_t wp = local_ram[2 + i];
         waypoints[i].x = (wp >> 16) & 0xFFFF;
         waypoints[i].y = wp & 0xFFFF;
     }
@@ -6187,14 +6645,39 @@ __attribute__((sdx_kernel("toplevel", 0))) void toplevel(uint32_t *ram, uint32_t
     WAYPOINT_LOOP: for (uint8_t i = 0; i < waypoint_count - 1; ++i) {
      ((void)0);
 
-        total_length += a_star(waypoints[i], waypoints[i + 1]);
+        uint32_t length = a_star(waypoints[i], waypoints[i + 1]);
+        total_length += length;
 
         if (error_flag != 0) {
          error_flag += (i + 1) * 1;
             break;
         }
+
+
+        if (total_length < 200) {
+            Coord current = waypoints[i + 1];
+            MAKE_PATH_LOOP: for (uint32_t i = 0; i <= length; ++i) {
+#pragma HLS UNROLL
+ uint32_t path_index = total_length - i;
+             ((void)0);
+             local_ram[2 + 16 + ((500 * 500 + 31) / 32) + path_index] = (((uint16_t)current.x) << 16) | ((uint16_t)current.y);
+       ap_uint<3> back_dir = (get_dir(current.x, current.y) + 2) % 4;
+       current.x += dx[back_dir];
+       current.y += dy[back_dir];
+            }
+        }
     }
 
-    ram[0] = total_length;
+    ram[1] = total_length;
+
+    if (total_length < 200) {
+  WRITE_BACK_PATH_LOOP: for (uint32_t i = 0; i < total_length; ++i) {
+#pragma HLS LOOP_TRIPCOUNT min=1 max=200
+ ram[2 + 16 + ((500 * 500 + 31) / 32) + i] = local_ram[2 + 16 + ((500 * 500 + 31) / 32) + i];
+  }
+    } else {
+     error_flag += 500;
+    }
+
     *code = error_flag;
 }

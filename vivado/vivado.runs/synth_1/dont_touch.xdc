@@ -6,64 +6,58 @@
 # Block Designs: bd/zybo_design/zybo_design.bd
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zybo_design || ORIG_REF_NAME==zybo_design} -quiet] -quiet
 
-# IP: bd/zybo_design/ip/zybo_design_processing_system7_0_3/zybo_design_processing_system7_0_3.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zybo_design_processing_system7_0_3 || ORIG_REF_NAME==zybo_design_processing_system7_0_3} -quiet] -quiet
+# IP: bd/zybo_design/ip/zybo_design_toplevel_0_4/zybo_design_toplevel_0_4.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zybo_design_toplevel_0_4 || ORIG_REF_NAME==zybo_design_toplevel_0_4} -quiet] -quiet
 
-# IP: bd/zybo_design/ip/zybo_design_xbar_3/zybo_design_xbar_3.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zybo_design_xbar_3 || ORIG_REF_NAME==zybo_design_xbar_3} -quiet] -quiet
+# IP: bd/zybo_design/ip/zybo_design_processing_system7_0_6/zybo_design_processing_system7_0_6.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zybo_design_processing_system7_0_6 || ORIG_REF_NAME==zybo_design_processing_system7_0_6} -quiet] -quiet
 
-# IP: bd/zybo_design/ip/zybo_design_ps7_0_axi_periph_2/zybo_design_ps7_0_axi_periph_2.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zybo_design_ps7_0_axi_periph_2 || ORIG_REF_NAME==zybo_design_ps7_0_axi_periph_2} -quiet] -quiet
+# IP: bd/zybo_design/ip/zybo_design_xbar_8/zybo_design_xbar_8.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zybo_design_xbar_8 || ORIG_REF_NAME==zybo_design_xbar_8} -quiet] -quiet
 
-# IP: bd/zybo_design/ip/zybo_design_rst_ps7_0_50M_0/zybo_design_rst_ps7_0_50M_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zybo_design_rst_ps7_0_50M_0 || ORIG_REF_NAME==zybo_design_rst_ps7_0_50M_0} -quiet] -quiet
+# IP: bd/zybo_design/ip/zybo_design_axi_mem_intercon_5/zybo_design_axi_mem_intercon_5.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zybo_design_axi_mem_intercon_5 || ORIG_REF_NAME==zybo_design_axi_mem_intercon_5} -quiet] -quiet
 
-# IP: bd/zybo_design/ip/zybo_design_xbar_4/zybo_design_xbar_4.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zybo_design_xbar_4 || ORIG_REF_NAME==zybo_design_xbar_4} -quiet] -quiet
+# IP: bd/zybo_design/ip/zybo_design_rst_ps7_0_50M_2/zybo_design_rst_ps7_0_50M_2.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zybo_design_rst_ps7_0_50M_2 || ORIG_REF_NAME==zybo_design_rst_ps7_0_50M_2} -quiet] -quiet
 
-# IP: bd/zybo_design/ip/zybo_design_axi_mem_intercon_2/zybo_design_axi_mem_intercon_2.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zybo_design_axi_mem_intercon_2 || ORIG_REF_NAME==zybo_design_axi_mem_intercon_2} -quiet] -quiet
+# IP: bd/zybo_design/ip/zybo_design_xbar_7/zybo_design_xbar_7.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zybo_design_xbar_7 || ORIG_REF_NAME==zybo_design_xbar_7} -quiet] -quiet
 
-# IP: bd/zybo_design/ip/zybo_design_axi_dynclk_0_2/zybo_design_axi_dynclk_0_2.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zybo_design_axi_dynclk_0_2 || ORIG_REF_NAME==zybo_design_axi_dynclk_0_2} -quiet] -quiet
+# IP: bd/zybo_design/ip/zybo_design_ps7_0_axi_periph_5/zybo_design_ps7_0_axi_periph_5.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zybo_design_ps7_0_axi_periph_5 || ORIG_REF_NAME==zybo_design_ps7_0_axi_periph_5} -quiet] -quiet
 
-# IP: bd/zybo_design/ip/zybo_design_axi_vdma_0_2/zybo_design_axi_vdma_0_2.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zybo_design_axi_vdma_0_2 || ORIG_REF_NAME==zybo_design_axi_vdma_0_2} -quiet] -quiet
+# IP: bd/zybo_design/ip/zybo_design_axi_dynclk_0_3/zybo_design_axi_dynclk_0_3.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zybo_design_axi_dynclk_0_3 || ORIG_REF_NAME==zybo_design_axi_dynclk_0_3} -quiet] -quiet
 
-# IP: bd/zybo_design/ip/zybo_design_v_tc_0_2/zybo_design_v_tc_0_2.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zybo_design_v_tc_0_2 || ORIG_REF_NAME==zybo_design_v_tc_0_2} -quiet] -quiet
+# IP: bd/zybo_design/ip/zybo_design_axi_vdma_0_3/zybo_design_axi_vdma_0_3.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zybo_design_axi_vdma_0_3 || ORIG_REF_NAME==zybo_design_axi_vdma_0_3} -quiet] -quiet
 
-# IP: bd/zybo_design/ip/zybo_design_v_axi4s_vid_out_0_2/zybo_design_v_axi4s_vid_out_0_2.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zybo_design_v_axi4s_vid_out_0_2 || ORIG_REF_NAME==zybo_design_v_axi4s_vid_out_0_2} -quiet] -quiet
+# IP: bd/zybo_design/ip/zybo_design_v_tc_0_3/zybo_design_v_tc_0_3.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zybo_design_v_tc_0_3 || ORIG_REF_NAME==zybo_design_v_tc_0_3} -quiet] -quiet
 
-# IP: bd/zybo_design/ip/zybo_design_rgb2dvi_0_2/zybo_design_rgb2dvi_0_2.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zybo_design_rgb2dvi_0_2 || ORIG_REF_NAME==zybo_design_rgb2dvi_0_2} -quiet] -quiet
+# IP: bd/zybo_design/ip/zybo_design_v_axi4s_vid_out_0_3/zybo_design_v_axi4s_vid_out_0_3.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zybo_design_v_axi4s_vid_out_0_3 || ORIG_REF_NAME==zybo_design_v_axi4s_vid_out_0_3} -quiet] -quiet
 
-# IP: bd/zybo_design/ip/zybo_design_axis_subset_converter_0_2/zybo_design_axis_subset_converter_0_2.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zybo_design_axis_subset_converter_0_2 || ORIG_REF_NAME==zybo_design_axis_subset_converter_0_2} -quiet] -quiet
+# IP: bd/zybo_design/ip/zybo_design_rgb2dvi_0_3/zybo_design_rgb2dvi_0_3.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zybo_design_rgb2dvi_0_3 || ORIG_REF_NAME==zybo_design_rgb2dvi_0_3} -quiet] -quiet
 
-# IP: bd/zybo_design/ip/zybo_design_xlconstant_0_2/zybo_design_xlconstant_0_2.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zybo_design_xlconstant_0_2 || ORIG_REF_NAME==zybo_design_xlconstant_0_2} -quiet] -quiet
+# IP: bd/zybo_design/ip/zybo_design_axis_subset_converter_0_3/zybo_design_axis_subset_converter_0_3.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zybo_design_axis_subset_converter_0_3 || ORIG_REF_NAME==zybo_design_axis_subset_converter_0_3} -quiet] -quiet
 
-# IP: bd/zybo_design/ip/zybo_design_toplevel_0_1/zybo_design_toplevel_0_1.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zybo_design_toplevel_0_1 || ORIG_REF_NAME==zybo_design_toplevel_0_1} -quiet] -quiet
-
-# IP: bd/zybo_design/ip/zybo_design_auto_pc_0/zybo_design_auto_pc_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zybo_design_auto_pc_0 || ORIG_REF_NAME==zybo_design_auto_pc_0} -quiet] -quiet
+# IP: bd/zybo_design/ip/zybo_design_xlconstant_0_3/zybo_design_xlconstant_0_3.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zybo_design_xlconstant_0_3 || ORIG_REF_NAME==zybo_design_xlconstant_0_3} -quiet] -quiet
 
 # IP: bd/zybo_design/ip/zybo_design_auto_us_0/zybo_design_auto_us_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zybo_design_auto_us_0 || ORIG_REF_NAME==zybo_design_auto_us_0} -quiet] -quiet
+
+# IP: bd/zybo_design/ip/zybo_design_auto_pc_0/zybo_design_auto_pc_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zybo_design_auto_pc_0 || ORIG_REF_NAME==zybo_design_auto_pc_0} -quiet] -quiet
 
 # IP: bd/zybo_design/ip/zybo_design_auto_pc_1/zybo_design_auto_pc_1.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zybo_design_auto_pc_1 || ORIG_REF_NAME==zybo_design_auto_pc_1} -quiet] -quiet
 
 # IP: bd/zybo_design/ip/zybo_design_auto_pc_2/zybo_design_auto_pc_2.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zybo_design_auto_pc_2 || ORIG_REF_NAME==zybo_design_auto_pc_2} -quiet] -quiet
-
-# IP: bd/zybo_design/ip/zybo_design_s00_mmu_0/zybo_design_s00_mmu_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zybo_design_s00_mmu_0 || ORIG_REF_NAME==zybo_design_s00_mmu_0} -quiet] -quiet
-
-# IP: bd/zybo_design/ip/zybo_design_s01_mmu_0/zybo_design_s01_mmu_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zybo_design_s01_mmu_0 || ORIG_REF_NAME==zybo_design_s01_mmu_0} -quiet] -quiet
 
 # XDC: /home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/zybo_design_ooc.xdc

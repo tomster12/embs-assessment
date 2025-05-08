@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Thu May  8 18:55:59 2025
+# Process ID: 485432
+# Current directory: /home/tomster12/files/EMBS/vivado/vivado.runs/zybo_design_xbar_8_synth_1
+# Command line: vivado -log zybo_design_xbar_8.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source zybo_design_xbar_8.tcl
+# Log file: /home/tomster12/files/EMBS/vivado/vivado.runs/zybo_design_xbar_8_synth_1/zybo_design_xbar_8.vds
+# Journal file: /home/tomster12/files/EMBS/vivado/vivado.runs/zybo_design_xbar_8_synth_1/vivado.jou
+#-----------------------------------------------------------
+source zybo_design_xbar_8.tcl -notrace
