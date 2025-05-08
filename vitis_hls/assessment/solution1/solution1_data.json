@@ -105,36 +105,46 @@
   "Files": {
     "CSource": ["..\/toplevel.cpp"],
     "Vhdl": [
-      "impl\/vhdl\/toplevel_a_star_len.vhd",
-      "impl\/vhdl\/toplevel_a_star_len_closed_set.vhd",
-      "impl\/vhdl\/toplevel_a_star_len_open_set_heap_f_score.vhd",
       "impl\/vhdl\/toplevel_AXILiteS_s_axi.vhd",
+      "impl\/vhdl\/toplevel_closed_set.vhd",
       "impl\/vhdl\/toplevel_control_s_axi.vhd",
       "impl\/vhdl\/toplevel_local_ram.vhd",
-      "impl\/vhdl\/toplevel_mac_muladd_8ns_11ns_32ns_32_4_1.vhd",
-      "impl\/vhdl\/toplevel_mac_muladd_16ns_16ns_16ns_18_4_1.vhd",
+      "impl\/vhdl\/toplevel_mac_muladd_16ns_9ns_9ns_18_4_1.vhd",
       "impl\/vhdl\/toplevel_MAXI_m_axi.vhd",
-      "impl\/vhdl\/toplevel_mul_mul_16ns_16ns_31_4_1.vhd",
-      "impl\/vhdl\/toplevel_mux_42_32_1_1.vhd",
-      "impl\/vhdl\/toplevel_waypoints_x.vhd",
+      "impl\/vhdl\/toplevel_mul_mul_16ns_9ns_18_4_1.vhd",
+      "impl\/vhdl\/toplevel_mul_mul_16ns_16ns_18_4_1.vhd",
+      "impl\/vhdl\/toplevel_open_set_heap_f_score_V.vhd",
+      "impl\/vhdl\/toplevel_open_set_heap_x_V.vhd",
+      "impl\/vhdl\/toplevel_os_heap_pop.vhd",
+      "impl\/vhdl\/toplevel_os_heap_push.vhd",
+      "impl\/vhdl\/toplevel_os_heap_push_moves_node_f_score_V.vhd",
+      "impl\/vhdl\/toplevel_os_heap_push_moves_node_x_V.vhd",
+      "impl\/vhdl\/toplevel_os_heap_push_moves_target.vhd",
+      "impl\/vhdl\/toplevel_waypoints_x_V.vhd",
       "impl\/vhdl\/toplevel.vhd"
     ],
     "Verilog": [
-      "impl\/verilog\/toplevel_a_star_len.v",
-      "impl\/verilog\/toplevel_a_star_len_closed_set.v",
-      "impl\/verilog\/toplevel_a_star_len_closed_set_ram.dat",
-      "impl\/verilog\/toplevel_a_star_len_open_set_heap_f_score.v",
-      "impl\/verilog\/toplevel_a_star_len_open_set_heap_f_score_ram.dat",
       "impl\/verilog\/toplevel_AXILiteS_s_axi.v",
+      "impl\/verilog\/toplevel_closed_set.v",
+      "impl\/verilog\/toplevel_closed_set_ram.dat",
       "impl\/verilog\/toplevel_control_s_axi.v",
       "impl\/verilog\/toplevel_local_ram.v",
       "impl\/verilog\/toplevel_local_ram_ram.dat",
-      "impl\/verilog\/toplevel_mac_muladd_8ns_11ns_32ns_32_4_1.v",
-      "impl\/verilog\/toplevel_mac_muladd_16ns_16ns_16ns_18_4_1.v",
+      "impl\/verilog\/toplevel_mac_muladd_16ns_9ns_9ns_18_4_1.v",
       "impl\/verilog\/toplevel_MAXI_m_axi.v",
-      "impl\/verilog\/toplevel_mul_mul_16ns_16ns_31_4_1.v",
-      "impl\/verilog\/toplevel_mux_42_32_1_1.v",
-      "impl\/verilog\/toplevel_waypoints_x.v",
+      "impl\/verilog\/toplevel_mul_mul_16ns_9ns_18_4_1.v",
+      "impl\/verilog\/toplevel_mul_mul_16ns_16ns_18_4_1.v",
+      "impl\/verilog\/toplevel_open_set_heap_f_score_V.v",
+      "impl\/verilog\/toplevel_open_set_heap_f_score_V_ram.dat",
+      "impl\/verilog\/toplevel_open_set_heap_x_V.v",
+      "impl\/verilog\/toplevel_open_set_heap_x_V_ram.dat",
+      "impl\/verilog\/toplevel_os_heap_pop.v",
+      "impl\/verilog\/toplevel_os_heap_push.v",
+      "impl\/verilog\/toplevel_os_heap_push_moves_node_f_score_V.v",
+      "impl\/verilog\/toplevel_os_heap_push_moves_node_x_V.v",
+      "impl\/verilog\/toplevel_os_heap_push_moves_target.v",
+      "impl\/verilog\/toplevel_waypoints_x_V.v",
+      "impl\/verilog\/toplevel_waypoints_x_V_ram.dat",
       "impl\/verilog\/toplevel.v"
     ],
     "SwDriver": [
@@ -929,13 +939,26 @@
   "ModuleInfo": {
     "Hierarchy": {
       "ModuleName": "toplevel",
-      "Instances": [{
-          "ModuleName": "a_star_len",
-          "InstanceName": "grp_a_star_len_fu_372"
-        }]
+      "Instances": [
+        {
+          "ModuleName": "os_heap_pop",
+          "InstanceName": "grp_os_heap_pop_fu_566"
+        },
+        {
+          "ModuleName": "os_heap_push",
+          "InstanceName": "grp_os_heap_push_fu_580"
+        }
+      ]
     },
     "Info": {
-      "a_star_len": {
+      "os_heap_push": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "0",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "os_heap_pop": {
         "FunctionProtocol": "ap_ctrl_hs",
         "isTaskLevelControl": "0",
         "isPipelined": "0",
@@ -951,85 +974,87 @@
       }
     },
     "Metrics": {
-      "a_star_len": {
+      "os_heap_push": {
         "Latency": {
-          "LatencyBest": "",
-          "LatencyAvg": "",
-          "LatencyWorst": "",
-          "PipelineII": "",
+          "LatencyBest": "2",
+          "LatencyAvg": "29",
+          "LatencyWorst": "90",
+          "PipelineIIMin": "2",
+          "PipelineIIMax": "90",
+          "PipelineII": "2 ~ 90",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
           "Target": "10.00",
           "Uncertainty": "2.70",
-          "Estimate": "8.213"
+          "Estimate": "5.683"
         },
-        "Loops": [
-          {
-            "Name": "Loop 1",
-            "TripCount": "7813",
-            "Latency": "7813",
-            "PipelineII": "1",
-            "PipelineDepth": "1"
-          },
-          {
-            "Name": "Loop 2",
-            "TripCount": "40000",
-            "Latency": "40000",
-            "PipelineII": "1",
-            "PipelineDepth": "1"
-          },
-          {
-            "Name": "AS_SEARCH_LOOP",
+        "Loops": [{
+            "Name": "SIFT_UP_COPY_LOOP",
             "TripCount": "",
-            "Latency": "",
+            "LatencyMin": "2",
+            "LatencyMax": "32",
+            "Latency": "2 ~ 32",
             "PipelineII": "",
-            "PipelineDepth": "",
-            "Loops": [
-              {
-                "Name": "AS_SEARCH_LOOP",
-                "TripCount": "",
-                "Latency": "",
-                "PipelineII": "64",
-                "PipelineDepth": "65"
-              },
-              {
-                "Name": "EXPLORE_NEIGHBORS_LOOP",
-                "TripCount": "",
-                "LatencyMin": "2",
-                "LatencyMax": "209",
-                "Latency": "2 ~ 209",
-                "PipelineII": "",
-                "PipelineDepthMin": "2",
-                "PipelineDepthMax": "50",
-                "PipelineDepth": "2 ~ 50",
-                "Loops": [{
-                    "Name": "SIFT_UP_LOOP",
-                    "TripCount": "",
-                    "LatencyMin": "4",
-                    "LatencyMax": "34",
-                    "Latency": "4 ~ 34",
-                    "PipelineII": "2",
-                    "PipelineDepth": "3"
-                  }]
-              }
-            ]
-          }
-        ],
+            "PipelineDepth": "2"
+          }],
         "Area": {
-          "BRAM_18K": "272",
+          "BRAM_18K": "0",
           "AVAIL_BRAM": "120",
-          "UTIL_BRAM": "226",
-          "DSP": "3",
-          "AVAIL_DSP": "80",
-          "UTIL_DSP": "3",
-          "FF": "3565",
+          "UTIL_BRAM": "0",
+          "FF": "809",
           "AVAIL_FF": "35200",
-          "UTIL_FF": "10",
-          "LUT": "6240",
+          "UTIL_FF": "2",
+          "LUT": "3818",
           "AVAIL_LUT": "17600",
-          "UTIL_LUT": "35",
+          "UTIL_LUT": "21",
+          "DSP": "0",
+          "AVAIL_DSP": "80",
+          "UTIL_DSP": "0",
+          "URAM": "0",
+          "AVAIL_URAM": "0",
+          "UTIL_URAM": "0"
+        }
+      },
+      "os_heap_pop": {
+        "Latency": {
+          "LatencyBest": "2",
+          "LatencyAvg": "34",
+          "LatencyWorst": "104",
+          "PipelineIIMin": "2",
+          "PipelineIIMax": "104",
+          "PipelineII": "2 ~ 104",
+          "PipelineDepth": "",
+          "PipelineType": "none"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "2.70",
+          "Estimate": "6.718"
+        },
+        "Loops": [{
+            "Name": "SIFT_DOWN_COPY_LOOP",
+            "TripCount": "",
+            "LatencyMin": "2",
+            "LatencyMax": "32",
+            "Latency": "2 ~ 32",
+            "PipelineII": "",
+            "PipelineDepth": "2"
+          }],
+        "Area": {
+          "BRAM_18K": "0",
+          "AVAIL_BRAM": "120",
+          "UTIL_BRAM": "0",
+          "FF": "1518",
+          "AVAIL_FF": "35200",
+          "UTIL_FF": "4",
+          "LUT": "4514",
+          "AVAIL_LUT": "17600",
+          "UTIL_LUT": "25",
+          "DSP": "0",
+          "AVAIL_DSP": "80",
+          "UTIL_DSP": "0",
           "URAM": "0",
           "AVAIL_URAM": "0",
           "UTIL_URAM": "0"
@@ -1047,13 +1072,13 @@
         "Timing": {
           "Target": "10.00",
           "Uncertainty": "2.70",
-          "Estimate": "8.213"
+          "Estimate": "8.006"
         },
         "Loops": [
           {
-            "Name": "COPY_LOOP",
-            "TripCount": "7831",
-            "Latency": "7832",
+            "Name": "COPY_RAM_LOOP",
+            "TripCount": "7830",
+            "Latency": "7831",
             "PipelineII": "1",
             "PipelineDepth": "3"
           },
@@ -1065,26 +1090,44 @@
             "PipelineDepth": "2"
           },
           {
-            "Name": "PATHFINDING_LOOP",
+            "Name": "WAYPOINT_LOOP",
             "TripCount": "",
             "Latency": "",
             "PipelineII": "",
-            "PipelineDepth": ""
+            "PipelineDepth": "",
+            "Loops": [
+              {
+                "Name": "EMPTY_CLOSED_SET_LOOP",
+                "TripCount": "7813",
+                "Latency": "7813",
+                "PipelineII": "1",
+                "PipelineDepth": "1"
+              },
+              {
+                "Name": "AS_SEARCH_LOOP",
+                "TripCount": "",
+                "Latency": "",
+                "PipelineII": "",
+                "PipelineDepthMin": "11",
+                "PipelineDepthMax": "503",
+                "PipelineDepth": "11 ~ 503"
+              }
+            ]
           }
         ],
         "Area": {
-          "BRAM_18K": "290",
+          "BRAM_18K": "114",
           "AVAIL_BRAM": "120",
-          "UTIL_BRAM": "241",
+          "UTIL_BRAM": "95",
           "DSP": "4",
           "AVAIL_DSP": "80",
           "UTIL_DSP": "5",
-          "FF": "4765",
+          "FF": "4229",
           "AVAIL_FF": "35200",
-          "UTIL_FF": "13",
-          "LUT": "7727",
+          "UTIL_FF": "12",
+          "LUT": "12507",
           "AVAIL_LUT": "17600",
-          "UTIL_LUT": "43",
+          "UTIL_LUT": "71",
           "URAM": "0",
           "AVAIL_URAM": "0",
           "UTIL_URAM": "0"
@@ -1095,7 +1138,7 @@
   "GenerateBdFiles": "0",
   "GenData": {
     "DataVersion": "0.2",
-    "Time": "2025-05-07 17:36:15 BST",
+    "Time": "2025-05-08 00:51:10 BST",
     "ToolName": "vivado_hls",
     "ToolVersion": "2020.2"
   }

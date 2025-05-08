@@ -1,25 +1,15 @@
-17:30:08 **** Incremental Build of configuration Release for project assessment ****
+00:29:29 **** Incremental Build of configuration Release for project assessment ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
  
 make --no-print-directory main-build
-Building file: ../src/zybo_z7_hdmi/display_ctrl.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/zybo_z7_hdmi/display_ctrl.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I/home/tomster12/files/EMBS/vitis/zybo_design_wrapper/export/zybo_design_wrapper/sw/zybo_design_wrapper/freertos10_xilinx_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/zybo_z7_hdmi/display_ctrl.d" -MT"src/zybo_z7_hdmi/display_ctrl.o" -o "src/zybo_z7_hdmi/display_ctrl.o" "../src/zybo_z7_hdmi/display_ctrl.c"
-Finished building: ../src/zybo_z7_hdmi/display_ctrl.c
- 
-Building file: ../src/zybo_z7_hdmi/dynclk.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/zybo_z7_hdmi/dynclk.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I/home/tomster12/files/EMBS/vitis/zybo_design_wrapper/export/zybo_design_wrapper/sw/zybo_design_wrapper/freertos10_xilinx_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/zybo_z7_hdmi/dynclk.d" -MT"src/zybo_z7_hdmi/dynclk.o" -o "src/zybo_z7_hdmi/dynclk.o" "../src/zybo_z7_hdmi/dynclk.c"
-Finished building: ../src/zybo_z7_hdmi/dynclk.c
- 
 Building file: ../src/main.c
 Invoking: ARM v7 gcc compiler
 arm-none-eabi-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I/home/tomster12/files/EMBS/vitis/zybo_design_wrapper/export/zybo_design_wrapper/sw/zybo_design_wrapper/freertos10_xilinx_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
 ../src/main.c: In function 'perform_pathfinding':
-../src/main.c:450:29: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
-  450 |     XToplevel_Set_ram(&hls, (u64) ram);
+../src/main.c:447:29: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  447 |     XToplevel_Set_ram(&hls, (u64) ram);
       |                             ^
 Finished building: ../src/main.c
  
@@ -35,5 +25,5 @@ arm-none-eabi-size assessment.elf  |tee "assessment.elf.size"
 Finished building: assessment.elf.size
  
 
-17:30:09 Build Finished (took 874ms)
+00:29:29 Build Finished (took 670ms)
 

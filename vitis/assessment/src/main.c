@@ -25,18 +25,16 @@
 #define WORLD_MAX_WALLS 240
 #define WORLD_MAX_WAYPOINTS 16
 #define WORLD_MAX_SIZE 500
-#define DBG_LIST_MAX 3000
 
 // RAM Layout (32-bit words)
 // -----------------------------
-// [0]     = world_size
-// [1]     = waypoint_count
-// [2..A]  = waypoints (WORLD_MAX_WAYPOINTS)
+// [0]     = world_size | waypoint_count
+// [1..A]  = waypoints (WORLD_MAX_WAYPOINTS)
 // [A..B]  = world bitmask (1 bit per cell, row-major order, WORLD_MAX_SIZE * WORLD_MAX_SIZE)
 //
 // For a 500x500 world this is meta (2 words) + waypoints (12 words) + grid (ceil(250000 / 32) = 7813 words) 7827 words
 
-#define HW_META_WORDS 2
+#define HW_META_WORDS 1
 #define HW_WAYPOINT_WORDS WORLD_MAX_WAYPOINTS
 #define HW_WORLD_WORDS ((WORLD_MAX_SIZE * WORLD_MAX_SIZE + 31) / 32)
 #define HW_MAX_WORDS (HW_META_WORDS + HW_WAYPOINT_WORDS + HW_WORLD_WORDS)
@@ -366,8 +364,7 @@ int write_world_to_mem(uint32_t *ram, WorldWalls *walls, WorldWaypoints *waypoin
 
 	// See RAM schema in definitions section
     uint16_t world_size = waypoints->size;
-    ram[0] = (uint32_t)world_size;
-    ram[1] = (uint32_t)waypoints->num_waypoints;
+    ram[0] = world_size << 16 | waypoints->num_waypoints;
 
     uint32_t *ram_waypoints = &ram[HW_META_WORDS];
 	for (uint8_t i = 0; i < waypoints->num_waypoints; ++i) {
@@ -454,13 +451,6 @@ int perform_pathfinding(uint32_t *ram) {
     uint32_t code = XToplevel_Get_code(&hls);
 
     xil_printf("Hardware finished: ram[0] = %lu, code = %lu\r\n", ram[0], code);
-
-//    xil_printf("dbg_list");
-//    for (uint16_t i = 0; i < DBG_LIST_MAX; ++i) {
-//    	if (ram[HW_MAX_WORDS - DBG_LIST_MAX + i] >= 1000) printf("\r\n");
-//    	xil_printf("%lu ", ram[HW_MAX_WORDS - DBG_LIST_MAX + i]);
-//    }
-//    xil_printf("\r\n");
 
     return 0;
 }

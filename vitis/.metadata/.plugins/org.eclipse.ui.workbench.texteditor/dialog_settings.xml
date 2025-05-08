@@ -6,8 +6,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="DBG_LIST_MAX"/>
+		<item key="selection" value="world_solution_attempt"/>
 		<list key="findhistory">
+			<item value="world_solution_attempt"/>
 			<item value="DBG_LIST_LENGTH"/>
 			<item value="Set"/>
 			<item value="direction"/>
@@ -22,7 +23,6 @@
 			<item value="HW_MEM_WORDS_MAX"/>
 			<item value="HW_MEM_MAX"/>
 			<item value="words_per_row"/>
-			<item value="tes"/>
 		</list>
 		<list key="replacehistory">
 			<item value="DBG_LIST_MAX"/>
@@ -43,10 +43,10 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="-2592"/>
-		<item key="DIALOG_Y_ORIGIN" value="-32"/>
-		<item key="DIALOG_WIDTH" value="341"/>
-		<item key="DIALOG_HEIGHT" value="408"/>
-		<item key="DIALOG_FONT_NAME" value="1|Sans|10.0|0|GTK|1|"/>
+		<item key="DIALOG_X_ORIGIN" value="10"/>
+		<item key="DIALOG_Y_ORIGIN" value="10"/>
+		<item key="DIALOG_WIDTH" value="352"/>
+		<item key="DIALOG_HEIGHT" value="415"/>
+		<item key="DIALOG_FONT_NAME" value="1|Cantarell|11.0|0|GTK|1|"/>
 	</section>
 </section>

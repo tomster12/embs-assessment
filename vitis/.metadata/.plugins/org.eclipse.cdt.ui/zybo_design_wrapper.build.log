@@ -1,6 +1,2 @@
-17:30:01 **** Incremental Build of project zybo_design_wrapper ****
-buildplatform.sh 39501 zybo_design_wrapper no_domain_build 
-XSDB Server Channel: tcfchan#39
-
-17:30:06 Build Finished (took 5s.170ms)
+Nothing to build in platform 'zybo_design_wrapper'
 

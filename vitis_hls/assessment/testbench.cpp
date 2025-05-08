@@ -5,12 +5,11 @@
 
 #define WORLD_MAX_WAYPOINTS 16
 #define WORLD_MAX_SIZE 500
-#define HW_META_WORDS 2
+#define HW_META_WORDS 1
 #define HW_WAYPOINT_WORDS WORLD_MAX_WAYPOINTS
 #define HW_WORLD_WORDS ((WORLD_MAX_SIZE * WORLD_MAX_SIZE + 31) / 32)
 #define HW_MAX_WORDS (HW_META_WORDS + HW_WAYPOINT_WORDS + HW_WORLD_WORDS)
 #define HW_WORLD_OFFSET (HW_META_WORDS + HW_WAYPOINT_WORDS)
-#define DBG_LIST_MAX 3000
 
 void check(uint32_t result, uint32_t expected, uint32_t code) {
     std::cout << "Total Path Length: " << result << ", code: " << code << std::endl;
@@ -45,8 +44,8 @@ int set_world_bit(uint32_t *world, uint16_t world_size, uint16_t x, uint16_t y, 
 }
 
 void debug_print_world_bitmap(uint32_t *ram) {
-	uint16_t world_size = ram[0];
-	uint16_t num_waypoints = ram[1];
+	uint16_t world_size = (ram[0] << 16) & 0xFFFF;
+	uint16_t num_waypoints = ram[0] & 0xFFFF;
 
     printf("World Bitmap (%u x %u)\r\n", world_size, world_size);
 
@@ -77,18 +76,20 @@ int main() {
     uint32_t ram[HW_MAX_WORDS];
     uint32_t code;
 
+    printf("Starting testbench\r\n");
+
     // Test: 10x10, 8 waypoints, walls (seed=1)
     memset(ram, 0, sizeof(ram));
-    ram[0] = 10;
-    ram[1] = 8;
-    ram[2] = (3 << 16) | 3;
-    ram[3] = (7 << 16) | 1;
-    ram[4] = (7 << 16) | 5;
-    ram[5] = (5 << 16) | 7;
-    ram[6] = (1 << 16) | 7;
-    ram[7] = (1 << 16) | 0;
+    ram[0] = (10 << 16) | 8;
+    ram[1] = (3 << 16) | 3;
+    ram[2] = (7 << 16) | 1;
+    ram[3] = (7 << 16) | 5;
+    ram[4] = (5 << 16) | 7;
+    ram[5] = (1 << 16) | 7;
+    ram[6] = (1 << 16) | 0;
+    ram[7] = (0 << 16) | 0;
     ram[8] = (0 << 16) | 0;
-    ram[9] = (0 << 16) | 0;
+
     uint32_t *ram_world = &ram[HW_WORLD_OFFSET];
     set_world_bit(ram_world, 10, 2, 1, 1);
     set_world_bit(ram_world, 10, 2, 2, 1);
@@ -113,16 +114,10 @@ int main() {
     set_world_bit(ram_world, 10, 8, 8, 1);
     debug_print_world_bitmap(ram);
 
+    printf("Running toplevel from testbench\r\n");
     toplevel(ram, &code);
 
     check(ram[0], 36, code);
-
-//    printf("dbg_list");
-//    for (uint16_t i = 0; i < DBG_LIST_MAX; ++i) {
-//    	if (ram[HW_MAX_WORDS - DBG_LIST_MAX + i] >= 1000) printf("\r\n");
-//    	printf("%lu ", ram[HW_MAX_WORDS - DBG_LIST_MAX + i]);
-//    }
-//    printf("\r\n");
 
     return 0;
 }

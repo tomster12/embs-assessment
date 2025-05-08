@@ -1,4 +1,4 @@
-INFO-FLOW: Workspace /home/tomster12/files/EMBS/vitis_hls/assessment/solution1 opened at Wed May 07 17:36:01 BST 2025
+INFO-FLOW: Workspace /home/tomster12/files/EMBS/vitis_hls/assessment/solution1 opened at Thu May 08 00:50:48 BST 2025
 Execute     ap_set_clock -name default -period 10 -default=false 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 Execute     import_lib /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/zynq/zynq 
@@ -61,7 +61,7 @@ INFO-FLOW: DBG:set_part: RDI_DATADIR=/opt/Xilinx/Vivado/2020.2/data:/opt/Xilinx/
 Execute       ap_part_info -name xc7z010-clg400-1 -data single -quiet 
 DBG:HLSDevice: Trying to load device library: /opt/Xilinx/Vitis_HLS/2020.2/lib/lnx64.o/librdi_hlsvwrap.so
 DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: /opt/Xilinx/Vivado/2020.2/data/parts/arch.xml
-Command       ap_part_info done; 0.53 sec.
+Command       ap_part_info done; 0.69 sec.
 Execute       ap_part_info -name xc7z010-clg400-1 -data info 
 Execute       add_library xilinx/zynq/zynq:xc7z010:-clg400:-1 
 Execute         get_default_platform 
@@ -94,11 +94,11 @@ Execute           source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/i
 Execute           source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
 Execute           source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
 Execute           source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
-Command       add_library done; 0.11 sec.
+Command       add_library done; 0.16 sec.
 INFO: [HLS 200-10] Setting target device to 'xc7z010-clg400-1'
 Execute       ap_part_info -name xc7z010-clg400-1 -data info 
 Execute       config_compile -quiet -complex-mul-dsp=0 
-Command     set_part done; 0.65 sec.
+Command     set_part done; 0.86 sec.
 Execute     ap_part_info -data single -name xc7z010-clg400-1 
 Execute     ap_part_info -name xc7z010-clg400-1 -data resources 
 Execute     config_chip_info -resource {SLICE 4400} {LUT 17600} {FF 35200} {DSP 80} {BRAM 120} {URAM 0} 
@@ -118,7 +118,7 @@ Execute     config_export -format=sysgen
 Execute     send_msg_by_id INFO @200-1464@%s config_export -rtl=verilog 
 INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
 Execute     config_export -rtl=verilog 
-Command   open_solution done; 0.86 sec.
+Command   open_solution done; 1.11 sec.
 Execute   set_part xc7z010-clg400-1 
 INFO: [HLS 200-1510] Running: set_part xc7z010-clg400-1 
 INFO-FLOW: DBG:set_part: XILINX_VIVADO=/opt/Xilinx/Vivado/2020.2
@@ -156,8 +156,11 @@ Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/
 Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
 Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
 Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.11 sec.
+Command     add_library done; 0.12 sec.
 Execute     ap_part_info -name xc7z010-clg400-1 -data info 
 Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.13 sec.
 Execute   create_clock -period 10 -name default 
 INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
 Execute   config_export -format sysgen -rtl verilog 
@@ -178,7 +181,7 @@ Execute     get_config_compile -skip_syncheck
 Execute     get_config_compile -skip_transform 
 Execute     get_config_compile -keep_printf 
 Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 76.391 MB.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 76.393 MB.
 INFO: [HLS 200-10] Analyzing design file 'assessment/toplevel.cpp' ... 
 INFO-FLOW: Compiling one TU...
 Execute       get_config_compile -pragma_strict_mode 
@@ -187,7 +190,8 @@ Execute       ap_part_info -name xc7z010-clg400-1 -data info
 INFO-FLOW: Running: GCC PP 39
 INFO-FLOW: Source preprocessing
 Execute       ap_eval exec -ignorestderr /opt/Xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/bin/clang assessment/toplevel.cpp -foptimization-record-file=/home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/clang.toplevel.cpp.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -gcc-toolchain /opt/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0 -fhls -fno-exceptions -E -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -fno-threadsafe-statics -fno-use-cxa-atexit -I /opt/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/39 -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /opt/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot -I /opt/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.pp.0.cpp > /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/clang.toplevel.cpp.out.log 2> /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/clang.toplevel.cpp.err.log 
-INFO-FLOW: Done: GCC PP 39 time: 0 seconds per iteration
+Command       ap_eval done; 0.13 sec.
+INFO-FLOW: Done: GCC PP 39 time: 0.1 seconds per iteration
 Execute       set_directive_top toplevel -name=toplevel 
 INFO-FLOW: Setting directive 'TOP' name=toplevel 
 INFO-FLOW: Setting directive 'TOP' name=toplevel 
@@ -201,23 +205,30 @@ INFO-FLOW: Setting directive 'TOP' name=toplevel
 Execute       list_core -type functional_unit 
 Execute       clang_tidy xilinx-systemc-detector /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.pp.0.cpp std=gnu++14 -target fpga  -directive=/home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/.systemc_flag 
 INFO-FLOW: exec /opt/Xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=/home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/.systemc_flag -fix-errors /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+Command       clang_tidy done; 0.63 sec.
 INFO-FLOW: Running: clang-tidy CDT preprocess 39
 Execute       clang_tidy xilinx-directive2pragma /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.pp.0.cpp std=gnu++14 -target fpga  -directive=/home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/all.directive.json 
 INFO-FLOW: exec /opt/Xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=/home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/all.directive.json -fix-errors /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+Command       clang_tidy done; 0.7 sec.
 Execute       clang_tidy xilinx-constantarray-param,xilinx-remove-assert /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.pp.0.cpp std=gnu++14 -target fpga  
 INFO-FLOW: exec /opt/Xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-constantarray-param,xilinx-remove-assert -fix-errors /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
-INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 0.2 seconds per iteration
+Command       clang_tidy done; 0.56 sec.
+INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 1.3 seconds per iteration
 INFO-FLOW: Calling xilinx-label-all-loops ... 
 Execute       clang_tidy -errorcheck xilinx-label-all-loops,xilinx-top-parameters,xilinx-array-stream-check,xilinx-warn-mayneed-no-ctor-attribute /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.pp.0.cpp std=gnu++14 -target fpga  
 Execute         ap_eval exec -ignorestderr /opt/Xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/clang-tidy.toplevel.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops,xilinx-top-parameters,xilinx-array-stream-check,xilinx-warn-mayneed-no-ctor-attribute -fix-errors /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/clang-tidy.toplevel.pp.0.cpp.out.log 2> /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/clang-tidy.toplevel.pp.0.cpp.err.log 
+Command         ap_eval done; 0.72 sec.
 Execute         source /opt/Xilinx/Vitis_HLS/2020.2/tps/tcl/tcllib1.11.1/yaml/yaml.tcl 
 Execute           source /opt/Xilinx/Vitis_HLS/2020.2/tps/tcl/tcllib1.11.1/cmdline/cmdline.tcl 
+Command       clang_tidy done; 0.75 sec.
 Execute       get_config_dataflow -strict_mode 
 Execute       ap_eval exec -ignorestderr /opt/Xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/xilinx-dataflow-lawyer.toplevel.pp.0.cpp.diag.yml /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/xilinx-dataflow-lawyer.toplevel.pp.0.cpp.out.log 2> /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/xilinx-dataflow-lawyer.toplevel.pp.0.cpp.err.log 
+Command       ap_eval done; 0.54 sec.
 Execute       ap_part_info -name xc7z010-clg400-1 -data info 
 INFO-FLOW: compiling source code to llvm bc
 Execute       ap_eval exec -ignorestderr /opt/Xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/clang.toplevel.pp.0.cpp.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.pp.0.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /opt/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot -I /opt/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.bc > /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/clang.toplevel.pp.0.cpp.out.log 2> /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/clang.toplevel.pp.0.cpp.err.log 
-INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.53 seconds. CPU system time: 0.11 seconds. Elapsed time: 0.49 seconds; current allocated memory: 77.490 MB.
+Command       ap_eval done; 0.56 sec.
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 4.02 seconds. CPU system time: 0.55 seconds. Elapsed time: 3.9 seconds; current allocated memory: 77.560 MB.
 INFO-FLOW: Linking Debug ...
 INFO-FLOW: Linking dut bc code.
 Execute       run_link_or_opt -out /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a.g.ld.0.bc -args  "/home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.g.bc"  
@@ -229,14 +240,14 @@ INFO-FLOW:
 INFO-FLOW: Linking math bc lib
 Execute       run_link_or_opt -out /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a.g.ld.2.m1.bc -args /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed /opt/Xilinx/Vitis_HLS/2020.2/lnx64/lib/libhlsm_39.bc /opt/Xilinx/Vitis_HLS/2020.2/lnx64/lib/libhlsmc++_39.bc 
 Execute         ap_eval exec -ignorestderr /opt/Xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed /opt/Xilinx/Vitis_HLS/2020.2/lnx64/lib/libhlsm_39.bc /opt/Xilinx/Vitis_HLS/2020.2/lnx64/lib/libhlsmc++_39.bc -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a.g.ld.2.m1.bc > /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/llvm-link.a.g.ld.2.m1.bc.out.log 2> /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/llvm-link.a.g.ld.2.m1.bc.err.log 
-Command         ap_eval done; 1.63 sec.
+Command         ap_eval done; 2.41 sec.
 INFO-FLOW: 
-Command       run_link_or_opt done; 1.64 sec.
+Command       run_link_or_opt done; 2.41 sec.
 Execute       run_link_or_opt -opt -out /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a.g.ld.3.fpc.bc -args /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=toplevel -reflow-float-conversion 
 Execute         ap_eval exec -ignorestderr /opt/Xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/opt.a.g.ld.3.fpc.bc.diag.yml /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=toplevel -reflow-float-conversion -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a.g.ld.3.fpc.bc > /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/opt.a.g.ld.3.fpc.bc.out.log 2> /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/opt.a.g.ld.3.fpc.bc.err.log 
-Command         ap_eval done; 0.59 sec.
+Command         ap_eval done; 0.82 sec.
 INFO-FLOW: 
-Command       run_link_or_opt done; 0.59 sec.
+Command       run_link_or_opt done; 0.83 sec.
 Execute       run_link_or_opt -out /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a.g.ld.4.m2.bc -args /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /opt/Xilinx/Vitis_HLS/2020.2/lnx64/lib/libfloatconversion_39.bc 
 Execute         ap_eval exec -ignorestderr /opt/Xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /opt/Xilinx/Vitis_HLS/2020.2/lnx64/lib/libfloatconversion_39.bc -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a.g.ld.4.m2.bc > /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/llvm-link.a.g.ld.4.m2.bc.out.log 2> /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/llvm-link.a.g.ld.4.m2.bc.err.log 
 INFO-FLOW: 
@@ -281,115 +292,130 @@ INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
 Execute       is_m_axi_addr64 
 INFO-FLOW: Doing LTO.
 Execute       ap_eval exec -ignorestderr /opt/Xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/clang.a.g.ld.0.bc.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fhls -mllvm -hls-top-function-name=toplevel -mllvm -hls-db-dir -mllvm /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db -emit-llvm -c -target fpga64-xilinx-none -mllvm -xcl-xmlinfo=/home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/kernel.internal.xml -mllvm -top-io-mapping-info=/home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/top-io-fe.xml -mllvm -hls-bitcode-version=3.1 -mllvm -reflow-enable-slave-interface-default-setting=true -mllvm -gen-kernel-xml=false -mllvm -default-maxi-offset=off -mllvm -maxi-latency=0 -mllvm -hls-maxi-data-size-in-bits=8 -mllvm -hls-maxi-max-data-size-in-bits=1024 -mllvm -hls-max-widen-size-in-bits=0 -mllvm -xcl-kernel-max-mem-ports=0 -mllvm -maxi-read-trans=16 -mllvm -maxi-write-trans=16 -mllvm -maxi-read-burst-len=16 -mllvm -maxi-write-burst-len=16 -mllvm -reflow-enable-saxi-64bits=0 -mllvm -assume-maxi-align=0 -mllvm -no-unaligned-maxi-accesses -mllvm -reflow-pipeline-style-llvm-setting=0 -mllvm -disable-inlined-alloca-merging=true -x ir /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a.g.ld.5.gdce.bc -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a.g.lto.bc > /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/clang.a.g.ld.0.bc.out.log 2> /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/clang.a.g.ld.0.bc.err.log 
-Command       ap_eval done; 0.12 sec.
-INFO: [HLS 214-131] Inlining function 'abs_sub(unsigned short, unsigned short)' into 'heuristic(Coord, Coord)' (assessment/toplevel.cpp:88:9)
-INFO: [HLS 214-131] Inlining function 'abs_sub(unsigned short, unsigned short)' into 'heuristic(Coord, Coord)' (assessment/toplevel.cpp:88:35)
-INFO: [HLS 214-131] Inlining function 'copy_as_node(ASNode*, ASNode*)' into 'os_sift_up(unsigned short)' (assessment/toplevel.cpp:166:2)
-INFO: [HLS 214-131] Inlining function 'copy_as_node(ASNode*, ASNode*)' into 'os_sift_up(unsigned short)' (assessment/toplevel.cpp:218:3)
-INFO: [HLS 214-131] Inlining function 'copy_as_node(ASNode*, ASNode*)' into 'os_sift_up(unsigned short)' (assessment/toplevel.cpp:206:5)
-INFO: [HLS 214-131] Inlining function 'copy_as_node(ASNode*, ASNode*)' into 'os_sift_up(unsigned short)' (assessment/toplevel.cpp:188:5)
-INFO: [HLS 214-131] Inlining function 'os_sift_up(unsigned short)' into 'os_heap_push(ASNode)' (assessment/toplevel.cpp:243:9)
-INFO: [HLS 214-131] Inlining function 'copy_as_node(ASNode*, ASNode*)' into 'os_sift_down(unsigned short)' (assessment/toplevel.cpp:115:2)
-INFO: [HLS 214-131] Inlining function 'copy_as_node(ASNode*, ASNode*)' into 'os_sift_down(unsigned short)' (assessment/toplevel.cpp:151:4)
-INFO: [HLS 214-131] Inlining function 'copy_as_node(ASNode*, ASNode*)' into 'os_sift_down(unsigned short)' (assessment/toplevel.cpp:143:4)
-INFO: [HLS 214-131] Inlining function 'copy_as_node(ASNode*, ASNode*)' into 'os_sift_down(unsigned short)' (assessment/toplevel.cpp:134:5)
-INFO: [HLS 214-131] Inlining function 'os_sift_down(unsigned short)' into 'os_heap_pop()' (assessment/toplevel.cpp:264:6)
-INFO: [HLS 214-131] Inlining function 'heuristic(Coord, Coord)' into 'a_star_len(Coord, Coord)' (assessment/toplevel.cpp:284:24)
-INFO: [HLS 214-131] Inlining function 'os_heap_push(ASNode)' into 'a_star_len(Coord, Coord)' (assessment/toplevel.cpp:359:13)
-INFO: [HLS 214-131] Inlining function 'heuristic(Coord, Coord)' into 'a_star_len(Coord, Coord)' (assessment/toplevel.cpp:351:34)
-INFO: [HLS 214-131] Inlining function 'is_closed(unsigned short, unsigned short)' into 'a_star_len(Coord, Coord)' (assessment/toplevel.cpp:342:17)
-INFO: [HLS 214-131] Inlining function 'get_world_bit(unsigned short, unsigned short)' into 'a_star_len(Coord, Coord)' (assessment/toplevel.cpp:337:17)
-INFO: [HLS 214-131] Inlining function 'set_closed(unsigned short, unsigned short)' into 'a_star_len(Coord, Coord)' (assessment/toplevel.cpp:314:9)
-INFO: [HLS 214-131] Inlining function 'is_closed(unsigned short, unsigned short)' into 'a_star_len(Coord, Coord)' (assessment/toplevel.cpp:307:13)
-INFO: [HLS 214-131] Inlining function 'os_heap_pop()' into 'a_star_len(Coord, Coord)' (assessment/toplevel.cpp:295:26)
-INFO: [HLS 214-131] Inlining function 'os_heap_push(ASNode)' into 'a_star_len(Coord, Coord)' (assessment/toplevel.cpp:286:5)
-WARNING: [HLS 214-167] The program may have out of bound array access (assessment/toplevel.cpp:233:34)
-WARNING: [HLS 214-167] The program may have out of bound array access (assessment/toplevel.cpp:253:20)
-WARNING: [HLS 214-167] The program may have out of bound array access (assessment/toplevel.cpp:256:22)
-WARNING: [HLS 214-167] The program may have out of bound array access (assessment/toplevel.cpp:404:29)
-WARNING: [HLS 214-167] The program may have out of bound array access (assessment/toplevel.cpp:405:42)
-INFO: [HLS 214-115] Multiple burst reads of length 7831 and bit width 32 in loop 'COPY_LOOP'(assessment/toplevel.cpp:401:16) has been inferred on port 'MAXI' (assessment/toplevel.cpp:401:16)
-INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i64.s_struct.ASNodes' into 'a_star_len(Coord, Coord)'
+Command       ap_eval done; 0.58 sec.
+INFO: [HLS 214-131] Inlining function 'abs_sub(ap_uint<9>, ap_uint<9>)' into 'heuristic(Coord, Coord)' (assessment/toplevel.cpp:88:9)
+INFO: [HLS 214-131] Inlining function 'abs_sub(ap_uint<9>, ap_uint<9>)' into 'heuristic(Coord, Coord)' (assessment/toplevel.cpp:88:35)
+INFO: [HLS 214-131] Inlining function 'copy_asnode(ASNode*, ASNode*)' into 'os_sift_up(unsigned short)' (assessment/toplevel.cpp:209:3)
+INFO: [HLS 214-131] Inlining function 'copy_asnode(ASNode*, ASNode*)' into 'os_sift_up(unsigned short)' (assessment/toplevel.cpp:207:2)
+INFO: [HLS 214-131] Inlining function 'copy_asnode(ASNode*, ASNode*)' into 'os_sift_up(unsigned short)' (assessment/toplevel.cpp:197:3)
+INFO: [HLS 214-131] Inlining function 'os_sift_up(unsigned short)' into 'os_heap_push(ASNode)' (assessment/toplevel.cpp:231:9)
+INFO: [HLS 214-131] Inlining function 'copy_asnode(ASNode*, ASNode*)' into 'os_sift_down(unsigned short)' (assessment/toplevel.cpp:158:3)
+INFO: [HLS 214-131] Inlining function 'copy_asnode(ASNode*, ASNode*)' into 'os_sift_down(unsigned short)' (assessment/toplevel.cpp:156:2)
+INFO: [HLS 214-131] Inlining function 'copy_asnode(ASNode*, ASNode*)' into 'os_sift_down(unsigned short)' (assessment/toplevel.cpp:145:4)
+INFO: [HLS 214-131] Inlining function 'copy_asnode(ASNode*, ASNode*)' into 'os_sift_down(unsigned short)' (assessment/toplevel.cpp:138:4)
+INFO: [HLS 214-131] Inlining function 'os_sift_down(unsigned short)' into 'os_heap_pop()' (assessment/toplevel.cpp:246:6)
+INFO: [HLS 214-131] Inlining function 'heuristic(Coord, Coord)' into 'a_star(Coord, Coord)' (assessment/toplevel.cpp:263:27)
+INFO: [HLS 214-131] Inlining function 'heuristic(Coord, Coord)' into 'a_star(Coord, Coord)' (assessment/toplevel.cpp:329:37)
+INFO: [HLS 214-131] Inlining function 'is_closed(ap_uint<9>, ap_uint<9>)' into 'a_star(Coord, Coord)' (assessment/toplevel.cpp:322:17)
+INFO: [HLS 214-131] Inlining function 'get_world_bit(ap_uint<9>, ap_uint<9>)' into 'a_star(Coord, Coord)' (assessment/toplevel.cpp:317:17)
+INFO: [HLS 214-131] Inlining function 'set_closed(ap_uint<9>, ap_uint<9>)' into 'a_star(Coord, Coord)' (assessment/toplevel.cpp:297:9)
+INFO: [HLS 214-131] Inlining function 'is_closed(ap_uint<9>, ap_uint<9>)' into 'a_star(Coord, Coord)' (assessment/toplevel.cpp:292:13)
+INFO: [HLS 214-131] Inlining function 'a_star(Coord, Coord)' into 'toplevel(unsigned int*, unsigned int*)' (assessment/toplevel.cpp:394:25)
+INFO: [HLS 214-186] Unrolling loop 'EXPLORE_NEIGHBORS_LOOP' (assessment/toplevel.cpp:302:33) in function 'toplevel' completely with a factor of 4 (assessment/toplevel.cpp:302:33)
+WARNING: [HLS 214-167] The program may have out of bound array access (assessment/toplevel.cpp:239:23)
+WARNING: [HLS 214-167] The program may have out of bound array access (assessment/toplevel.cpp:239:23)
+WARNING: [HLS 214-167] The program may have out of bound array access (assessment/toplevel.cpp:239:23)
+WARNING: [HLS 214-167] The program may have out of bound array access (assessment/toplevel.cpp:239:23)
+WARNING: [HLS 214-167] The program may have out of bound array access (assessment/toplevel.cpp:240:22)
+WARNING: [HLS 214-167] The program may have out of bound array access (assessment/toplevel.cpp:240:22)
+WARNING: [HLS 214-167] The program may have out of bound array access (assessment/toplevel.cpp:240:22)
+WARNING: [HLS 214-167] The program may have out of bound array access (assessment/toplevel.cpp:240:22)
+WARNING: [HLS 214-167] The program may have out of bound array access (assessment/toplevel.cpp:370:19)
+INFO: [HLS 214-115] Multiple burst reads of length 7830 and bit width 32 in loop 'COPY_RAM_LOOP'(assessment/toplevel.cpp:366:20) has been inferred on port 'MAXI' (assessment/toplevel.cpp:366:20)
 INFO-FLOW: DBG:CMD: copy_raw_kernel_xml ap_link_39: kernel.xml not generated: /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/kernel.internal.xml
-INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 2.88 seconds. CPU system time: 0.27 seconds. Elapsed time: 2.92 seconds; current allocated memory: 80.591 MB.
-INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 80.592 MB.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.13 seconds. CPU system time: 0.29 seconds. Elapsed time: 4.56 seconds; current allocated memory: 80.542 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 80.543 MB.
 Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
 Execute         cleanup_all_models 
 INFO: [HLS 200-10] Starting code transformations ...
 INFO-FLOW: Running Standard Transforms...
 Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top toplevel -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a.g.0.bc -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
-Command         transform done; 0.18 sec.
-INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.18 seconds. CPU system time: 0 seconds. Elapsed time: 0.18 seconds; current allocated memory: 85.243 MB.
+Command         transform done; 0.3 sec.
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.29 seconds. CPU system time: 0 seconds. Elapsed time: 0.31 seconds; current allocated memory: 91.795 MB.
 INFO: [HLS 200-10] Checking synthesizability ...
 INFO-FLOW: Checking Synthesizability 1/2..
 Execute         transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -pag -array-normalize -instcombine -dce -array-seg-normalize -instcombine -dce -data-pack -instcombine -dce -inst-simplify -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce -check-dspbuiltin /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a.g.1.bc -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a.g.2.prechk.bc -f 
-Command         transform done; 0.2 sec.
+Command         transform done; 0.37 sec.
 INFO-FLOW: Checking Synthesizability 2/2..
 Execute         transform -syn-check /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a.g.2.prechk.bc -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
-INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.2 seconds. CPU system time: 0 seconds. Elapsed time: 0.22 seconds; current allocated memory: 84.580 MB.
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.41 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.42 seconds; current allocated memory: 102.056 MB.
 INFO-FLOW: Compiler optimizing ...
 INFO-FLOW: Share syncheck's 1.bc for syn flow: copy /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a.g.1.bc to /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a.o.1.bc
 INFO-FLOW: Presyn 1...
 Execute         transform -hls -tmp /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db -interface-port-rename -function-uniquify -directive-preproc -mem2reg -dse -dce -disaggr -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -function-uniquify -resource-proc -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -ptrArgReplace -mem2reg -dce -array-seg-normalize -deadargelim -instcombine -dce -function-uniquify -directive-preproc -mem2reg -dse -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -dce -global-constprop -deadargelim -mem2reg -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -dce -norm-name -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -accesses-merge -function-inline -complex-op-raise -inst-simplify -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin2 -bitwidthmin2 -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -hls-dead-arg-elim -deadargelim -directive-preproc -annotate-dataflow-channels -scalar-propagation -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -norm-name /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a.o.1.bc -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a.o.1.tmp.bc -f 
-WARNING: [XFORM 203-803] Dropped interface mode 'ap_auto' on 'code' (assessment/toplevel.cpp:377) as it is incompatible with its interface mode 's_axilite'.
-INFO: [XFORM 203-510] Pipelining loop 'Loop-2' in function 'a_star_len' automatically.
-INFO: [XFORM 203-510] Pipelining loop 'Loop-3' in function 'a_star_len' automatically.
-INFO: [XFORM 203-510] Pipelining loop 'AS_SEARCH_LOOP' (assessment/toplevel.cpp:253) in function 'a_star_len' automatically.
-INFO: [XFORM 203-510] Pipelining loop 'COPY_LOOP' (assessment/toplevel.cpp:401) in function 'toplevel' automatically.
-INFO: [XFORM 203-510] Pipelining loop 'WAYPOINT_EXTRACT_LOOP' (assessment/toplevel.cpp:412) in function 'toplevel' automatically.
-INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'AS_SEARCH_LOOP' (assessment/toplevel.cpp:253) in function 'a_star_len' for pipelining.
-INFO: [HLS 200-489] Unrolling loop 'SIFT_DOWN_LOOP' (assessment/toplevel.cpp:123) in function 'a_star_len' completely with a factor of 16.
-INFO: [XFORM 203-102] Automatically partitioning small array 'dy' completely based on array size.
-INFO: [XFORM 203-102] Automatically partitioning small array 'dx' completely based on array size.
-INFO: [XFORM 203-101] Partitioning array 'dy' in dimension 1 completely.
-INFO: [XFORM 203-101] Partitioning array 'dx' in dimension 1 completely.
-Command         transform done; 0.49 sec.
+WARNING: [XFORM 203-803] Dropped interface mode 'ap_auto' on 'code' (assessment/toplevel.cpp:351) as it is incompatible with its interface mode 's_axilite'.
+INFO: [XFORM 203-510] Pipelining loop 'COPY_RAM_LOOP' (assessment/toplevel.cpp:366) in function 'toplevel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'WAYPOINT_EXTRACT_LOOP' (assessment/toplevel.cpp:379) in function 'toplevel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'EMPTY_CLOSED_SET_LOOP' (assessment/toplevel.cpp:257) in function 'toplevel' automatically.
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'os_heap_push' (assessment/toplevel.cpp:96:58).
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'os_heap_pop' (assessment/toplevel.cpp:96:54).
+WARNING: [XFORM 203-505] Ignored pipeline directive for loop 'SIFT_DOWN_LOOP' (assessment/toplevel.cpp:118) because its parent loop or function is pipelined.
+WARNING: [XFORM 203-503] Ignored partial unroll directive for loop 'SIFT_DOWN_LOOP' (assessment/toplevel.cpp:118) because its parent loop or function is pipelined.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_169_1' (assessment/toplevel.cpp:169) in function 'os_heap_push' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'SIFT_UP_LOOP' (assessment/toplevel.cpp:178) in function 'os_heap_push' completely with a factor of 16.
+WARNING: [HLS 200-936] Cannot unroll loop 'SIFT_UP_COPY_LOOP' (assessment/toplevel.cpp:205) in function 'os_heap_push': cannot completely unroll a loop with a variable trip count.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_109_1' (assessment/toplevel.cpp:109) in function 'os_heap_pop' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'SIFT_DOWN_LOOP' (assessment/toplevel.cpp:118) in function 'os_heap_pop' completely with a factor of 16.
+WARNING: [HLS 200-936] Cannot unroll loop 'SIFT_DOWN_COPY_LOOP' (assessment/toplevel.cpp:154) in function 'os_heap_pop': cannot completely unroll a loop with a variable trip count.
+Command         transform done; 0.69 sec.
 INFO-FLOW: Presyn 2...
 Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin2 -bitwidthmin2 -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -barrier -norm-name /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a.o.1.tmp.bc -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:98:7) to (assessment/toplevel.cpp:132:23) in function 'a_star_len'... converting 5 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:98:7) to (assessment/toplevel.cpp:132:23) in function 'a_star_len'... converting 5 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:98:7) to (assessment/toplevel.cpp:132:23) in function 'a_star_len'... converting 5 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:98:7) to (assessment/toplevel.cpp:132:23) in function 'a_star_len'... converting 5 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:98:7) to (assessment/toplevel.cpp:132:23) in function 'a_star_len'... converting 5 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:98:7) to (assessment/toplevel.cpp:132:23) in function 'a_star_len'... converting 5 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:98:7) to (assessment/toplevel.cpp:132:23) in function 'a_star_len'... converting 5 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:98:7) to (assessment/toplevel.cpp:132:23) in function 'a_star_len'... converting 5 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:98:7) to (assessment/toplevel.cpp:132:23) in function 'a_star_len'... converting 5 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:98:7) to (assessment/toplevel.cpp:132:23) in function 'a_star_len'... converting 5 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:98:7) to (assessment/toplevel.cpp:132:23) in function 'a_star_len'... converting 5 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:98:7) to (assessment/toplevel.cpp:132:23) in function 'a_star_len'... converting 5 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:98:7) to (assessment/toplevel.cpp:132:23) in function 'a_star_len'... converting 5 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:98:7) to (assessment/toplevel.cpp:132:23) in function 'a_star_len'... converting 5 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:98:7) to (assessment/toplevel.cpp:132:23) in function 'a_star_len'... converting 5 basic blocks.
-Command         transform done; 0.18 sec.
-INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.64 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.67 seconds; current allocated memory: 108.453 MB.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:99:7) to (assessment/toplevel.cpp:131:29) in function 'os_heap_pop'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:99:7) to (assessment/toplevel.cpp:131:29) in function 'os_heap_pop'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:99:7) to (assessment/toplevel.cpp:131:29) in function 'os_heap_pop'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:99:7) to (assessment/toplevel.cpp:131:29) in function 'os_heap_pop'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:99:7) to (assessment/toplevel.cpp:131:29) in function 'os_heap_pop'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:99:7) to (assessment/toplevel.cpp:131:29) in function 'os_heap_pop'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:99:7) to (assessment/toplevel.cpp:131:29) in function 'os_heap_pop'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:99:7) to (assessment/toplevel.cpp:131:29) in function 'os_heap_pop'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:99:7) to (assessment/toplevel.cpp:131:29) in function 'os_heap_pop'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:99:7) to (assessment/toplevel.cpp:131:29) in function 'os_heap_pop'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:99:7) to (assessment/toplevel.cpp:131:29) in function 'os_heap_pop'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:99:7) to (assessment/toplevel.cpp:131:29) in function 'os_heap_pop'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:99:7) to (assessment/toplevel.cpp:131:29) in function 'os_heap_pop'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:99:7) to (assessment/toplevel.cpp:131:29) in function 'os_heap_pop'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:99:7) to (assessment/toplevel.cpp:131:29) in function 'os_heap_pop'... converting 5 basic blocks.
+Command         transform done; 0.35 sec.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 1 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.05 seconds; current allocated memory: 137.362 MB.
 Execute         get_config_compile -enable_loop_extract 
 Execute         get_config_compile -disable_auto_rewind 
 Execute         get_config_compile -enable_auto_rewind 
 INFO-FLOW: Building ssdm...
 Execute         transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -aggr-aa -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin2 -bitwidthmin2 -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -float-op-raise -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -dyn-mem-reuse -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -bitwidth -dump-loop-dep-to-ir -check-all-ssdm -cdfg-build /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a.o.2.bc -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
-WARNING: [HLS 200-960] Cannot flatten loop 'EXPLORE_NEIGHBORS_LOOP' (assessment/toplevel.cpp:320:46) in function 'a_star_len' the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop.
-WARNING: [HLS 200-960] Cannot flatten loop 'AS_SEARCH_LOOP' in function 'a_star_len' more than one sub loop.
-INFO: [HLS 200-472] Inferring partial write operation for 'local_ram' (assessment/toplevel.cpp:402:19)
-INFO: [HLS 200-472] Inferring partial write operation for 'waypoints.x' (assessment/toplevel.cpp:414:24)
-INFO: [HLS 200-472] Inferring partial write operation for 'waypoints.y' (assessment/toplevel.cpp:415:24)
-INFO: [HLS 200-472] Inferring partial write operation for 'closed_set' 
-INFO: [HLS 200-472] Inferring partial write operation for 'open_set_heap.f_score' 
-INFO: [HLS 200-472] Inferring partial write operation for 'open_set_heap.g_score' 
-INFO: [HLS 200-472] Inferring partial write operation for 'open_set_heap.x' 
-INFO: [HLS 200-472] Inferring partial write operation for 'open_set_heap.y' 
-INFO: [HLS 200-472] Inferring partial write operation for 'open_set_heap.f_score' (assessment/toplevel.cpp:233:34)
-INFO: [HLS 200-472] Inferring partial write operation for 'open_set_heap.f_score' (assessment/toplevel.cpp:256:22)
-INFO: [HLS 200-472] Inferring partial write operation for 'open_set_heap.f_score' (assessment/toplevel.cpp:95:13)
-INFO: [HLS 200-472] Inferring partial write operation for 'open_set_heap.g_score' (assessment/toplevel.cpp:96:13)
-INFO: [HLS 200-472] Inferring partial write operation for 'open_set_heap.x' (assessment/toplevel.cpp:97:7)
-INFO: [HLS 200-472] Inferring partial write operation for 'open_set_heap.y' (assessment/toplevel.cpp:98:7)
+WARNING: [HLS 200-960] Cannot flatten loop 'WAYPOINT_LOOP' (assessment/toplevel.cpp:394:32) in function 'toplevel' more than one sub loop.
+INFO: [HLS 200-472] Inferring partial write operation for 'local_ram' (assessment/toplevel.cpp:367:19)
+INFO: [HLS 200-472] Inferring partial write operation for 'waypoints.x.V' (assessment/toplevel.cpp:381:24)
+INFO: [HLS 200-472] Inferring partial write operation for 'waypoints.y.V' (assessment/toplevel.cpp:382:24)
+INFO: [HLS 200-472] Inferring partial write operation for 'closed_set' (assessment/toplevel.cpp:258:20)
 INFO: [HLS 200-472] Inferring partial write operation for 'closed_set' (assessment/toplevel.cpp:78:26)
-Command         transform done; 0.7 sec.
-INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.66 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.7 seconds; current allocated memory: 123.559 MB.
+INFO: [HLS 200-472] Inferring partial write operation for 'open_set_heap.f_score.V' (assessment/toplevel.cpp:218:42)
+INFO: [HLS 200-472] Inferring partial write operation for 'open_set_heap.f_score.V' (assessment/toplevel.cpp:224:38)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.f_score.V' (assessment/toplevel.cpp:170:28)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.g_score.V' (assessment/toplevel.cpp:171:28)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.x.V' (assessment/toplevel.cpp:172:22)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.y.V' (assessment/toplevel.cpp:173:22)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.target' (assessment/toplevel.cpp:174:22)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.f_score.V' (assessment/toplevel.cpp:96:13)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.g_score.V' (assessment/toplevel.cpp:97:13)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.x.V' (assessment/toplevel.cpp:98:7)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.y.V' (assessment/toplevel.cpp:99:7)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.target' (assessment/toplevel.cpp:198:28)
+INFO: [HLS 200-472] Inferring partial write operation for 'open_set_heap.f_score.V' (assessment/toplevel.cpp:240:22)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.f_score.V' (assessment/toplevel.cpp:110:28)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.g_score.V' (assessment/toplevel.cpp:111:28)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.x.V' (assessment/toplevel.cpp:112:22)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.y.V' (assessment/toplevel.cpp:113:22)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.target' (assessment/toplevel.cpp:114:22)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.y.V' (assessment/toplevel.cpp:99:7)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.target' (assessment/toplevel.cpp:139:29)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.f_score.V' (assessment/toplevel.cpp:96:13)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.g_score.V' (assessment/toplevel.cpp:97:13)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.x.V' (assessment/toplevel.cpp:98:7)
+Command         transform done; 1.21 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 1.18 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.21 seconds; current allocated memory: 166.946 MB.
 INFO-FLOW: Finish building internal data model.
-Command       opt_and_import_c done; 1.77 sec.
-Command     elaborate done; 5.18 sec.
+Command       opt_and_import_c done; 2.99 sec.
+Command     elaborate done; 11.45 sec.
 Execute     autosyn -from_csynth_design=1 
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO-FLOW: Synthesizing C/C++ design ...
@@ -397,99 +423,119 @@ INFO: [HLS 200-10] Synthesizing 'toplevel' ...
 Execute       ap_set_top_model toplevel 
 Execute       get_model_list toplevel -filter all-wo-channel -topdown 
 Execute       preproc_iomode -model toplevel 
-Execute       preproc_iomode -model a_star_len 
+Execute       preproc_iomode -model os_heap_pop 
+Execute       preproc_iomode -model os_heap_push 
 Execute       get_model_list toplevel -filter all-wo-channel 
-INFO-FLOW: Model list for configure: a_star_len toplevel
-INFO-FLOW: Configuring Module : a_star_len ...
-Execute       set_default_model a_star_len 
-Execute       apply_spec_resource_limit a_star_len 
+INFO-FLOW: Model list for configure: os_heap_push os_heap_pop toplevel
+INFO-FLOW: Configuring Module : os_heap_push ...
+Execute       set_default_model os_heap_push 
+Execute       apply_spec_resource_limit os_heap_push 
+INFO-FLOW: Configuring Module : os_heap_pop ...
+Execute       set_default_model os_heap_pop 
+Execute       apply_spec_resource_limit os_heap_pop 
 INFO-FLOW: Configuring Module : toplevel ...
 Execute       set_default_model toplevel 
 Execute       apply_spec_resource_limit toplevel 
-INFO-FLOW: Model list for preprocess: a_star_len toplevel
-INFO-FLOW: Preprocessing Module: a_star_len ...
-Execute       set_default_model a_star_len 
-Execute       cdfg_preprocess -model a_star_len 
-Execute       rtl_gen_preprocess a_star_len 
+INFO-FLOW: Model list for preprocess: os_heap_push os_heap_pop toplevel
+INFO-FLOW: Preprocessing Module: os_heap_push ...
+Execute       set_default_model os_heap_push 
+Execute       cdfg_preprocess -model os_heap_push 
+Execute       rtl_gen_preprocess os_heap_push 
+INFO-FLOW: Preprocessing Module: os_heap_pop ...
+Execute       set_default_model os_heap_pop 
+Execute       cdfg_preprocess -model os_heap_pop 
+Execute       rtl_gen_preprocess os_heap_pop 
 INFO-FLOW: Preprocessing Module: toplevel ...
 Execute       set_default_model toplevel 
 Execute       cdfg_preprocess -model toplevel 
 Execute       rtl_gen_preprocess toplevel 
-INFO-FLOW: Model list for synthesis: a_star_len toplevel
+INFO-FLOW: Model list for synthesis: os_heap_push os_heap_pop toplevel
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'a_star_len' 
+INFO: [HLS 200-42] -- Implementing module 'os_heap_push' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
-Execute       set_default_model a_star_len 
-Execute       schedule -model a_star_len 
+Execute       set_default_model os_heap_push 
+Execute       schedule -model os_heap_push 
 INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln290) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln67) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln59) to 3 in order to utilize available DSP registers.
-INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'Loop 1'
-INFO: [SCHED 204-61] Pipelining loop 'Loop 2'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'Loop 2'
-INFO: [SCHED 204-61] Pipelining loop 'AS_SEARCH_LOOP'.
-WARNING: [HLS 200-878] Unable to schedule the loop exit test ('and' operation ('and_ln304', assessment/toplevel.cpp:304)) in the first pipeline iteration (II = 1 cycles).
-WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln307', assessment/toplevel.cpp:307)) in the first pipeline iteration (II = 2 cycles).
-WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln307', assessment/toplevel.cpp:307)) in the first pipeline iteration (II = 3 cycles).
-WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln307', assessment/toplevel.cpp:307)) in the first pipeline iteration (II = 4 cycles).
-WARNING: [HLS 200-880] The II Violation in module 'a_star_len' (loop 'AS_SEARCH_LOOP'): Unable to enforce a carried dependence constraint (II = 35, distance = 1, offset = 1) between 'store' operation ('open_set_heap_f_score_addr_34_write_ln95', assessment/toplevel.cpp:95) of variable 'open_set_heap_f_score_load_20', assessment/toplevel.cpp:129 on array 'open_set_heap_f_score' and 'load' operation ('node', assessment/toplevel.cpp:256) on array 'open_set_heap_f_score'.
-WARNING: [HLS 200-880] The II Violation in module 'a_star_len' (loop 'AS_SEARCH_LOOP'): Unable to enforce a carried dependence constraint (II = 51, distance = 1, offset = 1) between 'store' operation ('open_set_heap_f_score_addr_46_write_ln95', assessment/toplevel.cpp:95) of variable 'open_set_heap_f_score_load_28', assessment/toplevel.cpp:129 on array 'open_set_heap_f_score' and 'load' operation ('node', assessment/toplevel.cpp:256) on array 'open_set_heap_f_score'.
-WARNING: [HLS 200-880] The II Violation in module 'a_star_len' (loop 'AS_SEARCH_LOOP'): Unable to enforce a carried dependence constraint (II = 59, distance = 1, offset = 1) between 'store' operation ('open_set_heap_f_score_addr_52_write_ln95', assessment/toplevel.cpp:95) of variable 'open_set_heap_f_score_load_32', assessment/toplevel.cpp:129 on array 'open_set_heap_f_score' and 'load' operation ('node', assessment/toplevel.cpp:256) on array 'open_set_heap_f_score'.
-WARNING: [HLS 200-880] The II Violation in module 'a_star_len' (loop 'AS_SEARCH_LOOP'): Unable to enforce a carried dependence constraint (II = 63, distance = 1, offset = 1) between 'store' operation ('open_set_heap_f_score_addr_5_write_ln95', assessment/toplevel.cpp:95) of variable 'node', assessment/toplevel.cpp:256 on array 'open_set_heap_f_score' and 'load' operation ('open_set_heap_f_score_load_1', assessment/toplevel.cpp:129) on array 'open_set_heap_f_score'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 64, Depth = 65, loop 'AS_SEARCH_LOOP'
-INFO: [SCHED 204-61] Pipelining loop 'SIFT_UP_LOOP'.
-WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln199', assessment/toplevel.cpp:199)) in the first pipeline iteration (II = 1 cycles).
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 2, Depth = 3, loop 'SIFT_UP_LOOP'
-WARNING: [HLS 200-871] Estimated clock period (8.213ns) exceeds the target (target clock period: 10ns, clock uncertainty: 2.7ns, effective delay budget: 7.3ns).
-WARNING: [HLS 200-1016] The critical path in module 'a_star_len' consists of the following:	'phi' operation ('previous') with incoming values : ('idx', assessment/toplevel.cpp:234) ('parent', assessment/toplevel.cpp:195) [1117]  (0 ns)
-	'sub' operation ('sub_ln195', assessment/toplevel.cpp:195) [1131]  (2.08 ns)
-	'sub' operation ('sub_ln195_1', assessment/toplevel.cpp:195) [1133]  (2.08 ns)
-	'select' operation ('parent', assessment/toplevel.cpp:195) [1135]  (0.805 ns)
-	'getelementptr' operation ('open_set_heap_x_addr_8', assessment/toplevel.cpp:196) [1143]  (0 ns)
-	'load' operation ('open_set_heap_x_load_35', assessment/toplevel.cpp:196) on array 'open_set_heap_x' [1146]  (3.25 ns)
-
+WARNING: [SCHED 204-65] Unable to satisfy pipeline directive for function 'os_heap_push': contains subloop(s) that are not unrolled.
 INFO: [SCHED 204-11] Finished scheduling.
-Command       schedule done; 1.82 sec.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1.82 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.9 seconds; current allocated memory: 130.351 MB.
-Execute       syn_report -verbosereport -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a_star_len.verbose.sched.rpt 
+Command       schedule done; 0.56 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.64 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.67 seconds; current allocated memory: 170.247 MB.
+Execute       syn_report -verbosereport -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/os_heap_push.verbose.sched.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Command       syn_report done; 0.3 sec.
-Execute       db_write -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a_star_len.sched.adb -f 
-INFO-FLOW: Finish scheduling a_star_len.
-Execute       set_default_model a_star_len 
-Execute       bind -model a_star_len 
+Command       syn_report done; 0.26 sec.
+Execute       db_write -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/os_heap_push.sched.adb -f 
+INFO-FLOW: Finish scheduling os_heap_push.
+Execute       set_default_model os_heap_push 
+Execute       bind -model os_heap_push 
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-Command       bind done; 0.29 sec.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.63 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.66 seconds; current allocated memory: 135.452 MB.
-Execute       syn_report -verbosereport -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a_star_len.verbose.bind.rpt 
+Command       bind done; 0.19 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.47 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.49 seconds; current allocated memory: 172.941 MB.
+Execute       syn_report -verbosereport -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/os_heap_push.verbose.bind.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Command       syn_report done; 0.51 sec.
-Execute       db_write -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a_star_len.bind.adb -f 
-INFO-FLOW: Finish binding a_star_len.
+Command       syn_report done; 0.3 sec.
+Execute       db_write -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/os_heap_push.bind.adb -f 
+INFO-FLOW: Finish binding os_heap_push.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'os_heap_pop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model os_heap_pop 
+Execute       schedule -model os_heap_pop 
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-65] Unable to satisfy pipeline directive for function 'os_heap_pop': contains subloop(s) that are not unrolled.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.9 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1.19 seconds. CPU system time: 0.03 seconds. Elapsed time: 1.25 seconds; current allocated memory: 175.680 MB.
+Execute       syn_report -verbosereport -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/os_heap_pop.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Command       syn_report done; 0.3 sec.
+Execute       db_write -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/os_heap_pop.sched.adb -f 
+INFO-FLOW: Finish scheduling os_heap_pop.
+Execute       set_default_model os_heap_pop 
+Execute       bind -model os_heap_pop 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.27 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.6 seconds. CPU system time: 0 seconds. Elapsed time: 0.62 seconds; current allocated memory: 179.246 MB.
+Execute       syn_report -verbosereport -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/os_heap_pop.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Command       syn_report done; 0.49 sec.
+Execute       db_write -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/os_heap_pop.bind.adb -f 
+INFO-FLOW: Finish binding os_heap_pop.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'toplevel' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 Execute       set_default_model toplevel 
 Execute       schedule -model toplevel 
 INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln432) to 3 in order to utilize available DSP registers.
-INFO: [SCHED 204-61] Pipelining loop 'COPY_LOOP'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'COPY_LOOP'
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln275) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln208) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln208_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln208_2) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'COPY_RAM_LOOP'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'COPY_RAM_LOOP'
 INFO: [SCHED 204-61] Pipelining loop 'WAYPOINT_EXTRACT_LOOP'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'WAYPOINT_EXTRACT_LOOP'
+INFO: [SCHED 204-61] Pipelining loop 'EMPTY_CLOSED_SET_LOOP'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'EMPTY_CLOSED_SET_LOOP'
+WARNING: [SCHED 204-67] Unable to satisfy pipeline directive for loop 'AS_SEARCH_LOOP': contains subfunction 'os_heap_pop' which is not pipelined.
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.62 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.67 seconds; current allocated memory: 135.859 MB.
+Command       schedule done; 0.32 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.87 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.89 seconds; current allocated memory: 180.454 MB.
 Execute       syn_report -verbosereport -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.verbose.sched.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
+Command       syn_report done; 0.18 sec.
 Execute       db_write -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.sched.adb -f 
 INFO-FLOW: Finish scheduling toplevel.
 Execute       set_default_model toplevel 
@@ -499,51 +545,75 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-Command       bind done; 0.16 sec.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.21 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.23 seconds; current allocated memory: 136.397 MB.
+Command       bind done; 0.46 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.64 seconds. CPU system time: 0 seconds. Elapsed time: 0.66 seconds; current allocated memory: 182.063 MB.
 Execute       syn_report -verbosereport -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.verbose.bind.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Command       syn_report done; 0.42 sec.
+Command       syn_report done; 0.8 sec.
 Execute       db_write -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.bind.adb -f 
 INFO-FLOW: Finish binding toplevel.
 Execute       get_model_list toplevel -filter all-wo-channel 
 INFO-FLOW: Preprocessing for RTLGen ...
-Execute       rtl_gen_preprocess a_star_len 
+Execute       rtl_gen_preprocess os_heap_push 
+Execute       rtl_gen_preprocess os_heap_pop 
 Execute       rtl_gen_preprocess toplevel 
-INFO-FLOW: Model list for RTL generation: a_star_len toplevel
+INFO-FLOW: Model list for RTL generation: os_heap_push os_heap_pop toplevel
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'a_star_len' 
+INFO: [HLS 200-10] -- Generating RTL for module 'os_heap_push' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 Execute       get_config_rtl -module_prefix 
 Execute       get_config_rtl -module_auto_prefix 
 Execute       get_config_rtl -module_prefix 
 Execute       get_config_rtl -module_auto_prefix 
-Execute       create_rtl_model a_star_len -top_prefix toplevel_ -sub_prefix toplevel_ -mg_file /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a_star_len.compgen.tcl 
-INFO: [RTGEN 206-100] Generating core module 'mac_muladd_16ns_16ns_16ns_18_4_1': 2 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'mul_mul_16ns_16ns_31_4_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'mux_42_32_1_1': 2 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'a_star_len'.
-Command       create_rtl_model done; 0.32 sec.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.71 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.76 seconds; current allocated memory: 144.547 MB.
+Execute       create_rtl_model os_heap_push -top_prefix toplevel_ -sub_prefix toplevel_ -mg_file /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/os_heap_push.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'os_heap_push'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.91 seconds. CPU system time: 0 seconds. Elapsed time: 0.93 seconds; current allocated memory: 185.260 MB.
 Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.rtl_wrap.cfg.tcl 
-Execute       gen_rtl a_star_len -style xilinx -f -lang vhdl -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/syn/vhdl/toplevel_a_star_len 
-Execute       gen_rtl a_star_len -style xilinx -f -lang vlog -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/syn/verilog/toplevel_a_star_len 
-Execute       syn_report -csynth -model a_star_len -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/syn/report/a_star_len_csynth.rpt 
+Execute       gen_rtl os_heap_push -style xilinx -f -lang vhdl -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/syn/vhdl/toplevel_os_heap_push 
+Execute       gen_rtl os_heap_push -style xilinx -f -lang vlog -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/syn/verilog/toplevel_os_heap_push 
+Execute       syn_report -csynth -model os_heap_push -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/syn/report/os_heap_push_csynth.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Command       syn_report done; 0.32 sec.
-Execute       syn_report -rtlxml -model a_star_len -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/syn/report/a_star_len_csynth.xml 
+Command       syn_report done; 0.13 sec.
+Execute       syn_report -rtlxml -model os_heap_push -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/syn/report/os_heap_push_csynth.xml 
 Execute         get_solution -flow_target
 Execute           get_solution -flow_target 
-Command       syn_report done; 0.16 sec.
-Execute       syn_report -verbosereport -model a_star_len -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a_star_len.verbose.rpt 
+Execute       syn_report -verbosereport -model os_heap_push -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/os_heap_push.verbose.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Command       syn_report done; 0.7 sec.
-Execute       db_write -model a_star_len -f -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a_star_len.adb 
-Command       db_write done; 0.25 sec.
-Execute       gen_tb_info a_star_len -p /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a_star_len 
+Command       syn_report done; 0.35 sec.
+Execute       db_write -model os_heap_push -f -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/os_heap_push.adb 
+Execute       gen_tb_info os_heap_push -p /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/os_heap_push 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'os_heap_pop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model os_heap_pop -top_prefix toplevel_ -sub_prefix toplevel_ -mg_file /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/os_heap_pop.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'os_heap_pop'.
+Command       create_rtl_model done; 0.13 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.77 seconds. CPU system time: 0.08 seconds. Elapsed time: 0.87 seconds; current allocated memory: 200.235 MB.
+Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.rtl_wrap.cfg.tcl 
+Execute       gen_rtl os_heap_pop -style xilinx -f -lang vhdl -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/syn/vhdl/toplevel_os_heap_pop 
+Execute       gen_rtl os_heap_pop -style xilinx -f -lang vlog -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/syn/verilog/toplevel_os_heap_pop 
+Execute       syn_report -csynth -model os_heap_pop -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/syn/report/os_heap_pop_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Command       syn_report done; 0.22 sec.
+Execute       syn_report -rtlxml -model os_heap_pop -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/syn/report/os_heap_pop_csynth.xml 
+Execute         get_solution -flow_target
+Execute           get_solution -flow_target 
+Command       syn_report done; 0.11 sec.
+Execute       syn_report -verbosereport -model os_heap_pop -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/os_heap_pop.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Command       syn_report done; 0.54 sec.
+Execute       db_write -model os_heap_pop -f -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/os_heap_pop.adb 
+Command       db_write done; 0.17 sec.
+Execute       gen_tb_info os_heap_pop -p /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/os_heap_pop 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'toplevel' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -557,14 +627,19 @@ INFO: [RTGEN 206-500] Setting interface mode on port 'toplevel/ram' to 's_axilit
 INFO: [RTGEN 206-500] Setting interface mode on port 'toplevel/code' to 's_axilite & ap_vld'.
 INFO: [RTGEN 206-500] Setting interface mode on function 'toplevel' to 's_axilite & ap_ctrl_hs'.
 WARNING: [RTGEN 206-101] Register 'error_flag' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'world_size' is power-on initialization.
-INFO: [RTGEN 206-100] Bundling port 'code' to AXI-Lite port AXILiteS.
+WARNING: [RTGEN 206-101] Register 'open_set_size' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'waypoint_count' is power-on initialization.
+INFO: [RTGEN 206-100] Bundling port 'code' and 'return' to AXI-Lite port AXILiteS.
 INFO: [RTGEN 206-100] Bundling port 'ram' to AXI-Lite port control.
-INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8ns_11ns_32ns_32_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_16ns_9ns_9ns_18_4_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_mul_16ns_16ns_18_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_mul_16ns_9ns_18_4_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'toplevel'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.51 seconds. CPU system time: 0.07 seconds. Elapsed time: 1.65 seconds; current allocated memory: 168.298 MB.
+Command       create_rtl_model done; 0.13 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.24 seconds. CPU system time: 0.06 seconds. Elapsed time: 1.33 seconds; current allocated memory: 218.551 MB.
 Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.rtl_wrap.cfg.tcl 
 Execute       gen_rtl toplevel -istop -style xilinx -f -lang vhdl -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/syn/vhdl/toplevel 
+Command       gen_rtl done; 0.19 sec.
 Execute       gen_rtl toplevel -istop -style xilinx -f -lang vlog -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/syn/verilog/toplevel 
 Execute       syn_report -csynth -model toplevel -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/syn/report/toplevel_csynth.rpt 
 Execute         AP::get_flow_target_display_name
@@ -575,12 +650,13 @@ Execute           get_solution -flow_target
 Execute       syn_report -verbosereport -model toplevel -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.verbose.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Command       syn_report done; 0.41 sec.
+Command       syn_report done; 0.85 sec.
 Execute       db_write -model toplevel -f -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.adb 
+Command       db_write done; 0.11 sec.
 Execute       gen_tb_info toplevel -p /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel 
 Execute       export_constraint_db -f -tool general -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.constraint.tcl 
 Execute       syn_report -designview -model toplevel -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.design.xml 
-Command       syn_report done; 0.35 sec.
+Command       syn_report done; 0.51 sec.
 Execute       syn_report -csynthDesign -model toplevel -o /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/syn/report/csynth.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
@@ -594,52 +670,62 @@ Execute       get_config_rtl -module_prefix
 Execute       get_config_rtl -module_prefix 
 Execute       get_config_rtl -module_auto_prefix 
 Execute       sc_get_portdomain toplevel 
-INFO-FLOW: Model list for RTL component generation: a_star_len toplevel
-INFO-FLOW: Handling components in module [a_star_len] ... 
-Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a_star_len.compgen.tcl 
-INFO-FLOW: Found component toplevel_mux_42_32_1_1.
-INFO-FLOW: Append model toplevel_mux_42_32_1_1
-INFO-FLOW: Found component toplevel_mux_42_32_1_1.
-INFO-FLOW: Append model toplevel_mux_42_32_1_1
-INFO-FLOW: Found component toplevel_mul_mul_16ns_16ns_31_4_1.
-INFO-FLOW: Append model toplevel_mul_mul_16ns_16ns_31_4_1
-INFO-FLOW: Found component toplevel_mac_muladd_16ns_16ns_16ns_18_4_1.
-INFO-FLOW: Append model toplevel_mac_muladd_16ns_16ns_16ns_18_4_1
-INFO-FLOW: Found component toplevel_a_star_len_closed_set.
-INFO-FLOW: Append model toplevel_a_star_len_closed_set
-INFO-FLOW: Found component toplevel_a_star_len_open_set_heap_f_score.
-INFO-FLOW: Append model toplevel_a_star_len_open_set_heap_f_score
+INFO-FLOW: Model list for RTL component generation: os_heap_push os_heap_pop toplevel
+INFO-FLOW: Handling components in module [os_heap_push] ... 
+Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/os_heap_push.compgen.tcl 
+INFO-FLOW: Found component toplevel_os_heap_push_moves_node_f_score_V.
+INFO-FLOW: Append model toplevel_os_heap_push_moves_node_f_score_V
+INFO-FLOW: Found component toplevel_os_heap_push_moves_node_x_V.
+INFO-FLOW: Append model toplevel_os_heap_push_moves_node_x_V
+INFO-FLOW: Found component toplevel_os_heap_push_moves_target.
+INFO-FLOW: Append model toplevel_os_heap_push_moves_target
+INFO-FLOW: Handling components in module [os_heap_pop] ... 
+Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/os_heap_pop.compgen.tcl 
 INFO-FLOW: Handling components in module [toplevel] ... 
 Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.compgen.tcl 
-INFO-FLOW: Found component toplevel_mac_muladd_8ns_11ns_32ns_32_4_1.
-INFO-FLOW: Append model toplevel_mac_muladd_8ns_11ns_32ns_32_4_1
+INFO-FLOW: Found component toplevel_mul_mul_16ns_16ns_18_4_1.
+INFO-FLOW: Append model toplevel_mul_mul_16ns_16ns_18_4_1
+INFO-FLOW: Found component toplevel_mul_mul_16ns_9ns_18_4_1.
+INFO-FLOW: Append model toplevel_mul_mul_16ns_9ns_18_4_1
+INFO-FLOW: Found component toplevel_mac_muladd_16ns_9ns_9ns_18_4_1.
+INFO-FLOW: Append model toplevel_mac_muladd_16ns_9ns_9ns_18_4_1
 INFO-FLOW: Found component toplevel_local_ram.
 INFO-FLOW: Append model toplevel_local_ram
-INFO-FLOW: Found component toplevel_waypoints_x.
-INFO-FLOW: Append model toplevel_waypoints_x
+INFO-FLOW: Found component toplevel_waypoints_x_V.
+INFO-FLOW: Append model toplevel_waypoints_x_V
+INFO-FLOW: Found component toplevel_closed_set.
+INFO-FLOW: Append model toplevel_closed_set
+INFO-FLOW: Found component toplevel_open_set_heap_f_score_V.
+INFO-FLOW: Append model toplevel_open_set_heap_f_score_V
+INFO-FLOW: Found component toplevel_open_set_heap_x_V.
+INFO-FLOW: Append model toplevel_open_set_heap_x_V
 INFO-FLOW: Found component toplevel_AXILiteS_s_axi.
 INFO-FLOW: Append model toplevel_AXILiteS_s_axi
 INFO-FLOW: Found component toplevel_control_s_axi.
 INFO-FLOW: Append model toplevel_control_s_axi
 INFO-FLOW: Found component toplevel_MAXI_m_axi.
 INFO-FLOW: Append model toplevel_MAXI_m_axi
-INFO-FLOW: Append model a_star_len
+INFO-FLOW: Append model os_heap_push
+INFO-FLOW: Append model os_heap_pop
 INFO-FLOW: Append model toplevel
 INFO-FLOW: Generating RTL model list ...
-INFO-FLOW: All models in this session: toplevel_mux_42_32_1_1 toplevel_mux_42_32_1_1 toplevel_mul_mul_16ns_16ns_31_4_1 toplevel_mac_muladd_16ns_16ns_16ns_18_4_1 toplevel_a_star_len_closed_set toplevel_a_star_len_open_set_heap_f_score toplevel_mac_muladd_8ns_11ns_32ns_32_4_1 toplevel_local_ram toplevel_waypoints_x toplevel_AXILiteS_s_axi toplevel_control_s_axi toplevel_MAXI_m_axi a_star_len toplevel
-INFO-FLOW: To file: write model toplevel_mux_42_32_1_1
-INFO-FLOW: To file: write model toplevel_mux_42_32_1_1
-INFO-FLOW: To file: write model toplevel_mul_mul_16ns_16ns_31_4_1
-INFO-FLOW: To file: write model toplevel_mac_muladd_16ns_16ns_16ns_18_4_1
-INFO-FLOW: To file: write model toplevel_a_star_len_closed_set
-INFO-FLOW: To file: write model toplevel_a_star_len_open_set_heap_f_score
-INFO-FLOW: To file: write model toplevel_mac_muladd_8ns_11ns_32ns_32_4_1
+INFO-FLOW: All models in this session: toplevel_os_heap_push_moves_node_f_score_V toplevel_os_heap_push_moves_node_x_V toplevel_os_heap_push_moves_target toplevel_mul_mul_16ns_16ns_18_4_1 toplevel_mul_mul_16ns_9ns_18_4_1 toplevel_mac_muladd_16ns_9ns_9ns_18_4_1 toplevel_local_ram toplevel_waypoints_x_V toplevel_closed_set toplevel_open_set_heap_f_score_V toplevel_open_set_heap_x_V toplevel_AXILiteS_s_axi toplevel_control_s_axi toplevel_MAXI_m_axi os_heap_push os_heap_pop toplevel
+INFO-FLOW: To file: write model toplevel_os_heap_push_moves_node_f_score_V
+INFO-FLOW: To file: write model toplevel_os_heap_push_moves_node_x_V
+INFO-FLOW: To file: write model toplevel_os_heap_push_moves_target
+INFO-FLOW: To file: write model toplevel_mul_mul_16ns_16ns_18_4_1
+INFO-FLOW: To file: write model toplevel_mul_mul_16ns_9ns_18_4_1
+INFO-FLOW: To file: write model toplevel_mac_muladd_16ns_9ns_9ns_18_4_1
 INFO-FLOW: To file: write model toplevel_local_ram
-INFO-FLOW: To file: write model toplevel_waypoints_x
+INFO-FLOW: To file: write model toplevel_waypoints_x_V
+INFO-FLOW: To file: write model toplevel_closed_set
+INFO-FLOW: To file: write model toplevel_open_set_heap_f_score_V
+INFO-FLOW: To file: write model toplevel_open_set_heap_x_V
 INFO-FLOW: To file: write model toplevel_AXILiteS_s_axi
 INFO-FLOW: To file: write model toplevel_control_s_axi
 INFO-FLOW: To file: write model toplevel_MAXI_m_axi
-INFO-FLOW: To file: write model a_star_len
+INFO-FLOW: To file: write model os_heap_push
+INFO-FLOW: To file: write model os_heap_pop
 INFO-FLOW: To file: write model toplevel
 INFO-FLOW: Finished generating RTL model list.
 
@@ -699,30 +785,38 @@ Execute       ap_part_info -name xc7z010-clg400-1 -data names -quiet
 Execute       ap_part_info -name xc7z010-clg400-1 -data info -quiet 
 Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
 Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
-Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a_star_len.compgen.tcl 
+Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/os_heap_push.compgen.tcl 
+INFO: [RTMG 210-278] Implementing memory 'toplevel_os_heap_push_moves_node_f_score_V_ram (RAM)' using auto RAMs.
 Execute         ap_part_info -name xc7z010-clg400-1 -data names -quiet 
 Execute         ap_part_info -name xc7z010-clg400-1 -data info -quiet 
+INFO: [RTMG 210-278] Implementing memory 'toplevel_os_heap_push_moves_node_x_V_ram (RAM)' using auto RAMs.
 Execute         ap_part_info -name xc7z010-clg400-1 -data names -quiet 
 Execute         ap_part_info -name xc7z010-clg400-1 -data info -quiet 
+INFO: [RTMG 210-278] Implementing memory 'toplevel_os_heap_push_moves_target_ram (RAM)' using auto RAMs.
 Execute         ap_part_info -name xc7z010-clg400-1 -data names -quiet 
 Execute         ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-Execute         ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute         ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-Execute         ap_part_info -name xc7z010-clg400-1 -data info 
-INFO: [RTMG 210-278] Implementing memory 'toplevel_a_star_len_closed_set_ram (RAM_T2P_BRAM)' using block RAMs with power-on initialization.
-Execute         ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute         ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-INFO: [RTMG 210-278] Implementing memory 'toplevel_a_star_len_open_set_heap_f_score_ram (RAM_2P_BRAM)' using block RAMs with power-on initialization.
-Execute         ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute         ap_part_info -name xc7z010-clg400-1 -data info -quiet 
+Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/os_heap_pop.compgen.tcl 
 Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.compgen.tcl 
+Execute         ap_part_info -name xc7z010-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z010-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z010-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z010-clg400-1 -data info -quiet 
 Execute         ap_part_info -name xc7z010-clg400-1 -data names -quiet 
 Execute         ap_part_info -name xc7z010-clg400-1 -data info -quiet 
 Execute         ap_part_info -name xc7z010-clg400-1 -data info 
 INFO: [RTMG 210-278] Implementing memory 'toplevel_local_ram_ram (RAM_T2P_BRAM)' using block RAMs with power-on initialization.
 Execute         ap_part_info -name xc7z010-clg400-1 -data names -quiet 
 Execute         ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-INFO: [RTMG 210-278] Implementing memory 'toplevel_waypoints_x_ram (RAM)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'toplevel_waypoints_x_V_ram (RAM)' using auto RAMs with power-on initialization.
+Execute         ap_part_info -name xc7z010-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z010-clg400-1 -data info -quiet 
+INFO: [RTMG 210-278] Implementing memory 'toplevel_closed_set_ram (RAM_T2P_BRAM)' using block RAMs with power-on initialization.
+Execute         ap_part_info -name xc7z010-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z010-clg400-1 -data info -quiet 
+INFO: [RTMG 210-278] Implementing memory 'toplevel_open_set_heap_f_score_V_ram (RAM_T2P_BRAM)' using block RAMs with power-on initialization.
+Execute         ap_part_info -name xc7z010-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z010-clg400-1 -data info -quiet 
+INFO: [RTMG 210-278] Implementing memory 'toplevel_open_set_heap_x_V_ram (RAM_T2P_BRAM)' using block RAMs with power-on initialization.
 Execute         ap_part_info -name xc7z010-clg400-1 -data names -quiet 
 Execute         ap_part_info -name xc7z010-clg400-1 -data info -quiet 
 Execute         source ./AXILiteS.slave.tcl 
@@ -730,6 +824,7 @@ Execute         source ./AXILiteS.slave.tcl
 Execute         source ./control.slave.tcl 
 Execute         ap_part_info -name xc7z010-clg400-1 -data names -quiet 
 Execute         ap_part_info -name xc7z010-clg400-1 -data info -quiet 
+Command       ap_source done; 0.15 sec.
 INFO-FLOW: DBG:CMD:     auto_generate -export -impltomg_flag -rtl both -tool Vivado -pcore_version 1.00.a -phase csynth_design -d /home/tomster12/files/EMBS/vitis_hls/assessment/solution1
 Execute       get_solution -flow_target 
 Execute       get_config_export -xo 
@@ -777,11 +872,13 @@ Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.
 INFO-FLOW: DBG:CMD:       export_impl_rtl
 INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.verilog
 Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
-Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a_star_len.compgen.tcl 
+Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/os_heap_push.compgen.tcl 
+Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/os_heap_pop.compgen.tcl 
 Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.compgen.tcl 
 INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=1 expOnly=1 dstVlogDir=impl/.pcores/verilog
 Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
-Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a_star_len.compgen.tcl 
+Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/os_heap_push.compgen.tcl 
+Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/os_heap_pop.compgen.tcl 
 Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.compgen.tcl 
 Execute         ap_part_info -name xc7z010-clg400-1 -data names -quiet 
 Execute         ap_part_info -name xc7z010-clg400-1 -data info -quiet 
@@ -799,7 +896,8 @@ Execute       ap_part_info -name xc7z010-clg400-1 -data names -quiet
 Execute       ap_part_info -name xc7z010-clg400-1 -data info -quiet 
 INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.pcores/verilog_sim
 Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
-Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a_star_len.compgen.tcl 
+Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/os_heap_push.compgen.tcl 
+Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/os_heap_pop.compgen.tcl 
 Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.compgen.tcl 
 Execute       ap_part_info -name xc7z010-clg400-1 -data names -quiet 
 Execute       ap_part_info -name xc7z010-clg400-1 -data info -quiet 
@@ -812,7 +910,7 @@ Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.
 Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.tbgen.tcl 
 INFO-FLOW: DBG:CMD:       hasPcoreIpAdapter=false #gSsdmPorts=0
 INFO-FLOW: DBG:CMD: Skipping loadAnalyze_DB, #g_database=3
-INFO-FLOW: DBG:CMD:       generate_json is_phase_csynth=1 g_has_adaptors=false generate_bd_files=0 #modelList=14 #gSsdmPorts=0
+INFO-FLOW: DBG:CMD:       generate_json is_phase_csynth=1 g_has_adaptors=false generate_bd_files=0 #modelList=17 #gSsdmPorts=0
 Execute       source /opt/Xilinx/Vitis_HLS/2020.2/tps/tcl/tcllib1.11.1/fileutil/fileutil.tcl 
 Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
 Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
@@ -828,7 +926,8 @@ Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.
 Execute       get_config_export -format 
 Execute       ap_part_info -name xc7z010-clg400-1 -data names -quiet 
 Execute       ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a_star_len.tbgen.tcl 
+Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/os_heap_push.tbgen.tcl 
+Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/os_heap_pop.tbgen.tcl 
 Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.tbgen.tcl 
 Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
 Execute       ap_part_info -name xc7z010-clg400-1 -data names -quiet 
@@ -843,7 +942,7 @@ Execute       sc_get_clocks toplevel
 Execute       source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
 Execute       get_config_debug -directory 
 INFO-FLOW: DBG:CMD:       delete-temp-dirs (skipped for debug)
-INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1.58 seconds. CPU system time: 0.07 seconds. Elapsed time: 1.71 seconds; current allocated memory: 178.688 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 2.71 seconds. CPU system time: 0.2 seconds. Elapsed time: 2.99 seconds; current allocated memory: 233.499 MB.
 INFO: [VHDL 208-304] Generating VHDL RTL for toplevel.
 INFO: [VLOG 209-307] Generating Verilog RTL for toplevel.
 INFO-FLOW: DBG:CMD:       update_csynth_xml_report append design.xml content design_xml=/home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.design.xml
@@ -852,14 +951,14 @@ Execute       send_msg_by_id INFO @200-1603@%s  and missed bursts
 INFO: [HLS 200-1603] Design has MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
 INFO-FLOW: DBG:CMD:       update_csynth_xml_report done
 Execute       syn_report -model toplevel -printsummary 
-INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
-INFO: [HLS 200-789] **** Estimated Fmax: 121.76 MHz
-Command     autosyn done; 7.7 sec.
-Command   csynth_design done; 12.9 sec.
-INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 12.29 seconds. CPU system time: 0.62 seconds. Elapsed time: 12.9 seconds; current allocated memory: 179.373 MB.
-Command ap_source done; 13.86 sec.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 124.90 MHz
+Command     autosyn done; 10.88 sec.
+Command   csynth_design done; 22.33 sec.
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 21.25 seconds. CPU system time: 1.28 seconds. Elapsed time: 22.33 seconds; current allocated memory: 234.442 MB.
+Command ap_source done; 23.59 sec.
 Execute cleanup_all 
-INFO-FLOW: Workspace /home/tomster12/files/EMBS/vitis_hls/assessment/solution1 opened at Wed May 07 17:36:33 BST 2025
+INFO-FLOW: Workspace /home/tomster12/files/EMBS/vitis_hls/assessment/solution1 opened at Thu May 08 00:58:07 BST 2025
 Execute     ap_set_clock -name default -period 10 -default=false 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 Execute     import_lib /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/zynq/zynq 
@@ -904,7 +1003,7 @@ INFO-FLOW: DBG:set_part: RDI_DATADIR=/opt/Xilinx/Vivado/2020.2/data:/opt/Xilinx/
 Execute       ap_part_info -name xc7z010-clg400-1 -data single -quiet 
 DBG:HLSDevice: Trying to load device library: /opt/Xilinx/Vitis_HLS/2020.2/lib/lnx64.o/librdi_hlsvwrap.so
 DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: /opt/Xilinx/Vivado/2020.2/data/parts/arch.xml
-Command       ap_part_info done; 0.54 sec.
+Command       ap_part_info done; 0.62 sec.
 Execute       ap_part_info -name xc7z010-clg400-1 -data info 
 Execute       add_library xilinx/zynq/zynq:xc7z010:-clg400:-1 
 Execute         get_default_platform 
@@ -940,7 +1039,7 @@ Execute           source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/D
 INFO: [HLS 200-10] Setting target device to 'xc7z010-clg400-1'
 Execute       ap_part_info -name xc7z010-clg400-1 -data info 
 Execute       config_compile -quiet -complex-mul-dsp=0 
-Command     set_part done; 0.65 sec.
+Command     set_part done; 0.72 sec.
 Execute     ap_part_info -data single -name xc7z010-clg400-1 
 Execute     ap_part_info -name xc7z010-clg400-1 -data resources 
 Execute     config_chip_info -resource {SLICE 4400} {LUT 17600} {FF 35200} {DSP 80} {BRAM 120} {URAM 0} 
@@ -960,7 +1059,7 @@ Execute     config_export -format=sysgen
 Execute     send_msg_by_id INFO @200-1464@%s config_export -rtl=verilog 
 INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
 Execute     config_export -rtl=verilog 
-Command   open_solution done; 0.79 sec.
+Command   open_solution done; 0.89 sec.
 Execute   set_part xc7z010-clg400-1 
 INFO: [HLS 200-1510] Running: set_part xc7z010-clg400-1 
 INFO-FLOW: DBG:set_part: XILINX_VIVADO=/opt/Xilinx/Vivado/2020.2
@@ -998,8 +1097,10 @@ Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/
 Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
 Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
 Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command     add_library done; 0.11 sec.
 Execute     ap_part_info -name xc7z010-clg400-1 -data info 
 Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.11 sec.
 Execute   create_clock -period 10 -name default 
 INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
 Execute   config_export -format sysgen -rtl verilog 
@@ -1008,618 +1109,17 @@ Execute   source ./assessment/solution1/directives.tcl
 Execute     set_directive_top -name toplevel toplevel 
 INFO: [HLS 200-1510] Running: set_directive_top -name toplevel toplevel 
 INFO-FLOW: Setting directive 'TOP' name=toplevel 
-Execute   export_design -rtl verilog -format sysgen 
-INFO: [HLS 200-1510] Running: export_design -rtl verilog -format sysgen 
-Execute     get_config_export -clock_margin 
-Execute     get_config_export -custom_script 
-Execute     get_config_export -description 
-Execute     get_config_export -display_name 
-Execute     get_config_export -driver_input_dir 
-Execute     get_config_export -ipname 
-Execute     get_config_export -library 
-Execute     get_config_export -output 
-Execute     get_config_export -qor_test 
-Execute     get_config_export -sim 
-Execute     get_config_export -taxonomy 
-Execute     get_config_export -use_ip 
-Execute     get_config_export -use_netlist 
-Execute     get_config_export -vendor 
-Execute     get_config_export -version 
-Execute     get_config_export -xo 
-Execute     config_export -format=sysgen -rtl=verilog 
-INFO-FLOW: DBG:CMD: export_design_wrap: -format sysgen -rtl verilog
+Execute   csim_design -clean -quiet 
+INFO: [HLS 200-1510] Running: csim_design -clean -quiet 
 Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
-Execute     get_config_export -vivado_clock 
-Execute     get_top 
-Execute     get_config_export -ipname 
-Execute     get_config_export -xo 
-Execute     get_config_export -format 
-Execute     get_config_rtl -module_auto_prefix 
-INFO-FLOW: DBG:CMD:   auto_impl: set ipname to top (module_auto_prefix): toplevel
-Execute     get_solution -flow_target 
-Execute     get_config_export -xo 
-Execute     get_config_export -format 
-INFO-FLOW: DBG:CMD:   auto_impl: pack: -export -rtl verilog
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
-INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
-INFO-FLOW: DBG:CMD: automg_wrap -export -pcore_version 1.00.a -rtl vlog -tool Vivado -impltomg_flag
-INFO-FLOW: DBG:CMD:     auto_generate -export -pcore_version 1.00.a -rtl vlog -tool Vivado -impltomg_flag
-Execute     get_solution -flow_target 
-Execute     get_config_export -xo 
-Execute     get_config_export -format 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
-INFO-FLOW: DBG:CMD: read_platform_lib /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl
-Execute     source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/common.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/APCoreGen.gen 
-Execute     source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/op.gen 
-Execute     source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/op_simcore.gen 
-Execute     source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/interface.gen 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
-Execute     source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
-Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
-Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
-Execute     source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
-Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
-Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
-INFO-FLOW: DBG:CMD:   using AESL_AUTOCG::g_clock_period=10.000 (was NA)
-INFO-FLOW: DBG:CMD:       initCTypeInfo top_module=toplevel xml_exists=1
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.rtl_wrap.cfg.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.rtl_wrap.cfg.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.rtl_wrap.cfg.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.tbgen.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.tbgen.tcl 
-INFO-FLOW: DBG:CMD:       export_impl_rtl
-INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.verilog
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a_star_len.compgen.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.compgen.tcl 
-Execute     get_config_export -disable_deadlock_detection 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.tbgen.tcl 
-Execute     get_config_rtl -module_prefix 
-INFO-FLOW: DBG:CMD:       cosim_export_main adding deadlock detection to toplevel
-INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=1 expOnly=1 dstVlogDir=impl/.pcores/verilog
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a_star_len.compgen.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.compgen.tcl 
-Execute       ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute       ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-Execute       ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute       ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-Execute       ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute       ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-Execute       ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute       ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-Execute       ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute       ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-Execute       ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute       ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.pcores/verilog_sim
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a_star_len.compgen.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.compgen.tcl 
-Execute     get_config_export -disable_deadlock_detection 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.tbgen.tcl 
-Execute     get_config_rtl -module_prefix 
-INFO-FLOW: DBG:CMD:       cosim_export_main adding deadlock detection to toplevel
-Execute     ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
-Execute     ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.constraint.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.tbgen.tcl 
-INFO-FLOW: DBG:CMD:       hasPcoreIpAdapter=false #gSsdmPorts=0
-INFO-FLOW: DBG:CMD:       copying IP vlog from /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/impl/verilog
-INFO-FLOW: DBG:CMD:       copying IP vhdl from /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/impl/vhdl
-INFO-FLOW: DBG:CMD:       copy ip_driver_dir 1_0 /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/driver
-Execute     get_config_export -format 
-INFO-FLOW: DBG:CMD:       generate_ip_script #gSsdmPorts=0 g_lang=vlog is_sdaccel=false is_sdsoc=true xo_file=
-Execute     ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.compgen.dataonly.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.compgen.dataonly.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.compgen.dataonly.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.compgen.dataonly.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.tbgen.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.tbgen.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
-Execute     get_config_debug -directory 
-INFO-FLOW: DBG:CMD:       generate_ip_auxiliary
-Execute     ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
-INFO-FLOW: DBG:CMD:       prepArgInfo -> loadAnalyze_DB top_module=toplevel
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.rtl_wrap.cfg.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.rtl_wrap.cfg.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.rtl_wrap.cfg.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.tbgen.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.tbgen.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.tbgen.tcl 
-INFO-FLOW: DBG:CMD:       generate_top_info
-INFO-FLOW: DBG:CMD:       prepArgInfo -> loadAnalyze_DB top_module=toplevel
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.rtl_wrap.cfg.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.rtl_wrap.cfg.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.rtl_wrap.cfg.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.tbgen.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.tbgen.tcl 
-Execute     ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
-Execute     ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.tbgen.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.constraint.tcl 
-INFO-FLOW: DBG:CMD:       generate_ipi_example_script
-Execute     ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-INFO-FLOW: DBG:CMD:       generate_syn_sh
-Execute     ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
-INFO-FLOW: DBG:CMD:       generate_imp_constraints
-Execute     ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.constraint.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.tbgen.tcl 
-INFO-FLOW: DBG:CMD:       delete-temp-dirs (skipped for debug)
-Execute     ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-INFO-FLOW: DBG:CMD: read_platform_lib /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl
-Execute     source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/common.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/APCoreGen.gen 
-Execute     source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/op.gen 
-Execute     source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/op_simcore.gen 
-Execute     source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/interface.gen 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
-Execute     source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
-Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
-Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
-Execute     source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
-Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
-Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
-Execute     ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-INFO-FLOW: DBG:CMD:     exec /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/impl/ip/pack.sh
-Execute     get_config_export -output 
-Execute     send_msg_by_id INFO @200-802@%s assessment/solution1/impl/export.zip 
-INFO: [HLS 200-802] Generated output file assessment/solution1/impl/export.zip
-Command   export_design done; 19.11 sec.
-INFO: [HLS 200-111] Finished Command export_design CPU user time: 10 seconds. CPU system time: 1 seconds. Elapsed time: 19.11 seconds; current allocated memory: 101.862 MB.
-Command ap_source done; 20 sec.
-Execute cleanup_all 
-INFO-FLOW: Workspace /home/tomster12/files/EMBS/vitis_hls/assessment/solution1 opened at Wed May 07 17:37:08 BST 2025
-Execute     ap_set_clock -name default -period 10 -default=false 
-INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
-Execute     import_lib /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/zynq/zynq 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/xilinx_interface.hlp 
-Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.hlp 
-Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.hlp 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.hlp 
-Execute     source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
-Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
-Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
-Execute     import_lib /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/zynq/zynq_fpv6 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/xilinx_interface.hlp 
-Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.hlp 
-Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.hlp 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.hlp 
-Execute     source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
-Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
-Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
-Execute     set_part xc7z010-clg400-1 
-INFO-FLOW: DBG:set_part: XILINX_VIVADO=/opt/Xilinx/Vivado/2020.2
-INFO-FLOW: DBG:set_part: RDI_DATADIR=/opt/Xilinx/Vivado/2020.2/data:/opt/Xilinx/Vitis_HLS/2020.2/data
-Execute       ap_part_info -name xc7z010-clg400-1 -data single -quiet 
-DBG:HLSDevice: Trying to load device library: /opt/Xilinx/Vitis_HLS/2020.2/lib/lnx64.o/librdi_hlsvwrap.so
-DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: /opt/Xilinx/Vivado/2020.2/data/parts/arch.xml
-Command       ap_part_info done; 0.55 sec.
-Execute       ap_part_info -name xc7z010-clg400-1 -data info 
-Execute       add_library xilinx/zynq/zynq:xc7z010:-clg400:-1 
-Execute         get_default_platform 
-Execute         open_platform DefaultPlatform 
-Execute         ap_part_info -data single -name xc7z010-clg400-1 
-Execute         ap_part_info -name xc7z010-clg400-1 -data resources 
-Execute         config_chip_info -resource {SLICE 4400} {LUT 17600} {FF 35200} {DSP 80} {BRAM 120} {URAM 0} 
-Execute         ap_part_info -name xc7z010-clg400-1 -data info 
-Execute         config_chip_info -speed slow 
-Execute         ap_part_info -name xc7z010-clg400-1 -data info 
-Execute         config_library_info -library zynq_slow 
-Execute         config_library_info -family zynq 
-Execute         config_library_info -part xc7z010:-clg400:-1 
-Execute         import_lib /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/zynq/zynq 
-Execute           source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/xilinx_interface.hlp 
-Execute             source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.hlp 
-Execute             source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.hlp 
-Execute           source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.hlp 
-Execute           source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/zynq_dsp48e1.hlp 
-Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
-Execute           source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
-Execute           source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
-Execute           source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
-Execute             source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
-Execute             source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
-Execute           source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Execute           source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Execute           source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
-Execute           source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
-Execute           source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
-Execute           source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
-Execute           source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
-INFO: [HLS 200-10] Setting target device to 'xc7z010-clg400-1'
-Execute       ap_part_info -name xc7z010-clg400-1 -data info 
-Execute       config_compile -quiet -complex-mul-dsp=0 
-Command     set_part done; 0.67 sec.
-Execute     ap_part_info -data single -name xc7z010-clg400-1 
-Execute     ap_part_info -name xc7z010-clg400-1 -data resources 
-Execute     config_chip_info -resource {SLICE 4400} {LUT 17600} {FF 35200} {DSP 80} {BRAM 120} {URAM 0} 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
 Execute     ap_part_info -name xc7z010-clg400-1 -data info 
-Execute     config_chip_info -speed slow 
-Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
-INFO: [HLS 200-1505] Using flow_target 'vivado'
-Execute     get_config_interface -m_axi_latency 
-Execute     get_config_interface -m_axi_alignment_byte_size 
-Execute     get_config_interface -m_axi_max_widen_bitwidth 
-Execute     get_config_interface -default_interface 
-Execute     get_config_interface -m_axi_offset 
-Execute     get_config_rtl -register_reset_num 
-Execute     send_msg_by_id INFO @200-1464@%s config_export -format=sysgen 
-INFO: [HLS 200-1464] Running solution command: config_export -format=sysgen
-Execute     config_export -format=sysgen 
-Execute     send_msg_by_id INFO @200-1464@%s config_export -rtl=verilog 
-INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
-Execute     config_export -rtl=verilog 
-Command   open_solution done; 0.82 sec.
-Execute   set_part xc7z010-clg400-1 
-INFO: [HLS 200-1510] Running: set_part xc7z010-clg400-1 
-INFO-FLOW: DBG:set_part: XILINX_VIVADO=/opt/Xilinx/Vivado/2020.2
-INFO-FLOW: DBG:set_part: RDI_DATADIR=/opt/Xilinx/Vivado/2020.2/data:/opt/Xilinx/Vitis_HLS/2020.2/data
-Execute     ap_part_info -name xc7z010-clg400-1 -data single -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data info 
-Execute     add_library xilinx/zynq/zynq:xc7z010:-clg400:-1 
-Execute       get_default_platform 
-Execute       open_platform DefaultPlatform 
-Execute       ap_part_info -data single -name xc7z010-clg400-1 
-Execute       ap_part_info -name xc7z010-clg400-1 -data resources 
-Execute       config_chip_info -resource {SLICE 4400} {LUT 17600} {FF 35200} {DSP 80} {BRAM 120} {URAM 0} 
-Execute       ap_part_info -name xc7z010-clg400-1 -data info 
-Execute       config_chip_info -speed slow 
-Execute       ap_part_info -name xc7z010-clg400-1 -data info 
-Execute       config_library_info -library zynq_slow 
-Execute       config_library_info -family zynq 
-Execute       config_library_info -part xc7z010:-clg400:-1 
-Execute       import_lib /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/zynq/zynq 
-Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/xilinx_interface.hlp 
-Execute           source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.hlp 
-Execute           source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.hlp 
-Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.hlp 
-Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/zynq_dsp48e1.hlp 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
-Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
-Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
-Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
-Execute           source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
-Execute           source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
-Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
-Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
-Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
-Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
-Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
-Execute     ap_part_info -name xc7z010-clg400-1 -data info 
-Execute     config_compile -quiet -complex-mul-dsp=0 
-Execute   create_clock -period 10 -name default 
-INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
-Execute   config_export -format sysgen -rtl verilog 
-INFO: [HLS 200-1510] Running: config_export -format sysgen -rtl verilog 
-Execute   source ./assessment/solution1/directives.tcl 
-Execute     set_directive_top -name toplevel toplevel 
-INFO: [HLS 200-1510] Running: set_directive_top -name toplevel toplevel 
-INFO-FLOW: Setting directive 'TOP' name=toplevel 
-Execute   export_design -rtl verilog -format sysgen 
-INFO: [HLS 200-1510] Running: export_design -rtl verilog -format sysgen 
-Execute     get_config_export -clock_margin 
-Execute     get_config_export -custom_script 
-Execute     get_config_export -description 
-Execute     get_config_export -display_name 
-Execute     get_config_export -driver_input_dir 
-Execute     get_config_export -ipname 
-Execute     get_config_export -library 
-Execute     get_config_export -output 
-Execute     get_config_export -qor_test 
-Execute     get_config_export -sim 
-Execute     get_config_export -taxonomy 
-Execute     get_config_export -use_ip 
-Execute     get_config_export -use_netlist 
-Execute     get_config_export -vendor 
-Execute     get_config_export -version 
-Execute     get_config_export -xo 
-Execute     config_export -format=sysgen -rtl=verilog 
-INFO-FLOW: DBG:CMD: export_design_wrap: -format sysgen -rtl verilog
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
-Execute     get_config_export -vivado_clock 
-Execute     get_top 
-Execute     get_config_export -ipname 
-Execute     get_config_export -xo 
-Execute     get_config_export -format 
-Execute     get_config_rtl -module_auto_prefix 
-INFO-FLOW: DBG:CMD:   auto_impl: set ipname to top (module_auto_prefix): toplevel
-Execute     get_solution -flow_target 
-Execute     get_config_export -xo 
-Execute     get_config_export -format 
-INFO-FLOW: DBG:CMD:   auto_impl: pack: -export -rtl verilog
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
-INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
-INFO-FLOW: DBG:CMD: automg_wrap -export -pcore_version 1.00.a -rtl vlog -tool Vivado -impltomg_flag
-INFO-FLOW: DBG:CMD:     auto_generate -export -pcore_version 1.00.a -rtl vlog -tool Vivado -impltomg_flag
-Execute     get_solution -flow_target 
-Execute     get_config_export -xo 
-Execute     get_config_export -format 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
-INFO-FLOW: DBG:CMD: read_platform_lib /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl
-Execute     source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/common.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/APCoreGen.gen 
-Execute     source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/op.gen 
-Execute     source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/op_simcore.gen 
-Execute     source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/interface.gen 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
-Execute     source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
-Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
-Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
-Execute     source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
-Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
-Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
-INFO-FLOW: DBG:CMD:   using AESL_AUTOCG::g_clock_period=10.000 (was NA)
-INFO-FLOW: DBG:CMD:       initCTypeInfo top_module=toplevel xml_exists=1
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.rtl_wrap.cfg.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.rtl_wrap.cfg.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.rtl_wrap.cfg.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.tbgen.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.tbgen.tcl 
-INFO-FLOW: DBG:CMD:       export_impl_rtl
-INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.verilog
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a_star_len.compgen.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.compgen.tcl 
-Execute     get_config_export -disable_deadlock_detection 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.tbgen.tcl 
-Execute     get_config_rtl -module_prefix 
-INFO-FLOW: DBG:CMD:       cosim_export_main adding deadlock detection to toplevel
-INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=1 expOnly=1 dstVlogDir=impl/.pcores/verilog
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a_star_len.compgen.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.compgen.tcl 
-Execute       ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute       ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-Execute       ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute       ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-Execute       ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute       ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-Execute       ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute       ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-Execute       ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute       ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-Execute       ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute       ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.pcores/verilog_sim
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/a_star_len.compgen.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.compgen.tcl 
-Execute     get_config_export -disable_deadlock_detection 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.tbgen.tcl 
-Execute     get_config_rtl -module_prefix 
-INFO-FLOW: DBG:CMD:       cosim_export_main adding deadlock detection to toplevel
-Execute     ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
-Execute     ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.constraint.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.tbgen.tcl 
-INFO-FLOW: DBG:CMD:       hasPcoreIpAdapter=false #gSsdmPorts=0
-INFO-FLOW: DBG:CMD:       copying IP vlog from /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/impl/verilog
-INFO-FLOW: DBG:CMD:       copying IP vhdl from /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/impl/vhdl
-INFO-FLOW: DBG:CMD:       copy ip_driver_dir 1_0 /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/driver
-Execute     get_config_export -format 
-INFO-FLOW: DBG:CMD:       generate_ip_script #gSsdmPorts=0 g_lang=vlog is_sdaccel=false is_sdsoc=true xo_file=
-Execute     ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.compgen.dataonly.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.compgen.dataonly.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.compgen.dataonly.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.compgen.dataonly.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.tbgen.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.tbgen.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
-Execute     get_config_debug -directory 
-INFO-FLOW: DBG:CMD:       generate_ip_auxiliary
-Execute     ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
-INFO-FLOW: DBG:CMD:       prepArgInfo -> loadAnalyze_DB top_module=toplevel
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.rtl_wrap.cfg.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.rtl_wrap.cfg.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.rtl_wrap.cfg.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.tbgen.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.tbgen.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.tbgen.tcl 
-INFO-FLOW: DBG:CMD:       generate_top_info
-INFO-FLOW: DBG:CMD:       prepArgInfo -> loadAnalyze_DB top_module=toplevel
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.rtl_wrap.cfg.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.rtl_wrap.cfg.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.rtl_wrap.cfg.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.tbgen.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.tbgen.tcl 
-Execute     ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
-Execute     ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.tbgen.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.constraint.tcl 
-INFO-FLOW: DBG:CMD:       generate_ipi_example_script
-Execute     ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-INFO-FLOW: DBG:CMD:       generate_syn_sh
-Execute     ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
-INFO-FLOW: DBG:CMD:       generate_imp_constraints
-Execute     ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.constraint.tcl 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/toplevel.tbgen.tcl 
-INFO-FLOW: DBG:CMD:       delete-temp-dirs (skipped for debug)
-Execute     ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-INFO-FLOW: DBG:CMD: read_platform_lib /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl
-Execute     source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/common.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/APCoreGen.gen 
-Execute     source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/op.gen 
-Execute     source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/op_simcore.gen 
-Execute     source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/interface.gen 
-Execute     source /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/.autopilot/db/global.setting.tcl 
-Execute     source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
-Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
-Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
-Execute     source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
-Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
-Execute         source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
-Execute       source /opt/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
-Execute     ap_part_info -name xc7z010-clg400-1 -data names -quiet 
-Execute     ap_part_info -name xc7z010-clg400-1 -data info -quiet 
-INFO-FLOW: DBG:CMD:     exec /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/impl/ip/pack.sh
-Execute     get_config_export -output 
-Execute     send_msg_by_id INFO @200-802@%s assessment/solution1/impl/export.zip 
-INFO: [HLS 200-802] Generated output file assessment/solution1/impl/export.zip
-Command   export_design done; 18.35 sec.
-INFO: [HLS 200-111] Finished Command export_design CPU user time: 9.29 seconds. CPU system time: 1.01 seconds. Elapsed time: 18.35 seconds; current allocated memory: 85.860 MB.
-Command ap_source done; 19.27 sec.
+Execute     source run_sim.tcl 
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 1.6 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 2.01 seconds. CPU system time: 0.33 seconds. Elapsed time: 1.6 seconds; current allocated memory: 76.479 MB.
+Command ap_source done; 2.62 sec.
 Execute cleanup_all 

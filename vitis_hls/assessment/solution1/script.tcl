@@ -13,7 +13,7 @@ set_part {xc7z010-clg400-1}
 create_clock -period 10 -name default
 config_export -format sysgen -rtl verilog
 source "./assessment/solution1/directives.tcl"
-csim_design -clean -O
+csim_design -clean
 csynth_design
 cosim_design
 export_design -rtl verilog -format sysgen

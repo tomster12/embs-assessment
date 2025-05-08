@@ -2,8 +2,8 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Wed May  7 17:40:30 2025
-# Process ID: 659353
+# Start of session at: Thu May  8 00:17:57 2025
+# Process ID: 954877
 # Current directory: /home/tomster12/files/EMBS/vivado/vivado.runs/impl_1
 # Command line: vivado -log zybo_design_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source zybo_design_wrapper.tcl -notrace
 # Log file: /home/tomster12/files/EMBS/vivado/vivado.runs/impl_1/zybo_design_wrapper.vdi

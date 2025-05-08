@@ -1,55 +1,56 @@
 #include "toplevel.h"
-#include <string.h> // For memcpy, memset
+#include <ap_int.h>
 
 // ================================= DECLARATION =================================
 
+// Coordinates are 9 bytes for a maximum of 500
+// Scores are 11 bytes for a maximum of 2000 (500 * 4 for manhattan)
+
 #define WORLD_MAX_WAYPOINTS 16
 #define WORLD_MAX_SIZE 500
-#define HW_META_WORDS 2
+#define HW_META_WORDS 1
 #define HW_WAYPOINT_WORDS WORLD_MAX_WAYPOINTS
 #define HW_WORLD_WORDS ((WORLD_MAX_SIZE * WORLD_MAX_SIZE + 31) / 32)
 #define HW_MAX_WORDS (HW_META_WORDS + HW_WAYPOINT_WORDS + HW_WORLD_WORDS)
 #define HW_WORLD_OFFSET (HW_META_WORDS + HW_WAYPOINT_WORDS)
-#define INF UINT16_MAX
-#define MAX_OPEN_SET_SIZE 40000 // 8 bytes per node, 1KB per 128 nodes, 1000 nodes ~~ 8KB
+#define INF_U11 ((2 << 10) - 1)
+#define MAX_OPEN_SET_SIZE 25000 // 40 bits bytes per node, 1KB per 204 nodes, 1000 nodes ~~ 5KB
 #define MAX_TRIPS (WORLD_MAX_WAYPOINTS - 1)
 #define MAX_AS_ITERATIONS (WORLD_MAX_SIZE * WORLD_MAX_SIZE)
 
 // #define DEBUG_PRINTF
-// #define DEBUG_LIST
 #ifdef DEBUG_PRINTF
 	#include <iostream>
     #define dbg_printf(...) printf(__VA_ARGS__)
 #else
     #define dbg_printf(...) ((void)0)
 #endif
-#ifdef DEBUG_LIST
-	#define DBG_LIST_MAX 3000
-	static uint32_t dbg_list[DBG_LIST_MAX];
-	static uint16_t dbg_list_counter;
-	#define dbg_list_write(x) dbg_list[dbg_list_counter++] = x;
-#else
-	#define dbg_list_write(x) ((void)0)
-#endif
 
 struct Coord {
-    uint16_t x;
-    uint16_t y;
+    ap_uint<9> x;
+    ap_uint<9> y;
 };
 
 struct ASNode {
-    uint16_t f_score;
-    uint16_t g_score;
-    uint16_t x;
-    uint16_t y;
+	ap_uint<11> f_score;
+	ap_uint<11> g_score;
+	ap_uint<9> x;
+	ap_uint<9> y;
+	ap_uint<2> from;
 };
 
+struct MoveAction {
+	ASNode node;
+	uint16_t target;
+};
+
+static Coord waypoints[WORLD_MAX_WAYPOINTS];
 static ASNode open_set_heap[MAX_OPEN_SET_SIZE]; // Min-Heap using an array ordered by f_score
 static uint32_t closed_set[HW_WORLD_WORDS]; // Bitmask for closed set, 0=open, 1=closed
 static uint32_t local_ram[HW_MAX_WORDS];
-static uint32_t open_set_size;
-static uint32_t *world_ram_ptr;
+static uint16_t open_set_size;
 static uint16_t world_size;
+static uint8_t waypoint_count;
 static int error_flag;
 
 // ================================= DEFINITION/HELPERS =================================
@@ -90,325 +91,295 @@ uint16_t heuristic(Coord node, Coord goal) {
 
 // ================================= DEFINITION/MIN HEAP =================================
 
-void copy_as_node(ASNode *a, ASNode *b) {
+void copy_asnode(ASNode *a, ASNode *b) {
 	#pragma HLS INLINE
+	// This is needed when a and b are lvalues (i think)
 	a->f_score = b->f_score;
 	a->g_score = b->g_score;
 	a->x = b->x;
 	a->y = b->y;
-}
-
-void dump_os_to_dbg_list() {
-	dbg_list_write(4050);
-	for (uint16_t i = 0; i < open_set_size; ++i) {
-		dbg_list_write(open_set_heap[i].x);
-		dbg_list_write(open_set_heap[i].y);
-		dbg_list_write(open_set_heap[i].f_score);
-	}
+	a->from = b->from;
 }
 
 void os_sift_down(uint16_t idx) {
 	#pragma HLS INLINE
 
-	uint16_t previous = idx;
-	ASNode node;
-	copy_as_node(&node, &open_set_heap[idx]);
-	uint16_t node_f = node.f_score;
+	ASNode node = open_set_heap[idx];
+	MoveAction moves[16];
+	uint8_t move_count = 0;
+
+	for (uint8_t i = 0; i < 16; i++) {
+	    moves[i].node.f_score = 0;
+	    moves[i].node.g_score = 0;
+	    moves[i].node.x = 0;
+	    moves[i].node.y = 0;
+	    moves[i].node.from = 0;
+	    moves[i].target = 0;
+	}
 
 	// Loop limit of ceil(log2(MAX_OPEN_SET_SIZE)) = 16 for MAX_OPEN_SET_SIZE=65536
 	SIFT_DOWN_LOOP: for (uint8_t depth = 0; depth < 16; ++depth) {
 		#pragma HLS LOOP_TRIPCOUNT min=1 max=16
+		#pragma HLS PIPELINE II=1
 
-		// Read left and right child nodes
-		uint16_t smallest = idx;
 		uint16_t left = 2 * idx + 1;
 		uint16_t right = 2 * idx + 2;
-		uint16_t left_f = INF;
-		uint16_t right_f = INF;
+		ap_uint<11> left_f = INF_U11;
+		ap_uint<11> right_f = INF_U11;
+
 		if (left < open_set_size) left_f = open_set_heap[left].f_score;
 		if (right < open_set_size) right_f = open_set_heap[right].f_score;
 
-		// Node is smallest so stop sifting down
-		if (node_f < left_f && node_f < right_f) {
-			if (idx != previous) {
-				copy_as_node(&open_set_heap[idx], &node);
-			}
-			dbg_printf("(OS) S_DOWN, current %lu(%lu) is smaller than %lu(%lu) and %lu(%lu), stopping\r\n", idx, node_f, left, left_f, right, left_f);
-		    dump_os_to_dbg_list();
+		// Node is smallest so stop
+		if (node.f_score < left_f && node.f_score < right_f) {
 			break;
 		}
 
 		// Left or right is smaller so sift down
 		else if (left_f < right_f) {
-			copy_as_node(&open_set_heap[idx], &open_set_heap[left]);
-			dbg_printf("(OS) S_DOWN, left %lu(%lu) is smaller than %lu(%lu) and %lu(%lu), sitfing to %lu\r\n", left, left_f, idx, node_f, right, right_f, idx);
-		    dbg_list_write(4001);
-		    dbg_list_write(left);
-		    dbg_list_write(idx);
+        	dbg_printf("    [OS] S_DOWN, left %lu(%lu) is smaller than %lu(%lu), sifting\r\n", left, (uint16_t)left_f, idx, (uint16_t)node_f);
+			copy_asnode(&moves[move_count].node, &open_set_heap[left]);
+			moves[move_count].target = idx;
+			move_count++;
 			idx = left;
 		}
 		else {
-			copy_as_node(&open_set_heap[idx], &open_set_heap[right]);
-			dbg_printf("(OS) S_DOWN, right %lu(%lu) is smaller than %lu(%lu) and %lu(%lu), sitfing to %lu\r\n", right, right_f, idx, node_f, left, left_f, idx);
-		    dbg_list_write(4001);
-			dbg_list_write(right);
-			dbg_list_write(idx);
+        	dbg_printf("    [OS] S_DOWN, right %lu(%lu) is smaller than %lu(%lu), sifting\r\n", right, (uint16_t)right_f, idx, (uint16_t)node_f);
+			copy_asnode(&moves[move_count].node, &open_set_heap[right]);
+			moves[move_count].target = idx;
+			move_count++;
 			idx = right;
 		}
+	}
+
+	// Perform each of the moves then finally move the node
+	if (move_count > 0) {
+		SIFT_DOWN_COPY_LOOP: for (uint8_t i = 0; i < move_count; ++i) {
+			#pragma HLS LOOP_TRIPCOUNT min=1 max=16
+			copy_asnode(&open_set_heap[moves[i].target], &moves[i].node);
+		}
+		copy_asnode(&open_set_heap[idx], &node);
 	}
 }
 
 void os_sift_up(uint16_t idx) {
 	#pragma HLS INLINE
 
-	uint16_t previous = idx;
-	ASNode node;
-	copy_as_node(&node, &open_set_heap[idx]);
-	uint16_t node_f = node.f_score;
+	ASNode node = open_set_heap[idx];
+	MoveAction moves[16];
+	uint8_t move_count = 0;
 
-    dbg_list_write(4021);
-    dbg_list_write(idx);
-	dbg_list_write(node.x);
-	dbg_list_write(node.y);
-	dbg_list_write(node.f_score);
+	for (uint8_t i = 0; i < 16; i++) {
+	    moves[i].node.f_score = 0;
+	    moves[i].node.g_score = 0;
+	    moves[i].node.x = 0;
+	    moves[i].node.y = 0;
+	    moves[i].node.from = 0;
+	    moves[i].target = 0;
+	}
 
 	// Loop limit of ceil(log2(MAX_OPEN_SET_SIZE)) = 16 for MAX_OPEN_SET_SIZE=65536
 	SIFT_UP_LOOP: for (uint8_t depth = 0; depth < 16; depth++) {
 		#pragma HLS LOOP_TRIPCOUNT min=1 max=16
-		#pragma HLS PIPELINE II=1
 
-		// Reached root so stop sifting
+		// Reached root so stop
 		if (idx == 0) {
-			if (idx != previous) {
-			    dbg_list_write(4022);
-				dbg_list_write(idx);
-				dbg_list_write(node.x);
-				dbg_list_write(node.y);
-				dbg_list_write(node.f_score);
-				copy_as_node(&open_set_heap[idx], &node);
-				dump_os_to_dbg_list();
-			}
-			dbg_printf("(OS) S_UP, sifted to the root with f %ul\r\n", node_f);
+			dbg_printf("    [OS] S_UP, sifted to the root with f_score %lu\r\n", (uint16_t)node_f);
 			break;
 		}
 
+        // Parent is smaller so stop
         uint16_t parent = (idx - 1) / 2;
         ASNode parent_node = open_set_heap[parent];
-
-        // Parent is smaller so stop sifting
-        if (parent_node.f_score < node_f) {
-			if (idx != previous) {
-			    dbg_list_write(4022);
-				dbg_list_write(idx);
-				dbg_list_write(node.x);
-				dbg_list_write(node.y);
-				dbg_list_write(node.f_score);
-				copy_as_node(&open_set_heap[idx], &node);
-				dump_os_to_dbg_list();
-			}
-        	dbg_printf("    [OS] S_UP, parent %lu(%lu) is smaller than %lu(%lu), stopping\r\n", parent, parent_node.f_score, idx, node_f);
+        if (parent_node.f_score < node.f_score) {
+        	dbg_printf("    [OS] S_UP, parent %lu(%lu) is smaller than %lu(%lu), stopping\r\n", parent, (uint16_t)parent_node.f_score, idx, (uint16_t)node_f);
         	break;
         }
 
-        // Otherwise we are smaller so sift up
-    	dbg_printf("    [OS] S_UP, parent %lu(%lu) is bigger than %lu(%lu), sifting\r\n", parent, parent_node.f_score, idx, node_f);
-	    dbg_list_write(4002);
-		dbg_list_write(parent);
-		dbg_list_write(idx);
-		copy_as_node(&open_set_heap[idx], &parent_node);
+        // Parent is larger so sift up
+    	dbg_printf("    [OS] S_UP, parent %lu(%lu) is bigger than %lu(%lu), sifting\r\n", parent, (uint16_t)parent_node.f_score, idx, (uint16_t)node_f);
+		copy_asnode(&moves[move_count].node, &parent_node);
+		moves[move_count].target = idx;
+		move_count++;
 		idx = parent;
+	}
+
+	// Perform each of the moves then finally move the node
+	if (move_count > 0) {
+		SIFT_UP_COPY_LOOP: for (uint8_t i = 0; i < move_count; ++i) {
+			#pragma HLS LOOP_TRIPCOUNT min=1 max=16
+			copy_asnode(&open_set_heap[moves[i].target], &moves[i].node);
+		}
+		copy_asnode(&open_set_heap[idx], &node);
 	}
 }
 
 void os_heap_push(ASNode node) {
-	#pragma HLS INLINE
+	// #pragma HLS INLINE
 
-	// Stop once the heap is full
+	// Handle max size open set size
     if (open_set_size >= MAX_OPEN_SET_SIZE) {
-    	error_flag = 20000;
-    	return;
+        open_set_heap[open_set_size - 1] = node;
+        error_flag = 20000;
     }
 
-    // Add a node to the end then recursively sift upwards
-    open_set_heap[open_set_size] = node;
-    open_set_size++;
-    dbg_printf("    [OS] PUSH { %lu, %lu, %lu, %lu }, size=%lu\r\n", node.f_score, node.g_score, node.x, node.y, open_set_size);
-    dbg_list_write(4000);
-	dbg_list_write(open_set_size);
-    dbg_list_write(node.x);
-    dbg_list_write(node.y);
-    dbg_list_write(node.f_score);
+    // Add node to end, then sift up
+    else {
+        open_set_heap[open_set_size] = node;
+        open_set_size++;
+    }
+
+    dbg_printf("    [OS] PUSH { %lu, %lu, %lu, %lu }, size=%lu\r\n", (uint16_t)node.f_score, (uint16_t)node.g_score, (uint16_t)node.x, (uint16_t)node.y, open_set_size);
 
     if (open_set_size > 1) {
         os_sift_up(open_set_size - 1);
     }
-
-    dump_os_to_dbg_list();
 }
 
 ASNode os_heap_pop() {
-	#pragma HLS INLINE
+	// #pragma HLS INLINE
 
-	// Grab the top node to be returned
+	// Take first node, move last to start, then sift it down
     ASNode min_node = open_set_heap[0];
-
-	// Move last node to start then recursively sift downwards
     open_set_heap[0] = open_set_heap[open_set_size - 1];
     open_set_size--;
 
-	dbg_printf("    [OS] POP { %lu, %lu, %lu, %lu }, size=%lu\r\n", min_node.f_score, min_node.g_score, min_node.x, min_node.y, open_set_size);
-    dbg_list_write(4003);
-	dbg_list_write(open_set_size);
+    dbg_printf("    [OS] POP { %lu, %lu, %lu, %lu }, size=%lu\r\n", (uint16_t)min_node.f_score, (uint16_t)min_node.g_score, (uint16_t)min_node.x, (uint16_t)min_node.y, open_set_size);
 
 	if (open_set_size > 1) {
 	    os_sift_down(0);
 	}
-
-    dump_os_to_dbg_list();
 
     return min_node;
 }
 
 // ================================= DEFINITION/MAIN =================================
 
-int a_star_len(Coord start, Coord goal) {
-	#pragma HLS INLINE off
+int a_star(Coord start, Coord goal) {
+	#pragma HLS INLINE
 
-    // Clear the closed set and open set
-    uint32_t closed_words = (world_size * world_size + 31) / 32;
-    memset(closed_set, 0, HW_WORLD_WORDS * sizeof(uint32_t));
-    memset(open_set_heap, 0, MAX_OPEN_SET_SIZE * sizeof(ASNode));
+    EMPTY_CLOSED_SET_LOOP: for (uint16_t i = 0; i < HW_WORLD_WORDS; ++i) {
+    	closed_set[i] = 0;
+    }
+
     open_set_size = 0;
 
-    // Initialize start node and add to open set
-    uint16_t h_start = heuristic(start, goal);
-    ASNode start_node = {h_start, 0, start.x, start.y};
+    ap_uint<11> h_start = heuristic(start, goal);
+    ASNode start_node = {h_start, 0, start.x, start.y, 0};
     os_heap_push(start_node);
-    if (error_flag != 0) return INF;
+    if (error_flag != 0) {
+    	return 0;
+    }
 
-    // Start the A* loop with a semi-informed arbitrary limit on iterations
+    // We do not check that any node already exists in the open set when we add it
+    // This speeds it all up a lot, but means duplicated entries and therefore:
+    // - Iteration limit needs to be bigger than size * size
+    // - We need to always check is_closed() on each node
+
     const uint32_t iteration_limit = (uint32_t)(world_size * world_size * 2);
-    uint32_t iteration_count = 0;
-    AS_SEARCH_LOOP: while (open_set_size > 0 && iteration_count < iteration_limit) {
+    uint32_t iteration = 0;
+    AS_SEARCH_LOOP: for (; iteration < iteration_limit; ++iteration) {
+		#pragma HLS PIPELINE
 
-        // Get node with lowest f_score
+    	if (open_set_size == 0) {
+    		break;
+    	}
+
         ASNode current = os_heap_pop();
 
-        dbg_printf("[I%lu] Current node: { %lu, %lu, %lu, %lu }\r\n", iteration_count, current.f_score, current.g_score, current.x, current.y);
-        dbg_list_write(2000 + iteration_count);
-        dbg_list_write(current.x);
-        dbg_list_write(current.y);
-        dbg_list_write(current.f_score);
+        dbg_printf("[I%lu] Current node: { %lu, %lu, %lu, %lu }\r\n", iteration, (uint16_t)current.f_score, (uint16_t)current.g_score, (uint16_t)current.x, (uint16_t)current.y);
 
-        // If this node is the goal return the path length
-        if (current.x == goal.x && current.y == goal.y) return current.g_score;
+        if (current.x == goal.x && current.y == goal.y) {
+        	return current.g_score;
+        }
 
-        // Skip previously closed set nodes (e.g. multiple entries placed into open before processing)
         if (is_closed(current.x, current.y)) {
-    		dbg_list_write(2500 + iteration_count);
-        	dbg_printf("Current is closed { %lu, %lu }\r\n", current.x, current.y);
+        	dbg_printf("Current is closed { %lu, %lu }\r\n", (uint16_t)current.x, (uint16_t)current.y);
         	continue;
         }
 
-        // Add current node to the closed set
         set_closed(current.x, current.y);
 
-        // Visit each neighbour
         dbg_printf("Exploring current neighbours\r\n");
-        const int dx[] = {0, 0, -1, 1};
-        const int dy[] = {-1, 1, 0, 0};
+        const int8_t dx[] = {0, -1, 0, 1};
+        const int8_t dy[] = {-1, 0, 1, 0};
         EXPLORE_NEIGHBORS_LOOP: for (uint8_t i = 0; i < 4; ++i) {
+			#pragma HLS UNROLL
 
-        	// Check the position is in the world, not blocked, and not closed
         	if ((current.x == 0 && dx[i] < 0) || (current.y == 0 && dy[i] < 0)) {
-        		dbg_printf("Neighbour %lu (%d, %d), out of bottom bounds\r\n", i, dx[i], dy[i]);
-        		dbg_list_write(3010 + i + 1);
         		continue;
         	}
 
-            uint16_t n_x = current.x + dx[i];
-            uint16_t n_y = current.y + dy[i];
+        	ap_uint<9> n_x = current.x + dx[i];
+        	ap_uint<9> n_y = current.y + dy[i];
 
             if (n_x >= world_size || n_y >= world_size) {
         		dbg_printf("Neighbour %lu (%d, %d), out of top bounds\r\n", i, dx[i], dy[i]);
-        		dbg_list_write(3020 + i + 1);
-            	continue;
-            }
-            if (get_world_bit(n_x, n_y)) {
-        		dbg_printf("Neighbour %lu (%d, %d), blocked\r\n", i, dx[i], dy[i]);
-        		dbg_list_write(3030 + i + 1);
-            	continue;
-            }
-            if (is_closed(n_x, n_y)) {
-        		dbg_printf("Neighbour %lu (%d, %d), closed\r\n", i, dx[i], dy[i]);
-        		dbg_list_write(3040 + i + 1);
             	continue;
             }
 
-            // Calculate scores for the new neighbour
+            if (get_world_bit(n_x, n_y)) {
+        		dbg_printf("Neighbour %lu (%d, %d), blocked\r\n", i, dx[i], dy[i]);
+            	continue;
+            }
+
+            if (is_closed(n_x, n_y)) {
+        		dbg_printf("Neighbour %lu (%d, %d), closed\r\n", i, dx[i], dy[i]);
+            	continue;
+            }
+
             Coord n_pos = {n_x, n_y};
             uint16_t n_g_score_tentative = current.g_score + 1;
             uint16_t n_h_score = heuristic(n_pos, goal);
             uint16_t n_f_score = n_g_score_tentative + n_h_score;
 
-            dbg_printf("Neighbour %lu (%d, %d), pos (%lu, %lu)\r\n", i, dx[i], dy[i], n_x, n_y);
-            dbg_list_write(3000 + i + 1);
+            dbg_printf("Neighbour %lu (%d, %d), pos (%lu, %lu)\r\n", i, dx[i], dy[i], (uint16_t)n_x, (uint16_t)n_y);
 
-            // The heap handles preferring paths to a node via a lower f_score
-            ASNode neighbour_node = {n_f_score, n_g_score_tentative, n_x, n_y};
+            ASNode neighbour_node = {n_f_score, n_g_score_tentative, n_x, n_y, (i + 2) % 4};
             os_heap_push(neighbour_node);
-            if (error_flag != 0) return INF;
+            if (error_flag != 0) {
+            	return 0;
+            }
         }
-
-        iteration_count++;
     }
 
-    // Error has occured if this is reached
     if (open_set_size == 0) {
     	error_flag = 30000;
-    } else if (iteration_count >= iteration_limit) {
-    	error_flag = 40000;
     } else {
-    	error_flag = 50000;
+    	error_flag = 40000;
     }
-    return INF;
+
+    return 0;
 }
 
 void toplevel(uint32_t *ram, uint32_t *code) {
 	#pragma HLS INTERFACE m_axi port=ram offset=slave bundle=MAXI max_widen_bitwidth=32 depth=7827 // <- Match HW_MAX_WORDS
 	#pragma HLS INTERFACE s_axilite port=code bundle=AXILiteS
 	#pragma HLS INTERFACE s_axilite port=return bundle=AXILiteS
-	#pragma HLS BIND_STORAGE variable=closed_set type=RAM_T2P impl=BRAM
-	#pragma HLS BIND_STORAGE variable=open_set_heap type=RAM_2P impl=BRAM
+
 	#pragma HLS BIND_STORAGE variable=local_ram type=RAM_T2P impl=BRAM
+	#pragma HLS BIND_STORAGE variable=closed_set type=RAM_T2P impl=BRAM
+	#pragma HLS BIND_STORAGE variable=open_set_heap type=RAM_T2P impl=BRAM
 
 	dbg_printf("Starting toplevel\r\n");
 
-	// Initialize all the variables
     *code = 0;
     error_flag = 0;
     open_set_size = 0;
-    world_size = 0;
 
-#ifdef DEBUG_LIST
-    dbg_list_counter = 0;
-    DBG_LIST_CLEAR_LOOP: for (uint16_t i = 0; i < 400; ++i) {
-    	dbg_list[i] = 0;
-    }
-#endif
-
-    // Copy RAM, extract data, and perform sanity checks
-    COPY_LOOP: for (uint16_t i = 0; i < HW_MAX_WORDS; ++i) {
+    COPY_RAM_LOOP: for (uint16_t i = 0; i < HW_MAX_WORDS; ++i) {
     	local_ram[i] = ram[i];
     }
-    world_size = (uint16_t) local_ram[0];
-    uint16_t waypoint_count = (uint16_t) local_ram[1];
+
+    world_size = (local_ram[0] >> 16) & 0xFFFF;
+    waypoint_count = local_ram[0] & 0xFFFF;
+
     if (world_size == 0 || world_size > WORLD_MAX_SIZE || waypoint_count < 2 || waypoint_count > WORLD_MAX_WAYPOINTS) {
-    	ram[0] = INF;
+    	ram[0] = 0;
     	*code = 10000;
     	return;
     }
-    Coord waypoints[WORLD_MAX_WAYPOINTS];
+
     WAYPOINT_EXTRACT_LOOP: for (uint8_t i = 0; i < waypoint_count; ++i) {
         uint32_t wp = local_ram[HW_META_WORDS + i];
         waypoints[i].x = (wp >> 16) & 0xFFFF;
@@ -418,33 +389,22 @@ void toplevel(uint32_t *ram, uint32_t *code) {
     dbg_printf("World size: %lu, waypoint count: %lu\r\n", world_size, waypoint_count);
     dbg_printf("HW_META_WORDS: %lu, HW_WAYPOINT_WORDS: %lu, HW_WORLD_WORDS: %lu, HW_MAX_WORDS: %lu, HW_WORLD_OFFSET: %lu\r\n",
     		HW_META_WORDS, HW_WAYPOINT_WORDS, HW_WORLD_WORDS, HW_MAX_WORDS, HW_WORLD_OFFSET);
-    for (uint8_t i = 0; i < (world_size * world_size + 31) / 32; ++i) {
-    	dbg_printf("Ram word %lu: %lu\r\n", HW_WORLD_OFFSET + i, local_ram[HW_WORLD_OFFSET + i]);
-    }
 
-    // Perform A* between each consecutive waypoint pair and sum length
-    uint32_t total_len = 0;
-    PATHFINDING_LOOP: for (uint8_t i = 0; i < waypoint_count - 1; ++i) {
+    uint32_t total_length = 0;
+
+    WAYPOINT_LOOP: for (uint8_t i = 0; i < waypoint_count - 1; ++i) {
     	dbg_printf("Pathfinding %lu to %lu\r\n", i, i + 1);
-        dbg_list_write(1000 + i);
-        int ret = a_star_len(waypoints[i], waypoints[i + 1]);
+
+        total_length += a_star(waypoints[i], waypoints[i + 1]);
+
         if (error_flag != 0) {
-        	error_flag += (i + 1) * 1000;
+        	error_flag += (i + 1) * 1;
             break;
         }
-        total_len += ret;
     }
 
-    // Write final values
-#ifdef DEBUG_LIST
-    DBG_LIST_WRITE_LOOP: for (uint16_t i = 0; i < DBG_LIST_MAX; ++i) {
-    	ram[HW_MAX_WORDS - DBG_LIST_MAX + i] = dbg_list[i];
-    }
-#endif
-
-    ram[0] = total_len;
+    ram[0] = total_length;
     *code = error_flag;
 }
-
 
 
