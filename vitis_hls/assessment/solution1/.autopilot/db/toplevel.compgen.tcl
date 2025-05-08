@@ -1,6 +1,6 @@
 # This script segment is generated automatically by AutoPilot
 
-set id 9
+set id 13
 set name toplevel_mul_mul_16ns_16ns_18_4_1
 set corename simcore_mul
 set op mul
@@ -94,7 +94,7 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your p
 }
 
 
-set id 10
+set id 14
 set name toplevel_mul_mul_16ns_9ns_18_4_1
 set corename simcore_mul
 set op mul
@@ -188,7 +188,7 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your p
 }
 
 
-set id 11
+set id 15
 set name toplevel_mac_muladd_16ns_9ns_9ns_18_4_1
 set corename simcore_mac
 set op mac
@@ -289,14 +289,14 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your p
 
 
 # Memory (RAM/ROM)  definition:
-set ID 17
+set ID 21
 set hasByteEnable 0
 set MemName toplevel_local_ram
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
 set DataWd 32
-set AddrRange 8031
-set AddrWd 13
+set AddrRange 8631
+set AddrWd 14
 set impl_style block
 set TrueReset 0
 set IsROM 0
@@ -375,7 +375,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 18
+set ID 22
 set hasByteEnable 0
 set MemName toplevel_waypoints_x_V
 set CoreName ap_simcore_mem
@@ -461,14 +461,14 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 19
+set ID 23
 set hasByteEnable 0
-set MemName toplevel_grid_info_V
+set MemName toplevel_grid_info
 set CoreName ap_simcore_mem
-set PortList { 2 3 }
-set DataWd 3
-set AddrRange 250000
-set AddrWd 18
+set PortList { 2 2 }
+set DataWd 32
+set AddrRange 31250
+set AddrWd 15
 set impl_style block
 set TrueReset 0
 set IsROM 0
@@ -547,15 +547,15 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 20
+set ID 24
 set hasByteEnable 0
 set MemName toplevel_open_set_heap_f_score_V
 set CoreName ap_simcore_mem
-set PortList { 2 2 }
+set PortList { 2 }
 set DataWd 11
-set AddrRange 5000
-set AddrWd 13
-set impl_style block
+set AddrRange 1500
+set AddrWd 11
+set impl_style distributed
 set TrueReset 0
 set IsROM 0
 set ROMData { }
@@ -563,7 +563,7 @@ set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
 set MaxLatency -1
-set DelayBudget 3.254
+set DelayBudget 2.322
 set ClkPeriod 10
 set RegisteredInput 0
 if {${::AESL::PGuard_simmodel_gen}} {
@@ -578,7 +578,7 @@ if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
     sync_rst true \
     stage_num ${NumOfStage}  \
     registered_input ${RegisteredInput} \
-    port_num 2 \
+    port_num 1 \
     port_list \{${PortList}\} \
     data_wd ${DataWd} \
     addr_wd ${AddrWd} \
@@ -601,7 +601,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 }
 
 
-set CoreName RAM_T2P_BRAM
+set CoreName RAM_1P_LUTRAM
 if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
 if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RAM"} {
     eval "::AESL_LIB_VIRTEX::xil_gen_RAM { \
@@ -614,7 +614,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
     sync_rst true \
     stage_num ${NumOfStage}  \
     registered_input ${RegisteredInput} \
-    port_num 2 \
+    port_num 1 \
     port_list \{${PortList}\} \
     data_wd ${DataWd} \
     addr_wd ${AddrWd} \
@@ -633,15 +633,15 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 21
+set ID 25
 set hasByteEnable 0
 set MemName toplevel_open_set_heap_x_V
 set CoreName ap_simcore_mem
-set PortList { 2 2 }
+set PortList { 2 }
 set DataWd 9
-set AddrRange 5000
-set AddrWd 13
-set impl_style block
+set AddrRange 1500
+set AddrWd 11
+set impl_style distributed
 set TrueReset 0
 set IsROM 0
 set ROMData { }
@@ -649,7 +649,7 @@ set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
 set MaxLatency -1
-set DelayBudget 3.254
+set DelayBudget 2.322
 set ClkPeriod 10
 set RegisteredInput 0
 if {${::AESL::PGuard_simmodel_gen}} {
@@ -664,7 +664,7 @@ if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
     sync_rst true \
     stage_num ${NumOfStage}  \
     registered_input ${RegisteredInput} \
-    port_num 2 \
+    port_num 1 \
     port_list \{${PortList}\} \
     data_wd ${DataWd} \
     addr_wd ${AddrWd} \
@@ -687,7 +687,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 }
 
 
-set CoreName RAM_T2P_BRAM
+set CoreName RAM_1P_LUTRAM
 if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
 if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RAM"} {
     eval "::AESL_LIB_VIRTEX::xil_gen_RAM { \
@@ -700,7 +700,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
     sync_rst true \
     stage_num ${NumOfStage}  \
     registered_input ${RegisteredInput} \
-    port_num 2 \
+    port_num 1 \
     port_list \{${PortList}\} \
     data_wd ${DataWd} \
     addr_wd ${AddrWd} \
@@ -719,7 +719,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 22
+set ID 26
 set hasByteEnable 0
 set MemName toplevel_dx
 set CoreName ap_simcore_mem
@@ -805,7 +805,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 23
+set ID 27
 set hasByteEnable 0
 set MemName toplevel_dy
 set CoreName ap_simcore_mem
@@ -919,7 +919,7 @@ dict set axilite_register_dict AXILiteS $port_AXILiteS
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 24 \
+			id 28 \
 			corename toplevel_AXILiteS_axilite \
 			name toplevel_AXILiteS_s_axi \
 			ports {$port_AXILiteS} \
@@ -953,7 +953,7 @@ dict set axilite_register_dict control $port_control
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 25 \
+			id 29 \
 			corename toplevel_control_axilite \
 			name toplevel_control_s_axi \
 			ports {$port_control} \
@@ -974,7 +974,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::m_axi_gen] == "::AESL_LIB_XILADAPTER::m_axi_gen"} {
 eval "::AESL_LIB_XILADAPTER::m_axi_gen { \
-    id 26 \
+    id 30 \
     corename {m_axi} \
     op interface \
     max_latency -1 \ 

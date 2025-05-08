@@ -20,32 +20,32 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 606442
+INFO: [Synth 8-7075] Helper process launched with PID 839357
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 2280.855 ; gain = 0.000 ; free physical = 761 ; free virtual = 5714
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 2286.109 ; gain = 0.000 ; free physical = 401 ; free virtual = 4468
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'zybo_design_wrapper' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/hdl/zybo_design_wrapper.v:12]
 INFO: [Synth 8-6157] synthesizing module 'zybo_design' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:2721]
 INFO: [Synth 8-6157] synthesizing module 'zybo_design_axi_mem_intercon_5' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:3627]
 INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_1A9V514' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:606]
-INFO: [Synth 8-6157] synthesizing module 'zybo_design_auto_pc_0' [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-606414-DESKTOP-Q62E4QT/realtime/zybo_design_auto_pc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'zybo_design_auto_pc_0' (1#1) [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-606414-DESKTOP-Q62E4QT/realtime/zybo_design_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'zybo_design_auto_pc_0' [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-839267-DESKTOP-Q62E4QT/realtime/zybo_design_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zybo_design_auto_pc_0' (1#1) [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-839267-DESKTOP-Q62E4QT/realtime/zybo_design_auto_pc_0_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_1A9V514' (2#1) [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:606]
 INFO: [Synth 8-6157] synthesizing module 'm01_couplers_imp_FUHBQE' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:1143]
-INFO: [Synth 8-6157] synthesizing module 'zybo_design_auto_pc_1' [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-606414-DESKTOP-Q62E4QT/realtime/zybo_design_auto_pc_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'zybo_design_auto_pc_1' (3#1) [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-606414-DESKTOP-Q62E4QT/realtime/zybo_design_auto_pc_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'zybo_design_auto_pc_1' [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-839267-DESKTOP-Q62E4QT/realtime/zybo_design_auto_pc_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zybo_design_auto_pc_1' (3#1) [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-839267-DESKTOP-Q62E4QT/realtime/zybo_design_auto_pc_1_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'm01_couplers_imp_FUHBQE' (4#1) [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:1143]
 INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_KQYUY0' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:1951]
-INFO: [Synth 8-6157] synthesizing module 'zybo_design_auto_us_0' [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-606414-DESKTOP-Q62E4QT/realtime/zybo_design_auto_us_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'zybo_design_auto_us_0' (5#1) [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-606414-DESKTOP-Q62E4QT/realtime/zybo_design_auto_us_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'zybo_design_auto_us_0' [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-839267-DESKTOP-Q62E4QT/realtime/zybo_design_auto_us_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zybo_design_auto_us_0' (5#1) [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-839267-DESKTOP-Q62E4QT/realtime/zybo_design_auto_us_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'm_axi_awregion' of module 'zybo_design_auto_us_0' is unconnected for instance 'auto_us' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:2238]
 WARNING: [Synth 8-7071] port 'm_axi_arregion' of module 'zybo_design_auto_us_0' is unconnected for instance 'auto_us' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:2238]
 WARNING: [Synth 8-7023] instance 'auto_us' of module 'zybo_design_auto_us_0' has 72 connections declared, but only 70 given [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:2238]
 INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_KQYUY0' (6#1) [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:1951]
 INFO: [Synth 8-6157] synthesizing module 's01_couplers_imp_1N4QWTY' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:2616]
 INFO: [Synth 8-6155] done synthesizing module 's01_couplers_imp_1N4QWTY' (7#1) [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:2616]
-INFO: [Synth 8-6157] synthesizing module 'zybo_design_xbar_8' [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-606414-DESKTOP-Q62E4QT/realtime/zybo_design_xbar_8_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'zybo_design_xbar_8' (8#1) [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-606414-DESKTOP-Q62E4QT/realtime/zybo_design_xbar_8_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'zybo_design_xbar_8' [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-839267-DESKTOP-Q62E4QT/realtime/zybo_design_xbar_8_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zybo_design_xbar_8' (8#1) [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-839267-DESKTOP-Q62E4QT/realtime/zybo_design_xbar_8_stub.v:6]
 WARNING: [Synth 8-689] width (1) of port connection 's_axi_awready' does not match port width (2) of module 'zybo_design_xbar_8' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:4603]
 WARNING: [Synth 8-689] width (2) of port connection 's_axi_bresp' does not match port width (4) of module 'zybo_design_xbar_8' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:4607]
 WARNING: [Synth 8-689] width (1) of port connection 's_axi_bvalid' does not match port width (2) of module 'zybo_design_xbar_8' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:4608]
@@ -55,21 +55,21 @@ WARNING: [Synth 8-7071] port 's_axi_rid' of module 'zybo_design_xbar_8' is uncon
 WARNING: [Synth 8-7023] instance 'xbar' of module 'zybo_design_xbar_8' has 78 connections declared, but only 76 given [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:4542]
 INFO: [Synth 8-6155] done synthesizing module 'zybo_design_axi_mem_intercon_5' (9#1) [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:3627]
 INFO: [Synth 8-6157] synthesizing module 'hdmi_imp_NLTHK0' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:12]
-INFO: [Synth 8-6157] synthesizing module 'zybo_design_axi_dynclk_0_3' [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-606414-DESKTOP-Q62E4QT/realtime/zybo_design_axi_dynclk_0_3_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'zybo_design_axi_dynclk_0_3' (10#1) [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-606414-DESKTOP-Q62E4QT/realtime/zybo_design_axi_dynclk_0_3_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'zybo_design_axi_vdma_0_3' [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-606414-DESKTOP-Q62E4QT/realtime/zybo_design_axi_vdma_0_3_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'zybo_design_axi_vdma_0_3' (11#1) [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-606414-DESKTOP-Q62E4QT/realtime/zybo_design_axi_vdma_0_3_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'zybo_design_axi_dynclk_0_3' [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-839267-DESKTOP-Q62E4QT/realtime/zybo_design_axi_dynclk_0_3_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zybo_design_axi_dynclk_0_3' (10#1) [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-839267-DESKTOP-Q62E4QT/realtime/zybo_design_axi_dynclk_0_3_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'zybo_design_axi_vdma_0_3' [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-839267-DESKTOP-Q62E4QT/realtime/zybo_design_axi_vdma_0_3_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zybo_design_axi_vdma_0_3' (11#1) [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-839267-DESKTOP-Q62E4QT/realtime/zybo_design_axi_vdma_0_3_stub.v:6]
 WARNING: [Synth 8-7071] port 'mm2s_frame_ptr_out' of module 'zybo_design_axi_vdma_0_3' is unconnected for instance 'axi_vdma_0' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:349]
 WARNING: [Synth 8-7071] port 'mm2s_introut' of module 'zybo_design_axi_vdma_0_3' is unconnected for instance 'axi_vdma_0' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:349]
 WARNING: [Synth 8-7023] instance 'axi_vdma_0' of module 'zybo_design_axi_vdma_0_3' has 41 connections declared, but only 39 given [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:349]
-INFO: [Synth 8-6157] synthesizing module 'zybo_design_axis_subset_converter_0_3' [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-606414-DESKTOP-Q62E4QT/realtime/zybo_design_axis_subset_converter_0_3_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'zybo_design_axis_subset_converter_0_3' (12#1) [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-606414-DESKTOP-Q62E4QT/realtime/zybo_design_axis_subset_converter_0_3_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'zybo_design_axis_subset_converter_0_3' [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-839267-DESKTOP-Q62E4QT/realtime/zybo_design_axis_subset_converter_0_3_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zybo_design_axis_subset_converter_0_3' (12#1) [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-839267-DESKTOP-Q62E4QT/realtime/zybo_design_axis_subset_converter_0_3_stub.v:6]
 WARNING: [Synth 8-7071] port 'm_axis_tkeep' of module 'zybo_design_axis_subset_converter_0_3' is unconnected for instance 'axis_subset_converter_0' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:389]
 WARNING: [Synth 8-7023] instance 'axis_subset_converter_0' of module 'zybo_design_axis_subset_converter_0_3' has 14 connections declared, but only 13 given [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:389]
-INFO: [Synth 8-6157] synthesizing module 'zybo_design_rgb2dvi_0_3' [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-606414-DESKTOP-Q62E4QT/realtime/zybo_design_rgb2dvi_0_3_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'zybo_design_rgb2dvi_0_3' (13#1) [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-606414-DESKTOP-Q62E4QT/realtime/zybo_design_rgb2dvi_0_3_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'zybo_design_v_axi4s_vid_out_0_3' [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-606414-DESKTOP-Q62E4QT/realtime/zybo_design_v_axi4s_vid_out_0_3_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'zybo_design_v_axi4s_vid_out_0_3' (14#1) [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-606414-DESKTOP-Q62E4QT/realtime/zybo_design_v_axi4s_vid_out_0_3_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'zybo_design_rgb2dvi_0_3' [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-839267-DESKTOP-Q62E4QT/realtime/zybo_design_rgb2dvi_0_3_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zybo_design_rgb2dvi_0_3' (13#1) [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-839267-DESKTOP-Q62E4QT/realtime/zybo_design_rgb2dvi_0_3_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'zybo_design_v_axi4s_vid_out_0_3' [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-839267-DESKTOP-Q62E4QT/realtime/zybo_design_v_axi4s_vid_out_0_3_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zybo_design_v_axi4s_vid_out_0_3' (14#1) [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-839267-DESKTOP-Q62E4QT/realtime/zybo_design_v_axi4s_vid_out_0_3_stub.v:6]
 WARNING: [Synth 8-7071] port 'vid_vblank' of module 'zybo_design_v_axi4s_vid_out_0_3' is unconnected for instance 'v_axi4s_vid_out_0' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:415]
 WARNING: [Synth 8-7071] port 'vid_hblank' of module 'zybo_design_v_axi4s_vid_out_0_3' is unconnected for instance 'v_axi4s_vid_out_0' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:415]
 WARNING: [Synth 8-7071] port 'vid_field_id' of module 'zybo_design_v_axi4s_vid_out_0_3' is unconnected for instance 'v_axi4s_vid_out_0' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:415]
@@ -81,8 +81,8 @@ WARNING: [Synth 8-7071] port 'fifo_read_level' of module 'zybo_design_v_axi4s_vi
 WARNING: [Synth 8-7071] port 'status' of module 'zybo_design_v_axi4s_vid_out_0_3' is unconnected for instance 'v_axi4s_vid_out_0' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:415]
 WARNING: [Synth 8-7071] port 'sof_state_out' of module 'zybo_design_v_axi4s_vid_out_0_3' is unconnected for instance 'v_axi4s_vid_out_0' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:415]
 WARNING: [Synth 8-7023] instance 'v_axi4s_vid_out_0' of module 'zybo_design_v_axi4s_vid_out_0_3' has 32 connections declared, but only 22 given [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:415]
-INFO: [Synth 8-6157] synthesizing module 'zybo_design_v_tc_0_3' [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-606414-DESKTOP-Q62E4QT/realtime/zybo_design_v_tc_0_3_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'zybo_design_v_tc_0_3' (15#1) [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-606414-DESKTOP-Q62E4QT/realtime/zybo_design_v_tc_0_3_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'zybo_design_v_tc_0_3' [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-839267-DESKTOP-Q62E4QT/realtime/zybo_design_v_tc_0_3_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zybo_design_v_tc_0_3' (15#1) [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-839267-DESKTOP-Q62E4QT/realtime/zybo_design_v_tc_0_3_stub.v:6]
 WARNING: [Synth 8-7071] port 'irq' of module 'zybo_design_v_tc_0_3' is unconnected for instance 'v_tc_0' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:438]
 WARNING: [Synth 8-7071] port 'fsync_out' of module 'zybo_design_v_tc_0_3' is unconnected for instance 'v_tc_0' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:438]
 WARNING: [Synth 8-7023] instance 'v_tc_0' of module 'zybo_design_v_tc_0_3' has 33 connections declared, but only 31 given [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:438]
@@ -93,8 +93,8 @@ INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_7_xlconstant' [/home/t
 INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_7_xlconstant' (16#1) [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'zybo_design_xlconstant_0_3' (17#1) [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/ip/zybo_design_xlconstant_0_3/synth/zybo_design_xlconstant_0_3.v:57]
 INFO: [Synth 8-6155] done synthesizing module 'hdmi_imp_NLTHK0' (18#1) [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:12]
-INFO: [Synth 8-6157] synthesizing module 'zybo_design_processing_system7_0_6' [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-606414-DESKTOP-Q62E4QT/realtime/zybo_design_processing_system7_0_6_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'zybo_design_processing_system7_0_6' (19#1) [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-606414-DESKTOP-Q62E4QT/realtime/zybo_design_processing_system7_0_6_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'zybo_design_processing_system7_0_6' [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-839267-DESKTOP-Q62E4QT/realtime/zybo_design_processing_system7_0_6_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zybo_design_processing_system7_0_6' (19#1) [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-839267-DESKTOP-Q62E4QT/realtime/zybo_design_processing_system7_0_6_stub.v:6]
 WARNING: [Synth 8-7071] port 'USB0_PORT_INDCTL' of module 'zybo_design_processing_system7_0_6' is unconnected for instance 'processing_system7_0' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:3261]
 WARNING: [Synth 8-7071] port 'USB0_VBUS_PWRSELECT' of module 'zybo_design_processing_system7_0_6' is unconnected for instance 'processing_system7_0' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:3261]
 WARNING: [Synth 8-7071] port 'S_AXI_HP0_RCOUNT' of module 'zybo_design_processing_system7_0_6' is unconnected for instance 'processing_system7_0' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:3261]
@@ -118,40 +118,40 @@ INFO: [Synth 8-6155] done synthesizing module 'm03_couplers_imp_1YW2WG2' (23#1) 
 INFO: [Synth 8-6157] synthesizing module 'm04_couplers_imp_15S9DWA' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:1819]
 INFO: [Synth 8-6155] done synthesizing module 'm04_couplers_imp_15S9DWA' (24#1) [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:1819]
 INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_SYKYEP' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:2311]
-INFO: [Synth 8-6157] synthesizing module 'zybo_design_auto_pc_2' [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-606414-DESKTOP-Q62E4QT/realtime/zybo_design_auto_pc_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'zybo_design_auto_pc_2' (25#1) [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-606414-DESKTOP-Q62E4QT/realtime/zybo_design_auto_pc_2_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'zybo_design_auto_pc_2' [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-839267-DESKTOP-Q62E4QT/realtime/zybo_design_auto_pc_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zybo_design_auto_pc_2' (25#1) [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-839267-DESKTOP-Q62E4QT/realtime/zybo_design_auto_pc_2_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_SYKYEP' (26#1) [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:2311]
-INFO: [Synth 8-6157] synthesizing module 'zybo_design_xbar_7' [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-606414-DESKTOP-Q62E4QT/realtime/zybo_design_xbar_7_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'zybo_design_xbar_7' (27#1) [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-606414-DESKTOP-Q62E4QT/realtime/zybo_design_xbar_7_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'zybo_design_xbar_7' [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-839267-DESKTOP-Q62E4QT/realtime/zybo_design_xbar_7_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zybo_design_xbar_7' (27#1) [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-839267-DESKTOP-Q62E4QT/realtime/zybo_design_xbar_7_stub.v:6]
 WARNING: [Synth 8-689] width (9) of port connection 'm_axi_arprot' does not match port width (15) of module 'zybo_design_xbar_7' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:5523]
 WARNING: [Synth 8-689] width (9) of port connection 'm_axi_awprot' does not match port width (15) of module 'zybo_design_xbar_7' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:5527]
 INFO: [Synth 8-6155] done synthesizing module 'zybo_design_ps7_0_axi_periph_5' (28#1) [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:4621]
-INFO: [Synth 8-6157] synthesizing module 'zybo_design_rst_ps7_0_50M_2' [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-606414-DESKTOP-Q62E4QT/realtime/zybo_design_rst_ps7_0_50M_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'zybo_design_rst_ps7_0_50M_2' (29#1) [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-606414-DESKTOP-Q62E4QT/realtime/zybo_design_rst_ps7_0_50M_2_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'zybo_design_rst_ps7_0_50M_2' [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-839267-DESKTOP-Q62E4QT/realtime/zybo_design_rst_ps7_0_50M_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zybo_design_rst_ps7_0_50M_2' (29#1) [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-839267-DESKTOP-Q62E4QT/realtime/zybo_design_rst_ps7_0_50M_2_stub.v:6]
 WARNING: [Synth 8-7071] port 'mb_reset' of module 'zybo_design_rst_ps7_0_50M_2' is unconnected for instance 'rst_ps7_0_50M' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:3546]
 WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'zybo_design_rst_ps7_0_50M_2' is unconnected for instance 'rst_ps7_0_50M' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:3546]
 WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'zybo_design_rst_ps7_0_50M_2' is unconnected for instance 'rst_ps7_0_50M' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:3546]
 WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'zybo_design_rst_ps7_0_50M_2' is unconnected for instance 'rst_ps7_0_50M' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:3546]
 WARNING: [Synth 8-7023] instance 'rst_ps7_0_50M' of module 'zybo_design_rst_ps7_0_50M_2' has 10 connections declared, but only 6 given [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:3546]
-INFO: [Synth 8-6157] synthesizing module 'zybo_design_toplevel_0_4' [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-606414-DESKTOP-Q62E4QT/realtime/zybo_design_toplevel_0_4_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'zybo_design_toplevel_0_4' (30#1) [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-606414-DESKTOP-Q62E4QT/realtime/zybo_design_toplevel_0_4_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'zybo_design_toplevel_0_4' [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-839267-DESKTOP-Q62E4QT/realtime/zybo_design_toplevel_0_4_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zybo_design_toplevel_0_4' (30#1) [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/.Xil/Vivado-839267-DESKTOP-Q62E4QT/realtime/zybo_design_toplevel_0_4_stub.v:6]
 WARNING: [Synth 8-7071] port 'interrupt' of module 'zybo_design_toplevel_0_4' is unconnected for instance 'toplevel_0' [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:3553]
 WARNING: [Synth 8-7023] instance 'toplevel_0' of module 'zybo_design_toplevel_0_4' has 72 connections declared, but only 71 given [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:3553]
 INFO: [Synth 8-6155] done synthesizing module 'zybo_design' (31#1) [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v:2721]
 INFO: [Synth 8-6155] done synthesizing module 'zybo_design_wrapper' (32#1) [/home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/hdl/zybo_design_wrapper.v:12]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2280.855 ; gain = 0.000 ; free physical = 1455 ; free virtual = 6406
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2286.109 ; gain = 0.000 ; free physical = 1127 ; free virtual = 5195
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2280.855 ; gain = 0.000 ; free physical = 1484 ; free virtual = 6432
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2286.109 ; gain = 0.000 ; free physical = 1162 ; free virtual = 5230
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2280.855 ; gain = 0.000 ; free physical = 1484 ; free virtual = 6432
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2286.109 ; gain = 0.000 ; free physical = 1162 ; free virtual = 5230
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2280.855 ; gain = 0.000 ; free physical = 1477 ; free virtual = 6425
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2286.109 ; gain = 0.000 ; free physical = 1154 ; free virtual = 5222
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -194,20 +194,20 @@ Parsing XDC File [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/dont_tou
 Finished Parsing XDC File [/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2342.910 ; gain = 0.000 ; free physical = 1369 ; free virtual = 6317
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2350.008 ; gain = 0.000 ; free physical = 1058 ; free virtual = 5126
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2342.910 ; gain = 0.000 ; free physical = 1361 ; free virtual = 6317
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2350.008 ; gain = 0.000 ; free physical = 1058 ; free virtual = 5126
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 2342.910 ; gain = 62.055 ; free physical = 1455 ; free virtual = 6403
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 2350.008 ; gain = 63.898 ; free physical = 1126 ; free virtual = 5194
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 2342.910 ; gain = 62.055 ; free physical = 1455 ; free virtual = 6403
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 2350.008 ; gain = 63.898 ; free physical = 1126 ; free virtual = 5194
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -508,10 +508,10 @@ Applied set_property KEEP_HIERARCHY = SOFT for zybo_design_i/hdmi/axis_subset_co
 Applied set_property KEEP_HIERARCHY = SOFT for zybo_design_i/hdmi/xlconstant_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for zybo_design_i/toplevel_0. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 2342.910 ; gain = 62.055 ; free physical = 1455 ; free virtual = 6403
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2350.008 ; gain = 63.898 ; free physical = 1126 ; free virtual = 5194
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 2342.910 ; gain = 62.055 ; free physical = 1455 ; free virtual = 6405
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2350.008 ; gain = 63.898 ; free physical = 1127 ; free virtual = 5196
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -533,25 +533,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 2342.910 ; gain = 62.055 ; free physical = 1441 ; free virtual = 6394
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 2350.008 ; gain = 63.898 ; free physical = 1112 ; free virtual = 5185
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 2342.910 ; gain = 62.055 ; free physical = 1306 ; free virtual = 6260
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 2350.008 ; gain = 63.898 ; free physical = 978 ; free virtual = 5051
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 2342.910 ; gain = 62.055 ; free physical = 1306 ; free virtual = 6260
+Finished Timing Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2350.008 ; gain = 63.898 ; free physical = 978 ; free virtual = 5051
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 2342.910 ; gain = 62.055 ; free physical = 1303 ; free virtual = 6256
+Finished Technology Mapping : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2350.008 ; gain = 63.898 ; free physical = 977 ; free virtual = 5050
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -569,37 +569,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2342.910 ; gain = 62.055 ; free physical = 1297 ; free virtual = 6259
+Finished IO Insertion : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 2350.008 ; gain = 63.898 ; free physical = 978 ; free virtual = 5051
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2342.910 ; gain = 62.055 ; free physical = 1295 ; free virtual = 6259
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 2350.008 ; gain = 63.898 ; free physical = 978 ; free virtual = 5051
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2342.910 ; gain = 62.055 ; free physical = 1292 ; free virtual = 6258
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 2350.008 ; gain = 63.898 ; free physical = 978 ; free virtual = 5051
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2342.910 ; gain = 62.055 ; free physical = 1303 ; free virtual = 6257
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 2350.008 ; gain = 63.898 ; free physical = 978 ; free virtual = 5051
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2342.910 ; gain = 62.055 ; free physical = 1297 ; free virtual = 6257
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 2350.008 ; gain = 63.898 ; free physical = 978 ; free virtual = 5051
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2342.910 ; gain = 62.055 ; free physical = 1304 ; free virtual = 6257
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 2350.008 ; gain = 63.898 ; free physical = 978 ; free virtual = 5051
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -644,23 +644,23 @@ Report Cell Usage:
 |14    |zybo_design_xbar                    |     2|
 +------+------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2342.910 ; gain = 62.055 ; free physical = 1303 ; free virtual = 6257
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 2350.008 ; gain = 63.898 ; free physical = 978 ; free virtual = 5051
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 2342.910 ; gain = 0.000 ; free physical = 1332 ; free virtual = 6294
-Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2342.910 ; gain = 62.055 ; free physical = 1329 ; free virtual = 6293
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2350.008 ; gain = 0.000 ; free physical = 1015 ; free virtual = 5088
+Synthesis Optimization Complete : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 2350.008 ; gain = 63.898 ; free physical = 1015 ; free virtual = 5088
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2342.910 ; gain = 0.000 ; free physical = 1430 ; free virtual = 6386
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2350.008 ; gain = 0.000 ; free physical = 1107 ; free virtual = 5180
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2342.910 ; gain = 0.000 ; free physical = 1373 ; free virtual = 6326
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2350.008 ; gain = 0.000 ; free physical = 1046 ; free virtual = 5119
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
 81 Infos, 49 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:20 . Memory (MB): peak = 2342.910 ; gain = 62.055 ; free physical = 1419 ; free virtual = 6372
+synth_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:17 . Memory (MB): peak = 2350.008 ; gain = 64.031 ; free physical = 1095 ; free virtual = 5168
 INFO: [Common 17-1381] The checkpoint '/home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/zybo_design_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file zybo_design_wrapper_utilization_synth.rpt -pb zybo_design_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu May  8 19:28:10 2025...
+INFO: [Common 17-206] Exiting Vivado at Thu May  8 23:20:13 2025...

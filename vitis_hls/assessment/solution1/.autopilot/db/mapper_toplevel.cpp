@@ -36,10 +36,10 @@ extern "C" void toplevel(int*, int, volatile void *);
 extern "C" void apatb_toplevel_hw(volatile void * __xlx_apatb_param_ram, volatile void * __xlx_apatb_param_code) {
   // Collect __xlx_ram__tmp_vec
   vector<sc_bv<32> >__xlx_ram__tmp_vec;
-  for (int j = 0, e = 8031; j != e; ++j) {
+  for (int j = 0, e = 8631; j != e; ++j) {
     __xlx_ram__tmp_vec.push_back(((int*)__xlx_apatb_param_ram)[j]);
   }
-  int __xlx_size_param_ram = 8031;
+  int __xlx_size_param_ram = 8631;
   int __xlx_offset_param_ram = 0;
   int __xlx_offset_byte_param_ram = 0*4;
   int* __xlx_ram__input_buffer= new int[__xlx_ram__tmp_vec.size()];

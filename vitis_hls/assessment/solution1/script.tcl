@@ -11,7 +11,7 @@ add_files -tb assessment/testbench.cpp -cflags "-Wno-unknown-pragmas" -csimflags
 open_solution "solution1" -flow_target vivado
 set_part {xc7z010-clg400-1}
 create_clock -period 10 -name default
-config_export -format sysgen -rtl verilog
+config_export -format ip_catalog -rtl verilog
 source "./assessment/solution1/directives.tcl"
 csim_design
 csynth_design

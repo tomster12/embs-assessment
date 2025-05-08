@@ -11,8 +11,8 @@ entity toplevel_local_ram_ram is
     generic(
             MEM_TYPE    : string := "block"; 
             DWIDTH     : integer := 32; 
-            AWIDTH     : integer := 13; 
-            MEM_SIZE    : integer := 8031
+            AWIDTH     : integer := 14; 
+            MEM_SIZE    : integer := 8631
     ); 
     port (
           addr0     : in std_logic_vector(AWIDTH-1 downto 0); 
@@ -72,8 +72,8 @@ use IEEE.std_logic_1164.all;
 entity toplevel_local_ram is
     generic (
         DataWidth : INTEGER := 32;
-        AddressRange : INTEGER := 8031;
-        AddressWidth : INTEGER := 13);
+        AddressRange : INTEGER := 8631;
+        AddressWidth : INTEGER := 14);
     port (
         reset : IN STD_LOGIC;
         clk : IN STD_LOGIC;

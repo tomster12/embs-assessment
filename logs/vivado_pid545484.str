@@ -898,3 +898,1571 @@ dismissDialog("Export Hardware Platform"); // bz
 // WARNING: HEventQueue.dispatchEvent() is taking  1019 ms.
 // WARNING: HEventQueue.dispatchEvent() is taking  1023 ms.
 // WARNING: HEventQueue.dispatchEvent() is taking  1020 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1103 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1110 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1080 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1067 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1056 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1053 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1067 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1163 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1013 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1040 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1018 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1114 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1008 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1081 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1094 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1044 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1038 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1011 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1002 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1016 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1003 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1021 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,186 MB. GUI used memory: 146 MB. Current time: 5/8/25, 8:27:29 PM BST
+// Elapsed time: 3289 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_WINDOW, "Window"); // ac
+selectMenuItem(PAResourceCommand.PACommandNames_CORE_GEN, "IP Catalog"); // ak
+dismissMenu(PAResourceItoN.MainMenuMgr_WINDOW, "Window"); // ac
+// Run Command: PAResourceCommand.PACommandNames_CORE_GEN
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "User Repository ;  ;  ;  ; ", 4, "User Repository", 0, true, false, false, false, true, false); // L - Popup Trigger - Node
+selectMenuItem(PAResourceAtoD.CoreAndInterfacesBaseTreeTablePanel_REFRESH_REPOSITORY, "Refresh Repository"); // ak
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: BDCELL_LOCK_CHANGE
+// TclEventType: RSB_LOCK_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: RSB_BITABEN_IPREPODATA_REFRESH
+// Tcl Message: update_ip_catalog -rebuild -repo_path /home/tomster12/files/EMBS/vitis_hls/assessment 
+// Tcl Message: INFO: [IP_Flow 19-725] Reloaded user IP repository '/home/tomster12/files/EMBS/vitis_hls/assessment' 
+// TclEventType: BDCELL_LOCK_CHANGE
+// TclEventType: CREATE_IP_CATALOG
+// bz (cr):  Refresh IP Repository : addNotify
+// TclEventType: CREATE_IP_CATALOG
+// [GUI Memory]: 308 MB (+44655kb) [01:21:15]
+dismissDialog("Refresh IP Repository"); // bz
+// [Engine Memory]: 2,389 MB (+35571kb) [01:21:16]
+// HMemoryUtils.trashcanNow. Engine heap size: 2,369 MB. GUI used memory: 151 MB. Current time: 5/8/25, 8:27:49 PM BST
+selectButton(PAResourceQtoS.SystemTab_SHOW_IP_STATUS, "Show IP Status"); // h
+selectButton(PAResourceQtoS.SystemTab_SHOW_IP_STATUS, "Show IP Status"); // h
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "User Repository ;  ;  ;  ; ", 1, "User Repository", 0, true, false, false, false, true, false); // L - Popup Trigger - Node
+selectMenuItem(PAResourceAtoD.CoreAndInterfacesBaseTreeTablePanel_REFRESH_ALL_REPOSITORIES, "Refresh All Repositories"); // ak
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: RSB_BITABEN_IPREPODATA_REFRESH
+// TclEventType: BDCELL_LOCK_CHANGE
+// TclEventType: CREATE_IP_CATALOG
+// Tcl Message: update_ip_catalog -rebuild 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/tomster12/files/EMBS/zybo-z7-hdmi/hardware/zybo_z7_hdmi_repo'. INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/tomster12/files/EMBS/vitis_hls/assessment'. 
+// bz (cr):  Refresh All IP Repositories : addNotify
+selectButton(RDIResource.BaseReportTab_RERUN, "Rerun"); // h
+dismissDialog("Refresh All IP Repositories"); // bz
+selectButton(RDIResource.BaseReportTab_RERUN, "Rerun"); // h
+// Tcl Command: 'report_ip_status -name ip_status '
+// TclEventType: IP_SUMMARY_RESULTS
+// Tcl Message: report_ip_status -name ip_status  
+// [Engine Memory]: 2,897 MB (+406553kb) [01:21:23]
+selectButton(PAResourceItoN.IPStatusSectionPanel_UPGRADE_SELECTED, "Upgrade Selected"); // a
+selectButton(PAResourceItoN.IPStatusSectionPanel_UPGRADE_SELECTED, "Upgrade Selected"); // a
+// Run Command: PAResourceCommand.PACommandNames_UPGRADE_IP
+// TclEventType: RSB_OPEN_DIAGRAM
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// bz (cr):  Upgrade IP : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILESET_UPDATE_IP
+// TclEventType: IP_UPGRADE_COMPLETE
+// Tcl Message: upgrade_ip -vlnv xilinx.com:hls:toplevel:1.0 [get_ips  zybo_design_toplevel_0_4] -log ip_upgrade.log 
+// Tcl Message: Upgrading '/home/tomster12/files/EMBS/vivado/vivado.srcs/sources_1/bd/zybo_design/zybo_design.bd' 
+// Tcl Message: INFO: [IP_Flow 19-3422] Upgraded zybo_design_toplevel_0_4 (Toplevel 1.0) from revision 2114074585 to revision 2114074645 
+// Tcl Message: Wrote  : </home/tomster12/files/EMBS/vivado/vivado.srcs/sources_1/bd/zybo_design/zybo_design.bd>  Wrote  : </home/tomster12/files/EMBS/vivado/vivado.srcs/sources_1/bd/zybo_design/ui/bd_1ee47611.ui>  
+// Tcl Message: INFO: [Coretcl 2-1525] Wrote upgrade log to '/home/tomster12/files/EMBS/vivado/ip_upgrade.log'. 
+// Tcl Message: export_ip_user_files -of_objects [get_ips zybo_design_toplevel_0_4] -no_script -sync -force -quiet 
+// aI (cr): Generate Output Products: addNotify
+selectButton("OptionPane.button", "OK"); // JButton
+// HMemoryUtils.trashcanNow. Engine heap size: 2,453 MB. GUI used memory: 161 MB. Current time: 5/8/25, 8:28:05 PM BST
+// Elapsed time: 10 seconds
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, "Generate"); // a
+// bz (cr):  Managing Output Products : addNotify
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: generate_target all [get_files  /home/tomster12/files/EMBS/vivado/vivado.srcs/sources_1/bd/zybo_design/zybo_design.bd] 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: Wrote  : </home/tomster12/files/EMBS/vivado/vivado.srcs/sources_1/bd/zybo_design/zybo_design.bd>  
+// Tcl Message: VHDL Output written to : /home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v 
+// Tcl Message: VHDL Output written to : /home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/sim/zybo_design.v VHDL Output written to : /home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/hdl/zybo_design_wrapper.v 
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block toplevel_0 . 
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_us . 
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/auto_pc . 
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m01_couplers/auto_pc . 
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/s00_couplers/auto_pc . 
+// Tcl Message: Exporting to file /home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/hw_handoff/zybo_design.hwh Generated Block Design Tcl file /home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/hw_handoff/zybo_design_bd.tcl Generated Hardware Definition File /home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.hwdef 
+// Tcl Message: generate_target: Time (s): cpu = 00:00:14 ; elapsed = 00:00:13 . Memory (MB): peak = 9240.719 ; gain = 0.000 ; free physical = 1364 ; free virtual = 6875 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all zybo_design_toplevel_0_4] } 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: catch { config_ip_cache -export [get_ips -all zybo_design_auto_us_0] } 
+// TclEventType: OOC_IP_CACHE_USED
+// Tcl Message: INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP zybo_design_auto_us_0, cache-ID = bc941287a83e2174; cache size = 569.522 MB. 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: OOC_IP_CACHE_USED
+// Tcl Message: catch { config_ip_cache -export [get_ips -all zybo_design_auto_pc_0] } 
+// Tcl Message: INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP zybo_design_auto_pc_0, cache-ID = b3c5e821bd002132; cache size = 569.522 MB. 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: OOC_IP_CACHE_USED
+// Tcl Message: catch { config_ip_cache -export [get_ips -all zybo_design_auto_pc_1] } 
+// Tcl Message: INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP zybo_design_auto_pc_1, cache-ID = b3c5e821bd002132; cache size = 569.522 MB. 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: catch { config_ip_cache -export [get_ips -all zybo_design_auto_pc_2] } 
+// TclEventType: OOC_IP_CACHE_USED
+// TclEventType: PROJ_DESIGN_MODE_SET
+// Tcl Message: INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP zybo_design_auto_pc_2, cache-ID = 49a6968113a25fe4; cache size = 569.522 MB. 
+// TclEventType: PROJ_DESIGN_MODE_SET
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJ_DESIGN_MODE_SET
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJ_DESIGN_MODE_SET
+// Tcl Message: export_ip_user_files -of_objects [get_files /home/tomster12/files/EMBS/vivado/vivado.srcs/sources_1/bd/zybo_design/zybo_design.bd] -no_script -sync -force -quiet 
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// Tcl Message: create_ip_run [get_files -of_objects [get_fileset sources_1] /home/tomster12/files/EMBS/vivado/vivado.srcs/sources_1/bd/zybo_design/zybo_design.bd] 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: launch_runs zybo_design_toplevel_0_4_synth_1 -jobs 8 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Thu May  8 20:28:28 2025] Launched zybo_design_toplevel_0_4_synth_1... Run output will be captured here: /home/tomster12/files/EMBS/vivado/vivado.runs/zybo_design_toplevel_0_4_synth_1/runme.log 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// Elapsed time: 30 seconds
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, "Generate"); // a
+selectButton("OptionPane.button", "OK"); // JButton
+selectButton(PAResourceItoN.IPStatusSectionPanel_RE_RUN_REPORT, (String) null); // E
+selectButton(PAResourceItoN.IPStatusSectionPanel_RE_RUN_REPORT, (String) null); // E
+// Tcl Command: 'report_ip_status -name ip_status '
+// TclEventType: IP_SUMMARY_RESULTS
+// Tcl Message: report_ip_status -name ip_status  
+selectTab((HResource) null, (HResource) null, "Design Runs", 5); // aK
+expandTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "zybo_design ;  ; Running Submodule Runs ; 75 ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Thu May 08 18:55:59 BST 2025 ; 01:32:47 ;  ;  ;  ;  ; ", 3); // az
+// Elapsed time: 43 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bz (cr):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// cD (cr): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// TclEventType: RUN_RESET
+dismissDialog("Launch Runs"); // cD
+// bz (cr):  Generate Bitstream : addNotify
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 8 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Thu May  8 20:29:33 2025] Launched zybo_design_toplevel_0_4_synth_1, synth_1... Run output will be captured here: zybo_design_toplevel_0_4_synth_1: /home/tomster12/files/EMBS/vivado/vivado.runs/zybo_design_toplevel_0_4_synth_1/runme.log synth_1: /home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/runme.log [Thu May  8 20:29:33 2025] Launched impl_1... Run output will be captured here: /home/tomster12/files/EMBS/vivado/vivado.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bz
+// TclEventType: RUN_STATUS_CHANGE
+// WARNING: HEventQueue.dispatchEvent() is taking  1032 ms.
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// WARNING: HEventQueue.dispatchEvent() is taking  1035 ms.
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// WARNING: HEventQueue.dispatchEvent() is taking  1002 ms.
+// TclEventType: RUN_STEP_COMPLETED
+// WARNING: HEventQueue.dispatchEvent() is taking  1018 ms.
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// ag (cr): Implementation Failed: addNotify
+// Elapsed time: 181 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Implementation Failed"); // ag
+// WARNING: HEventQueue.dispatchEvent() is taking  1081 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1021 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1232 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1086 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1017 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1045 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1024 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1085 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1020 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1185 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1019 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1093 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1198 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1119 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1157 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1176 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1066 ms.
+// Elapsed time: 703 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_WINDOW, "Window"); // ac
+selectMenuItem(PAResourceCommand.PACommandNames_CORE_GEN, "IP Catalog"); // ak
+dismissMenu(PAResourceItoN.MainMenuMgr_WINDOW, "Window"); // ac
+// Run Command: PAResourceCommand.PACommandNames_CORE_GEN
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "Video & Image Processing ;  ;  ;  ; ", 3, "Video & Image Processing", 0, true, false, false, false, true, false); // L - Popup Trigger - Node
+selectMenuItem(PAResourceAtoD.CoreAndInterfacesBaseTreeTablePanel_REFRESH_ALL_REPOSITORIES, "Refresh All Repositories"); // ak
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: BDCELL_LOCK_CHANGE
+// TclEventType: RSB_LOCK_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: RSB_BITABEN_IPREPODATA_REFRESH
+// TclEventType: BDCELL_LOCK_CHANGE
+// TclEventType: CREATE_IP_CATALOG
+// [GUI Memory]: 324 MB (+735kb) [01:37:51]
+// Tcl Message: update_ip_catalog -rebuild 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/tomster12/files/EMBS/zybo-z7-hdmi/hardware/zybo_z7_hdmi_repo'. INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/tomster12/files/EMBS/vitis_hls/assessment'. 
+// bz (cr):  Refresh All IP Repositories : addNotify
+// [GUI Memory]: 363 MB (+24337kb) [01:37:52]
+dismissDialog("Refresh All IP Repositories"); // bz
+selectTab((HResource) null, (HResource) null, "IP Status", 3); // aK
+selectButton(PAResourceQtoS.SystemTab_SHOW_IP_STATUS, "Show IP Status"); // h
+selectButton(PAResourceQtoS.SystemTab_SHOW_IP_STATUS, "Show IP Status"); // h
+selectButton(RDIResource.BaseReportTab_RERUN, "Rerun"); // h
+selectButton(RDIResource.BaseReportTab_RERUN, "Rerun"); // h
+// Tcl Command: 'report_ip_status -name ip_status '
+// TclEventType: IP_SUMMARY_RESULTS
+// Tcl Message: report_ip_status -name ip_status  
+selectButton(PAResourceItoN.IPStatusSectionPanel_UPGRADE_SELECTED, "Upgrade Selected"); // a
+selectButton(PAResourceItoN.IPStatusSectionPanel_UPGRADE_SELECTED, "Upgrade Selected"); // a
+// Run Command: PAResourceCommand.PACommandNames_UPGRADE_IP
+// TclEventType: RSB_OPEN_DIAGRAM
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: upgrade_ip -vlnv xilinx.com:hls:toplevel:1.0 [get_ips  zybo_design_toplevel_0_4] -log ip_upgrade.log 
+// TclEventType: RUN_DELETE
+// Tcl Message: Upgrading '/home/tomster12/files/EMBS/vivado/vivado.srcs/sources_1/bd/zybo_design/zybo_design.bd' 
+// TclEventType: RUN_DELETE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_DELETE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// bz (cr):  Upgrade IP : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILESET_UPDATE_IP
+// TclEventType: IP_UPGRADE_COMPLETE
+// Tcl Message: INFO: [IP_Flow 19-3422] Upgraded zybo_design_toplevel_0_4 (Toplevel 1.0) from revision 2114074645 to revision 2114074663 
+// Tcl Message: Wrote  : </home/tomster12/files/EMBS/vivado/vivado.srcs/sources_1/bd/zybo_design/zybo_design.bd>  Wrote  : </home/tomster12/files/EMBS/vivado/vivado.srcs/sources_1/bd/zybo_design/ui/bd_1ee47611.ui>  
+// Tcl Message: INFO: [Coretcl 2-1525] Wrote upgrade log to '/home/tomster12/files/EMBS/vivado/ip_upgrade.log'. 
+// Tcl Message: export_ip_user_files -of_objects [get_ips zybo_design_toplevel_0_4] -no_script -sync -force -quiet 
+// aI (cr): Generate Output Products: addNotify
+// Elapsed time: 27 seconds
+selectButton("OptionPane.button", "OK"); // JButton
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, "Generate"); // a
+// bz (cr):  Managing Output Products : addNotify
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// Tcl Message: generate_target all [get_files  /home/tomster12/files/EMBS/vivado/vivado.srcs/sources_1/bd/zybo_design/zybo_design.bd] 
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: Wrote  : </home/tomster12/files/EMBS/vivado/vivado.srcs/sources_1/bd/zybo_design/zybo_design.bd>  
+// Tcl Message: VHDL Output written to : /home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v 
+// Tcl Message: VHDL Output written to : /home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/sim/zybo_design.v VHDL Output written to : /home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/hdl/zybo_design_wrapper.v 
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block toplevel_0 . 
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_us . 
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/auto_pc . 
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m01_couplers/auto_pc . 
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/s00_couplers/auto_pc . 
+// Tcl Message: Exporting to file /home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/hw_handoff/zybo_design.hwh Generated Block Design Tcl file /home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/hw_handoff/zybo_design_bd.tcl Generated Hardware Definition File /home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.hwdef 
+// Tcl Message: generate_target: Time (s): cpu = 00:00:14 ; elapsed = 00:00:13 . Memory (MB): peak = 9240.719 ; gain = 0.000 ; free physical = 1884 ; free virtual = 6775 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all zybo_design_toplevel_0_4] } 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: catch { config_ip_cache -export [get_ips -all zybo_design_auto_us_0] } 
+// TclEventType: OOC_IP_CACHE_USED
+// Tcl Message: INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP zybo_design_auto_us_0, cache-ID = bc941287a83e2174; cache size = 582.578 MB. 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: OOC_IP_CACHE_USED
+// Tcl Message: catch { config_ip_cache -export [get_ips -all zybo_design_auto_pc_0] } 
+// Tcl Message: INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP zybo_design_auto_pc_0, cache-ID = b3c5e821bd002132; cache size = 582.578 MB. 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: OOC_IP_CACHE_USED
+// Tcl Message: catch { config_ip_cache -export [get_ips -all zybo_design_auto_pc_1] } 
+// Tcl Message: INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP zybo_design_auto_pc_1, cache-ID = b3c5e821bd002132; cache size = 582.578 MB. 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: catch { config_ip_cache -export [get_ips -all zybo_design_auto_pc_2] } 
+// TclEventType: OOC_IP_CACHE_USED
+// TclEventType: PROJ_DESIGN_MODE_SET
+// Tcl Message: INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP zybo_design_auto_pc_2, cache-ID = 49a6968113a25fe4; cache size = 582.578 MB. 
+// TclEventType: PROJ_DESIGN_MODE_SET
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: export_ip_user_files -of_objects [get_files /home/tomster12/files/EMBS/vivado/vivado.srcs/sources_1/bd/zybo_design/zybo_design.bd] -no_script -sync -force -quiet 
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// Tcl Message: create_ip_run [get_files -of_objects [get_fileset sources_1] /home/tomster12/files/EMBS/vivado/vivado.srcs/sources_1/bd/zybo_design/zybo_design.bd] 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs zybo_design_toplevel_0_4_synth_1 -jobs 8 
+// Tcl Message: [Thu May  8 20:45:18 2025] Launched zybo_design_toplevel_0_4_synth_1... Run output will be captured here: /home/tomster12/files/EMBS/vivado/vivado.runs/zybo_design_toplevel_0_4_synth_1/runme.log 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// WARNING: HEventQueue.dispatchEvent() is taking  1006 ms.
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 129 seconds
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, "Generate"); // a
+selectButton("OptionPane.button", "OK"); // JButton
+selectButton(PAResourceItoN.IPStatusSectionPanel_RE_RUN_REPORT, (String) null); // E
+selectButton(PAResourceItoN.IPStatusSectionPanel_RE_RUN_REPORT, (String) null); // E
+// Tcl Command: 'report_ip_status -name ip_status '
+// TclEventType: IP_SUMMARY_RESULTS
+// Tcl Message: report_ip_status -name ip_status  
+selectTab((HResource) null, (HResource) null, "Design Runs", 5); // aK
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bz (cr):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// cD (cr): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Launch Runs"); // cD
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 8 
+// Tcl Message: [Thu May  8 20:47:16 2025] Launched synth_1... Run output will be captured here: /home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/runme.log [Thu May  8 20:47:16 2025] Launched impl_1... Run output will be captured here: /home/tomster12/files/EMBS/vivado/vivado.runs/impl_1/runme.log 
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "zybo_design ;  ; Submodule Runs Complete ; 100 ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Thu May 08 18:55:59 BST 2025 ; 01:50:48 ;  ;  ;  ;  ; ", 3, "zybo_design", 0, true); // az - Node
+expandTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "zybo_design ;  ; Submodule Runs Complete ; 100 ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Thu May 08 18:55:59 BST 2025 ; 01:50:48 ;  ;  ;  ;  ; ", 3); // az
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// WARNING: HEventQueue.dispatchEvent() is taking  1029 ms.
+// Elapsed time: 259 seconds
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "impl_1 ; constrs_1 ; Running route_design... ; 80 ; Off ;  ;  ;  ;  ;  ;  ;  ;  ; 10262 ; 12067 ; 55.0 ; 0 ; 5 ; 292 ; 8 ; 0 ; 1 ; 1 ; 0 ; 0 ; Thu May 08 20:48:05 BST 2025 ; 00:03:32 ; Vivado Implementation Defaults (Vivado Implementation 2020) ; Vivado Implementation Default Reports (Vivado Implementation 2020) ; xc7z010clg400-1 ;  ; Default settings for Implementation.", 1, "impl_1", 0, false); // az
+// PAPropertyPanels.initPanels (impl_1) elapsed time: 0.2s
+// TclEventType: RUN_STEP_COMPLETED
+// WARNING: HEventQueue.dispatchEvent() is taking  1034 ms.
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// WARNING: HEventQueue.dispatchEvent() is taking  1130 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1026 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1002 ms.
+// Elapsed time: 115 seconds
+selectButton(PAResourceEtoH.ExploreAheadView_SHOW_PERCENTAGE, (String) null); // x: TRUE
+selectButton(PAResourceEtoH.ExploreAheadView_SHOW_PERCENTAGE, (String) null); // x: FALSE
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ac
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // ah
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // ah
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // ah
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // ah
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ah
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ah
+selectMenuItem(PAResourceCommand.PACommandNames_EXPORT_HARDWARE, "Export Hardware..."); // ak
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ac
+// Run Command: PAResourceCommand.PACommandNames_EXPORT_HARDWARE
+// Tcl Command: 'get_property pfm_name [get_files -all {/home/tomster12/files/EMBS/vivado/vivado.srcs/sources_1/bd/zybo_design/zybo_design.bd}]'
+// Tcl Command: 'get_property pfm_name [get_files -all {/home/tomster12/files/EMBS/vivado/vivado.srcs/sources_1/bd/zybo_design/zybo_design.bd}]'
+// g (cr): Export Hardware Platform: addNotify
+selectButton("NEXT", "Next >"); // JButton
+selectButton("NEXT", "Next >"); // JButton
+// WARNING: HEventQueue.dispatchEvent() is taking  1006 ms.
+// Elapsed time: 42 seconds
+selectButton("NEXT", "Next >"); // JButton
+selectButton("OptionPane.button", "Yes"); // JButton
+// WARNING: HEventQueue.dispatchEvent() is taking  1118 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1040 ms.
+// Tcl Command: 'get_property pfm_name [get_files -all {/home/tomster12/files/EMBS/vivado/vivado.srcs/sources_1/bd/zybo_design/zybo_design.bd}]'
+// Elapsed time: 58 seconds
+selectButton("FINISH", "Finish"); // JButton
+// 'n' command handler elapsed time: 103 seconds
+dismissDialog("Export Hardware Platform"); // g
+// Tcl Message: write_hw_platform -fixed -include_bit -force -file /home/tomster12/files/EMBS/vivado/zybo_design_wrapper.xsa 
+// Tcl Message: INFO: [Vivado 12-4895] Creating Hardware Platform: /home/tomster12/files/EMBS/vivado/zybo_design_wrapper.xsa ... 
+// bz (cr):  Export Hardware Platform : addNotify
+// Tcl Message: INFO: [Vivado 12-12467] The Hardware Platform can be used for Hardware INFO: [Vivado 12-4896] Successfully created Hardware Platform: /home/tomster12/files/EMBS/vivado/zybo_design_wrapper.xsa 
+dismissDialog("Export Hardware Platform"); // bz
+// WARNING: HEventQueue.dispatchEvent() is taking  1137 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1144 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1139 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1151 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,530 MB. GUI used memory: 155 MB. Current time: 5/8/25, 8:58:09 PM BST
+// WARNING: HEventQueue.dispatchEvent() is taking  1051 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1149 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1097 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1146 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1043 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1098 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1240 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1024 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1165 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1087 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1189 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1121 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1037 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1084 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1047 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1122 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1182 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1022 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1214 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1071 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1072 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1127 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,530 MB. GUI used memory: 155 MB. Current time: 5/8/25, 9:28:13 PM BST
+// WARNING: HEventQueue.dispatchEvent() is taking  1149 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1217 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1035 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1042 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,555 MB. GUI used memory: 153 MB. Current time: 5/8/25, 9:58:13 PM BST
+// WARNING: HEventQueue.dispatchEvent() is taking  1017 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1197 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1158 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1129 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1048 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1071 ms.
+// Elapsed time: 5244 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_REPORTS, "Reports"); // ac
+dismissMenu(PAResourceItoN.MainMenuMgr_REPORTS, "Reports"); // ac
+selectMenu(PAResourceItoN.MainMenuMgr_WINDOW, "Window"); // ac
+selectMenuItem(PAResourceCommand.PACommandNames_CORE_GEN, "IP Catalog"); // ak
+dismissMenu(PAResourceItoN.MainMenuMgr_WINDOW, "Window"); // ac
+// Run Command: PAResourceCommand.PACommandNames_CORE_GEN
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "UserIP ;  ;  ;  ; ", 2, "UserIP", 0, true, false, false, false, true, false); // L - Popup Trigger - Node
+selectMenuItem(PAResourceAtoD.CoreAndInterfacesBaseTreeTablePanel_REFRESH_ALL_REPOSITORIES, "Refresh All Repositories"); // ak
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: BDCELL_LOCK_CHANGE
+// TclEventType: RSB_LOCK_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// bz (cr):  Refresh All IP Repositories : addNotify
+// Tcl Message: update_ip_catalog -rebuild 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/tomster12/files/EMBS/zybo-z7-hdmi/hardware/zybo_z7_hdmi_repo'. INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/tomster12/files/EMBS/vitis_hls/assessment'. 
+// TclEventType: RSB_BITABEN_IPREPODATA_REFRESH
+// TclEventType: BDCELL_LOCK_CHANGE
+// TclEventType: CREATE_IP_CATALOG
+// [Engine Memory]: 3,095 MB (+55746kb) [03:16:23]
+// WARNING: HEventQueue.dispatchEvent() is taking  1140 ms.
+// PAPropertyPanels.initPanels (impl_1) elapsed time: 0.2s
+dismissDialog("Refresh All IP Repositories"); // bz
+// HMemoryUtils.trashcanNow. Engine heap size: 2,645 MB. GUI used memory: 172 MB. Current time: 5/8/25, 10:23:00 PM BST
+// Elapsed time: 10 seconds
+setText("PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE_SEARCH_FIELD", (String) null); // OverlayTextField
+selectTab((HResource) null, (HResource) null, "IP Status", 3); // aK
+selectButton(RDIResource.BaseReportTab_RERUN, "Rerun"); // h
+selectButton(RDIResource.BaseReportTab_RERUN, "Rerun"); // h
+// Tcl Command: 'report_ip_status -name ip_status '
+// TclEventType: IP_SUMMARY_RESULTS
+// Tcl Message: report_ip_status -name ip_status  
+selectButton(PAResourceItoN.IPStatusSectionPanel_UPGRADE_SELECTED, "Upgrade Selected"); // a
+selectButton(PAResourceItoN.IPStatusSectionPanel_UPGRADE_SELECTED, "Upgrade Selected"); // a
+// Run Command: PAResourceCommand.PACommandNames_UPGRADE_IP
+// TclEventType: RSB_OPEN_DIAGRAM
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_DELETE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_DELETE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: FILE_SET_CHANGE
+// bz (cr):  Upgrade IP : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// Tcl Message: upgrade_ip -vlnv xilinx.com:hls:toplevel:1.0 [get_ips  zybo_design_toplevel_0_4] -log ip_upgrade.log 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: Upgrading '/home/tomster12/files/EMBS/vivado/vivado.srcs/sources_1/bd/zybo_design/zybo_design.bd' 
+// Tcl Message: INFO: [IP_Flow 19-3422] Upgraded zybo_design_toplevel_0_4 (Toplevel 1.0) from revision 2114074663 to revision 2114074760 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILESET_UPDATE_IP
+// TclEventType: IP_UPGRADE_COMPLETE
+// Tcl Message: Wrote  : </home/tomster12/files/EMBS/vivado/vivado.srcs/sources_1/bd/zybo_design/zybo_design.bd>  
+// Tcl Message: INFO: [Coretcl 2-1525] Wrote upgrade log to '/home/tomster12/files/EMBS/vivado/ip_upgrade.log'. 
+// Tcl Message: export_ip_user_files -of_objects [get_ips zybo_design_toplevel_0_4] -no_script -sync -force -quiet 
+// aI (cr): Generate Output Products: addNotify
+// Elapsed time: 11 seconds
+selectButton("OptionPane.button", "OK"); // JButton
+// WARNING: HEventQueue.dispatchEvent() is taking  1233 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1294 ms.
+// Elapsed time: 89 seconds
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, "Generate"); // a
+// bz (cr):  Managing Output Products : addNotify
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: generate_target all [get_files  /home/tomster12/files/EMBS/vivado/vivado.srcs/sources_1/bd/zybo_design/zybo_design.bd] 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: Wrote  : </home/tomster12/files/EMBS/vivado/vivado.srcs/sources_1/bd/zybo_design/zybo_design.bd>  
+// Tcl Message: VHDL Output written to : /home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v 
+// Tcl Message: VHDL Output written to : /home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/sim/zybo_design.v VHDL Output written to : /home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/hdl/zybo_design_wrapper.v 
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block toplevel_0 . 
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_us . 
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/auto_pc . 
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m01_couplers/auto_pc . 
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/s00_couplers/auto_pc . 
+// Tcl Message: Exporting to file /home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/hw_handoff/zybo_design.hwh Generated Block Design Tcl file /home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/hw_handoff/zybo_design_bd.tcl Generated Hardware Definition File /home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.hwdef 
+// Tcl Message: generate_target: Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 9265.574 ; gain = 0.000 ; free physical = 3318 ; free virtual = 6845 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all zybo_design_toplevel_0_4] } 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: catch { config_ip_cache -export [get_ips -all zybo_design_auto_us_0] } 
+// TclEventType: OOC_IP_CACHE_USED
+// Tcl Message: INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP zybo_design_auto_us_0, cache-ID = bc941287a83e2174; cache size = 595.106 MB. 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: OOC_IP_CACHE_USED
+// Tcl Message: catch { config_ip_cache -export [get_ips -all zybo_design_auto_pc_0] } 
+// Tcl Message: INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP zybo_design_auto_pc_0, cache-ID = b3c5e821bd002132; cache size = 595.106 MB. 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: OOC_IP_CACHE_USED
+// Tcl Message: catch { config_ip_cache -export [get_ips -all zybo_design_auto_pc_1] } 
+// Tcl Message: INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP zybo_design_auto_pc_1, cache-ID = b3c5e821bd002132; cache size = 595.106 MB. 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: catch { config_ip_cache -export [get_ips -all zybo_design_auto_pc_2] } 
+// TclEventType: OOC_IP_CACHE_USED
+// TclEventType: PROJ_DESIGN_MODE_SET
+// Tcl Message: INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP zybo_design_auto_pc_2, cache-ID = 49a6968113a25fe4; cache size = 595.106 MB. 
+// TclEventType: PROJ_DESIGN_MODE_SET
+// Tcl Message: export_ip_user_files -of_objects [get_files /home/tomster12/files/EMBS/vivado/vivado.srcs/sources_1/bd/zybo_design/zybo_design.bd] -no_script -sync -force -quiet 
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// Tcl Message: create_ip_run [get_files -of_objects [get_fileset sources_1] /home/tomster12/files/EMBS/vivado/vivado.srcs/sources_1/bd/zybo_design/zybo_design.bd] 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs zybo_design_toplevel_0_4_synth_1 -jobs 8 
+// Tcl Message: [Thu May  8 22:25:06 2025] Launched zybo_design_toplevel_0_4_synth_1... Run output will be captured here: /home/tomster12/files/EMBS/vivado/vivado.runs/zybo_design_toplevel_0_4_synth_1/runme.log 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 33 seconds
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, "Generate"); // a
+selectButton("OptionPane.button", "OK"); // JButton
+selectButton(PAResourceItoN.IPStatusSectionPanel_RE_RUN_REPORT, (String) null); // E
+selectButton(PAResourceItoN.IPStatusSectionPanel_RE_RUN_REPORT, (String) null); // E
+// Tcl Command: 'report_ip_status -name ip_status '
+// TclEventType: IP_SUMMARY_RESULTS
+// Tcl Message: report_ip_status -name ip_status  
+selectTab((HResource) null, (HResource) null, "Design Runs", 5); // aK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 119 seconds
+expandTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "zybo_design ;  ; Submodule Runs Complete ; 100 ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Thu May 08 18:55:59 BST 2025 ; 03:31:18 ;  ;  ;  ;  ; ", 3); // az
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bz (cr):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// cD (cr): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Launch Runs"); // cD
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 8 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// bz (cr):  Generate Bitstream : addNotify
+// Tcl Message: [Thu May  8 22:27:29 2025] Launched synth_1... Run output will be captured here: /home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/runme.log [Thu May  8 22:27:29 2025] Launched impl_1... Run output will be captured here: /home/tomster12/files/EMBS/vivado/vivado.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bz
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// ag (cr): Implementation Failed: addNotify
+// Elapsed time: 92 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Implementation Failed"); // ag
+// WARNING: HEventQueue.dispatchEvent() is taking  1074 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,666 MB. GUI used memory: 170 MB. Current time: 5/8/25, 10:53:05 PM BST
+// WARNING: HEventQueue.dispatchEvent() is taking  1077 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1088 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1115 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1056 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1171 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1150 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1068 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1056 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1021 ms.
+// Elapsed time: 2788 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_REPORTS, "Reports"); // ac
+dismissMenu(PAResourceItoN.MainMenuMgr_REPORTS, "Reports"); // ac
+selectMenu(PAResourceItoN.MainMenuMgr_WINDOW, "Window"); // ac
+selectMenuItem(PAResourceCommand.PACommandNames_CORE_GEN, "IP Catalog"); // ak
+dismissMenu(PAResourceItoN.MainMenuMgr_WINDOW, "Window"); // ac
+// Run Command: PAResourceCommand.PACommandNames_CORE_GEN
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "User Repository ;  ;  ;  ; ", 4, "User Repository", 0, true, false, false, false, true, false); // L - Popup Trigger - Node
+selectMenuItem(PAResourceAtoD.CoreAndInterfacesBaseTreeTablePanel_REFRESH_ALL_REPOSITORIES, "Refresh All Repositories"); // ak
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: BDCELL_LOCK_CHANGE
+// TclEventType: RSB_LOCK_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// bz (cr):  Refresh All IP Repositories : addNotify
+// TclEventType: RSB_BITABEN_IPREPODATA_REFRESH
+// TclEventType: BDCELL_LOCK_CHANGE
+// TclEventType: CREATE_IP_CATALOG
+// WARNING: HEventQueue.dispatchEvent() is taking  1367 ms.
+// Tcl Message: update_ip_catalog -rebuild 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/tomster12/files/EMBS/zybo-z7-hdmi/hardware/zybo_z7_hdmi_repo'. INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/tomster12/files/EMBS/vitis_hls/assessment'. 
+// [GUI Memory]: 382 MB (+1038kb) [04:09:04]
+dismissDialog("Refresh All IP Repositories"); // bz
+selectTab((HResource) null, (HResource) null, "IP Status", 3); // aK
+selectButton(RDIResource.BaseReportTab_RERUN, "Rerun"); // h
+selectButton(RDIResource.BaseReportTab_RERUN, "Rerun"); // h
+// Tcl Command: 'report_ip_status -name ip_status '
+// TclEventType: IP_SUMMARY_RESULTS
+// Tcl Message: report_ip_status -name ip_status  
+selectButton(PAResourceItoN.IPStatusSectionPanel_UPGRADE_SELECTED, "Upgrade Selected"); // a
+selectButton(PAResourceItoN.IPStatusSectionPanel_UPGRADE_SELECTED, "Upgrade Selected"); // a
+// Run Command: PAResourceCommand.PACommandNames_UPGRADE_IP
+// TclEventType: RSB_OPEN_DIAGRAM
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_DELETE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_DELETE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: FILE_SET_CHANGE
+// bz (cr):  Upgrade IP : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// Tcl Message: upgrade_ip -vlnv xilinx.com:hls:toplevel:1.0 [get_ips  zybo_design_toplevel_0_4] -log ip_upgrade.log 
+// Tcl Message: Upgrading '/home/tomster12/files/EMBS/vivado/vivado.srcs/sources_1/bd/zybo_design/zybo_design.bd' 
+// Tcl Message: INFO: [IP_Flow 19-3422] Upgraded zybo_design_toplevel_0_4 (Toplevel 1.0) from revision 2114074760 to revision 2114074815 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILESET_UPDATE_IP
+// TclEventType: IP_UPGRADE_COMPLETE
+// Tcl Message: Wrote  : </home/tomster12/files/EMBS/vivado/vivado.srcs/sources_1/bd/zybo_design/zybo_design.bd>  Wrote  : </home/tomster12/files/EMBS/vivado/vivado.srcs/sources_1/bd/zybo_design/ui/bd_1ee47611.ui>  
+// Tcl Message: INFO: [Coretcl 2-1525] Wrote upgrade log to '/home/tomster12/files/EMBS/vivado/ip_upgrade.log'. 
+// Tcl Message: export_ip_user_files -of_objects [get_ips zybo_design_toplevel_0_4] -no_script -sync -force -quiet 
+// aI (cr): Generate Output Products: addNotify
+selectButton("OptionPane.button", "OK"); // JButton
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, "Generate"); // a
+// bz (cr):  Managing Output Products : addNotify
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: generate_target all [get_files  /home/tomster12/files/EMBS/vivado/vivado.srcs/sources_1/bd/zybo_design/zybo_design.bd] 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: Wrote  : </home/tomster12/files/EMBS/vivado/vivado.srcs/sources_1/bd/zybo_design/zybo_design.bd>  
+// Tcl Message: VHDL Output written to : /home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.v 
+// Tcl Message: VHDL Output written to : /home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/sim/zybo_design.v VHDL Output written to : /home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/hdl/zybo_design_wrapper.v 
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block toplevel_0 . 
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_us . 
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/auto_pc . 
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m01_couplers/auto_pc . 
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/s00_couplers/auto_pc . 
+// Tcl Message: Exporting to file /home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/hw_handoff/zybo_design.hwh Generated Block Design Tcl file /home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/hw_handoff/zybo_design_bd.tcl Generated Hardware Definition File /home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/synth/zybo_design.hwdef 
+// Tcl Message: generate_target: Time (s): cpu = 00:00:19 ; elapsed = 00:00:18 . Memory (MB): peak = 9379.480 ; gain = 0.000 ; free physical = 2382 ; free virtual = 6337 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all zybo_design_toplevel_0_4] } 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: catch { config_ip_cache -export [get_ips -all zybo_design_auto_us_0] } 
+// TclEventType: OOC_IP_CACHE_USED
+// Tcl Message: INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP zybo_design_auto_us_0, cache-ID = bc941287a83e2174; cache size = 609.716 MB. 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all zybo_design_auto_pc_0] } 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: OOC_IP_CACHE_USED
+// Tcl Message: INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP zybo_design_auto_pc_0, cache-ID = b3c5e821bd002132; cache size = 609.716 MB. 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: catch { config_ip_cache -export [get_ips -all zybo_design_auto_pc_1] } 
+// TclEventType: OOC_IP_CACHE_USED
+// Tcl Message: INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP zybo_design_auto_pc_1, cache-ID = b3c5e821bd002132; cache size = 609.716 MB. 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: catch { config_ip_cache -export [get_ips -all zybo_design_auto_pc_2] } 
+// TclEventType: OOC_IP_CACHE_USED
+// TclEventType: PROJ_DESIGN_MODE_SET
+// Tcl Message: INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP zybo_design_auto_pc_2, cache-ID = 49a6968113a25fe4; cache size = 609.716 MB. 
+// TclEventType: PROJ_DESIGN_MODE_SET
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: export_ip_user_files -of_objects [get_files /home/tomster12/files/EMBS/vivado/vivado.srcs/sources_1/bd/zybo_design/zybo_design.bd] -no_script -sync -force -quiet 
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// Tcl Message: create_ip_run [get_files -of_objects [get_fileset sources_1] /home/tomster12/files/EMBS/vivado/vivado.srcs/sources_1/bd/zybo_design/zybo_design.bd] 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: launch_runs zybo_design_toplevel_0_4_synth_1 -jobs 8 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Thu May  8 23:16:13 2025] Launched zybo_design_toplevel_0_4_synth_1... Run output will be captured here: /home/tomster12/files/EMBS/vivado/vivado.runs/zybo_design_toplevel_0_4_synth_1/runme.log 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// Elapsed time: 34 seconds
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, "Generate"); // a
+selectButton("OptionPane.button", "OK"); // JButton
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bz (cr):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// cD (cr): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a
+dismissDialog("Launch Runs"); // cD
+selectButton(PAResourceItoN.IPStatusSectionPanel_RE_RUN_REPORT, (String) null); // E
+selectButton(PAResourceItoN.IPStatusSectionPanel_RE_RUN_REPORT, (String) null); // E
+// Tcl Command: 'report_ip_status -name ip_status '
+// TclEventType: IP_SUMMARY_RESULTS
+// Tcl Message: report_ip_status -name ip_status  
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bz (cr):  Resetting Runs : addNotify
+// cD (cr): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// TclEventType: RUN_RESET
+dismissDialog("Launch Runs"); // cD
+// bz (cr):  Generate Bitstream : addNotify
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 8 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Thu May  8 23:16:35 2025] Launched zybo_design_toplevel_0_4_synth_1, synth_1... Run output will be captured here: zybo_design_toplevel_0_4_synth_1: /home/tomster12/files/EMBS/vivado/vivado.runs/zybo_design_toplevel_0_4_synth_1/runme.log synth_1: /home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/runme.log [Thu May  8 23:16:35 2025] Launched impl_1... Run output will be captured here: /home/tomster12/files/EMBS/vivado/vivado.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bz
+selectTab((HResource) null, (HResource) null, "Design Runs", 5); // aK
+// TclEventType: RUN_STATUS_CHANGE
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "zybo_design ;  ; Running Submodule Runs ; 75 ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Thu May 08 18:55:59 BST 2025 ; 00:01:11 ;  ;  ;  ;  ; ", 3, "zybo_design", 0, true); // az - Node
+expandTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "zybo_design ;  ; Running Submodule Runs ; 75 ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Thu May 08 18:55:59 BST 2025 ; 00:01:11 ;  ;  ;  ;  ; ", 3); // az
+// WARNING: HEventQueue.dispatchEvent() is taking  1202 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1279 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1042 ms.
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// WARNING: HEventQueue.dispatchEvent() is taking  1272 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1229 ms.
+// TclEventType: RUN_STEP_COMPLETED
+// WARNING: HEventQueue.dispatchEvent() is taking  1113 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,717 MB. GUI used memory: 148 MB. Current time: 5/8/25, 11:23:09 PM BST
+// WARNING: HEventQueue.dispatchEvent() is taking  1053 ms.
+// TclEventType: RUN_STEP_COMPLETED
+// WARNING: HEventQueue.dispatchEvent() is taking  1072 ms.
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// WARNING: HEventQueue.dispatchEvent() is taking  1200 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1108 ms.
+// Elapsed time: 559 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ac
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // ah
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // ah
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // ah
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // ah
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ah
+selectMenuItem(PAResourceCommand.PACommandNames_EXPORT_HARDWARE, "Export Hardware..."); // ak
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ac
+// Run Command: PAResourceCommand.PACommandNames_EXPORT_HARDWARE
+// Tcl Command: 'get_property pfm_name [get_files -all {/home/tomster12/files/EMBS/vivado/vivado.srcs/sources_1/bd/zybo_design/zybo_design.bd}]'
+// Tcl Command: 'get_property pfm_name [get_files -all {/home/tomster12/files/EMBS/vivado/vivado.srcs/sources_1/bd/zybo_design/zybo_design.bd}]'
+// g (cr): Export Hardware Platform: addNotify
+selectButton("NEXT", "Next >"); // JButton
+selectButton("NEXT", "Next >"); // JButton
+// WARNING: HEventQueue.dispatchEvent() is taking  1226 ms.
+// Elapsed time: 41 seconds
+selectButton("NEXT", "Next >"); // JButton
+selectButton("OptionPane.button", "Yes"); // JButton
+// Tcl Command: 'get_property pfm_name [get_files -all {/home/tomster12/files/EMBS/vivado/vivado.srcs/sources_1/bd/zybo_design/zybo_design.bd}]'
+selectButton("FINISH", "Finish"); // JButton
+// 'n' command handler elapsed time: 44 seconds
+dismissDialog("Export Hardware Platform"); // g
+// Tcl Message: write_hw_platform -fixed -include_bit -force -file /home/tomster12/files/EMBS/vivado/zybo_design_wrapper.xsa 
+// Tcl Message: INFO: [Vivado 12-4895] Creating Hardware Platform: /home/tomster12/files/EMBS/vivado/zybo_design_wrapper.xsa ... 
+// bz (cr):  Export Hardware Platform : addNotify
+// Tcl Message: INFO: [Vivado 12-12467] The Hardware Platform can be used for Hardware INFO: [Vivado 12-4896] Successfully created Hardware Platform: /home/tomster12/files/EMBS/vivado/zybo_design_wrapper.xsa 
+dismissDialog("Export Hardware Platform"); // bz
+// WARNING: HEventQueue.dispatchEvent() is taking  1183 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1266 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1160 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1231 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1261 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1185 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1171 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1143 ms.

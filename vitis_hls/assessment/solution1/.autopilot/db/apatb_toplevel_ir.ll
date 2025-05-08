@@ -6,14 +6,14 @@ target triple = "fpga64-xilinx-none"
 ; Function Attrs: noinline
 define void @apatb_toplevel_ir(i32* %ram, i32* %code) local_unnamed_addr #0 {
 entry:
-  %malloccall = tail call i8* @malloc(i64 32124)
-  %ram_copy = bitcast i8* %malloccall to [8031 x i32]*
+  %malloccall = tail call i8* @malloc(i64 34524)
+  %ram_copy = bitcast i8* %malloccall to [8631 x i32]*
   %code_copy = alloca i32, align 512
-  %0 = bitcast i32* %ram to [8031 x i32]*
-  call fastcc void @copy_in([8031 x i32]* %0, [8031 x i32]* %ram_copy, i32* %code, i32* nonnull align 512 %code_copy)
-  %1 = getelementptr inbounds [8031 x i32], [8031 x i32]* %ram_copy, i32 0, i32 0
+  %0 = bitcast i32* %ram to [8631 x i32]*
+  call fastcc void @copy_in([8631 x i32]* %0, [8631 x i32]* %ram_copy, i32* %code, i32* nonnull align 512 %code_copy)
+  %1 = getelementptr inbounds [8631 x i32], [8631 x i32]* %ram_copy, i32 0, i32 0
   call void @apatb_toplevel_hw(i32* %1, i32* %code_copy)
-  call fastcc void @copy_out([8031 x i32]* %0, [8031 x i32]* %ram_copy, i32* %code, i32* nonnull align 512 %code_copy)
+  call fastcc void @copy_out([8631 x i32]* %0, [8631 x i32]* %ram_copy, i32* %code, i32* nonnull align 512 %code_copy)
   tail call void @free(i8* %malloccall)
   ret void
 }
@@ -21,18 +21,18 @@ entry:
 declare noalias i8* @malloc(i64) local_unnamed_addr
 
 ; Function Attrs: argmemonly noinline
-define internal fastcc void @copy_in([8031 x i32]* readonly, [8031 x i32]* noalias, i32* readonly, i32* noalias align 512) unnamed_addr #1 {
+define internal fastcc void @copy_in([8631 x i32]* readonly, [8631 x i32]* noalias, i32* readonly, i32* noalias align 512) unnamed_addr #1 {
 entry:
-  call fastcc void @onebyonecpy_hls.p0a8031i32([8031 x i32]* %1, [8031 x i32]* %0)
+  call fastcc void @onebyonecpy_hls.p0a8631i32([8631 x i32]* %1, [8631 x i32]* %0)
   call fastcc void @onebyonecpy_hls.p0i32(i32* align 512 %3, i32* %2)
   ret void
 }
 
 ; Function Attrs: argmemonly noinline
-define internal fastcc void @onebyonecpy_hls.p0a8031i32([8031 x i32]* noalias, [8031 x i32]* noalias readonly) unnamed_addr #2 {
+define internal fastcc void @onebyonecpy_hls.p0a8631i32([8631 x i32]* noalias, [8631 x i32]* noalias readonly) unnamed_addr #2 {
 entry:
-  %2 = icmp eq [8031 x i32]* %0, null
-  %3 = icmp eq [8031 x i32]* %1, null
+  %2 = icmp eq [8631 x i32]* %0, null
+  %3 = icmp eq [8631 x i32]* %1, null
   %4 = or i1 %2, %3
   br i1 %4, label %ret, label %copy
 
@@ -41,13 +41,13 @@ copy:                                             ; preds = %entry
 
 for.loop:                                         ; preds = %for.loop, %copy
   %for.loop.idx3 = phi i64 [ 0, %copy ], [ %for.loop.idx.next, %for.loop ]
-  %dst.addr.gep1 = getelementptr [8031 x i32], [8031 x i32]* %0, i64 0, i64 %for.loop.idx3
+  %dst.addr.gep1 = getelementptr [8631 x i32], [8631 x i32]* %0, i64 0, i64 %for.loop.idx3
   %5 = bitcast i32* %dst.addr.gep1 to i8*
-  %src.addr.gep2 = getelementptr [8031 x i32], [8031 x i32]* %1, i64 0, i64 %for.loop.idx3
+  %src.addr.gep2 = getelementptr [8631 x i32], [8631 x i32]* %1, i64 0, i64 %for.loop.idx3
   %6 = bitcast i32* %src.addr.gep2 to i8*
   call void @llvm.memcpy.p0i8.p0i8.i64(i8* align 1 %5, i8* align 1 %6, i64 4, i1 false)
   %for.loop.idx.next = add nuw nsw i64 %for.loop.idx3, 1
-  %exitcond = icmp ne i64 %for.loop.idx.next, 8031
+  %exitcond = icmp ne i64 %for.loop.idx.next, 8631
   br i1 %exitcond, label %for.loop, label %ret
 
 ret:                                              ; preds = %for.loop, %entry
@@ -76,9 +76,9 @@ ret:                                              ; preds = %copy, %entry
 }
 
 ; Function Attrs: argmemonly noinline
-define internal fastcc void @copy_out([8031 x i32]*, [8031 x i32]* noalias readonly, i32*, i32* noalias readonly align 512) unnamed_addr #4 {
+define internal fastcc void @copy_out([8631 x i32]*, [8631 x i32]* noalias readonly, i32*, i32* noalias readonly align 512) unnamed_addr #4 {
 entry:
-  call fastcc void @onebyonecpy_hls.p0a8031i32([8031 x i32]* %0, [8031 x i32]* %1)
+  call fastcc void @onebyonecpy_hls.p0a8631i32([8631 x i32]* %0, [8631 x i32]* %1)
   call fastcc void @onebyonecpy_hls.p0i32(i32* %2, i32* align 512 %3)
   ret void
 }
@@ -89,11 +89,11 @@ declare void @apatb_toplevel_hw(i32*, i32*)
 
 define void @toplevel_hw_stub_wrapper(i32*, i32*) #5 {
 entry:
-  %2 = bitcast i32* %0 to [8031 x i32]*
-  call void @copy_out([8031 x i32]* null, [8031 x i32]* %2, i32* null, i32* %1)
-  %3 = bitcast [8031 x i32]* %2 to i32*
+  %2 = bitcast i32* %0 to [8631 x i32]*
+  call void @copy_out([8631 x i32]* null, [8631 x i32]* %2, i32* null, i32* %1)
+  %3 = bitcast [8631 x i32]* %2 to i32*
   call void @toplevel_hw_stub(i32* %3, i32* %1)
-  call void @copy_in([8031 x i32]* null, [8031 x i32]* %2, i32* null, i32* %1)
+  call void @copy_in([8631 x i32]* null, [8631 x i32]* %2, i32* null, i32* %1)
   ret void
 }
 

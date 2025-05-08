@@ -1,9 +1,9 @@
 INFO: Applying HLS Y2K22 patch v1.2 for IP revision
 INFO: [HLS 200-10] Running '/opt/Xilinx/Vitis_HLS/2020.2/bin/unwrapped/lnx64.o/vitis_hls'
-INFO: [HLS 200-10] For user 'tomster12' on host 'DESKTOP-Q62E4QT.' (Linux_x86_64 version 5.15.167.4-microsoft-standard-WSL2) on Thu May 08 19:39:04 BST 2025
+INFO: [HLS 200-10] For user 'tomster12' on host 'DESKTOP-Q62E4QT.' (Linux_x86_64 version 5.15.167.4-microsoft-standard-WSL2) on Thu May 08 23:15:00 BST 2025
 INFO: [HLS 200-10] On os Ubuntu 22.04.5 LTS
 INFO: [HLS 200-10] In directory '/home/tomster12/files/EMBS/vitis_hls'
-Sourcing Tcl script '/home/tomster12/files/EMBS/vitis_hls/assessment/solution1/csim.tcl'
+Sourcing Tcl script '/home/tomster12/files/EMBS/vitis_hls/assessment/solution1/export.tcl'
 INFO: [HLS 200-1510] Running: open_project assessment 
 INFO: [HLS 200-10] Opening project '/home/tomster12/files/EMBS/vitis_hls/assessment'.
 INFO: [HLS 200-1510] Running: set_top toplevel 
@@ -19,45 +19,24 @@ INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 INFO: [HLS 200-10] Setting target device to 'xc7z010-clg400-1'
 INFO: [HLS 200-1505] Using flow_target 'vivado'
 Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-1505.html
-INFO: [HLS 200-1464] Running solution command: config_export -format=sysgen
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
 INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
 INFO: [HLS 200-1510] Running: set_part xc7z010-clg400-1 
 INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
-INFO: [HLS 200-1510] Running: config_export -format sysgen -rtl verilog 
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -rtl verilog 
 INFO: [HLS 200-1510] Running: set_directive_top -name toplevel toplevel 
-INFO: [HLS 200-1510] Running: csim_design -quiet 
-INFO: [SIM 211-2] *************** CSIM start ***************
-INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
-   Compiling ../../../testbench.cpp in debug mode
-   Generating csim.exe
-Starting testbench
-Test: 655368
-Test: 0
-Test: 196611
-Test: 458753
-Test: 458757
-Running toplevel from testbench
-World Bitmap (10 x 10), waypoints=8, length=36
-Waypoint 0 at 3, 3
-Waypoint 1 at 7, 1
-Waypoint 2 at 7, 5
-Waypoint 3 at 5, 7
-Waypoint 4 at 1, 7
-Waypoint 5 at 1, 0
-Waypoint 6 at 0, 0
-Waypoint 7 at 0, 0
- .   ...  
- .O  .O.  
- .O  .O.O 
- .O...O.  
- .O   O.  
- .O   O.  
- .O   O.O 
- .O...O.O 
- .O.O.O.O 
- ... ...  
-Total Path Length: 36, code: 0
-Test Passed.
-INFO: [SIM 211-1] CSim done with 0 errors.
-INFO: [SIM 211-3] *************** CSIM finish ***************
-INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0.94 seconds. CPU system time: 0.2 seconds. Elapsed time: 0.66 seconds; current allocated memory: 92.505 MB.
+INFO: [HLS 200-1510] Running: export_design -rtl verilog -format sysgen 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source run_ippack.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2020.2/data/ip'.
+INFO: [Common 17-206] Exiting Vivado at Thu May  8 23:15:12 2025...
+INFO: [HLS 200-802] Generated output file assessment/solution1/impl/export.zip
+INFO: [HLS 200-111] Finished Command export_design CPU user time: 12.73 seconds. CPU system time: 2.14 seconds. Elapsed time: 21.23 seconds; current allocated memory: 85.932 MB.

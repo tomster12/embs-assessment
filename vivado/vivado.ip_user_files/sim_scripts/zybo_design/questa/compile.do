@@ -87,24 +87,24 @@ vcom -work xpm -64 -93 \
 "/opt/Xilinx/Vivado/2020.2/data/ip/xpm/xpm_VCOMP.vhd" \
 
 vlog -work xil_defaultlib -64 "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ec67/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/34f8/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/7860/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/8713/hdl" "+incdir+/opt/Xilinx/Vivado/2020.2/data/xilinx_vip/include" \
-"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6bcd/hdl/verilog/toplevel_AXILiteS_s_axi.v" \
-"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6bcd/hdl/verilog/toplevel_control_s_axi.v" \
-"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6bcd/hdl/verilog/toplevel_dx.v" \
-"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6bcd/hdl/verilog/toplevel_dy.v" \
-"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6bcd/hdl/verilog/toplevel_grid_info_V.v" \
-"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6bcd/hdl/verilog/toplevel_local_ram.v" \
-"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6bcd/hdl/verilog/toplevel_mac_muladd_16ns_9ns_9ns_18_4_1.v" \
-"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6bcd/hdl/verilog/toplevel_MAXI_m_axi.v" \
-"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6bcd/hdl/verilog/toplevel_mul_mul_16ns_9ns_18_4_1.v" \
-"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6bcd/hdl/verilog/toplevel_mul_mul_16ns_16ns_18_4_1.v" \
-"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6bcd/hdl/verilog/toplevel_open_set_heap_f_score_V.v" \
-"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6bcd/hdl/verilog/toplevel_open_set_heap_x_V.v" \
-"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6bcd/hdl/verilog/toplevel_os_sift_up.v" \
-"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6bcd/hdl/verilog/toplevel_os_sift_up_moves_node_f_score_V.v" \
-"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6bcd/hdl/verilog/toplevel_os_sift_up_moves_node_x_V.v" \
-"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6bcd/hdl/verilog/toplevel_os_sift_up_moves_target.v" \
-"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6bcd/hdl/verilog/toplevel_waypoints_x_V.v" \
-"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6bcd/hdl/verilog/toplevel.v" \
+"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6772/hdl/verilog/toplevel_AXILiteS_s_axi.v" \
+"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6772/hdl/verilog/toplevel_control_s_axi.v" \
+"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6772/hdl/verilog/toplevel_dx.v" \
+"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6772/hdl/verilog/toplevel_dy.v" \
+"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6772/hdl/verilog/toplevel_grid_info.v" \
+"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6772/hdl/verilog/toplevel_local_ram.v" \
+"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6772/hdl/verilog/toplevel_mac_muladd_16ns_9ns_9ns_18_4_1.v" \
+"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6772/hdl/verilog/toplevel_MAXI_m_axi.v" \
+"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6772/hdl/verilog/toplevel_mul_mul_16ns_9ns_18_4_1.v" \
+"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6772/hdl/verilog/toplevel_mul_mul_16ns_16ns_18_4_1.v" \
+"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6772/hdl/verilog/toplevel_open_set_heap_f_score_V.v" \
+"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6772/hdl/verilog/toplevel_open_set_heap_x_V.v" \
+"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6772/hdl/verilog/toplevel_os_sift_down.v" \
+"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6772/hdl/verilog/toplevel_os_sift_down_moves_node_f_score_V.v" \
+"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6772/hdl/verilog/toplevel_os_sift_down_moves_node_x_V.v" \
+"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6772/hdl/verilog/toplevel_os_sift_up.v" \
+"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6772/hdl/verilog/toplevel_waypoints_x_V.v" \
+"../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/6772/hdl/verilog/toplevel.v" \
 "../../../bd/zybo_design/ip/zybo_design_toplevel_0_4/sim/zybo_design_toplevel_0_4.v" \
 
 vlog -work axi_infrastructure_v1_1_0 -64 "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ec67/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/34f8/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/7860/hdl" "+incdir+../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/8713/hdl" "+incdir+/opt/Xilinx/Vivado/2020.2/data/xilinx_vip/include" \

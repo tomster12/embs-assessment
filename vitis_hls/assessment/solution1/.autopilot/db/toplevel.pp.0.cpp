@@ -6247,7 +6247,7 @@ inline bool operator!=(
 # 396 "/opt/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/ap_fixed.h" 2
 # 365 "/opt/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/ap_int.h" 2
 # 4 "assessment/toplevel.cpp" 2
-# 34 "assessment/toplevel.cpp"
+# 35 "assessment/toplevel.cpp"
 struct Coord {
     ap_uint<9> x;
     ap_uint<9> y;
@@ -6266,9 +6266,9 @@ struct MoveAction {
 };
 
 static Coord waypoints[16];
-static ASNode open_set_heap[5000];
-static ap_uint<3> grid_info[500 * 500];
-static uint32_t local_ram[(2 + 16 + ((500 * 500 + 31) / 32) + (200))];
+static ASNode open_set_heap[1500];
+static uint32_t grid_info[((500 * 500 + 7) / 8)];
+static uint32_t local_ram[(2 + 16 + ((500 * 500 + 31) / 32) + (800))];
 static uint16_t open_set_size;
 static uint16_t world_size;
 static uint8_t waypoint_count;
@@ -6278,7 +6278,7 @@ const int8_t dy[] = {-1, 0, 1, 0};
 
 
 
-int get_world_bit(uint16_t x, uint16_t y) {
+uint8_t get_world_bit(uint16_t x, uint16_t y) {
 #pragma HLS INLINE
  uint32_t idx = x + y * world_size;
     uint32_t word = idx / 32;
@@ -6286,27 +6286,55 @@ int get_world_bit(uint16_t x, uint16_t y) {
     return (local_ram[2 + 16 + word] >> bit) & 1;
 }
 
-int is_closed(uint16_t x, uint16_t y) {
+uint8_t get_closed(uint16_t x, uint16_t y) {
 #pragma HLS INLINE
- return grid_info[x + y * world_size] & (ap_uint<3>)0b001;
+ uint32_t idx = x + y * world_size;
+ uint32_t word = idx / 8;
+    uint32_t offset = (idx % 8) * 4;
+ return (grid_info[word] >> offset) & 0b0001;
 }
 
 void set_closed(uint16_t x, uint16_t y) {
 #pragma HLS INLINE
- grid_info[x + y * world_size] |= (ap_uint<3>)0b001;
+ uint32_t idx = x + y * world_size;
+ uint32_t word = idx / 8;
+    uint32_t offset = (idx % 8) * 4;
+    grid_info[word] |= 0b0001 << offset;
+}
+
+uint8_t get_open(uint16_t x, uint16_t y) {
+#pragma HLS INLINE
+ uint32_t idx = x + y * world_size;
+ uint32_t word = idx / 8;
+    uint32_t offset = (idx % 8) * 4;
+ return ((grid_info[word] >> offset) & 0b0010) >> 1;
+}
+
+void set_open(uint16_t x, uint16_t y) {
+#pragma HLS INLINE
+ uint32_t idx = x + y * world_size;
+ uint32_t word = idx / 8;
+    uint32_t offset = (idx % 8) * 4;
+    grid_info[word] |= 0b0010 << offset;
 }
 
 uint8_t get_dir(uint16_t x, uint16_t y) {
 #pragma HLS INLINE
- return (ap_uint<3>)((grid_info[x + y * world_size] & 0b110) >> 1);
+ uint32_t idx = x + y * world_size;
+ uint32_t word = idx / 8;
+    uint32_t offset = (idx % 8) * 4;
+ return ((grid_info[word] >> offset) & 0b1100) >> 2;
 }
 
 void set_dir(uint16_t x, uint16_t y, uint8_t dir) {
 #pragma HLS INLINE
- grid_info[x + y * world_size] |= (ap_uint<3>)((dir & 0b011) << 1);
+ uint32_t idx = x + y * world_size;
+ uint32_t word = idx / 8;
+    uint32_t offset = (idx % 8) * 4;
+    grid_info[word] |= ((dir << 2) & 0b1100) << offset;
 }
 
-static inline uint16_t abs_sub(uint16_t a, uint16_t b) {
+inline uint16_t abs_sub(uint16_t a, uint16_t b) {
 #pragma HLS INLINE
  return (a > b) ? (a - b) : (b - a);
 }
@@ -6328,14 +6356,14 @@ void copy_asnode(ASNode *a, ASNode *b) {
 }
 
 void os_sift_down(uint16_t idx) {
-#pragma HLS INLINE
+#pragma HLS INLINE off
 
  uint16_t current = idx;
  ASNode node = open_set_heap[current];
  MoveAction moves[16];
  uint8_t move_count = 0;
 
- VITIS_LOOP_121_1: for (uint8_t i = 0; i < 16; i++) {
+ VITIS_LOOP_150_1: for (uint8_t i = 0; i < 16; i++) {
      moves[i].node.f_score = 0;
      moves[i].node.g_score = 0;
      moves[i].node.x = 0;
@@ -6382,7 +6410,6 @@ void os_sift_down(uint16_t idx) {
  if (move_count > 0) {
   SIFT_DOWN_COPY_LOOP: for (uint8_t i = 0; i < move_count; ++i) {
 #pragma HLS LOOP_TRIPCOUNT min=1 max=16
-#pragma HLS PIPELINE II=1
  copy_asnode(&open_set_heap[moves[i].target], &moves[i].node);
   }
   copy_asnode(&open_set_heap[current], &node);
@@ -6397,7 +6424,7 @@ void os_sift_up(uint16_t idx) {
  MoveAction moves[16];
  uint8_t move_count = 0;
 
- VITIS_LOOP_183_1: for (uint8_t i = 0; i < 16; i++) {
+ VITIS_LOOP_211_1: for (uint8_t i = 0; i < 16; i++) {
      moves[i].node.f_score = 0;
      moves[i].node.g_score = 0;
      moves[i].node.x = 0;
@@ -6418,15 +6445,14 @@ void os_sift_up(uint16_t idx) {
 
 
         uint16_t parent = (current - 1) / 2;
-        ASNode parent_node = open_set_heap[parent];
-        if (parent_node.f_score < node.f_score) {
+        if (open_set_heap[parent].f_score < node.f_score) {
          ((void)0);
          break;
         }
 
 
      ((void)0);
-  copy_asnode(&moves[move_count].node, &parent_node);
+  copy_asnode(&moves[move_count].node, &open_set_heap[parent]);
   moves[move_count].target = current;
   move_count++;
   current = parent;
@@ -6447,7 +6473,7 @@ void os_heap_push(ASNode node) {
 #pragma HLS INLINE
 
 
- if (open_set_size >= 5000) {
+ if (open_set_size >= 1500) {
         open_set_heap[open_set_size - 1] = node;
         error_flag = 20000;
     }
@@ -6482,12 +6508,13 @@ ASNode os_heap_pop() {
     return min_node;
 }
 
+
 uint16_t os_find(ap_uint<11> x, ap_uint<11> y) {
 #pragma HLS INLINE
 
 
  OS_FIND_LOOP: for (uint16_t i = 0; i < open_set_size; ++i) {
-#pragma HLS LOOP_TRIPCOUNT min=1 max=5000
+#pragma HLS LOOP_TRIPCOUNT min=1 max=1500
  if (open_set_heap[i].x == x && open_set_heap[i].y == y) {
    return i;
   }
@@ -6497,11 +6524,14 @@ uint16_t os_find(ap_uint<11> x, ap_uint<11> y) {
 
 
 
+
 int a_star(Coord start, Coord goal) {
 #pragma HLS INLINE
 
- EMPTY_GRID_INFO_LOOP: for (uint32_t i = 0; i < 500 * 500; ++i) {
-     grid_info[i] = (ap_uint<3>)0;
+ EMPTY_GRID_INFO_LOOP: for (uint32_t i = 0; i < ((500 * 500 + 7) / 8); i++) {
+#pragma HLS LOOP_TRIPCOUNT min=1 max=31250
+#pragma HLS UNROLL factor=16
+ grid_info[i] = 0;
     }
 
     open_set_size = 0;
@@ -6512,7 +6542,7 @@ int a_star(Coord start, Coord goal) {
     if (error_flag != 0) {
      return 0;
     }
-# 308 "assessment/toplevel.cpp"
+# 338 "assessment/toplevel.cpp"
     const uint32_t iteration_limit = world_size * world_size;
 
 
@@ -6520,18 +6550,15 @@ int a_star(Coord start, Coord goal) {
     AS_SEARCH_LOOP: for (; iteration < iteration_limit; ++iteration) {
 #pragma HLS PIPELINE
 
- if (open_set_size == 0) {
-      break;
-     }
+ if (open_set_size == 0) break;
 
         ASNode current = os_heap_pop();
-
         ((void)0);
 
         if (current.x == goal.x && current.y == goal.y) {
          return current.g_score;
         }
-# 334 "assessment/toplevel.cpp"
+# 361 "assessment/toplevel.cpp"
         set_closed(current.x, current.y);
 
         ((void)0);
@@ -6550,12 +6577,12 @@ int a_star(Coord start, Coord goal) {
              continue;
             }
 
-            if (get_world_bit(n_x, n_y)) {
+            if (get_world_bit(n_x, n_y) == 1) {
           ((void)0);
              continue;
             }
 
-            if (is_closed(n_x, n_y)) {
+            if (get_closed(n_x, n_y)) {
           ((void)0);
              continue;
             }
@@ -6566,27 +6593,44 @@ int a_star(Coord start, Coord goal) {
             ap_uint<11> n_f_score = n_g_score + n_h_score;
 
 
-            uint16_t existing_idx = os_find(n_x, n_y);
-            if (existing_idx < open_set_size) {
-             if (n_f_score < open_set_heap[existing_idx].f_score) {
-                    ((void)0);
-                 open_set_heap[existing_idx].f_score = n_f_score;
-                 open_set_heap[existing_idx].g_score = n_g_score;
-                 set_dir(n_x, n_y, dir);
-                 os_sift_up(existing_idx);
-             } else {
-                    ((void)0);
-             }
-            } else {
+            uint8_t to_add = 1;
+            uint8_t n_open = get_open(n_x, n_y);
+            if (n_open == 1) {
+                uint16_t existing_idx = os_find(n_x, n_y);
+                if (existing_idx < open_set_size) {
+
+
+                 if (n_f_score < open_set_heap[existing_idx].f_score) {
+                     to_add = 0;
+                        ((void)0);
+
+                     open_set_heap[existing_idx].f_score = n_f_score;
+                     open_set_heap[existing_idx].g_score = n_g_score;
+                     set_dir(n_x, n_y, dir);
+                     os_sift_up(existing_idx);
+                 }
+
+
+                 else {
+                     to_add = 0;
+                        ((void)0);
+                 }
+                }
+            }
+
+
+            if (to_add == 1) {
                 ((void)0);
+
                 ASNode neighbour_node = {n_f_score, n_g_score, n_x, n_y};
+                set_open(n_x, n_y);
              set_dir(n_x, n_y, dir);
                 os_heap_push(neighbour_node);
                 if (error_flag != 0) {
                  return 0;
                 }
             }
-# 396 "assessment/toplevel.cpp"
+# 441 "assessment/toplevel.cpp"
         }
     }
 
@@ -6601,15 +6645,15 @@ int a_star(Coord start, Coord goal) {
 
 __attribute__((sdx_kernel("toplevel", 0))) void toplevel(uint32_t *ram, uint32_t *code) {
 #pragma HLS TOP name=toplevel
-# 408 "assessment/toplevel.cpp"
+# 453 "assessment/toplevel.cpp"
 
-#pragma HLS INTERFACE m_axi port=ram offset=slave bundle=MAXI max_widen_bitwidth=32 depth=8031
+#pragma HLS INTERFACE m_axi port=ram offset=slave bundle=MAXI max_widen_bitwidth=32 depth=8631
 #pragma HLS INTERFACE s_axilite port=code bundle=AXILiteS
 #pragma HLS INTERFACE s_axilite port=return bundle=AXILiteS
 
 #pragma HLS BIND_STORAGE variable=local_ram type=RAM_T2P impl=BRAM
 #pragma HLS BIND_STORAGE variable=grid_info type=RAM_T2P impl=BRAM
-#pragma HLS BIND_STORAGE variable=open_set_heap type=RAM_T2P impl=BRAM
+#pragma HLS BIND_STORAGE variable=open_set_heap type=RAM_1P impl=LUTRAM
 
  ((void)0);
 
@@ -6617,7 +6661,7 @@ __attribute__((sdx_kernel("toplevel", 0))) void toplevel(uint32_t *ram, uint32_t
     error_flag = 0;
     open_set_size = 0;
 
-    COPY_RAM_LOOP: for (uint16_t i = 0; i < (2 + 16 + ((500 * 500 + 31) / 32) + (200)); ++i) {
+    COPY_RAM_LOOP: for (uint16_t i = 0; i < (2 + 16 + ((500 * 500 + 31) / 32) + (800)); ++i) {
      local_ram[i] = ram[i];
     }
 
@@ -6654,7 +6698,7 @@ __attribute__((sdx_kernel("toplevel", 0))) void toplevel(uint32_t *ram, uint32_t
         }
 
 
-        if (total_length < 200) {
+        if (total_length < 800) {
             Coord current = waypoints[i + 1];
             MAKE_PATH_LOOP: for (uint32_t i = 0; i <= length; ++i) {
 #pragma HLS UNROLL
@@ -6670,9 +6714,9 @@ __attribute__((sdx_kernel("toplevel", 0))) void toplevel(uint32_t *ram, uint32_t
 
     ram[1] = total_length;
 
-    if (total_length < 200) {
+    if (total_length < 800) {
   WRITE_BACK_PATH_LOOP: for (uint32_t i = 0; i < total_length; ++i) {
-#pragma HLS LOOP_TRIPCOUNT min=1 max=200
+#pragma HLS LOOP_TRIPCOUNT min=1 max=800
  ram[2 + 16 + ((500 * 500 + 31) / 32) + i] = local_ram[2 + 16 + ((500 * 500 + 31) / 32) + i];
   }
     } else {

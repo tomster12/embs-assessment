@@ -7,8 +7,8 @@
 // change WORLD_MAX_SIZE: Coordinates are 9 bytes for a maximum of 500
 // change WORLD_MAX_SIZE: Scores are 11 bytes for a maximum of 2000, 500 * 4 for manhattan
 // change MAX_OUTPUT_PATH_LENGTH: Update WRITE_BACK_PATH_LOOP
-// change MAX_OPEN_SET_SIZE: Update SIFT_DOWN_LOOP and SIFT_UP_LOOP LOOP_TRIPCOUNT
-// change MAX_OPEN_SET_SIZE: Update OS_FIND_LOOP
+// change MAX_OPEN_SET_SIZE: (if big) Update SIFT_DOWN_LOOP and SIFT_UP_LOOP LOOP_TRIPCOUNT
+// change MAX_OPEN_SET_SIZE: if safe) Update OS_FIND_LOOP
 // change HW_MAX_WORDS: Update RAM port
 
 #define WORLD_MAX_WAYPOINTS 16
@@ -16,11 +16,12 @@
 #define HW_META_WORDS 2
 #define HW_WAYPOINT_WORDS WORLD_MAX_WAYPOINTS
 #define HW_WORLD_WORDS ((WORLD_MAX_SIZE * WORLD_MAX_SIZE + 31) / 32)
-#define MAX_OUTPUT_PATH_LENGTH 200
+#define MAX_OUTPUT_PATH_LENGTH 800
 #define HW_PATH_WORDS (MAX_OUTPUT_PATH_LENGTH)
-#define HW_MAX_WORDS (HW_META_WORDS + HW_WAYPOINT_WORDS + HW_WORLD_WORDS + HW_PATH_WORDS)
+#define HW_MAX_WORDS (HW_META_WORDS + HW_WAYPOINT_WORDS + HW_WORLD_WORDS + HW_PATH_WORDS) // 7831 + HW_PATH_WORDS
+#define GRID_INFO_WORDS ((WORLD_MAX_SIZE * WORLD_MAX_SIZE + 7) / 8)
 #define INF_U11 ((1 << 11) - 1)
-#define MAX_OPEN_SET_SIZE 5000
+#define MAX_OPEN_SET_SIZE 1500
 #define UNSAFE_SEARCH 0
 #define DEBUG_PRINTF 0
 
@@ -50,7 +51,7 @@ struct MoveAction {
 
 static Coord waypoints[WORLD_MAX_WAYPOINTS];
 static ASNode open_set_heap[MAX_OPEN_SET_SIZE]; // Min-Heap using an array ordered by f_score
-static ap_uint<3> grid_info[WORLD_MAX_SIZE * WORLD_MAX_SIZE]; // xx0=open, xx1=closed, 00x->11x=direction
+static uint32_t grid_info[GRID_INFO_WORDS]; // 4-bits per entry, 8 entries per 32-bit word (xxx1=closed, xx1x=open, 00xx->11xx=dir)
 static uint32_t local_ram[HW_MAX_WORDS];
 static uint16_t open_set_size;
 static uint16_t world_size;
@@ -61,7 +62,7 @@ const int8_t dy[] = {-1, 0, 1, 0};
 
 // ================================= DEFINITION/HELPERS =================================
 
-int get_world_bit(uint16_t x, uint16_t y) {
+uint8_t get_world_bit(uint16_t x, uint16_t y) {
 	#pragma HLS INLINE
     uint32_t idx = x + y * world_size;
     uint32_t word = idx / 32;
@@ -69,27 +70,55 @@ int get_world_bit(uint16_t x, uint16_t y) {
     return (local_ram[HW_META_WORDS + HW_WAYPOINT_WORDS + word] >> bit) & 1;
 }
 
-int is_closed(uint16_t x, uint16_t y) {
+uint8_t get_closed(uint16_t x, uint16_t y) {
 	#pragma HLS INLINE
-	return grid_info[x + y * world_size] & (ap_uint<3>)0b001;
+	uint32_t idx = x + y * world_size;
+	uint32_t word = idx / 8;
+    uint32_t offset = (idx % 8) * 4;
+	return (grid_info[word] >> offset) & 0b0001;
 }
 
 void set_closed(uint16_t x, uint16_t y) {
 	#pragma HLS INLINE
-	grid_info[x + y * world_size] |= (ap_uint<3>)0b001;
+	uint32_t idx = x + y * world_size;
+	uint32_t word = idx / 8;
+    uint32_t offset = (idx % 8) * 4;
+    grid_info[word] |= 0b0001 << offset;
+}
+
+uint8_t get_open(uint16_t x, uint16_t y) {
+	#pragma HLS INLINE
+	uint32_t idx = x + y * world_size;
+	uint32_t word = idx / 8;
+    uint32_t offset = (idx % 8) * 4;
+	return ((grid_info[word] >> offset) & 0b0010) >> 1;
+}
+
+void set_open(uint16_t x, uint16_t y) {
+	#pragma HLS INLINE
+	uint32_t idx = x + y * world_size;
+	uint32_t word = idx / 8;
+    uint32_t offset = (idx % 8) * 4;
+    grid_info[word] |= 0b0010 << offset;
 }
 
 uint8_t get_dir(uint16_t x, uint16_t y) {
 	#pragma HLS INLINE
-	return (ap_uint<3>)((grid_info[x + y * world_size] & 0b110) >> 1);
+	uint32_t idx = x + y * world_size;
+	uint32_t word = idx / 8;
+    uint32_t offset = (idx % 8) * 4;
+	return ((grid_info[word] >> offset) & 0b1100) >> 2;
 }
 
 void set_dir(uint16_t x, uint16_t y, uint8_t dir) {
 	#pragma HLS INLINE
-	grid_info[x + y * world_size] |= (ap_uint<3>)((dir & 0b011) << 1);
+	uint32_t idx = x + y * world_size;
+	uint32_t word = idx / 8;
+    uint32_t offset = (idx % 8) * 4;
+    grid_info[word] |= ((dir << 2) & 0b1100) << offset;
 }
 
-static inline uint16_t abs_sub(uint16_t a, uint16_t b) {
+inline uint16_t abs_sub(uint16_t a, uint16_t b) {
 	#pragma HLS INLINE
     return (a > b) ? (a - b) : (b - a);
 }
@@ -200,15 +229,14 @@ void os_sift_up(uint16_t idx) {
 
         // Parent is smaller so stop
         uint16_t parent = (current - 1) / 2;
-        ASNode parent_node = open_set_heap[parent];
-        if (parent_node.f_score < node.f_score) {
+        if (open_set_heap[parent].f_score < node.f_score) {
         	dbg_printf("    [OS] S_UP, parent %lu(%lu) is smaller than %lu(%lu), stopping\r\n", parent, (uint16_t)parent_node.f_score, current, (uint16_t)node.f_score);
         	break;
         }
 
         // Parent is larger so sift up
     	dbg_printf("    [OS] S_UP, parent %lu(%lu) is bigger than %lu(%lu), sifting\r\n", parent, (uint16_t)parent_node.f_score, current, (uint16_t)node.f_score);
-		copy_asnode(&moves[move_count].node, &parent_node);
+		copy_asnode(&moves[move_count].node, &open_set_heap[parent]);
 		moves[move_count].target = current;
 		move_count++;
 		current = parent;
@@ -264,26 +292,30 @@ ASNode os_heap_pop() {
     return min_node;
 }
 
+#if UNSAFE_SEARCH == 0
 uint16_t os_find(ap_uint<11> x, ap_uint<11> y) {
 	#pragma HLS INLINE
 
 	// Return the index matching (x, y)
 	OS_FIND_LOOP: for (uint16_t i = 0; i < open_set_size; ++i) {
-		#pragma HLS LOOP_TRIPCOUNT min=1 max=5000
+		#pragma HLS LOOP_TRIPCOUNT min=1 max=1500
 		if (open_set_heap[i].x == x && open_set_heap[i].y == y) {
 			return i;
 		}
 	}
 	return open_set_size;
 }
+#endif
 
 // ================================= DEFINITION/MAIN =================================
 
 int a_star(Coord start, Coord goal) {
 	#pragma HLS INLINE
 
-    EMPTY_GRID_INFO_LOOP: for (uint32_t i = 0; i < WORLD_MAX_SIZE * WORLD_MAX_SIZE; ++i) {
-    	grid_info[i] = (ap_uint<3>)0;
+    EMPTY_GRID_INFO_LOOP: for (uint32_t i = 0; i < GRID_INFO_WORDS; i++) {
+		#pragma HLS LOOP_TRIPCOUNT min=1 max=31250
+        #pragma HLS UNROLL factor=16
+        grid_info[i] = 0;
     }
 
     open_set_size = 0;
@@ -295,11 +327,10 @@ int a_star(Coord start, Coord goal) {
     	return 0;
     }
 
-    // if using UNSAFE_SEARCH:
-    //   Do not check that any node already exists in the open set when we add it
-    //   This speeds it all up a lot, but means duplicated entries and therefore:
+    // if using UNSAFE_SEARCH do not check that any node already exists in the open
+    // set when we add it which speeds it all up but means duplication, and therefore:
     //   - Iteration limit needs to be bigger than size * size
-    //   - We need to always check is_closed() on each node
+    //   - We need to always check get_closed() on each node
 
 #if UNSAFE_SEARCH == 1
     const uint32_t iteration_limit = (uint32_t)(world_size * world_size * 2);
@@ -311,12 +342,9 @@ int a_star(Coord start, Coord goal) {
     AS_SEARCH_LOOP: for (; iteration < iteration_limit; ++iteration) {
 		#pragma HLS PIPELINE
 
-    	if (open_set_size == 0) {
-    		break;
-    	}
+    	if (open_set_size == 0) break;
 
         ASNode current = os_heap_pop();
-
         dbg_printf("[I%lu] Current node: { %lu, %lu, %lu, %lu }\r\n", iteration, (uint16_t)current.f_score, (uint16_t)current.g_score, (uint16_t)current.x, (uint16_t)current.y);
 
         if (current.x == goal.x && current.y == goal.y) {
@@ -324,7 +352,7 @@ int a_star(Coord start, Coord goal) {
         }
 
 #if UNSAFE_SEARCH == 1
-        if (is_closed(current.x, current.y)) {
+        if (get_closed(current.x, current.y)) {
         	dbg_printf("Current is closed { %lu, %lu }\r\n", (uint16_t)current.x, (uint16_t)current.y);
         	continue;
         }
@@ -348,12 +376,12 @@ int a_star(Coord start, Coord goal) {
             	continue;
             }
 
-            if (get_world_bit(n_x, n_y)) {
+            if (get_world_bit(n_x, n_y) == 1) {
         		dbg_printf("Neighbour %lu (%d, %d), blocked\r\n", dir, dx[dir], dy[dir]);
             	continue;
             }
 
-            if (is_closed(n_x, n_y)) {
+            if (get_closed(n_x, n_y)) {
         		dbg_printf("Neighbour %lu (%d, %d), closed\r\n", dir, dx[dir], dy[dir]);
             	continue;
             }
@@ -364,20 +392,37 @@ int a_star(Coord start, Coord goal) {
             ap_uint<11> n_f_score = n_g_score + n_h_score;
 
 #if UNSAFE_SEARCH == 0
-            uint16_t existing_idx = os_find(n_x, n_y);
-            if (existing_idx < open_set_size) {
-            	if (n_f_score < open_set_heap[existing_idx].f_score) {
-                    dbg_printf("Updating neighbour %lu (%d, %d), pos (%lu, %lu)\r\n", dir, dx[dir], dy[dir], (uint16_t)n_x, (uint16_t)n_y);
-                	open_set_heap[existing_idx].f_score = n_f_score;
-                	open_set_heap[existing_idx].g_score = n_g_score;
-                	set_dir(n_x, n_y, dir);
-                	os_sift_up(existing_idx);
-            	} else {
-                    dbg_printf("Neighbour %lu (%d, %d), pos (%lu, %lu) already exists\r\n", dir, dx[dir], dy[dir], (uint16_t)n_x, (uint16_t)n_y);
-            	}
-            } else {
+            uint8_t to_add = 1;
+            uint8_t n_open = get_open(n_x, n_y);
+            if (n_open == 1) {
+                uint16_t existing_idx = os_find(n_x, n_y);
+                if (existing_idx < open_set_size) {
+
+                	// Was found and this is a better route, so update node
+                	if (n_f_score < open_set_heap[existing_idx].f_score) {
+                    	to_add = 0;
+                        dbg_printf("Updating neighbour %lu (%d, %d), pos (%lu, %lu)\r\n", dir, dx[dir], dy[dir], (uint16_t)n_x, (uint16_t)n_y);
+
+                    	open_set_heap[existing_idx].f_score = n_f_score;
+                    	open_set_heap[existing_idx].g_score = n_g_score;
+                    	set_dir(n_x, n_y, dir);
+                    	os_sift_up(existing_idx);
+                	}
+
+                	// Was found but this is a worse route, so leave it alone
+                	else {
+                    	to_add = 0;
+                        dbg_printf("Neighbour %lu (%d, %d), pos (%lu, %lu) already exists\r\n", dir, dx[dir], dy[dir], (uint16_t)n_x, (uint16_t)n_y);
+                	}
+                }
+            }
+
+            // Was not found, so add neighbour as new node
+            if (to_add == 1) {
                 dbg_printf("Adding neighbour %lu (%d, %d), pos (%lu, %lu)\r\n", dir, dx[dir], dy[dir], (uint16_t)n_x, (uint16_t)n_y);
+
                 ASNode neighbour_node = {n_f_score, n_g_score, n_x, n_y};
+                set_open(n_x, n_y);
             	set_dir(n_x, n_y, dir);
                 os_heap_push(neighbour_node);
                 if (error_flag != 0) {
@@ -385,6 +430,7 @@ int a_star(Coord start, Coord goal) {
                 }
             }
 #else
+            // Blindly add the node to the open set
             dbg_printf("Adding neighbour %lu (%d, %d), pos (%lu, %lu)\r\n", dir, dx[dir], dy[dir], (uint16_t)n_x, (uint16_t)n_y);
             ASNode neighbour_node = {n_f_score, n_g_score, n_x, n_y};
             os_heap_push(neighbour_node);
@@ -405,13 +451,13 @@ int a_star(Coord start, Coord goal) {
 }
 
 void toplevel(uint32_t *ram, uint32_t *code) {
-	#pragma HLS INTERFACE m_axi port=ram offset=slave bundle=MAXI max_widen_bitwidth=32 depth=8031
+	#pragma HLS INTERFACE m_axi port=ram offset=slave bundle=MAXI max_widen_bitwidth=32 depth=8631
 	#pragma HLS INTERFACE s_axilite port=code bundle=AXILiteS
 	#pragma HLS INTERFACE s_axilite port=return bundle=AXILiteS
 
 	#pragma HLS BIND_STORAGE variable=local_ram type=RAM_T2P impl=BRAM
 	#pragma HLS BIND_STORAGE variable=grid_info type=RAM_T2P impl=BRAM
-	#pragma HLS BIND_STORAGE variable=open_set_heap type=RAM_T2P impl=BRAM
+	#pragma HLS BIND_STORAGE variable=open_set_heap type=RAM_1P impl=LUTRAM
 
 	dbg_printf("Starting toplevel\r\n");
 
@@ -474,7 +520,7 @@ void toplevel(uint32_t *ram, uint32_t *code) {
 
     if (total_length < MAX_OUTPUT_PATH_LENGTH) {
 		WRITE_BACK_PATH_LOOP: for (uint32_t i = 0; i < total_length; ++i) {
-			#pragma HLS LOOP_TRIPCOUNT min=1 max=200
+			#pragma HLS LOOP_TRIPCOUNT min=1 max=800
 			ram[HW_META_WORDS + HW_WAYPOINT_WORDS + HW_WORLD_WORDS + i] = local_ram[HW_META_WORDS + HW_WAYPOINT_WORDS + HW_WORLD_WORDS + i];
 		}
     } else {
@@ -483,5 +529,4 @@ void toplevel(uint32_t *ram, uint32_t *code) {
 
     *code = error_flag;
 }
-
 

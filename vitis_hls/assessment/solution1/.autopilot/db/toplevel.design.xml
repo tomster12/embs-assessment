@@ -5,10 +5,16 @@
 <ModuleName>toplevel</ModuleName>
 <InstancesList>
 <Instance>
-<InstName>grp_os_sift_up_fu_3978</InstName>
+<InstName>grp_os_sift_down_fu_1711</InstName>
+<ModuleName>os_sift_down</ModuleName>
+<IsCompInst>true</IsCompInst>
+<ID>1711</ID>
+</Instance>
+<Instance>
+<InstName>grp_os_sift_up_fu_1725</InstName>
 <ModuleName>os_sift_up</ModuleName>
 <IsCompInst>true</IsCompInst>
-<ID>3978</ID>
+<ID>1725</ID>
 </Instance>
 </InstancesList>
 </TopModule>
@@ -16,22 +22,376 @@
 
 <ModuleInformation>
 <Module>
+<Name>os_sift_down</Name>
+<PerformanceEstimates>
+<SummaryOfTimingAnalysis>
+<TargetClockPeriod>10.00</TargetClockPeriod>
+<ClockUncertainty>2.70</ClockUncertainty>
+<TargetInitiationInterval>4294967295</TargetInitiationInterval>
+<EstimatedClockPeriod>6.302</EstimatedClockPeriod>
+</SummaryOfTimingAnalysis>
+<SummaryOfOverallLatency>
+<Best-caseLatency>9</Best-caseLatency>
+<Average-caseLatency>49</Average-caseLatency>
+<Worst-caseLatency>102</Worst-caseLatency>
+<Best-caseRealTimeLatency>90.000 ns</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>0.490 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>1.020 us</Worst-caseRealTimeLatency>
+<PipelineInitiationInterval>9 ~ 102</PipelineInitiationInterval>
+<PipelineType>none</PipelineType>
+</SummaryOfOverallLatency>
+<SummaryOfLoopLatency>
+<SIFT_DOWN_COPY_LOOP>
+<Name>SIFT_DOWN_COPY_LOOP</Name>
+<TripCount>
+<range>
+<min>1</min>
+<max>16</max>
+</range>
+</TripCount>
+<Latency>2 ~ 32</Latency>
+<AbsoluteTimeLatency>20.000 ns ~ 0.320 us</AbsoluteTimeLatency>
+<IterationLatency>2</IterationLatency>
+<PipelineDepth>2</PipelineDepth>
+</SIFT_DOWN_COPY_LOOP>
+</SummaryOfLoopLatency>
+</PerformanceEstimates>
+<AreaEstimates>
+<Resources>
+<BRAM_18K>0</BRAM_18K>
+<AVAIL_BRAM>120</AVAIL_BRAM>
+<UTIL_BRAM>0</UTIL_BRAM>
+<FF>1429</FF>
+<AVAIL_FF>35200</AVAIL_FF>
+<UTIL_FF>4</UTIL_FF>
+<LUT>4452</LUT>
+<AVAIL_LUT>17600</AVAIL_LUT>
+<UTIL_LUT>25</UTIL_LUT>
+<DSP>0</DSP>
+<AVAIL_DSP>80</AVAIL_DSP>
+<UTIL_DSP>0</UTIL_DSP>
+<URAM>0</URAM>
+<AVAIL_URAM>0</AVAIL_URAM>
+<UTIL_URAM>0</UTIL_URAM>
+</Resources>
+</AreaEstimates>
+<InterfaceSummary>
+<RtlPorts>
+<name>ap_clk</name>
+<Object>os_sift_down</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>ap_rst</name>
+<Object>os_sift_down</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>ap_start</name>
+<Object>os_sift_down</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>ap_done</name>
+<Object>os_sift_down</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>ap_idle</name>
+<Object>os_sift_down</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>ap_ready</name>
+<Object>os_sift_down</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>open_set_size</name>
+<Object>open_set_size</Object>
+<Type>pointer</Type>
+<Scope>global</Scope>
+<IOProtocol>ap_none</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>16</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>open_set_heap_f_score_V_address0</name>
+<Object>open_set_heap_f_score_V</Object>
+<Type>array</Type>
+<Scope>global</Scope>
+<IOProtocol>ap_memory</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>11</Bits>
+<Attribute>address</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>open_set_heap_f_score_V_ce0</name>
+<Object>open_set_heap_f_score_V</Object>
+<Type>array</Type>
+<Scope>global</Scope>
+<IOProtocol>ap_memory</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>open_set_heap_f_score_V_we0</name>
+<Object>open_set_heap_f_score_V</Object>
+<Type>array</Type>
+<Scope>global</Scope>
+<IOProtocol>ap_memory</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>open_set_heap_f_score_V_d0</name>
+<Object>open_set_heap_f_score_V</Object>
+<Type>array</Type>
+<Scope>global</Scope>
+<IOProtocol>ap_memory</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>11</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>open_set_heap_f_score_V_q0</name>
+<Object>open_set_heap_f_score_V</Object>
+<Type>array</Type>
+<Scope>global</Scope>
+<IOProtocol>ap_memory</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>11</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>open_set_heap_g_score_V_address0</name>
+<Object>open_set_heap_g_score_V</Object>
+<Type>array</Type>
+<Scope>global</Scope>
+<IOProtocol>ap_memory</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>11</Bits>
+<Attribute>address</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>open_set_heap_g_score_V_ce0</name>
+<Object>open_set_heap_g_score_V</Object>
+<Type>array</Type>
+<Scope>global</Scope>
+<IOProtocol>ap_memory</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>open_set_heap_g_score_V_we0</name>
+<Object>open_set_heap_g_score_V</Object>
+<Type>array</Type>
+<Scope>global</Scope>
+<IOProtocol>ap_memory</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>open_set_heap_g_score_V_d0</name>
+<Object>open_set_heap_g_score_V</Object>
+<Type>array</Type>
+<Scope>global</Scope>
+<IOProtocol>ap_memory</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>11</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>open_set_heap_g_score_V_q0</name>
+<Object>open_set_heap_g_score_V</Object>
+<Type>array</Type>
+<Scope>global</Scope>
+<IOProtocol>ap_memory</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>11</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>open_set_heap_x_V_address0</name>
+<Object>open_set_heap_x_V</Object>
+<Type>array</Type>
+<Scope>global</Scope>
+<IOProtocol>ap_memory</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>11</Bits>
+<Attribute>address</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>open_set_heap_x_V_ce0</name>
+<Object>open_set_heap_x_V</Object>
+<Type>array</Type>
+<Scope>global</Scope>
+<IOProtocol>ap_memory</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>open_set_heap_x_V_we0</name>
+<Object>open_set_heap_x_V</Object>
+<Type>array</Type>
+<Scope>global</Scope>
+<IOProtocol>ap_memory</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>open_set_heap_x_V_d0</name>
+<Object>open_set_heap_x_V</Object>
+<Type>array</Type>
+<Scope>global</Scope>
+<IOProtocol>ap_memory</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>9</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>open_set_heap_x_V_q0</name>
+<Object>open_set_heap_x_V</Object>
+<Type>array</Type>
+<Scope>global</Scope>
+<IOProtocol>ap_memory</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>9</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>open_set_heap_y_V_address0</name>
+<Object>open_set_heap_y_V</Object>
+<Type>array</Type>
+<Scope>global</Scope>
+<IOProtocol>ap_memory</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>11</Bits>
+<Attribute>address</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>open_set_heap_y_V_ce0</name>
+<Object>open_set_heap_y_V</Object>
+<Type>array</Type>
+<Scope>global</Scope>
+<IOProtocol>ap_memory</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>open_set_heap_y_V_we0</name>
+<Object>open_set_heap_y_V</Object>
+<Type>array</Type>
+<Scope>global</Scope>
+<IOProtocol>ap_memory</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>open_set_heap_y_V_d0</name>
+<Object>open_set_heap_y_V</Object>
+<Type>array</Type>
+<Scope>global</Scope>
+<IOProtocol>ap_memory</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>9</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>open_set_heap_y_V_q0</name>
+<Object>open_set_heap_y_V</Object>
+<Type>array</Type>
+<Scope>global</Scope>
+<IOProtocol>ap_memory</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>9</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+</InterfaceSummary>
+</Module>
+<Module>
 <Name>os_sift_up</Name>
 <PerformanceEstimates>
 <SummaryOfTimingAnalysis>
 <TargetClockPeriod>10.00</TargetClockPeriod>
 <ClockUncertainty>2.70</ClockUncertainty>
 <TargetInitiationInterval>4294967295</TargetInitiationInterval>
-<EstimatedClockPeriod>5.576</EstimatedClockPeriod>
+<EstimatedClockPeriod>7.281</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <Best-caseLatency>9</Best-caseLatency>
-<Average-caseLatency>39</Average-caseLatency>
-<Worst-caseLatency>74</Worst-caseLatency>
+<Average-caseLatency>30</Average-caseLatency>
+<Worst-caseLatency>58</Worst-caseLatency>
 <Best-caseRealTimeLatency>90.000 ns</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>0.390 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>0.740 us</Worst-caseRealTimeLatency>
-<PipelineInitiationInterval>9 ~ 74</PipelineInitiationInterval>
+<Average-caseRealTimeLatency>0.300 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>0.580 us</Worst-caseRealTimeLatency>
+<PipelineInitiationInterval>9 ~ 58</PipelineInitiationInterval>
 <PipelineType>none</PipelineType>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
@@ -55,10 +415,10 @@
 <BRAM_18K>0</BRAM_18K>
 <AVAIL_BRAM>120</AVAIL_BRAM>
 <UTIL_BRAM>0</UTIL_BRAM>
-<FF>733</FF>
+<FF>888</FF>
 <AVAIL_FF>35200</AVAIL_FF>
 <UTIL_FF>2</UTIL_FF>
-<LUT>3607</LUT>
+<LUT>3528</LUT>
 <AVAIL_LUT>17600</AVAIL_LUT>
 <UTIL_LUT>20</UTIL_LUT>
 <DSP>0</DSP>
@@ -155,7 +515,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>13</Bits>
+<Bits>11</Bits>
 <Attribute>address</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -210,7 +570,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>13</Bits>
+<Bits>11</Bits>
 <Attribute>address</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -265,7 +625,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>13</Bits>
+<Bits>11</Bits>
 <Attribute>address</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -320,7 +680,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>13</Bits>
+<Bits>11</Bits>
 <Attribute>address</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -390,9 +750,9 @@
 <SummaryOfLoopLatency>
 <COPY_RAM_LOOP>
 <Name>COPY_RAM_LOOP</Name>
-<TripCount>8031</TripCount>
-<Latency>8032</Latency>
-<AbsoluteTimeLatency>80.320 us</AbsoluteTimeLatency>
+<TripCount>8631</TripCount>
+<Latency>8632</Latency>
+<AbsoluteTimeLatency>86.320 us</AbsoluteTimeLatency>
 <PipelineII>1</PipelineII>
 <PipelineDepth>3</PipelineDepth>
 </COPY_RAM_LOOP>
@@ -413,11 +773,11 @@
 <PipelineDepth>undef</PipelineDepth>
 <EMPTY_GRID_INFO_LOOP>
 <Name>EMPTY_GRID_INFO_LOOP</Name>
-<TripCount>250000</TripCount>
-<Latency>250000</Latency>
-<AbsoluteTimeLatency>2.500 ms</AbsoluteTimeLatency>
-<PipelineII>1</PipelineII>
-<PipelineDepth>1</PipelineDepth>
+<TripCount>1953</TripCount>
+<Latency>15624</Latency>
+<AbsoluteTimeLatency>0.156 ms</AbsoluteTimeLatency>
+<PipelineII>8</PipelineII>
+<PipelineDepth>8</PipelineDepth>
 </EMPTY_GRID_INFO_LOOP>
 <AS_SEARCH_LOOP>
 <Name>AS_SEARCH_LOOP</Name>
@@ -426,34 +786,21 @@
 <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
 <IterationLatency>
 <range>
-<min>13</min>
-<max>60446</max>
+<min>15</min>
+<max>18400</max>
 </range>
 </IterationLatency>
-<PipelineDepth>13 ~ 60446</PipelineDepth>
-<SIFT_DOWN_COPY_LOOP>
-<Name>SIFT_DOWN_COPY_LOOP</Name>
-<TripCount>
-<range>
-<min>1</min>
-<max>16</max>
-</range>
-</TripCount>
-<Latency>1 ~ 16</Latency>
-<AbsoluteTimeLatency>10.000 ns ~ 0.160 us</AbsoluteTimeLatency>
-<PipelineII>1</PipelineII>
-<PipelineDepth>2</PipelineDepth>
-</SIFT_DOWN_COPY_LOOP>
+<PipelineDepth>15 ~ 18400</PipelineDepth>
 <OS_FIND_LOOP>
 <Name>OS_FIND_LOOP</Name>
 <TripCount>
 <range>
 <min>1</min>
-<max>5000</max>
+<max>1500</max>
 </range>
 </TripCount>
-<Latency>3 ~ 15002</Latency>
-<AbsoluteTimeLatency>30.000 ns ~ 0.150 ms</AbsoluteTimeLatency>
+<Latency>3 ~ 4502</Latency>
+<AbsoluteTimeLatency>30.000 ns ~ 45.020 us</AbsoluteTimeLatency>
 <IterationLatency>3</IterationLatency>
 <PipelineDepth>3</PipelineDepth>
 </OS_FIND_LOOP>
@@ -462,11 +809,11 @@
 <TripCount>
 <range>
 <min>1</min>
-<max>5000</max>
+<max>1500</max>
 </range>
 </TripCount>
-<Latency>3 ~ 15002</Latency>
-<AbsoluteTimeLatency>30.000 ns ~ 0.150 ms</AbsoluteTimeLatency>
+<Latency>3 ~ 4502</Latency>
+<AbsoluteTimeLatency>30.000 ns ~ 45.020 us</AbsoluteTimeLatency>
 <IterationLatency>3</IterationLatency>
 <PipelineDepth>3</PipelineDepth>
 </OS_FIND_LOOP>
@@ -475,11 +822,11 @@
 <TripCount>
 <range>
 <min>1</min>
-<max>5000</max>
+<max>1500</max>
 </range>
 </TripCount>
-<Latency>3 ~ 15002</Latency>
-<AbsoluteTimeLatency>30.000 ns ~ 0.150 ms</AbsoluteTimeLatency>
+<Latency>3 ~ 4502</Latency>
+<AbsoluteTimeLatency>30.000 ns ~ 45.020 us</AbsoluteTimeLatency>
 <IterationLatency>3</IterationLatency>
 <PipelineDepth>3</PipelineDepth>
 </OS_FIND_LOOP>
@@ -488,11 +835,11 @@
 <TripCount>
 <range>
 <min>1</min>
-<max>5000</max>
+<max>1500</max>
 </range>
 </TripCount>
-<Latency>3 ~ 15002</Latency>
-<AbsoluteTimeLatency>30.000 ns ~ 0.150 ms</AbsoluteTimeLatency>
+<Latency>3 ~ 4502</Latency>
+<AbsoluteTimeLatency>30.000 ns ~ 45.020 us</AbsoluteTimeLatency>
 <IterationLatency>3</IterationLatency>
 <PipelineDepth>3</PipelineDepth>
 </OS_FIND_LOOP>
@@ -505,10 +852,10 @@
 <max>2048</max>
 </range>
 </TripCount>
-<Latency>6 ~ 12288</Latency>
-<AbsoluteTimeLatency>60.000 ns ~ 0.123 ms</AbsoluteTimeLatency>
-<IterationLatency>6</IterationLatency>
-<PipelineDepth>6</PipelineDepth>
+<Latency>7 ~ 14336</Latency>
+<AbsoluteTimeLatency>70.000 ns ~ 0.143 ms</AbsoluteTimeLatency>
+<IterationLatency>7</IterationLatency>
+<PipelineDepth>7</PipelineDepth>
 </MAKE_PATH_LOOP>
 </WAYPOINT_LOOP>
 <WRITE_BACK_PATH_LOOP>
@@ -516,11 +863,11 @@
 <TripCount>
 <range>
 <min>1</min>
-<max>200</max>
+<max>800</max>
 </range>
 </TripCount>
-<Latency>2 ~ 201</Latency>
-<AbsoluteTimeLatency>20.000 ns ~ 2.010 us</AbsoluteTimeLatency>
+<Latency>2 ~ 801</Latency>
+<AbsoluteTimeLatency>20.000 ns ~ 8.010 us</AbsoluteTimeLatency>
 <PipelineII>1</PipelineII>
 <PipelineDepth>3</PipelineDepth>
 </WRITE_BACK_PATH_LOOP>
@@ -528,18 +875,18 @@
 </PerformanceEstimates>
 <AreaEstimates>
 <Resources>
-<BRAM_18K>88</BRAM_18K>
+<BRAM_18K>98</BRAM_18K>
 <AVAIL_BRAM>120</AVAIL_BRAM>
-<UTIL_BRAM>73</UTIL_BRAM>
+<UTIL_BRAM>81</UTIL_BRAM>
 <DSP>5</DSP>
 <AVAIL_DSP>80</AVAIL_DSP>
 <UTIL_DSP>6</UTIL_DSP>
-<FF>5461</FF>
+<FF>5749</FF>
 <AVAIL_FF>35200</AVAIL_FF>
-<UTIL_FF>15</UTIL_FF>
-<LUT>14431</LUT>
+<UTIL_FF>16</UTIL_FF>
+<LUT>16779</LUT>
 <AVAIL_LUT>17600</AVAIL_LUT>
-<UTIL_LUT>81</UTIL_LUT>
+<UTIL_LUT>95</UTIL_LUT>
 <URAM>0</URAM>
 <AVAIL_URAM>0</AVAIL_URAM>
 <UTIL_URAM>0</UTIL_URAM>

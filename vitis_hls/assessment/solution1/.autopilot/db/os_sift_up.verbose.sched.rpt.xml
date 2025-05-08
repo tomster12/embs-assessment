@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'os_sift_up'" level="0">
-<item name = "Date">Thu May  8 19:36:24 2025
+<item name = "Date">Thu May  8 23:13:32 2025
 </item>
 <item name = "Version">2020.2 (Build 3064766 on Wed Nov 18 09:12:47 MST 2020)</item>
 <item name = "Project">assessment</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 5.576 ns, 2.70 ns</column>
+<column name="ap_clk">10.00 ns, 7.281 ns, 2.70 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">9, 74, 90.000 ns, 0.740 us, 9, 74, none</column>
+<column name="">9, 58, 90.000 ns, 0.580 us, 9, 58, none</column>
 </table>
 </item>
 <item name = "Detail">

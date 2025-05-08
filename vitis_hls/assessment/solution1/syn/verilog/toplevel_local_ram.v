@@ -6,8 +6,8 @@
 module toplevel_local_ram_ram (addr0, ce0, d0, we0, q0,  clk);
 
 parameter DWIDTH = 32;
-parameter AWIDTH = 13;
-parameter MEM_SIZE = 8031;
+parameter AWIDTH = 14;
+parameter MEM_SIZE = 8631;
 
 input[AWIDTH-1:0] addr0;
 input ce0;
@@ -47,8 +47,8 @@ module toplevel_local_ram(
     q0);
 
 parameter DataWidth = 32'd32;
-parameter AddressRange = 32'd8031;
-parameter AddressWidth = 32'd13;
+parameter AddressRange = 32'd8631;
+parameter AddressWidth = 32'd14;
 input reset;
 input clk;
 input[AddressWidth - 1:0] address0;

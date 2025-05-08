@@ -8,7 +8,9 @@
 #define HW_META_WORDS 2
 #define HW_WAYPOINT_WORDS WORLD_MAX_WAYPOINTS
 #define HW_WORLD_WORDS ((WORLD_MAX_SIZE * WORLD_MAX_SIZE + 31) / 32)
-#define HW_MAX_WORDS (HW_META_WORDS + HW_WAYPOINT_WORDS + HW_WORLD_WORDS * 2)
+#define MAX_OUTPUT_PATH_LENGTH 1000
+#define HW_PATH_WORDS (MAX_OUTPUT_PATH_LENGTH)
+#define HW_MAX_WORDS (HW_META_WORDS + HW_WAYPOINT_WORDS + HW_WORLD_WORDS + HW_PATH_WORDS) // 7831 + HW_PATH_WORDS
 
 void check(uint32_t result, uint32_t expected, uint32_t code) {
     std::cout << "Total Path Length: " << result << ", code: " << code << std::endl;
