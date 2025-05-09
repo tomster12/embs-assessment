@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# xsim v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Fri May  9 01:01:29 2025
+# Process ID: 1093075
+# Current directory: /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/sim/verilog
+# Command line: xsim -mode tcl -source {xsim.dir/toplevel/xsim_script.tcl}
+# Log file: /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/sim/verilog/xsim.log
+# Journal file: /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/sim/verilog/xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/toplevel/xsim_script.tcl
+source toplevel.tcl

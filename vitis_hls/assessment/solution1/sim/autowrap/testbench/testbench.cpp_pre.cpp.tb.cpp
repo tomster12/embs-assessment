@@ -248,7 +248,7 @@ typedef __uintmax_t uintmax_t;
 
 
 # 5 "/home/tomster12/files/EMBS/vitis_hls/assessment/toplevel.h"
-void toplevel(uint32_t *ram, volatile uint32_t *code);
+void toplevel(uint32_t *ram, uint32_t *code);
 # 2 "/home/tomster12/files/EMBS/vitis_hls/assessment/testbench.cpp" 2
 # 1 "/opt/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream" 1 3
 # 36 "/opt/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream" 3
@@ -27892,58 +27892,51 @@ extern void __assert (const char *__assertion, const char *__file, int __line)
 }
 # 44 "/opt/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/cassert" 2 3
 # 5 "/home/tomster12/files/EMBS/vitis_hls/assessment/testbench.cpp" 2
-# 14 "/home/tomster12/files/EMBS/vitis_hls/assessment/testbench.cpp"
+# 15 "/home/tomster12/files/EMBS/vitis_hls/assessment/testbench.cpp"
 
-# 14 "/home/tomster12/files/EMBS/vitis_hls/assessment/testbench.cpp"
+# 15 "/home/tomster12/files/EMBS/vitis_hls/assessment/testbench.cpp"
 void check(uint32_t result, uint32_t expected, uint32_t code) {
     std::cout << "Total Path Length: " << result << ", code: " << code << std::endl;
     
-# 16 "/home/tomster12/files/EMBS/vitis_hls/assessment/testbench.cpp" 3 4
+# 17 "/home/tomster12/files/EMBS/vitis_hls/assessment/testbench.cpp" 3 4
    (static_cast <bool> (
-# 16 "/home/tomster12/files/EMBS/vitis_hls/assessment/testbench.cpp"
+# 17 "/home/tomster12/files/EMBS/vitis_hls/assessment/testbench.cpp"
    result == expected
-# 16 "/home/tomster12/files/EMBS/vitis_hls/assessment/testbench.cpp" 3 4
+# 17 "/home/tomster12/files/EMBS/vitis_hls/assessment/testbench.cpp" 3 4
    ) ? void (0) : __assert_fail (
-# 16 "/home/tomster12/files/EMBS/vitis_hls/assessment/testbench.cpp"
+# 17 "/home/tomster12/files/EMBS/vitis_hls/assessment/testbench.cpp"
    "result == expected"
-# 16 "/home/tomster12/files/EMBS/vitis_hls/assessment/testbench.cpp" 3 4
-   , "/home/tomster12/files/EMBS/vitis_hls/assessment/testbench.cpp", 16, __extension__ __PRETTY_FUNCTION__))
-# 16 "/home/tomster12/files/EMBS/vitis_hls/assessment/testbench.cpp"
+# 17 "/home/tomster12/files/EMBS/vitis_hls/assessment/testbench.cpp" 3 4
+   , "/home/tomster12/files/EMBS/vitis_hls/assessment/testbench.cpp", 17, __extension__ __PRETTY_FUNCTION__))
+# 17 "/home/tomster12/files/EMBS/vitis_hls/assessment/testbench.cpp"
                              ;
     std::cout << "Test Passed." << std::endl;
 }
 
-int get_world_bit(uint32_t *world, uint16_t world_size, uint16_t x, uint16_t y) {
+uint8_t get_world_bit(uint32_t *world, uint16_t world_size, uint16_t x, uint16_t y) {
     if (x >= world_size || y >= world_size) {
      printf("Error: get_world_bit coord out of bounds, %lu, %lu outside world of size %lu\r\n", x, y, world_size);
-     return 1;
     }
-
     uint32_t idx = x + y * world_size;
     uint16_t word = idx / 32;
     uint8_t bit = idx % 32;
     return (world[word] >> bit) & 1;
 }
 
-int set_world_bit(uint32_t *world, uint16_t world_size, uint16_t x, uint16_t y, uint8_t value) {
-
-    if (x >= world_size || y >= world_size) {
-     printf("Failed to set %lu, %lu\r\n", x, y);
-  return 1;
-    }
-
+void set_world_bit(uint32_t *world, uint16_t world_size, uint16_t x, uint16_t y, uint8_t value) {
+    if (x >= world_size || y >= world_size) printf("Failed to set %lu, %lu\r\n", x, y);
     uint32_t idx = x + y * world_size;
     uint16_t word = idx / 32;
     uint8_t bit = idx % 32;
     world[word] |= (value << bit);
-    return 0;
 }
 
 void debug_print_world_bitmap(uint32_t *ram) {
- uint16_t world_size = ram[0];
- uint16_t num_waypoints = ram[1];
+ uint16_t world_size = (ram[0] >> 16) & 0xFFFF;
+ uint16_t num_waypoints = ram[0] & 0xFFFF;
+ uint16_t path_length = ram[1];
 
-    printf("World Bitmap (%u x %u)\r\n", world_size, world_size);
+    printf("World Bitmap (%u x %u), waypoints=%lu, length=%lu\r\n", world_size, world_size, num_waypoints, path_length);
 
 
     uint32_t *ram_waypoints = &ram[2];
@@ -27954,15 +27947,25 @@ void debug_print_world_bitmap(uint32_t *ram) {
  }
 
 
+ char output[500 * 500];
     uint32_t *ram_world = &ram[2 + 16];
     for (uint16_t y = 0; y < world_size; ++y) {
         for (uint16_t x = 0; x < world_size; ++x) {
-            int bit = get_world_bit(ram_world, world_size, x, y);
-            if (bit == -1) {
-                printf("Error reading world bit at (%u, %u)\n", x, y);
-                return;
-            }
-            printf("%c", bit == 1 ? 'X' : '.');
+            int world_bit = get_world_bit(ram_world, world_size, x, y);
+            output[x + y * world_size] = world_bit == 1 ? 'O' : ' ';
+        }
+    }
+    uint32_t *ram_path = &ram[2 + 16 + ((500 * 500 + 31) / 32)];
+    for (uint32_t i = 0; i < path_length; ++i) {
+     uint16_t x = (ram_path[i] >> 16) & 0xFFFF;
+     uint16_t y = (ram_path[i]) & 0xFFFF;
+     output[x + y * world_size] = '.';
+    }
+
+
+    for (uint16_t y = 0; y < world_size; ++y) {
+        for (uint16_t x = 0; x < world_size; ++x) {
+         printf("%c", output[x + y * world_size]);
         }
         printf("\r\n");
     }
@@ -27972,16 +27975,17 @@ void debug_print_world_bitmap(uint32_t *ram) {
 #ifdef __cplusplus
 extern "C"
 #endif
-void apatb_toplevel_sw(unsigned int *, volatile unsigned int *);
-# 75 "/home/tomster12/files/EMBS/vitis_hls/assessment/testbench.cpp"
+void apatb_toplevel_sw(unsigned int *, unsigned int *);
+# 79 "/home/tomster12/files/EMBS/vitis_hls/assessment/testbench.cpp"
 int main() {
-    uint32_t ram[(2 + 16 + ((500 * 500 + 31) / 32))];
+    uint32_t ram[(2 + 16 + ((500 * 500 + 31) / 32) + (1000))];
     uint32_t code;
+
+    printf("Starting testbench\r\n");
 
 
     memset(ram, 0, sizeof(ram));
-    ram[0] = 10;
-    ram[1] = 8;
+    ram[0] = (10 << 16) | 8;
     ram[2] = (3 << 16) | 3;
     ram[3] = (7 << 16) | 1;
     ram[4] = (7 << 16) | 5;
@@ -27990,7 +27994,8 @@ int main() {
     ram[7] = (1 << 16) | 0;
     ram[8] = (0 << 16) | 0;
     ram[9] = (0 << 16) | 0;
-    uint32_t *ram_world = &ram[(2 + 16)];
+
+    uint32_t *ram_world = &ram[2 + 16];
     set_world_bit(ram_world, 10, 2, 1, 1);
     set_world_bit(ram_world, 10, 2, 2, 1);
     set_world_bit(ram_world, 10, 2, 3, 1);
@@ -28012,20 +28017,29 @@ int main() {
     set_world_bit(ram_world, 10, 8, 6, 1);
     set_world_bit(ram_world, 10, 8, 7, 1);
     set_world_bit(ram_world, 10, 8, 8, 1);
-    debug_print_world_bitmap(ram);
+
+    printf("Test: %lu\r\n", ram[0]);
+    printf("Test: %lu\r\n", ram[1]);
+    printf("Test: %lu\r\n", ram[2]);
+    printf("Test: %lu\r\n", ram[3]);
+    printf("Test: %lu\r\n", ram[4]);
+
+    printf("Running toplevel from testbench\r\n");
     
 #ifndef HLS_FASTSIM
 #define toplevel apatb_toplevel_sw
 #endif
-# 114 "/home/tomster12/files/EMBS/vitis_hls/assessment/testbench.cpp"
+# 127 "/home/tomster12/files/EMBS/vitis_hls/assessment/testbench.cpp"
 toplevel(ram, &code);
 #undef toplevel
-# 114 "/home/tomster12/files/EMBS/vitis_hls/assessment/testbench.cpp"
+# 127 "/home/tomster12/files/EMBS/vitis_hls/assessment/testbench.cpp"
 
-    check(ram[0], 18, code);
+
+    debug_print_world_bitmap(ram);
+    check(ram[1], 36, code);
 
     return 0;
 }
 #endif
-# 118 "/home/tomster12/files/EMBS/vitis_hls/assessment/testbench.cpp"
+# 133 "/home/tomster12/files/EMBS/vitis_hls/assessment/testbench.cpp"
 

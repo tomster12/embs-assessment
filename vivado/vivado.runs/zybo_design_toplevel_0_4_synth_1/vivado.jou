@@ -2,8 +2,8 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Thu May  8 23:16:36 2025
-# Process ID: 837339
+# Start of session at: Fri May  9 00:42:36 2025
+# Process ID: 1019328
 # Current directory: /home/tomster12/files/EMBS/vivado/vivado.runs/zybo_design_toplevel_0_4_synth_1
 # Command line: vivado -log zybo_design_toplevel_0_4.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source zybo_design_toplevel_0_4.tcl
 # Log file: /home/tomster12/files/EMBS/vivado/vivado.runs/zybo_design_toplevel_0_4_synth_1/zybo_design_toplevel_0_4.vds

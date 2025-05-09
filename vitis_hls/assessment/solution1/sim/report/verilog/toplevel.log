@@ -7,7 +7,238 @@ INFO: [COSIM-14] Instrumenting C test bench ...
    Compiling apatb_toplevel_ir.ll
    Generating cosim.tv.exe
 INFO: [COSIM-302] Starting C TB testing ... 
-ERROR: [COSIM-360] Aborting co-simulation: C TB simulation failed.
-ERROR: [COSIM-320] C TB testing failed, stop generating test vectors. Please check C TB or re-run cosim.
-ERROR: [COSIM-5] *** C/RTL co-simulation file generation failed. ***
+INFO: [COSIM-333] Generating C post check test bench ...
+INFO: [COSIM-12] Generating RTL test bench ...
+INFO: [COSIM-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM-323] Starting verilog simulation. 
+INFO: [COSIM-15] Starting XSIM ...
+World Bitmap (10 x 10)
+Waypoint 0 at 3, 3
+Waypoint 1 at 7, 1
+Waypoint 2 at 7, 5
+Waypoint 3 at 5, 7
+Waypoint 4 at 1, 7
+Waypoint 5 at 1, 0
+Waypoint 6 at 0, 0
+Waypoint 7 at 0, 0
+..........
+..X...X...
+..X...X.X.
+..X...X...
+..X...X...
+..X...X...
+..X...X.X.
+..X...X.X.
+..X.X.X.X.
+..........
+Total Path Length: 36, code: 0
+cosim.tv.exe: /home/tomster12/files/EMBS/vitis_hls/assessment/testbench.cpp:16: void check(uint32_t, uint32_t, uint32_t): Assertion `result == expected' failed.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+WARNING: Bitsize mismatch for ap_[u]int|=ap_[u]int.
+Starting testbench
+Test: 655368
+Test: 0
+Test: 196611
+Test: 458753
+Test: 458757
+Running toplevel from testbench
+World Bitmap (10 x 10), waypoints=8, length=36
+Waypoint 0 at 3, 3
+Waypoint 1 at 7, 1
+Waypoint 2 at 7, 5
+Waypoint 3 at 5, 7
+Waypoint 4 at 1, 7
+Waypoint 5 at 1, 0
+Waypoint 6 at 0, 0
+Waypoint 7 at 0, 0
+ .   ...  
+ .O  .O.  
+ .O  .O.O 
+ .O...O.  
+ .O   O.  
+ .O   O.  
+ .O   O.O 
+ .O...O.O 
+ .O.O.O.O 
+ ... ...  
+Total Path Length: 36, code: 0
+Test Passed.
 ERROR: [COSIM-4] *** C/RTL co-simulation finished: FAIL ***
+INFO: [COSIM-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.

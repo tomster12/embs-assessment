@@ -28,13 +28,13 @@
 #define WORLD_MAX_WALLS 240
 #define WORLD_MAX_WAYPOINTS 16
 #define WORLD_MAX_SIZE 500
-#define HW_META_WORDS 2
-#define HW_WAYPOINT_WORDS WORLD_MAX_WAYPOINTS
-#define HW_WORLD_WORDS ((WORLD_MAX_SIZE * WORLD_MAX_SIZE + 31) / 32)
-#define MAX_OUTPUT_PATH_LENGTH 200
-#define MAX_OUTPUT_WORLD_SIZE 60
-#define HW_PATH_WORDS (MAX_OUTPUT_PATH_LENGTH)
-#define HW_MAX_WORDS (HW_META_WORDS + HW_WAYPOINT_WORDS + HW_WORLD_WORDS + HW_PATH_WORDS)
+#define RAM_META_WORDS 2
+#define RAM_WAYPOINT_WORDS WORLD_MAX_WAYPOINTS
+#define RAM_WORLD_WORDS ((WORLD_MAX_SIZE * WORLD_MAX_SIZE + 31) / 32)
+#define MAX_OUTPUT_PATH_LENGTH 2000
+#define MAX_OUTPUT_WORLD_SIZE 120
+#define RAM_PATH_WORDS (MAX_OUTPUT_PATH_LENGTH)
+#define RAM_MAX_WORDS (RAM_META_WORDS + RAM_WAYPOINT_WORDS + RAM_WORLD_WORDS + RAM_PATH_WORDS)
 #define THREAD_STACKSIZE 1024
 #define FRAME_RES (1440*900) // 1440x900 based on 4x8 bits for 32-bit colours
 #define FRAME_STRIDE (1440*4)
@@ -70,7 +70,7 @@ WorldSolutionResponse world_solution_response;
 XScuTimer timer;
 XScuTimer_Config *timercfg;
 XToplevel hls;
-uint32_t hw_ram[HW_MAX_WORDS];
+uint32_t hw_ram[RAM_MAX_WORDS];
 DisplayCtrl gx_dsp_ctrl;
 uint32_t gx_frame_buf[DISPLAY_NUM_FRAMES][FRAME_RES] __attribute__((aligned(0x20))); // 2 frame buffers of size FRAME_RES aligned to 32-bits + pointers
 void *gx_frame_ptrs[DISPLAY_NUM_FRAMES];
@@ -202,6 +202,18 @@ void app_task() {
     XScuTimer_DisableAutoReload(&timer);
 
 	xil_printf("App setup and communicating over port %d\r\n", RECV_PORT);
+
+	for (uint16_t i = 3780; i < 3820; ++i) {
+		// Send world solution attempt
+		world_solution_attempt.type = 0x05;
+		world_solution_attempt.seed = htonl(2);
+		world_solution_attempt.size = htons(300);
+		world_solution_attempt.answer = htonl(i);
+		xil_printf("Sending brute force world solution request: { %lu, %lu, %lu, %lu }\r\n", 0x05, 2, 300, i);
+		if (udp_send_msg(udp_pcb, &world_server_ip, WORLD_SERVER_PORT, &world_solution_attempt, sizeof(world_solution_attempt)) == -1) continue;
+		if (udp_recv_block(5000) == 1) continue;
+		if (parse_world_solution_response(udp_recv_buf, udp_recv_buf_len, &world_solution_response) == -1) continue;
+	}
 
 	while (1) {
 		// Prompt the user for world params
@@ -393,13 +405,6 @@ void debug_print_world_bitmap() {
 
     xil_printf("World Bitmap (%u x %u), waypoints=%lu, length=%lu\r\n", world_size, world_size, num_waypoints, path_length);
 
-    // Print waypoint locations
-    uint32_t *ram_waypoints = &hw_ram[HW_META_WORDS];
-	for (uint8_t i = 0; i < num_waypoints; ++i) {
-        uint16_t x = (ram_waypoints[i] >> 16) & 0xFFFF;
-        uint16_t y = (ram_waypoints[i]) & 0xFFFF;
-	}
-
 	if (world_size > MAX_OUTPUT_WORLD_SIZE) {
 		xil_printf("Hiding world because it is too big (%lu > %lu)\r\n", world_size, MAX_OUTPUT_WORLD_SIZE);
 		return;
@@ -407,7 +412,7 @@ void debug_print_world_bitmap() {
 
     // Draw world and path to output
 	char output[WORLD_MAX_SIZE * WORLD_MAX_SIZE];
-    uint32_t *ram_world = &hw_ram[HW_META_WORDS + HW_WAYPOINT_WORDS];
+    uint32_t *ram_world = &hw_ram[RAM_META_WORDS + RAM_WAYPOINT_WORDS];
     for (uint16_t y = 0; y < world_size; ++y) {
         for (uint16_t x = 0; x < world_size; ++x) {
             int world_bit = get_world_bit(ram_world, world_size, x, y);
@@ -418,7 +423,7 @@ void debug_print_world_bitmap() {
 	if (path_length > MAX_OUTPUT_PATH_LENGTH) {
 		xil_printf("Not drawing path path because it is too long (%lu > %lu)\r\n", path_length, MAX_OUTPUT_PATH_LENGTH);
 	} else {
-	    uint32_t *ram_path = &hw_ram[HW_META_WORDS + HW_WAYPOINT_WORDS + HW_WORLD_WORDS];
+	    uint32_t *ram_path = &hw_ram[RAM_META_WORDS + RAM_WAYPOINT_WORDS + RAM_WORLD_WORDS];
 	    for (uint32_t i = 0; i < path_length; ++i) {
 	    	uint16_t x = (ram_path[i] >> 16) & 0xFFFF;
 	    	uint16_t y = (ram_path[i]) & 0xFFFF;
@@ -436,20 +441,20 @@ void debug_print_world_bitmap() {
 }
 
 int write_world_to_mem() {
-	memset(hw_ram, 0, HW_MAX_WORDS * sizeof(uint32_t));
+	memset(hw_ram, 0, RAM_MAX_WORDS * sizeof(uint32_t));
 
 	// See RAM schema in definitions section
     uint16_t world_size = world_waypoints.size;
     hw_ram[0] = (world_size << 16) | world_waypoints.num_waypoints;
 
-    uint32_t *ram_waypoints = &hw_ram[HW_META_WORDS];
+    uint32_t *ram_waypoints = &hw_ram[RAM_META_WORDS];
 	for (uint8_t i = 0; i < world_waypoints.num_waypoints; ++i) {
         uint16_t x = world_waypoints.waypoints[i].x;
         uint16_t y = world_waypoints.waypoints[i].y;
         ram_waypoints[i] = (x << 16) | (y);
 	}
 
-    uint32_t *ram_world = &hw_ram[HW_META_WORDS + HW_WAYPOINT_WORDS];
+    uint32_t *ram_world = &hw_ram[RAM_META_WORDS + RAM_WAYPOINT_WORDS];
     for (uint8_t i = 0; i < world_walls.num_walls; ++i) {
         uint16_t x = world_walls.walls[i].x;
         uint16_t y = world_walls.walls[i].y;
@@ -469,7 +474,7 @@ int perform_pathfinding() {
 	xil_printf("Pathfinding...\r\n");
 
     XToplevel_Set_ram(&hls, (u64)hw_ram);
-    Xil_DCacheFlushRange((u64)hw_ram, HW_MAX_WORDS);
+    Xil_DCacheFlushRange((u64)hw_ram, RAM_MAX_WORDS);
 
     XScuTimer_Stop(&timer);
     XScuTimer_LoadTimer(&timer, 0xFFFFFFFF);

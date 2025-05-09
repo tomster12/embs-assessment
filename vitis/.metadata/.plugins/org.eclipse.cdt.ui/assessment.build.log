@@ -1,35 +1,18 @@
-23:28:16 **** Incremental Build of configuration Release for project assessment ****
+01:18:45 **** Incremental Build of configuration Release for project assessment ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
  
 make --no-print-directory main-build
-Building file: ../src/zybo_z7_hdmi/display_ctrl.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/zybo_z7_hdmi/display_ctrl.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I/home/tomster12/files/EMBS/vitis/zybo_design_wrapper/export/zybo_design_wrapper/sw/zybo_design_wrapper/freertos10_xilinx_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/zybo_z7_hdmi/display_ctrl.d" -MT"src/zybo_z7_hdmi/display_ctrl.o" -o "src/zybo_z7_hdmi/display_ctrl.o" "../src/zybo_z7_hdmi/display_ctrl.c"
-Finished building: ../src/zybo_z7_hdmi/display_ctrl.c
- 
-Building file: ../src/zybo_z7_hdmi/dynclk.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/zybo_z7_hdmi/dynclk.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I/home/tomster12/files/EMBS/vitis/zybo_design_wrapper/export/zybo_design_wrapper/sw/zybo_design_wrapper/freertos10_xilinx_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/zybo_z7_hdmi/dynclk.d" -MT"src/zybo_z7_hdmi/dynclk.o" -o "src/zybo_z7_hdmi/dynclk.o" "../src/zybo_z7_hdmi/dynclk.c"
-Finished building: ../src/zybo_z7_hdmi/dynclk.c
- 
 Building file: ../src/main.c
 Invoking: ARM v7 gcc compiler
 arm-none-eabi-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I/home/tomster12/files/EMBS/vitis/zybo_design_wrapper/export/zybo_design_wrapper/sw/zybo_design_wrapper/freertos10_xilinx_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-../src/main.c: In function 'debug_print_world_bitmap':
-../src/main.c:400:18: warning: unused variable 'y' [-Wunused-variable]
-  400 |         uint16_t y = (ram_waypoints[i]) & 0xFFFF;
-      |                  ^
-../src/main.c:399:18: warning: unused variable 'x' [-Wunused-variable]
-  399 |         uint16_t x = (ram_waypoints[i] >> 16) & 0xFFFF;
-      |                  ^
 ../src/main.c: In function 'perform_pathfinding':
-../src/main.c:471:29: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
-  471 |     XToplevel_Set_ram(&hls, (u64)hw_ram);
+../src/main.c:476:29: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  476 |     XToplevel_Set_ram(&hls, (u64)hw_ram);
       |                             ^
-../src/main.c:472:26: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
-  472 |     Xil_DCacheFlushRange((u64)hw_ram, HW_MAX_WORDS);
+../src/main.c:477:26: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  477 |     Xil_DCacheFlushRange((u64)hw_ram, RAM_MAX_WORDS);
       |                          ^
 Finished building: ../src/main.c
  
@@ -41,9 +24,9 @@ Finished building target: assessment.elf
 Invoking: ARM v7 Print Size
 arm-none-eabi-size assessment.elf  |tee "assessment.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 189552	   3544	12638256	12831352	 c3ca78	assessment.elf
+ 189816	   3544	12638256	12831616	 c3cb80	assessment.elf
 Finished building: assessment.elf.size
  
 
-23:28:17 Build Finished (took 923ms)
+01:18:46 Build Finished (took 623ms)
 

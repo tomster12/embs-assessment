@@ -11,8 +11,8 @@ entity toplevel_open_set_heap_f_score_V_ram is
     generic(
             MEM_TYPE    : string := "distributed"; 
             DWIDTH     : integer := 11; 
-            AWIDTH     : integer := 11; 
-            MEM_SIZE    : integer := 1500
+            AWIDTH     : integer := 13; 
+            MEM_SIZE    : integer := 5000
     ); 
     port (
           addr0     : in std_logic_vector(AWIDTH-1 downto 0); 
@@ -72,8 +72,8 @@ use IEEE.std_logic_1164.all;
 entity toplevel_open_set_heap_f_score_V is
     generic (
         DataWidth : INTEGER := 11;
-        AddressRange : INTEGER := 1500;
-        AddressWidth : INTEGER := 11);
+        AddressRange : INTEGER := 5000;
+        AddressWidth : INTEGER := 13);
     port (
         reset : IN STD_LOGIC;
         clk : IN STD_LOGIC;

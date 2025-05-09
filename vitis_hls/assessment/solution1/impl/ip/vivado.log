@@ -2,8 +2,8 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Thu May  8 23:15:02 2025
-# Process ID: 835950
+# Start of session at: Fri May  9 00:41:02 2025
+# Process ID: 1017878
 # Current directory: /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/impl/ip
 # Command line: vivado -notrace -mode batch -source run_ippack.tcl
 # Log file: /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/impl/ip/vivado.log
@@ -13,4 +13,4 @@ source run_ippack.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2020.2/data/ip'.
-INFO: [Common 17-206] Exiting Vivado at Thu May  8 23:15:12 2025...
+INFO: [Common 17-206] Exiting Vivado at Fri May  9 00:41:11 2025...
