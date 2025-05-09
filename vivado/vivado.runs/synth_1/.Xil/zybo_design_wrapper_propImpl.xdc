@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:/home/tomster12/files/EMBS/vivado/vivado.srcs/constrs_1/imports/hardware/zybo_z7_hdmi.xdc rfile:../../../vivado.srcs/constrs_1/imports/hardware/zybo_z7_hdmi.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vivado/vivado.srcs/constrs_1/imports/hardware/zybo_z7_hdmi.xdc rfile:../../../vivado.srcs/constrs_1/imports/hardware/zybo_z7_hdmi.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:2 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN H17  IOSTANDARD TMDS_33  } [get_ports { hdmi_out_clk_n      }]; #IO_L13N_T2_MRCC_35 Sch=hdmi_tx_clk_n
 set_property src_info {type:XDC file:1 line:3 export:INPUT save:INPUT read:READ} [current_design]

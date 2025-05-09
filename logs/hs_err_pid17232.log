@@ -1,0 +1,19 @@
+#
+# An unexpected error has occurred (6)
+#
+Stack:
+/lib/x86_64-linux-gnu/libc.so.6(+0x45330) [0x7ecbf2a45330]
+/lib/x86_64-linux-gnu/libc.so.6(pthread_kill+0x11c) [0x7ecbf2a9eb2c]
+/lib/x86_64-linux-gnu/libc.so.6(gsignal+0x1e) [0x7ecbf2a4527e]
+/lib/x86_64-linux-gnu/libc.so.6(abort+0xdf) [0x7ecbf2a288ff]
+/opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vivado/2020.2/lib/lnx64.o/Ubuntu/libstdc++.so.6(_ZN9__gnu_cxx27__verbose_terminate_handlerEv+0x15d) [0x7ecbf329033d]
+/opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vivado/2020.2/lib/lnx64.o/Ubuntu/libstdc++.so.6(+0x8e316) [0x7ecbf328e316]
+/opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vivado/2020.2/lib/lnx64.o/Ubuntu/libstdc++.so.6(+0x8e361) [0x7ecbf328e361]
+/opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vivado/2020.2/lib/lnx64.o/Ubuntu/libstdc++.so.6(+0x8e578) [0x7ecbf328e578]
+/opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vivado/2020.2/lib/lnx64.o/librdi_labtoolsRT.so(+0x4270f) [0x7ecb6c24270f]
+/opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vivado/2020.2/lib/lnx64.o/librdi_labtoolsRT.so(+0x4282b) [0x7ecb6c24282b]
+/opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vivado/2020.2/lib/lnx64.o/librdi_labtoolsRT.so(+0x428c8) [0x7ecb6c2428c8]
+/opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vivado/2020.2/lib/lnx64.o/librdi_labtoolsRT.so(LRT::Engine::run()+0x64a) [0x7ecb6c238daa]
+/opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vivado/2020.2/lib/lnx64.o/libboost_thread.so(+0xfa0d) [0x7ecbf0a0fa0d]
+/lib/x86_64-linux-gnu/libc.so.6(+0x9caa4) [0x7ecbf2a9caa4]
+/lib/x86_64-linux-gnu/libc.so.6(+0x129c3c) [0x7ecbf2b29c3c]

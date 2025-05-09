@@ -1,42 +1,21 @@
 -makelib ies_lib/xilinx_vip -sv \
-  "/opt/Xilinx/Vivado/2020.2/data/xilinx_vip/hdl/axi4stream_vip_axi4streampc.sv" \
-  "/opt/Xilinx/Vivado/2020.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv" \
-  "/opt/Xilinx/Vivado/2020.2/data/xilinx_vip/hdl/xil_common_vip_pkg.sv" \
-  "/opt/Xilinx/Vivado/2020.2/data/xilinx_vip/hdl/axi4stream_vip_pkg.sv" \
-  "/opt/Xilinx/Vivado/2020.2/data/xilinx_vip/hdl/axi_vip_pkg.sv" \
-  "/opt/Xilinx/Vivado/2020.2/data/xilinx_vip/hdl/axi4stream_vip_if.sv" \
-  "/opt/Xilinx/Vivado/2020.2/data/xilinx_vip/hdl/axi_vip_if.sv" \
-  "/opt/Xilinx/Vivado/2020.2/data/xilinx_vip/hdl/clk_vip_if.sv" \
-  "/opt/Xilinx/Vivado/2020.2/data/xilinx_vip/hdl/rst_vip_if.sv" \
+  "/opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vivado/2020.2/data/xilinx_vip/hdl/axi4stream_vip_axi4streampc.sv" \
+  "/opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vivado/2020.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv" \
+  "/opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vivado/2020.2/data/xilinx_vip/hdl/xil_common_vip_pkg.sv" \
+  "/opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vivado/2020.2/data/xilinx_vip/hdl/axi4stream_vip_pkg.sv" \
+  "/opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vivado/2020.2/data/xilinx_vip/hdl/axi_vip_pkg.sv" \
+  "/opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vivado/2020.2/data/xilinx_vip/hdl/axi4stream_vip_if.sv" \
+  "/opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vivado/2020.2/data/xilinx_vip/hdl/axi_vip_if.sv" \
+  "/opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vivado/2020.2/data/xilinx_vip/hdl/clk_vip_if.sv" \
+  "/opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vivado/2020.2/data/xilinx_vip/hdl/rst_vip_if.sv" \
 -endlib
 -makelib ies_lib/xpm -sv \
-  "/opt/Xilinx/Vivado/2020.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
-  "/opt/Xilinx/Vivado/2020.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv" \
-  "/opt/Xilinx/Vivado/2020.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
+  "/opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vivado/2020.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
+  "/opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vivado/2020.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv" \
+  "/opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vivado/2020.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
 -endlib
 -makelib ies_lib/xpm \
-  "/opt/Xilinx/Vivado/2020.2/data/ip/xpm/xpm_VCOMP.vhd" \
--endlib
--makelib ies_lib/xil_defaultlib \
-  "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/0737/hdl/verilog/toplevel_AXILiteS_s_axi.v" \
-  "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/0737/hdl/verilog/toplevel_control_s_axi.v" \
-  "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/0737/hdl/verilog/toplevel_dx.v" \
-  "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/0737/hdl/verilog/toplevel_dy.v" \
-  "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/0737/hdl/verilog/toplevel_grid_info_V.v" \
-  "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/0737/hdl/verilog/toplevel_local_world.v" \
-  "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/0737/hdl/verilog/toplevel_mac_muladd_16ns_9ns_9ns_18_4_1.v" \
-  "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/0737/hdl/verilog/toplevel_MAXI_m_axi.v" \
-  "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/0737/hdl/verilog/toplevel_mul_mul_16ns_9ns_18_4_1.v" \
-  "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/0737/hdl/verilog/toplevel_mul_mul_16ns_16ns_18_4_1.v" \
-  "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/0737/hdl/verilog/toplevel_open_set_heap_f_score_V.v" \
-  "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/0737/hdl/verilog/toplevel_open_set_heap_x_V.v" \
-  "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/0737/hdl/verilog/toplevel_os_sift_up.v" \
-  "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/0737/hdl/verilog/toplevel_os_sift_up_moves_node_f_score_V.v" \
-  "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/0737/hdl/verilog/toplevel_os_sift_up_moves_node_x_V.v" \
-  "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/0737/hdl/verilog/toplevel_os_sift_up_moves_target.v" \
-  "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/0737/hdl/verilog/toplevel_waypoints_x_V.v" \
-  "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/0737/hdl/verilog/toplevel.v" \
-  "../../../bd/zybo_design/ip/zybo_design_toplevel_0_4/sim/zybo_design_toplevel_0_4.v" \
+  "/opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vivado/2020.2/data/ip/xpm/xpm_VCOMP.vhd" \
 -endlib
 -makelib ies_lib/axi_infrastructure_v1_1_0 \
   "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v" \
@@ -177,6 +156,25 @@
 -endlib
 -makelib ies_lib/xil_defaultlib \
   "../../../bd/zybo_design/ip/zybo_design_xlconstant_0_3/sim/zybo_design_xlconstant_0_3.v" \
+  "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/542d/hdl/verilog/toplevel_AXILiteS_s_axi.v" \
+  "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/542d/hdl/verilog/toplevel_control_s_axi.v" \
+  "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/542d/hdl/verilog/toplevel_dx.v" \
+  "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/542d/hdl/verilog/toplevel_dy.v" \
+  "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/542d/hdl/verilog/toplevel_grid_info_V.v" \
+  "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/542d/hdl/verilog/toplevel_local_world.v" \
+  "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/542d/hdl/verilog/toplevel_mac_muladd_16ns_9ns_9ns_18_4_1.v" \
+  "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/542d/hdl/verilog/toplevel_MAXI_m_axi.v" \
+  "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/542d/hdl/verilog/toplevel_mul_mul_16ns_9ns_18_4_1.v" \
+  "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/542d/hdl/verilog/toplevel_mul_mul_16ns_16ns_18_4_1.v" \
+  "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/542d/hdl/verilog/toplevel_open_set_heap_f_score_V.v" \
+  "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/542d/hdl/verilog/toplevel_open_set_heap_x_V.v" \
+  "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/542d/hdl/verilog/toplevel_os_sift_up.v" \
+  "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/542d/hdl/verilog/toplevel_os_sift_up_moves_node_f_score_V.v" \
+  "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/542d/hdl/verilog/toplevel_os_sift_up_moves_node_x_V.v" \
+  "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/542d/hdl/verilog/toplevel_os_sift_up_moves_target.v" \
+  "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/542d/hdl/verilog/toplevel_waypoints_x_V.v" \
+  "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/542d/hdl/verilog/toplevel.v" \
+  "../../../bd/zybo_design/ip/zybo_design_toplevel_0_4/sim/zybo_design_toplevel_0_4.v" \
 -endlib
 -makelib ies_lib/axi_protocol_converter_v2_1_22 \
   "../../../../vivado.gen/sources_1/bd/zybo_design/ipshared/5cee/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \

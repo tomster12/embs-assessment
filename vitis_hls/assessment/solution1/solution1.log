@@ -33712,3 +33712,561 @@ Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2.2 (64-bit)
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2.2 (64-bit)
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z010-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_export -format=sysgen
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+INFO: [HLS 200-1510] Running: set_part xc7z010-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: config_export -format sysgen -rtl verilog 
+INFO: [HLS 200-1510] Running: set_directive_top -name toplevel toplevel 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 245.845 MB.
+INFO: [HLS 200-10] Analyzing design file 'assessment/toplevel.cpp' ... 
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:156:89
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:156:95
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:156:113
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:156:122
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:163:90
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:163:97
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:163:116
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:163:125
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:204:69
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:211:90
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:211:98
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:211:139
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:211:148
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:216:84
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:216:92
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:216:133
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:216:142
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:249:66
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:249:90
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:249:114
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:249:132
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:249:150
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:264:65
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:264:93
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:264:121
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:264:143
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:264:165
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint32_t' (aka 'unsigned int'): assessment/toplevel.cpp:318:67
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:318:78
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:318:105
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:318:132
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:318:153
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint8_t' (aka 'unsigned char'): assessment/toplevel.cpp:345:67
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint8_t' (aka 'unsigned char'): assessment/toplevel.cpp:350:57
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint8_t' (aka 'unsigned char'): assessment/toplevel.cpp:369:87
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:369:110
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:369:125
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint8_t' (aka 'unsigned char'): assessment/toplevel.cpp:380:93
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:380:116
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:380:131
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint8_t' (aka 'unsigned char'): assessment/toplevel.cpp:387:77
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:387:100
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:387:115
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:452:56
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint8_t' (aka 'unsigned char'): assessment/toplevel.cpp:452:68
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'int': assessment/toplevel.cpp:453:157
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'int': assessment/toplevel.cpp:453:160
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'int': assessment/toplevel.cpp:453:164
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'int': assessment/toplevel.cpp:453:189
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'int': assessment/toplevel.cpp:453:234
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'int': assessment/toplevel.cpp:453:242
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint8_t' (aka 'unsigned char'): assessment/toplevel.cpp:459:43
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'int': assessment/toplevel.cpp:459:46
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:489:66
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:489:87
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint32_t' (aka 'unsigned int'): assessment/toplevel.cpp:489:108
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 4.99 seconds. CPU system time: 0.54 seconds. Elapsed time: 5.46 seconds; current allocated memory: 247.641 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-131] Inlining function 'abs_sub(unsigned short, unsigned short)' into 'heuristic(Coord, Coord)' (assessment/toplevel.cpp:106:35)
+INFO: [HLS 214-131] Inlining function 'abs_sub(unsigned short, unsigned short)' into 'heuristic(Coord, Coord)' (assessment/toplevel.cpp:106:9)
+INFO: [HLS 214-131] Inlining function 'copy_asnode(ASNode*, ASNode*)' into 'os_sift_up(unsigned short)' (assessment/toplevel.cpp:230:3)
+INFO: [HLS 214-131] Inlining function 'copy_asnode(ASNode*, ASNode*)' into 'os_sift_up(unsigned short)' (assessment/toplevel.cpp:228:2)
+INFO: [HLS 214-131] Inlining function 'copy_asnode(ASNode*, ASNode*)' into 'os_sift_up(unsigned short)' (assessment/toplevel.cpp:217:3)
+INFO: [HLS 214-131] Inlining function 'copy_asnode(ASNode*, ASNode*)' into 'os_sift_down(unsigned short)' (assessment/toplevel.cpp:177:3)
+INFO: [HLS 214-131] Inlining function 'copy_asnode(ASNode*, ASNode*)' into 'os_sift_down(unsigned short)' (assessment/toplevel.cpp:175:2)
+INFO: [HLS 214-131] Inlining function 'copy_asnode(ASNode*, ASNode*)' into 'os_sift_down(unsigned short)' (assessment/toplevel.cpp:164:4)
+INFO: [HLS 214-131] Inlining function 'copy_asnode(ASNode*, ASNode*)' into 'os_sift_down(unsigned short)' (assessment/toplevel.cpp:157:4)
+INFO: [HLS 214-131] Inlining function 'os_sift_down(unsigned short)' into 'os_heap_pop()' (assessment/toplevel.cpp:267:6)
+INFO: [HLS 214-131] Inlining function 'heuristic(Coord, Coord)' into 'a_star(Coord, Coord)' (assessment/toplevel.cpp:293:24)
+INFO: [HLS 214-131] Inlining function 'os_heap_push(ASNode)' into 'a_star(Coord, Coord)' (assessment/toplevel.cpp:392:17)
+INFO: [HLS 214-131] Inlining function 'set_dir(unsigned short, unsigned short, unsigned char)' into 'a_star(Coord, Coord)' (assessment/toplevel.cpp:391:14)
+INFO: [HLS 214-131] Inlining function 'set_open(unsigned short, unsigned short)' into 'a_star(Coord, Coord)' (assessment/toplevel.cpp:390:17)
+INFO: [HLS 214-131] Inlining function 'os_heap_push(ASNode)' into 'a_star(Coord, Coord)' (assessment/toplevel.cpp:295:5)
+INFO: [HLS 214-131] Inlining function 'os_heap_pop()' into 'a_star(Coord, Coord)' (assessment/toplevel.cpp:317:26)
+INFO: [HLS 214-131] Inlining function 'set_dir(unsigned short, unsigned short, unsigned char)' into 'a_star(Coord, Coord)' (assessment/toplevel.cpp:373:22)
+INFO: [HLS 214-131] Inlining function 'os_find(ap_uint<11>, ap_uint<11>)' into 'a_star(Coord, Coord)' (assessment/toplevel.cpp:363:41)
+INFO: [HLS 214-131] Inlining function 'get_open(unsigned short, unsigned short)' into 'a_star(Coord, Coord)' (assessment/toplevel.cpp:361:30)
+INFO: [HLS 214-131] Inlining function 'heuristic(Coord, Coord)' into 'a_star(Coord, Coord)' (assessment/toplevel.cpp:355:37)
+INFO: [HLS 214-131] Inlining function 'get_world_bit(unsigned short, unsigned short)' into 'a_star(Coord, Coord)' (assessment/toplevel.cpp:349:17)
+INFO: [HLS 214-131] Inlining function 'set_world_bit(unsigned short, unsigned short)' into 'a_star(Coord, Coord)' (assessment/toplevel.cpp:331:9)
+INFO: [HLS 214-131] Inlining function 'get_dir(unsigned short, unsigned short)' into 'toplevel(unsigned int*, unsigned int*)' (assessment/toplevel.cpp:491:28)
+INFO: [HLS 214-131] Inlining function 'a_star(Coord, Coord)' into 'toplevel(unsigned int*, unsigned int*)' (assessment/toplevel.cpp:475:27)
+INFO: [HLS 214-186] Unrolling loop 'EXPLORE_NEIGHBORS_LOOP' (assessment/toplevel.cpp:334:33) in function 'toplevel' completely with a factor of 4 (assessment/toplevel.cpp:334:33)
+WARNING: [HLS 214-167] The program may have out of bound array access (assessment/toplevel.cpp:245:38)
+WARNING: [HLS 214-167] The program may have out of bound array access (assessment/toplevel.cpp:245:38)
+WARNING: [HLS 214-167] The program may have out of bound array access (assessment/toplevel.cpp:245:38)
+WARNING: [HLS 214-167] The program may have out of bound array access (assessment/toplevel.cpp:245:38)
+WARNING: [HLS 214-167] The program may have out of bound array access (assessment/toplevel.cpp:260:20)
+WARNING: [HLS 214-167] The program may have out of bound array access (assessment/toplevel.cpp:260:20)
+WARNING: [HLS 214-167] The program may have out of bound array access (assessment/toplevel.cpp:260:20)
+WARNING: [HLS 214-167] The program may have out of bound array access (assessment/toplevel.cpp:261:22)
+WARNING: [HLS 214-167] The program may have out of bound array access (assessment/toplevel.cpp:261:22)
+WARNING: [HLS 214-167] The program may have out of bound array access (assessment/toplevel.cpp:261:22)
+WARNING: [HLS 214-167] The program may have out of bound array access (assessment/toplevel.cpp:261:22)
+INFO: [HLS 214-115] Multiple burst reads of length 7813 and bit width 32 in loop 'COPY_RAM_LOOP'(assessment/toplevel.cpp:433:20) has been inferred on port 'MAXI' (assessment/toplevel.cpp:433:20)
+INFO: [HLS 214-115] Multiple burst reads of variable length and bit width 32 in loop 'WAYPOINT_EXTRACT_LOOP'(assessment/toplevel.cpp:446:28) has been inferred on port 'MAXI' (assessment/toplevel.cpp:446:28)
+INFO: [HLS 214-115] Multiple burst reads of length 7813 and bit width 32 in loop 'RESET_WORLD_LOOP'(assessment/toplevel.cpp:467:27) has been inferred on port 'MAXI' (assessment/toplevel.cpp:467:27)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.53 seconds. CPU system time: 0.3 seconds. Elapsed time: 4.86 seconds; current allocated memory: 250.879 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 250.881 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.12 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.3 seconds; current allocated memory: 260.931 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.19 seconds. CPU system time: 0 seconds. Elapsed time: 0.22 seconds; current allocated memory: 270.419 MB.
+WARNING: [XFORM 203-803] Dropped interface mode 'ap_auto' on 'code' (assessment/toplevel.cpp:418) as it is incompatible with its interface mode 's_axilite'.
+INFO: [XFORM 203-510] Pipelining loop 'COPY_RAM_LOOP' (assessment/toplevel.cpp:433) in function 'toplevel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'WAYPOINT_EXTRACT_LOOP' (assessment/toplevel.cpp:446) in function 'toplevel' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'AS_SEARCH_LOOP' (assessment/toplevel.cpp:311) in function 'toplevel' for pipelining.
+WARNING: [XFORM 203-505] Ignored pipeline directive for loop 'SIFT_DOWN_LOOP' (assessment/toplevel.cpp:137) because its parent loop or function is pipelined.
+WARNING: [XFORM 203-503] Ignored partial unroll directive for loop 'SIFT_DOWN_LOOP' (assessment/toplevel.cpp:137) because its parent loop or function is pipelined.
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'os_sift_up' (assessment/toplevel.cpp:181).
+WARNING: [XFORM 203-505] Ignored pipeline directive for loop 'SIFT_UP_LOOP' (assessment/toplevel.cpp:198) because its parent loop or function is pipelined.
+WARNING: [XFORM 203-503] Ignored partial unroll directive for loop 'SIFT_UP_LOOP' (assessment/toplevel.cpp:198) because its parent loop or function is pipelined.
+WARNING: [XFORM 203-503] Ignored partial unroll directive for loop 'SIFT_UP_COPY_LOOP' (assessment/toplevel.cpp:225) because its parent loop or function is pipelined.
+WARNING: [XFORM 203-561] Updating loop lower bound from 1 to 7813 for loop 'RESET_WORLD_LOOP' (assessment/toplevel.cpp:467:41) in function 'toplevel'.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_128_1' (assessment/toplevel.cpp:128) in function 'toplevel' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'SIFT_DOWN_LOOP' (assessment/toplevel.cpp:137) in function 'toplevel' completely with a factor of 16.
+WARNING: [HLS 200-936] Cannot unroll loop 'SIFT_DOWN_COPY_LOOP' (assessment/toplevel.cpp:173) in function 'toplevel': cannot completely unroll a loop with a variable trip count.
+WARNING: [HLS 200-936] Cannot unroll loop 'OS_FIND_LOOP' (assessment/toplevel.cpp:278) in function 'toplevel': cannot completely unroll a loop with a variable trip count.
+WARNING: [HLS 200-936] Cannot unroll loop 'OS_FIND_LOOP' (assessment/toplevel.cpp:278) in function 'toplevel': cannot completely unroll a loop with a variable trip count.
+WARNING: [HLS 200-936] Cannot unroll loop 'OS_FIND_LOOP' (assessment/toplevel.cpp:278) in function 'toplevel': cannot completely unroll a loop with a variable trip count.
+WARNING: [HLS 200-936] Cannot unroll loop 'OS_FIND_LOOP' (assessment/toplevel.cpp:278) in function 'toplevel': cannot completely unroll a loop with a variable trip count.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_189_1' (assessment/toplevel.cpp:189) in function 'os_sift_up' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'SIFT_UP_LOOP' (assessment/toplevel.cpp:198) in function 'os_sift_up' completely with a factor of 16.
+WARNING: [HLS 200-936] Cannot unroll loop 'SIFT_UP_COPY_LOOP' (assessment/toplevel.cpp:225) in function 'os_sift_up': cannot completely unroll a loop with a variable trip count.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:117:7) to (assessment/toplevel.cpp:150:29) in function 'toplevel'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:117:7) to (assessment/toplevel.cpp:150:29) in function 'toplevel'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:117:7) to (assessment/toplevel.cpp:150:29) in function 'toplevel'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:117:7) to (assessment/toplevel.cpp:150:29) in function 'toplevel'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:117:7) to (assessment/toplevel.cpp:150:29) in function 'toplevel'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:117:7) to (assessment/toplevel.cpp:150:29) in function 'toplevel'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:117:7) to (assessment/toplevel.cpp:150:29) in function 'toplevel'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:117:7) to (assessment/toplevel.cpp:150:29) in function 'toplevel'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:117:7) to (assessment/toplevel.cpp:150:29) in function 'toplevel'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:117:7) to (assessment/toplevel.cpp:150:29) in function 'toplevel'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:117:7) to (assessment/toplevel.cpp:150:29) in function 'toplevel'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:117:7) to (assessment/toplevel.cpp:150:29) in function 'toplevel'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:117:7) to (assessment/toplevel.cpp:150:29) in function 'toplevel'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:117:7) to (assessment/toplevel.cpp:150:29) in function 'toplevel'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:117:7) to (assessment/toplevel.cpp:150:29) in function 'toplevel'... converting 5 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 1.36 seconds. CPU system time: 0.03 seconds. Elapsed time: 1.56 seconds; current allocated memory: 306.419 MB.
+WARNING: [HLS 200-960] Cannot flatten loop 'AS_SEARCH_LOOP' (assessment/toplevel.cpp:311:14) in function 'toplevel' more than one sub loop.
+WARNING: [HLS 200-960] Cannot flatten loop 'WAYPOINT_LOOP' (assessment/toplevel.cpp:459:48) in function 'toplevel' more than one sub loop.
+INFO: [HLS 200-472] Inferring partial write operation for 'local_world' (assessment/toplevel.cpp:434:21)
+INFO: [HLS 200-472] Inferring partial write operation for 'waypoints.x.V' (assessment/toplevel.cpp:448:24)
+INFO: [HLS 200-472] Inferring partial write operation for 'waypoints.y.V' (assessment/toplevel.cpp:449:24)
+INFO: [HLS 200-472] Inferring partial write operation for 'grid_info.V' (assessment/toplevel.cpp:464:15)
+INFO: [HLS 200-472] Inferring partial write operation for 'local_world' (assessment/toplevel.cpp:470:17)
+INFO: [HLS 200-472] Inferring partial write operation for 'open_set_heap.f_score.V' (assessment/toplevel.cpp:245:38)
+INFO: [HLS 200-472] Inferring partial write operation for 'open_set_heap.f_score.V' (assessment/toplevel.cpp:261:22)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.f_score.V' (assessment/toplevel.cpp:129:28)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.g_score.V' (assessment/toplevel.cpp:130:28)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.x.V' (assessment/toplevel.cpp:131:22)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.y.V' (assessment/toplevel.cpp:132:22)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.target' (assessment/toplevel.cpp:133:22)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.y.V' (assessment/toplevel.cpp:117:7)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.target' (assessment/toplevel.cpp:158:29)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.f_score.V' (assessment/toplevel.cpp:114:13)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.g_score.V' (assessment/toplevel.cpp:115:13)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.x.V' (assessment/toplevel.cpp:116:7)
+INFO: [HLS 200-472] Inferring partial write operation for 'local_world' (assessment/toplevel.cpp:76:23)
+INFO: [HLS 200-472] Inferring partial write operation for 'open_set_heap.f_score.V' (assessment/toplevel.cpp:371:58)
+INFO: [HLS 200-472] Inferring partial write operation for 'open_set_heap.g_score.V' (assessment/toplevel.cpp:372:58)
+INFO: [HLS 200-472] Inferring partial write operation for 'grid_info.V' 
+INFO: [HLS 200-472] Inferring partial write operation for 'open_set_heap.f_score.V' (assessment/toplevel.cpp:239:42)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.f_score.V' (assessment/toplevel.cpp:190:28)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.g_score.V' (assessment/toplevel.cpp:191:28)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.x.V' (assessment/toplevel.cpp:192:22)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.y.V' (assessment/toplevel.cpp:193:22)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.target' (assessment/toplevel.cpp:194:22)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.f_score.V' (assessment/toplevel.cpp:114:13)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.g_score.V' (assessment/toplevel.cpp:115:13)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.x.V' (assessment/toplevel.cpp:116:7)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.y.V' (assessment/toplevel.cpp:117:7)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.target' (assessment/toplevel.cpp:218:28)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 1.28 seconds. CPU system time: 0.02 seconds. Elapsed time: 1.46 seconds; current allocated memory: 328.956 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'toplevel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'os_sift_up' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-65] Unable to satisfy pipeline directive for function 'os_sift_up': contains subloop(s) that are not unrolled.
+INFO: [SCHED 204-61] Pipelining loop 'SIFT_UP_COPY_LOOP'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'SIFT_UP_COPY_LOOP'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.62 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.73 seconds; current allocated memory: 334.600 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.35 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.42 seconds; current allocated memory: 337.117 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'toplevel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=iteration_limit) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln73) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln65) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln65_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln91) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'COPY_RAM_LOOP'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'COPY_RAM_LOOP'
+INFO: [SCHED 204-61] Pipelining loop 'WAYPOINT_EXTRACT_LOOP'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'WAYPOINT_EXTRACT_LOOP'
+INFO: [SCHED 204-61] Pipelining loop 'EMPTY_GRID_INFO_LOOP'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'EMPTY_GRID_INFO_LOOP'
+INFO: [SCHED 204-61] Pipelining loop 'RESET_WORLD_LOOP'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'RESET_WORLD_LOOP'
+WARNING: [SCHED 204-65] Unable to satisfy pipeline directive for loop 'AS_SEARCH_LOOP': contains subloop(s) that are not unrolled or flattened.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 3.69 seconds. CPU system time: 0.03 seconds. Elapsed time: 3.93 seconds; current allocated memory: 342.186 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1.45 seconds. CPU system time: 0.03 seconds. Elapsed time: 1.67 seconds; current allocated memory: 349.262 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'os_sift_up' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'os_sift_up'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.24 seconds. CPU system time: 0.03 seconds. Elapsed time: 1.68 seconds; current allocated memory: 352.298 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'toplevel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'toplevel/MAXI' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'toplevel/ram' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'toplevel/code' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'toplevel' to 's_axilite & ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Register 'waypoint_count' is power-on initialization.
+INFO: [RTGEN 206-100] Bundling port 'code' to AXI-Lite port AXILiteS.
+INFO: [RTGEN 206-100] Bundling port 'ram' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_16ns_9ns_9ns_18_4_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_mul_16ns_16ns_18_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_mul_16ns_9ns_18_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'toplevel'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.04 seconds. CPU system time: 0.03 seconds. Elapsed time: 1.21 seconds; current allocated memory: 372.462 MB.
+INFO: [RTMG 210-278] Implementing memory 'toplevel_os_sift_up_moves_node_f_score_V_ram (RAM)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'toplevel_os_sift_up_moves_node_x_V_ram (RAM)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'toplevel_os_sift_up_moves_target_ram (RAM)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'toplevel_local_world_ram (RAM_T2P_BRAM)' using block RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'toplevel_waypoints_x_V_ram (RAM)' using auto RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'toplevel_grid_info_V_ram (RAM_T2P_BRAM)' using block RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'toplevel_open_set_heap_f_score_V_ram (RAM_1P_LUTRAM)' using distributed RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'toplevel_open_set_heap_x_V_ram (RAM_1P_LUTRAM)' using distributed RAMs with power-on initialization.
+INFO: [RTMG 210-279] Implementing memory 'toplevel_dx_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'toplevel_dy_rom' using auto ROMs.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 5.77 seconds. CPU system time: 0.33 seconds. Elapsed time: 10.04 seconds; current allocated memory: 411.002 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for toplevel.
+INFO: [VLOG 209-307] Generating Verilog RTL for toplevel.
+INFO: [HLS 200-1603] Design has MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 136.99 MHz
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2.2 (64-bit)
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2.2 (64-bit)
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2.2 (64-bit)
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z010-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_export -format=sysgen
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+INFO: [HLS 200-1510] Running: set_part xc7z010-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: config_export -format sysgen -rtl verilog 
+INFO: [HLS 200-1510] Running: set_directive_top -name toplevel toplevel 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 245.802 MB.
+INFO: [HLS 200-10] Analyzing design file 'assessment/toplevel.cpp' ... 
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:156:89
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:156:95
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:156:113
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:156:122
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:163:90
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:163:97
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:163:116
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:163:125
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:204:69
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:211:90
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:211:98
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:211:139
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:211:148
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:216:84
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:216:92
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:216:133
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:216:142
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:249:66
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:249:90
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:249:114
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:249:132
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:249:150
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:264:65
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:264:93
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:264:121
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:264:143
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:264:165
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint32_t' (aka 'unsigned int'): assessment/toplevel.cpp:318:67
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:318:78
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:318:105
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:318:132
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:318:153
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint8_t' (aka 'unsigned char'): assessment/toplevel.cpp:345:67
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint8_t' (aka 'unsigned char'): assessment/toplevel.cpp:350:57
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint8_t' (aka 'unsigned char'): assessment/toplevel.cpp:369:87
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:369:110
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:369:125
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint8_t' (aka 'unsigned char'): assessment/toplevel.cpp:380:93
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:380:116
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:380:131
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint8_t' (aka 'unsigned char'): assessment/toplevel.cpp:387:77
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:387:100
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:387:115
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:452:56
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint8_t' (aka 'unsigned char'): assessment/toplevel.cpp:452:68
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'int': assessment/toplevel.cpp:453:157
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'int': assessment/toplevel.cpp:453:160
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'int': assessment/toplevel.cpp:453:164
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'int': assessment/toplevel.cpp:453:189
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'int': assessment/toplevel.cpp:453:234
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'int': assessment/toplevel.cpp:453:242
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint8_t' (aka 'unsigned char'): assessment/toplevel.cpp:459:43
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'int': assessment/toplevel.cpp:459:46
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:489:66
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint16_t' (aka 'unsigned short'): assessment/toplevel.cpp:489:87
+WARNING: [HLS 207-4855] format specifies type 'unsigned long' but the argument has type 'uint32_t' (aka 'unsigned int'): assessment/toplevel.cpp:489:108
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 4.17 seconds. CPU system time: 0.42 seconds. Elapsed time: 4.94 seconds; current allocated memory: 247.590 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-131] Inlining function 'abs_sub(unsigned short, unsigned short)' into 'heuristic(Coord, Coord)' (assessment/toplevel.cpp:106:35)
+INFO: [HLS 214-131] Inlining function 'abs_sub(unsigned short, unsigned short)' into 'heuristic(Coord, Coord)' (assessment/toplevel.cpp:106:9)
+INFO: [HLS 214-131] Inlining function 'copy_asnode(ASNode*, ASNode*)' into 'os_sift_up(unsigned short)' (assessment/toplevel.cpp:230:3)
+INFO: [HLS 214-131] Inlining function 'copy_asnode(ASNode*, ASNode*)' into 'os_sift_up(unsigned short)' (assessment/toplevel.cpp:228:2)
+INFO: [HLS 214-131] Inlining function 'copy_asnode(ASNode*, ASNode*)' into 'os_sift_up(unsigned short)' (assessment/toplevel.cpp:217:3)
+INFO: [HLS 214-131] Inlining function 'copy_asnode(ASNode*, ASNode*)' into 'os_sift_down(unsigned short)' (assessment/toplevel.cpp:177:3)
+INFO: [HLS 214-131] Inlining function 'copy_asnode(ASNode*, ASNode*)' into 'os_sift_down(unsigned short)' (assessment/toplevel.cpp:175:2)
+INFO: [HLS 214-131] Inlining function 'copy_asnode(ASNode*, ASNode*)' into 'os_sift_down(unsigned short)' (assessment/toplevel.cpp:164:4)
+INFO: [HLS 214-131] Inlining function 'copy_asnode(ASNode*, ASNode*)' into 'os_sift_down(unsigned short)' (assessment/toplevel.cpp:157:4)
+INFO: [HLS 214-131] Inlining function 'os_sift_down(unsigned short)' into 'os_heap_pop()' (assessment/toplevel.cpp:267:6)
+INFO: [HLS 214-131] Inlining function 'heuristic(Coord, Coord)' into 'a_star(Coord, Coord)' (assessment/toplevel.cpp:293:24)
+INFO: [HLS 214-131] Inlining function 'os_heap_push(ASNode)' into 'a_star(Coord, Coord)' (assessment/toplevel.cpp:392:17)
+INFO: [HLS 214-131] Inlining function 'set_dir(unsigned short, unsigned short, unsigned char)' into 'a_star(Coord, Coord)' (assessment/toplevel.cpp:391:14)
+INFO: [HLS 214-131] Inlining function 'set_open(unsigned short, unsigned short)' into 'a_star(Coord, Coord)' (assessment/toplevel.cpp:390:17)
+INFO: [HLS 214-131] Inlining function 'os_heap_push(ASNode)' into 'a_star(Coord, Coord)' (assessment/toplevel.cpp:295:5)
+INFO: [HLS 214-131] Inlining function 'os_heap_pop()' into 'a_star(Coord, Coord)' (assessment/toplevel.cpp:317:26)
+INFO: [HLS 214-131] Inlining function 'set_dir(unsigned short, unsigned short, unsigned char)' into 'a_star(Coord, Coord)' (assessment/toplevel.cpp:373:22)
+INFO: [HLS 214-131] Inlining function 'os_find(ap_uint<11>, ap_uint<11>)' into 'a_star(Coord, Coord)' (assessment/toplevel.cpp:363:41)
+INFO: [HLS 214-131] Inlining function 'get_open(unsigned short, unsigned short)' into 'a_star(Coord, Coord)' (assessment/toplevel.cpp:361:30)
+INFO: [HLS 214-131] Inlining function 'heuristic(Coord, Coord)' into 'a_star(Coord, Coord)' (assessment/toplevel.cpp:355:37)
+INFO: [HLS 214-131] Inlining function 'get_world_bit(unsigned short, unsigned short)' into 'a_star(Coord, Coord)' (assessment/toplevel.cpp:349:17)
+INFO: [HLS 214-131] Inlining function 'set_world_bit(unsigned short, unsigned short)' into 'a_star(Coord, Coord)' (assessment/toplevel.cpp:331:9)
+INFO: [HLS 214-131] Inlining function 'get_dir(unsigned short, unsigned short)' into 'toplevel(unsigned int*, unsigned int*)' (assessment/toplevel.cpp:491:28)
+INFO: [HLS 214-131] Inlining function 'a_star(Coord, Coord)' into 'toplevel(unsigned int*, unsigned int*)' (assessment/toplevel.cpp:475:27)
+INFO: [HLS 214-186] Unrolling loop 'EXPLORE_NEIGHBORS_LOOP' (assessment/toplevel.cpp:334:33) in function 'toplevel' completely with a factor of 4 (assessment/toplevel.cpp:334:33)
+WARNING: [HLS 214-167] The program may have out of bound array access (assessment/toplevel.cpp:245:38)
+WARNING: [HLS 214-167] The program may have out of bound array access (assessment/toplevel.cpp:245:38)
+WARNING: [HLS 214-167] The program may have out of bound array access (assessment/toplevel.cpp:245:38)
+WARNING: [HLS 214-167] The program may have out of bound array access (assessment/toplevel.cpp:245:38)
+WARNING: [HLS 214-167] The program may have out of bound array access (assessment/toplevel.cpp:260:20)
+WARNING: [HLS 214-167] The program may have out of bound array access (assessment/toplevel.cpp:260:20)
+WARNING: [HLS 214-167] The program may have out of bound array access (assessment/toplevel.cpp:260:20)
+WARNING: [HLS 214-167] The program may have out of bound array access (assessment/toplevel.cpp:261:22)
+WARNING: [HLS 214-167] The program may have out of bound array access (assessment/toplevel.cpp:261:22)
+WARNING: [HLS 214-167] The program may have out of bound array access (assessment/toplevel.cpp:261:22)
+WARNING: [HLS 214-167] The program may have out of bound array access (assessment/toplevel.cpp:261:22)
+INFO: [HLS 214-115] Multiple burst reads of length 7813 and bit width 32 in loop 'COPY_RAM_LOOP'(assessment/toplevel.cpp:433:20) has been inferred on port 'MAXI' (assessment/toplevel.cpp:433:20)
+INFO: [HLS 214-115] Multiple burst reads of variable length and bit width 32 in loop 'WAYPOINT_EXTRACT_LOOP'(assessment/toplevel.cpp:446:28) has been inferred on port 'MAXI' (assessment/toplevel.cpp:446:28)
+INFO: [HLS 214-115] Multiple burst reads of length 7813 and bit width 32 in loop 'RESET_WORLD_LOOP'(assessment/toplevel.cpp:467:27) has been inferred on port 'MAXI' (assessment/toplevel.cpp:467:27)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.7 seconds. CPU system time: 0.28 seconds. Elapsed time: 4.46 seconds; current allocated memory: 250.871 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 250.873 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.11 seconds. CPU system time: 0 seconds. Elapsed time: 0.17 seconds; current allocated memory: 260.919 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.2 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.22 seconds; current allocated memory: 270.419 MB.
+WARNING: [XFORM 203-803] Dropped interface mode 'ap_auto' on 'code' (assessment/toplevel.cpp:418) as it is incompatible with its interface mode 's_axilite'.
+INFO: [XFORM 203-510] Pipelining loop 'COPY_RAM_LOOP' (assessment/toplevel.cpp:433) in function 'toplevel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'WAYPOINT_EXTRACT_LOOP' (assessment/toplevel.cpp:446) in function 'toplevel' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'AS_SEARCH_LOOP' (assessment/toplevel.cpp:311) in function 'toplevel' for pipelining.
+WARNING: [XFORM 203-505] Ignored pipeline directive for loop 'SIFT_DOWN_LOOP' (assessment/toplevel.cpp:137) because its parent loop or function is pipelined.
+WARNING: [XFORM 203-503] Ignored partial unroll directive for loop 'SIFT_DOWN_LOOP' (assessment/toplevel.cpp:137) because its parent loop or function is pipelined.
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'os_sift_up' (assessment/toplevel.cpp:181).
+WARNING: [XFORM 203-505] Ignored pipeline directive for loop 'SIFT_UP_LOOP' (assessment/toplevel.cpp:198) because its parent loop or function is pipelined.
+WARNING: [XFORM 203-503] Ignored partial unroll directive for loop 'SIFT_UP_LOOP' (assessment/toplevel.cpp:198) because its parent loop or function is pipelined.
+WARNING: [XFORM 203-503] Ignored partial unroll directive for loop 'SIFT_UP_COPY_LOOP' (assessment/toplevel.cpp:225) because its parent loop or function is pipelined.
+WARNING: [XFORM 203-561] Updating loop lower bound from 1 to 7813 for loop 'RESET_WORLD_LOOP' (assessment/toplevel.cpp:467:41) in function 'toplevel'.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_128_1' (assessment/toplevel.cpp:128) in function 'toplevel' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'SIFT_DOWN_LOOP' (assessment/toplevel.cpp:137) in function 'toplevel' completely with a factor of 16.
+WARNING: [HLS 200-936] Cannot unroll loop 'SIFT_DOWN_COPY_LOOP' (assessment/toplevel.cpp:173) in function 'toplevel': cannot completely unroll a loop with a variable trip count.
+WARNING: [HLS 200-936] Cannot unroll loop 'OS_FIND_LOOP' (assessment/toplevel.cpp:278) in function 'toplevel': cannot completely unroll a loop with a variable trip count.
+WARNING: [HLS 200-936] Cannot unroll loop 'OS_FIND_LOOP' (assessment/toplevel.cpp:278) in function 'toplevel': cannot completely unroll a loop with a variable trip count.
+WARNING: [HLS 200-936] Cannot unroll loop 'OS_FIND_LOOP' (assessment/toplevel.cpp:278) in function 'toplevel': cannot completely unroll a loop with a variable trip count.
+WARNING: [HLS 200-936] Cannot unroll loop 'OS_FIND_LOOP' (assessment/toplevel.cpp:278) in function 'toplevel': cannot completely unroll a loop with a variable trip count.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_189_1' (assessment/toplevel.cpp:189) in function 'os_sift_up' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'SIFT_UP_LOOP' (assessment/toplevel.cpp:198) in function 'os_sift_up' completely with a factor of 16.
+WARNING: [HLS 200-936] Cannot unroll loop 'SIFT_UP_COPY_LOOP' (assessment/toplevel.cpp:225) in function 'os_sift_up': cannot completely unroll a loop with a variable trip count.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:117:7) to (assessment/toplevel.cpp:150:29) in function 'toplevel'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:117:7) to (assessment/toplevel.cpp:150:29) in function 'toplevel'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:117:7) to (assessment/toplevel.cpp:150:29) in function 'toplevel'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:117:7) to (assessment/toplevel.cpp:150:29) in function 'toplevel'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:117:7) to (assessment/toplevel.cpp:150:29) in function 'toplevel'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:117:7) to (assessment/toplevel.cpp:150:29) in function 'toplevel'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:117:7) to (assessment/toplevel.cpp:150:29) in function 'toplevel'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:117:7) to (assessment/toplevel.cpp:150:29) in function 'toplevel'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:117:7) to (assessment/toplevel.cpp:150:29) in function 'toplevel'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:117:7) to (assessment/toplevel.cpp:150:29) in function 'toplevel'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:117:7) to (assessment/toplevel.cpp:150:29) in function 'toplevel'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:117:7) to (assessment/toplevel.cpp:150:29) in function 'toplevel'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:117:7) to (assessment/toplevel.cpp:150:29) in function 'toplevel'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:117:7) to (assessment/toplevel.cpp:150:29) in function 'toplevel'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (assessment/toplevel.cpp:117:7) to (assessment/toplevel.cpp:150:29) in function 'toplevel'... converting 5 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 1.34 seconds. CPU system time: 0.02 seconds. Elapsed time: 1.51 seconds; current allocated memory: 306.410 MB.
+WARNING: [HLS 200-960] Cannot flatten loop 'AS_SEARCH_LOOP' (assessment/toplevel.cpp:311:14) in function 'toplevel' more than one sub loop.
+WARNING: [HLS 200-960] Cannot flatten loop 'WAYPOINT_LOOP' (assessment/toplevel.cpp:459:48) in function 'toplevel' more than one sub loop.
+INFO: [HLS 200-472] Inferring partial write operation for 'local_world' (assessment/toplevel.cpp:434:21)
+INFO: [HLS 200-472] Inferring partial write operation for 'waypoints.x.V' (assessment/toplevel.cpp:448:24)
+INFO: [HLS 200-472] Inferring partial write operation for 'waypoints.y.V' (assessment/toplevel.cpp:449:24)
+INFO: [HLS 200-472] Inferring partial write operation for 'grid_info.V' (assessment/toplevel.cpp:464:15)
+INFO: [HLS 200-472] Inferring partial write operation for 'local_world' (assessment/toplevel.cpp:470:17)
+INFO: [HLS 200-472] Inferring partial write operation for 'open_set_heap.f_score.V' (assessment/toplevel.cpp:245:38)
+INFO: [HLS 200-472] Inferring partial write operation for 'open_set_heap.f_score.V' (assessment/toplevel.cpp:261:22)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.f_score.V' (assessment/toplevel.cpp:129:28)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.g_score.V' (assessment/toplevel.cpp:130:28)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.x.V' (assessment/toplevel.cpp:131:22)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.y.V' (assessment/toplevel.cpp:132:22)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.target' (assessment/toplevel.cpp:133:22)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.y.V' (assessment/toplevel.cpp:117:7)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.target' (assessment/toplevel.cpp:158:29)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.f_score.V' (assessment/toplevel.cpp:114:13)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.g_score.V' (assessment/toplevel.cpp:115:13)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.x.V' (assessment/toplevel.cpp:116:7)
+INFO: [HLS 200-472] Inferring partial write operation for 'local_world' (assessment/toplevel.cpp:76:23)
+INFO: [HLS 200-472] Inferring partial write operation for 'open_set_heap.f_score.V' (assessment/toplevel.cpp:371:58)
+INFO: [HLS 200-472] Inferring partial write operation for 'open_set_heap.g_score.V' (assessment/toplevel.cpp:372:58)
+INFO: [HLS 200-472] Inferring partial write operation for 'grid_info.V' 
+INFO: [HLS 200-472] Inferring partial write operation for 'open_set_heap.f_score.V' (assessment/toplevel.cpp:239:42)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.f_score.V' (assessment/toplevel.cpp:190:28)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.g_score.V' (assessment/toplevel.cpp:191:28)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.x.V' (assessment/toplevel.cpp:192:22)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.y.V' (assessment/toplevel.cpp:193:22)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.target' (assessment/toplevel.cpp:194:22)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.f_score.V' (assessment/toplevel.cpp:114:13)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.g_score.V' (assessment/toplevel.cpp:115:13)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.x.V' (assessment/toplevel.cpp:116:7)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.node.y.V' (assessment/toplevel.cpp:117:7)
+INFO: [HLS 200-472] Inferring partial write operation for 'moves.target' (assessment/toplevel.cpp:218:28)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 1.25 seconds. CPU system time: 0.02 seconds. Elapsed time: 1.37 seconds; current allocated memory: 328.916 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'toplevel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'os_sift_up' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-65] Unable to satisfy pipeline directive for function 'os_sift_up': contains subloop(s) that are not unrolled.
+INFO: [SCHED 204-61] Pipelining loop 'SIFT_UP_COPY_LOOP'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'SIFT_UP_COPY_LOOP'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.61 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.66 seconds; current allocated memory: 334.575 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.35 seconds. CPU system time: 0 seconds. Elapsed time: 0.42 seconds; current allocated memory: 337.089 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'toplevel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=iteration_limit) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln73) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln65) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln65_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln91) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'COPY_RAM_LOOP'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'COPY_RAM_LOOP'
+INFO: [SCHED 204-61] Pipelining loop 'WAYPOINT_EXTRACT_LOOP'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'WAYPOINT_EXTRACT_LOOP'
+INFO: [SCHED 204-61] Pipelining loop 'EMPTY_GRID_INFO_LOOP'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'EMPTY_GRID_INFO_LOOP'
+INFO: [SCHED 204-61] Pipelining loop 'RESET_WORLD_LOOP'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'RESET_WORLD_LOOP'
+WARNING: [SCHED 204-65] Unable to satisfy pipeline directive for loop 'AS_SEARCH_LOOP': contains subloop(s) that are not unrolled or flattened.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 3.67 seconds. CPU system time: 0.04 seconds. Elapsed time: 3.85 seconds; current allocated memory: 342.188 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1.47 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.7 seconds; current allocated memory: 349.270 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'os_sift_up' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'os_sift_up'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.28 seconds. CPU system time: 0.03 seconds. Elapsed time: 1.65 seconds; current allocated memory: 352.299 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'toplevel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'toplevel/MAXI' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'toplevel/ram' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'toplevel/code' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'toplevel' to 's_axilite & ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Register 'waypoint_count' is power-on initialization.
+INFO: [RTGEN 206-100] Bundling port 'code' to AXI-Lite port AXILiteS.
+INFO: [RTGEN 206-100] Bundling port 'ram' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_16ns_9ns_9ns_18_4_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_mul_16ns_16ns_18_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_mul_16ns_9ns_18_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'toplevel'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.03 seconds. CPU system time: 0.04 seconds. Elapsed time: 1.26 seconds; current allocated memory: 372.418 MB.
+INFO: [RTMG 210-278] Implementing memory 'toplevel_os_sift_up_moves_node_f_score_V_ram (RAM)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'toplevel_os_sift_up_moves_node_x_V_ram (RAM)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'toplevel_os_sift_up_moves_target_ram (RAM)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'toplevel_local_world_ram (RAM_T2P_BRAM)' using block RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'toplevel_waypoints_x_V_ram (RAM)' using auto RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'toplevel_grid_info_V_ram (RAM_T2P_BRAM)' using block RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'toplevel_open_set_heap_f_score_V_ram (RAM_1P_LUTRAM)' using distributed RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'toplevel_open_set_heap_x_V_ram (RAM_1P_LUTRAM)' using distributed RAMs with power-on initialization.
+INFO: [RTMG 210-279] Implementing memory 'toplevel_dx_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'toplevel_dy_rom' using auto ROMs.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 5.76 seconds. CPU system time: 0.32 seconds. Elapsed time: 8.18 seconds; current allocated memory: 410.909 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for toplevel.
+INFO: [VLOG 209-307] Generating Verilog RTL for toplevel.
+INFO: [HLS 200-1603] Design has MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 136.99 MHz
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2.2 (64-bit)
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+==============================================================

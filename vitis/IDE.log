@@ -8279,3 +8279,1891 @@ con
 
 01:19:18 INFO  : Launch script is exported to file '/home/tomster12/files/EMBS/vitis/assessment_system/_ide/scripts/assessment_system_standalone.tcl'
 01:20:45 WARN  : channel "tcfchan#98" closed
+09:48:36 INFO  : Launching XSCT server: xsct -n  -interactive /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/temp_xsdb_launch_script.tcl
+09:48:40 INFO  : XSCT server has started successfully.
+09:48:40 INFO  : plnx-install-location is set to ''
+09:48:40 INFO  : Successfully done setting XSCT server connection channel  
+09:48:40 INFO  : Successfully done setting workspace for the tool. 
+09:48:42 ERROR : Error encountered while initializing user repository paths
+Reason: No Platforms Found.
+
+
+09:48:42 INFO  : Platform repository initialization has completed.
+09:48:42 INFO  : Registering command handlers for Vitis TCF services
+09:48:44 INFO  : Successfully done query RDI_DATADIR 
+09:48:44 INFO  : Restoring local repository preferences: 
+		 /home/tomster12/files/EMBS/vitis_hls/assessment
+09:48:44 WARN  : Invalid repository path /home/tomster12/files/EMBS/vitis_hls/assessment.
+09:49:28 INFO  : Result from executing command 'getProjects': zybo_design_wrapper
+09:49:28 INFO  : Result from executing command 'getPlatforms': 
+09:49:32 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+09:49:58 ERROR : Failed to redirect connection to hardware server on host 'localhost' and port '12345'.
+Reason: Connection refused
+09:49:58 INFO  : ----------------XSDB Script----------------
+connect -path [list tcp::1534 tcp:localhost:12345]
+----------------End of Script----------------
+
+09:49:58 ERROR : Failed to redirect connection to hardware server on host 'localhost' and port '12345'.
+Reason: Connection refused
+09:50:42 ERROR : Failed to redirect connection to hardware server on host 'localhost' and port '12345'.
+Reason: Connection refused
+09:50:42 INFO  : ----------------XSDB Script----------------
+connect -path [list tcp::1534 tcp:localhost:12345]
+----------------End of Script----------------
+
+09:50:42 ERROR : Failed to redirect connection to hardware server on host 'localhost' and port '12345'.
+Reason: Connection refused
+09:51:06 ERROR : Failed to redirect connection to hardware server on host 'localhost' and port '12345'.
+Reason: Connection refused
+09:51:06 INFO  : ----------------XSDB Script----------------
+connect -path [list tcp::1534 tcp:localhost:12345]
+----------------End of Script----------------
+
+09:51:06 ERROR : Failed to redirect connection to hardware server on host 'localhost' and port '12345'.
+Reason: Connection refused
+09:51:10 ERROR : Failed to redirect connection to hardware server on host 'localhost' and port '12345'.
+Reason: Connection refused
+09:51:10 INFO  : ----------------XSDB Script----------------
+connect -path [list tcp::1534 tcp:localhost:12345]
+----------------End of Script----------------
+
+09:51:10 ERROR : Failed to redirect connection to hardware server on host 'localhost' and port '12345'.
+Reason: Connection refused
+09:51:13 ERROR : Failed to redirect connection to hardware server on host 'localhost' and port '12345'.
+Reason: Connection refused
+09:51:13 INFO  : ----------------XSDB Script----------------
+connect -path [list tcp::1534 tcp:localhost:12345]
+----------------End of Script----------------
+
+09:51:13 ERROR : Failed to redirect connection to hardware server on host 'localhost' and port '12345'.
+Reason: Connection refused
+09:51:28 ERROR : Failed to redirect connection to hardware server on host 'localhost' and port '12345'.
+Reason: Connection refused
+09:51:28 INFO  : ----------------XSDB Script----------------
+connect -path [list tcp::1534 tcp:localhost:12345]
+----------------End of Script----------------
+
+09:51:28 ERROR : Failed to redirect connection to hardware server on host 'localhost' and port '12345'.
+Reason: Connection refused
+09:51:47 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:51:47 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78039A' is selected.
+09:51:47 INFO  : 'jtag frequency' command is executed.
+09:51:47 INFO  : Context for 'APU' is selected.
+09:51:47 INFO  : System reset is completed.
+09:51:50 INFO  : 'after 3000' command is executed.
+09:51:50 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}' command is executed.
+09:51:52 INFO  : Device configured successfully with "/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit"
+09:51:52 INFO  : Context for 'APU' is selected.
+09:51:52 INFO  : Hardware design and registers information is loaded from '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa'.
+09:51:52 INFO  : 'configparams force-mem-access 1' command is executed.
+09:51:52 INFO  : Context for 'APU' is selected.
+09:51:52 INFO  : Sourcing of '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl' is done.
+09:51:52 INFO  : 'ps7_init' command is executed.
+09:51:52 INFO  : 'ps7_post_config' command is executed.
+09:51:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:51:53 INFO  : The application '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+09:51:53 INFO  : 'configparams force-mem-access 0' command is executed.
+09:51:53 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}
+fpga -file /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+09:51:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:51:53 INFO  : 'con' command is executed.
+09:51:53 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+09:51:53 INFO  : Launch script is exported to file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment_system/_ide/scripts/assessment_system_(local)_standalone.tcl'
+09:54:53 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+09:55:14 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+09:55:27 INFO  : Disconnected from the channel tcfchan#9.
+09:55:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:55:27 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78039A' is selected.
+09:55:27 INFO  : 'jtag frequency' command is executed.
+09:55:27 INFO  : Context for 'APU' is selected.
+09:55:27 INFO  : System reset is completed.
+09:55:30 INFO  : 'after 3000' command is executed.
+09:55:30 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}' command is executed.
+09:55:31 INFO  : Device configured successfully with "/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit"
+09:55:31 INFO  : Context for 'APU' is selected.
+09:55:31 INFO  : Hardware design and registers information is loaded from '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa'.
+09:55:31 INFO  : 'configparams force-mem-access 1' command is executed.
+09:55:31 INFO  : Context for 'APU' is selected.
+09:55:31 INFO  : Sourcing of '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl' is done.
+09:55:32 INFO  : 'ps7_init' command is executed.
+09:55:32 INFO  : 'ps7_post_config' command is executed.
+09:55:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:55:32 INFO  : The application '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+09:55:32 INFO  : 'configparams force-mem-access 0' command is executed.
+09:55:32 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}
+fpga -file /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+09:55:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:55:32 INFO  : 'con' command is executed.
+09:55:32 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+09:55:32 INFO  : Launch script is exported to file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment_system/_ide/scripts/assessment_system_(local)_standalone.tcl'
+10:04:02 INFO  : Disconnected from the channel tcfchan#12.
+10:04:02 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:04:02 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78039A' is selected.
+10:04:02 INFO  : 'jtag frequency' command is executed.
+10:04:02 INFO  : Context for 'APU' is selected.
+10:04:02 INFO  : System reset is completed.
+10:04:05 INFO  : 'after 3000' command is executed.
+10:04:05 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}' command is executed.
+10:04:06 INFO  : Device configured successfully with "/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit"
+10:04:06 INFO  : Context for 'APU' is selected.
+10:04:06 INFO  : Hardware design and registers information is loaded from '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa'.
+10:04:06 INFO  : 'configparams force-mem-access 1' command is executed.
+10:04:06 INFO  : Context for 'APU' is selected.
+10:04:06 INFO  : Sourcing of '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl' is done.
+10:04:07 INFO  : 'ps7_init' command is executed.
+10:04:07 INFO  : 'ps7_post_config' command is executed.
+10:04:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:04:07 INFO  : The application '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:04:07 INFO  : 'configparams force-mem-access 0' command is executed.
+10:04:07 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}
+fpga -file /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+10:04:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:04:07 INFO  : 'con' command is executed.
+10:04:07 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+10:04:07 INFO  : Launch script is exported to file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment_system/_ide/scripts/assessment_system_(local)_standalone.tcl'
+10:18:17 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+10:18:44 INFO  : Disconnected from the channel tcfchan#13.
+10:18:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:18:44 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78039A' is selected.
+10:18:44 INFO  : 'jtag frequency' command is executed.
+10:18:44 INFO  : Context for 'APU' is selected.
+10:18:44 INFO  : System reset is completed.
+10:18:47 INFO  : 'after 3000' command is executed.
+10:18:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}' command is executed.
+10:18:49 INFO  : Device configured successfully with "/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit"
+10:18:49 INFO  : Context for 'APU' is selected.
+10:18:49 INFO  : Hardware design and registers information is loaded from '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa'.
+10:18:49 INFO  : 'configparams force-mem-access 1' command is executed.
+10:18:49 INFO  : Context for 'APU' is selected.
+10:18:49 INFO  : Sourcing of '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl' is done.
+10:18:49 INFO  : 'ps7_init' command is executed.
+10:18:49 INFO  : 'ps7_post_config' command is executed.
+10:18:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:18:49 INFO  : The application '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:18:49 INFO  : 'configparams force-mem-access 0' command is executed.
+10:18:49 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}
+fpga -file /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+10:18:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:18:49 INFO  : 'con' command is executed.
+10:18:49 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+10:18:49 INFO  : Launch script is exported to file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment_system/_ide/scripts/assessment_system_(local)_standalone.tcl'
+10:19:08 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+10:19:28 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+10:20:20 INFO  : Result from executing command 'getProjects': zybo_design_wrapper
+10:20:20 INFO  : Result from executing command 'getPlatforms': zybo_design_wrapper|/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/zybo_design_wrapper.xpfm
+10:20:23 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+10:20:43 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+10:21:10 INFO  : Disconnected from the channel tcfchan#15.
+10:21:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:21:11 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78039A' is selected.
+10:21:11 INFO  : 'jtag frequency' command is executed.
+10:21:11 INFO  : Context for 'APU' is selected.
+10:21:11 INFO  : System reset is completed.
+10:21:14 INFO  : 'after 3000' command is executed.
+10:21:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}' command is executed.
+10:21:15 INFO  : Device configured successfully with "/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit"
+10:21:15 INFO  : Context for 'APU' is selected.
+10:21:15 INFO  : Hardware design and registers information is loaded from '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa'.
+10:21:15 INFO  : 'configparams force-mem-access 1' command is executed.
+10:21:15 INFO  : Context for 'APU' is selected.
+10:21:15 INFO  : Sourcing of '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl' is done.
+10:21:15 INFO  : 'ps7_init' command is executed.
+10:21:15 INFO  : 'ps7_post_config' command is executed.
+10:21:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:21:16 INFO  : The application '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:21:16 INFO  : 'configparams force-mem-access 0' command is executed.
+10:21:16 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}
+fpga -file /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+10:21:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:21:16 INFO  : 'con' command is executed.
+10:21:16 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+10:21:16 INFO  : Launch script is exported to file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment_system/_ide/scripts/assessment_system_(local)_standalone.tcl'
+10:26:50 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+10:27:05 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+10:27:13 INFO  : Disconnected from the channel tcfchan#20.
+10:27:13 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:27:14 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78039A' is selected.
+10:27:14 INFO  : 'jtag frequency' command is executed.
+10:27:14 INFO  : Context for 'APU' is selected.
+10:27:14 INFO  : System reset is completed.
+10:27:17 INFO  : 'after 3000' command is executed.
+10:27:17 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}' command is executed.
+10:27:18 INFO  : Device configured successfully with "/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit"
+10:27:18 INFO  : Context for 'APU' is selected.
+10:27:18 INFO  : Hardware design and registers information is loaded from '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa'.
+10:27:18 INFO  : 'configparams force-mem-access 1' command is executed.
+10:27:18 INFO  : Context for 'APU' is selected.
+10:27:18 INFO  : Sourcing of '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl' is done.
+10:27:18 INFO  : 'ps7_init' command is executed.
+10:27:18 INFO  : 'ps7_post_config' command is executed.
+10:27:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:27:19 INFO  : The application '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:27:19 INFO  : 'configparams force-mem-access 0' command is executed.
+10:27:19 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}
+fpga -file /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+10:27:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:27:19 INFO  : 'con' command is executed.
+10:27:19 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+10:27:19 INFO  : Launch script is exported to file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment_system/_ide/scripts/assessment_system_(local)_standalone.tcl'
+10:33:24 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+10:33:37 INFO  : Disconnected from the channel tcfchan#23.
+10:33:37 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:33:37 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78039A' is selected.
+10:33:37 INFO  : 'jtag frequency' command is executed.
+10:33:37 INFO  : Context for 'APU' is selected.
+10:33:37 INFO  : System reset is completed.
+10:33:40 INFO  : 'after 3000' command is executed.
+10:33:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}' command is executed.
+10:33:41 INFO  : Device configured successfully with "/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit"
+10:33:41 INFO  : Context for 'APU' is selected.
+10:33:41 INFO  : Hardware design and registers information is loaded from '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa'.
+10:33:41 INFO  : 'configparams force-mem-access 1' command is executed.
+10:33:41 INFO  : Context for 'APU' is selected.
+10:33:41 INFO  : Sourcing of '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl' is done.
+10:33:42 INFO  : 'ps7_init' command is executed.
+10:33:42 INFO  : 'ps7_post_config' command is executed.
+10:33:42 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:33:42 INFO  : The application '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:33:42 INFO  : 'configparams force-mem-access 0' command is executed.
+10:33:42 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}
+fpga -file /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+10:33:42 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:33:42 INFO  : 'con' command is executed.
+10:33:42 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+10:33:42 INFO  : Launch script is exported to file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment_system/_ide/scripts/assessment_system_(local)_standalone.tcl'
+10:34:20 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+10:34:49 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+10:35:05 ERROR : Failed to redirect connection to hardware server on host 'localhost' and port '12345'.
+Reason: Connection refused
+10:35:05 INFO  : ----------------XSDB Script----------------
+connect -path [list tcp::1534 tcp:localhost:12345]
+----------------End of Script----------------
+
+10:35:05 ERROR : Failed to redirect connection to hardware server on host 'localhost' and port '12345'.
+Reason: Connection refused
+10:35:08 INFO  : Disconnected from the channel tcfchan#25.
+10:35:08 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:35:08 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78039A' is selected.
+10:35:08 INFO  : 'jtag frequency' command is executed.
+10:35:08 INFO  : Context for 'APU' is selected.
+10:35:08 INFO  : System reset is completed.
+10:35:11 INFO  : 'after 3000' command is executed.
+10:35:11 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}' command is executed.
+10:35:13 INFO  : Device configured successfully with "/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit"
+10:35:13 INFO  : Context for 'APU' is selected.
+10:35:13 INFO  : Hardware design and registers information is loaded from '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa'.
+10:35:13 INFO  : 'configparams force-mem-access 1' command is executed.
+10:35:13 INFO  : Context for 'APU' is selected.
+10:35:13 INFO  : Sourcing of '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl' is done.
+10:35:13 INFO  : 'ps7_init' command is executed.
+10:35:13 INFO  : 'ps7_post_config' command is executed.
+10:35:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:35:13 INFO  : The application '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:35:13 INFO  : 'configparams force-mem-access 0' command is executed.
+10:35:13 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}
+fpga -file /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+10:35:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:35:13 INFO  : 'con' command is executed.
+10:35:13 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+10:35:13 INFO  : Launch script is exported to file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment_system/_ide/scripts/assessment_system_(local)_standalone.tcl'
+10:38:49 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+10:41:57 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+10:42:10 INFO  : Disconnected from the channel tcfchan#29.
+10:42:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:42:10 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78039A' is selected.
+10:42:10 INFO  : 'jtag frequency' command is executed.
+10:42:10 INFO  : Context for 'APU' is selected.
+10:42:10 INFO  : System reset is completed.
+10:42:13 INFO  : 'after 3000' command is executed.
+10:42:13 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}' command is executed.
+10:42:14 INFO  : Device configured successfully with "/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit"
+10:42:14 INFO  : Context for 'APU' is selected.
+10:42:14 INFO  : Hardware design and registers information is loaded from '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa'.
+10:42:14 INFO  : 'configparams force-mem-access 1' command is executed.
+10:42:14 INFO  : Context for 'APU' is selected.
+10:42:14 INFO  : Sourcing of '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl' is done.
+10:42:15 INFO  : 'ps7_init' command is executed.
+10:42:15 INFO  : 'ps7_post_config' command is executed.
+10:42:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:42:15 INFO  : The application '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:42:15 INFO  : 'configparams force-mem-access 0' command is executed.
+10:42:15 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}
+fpga -file /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+10:42:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:42:15 INFO  : 'con' command is executed.
+10:42:15 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+10:42:15 INFO  : Launch script is exported to file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment_system/_ide/scripts/assessment_system_(local)_standalone.tcl'
+10:44:08 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+10:44:15 INFO  : Disconnected from the channel tcfchan#32.
+10:44:33 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+10:45:30 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+10:45:39 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:45:39 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78039A' is selected.
+10:45:39 INFO  : 'jtag frequency' command is executed.
+10:45:39 INFO  : Context for 'APU' is selected.
+10:45:39 INFO  : System reset is completed.
+10:45:42 INFO  : 'after 3000' command is executed.
+10:45:42 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}' command is executed.
+10:45:43 INFO  : Device configured successfully with "/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit"
+10:45:43 INFO  : Context for 'APU' is selected.
+10:45:43 INFO  : Hardware design and registers information is loaded from '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa'.
+10:45:43 INFO  : 'configparams force-mem-access 1' command is executed.
+10:45:43 INFO  : Context for 'APU' is selected.
+10:45:43 INFO  : Sourcing of '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl' is done.
+10:45:44 INFO  : 'ps7_init' command is executed.
+10:45:44 INFO  : 'ps7_post_config' command is executed.
+10:45:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:45:44 INFO  : The application '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:45:44 INFO  : 'configparams force-mem-access 0' command is executed.
+10:45:44 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}
+fpga -file /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+10:45:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:45:44 INFO  : 'con' command is executed.
+10:45:44 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+10:45:44 INFO  : Launch script is exported to file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment_system/_ide/scripts/assessment_system_(local)_standalone.tcl'
+10:47:50 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+10:47:59 INFO  : Disconnected from the channel tcfchan#36.
+10:47:59 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:47:59 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78039A' is selected.
+10:47:59 INFO  : 'jtag frequency' command is executed.
+10:47:59 INFO  : Context for 'APU' is selected.
+10:47:59 INFO  : System reset is completed.
+10:48:02 INFO  : 'after 3000' command is executed.
+10:48:02 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}' command is executed.
+10:48:03 INFO  : Device configured successfully with "/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit"
+10:48:03 INFO  : Context for 'APU' is selected.
+10:48:03 INFO  : Hardware design and registers information is loaded from '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa'.
+10:48:03 INFO  : 'configparams force-mem-access 1' command is executed.
+10:48:03 INFO  : Context for 'APU' is selected.
+10:48:03 INFO  : Sourcing of '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl' is done.
+10:48:03 INFO  : 'ps7_init' command is executed.
+10:48:03 INFO  : 'ps7_post_config' command is executed.
+10:48:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:48:04 INFO  : The application '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:48:04 INFO  : 'configparams force-mem-access 0' command is executed.
+10:48:04 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}
+fpga -file /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+10:48:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:48:04 INFO  : 'con' command is executed.
+10:48:04 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+10:48:04 INFO  : Launch script is exported to file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment_system/_ide/scripts/assessment_system_(local)_standalone.tcl'
+10:51:11 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+10:51:25 INFO  : Disconnected from the channel tcfchan#38.
+10:51:25 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:51:25 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78039A' is selected.
+10:51:25 INFO  : 'jtag frequency' command is executed.
+10:51:25 INFO  : Context for 'APU' is selected.
+10:51:25 INFO  : System reset is completed.
+10:51:28 INFO  : 'after 3000' command is executed.
+10:51:28 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}' command is executed.
+10:51:30 INFO  : Device configured successfully with "/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit"
+10:51:30 INFO  : Context for 'APU' is selected.
+10:51:30 INFO  : Hardware design and registers information is loaded from '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa'.
+10:51:30 INFO  : 'configparams force-mem-access 1' command is executed.
+10:51:30 INFO  : Context for 'APU' is selected.
+10:51:30 INFO  : Sourcing of '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl' is done.
+10:51:30 INFO  : 'ps7_init' command is executed.
+10:51:30 INFO  : 'ps7_post_config' command is executed.
+10:51:30 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:51:30 INFO  : The application '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:51:30 INFO  : 'configparams force-mem-access 0' command is executed.
+10:51:30 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}
+fpga -file /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+10:51:30 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:51:30 INFO  : 'con' command is executed.
+10:51:30 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+10:51:30 INFO  : Launch script is exported to file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment_system/_ide/scripts/assessment_system_(local)_standalone.tcl'
+10:53:23 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+10:54:01 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+10:54:10 INFO  : Disconnected from the channel tcfchan#40.
+10:54:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:54:10 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78039A' is selected.
+10:54:10 INFO  : 'jtag frequency' command is executed.
+10:54:10 INFO  : Context for 'APU' is selected.
+10:54:10 INFO  : System reset is completed.
+10:54:13 INFO  : 'after 3000' command is executed.
+10:54:13 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}' command is executed.
+10:54:15 INFO  : Device configured successfully with "/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit"
+10:54:15 INFO  : Context for 'APU' is selected.
+10:54:15 INFO  : Hardware design and registers information is loaded from '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa'.
+10:54:15 INFO  : 'configparams force-mem-access 1' command is executed.
+10:54:15 INFO  : Context for 'APU' is selected.
+10:54:15 INFO  : Sourcing of '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl' is done.
+10:54:15 INFO  : 'ps7_init' command is executed.
+10:54:15 INFO  : 'ps7_post_config' command is executed.
+10:54:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:54:15 INFO  : The application '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:54:15 INFO  : 'configparams force-mem-access 0' command is executed.
+10:54:15 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}
+fpga -file /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+10:54:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:54:15 INFO  : 'con' command is executed.
+10:54:15 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+10:54:15 INFO  : Launch script is exported to file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment_system/_ide/scripts/assessment_system_(local)_standalone.tcl'
+10:55:07 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+10:55:17 INFO  : Disconnected from the channel tcfchan#43.
+10:55:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:55:18 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78039A' is selected.
+10:55:18 INFO  : 'jtag frequency' command is executed.
+10:55:18 INFO  : Context for 'APU' is selected.
+10:55:18 INFO  : System reset is completed.
+10:55:21 INFO  : 'after 3000' command is executed.
+10:55:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}' command is executed.
+10:55:22 INFO  : Device configured successfully with "/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit"
+10:55:22 INFO  : Context for 'APU' is selected.
+10:55:22 INFO  : Hardware design and registers information is loaded from '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa'.
+10:55:22 INFO  : 'configparams force-mem-access 1' command is executed.
+10:55:22 INFO  : Context for 'APU' is selected.
+10:55:22 INFO  : Sourcing of '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl' is done.
+10:55:22 INFO  : 'ps7_init' command is executed.
+10:55:22 INFO  : 'ps7_post_config' command is executed.
+10:55:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:55:23 INFO  : The application '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:55:23 INFO  : 'configparams force-mem-access 0' command is executed.
+10:55:23 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}
+fpga -file /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+10:55:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:55:23 INFO  : 'con' command is executed.
+10:55:23 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+10:55:23 INFO  : Launch script is exported to file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment_system/_ide/scripts/assessment_system_(local)_standalone.tcl'
+10:57:04 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+10:57:22 INFO  : Disconnected from the channel tcfchan#45.
+10:57:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:57:22 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78039A' is selected.
+10:57:22 INFO  : 'jtag frequency' command is executed.
+10:57:22 INFO  : Context for 'APU' is selected.
+10:57:22 INFO  : System reset is completed.
+10:57:26 INFO  : 'after 3000' command is executed.
+10:57:26 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}' command is executed.
+10:57:27 INFO  : Device configured successfully with "/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit"
+10:57:27 INFO  : Context for 'APU' is selected.
+10:57:27 INFO  : Hardware design and registers information is loaded from '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa'.
+10:57:27 INFO  : 'configparams force-mem-access 1' command is executed.
+10:57:27 INFO  : Context for 'APU' is selected.
+10:57:27 INFO  : Sourcing of '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl' is done.
+10:57:27 INFO  : 'ps7_init' command is executed.
+10:57:27 INFO  : 'ps7_post_config' command is executed.
+10:57:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:57:27 INFO  : The application '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:57:28 INFO  : 'configparams force-mem-access 0' command is executed.
+10:57:28 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}
+fpga -file /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+10:57:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:57:28 INFO  : 'con' command is executed.
+10:57:28 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+10:57:28 INFO  : Launch script is exported to file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment_system/_ide/scripts/assessment_system_(local)_standalone.tcl'
+10:59:56 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+11:00:23 INFO  : Disconnected from the channel tcfchan#47.
+11:00:23 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:00:23 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78039A' is selected.
+11:00:23 INFO  : 'jtag frequency' command is executed.
+11:00:23 INFO  : Context for 'APU' is selected.
+11:00:23 INFO  : System reset is completed.
+11:00:26 INFO  : 'after 3000' command is executed.
+11:00:26 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}' command is executed.
+11:00:28 INFO  : Device configured successfully with "/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit"
+11:00:28 INFO  : Context for 'APU' is selected.
+11:00:28 INFO  : Hardware design and registers information is loaded from '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa'.
+11:00:28 INFO  : 'configparams force-mem-access 1' command is executed.
+11:00:28 INFO  : Context for 'APU' is selected.
+11:00:28 INFO  : Sourcing of '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl' is done.
+11:00:28 INFO  : 'ps7_init' command is executed.
+11:00:28 INFO  : 'ps7_post_config' command is executed.
+11:00:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:00:28 INFO  : The application '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:00:28 INFO  : 'configparams force-mem-access 0' command is executed.
+11:00:28 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}
+fpga -file /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:00:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:00:28 INFO  : 'con' command is executed.
+11:00:28 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:00:28 INFO  : Launch script is exported to file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment_system/_ide/scripts/assessment_system_(local)_standalone.tcl'
+11:01:48 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+11:02:01 INFO  : Disconnected from the channel tcfchan#49.
+11:02:01 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:02:01 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78039A' is selected.
+11:02:01 INFO  : 'jtag frequency' command is executed.
+11:02:01 INFO  : Context for 'APU' is selected.
+11:02:02 INFO  : System reset is completed.
+11:02:05 INFO  : 'after 3000' command is executed.
+11:02:05 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}' command is executed.
+11:02:06 INFO  : Device configured successfully with "/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit"
+11:02:06 INFO  : Context for 'APU' is selected.
+11:02:06 INFO  : Hardware design and registers information is loaded from '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa'.
+11:02:06 INFO  : 'configparams force-mem-access 1' command is executed.
+11:02:06 INFO  : Context for 'APU' is selected.
+11:02:06 INFO  : Sourcing of '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl' is done.
+11:02:06 INFO  : 'ps7_init' command is executed.
+11:02:06 INFO  : 'ps7_post_config' command is executed.
+11:02:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:02:06 INFO  : The application '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:02:07 INFO  : 'configparams force-mem-access 0' command is executed.
+11:02:07 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}
+fpga -file /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:02:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:02:07 INFO  : 'con' command is executed.
+11:02:07 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:02:07 INFO  : Launch script is exported to file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment_system/_ide/scripts/assessment_system_(local)_standalone.tcl'
+11:03:36 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+11:04:12 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+11:04:28 INFO  : Disconnected from the channel tcfchan#51.
+11:04:29 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:04:29 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78039A' is selected.
+11:04:29 INFO  : 'jtag frequency' command is executed.
+11:04:29 INFO  : Context for 'APU' is selected.
+11:04:29 INFO  : System reset is completed.
+11:04:32 INFO  : 'after 3000' command is executed.
+11:04:32 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}' command is executed.
+11:04:33 INFO  : Device configured successfully with "/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit"
+11:04:33 INFO  : Context for 'APU' is selected.
+11:04:33 INFO  : Hardware design and registers information is loaded from '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa'.
+11:04:33 INFO  : 'configparams force-mem-access 1' command is executed.
+11:04:33 INFO  : Context for 'APU' is selected.
+11:04:33 INFO  : Sourcing of '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl' is done.
+11:04:33 INFO  : 'ps7_init' command is executed.
+11:04:33 INFO  : 'ps7_post_config' command is executed.
+11:04:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:04:34 INFO  : The application '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:04:34 INFO  : 'configparams force-mem-access 0' command is executed.
+11:04:34 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}
+fpga -file /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:04:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:04:34 INFO  : 'con' command is executed.
+11:04:34 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:04:34 INFO  : Launch script is exported to file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment_system/_ide/scripts/assessment_system_(local)_standalone.tcl'
+11:06:50 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+11:07:10 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+11:07:31 INFO  : Disconnected from the channel tcfchan#54.
+11:07:31 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:07:31 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78039A' is selected.
+11:07:31 INFO  : 'jtag frequency' command is executed.
+11:07:31 INFO  : Context for 'APU' is selected.
+11:07:31 INFO  : System reset is completed.
+11:07:34 INFO  : 'after 3000' command is executed.
+11:07:34 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}' command is executed.
+11:07:35 INFO  : Device configured successfully with "/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit"
+11:07:35 INFO  : Context for 'APU' is selected.
+11:07:36 INFO  : Hardware design and registers information is loaded from '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa'.
+11:07:36 INFO  : 'configparams force-mem-access 1' command is executed.
+11:07:36 INFO  : Context for 'APU' is selected.
+11:07:36 INFO  : Sourcing of '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl' is done.
+11:07:36 INFO  : 'ps7_init' command is executed.
+11:07:36 INFO  : 'ps7_post_config' command is executed.
+11:07:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:07:36 INFO  : The application '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:07:36 INFO  : 'configparams force-mem-access 0' command is executed.
+11:07:36 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}
+fpga -file /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:07:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:07:36 INFO  : 'con' command is executed.
+11:07:36 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:07:36 INFO  : Launch script is exported to file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment_system/_ide/scripts/assessment_system_(local)_standalone.tcl'
+11:11:34 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+11:11:45 INFO  : Disconnected from the channel tcfchan#57.
+11:11:46 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:11:46 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78039A' is selected.
+11:11:46 INFO  : 'jtag frequency' command is executed.
+11:11:46 INFO  : Context for 'APU' is selected.
+11:11:46 INFO  : System reset is completed.
+11:11:49 INFO  : 'after 3000' command is executed.
+11:11:49 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}' command is executed.
+11:11:50 INFO  : Device configured successfully with "/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit"
+11:11:50 INFO  : Context for 'APU' is selected.
+11:11:51 INFO  : Hardware design and registers information is loaded from '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa'.
+11:11:51 INFO  : 'configparams force-mem-access 1' command is executed.
+11:11:51 INFO  : Context for 'APU' is selected.
+11:11:51 INFO  : Sourcing of '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl' is done.
+11:11:51 INFO  : 'ps7_init' command is executed.
+11:11:51 INFO  : 'ps7_post_config' command is executed.
+11:11:51 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:11:51 INFO  : The application '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:11:51 INFO  : 'configparams force-mem-access 0' command is executed.
+11:11:51 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}
+fpga -file /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:11:51 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:11:51 INFO  : 'con' command is executed.
+11:11:51 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:11:51 INFO  : Launch script is exported to file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment_system/_ide/scripts/assessment_system_(local)_standalone.tcl'
+11:13:24 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+11:13:35 INFO  : Disconnected from the channel tcfchan#59.
+11:13:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:13:35 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78039A' is selected.
+11:13:35 INFO  : 'jtag frequency' command is executed.
+11:13:35 INFO  : Context for 'APU' is selected.
+11:13:35 INFO  : System reset is completed.
+11:13:38 INFO  : 'after 3000' command is executed.
+11:13:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}' command is executed.
+11:13:40 INFO  : Device configured successfully with "/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit"
+11:13:40 INFO  : Context for 'APU' is selected.
+11:13:40 INFO  : Hardware design and registers information is loaded from '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa'.
+11:13:40 INFO  : 'configparams force-mem-access 1' command is executed.
+11:13:40 INFO  : Context for 'APU' is selected.
+11:13:40 INFO  : Sourcing of '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl' is done.
+11:13:40 INFO  : 'ps7_init' command is executed.
+11:13:40 INFO  : 'ps7_post_config' command is executed.
+11:13:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:13:40 INFO  : The application '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:13:40 INFO  : 'configparams force-mem-access 0' command is executed.
+11:13:40 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}
+fpga -file /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:13:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:13:40 INFO  : 'con' command is executed.
+11:13:40 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:13:40 INFO  : Launch script is exported to file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment_system/_ide/scripts/assessment_system_(local)_standalone.tcl'
+11:16:23 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+11:16:34 INFO  : Disconnected from the channel tcfchan#61.
+11:16:34 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:16:34 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78039A' is selected.
+11:16:34 INFO  : 'jtag frequency' command is executed.
+11:16:34 INFO  : Context for 'APU' is selected.
+11:16:34 INFO  : System reset is completed.
+11:16:37 INFO  : 'after 3000' command is executed.
+11:16:37 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}' command is executed.
+11:16:38 INFO  : Device configured successfully with "/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit"
+11:16:38 INFO  : Context for 'APU' is selected.
+11:16:38 INFO  : Hardware design and registers information is loaded from '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa'.
+11:16:38 INFO  : 'configparams force-mem-access 1' command is executed.
+11:16:39 INFO  : Context for 'APU' is selected.
+11:16:39 INFO  : Sourcing of '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl' is done.
+11:16:39 INFO  : 'ps7_init' command is executed.
+11:16:39 INFO  : 'ps7_post_config' command is executed.
+11:16:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:16:39 INFO  : The application '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:16:39 INFO  : 'configparams force-mem-access 0' command is executed.
+11:16:39 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}
+fpga -file /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:16:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:16:39 INFO  : 'con' command is executed.
+11:16:39 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:16:39 INFO  : Launch script is exported to file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment_system/_ide/scripts/assessment_system_(local)_standalone.tcl'
+11:35:05 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+11:35:17 INFO  : Disconnected from the channel tcfchan#63.
+11:35:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:35:17 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78039A' is selected.
+11:35:17 INFO  : 'jtag frequency' command is executed.
+11:35:17 INFO  : Context for 'APU' is selected.
+11:35:17 INFO  : System reset is completed.
+11:35:20 INFO  : 'after 3000' command is executed.
+11:35:20 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}' command is executed.
+11:35:21 INFO  : Device configured successfully with "/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit"
+11:35:21 INFO  : Context for 'APU' is selected.
+11:35:21 INFO  : Hardware design and registers information is loaded from '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa'.
+11:35:21 INFO  : 'configparams force-mem-access 1' command is executed.
+11:35:21 INFO  : Context for 'APU' is selected.
+11:35:21 INFO  : Sourcing of '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl' is done.
+11:35:21 INFO  : 'ps7_init' command is executed.
+11:35:21 INFO  : 'ps7_post_config' command is executed.
+11:35:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:35:22 INFO  : The application '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:35:22 INFO  : 'configparams force-mem-access 0' command is executed.
+11:35:22 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}
+fpga -file /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:35:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:35:22 INFO  : 'con' command is executed.
+11:35:22 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:35:22 INFO  : Launch script is exported to file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment_system/_ide/scripts/assessment_system_(local)_standalone.tcl'
+11:35:29 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+11:35:39 INFO  : Disconnected from the channel tcfchan#65.
+11:35:39 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:35:39 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78039A' is selected.
+11:35:39 INFO  : 'jtag frequency' command is executed.
+11:35:39 INFO  : Context for 'APU' is selected.
+11:35:39 INFO  : System reset is completed.
+11:35:42 INFO  : 'after 3000' command is executed.
+11:35:42 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}' command is executed.
+11:35:44 INFO  : Device configured successfully with "/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit"
+11:35:44 INFO  : Context for 'APU' is selected.
+11:35:44 INFO  : Hardware design and registers information is loaded from '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa'.
+11:35:44 INFO  : 'configparams force-mem-access 1' command is executed.
+11:35:44 INFO  : Context for 'APU' is selected.
+11:35:44 INFO  : Sourcing of '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl' is done.
+11:35:44 INFO  : 'ps7_init' command is executed.
+11:35:44 INFO  : 'ps7_post_config' command is executed.
+11:35:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:35:44 INFO  : The application '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:35:44 INFO  : 'configparams force-mem-access 0' command is executed.
+11:35:44 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}
+fpga -file /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:35:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:35:44 INFO  : 'con' command is executed.
+11:35:44 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:35:44 INFO  : Launch script is exported to file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment_system/_ide/scripts/assessment_system_(local)_standalone.tcl'
+11:36:44 INFO  : Disconnected from the channel tcfchan#67.
+11:36:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:36:44 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78039A' is selected.
+11:36:44 INFO  : 'jtag frequency' command is executed.
+11:36:44 INFO  : Context for 'APU' is selected.
+11:36:44 INFO  : System reset is completed.
+11:36:47 INFO  : 'after 3000' command is executed.
+11:36:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}' command is executed.
+11:36:48 INFO  : Device configured successfully with "/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit"
+11:36:48 INFO  : Context for 'APU' is selected.
+11:36:48 INFO  : Hardware design and registers information is loaded from '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa'.
+11:36:48 INFO  : 'configparams force-mem-access 1' command is executed.
+11:36:48 INFO  : Context for 'APU' is selected.
+11:36:48 INFO  : Sourcing of '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl' is done.
+11:36:48 INFO  : 'ps7_init' command is executed.
+11:36:48 INFO  : 'ps7_post_config' command is executed.
+11:36:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:36:49 INFO  : The application '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:36:49 INFO  : 'configparams force-mem-access 0' command is executed.
+11:36:49 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}
+fpga -file /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:36:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:36:49 INFO  : 'con' command is executed.
+11:36:49 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:36:49 INFO  : Launch script is exported to file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment_system/_ide/scripts/assessment_system_(local)_standalone.tcl'
+11:38:10 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+11:38:40 INFO  : Disconnected from the channel tcfchan#68.
+11:38:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:38:40 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78039A' is selected.
+11:38:40 INFO  : 'jtag frequency' command is executed.
+11:38:40 INFO  : Context for 'APU' is selected.
+11:38:40 INFO  : System reset is completed.
+11:38:43 INFO  : 'after 3000' command is executed.
+11:38:43 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}' command is executed.
+11:38:44 INFO  : Device configured successfully with "/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit"
+11:38:44 INFO  : Context for 'APU' is selected.
+11:38:44 INFO  : Hardware design and registers information is loaded from '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa'.
+11:38:44 INFO  : 'configparams force-mem-access 1' command is executed.
+11:38:44 INFO  : Context for 'APU' is selected.
+11:38:45 INFO  : Sourcing of '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl' is done.
+11:38:45 INFO  : 'ps7_init' command is executed.
+11:38:45 INFO  : 'ps7_post_config' command is executed.
+11:38:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:38:45 INFO  : The application '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:38:45 INFO  : 'configparams force-mem-access 0' command is executed.
+11:38:45 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}
+fpga -file /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:38:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:38:45 INFO  : 'con' command is executed.
+11:38:45 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:38:45 INFO  : Launch script is exported to file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment_system/_ide/scripts/assessment_system_(local)_standalone.tcl'
+11:39:15 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+11:39:25 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+11:39:43 INFO  : Disconnected from the channel tcfchan#70.
+11:39:43 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:39:43 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78039A' is selected.
+11:39:43 INFO  : 'jtag frequency' command is executed.
+11:39:43 INFO  : Context for 'APU' is selected.
+11:39:43 INFO  : System reset is completed.
+11:39:46 INFO  : 'after 3000' command is executed.
+11:39:46 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}' command is executed.
+11:39:48 INFO  : Device configured successfully with "/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit"
+11:39:48 INFO  : Context for 'APU' is selected.
+11:39:48 INFO  : Hardware design and registers information is loaded from '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa'.
+11:39:48 INFO  : 'configparams force-mem-access 1' command is executed.
+11:39:48 INFO  : Context for 'APU' is selected.
+11:39:48 INFO  : Sourcing of '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl' is done.
+11:39:48 INFO  : 'ps7_init' command is executed.
+11:39:48 INFO  : 'ps7_post_config' command is executed.
+11:39:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:39:48 INFO  : The application '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:39:48 INFO  : 'configparams force-mem-access 0' command is executed.
+11:39:48 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}
+fpga -file /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:39:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:39:48 INFO  : 'con' command is executed.
+11:39:48 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:39:48 INFO  : Launch script is exported to file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment_system/_ide/scripts/assessment_system_(local)_standalone.tcl'
+11:43:17 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+11:43:40 INFO  : Disconnected from the channel tcfchan#73.
+11:43:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:43:40 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78039A' is selected.
+11:43:40 INFO  : 'jtag frequency' command is executed.
+11:43:40 INFO  : Context for 'APU' is selected.
+11:43:40 INFO  : System reset is completed.
+11:43:43 INFO  : 'after 3000' command is executed.
+11:43:43 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}' command is executed.
+11:43:44 INFO  : Device configured successfully with "/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit"
+11:43:44 INFO  : Context for 'APU' is selected.
+11:43:44 INFO  : Hardware design and registers information is loaded from '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa'.
+11:43:44 INFO  : 'configparams force-mem-access 1' command is executed.
+11:43:44 INFO  : Context for 'APU' is selected.
+11:43:44 INFO  : Sourcing of '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl' is done.
+11:43:44 INFO  : 'ps7_init' command is executed.
+11:43:44 INFO  : 'ps7_post_config' command is executed.
+11:43:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:43:45 INFO  : The application '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:43:45 INFO  : 'configparams force-mem-access 0' command is executed.
+11:43:45 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}
+fpga -file /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:43:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:43:45 INFO  : 'con' command is executed.
+11:43:45 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:43:45 INFO  : Launch script is exported to file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment_system/_ide/scripts/assessment_system_(local)_standalone.tcl'
+11:46:05 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+11:46:14 INFO  : Disconnected from the channel tcfchan#75.
+11:46:14 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:46:14 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78039A' is selected.
+11:46:14 INFO  : 'jtag frequency' command is executed.
+11:46:14 INFO  : Context for 'APU' is selected.
+11:46:14 INFO  : System reset is completed.
+11:46:17 INFO  : 'after 3000' command is executed.
+11:46:17 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}' command is executed.
+11:46:18 INFO  : Device configured successfully with "/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit"
+11:46:18 INFO  : Context for 'APU' is selected.
+11:46:18 INFO  : Hardware design and registers information is loaded from '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa'.
+11:46:18 INFO  : 'configparams force-mem-access 1' command is executed.
+11:46:18 INFO  : Context for 'APU' is selected.
+11:46:18 INFO  : Sourcing of '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl' is done.
+11:46:19 INFO  : 'ps7_init' command is executed.
+11:46:19 INFO  : 'ps7_post_config' command is executed.
+11:46:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:46:19 INFO  : The application '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:46:19 INFO  : 'configparams force-mem-access 0' command is executed.
+11:46:19 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}
+fpga -file /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:46:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:46:19 INFO  : 'con' command is executed.
+11:46:19 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:46:19 INFO  : Launch script is exported to file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment_system/_ide/scripts/assessment_system_(local)_standalone.tcl'
+11:48:27 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+11:48:36 INFO  : Disconnected from the channel tcfchan#77.
+11:48:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:48:37 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78039A' is selected.
+11:48:37 INFO  : 'jtag frequency' command is executed.
+11:48:37 INFO  : Context for 'APU' is selected.
+11:48:37 INFO  : System reset is completed.
+11:48:40 INFO  : 'after 3000' command is executed.
+11:48:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}' command is executed.
+11:48:41 INFO  : Device configured successfully with "/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit"
+11:48:41 INFO  : Context for 'APU' is selected.
+11:48:41 INFO  : Hardware design and registers information is loaded from '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa'.
+11:48:41 INFO  : 'configparams force-mem-access 1' command is executed.
+11:48:41 INFO  : Context for 'APU' is selected.
+11:48:41 INFO  : Sourcing of '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl' is done.
+11:48:41 INFO  : 'ps7_init' command is executed.
+11:48:41 INFO  : 'ps7_post_config' command is executed.
+11:48:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:48:42 INFO  : The application '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:48:42 INFO  : 'configparams force-mem-access 0' command is executed.
+11:48:42 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}
+fpga -file /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:48:42 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:48:42 INFO  : 'con' command is executed.
+11:48:42 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:48:42 INFO  : Launch script is exported to file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment_system/_ide/scripts/assessment_system_(local)_standalone.tcl'
+11:48:57 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+11:49:39 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+11:49:48 INFO  : Disconnected from the channel tcfchan#79.
+11:49:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:49:48 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78039A' is selected.
+11:49:48 INFO  : 'jtag frequency' command is executed.
+11:49:48 INFO  : Context for 'APU' is selected.
+11:49:48 INFO  : System reset is completed.
+11:49:51 INFO  : 'after 3000' command is executed.
+11:49:51 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}' command is executed.
+11:49:53 INFO  : Device configured successfully with "/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit"
+11:49:53 INFO  : Context for 'APU' is selected.
+11:49:53 INFO  : Hardware design and registers information is loaded from '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa'.
+11:49:53 INFO  : 'configparams force-mem-access 1' command is executed.
+11:49:53 INFO  : Context for 'APU' is selected.
+11:49:53 INFO  : Sourcing of '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl' is done.
+11:49:53 INFO  : 'ps7_init' command is executed.
+11:49:53 INFO  : 'ps7_post_config' command is executed.
+11:49:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:49:53 INFO  : The application '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:49:53 INFO  : 'configparams force-mem-access 0' command is executed.
+11:49:53 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}
+fpga -file /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:49:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:49:53 INFO  : 'con' command is executed.
+11:49:53 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:49:53 INFO  : Launch script is exported to file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment_system/_ide/scripts/assessment_system_(local)_standalone.tcl'
+11:50:30 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+11:50:40 INFO  : Disconnected from the channel tcfchan#82.
+11:50:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:50:40 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78039A' is selected.
+11:50:40 INFO  : 'jtag frequency' command is executed.
+11:50:40 INFO  : Context for 'APU' is selected.
+11:50:40 INFO  : System reset is completed.
+11:50:43 INFO  : 'after 3000' command is executed.
+11:50:43 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}' command is executed.
+11:50:44 INFO  : Device configured successfully with "/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit"
+11:50:44 INFO  : Context for 'APU' is selected.
+11:50:44 INFO  : Hardware design and registers information is loaded from '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa'.
+11:50:44 INFO  : 'configparams force-mem-access 1' command is executed.
+11:50:44 INFO  : Context for 'APU' is selected.
+11:50:44 INFO  : Sourcing of '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl' is done.
+11:50:44 INFO  : 'ps7_init' command is executed.
+11:50:44 INFO  : 'ps7_post_config' command is executed.
+11:50:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:50:45 INFO  : The application '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:50:45 INFO  : 'configparams force-mem-access 0' command is executed.
+11:50:45 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}
+fpga -file /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:50:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:50:45 INFO  : 'con' command is executed.
+11:50:45 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:50:45 INFO  : Launch script is exported to file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment_system/_ide/scripts/assessment_system_(local)_standalone.tcl'
+11:51:00 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+11:51:13 INFO  : Disconnected from the channel tcfchan#84.
+11:51:13 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:51:13 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78039A' is selected.
+11:51:13 INFO  : 'jtag frequency' command is executed.
+11:51:13 INFO  : Context for 'APU' is selected.
+11:51:13 INFO  : System reset is completed.
+11:51:16 INFO  : 'after 3000' command is executed.
+11:51:17 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}' command is executed.
+11:51:18 INFO  : Device configured successfully with "/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit"
+11:51:18 INFO  : Context for 'APU' is selected.
+11:51:18 INFO  : Hardware design and registers information is loaded from '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa'.
+11:51:18 INFO  : 'configparams force-mem-access 1' command is executed.
+11:51:18 INFO  : Context for 'APU' is selected.
+11:51:18 INFO  : Sourcing of '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl' is done.
+11:51:18 INFO  : 'ps7_init' command is executed.
+11:51:18 INFO  : 'ps7_post_config' command is executed.
+11:51:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:51:18 INFO  : The application '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:51:18 INFO  : 'configparams force-mem-access 0' command is executed.
+11:51:18 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}
+fpga -file /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:51:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:51:18 INFO  : 'con' command is executed.
+11:51:18 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:51:18 INFO  : Launch script is exported to file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment_system/_ide/scripts/assessment_system_(local)_standalone.tcl'
+11:58:20 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+11:58:43 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+11:59:16 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+11:59:30 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+11:59:51 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+12:00:17 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+12:00:35 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+12:00:43 INFO  : Disconnected from the channel tcfchan#86.
+12:00:43 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:00:43 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78039A' is selected.
+12:00:43 INFO  : 'jtag frequency' command is executed.
+12:00:43 INFO  : Context for 'APU' is selected.
+12:00:43 INFO  : System reset is completed.
+12:00:46 INFO  : 'after 3000' command is executed.
+12:00:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}' command is executed.
+12:00:48 INFO  : Device configured successfully with "/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit"
+12:00:48 INFO  : Context for 'APU' is selected.
+12:00:48 INFO  : Hardware design and registers information is loaded from '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa'.
+12:00:48 INFO  : 'configparams force-mem-access 1' command is executed.
+12:00:48 INFO  : Context for 'APU' is selected.
+12:00:48 INFO  : Sourcing of '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl' is done.
+12:00:48 INFO  : 'ps7_init' command is executed.
+12:00:48 INFO  : 'ps7_post_config' command is executed.
+12:00:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:00:48 INFO  : The application '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:00:48 INFO  : 'configparams force-mem-access 0' command is executed.
+12:00:48 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}
+fpga -file /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:00:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:00:49 INFO  : 'con' command is executed.
+12:00:49 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:00:49 INFO  : Launch script is exported to file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment_system/_ide/scripts/assessment_system_(local)_standalone.tcl'
+12:02:54 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+12:03:05 INFO  : Disconnected from the channel tcfchan#94.
+12:03:05 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:03:05 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78039A' is selected.
+12:03:05 INFO  : 'jtag frequency' command is executed.
+12:03:05 INFO  : Context for 'APU' is selected.
+12:03:06 INFO  : System reset is completed.
+12:03:09 INFO  : 'after 3000' command is executed.
+12:03:09 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}' command is executed.
+12:03:10 INFO  : Device configured successfully with "/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit"
+12:03:10 INFO  : Context for 'APU' is selected.
+12:03:10 INFO  : Hardware design and registers information is loaded from '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa'.
+12:03:10 INFO  : 'configparams force-mem-access 1' command is executed.
+12:03:10 INFO  : Context for 'APU' is selected.
+12:03:10 INFO  : Sourcing of '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl' is done.
+12:03:10 INFO  : 'ps7_init' command is executed.
+12:03:10 INFO  : 'ps7_post_config' command is executed.
+12:03:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:03:11 INFO  : The application '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:03:11 INFO  : 'configparams force-mem-access 0' command is executed.
+12:03:11 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}
+fpga -file /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:03:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:03:11 INFO  : 'con' command is executed.
+12:03:11 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:03:11 INFO  : Launch script is exported to file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment_system/_ide/scripts/assessment_system_(local)_standalone.tcl'
+12:05:50 INFO  : Disconnected from the channel tcfchan#96.
+12:05:50 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:05:51 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78039A' is selected.
+12:05:51 INFO  : 'jtag frequency' command is executed.
+12:05:51 INFO  : Context for 'APU' is selected.
+12:05:51 INFO  : System reset is completed.
+12:05:54 INFO  : 'after 3000' command is executed.
+12:05:54 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}' command is executed.
+12:05:55 INFO  : Device configured successfully with "/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit"
+12:05:55 INFO  : Context for 'APU' is selected.
+12:05:55 INFO  : Hardware design and registers information is loaded from '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa'.
+12:05:55 INFO  : 'configparams force-mem-access 1' command is executed.
+12:05:55 INFO  : Context for 'APU' is selected.
+12:05:55 INFO  : Sourcing of '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl' is done.
+12:05:55 INFO  : 'ps7_init' command is executed.
+12:05:55 INFO  : 'ps7_post_config' command is executed.
+12:05:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:05:56 INFO  : The application '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:05:56 INFO  : 'configparams force-mem-access 0' command is executed.
+12:05:56 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}
+fpga -file /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:05:56 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:05:56 INFO  : 'con' command is executed.
+12:05:56 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:05:56 INFO  : Launch script is exported to file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment_system/_ide/scripts/assessment_system_(local)_standalone.tcl'
+12:08:42 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+12:08:50 INFO  : Disconnected from the channel tcfchan#97.
+12:08:50 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:08:50 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78039A' is selected.
+12:08:50 INFO  : 'jtag frequency' command is executed.
+12:08:50 INFO  : Context for 'APU' is selected.
+12:08:50 INFO  : System reset is completed.
+12:08:53 INFO  : 'after 3000' command is executed.
+12:08:53 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}' command is executed.
+12:08:55 INFO  : Device configured successfully with "/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit"
+12:08:55 INFO  : Context for 'APU' is selected.
+12:08:55 INFO  : Hardware design and registers information is loaded from '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa'.
+12:08:55 INFO  : 'configparams force-mem-access 1' command is executed.
+12:08:55 INFO  : Context for 'APU' is selected.
+12:08:55 INFO  : Sourcing of '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl' is done.
+12:08:55 INFO  : 'ps7_init' command is executed.
+12:08:55 INFO  : 'ps7_post_config' command is executed.
+12:08:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:08:55 INFO  : The application '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:08:55 INFO  : 'configparams force-mem-access 0' command is executed.
+12:08:55 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}
+fpga -file /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:08:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:08:55 INFO  : 'con' command is executed.
+12:08:55 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:08:55 INFO  : Launch script is exported to file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment_system/_ide/scripts/assessment_system_(local)_standalone.tcl'
+12:32:09 ERROR : Failed to update hardware specification for project 'zybo_design_wrapper'.
+Reason: Failed to execute command 'platform config -updatehw {/home/tomster12/files/EMBS/vivado/zybo_design_wrapper.xsa}'. Click on details for more information.
+12:32:42 INFO  : Hardware specification for platform project 'zybo_design_wrapper' is updated.
+12:32:56 INFO  : Result from executing command 'getProjects': zybo_design_wrapper
+12:32:56 INFO  : Result from executing command 'getPlatforms': zybo_design_wrapper|/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/zybo_design_wrapper.xpfm
+12:33:00 INFO  : Checking for BSP changes to sync application flags for project 'assessment'...
+12:33:03 INFO  : The hardware specfication used by project 'assessment' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+12:33:03 INFO  : The file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit' stored in project is removed.
+12:33:03 INFO  : The updated bitstream files are copied from platform to folder '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream' in project 'assessment'.
+12:33:03 INFO  : The file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl' stored in project is removed.
+12:33:08 INFO  : The updated ps init files are copied from platform to folder '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit' in project 'assessment'.
+12:33:15 INFO  : Disconnected from the channel tcfchan#99.
+12:33:15 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:33:16 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78039A' is selected.
+12:33:16 INFO  : 'jtag frequency' command is executed.
+12:33:16 INFO  : Context for 'APU' is selected.
+12:33:16 INFO  : System reset is completed.
+12:33:19 INFO  : 'after 3000' command is executed.
+12:33:19 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}' command is executed.
+12:33:20 INFO  : Device configured successfully with "/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit"
+12:33:20 INFO  : Context for 'APU' is selected.
+12:33:20 INFO  : Hardware design and registers information is loaded from '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa'.
+12:33:20 INFO  : 'configparams force-mem-access 1' command is executed.
+12:33:20 INFO  : Context for 'APU' is selected.
+12:33:20 INFO  : Sourcing of '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl' is done.
+12:33:20 INFO  : 'ps7_init' command is executed.
+12:33:20 INFO  : 'ps7_post_config' command is executed.
+12:33:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:33:21 INFO  : The application '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:33:21 INFO  : 'configparams force-mem-access 0' command is executed.
+12:33:21 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}
+fpga -file /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/Release/assessment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:33:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:33:21 INFO  : 'con' command is executed.
+12:33:21 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:33:21 INFO  : Launch script is exported to file '/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment_system/_ide/scripts/assessment_system_(local)_standalone.tcl'
+12:35:33 INFO  : Disconnected from the channel tcfchan#102.

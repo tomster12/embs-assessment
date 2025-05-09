@@ -1,6 +1,6 @@
 // ==============================================================
-// Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
-// Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+// Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2.2 (64-bit)
+// Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // ==============================================================
 `timescale 1 ns / 1 ps
 module toplevel_os_sift_up_moves_target_ram (addr0, ce0, d0, we0, q0, addr1, ce1, d1, we1,  clk);

@@ -1,2 +1,6 @@
-2025-05-09T01:18:45.778353000-Nothing to build in platform 'zybo_design_wrapper'
+2025-05-09T12:32:47.79617800255-12:32:47 **** Incremental Build of project zybo_design_wrapper ****
+000-buildplatform.sh 37865 zybo_design_wrapper no_domain_build 
+000-XSDB Server Channel: tcfchan#100
+00255-
+12:32:59 Build Finished (took 12s.152ms)
 

@@ -213,7 +213,7 @@ void os_sift_up(uint16_t idx) {
         }
 
         // Parent is larger so sift up
-    	dbg_printf("    [OS] S_UP, parent %lu(%lu) is bigger than %lu(%lu), sifting\r\n", parent, (uint16_t)parent_node.f_score, current, (uint16_t)node.f_score);
+    	dbg_printf("    [OS] S_UP, parent %lu(%lu) is bigger than %lu(%lu), sifting\r\n", parent, (uint16_t)open_set_heap[parent].f_score, current, (uint16_t)node.f_score);
 		copy_asnode(&moves[move_count].node, &open_set_heap[parent]);
 		moves[move_count].target = current;
 		move_count++;
@@ -398,6 +398,8 @@ int a_star(Coord start, Coord goal) {
             // Blindly add the node to the open set
             dbg_printf("Adding neighbour %lu (%d, %d), pos (%lu, %lu)\r\n", dir, dx[dir], dy[dir], (uint16_t)n_x, (uint16_t)n_y);
             ASNode neighbour_node = {n_f_score, n_g_score, n_x, n_y};
+            set_open(n_x, n_y);
+        	set_dir(n_x, n_y, dir);
             os_heap_push(neighbour_node);
             if (error_flag != 0) {
             	return 0;
@@ -484,11 +486,11 @@ void toplevel(uint32_t *ram, uint32_t *code) {
         if (total_length < MAX_OUTPUT_PATH_LENGTH) {
             Coord current = waypoints[i + 1];
             MAKE_PATH_LOOP: for (uint32_t i = 0; i <= length; ++i) {
-    			#pragma HLS UNROLL
+    			#pragma HLS PIPELINE OFF
             	uint32_t node_index = RAM_META_WORDS + RAM_WAYPOINT_WORDS + RAM_WORLD_WORDS + (total_length - i);
-            	dbg_printf("Setting path position %lu, %lu at %lu\r\n", (uint16_t)current.x, (uint16_t)current.y, path_index);
-            	ram[node_index] = (((uint16_t)current.x) << 16) | ((uint16_t)current.y);
-    			ap_uint<3> back_dir = (get_dir(current.x, current.y) + 2) % 4;
+            	dbg_printf("Setting path position %lu, %lu at %lu\r\n", (uint16_t)current.x, (uint16_t)current.y, i);
+            	ram[node_index] = (current.x << 16) | current.y;
+    			uint8_t back_dir = (get_dir(current.x, current.y) + 2) % 4;
     			current.x += dx[back_dir];
     			current.y += dy[back_dir];
             }

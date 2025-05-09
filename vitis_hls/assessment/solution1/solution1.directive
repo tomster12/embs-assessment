@@ -5,11 +5,6 @@
                 <option name="name" value="toplevel"/>
             </pragma>
         </directive>
-        <directive functionName="toplevel" label="" functionLabel="">
-            <pragma name="TOP">
-                <option name="name" value="toplevel"/>
-            </pragma>
-        </directive>
     </sourceFile>
 </AutoPilot:ProjectResources>
 
