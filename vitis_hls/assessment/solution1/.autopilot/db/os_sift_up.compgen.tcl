@@ -176,7 +176,7 @@ set hasByteEnable 0
 set MemName toplevel_os_sift_up_moves_target
 set CoreName ap_simcore_mem
 set PortList { 2 0 }
-set DataWd 13
+set DataWd 12
 set AddrRange 16
 set AddrWd 4
 set impl_style auto
@@ -273,7 +273,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir IO \
     corename open_set_heap_f_score_V \
     op interface \
-    ports { open_set_heap_f_score_V_address0 { O 13 vector } open_set_heap_f_score_V_ce0 { O 1 bit } open_set_heap_f_score_V_we0 { O 1 bit } open_set_heap_f_score_V_d0 { O 11 vector } open_set_heap_f_score_V_q0 { I 11 vector } } \
+    ports { open_set_heap_f_score_V_address0 { O 12 vector } open_set_heap_f_score_V_ce0 { O 1 bit } open_set_heap_f_score_V_we0 { O 1 bit } open_set_heap_f_score_V_d0 { O 11 vector } open_set_heap_f_score_V_q0 { I 11 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'open_set_heap_f_score_V'"
@@ -292,7 +292,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir IO \
     corename open_set_heap_g_score_V \
     op interface \
-    ports { open_set_heap_g_score_V_address0 { O 13 vector } open_set_heap_g_score_V_ce0 { O 1 bit } open_set_heap_g_score_V_we0 { O 1 bit } open_set_heap_g_score_V_d0 { O 11 vector } open_set_heap_g_score_V_q0 { I 11 vector } } \
+    ports { open_set_heap_g_score_V_address0 { O 12 vector } open_set_heap_g_score_V_ce0 { O 1 bit } open_set_heap_g_score_V_we0 { O 1 bit } open_set_heap_g_score_V_d0 { O 11 vector } open_set_heap_g_score_V_q0 { I 11 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'open_set_heap_g_score_V'"
@@ -311,7 +311,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir IO \
     corename open_set_heap_x_V \
     op interface \
-    ports { open_set_heap_x_V_address0 { O 13 vector } open_set_heap_x_V_ce0 { O 1 bit } open_set_heap_x_V_we0 { O 1 bit } open_set_heap_x_V_d0 { O 9 vector } open_set_heap_x_V_q0 { I 9 vector } } \
+    ports { open_set_heap_x_V_address0 { O 12 vector } open_set_heap_x_V_ce0 { O 1 bit } open_set_heap_x_V_we0 { O 1 bit } open_set_heap_x_V_d0 { O 9 vector } open_set_heap_x_V_q0 { I 9 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'open_set_heap_x_V'"
@@ -330,7 +330,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir IO \
     corename open_set_heap_y_V \
     op interface \
-    ports { open_set_heap_y_V_address0 { O 13 vector } open_set_heap_y_V_ce0 { O 1 bit } open_set_heap_y_V_we0 { O 1 bit } open_set_heap_y_V_d0 { O 9 vector } open_set_heap_y_V_q0 { I 9 vector } } \
+    ports { open_set_heap_y_V_address0 { O 12 vector } open_set_heap_y_V_ce0 { O 1 bit } open_set_heap_y_V_we0 { O 1 bit } open_set_heap_y_V_d0 { O 9 vector } open_set_heap_y_V_q0 { I 9 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'open_set_heap_y_V'"

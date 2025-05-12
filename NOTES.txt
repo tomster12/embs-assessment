@@ -1,0 +1,43 @@
+# Storage
+
+Limited by space rather than performance.
+500x500=250,000, 1-byte each = 250kb = almost all the RAM, so have to be smaller.
+
+Experimentation with large worlds:
+- seed=1, size=500, length=7112, max open set size=2048, 2294 ms
+- seed=2, size=500, length=6229, max open set size=2234, 1543 ms
+- seed=3, size=500, length=5154, max open set size=1665, 619 ms
+- seed=4, size=500, length=5941, max open set size=1828, 984 ms
+- seed=5, size=500, length=7340, max open set size=2152, 898 ms
+
+A* nodes are in open set, which is into arrays-per-variable into LUT
+- Limit of 3500 based on above experimentation
+- Only 2200 LUT but the other LUT is taken (expressions, registers, function variables, multiplexers)
+
+Cannot make A* nodes bigger, otherwise LUT fills up quickly
+- Coordinates are <= 500 therefore 9-bits max
+- Realistically F / G scores shouldn't be above 500*4=2000, therefore 11-bits
+
+Most data in packed into seperate bitmaps in BRAM
+- 1-bit each for closed / blocked / open, 2-bits for direction
+- At 5 bits total per node these cover 80 BRAM units
+
+input / output RAM sized to fit the input world and output RAM
+- For 500x500 input world is 7213
+- Realistically path shouldnt be above 500 each segment therefore 500*16=8000 total
+- Set to 8500 to guarantee cover world and most paths comfortably (based on above experimentation)
+
+# Performance
+
+Without the linear search it is very very quick.
+The other method duplicates entries and relies on the heaps sorting.
+This is very limited by the open set size, which needs to be alot bigger than we can.
+
+The middle ground is using an "is open" flag bitmask, and if its open do a pipelined linear search
+os_find always loops over the entire array no early exit then returns at the end
+This allows pipeline II=1 which is better
+
+Heap sift up / down are split into 2 loops:
+- First loop finds element movements and stores these
+- Second loop performs the movements on the array
+This avoids loop dependence and allows pipeline II=1

@@ -1,9 +1,9 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'os_sift_up'" level="0">
-<item name = "Date">Fri May  9 12:17:38 2025
+<item name = "Date">Mon May 12 22:50:44 2025
 </item>
-<item name = "Version">2020.2.2 (Build 3118627 on Tue Feb  9 05:13:49 MST 2021)</item>
+<item name = "Version">2020.2 (Build 3064766 on Wed Nov 18 09:12:47 MST 2020)</item>
 <item name = "Project">assessment</item>
 <item name = "Solution">solution1 (Vivado IP Flow Target)</item>
 <item name = "Product family">zynq</item>

@@ -1,11 +1,11 @@
-// Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+// Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2020.2.2 (lin64) Build 3118627 Tue Feb  9 05:13:49 MST 2021
-// Date        : Fri May  9 12:21:11 2025
-// Host        : cse168pc05 running 64-bit Ubuntu 24.04.2 LTS
+// Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+// Date        : Fri May  2 16:22:20 2025
+// Host        : DESKTOP-Q62E4QT running 64-bit Ubuntu 22.04.5 LTS
 // Command     : write_verilog -force -mode synth_stub -rename_top zybo_design_auto_pc_1 -prefix
-//               zybo_design_auto_pc_1_ zybo_design_auto_pc_0_stub.v
-// Design      : zybo_design_auto_pc_0
+//               zybo_design_auto_pc_1_ zybo_design_auto_pc_2_stub.v
+// Design      : zybo_design_auto_pc_2
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z010clg400-1
 // --------------------------------------------------------------------------------
@@ -13,7 +13,7 @@
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
-(* X_CORE_INFO = "axi_protocol_converter_v2_1_22_axi_protocol_converter,Vivado 2020.2.2" *)
+(* X_CORE_INFO = "axi_protocol_converter_v2_1_22_axi_protocol_converter,Vivado 2020.2" *)
 module zybo_design_auto_pc_1(aclk, aresetn, s_axi_awid, s_axi_awaddr, 
   s_axi_awlen, s_axi_awsize, s_axi_awburst, s_axi_awlock, s_axi_awcache, s_axi_awprot, 
   s_axi_awregion, s_axi_awqos, s_axi_awvalid, s_axi_awready, s_axi_wdata, s_axi_wstrb, 

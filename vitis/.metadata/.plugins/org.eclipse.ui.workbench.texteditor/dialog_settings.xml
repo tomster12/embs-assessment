@@ -2,51 +2,51 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item key="wrap" value="true"/>
-		<item key="casesensitive" value="true"/>
+		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="t"/>
+		<item key="selection" value="length ="/>
 		<list key="findhistory">
-			<item value="type"/>
-			<item value="display_square"/>
-			<item value="display_world"/>
-			<item value="type !="/>
-			<item value="(-"/>
-			<item value="Enter world"/>
-			<item value="Enter"/>
-			<item value="i =="/>
-			<item value="TASK]"/>
-			<item value="UDP]"/>
-			<item value="GRAPHICS"/>
-			<item value=" [GRAPHICS]"/>
-			<item value=" [UDP]"/>
-			<item value=" [TASK]"/>
-			<item value="[TASK]"/>
+			<item value="length ="/>
+			<item value="World"/>
+			<item value="Outputting"/>
+			<item value="&quot;  ["/>
+			<item value="&quot;["/>
+			<item value="⎯"/>
+			<item value="dump"/>
+			<item value="Error:"/>
+			<item value="&amp;hw_ram"/>
+			<item value="char_world"/>
+			<item value="get_world_closed"/>
+			<item value="update_char_world"/>
+			<item value="World bitmap"/>
+			<item value="mem"/>
+			<item value="write_world_to_mem"/>
 		</list>
 		<list key="replacehistory">
-			<item value="t"/>
-			<item value=" TASK]"/>
-			<item value=" UDP]"/>
-			<item value=" HDMI"/>
-			<item value="[💻GRAPHICS]"/>
-			<item value="[📡UDP]"/>
-			<item value="[UDP"/>
-			<item value="[⏳TASK]"/>
-			<item value=" [GRAPHICS]"/>
-			<item value=" [UDP]"/>
-			<item value=" [TASK]"/>
-			<item value="\n\r"/>
-			<item value="\r\n❗ Error"/>
-			<item value="❗ Error:"/>
-			<item value="[GRAPHICS]"/>
+			<item value="&quot;["/>
+			<item value="&quot;  ["/>
+			<item value="write_world_to_ram"/>
+			<item value="_world_closed("/>
+			<item value="hw_ram_wp"/>
+			<item value="WORLD_"/>
+			<item value="t == &apos;x&apos;"/>
+			<item value="t == &apos;.&apos;"/>
+			<item value="t == &apos;O&apos;"/>
+			<item value="c == &apos;&apos;"/>
+			<item value="c == &apos; &apos;"/>
+			<item value="hw_ram"/>
+			<item value="MAX_WORLD_SIZE"/>
+			<item value="MAX_WORLD_WALLS"/>
+			<item value="MAX_WORLD_WAYPOINTS"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="10"/>
-		<item key="DIALOG_Y_ORIGIN" value="10"/>
-		<item key="DIALOG_WIDTH" value="342"/>
-		<item key="DIALOG_HEIGHT" value="415"/>
-		<item key="DIALOG_FONT_NAME" value="1|Ubuntu Sans|11.0|0|GTK|1|"/>
+		<item key="DIALOG_X_ORIGIN" value="1322"/>
+		<item key="DIALOG_Y_ORIGIN" value="427"/>
+		<item key="DIALOG_WIDTH" value="341"/>
+		<item key="DIALOG_HEIGHT" value="408"/>
+		<item key="DIALOG_FONT_NAME" value="1|Sans|10.0|0|GTK|1|"/>
 	</section>
 </section>

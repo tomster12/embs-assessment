@@ -1,6 +1,6 @@
 -- ==============================================================
--- Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2.2 (64-bit)
--- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+-- Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+-- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- ==============================================================
 --
 library ieee; 
@@ -9,7 +9,7 @@ use ieee.std_logic_unsigned.all;
 
 entity toplevel_os_sift_up_moves_target_ram is 
     generic(
-            DWIDTH     : integer := 13; 
+            DWIDTH     : integer := 12; 
             AWIDTH     : integer := 4; 
             MEM_SIZE    : integer := 16
     ); 
@@ -82,7 +82,7 @@ use IEEE.std_logic_1164.all;
 
 entity toplevel_os_sift_up_moves_target is
     generic (
-        DataWidth : INTEGER := 13;
+        DataWidth : INTEGER := 12;
         AddressRange : INTEGER := 16;
         AddressWidth : INTEGER := 4);
     port (

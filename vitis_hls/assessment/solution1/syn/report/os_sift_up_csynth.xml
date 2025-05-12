@@ -1,7 +1,7 @@
 <profile>
 
 <ReportVersion>
-<Version>2020.2.2</Version>
+<Version>2020.2</Version>
 </ReportVersion>
 
 <UserAssignments>
@@ -61,8 +61,8 @@
 <AreaEstimates>
 <Resources>
 <BRAM_18K>0</BRAM_18K>
-<FF>930</FF>
-<LUT>3543</LUT>
+<FF>909</FF>
+<LUT>3533</LUT>
 <DSP>0</DSP>
 <URAM>0</URAM>
 </Resources>
@@ -161,7 +161,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>13</Bits>
+<Bits>12</Bits>
 <Attribute>address</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -216,7 +216,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>13</Bits>
+<Bits>12</Bits>
 <Attribute>address</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -271,7 +271,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>13</Bits>
+<Bits>12</Bits>
 <Attribute>address</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -326,7 +326,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>13</Bits>
+<Bits>12</Bits>
 <Attribute>address</Attribute>
 </RtlPorts>
 <RtlPorts>

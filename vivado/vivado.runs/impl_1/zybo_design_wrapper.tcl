@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vivado/vivado.runs/impl_1/zybo_design_wrapper.tcl"
+  variable script "/home/tomster12/files/EMBS/vivado/vivado.runs/impl_1/zybo_design_wrapper.tcl"
   variable category "vivado_impl"
 }
 
@@ -122,35 +122,35 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param chipscope.maxJobs 3
-  set_param xicom.use_bs_reader 1
+  set_param chipscope.maxJobs 4
+  set_param ced.repoPaths /home/tomster12/.Xilinx/Vivado/2020.2/xhub/ced_store/Vivado_example_project
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7z010clg400-1
-  set_property board_part_repo_paths {/home/userfs/t/tb1262/.Xilinx/Vivado/2020.2.2/xhub/board_store/xilinx_board_store} [current_project]
+  set_property board_part_repo_paths {/home/tomster12/.Xilinx/Vivado/2020.2/xhub/board_store/xilinx_board_store} [current_project]
   set_property board_part digilentinc.com:zybo-z7-10:part0:1.0 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vivado/vivado.cache/wt [current_project]
-  set_property parent.project_path /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vivado/vivado.xpr [current_project]
+  set_property webtalk.parent_dir /home/tomster12/files/EMBS/vivado/vivado.cache/wt [current_project]
+  set_property parent.project_path /home/tomster12/files/EMBS/vivado/vivado.xpr [current_project]
   set_property ip_repo_paths {
-  /home/userfs/t/tb1262/Files/EMBS/embs-assessment/zybo-z7-hdmi/hardware/zybo_z7_hdmi_repo
-  /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis_hls/assessment
+  /home/tomster12/files/EMBS/zybo-z7-hdmi/hardware/zybo_z7_hdmi_repo
+  /home/tomster12/files/EMBS/vitis_hls/assessment
 } [current_project]
   update_ip_catalog
-  set_property ip_output_repo /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vivado/vivado.cache/ip [current_project]
+  set_property ip_output_repo /home/tomster12/files/EMBS/vivado/vivado.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vivado/vivado.runs/synth_1/zybo_design_wrapper.dcp
+  add_files -quiet /home/tomster12/files/EMBS/vivado/vivado.runs/synth_1/zybo_design_wrapper.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
-  add_files /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vivado/vivado.srcs/sources_1/bd/zybo_design/zybo_design.bd
+  add_files /home/tomster12/files/EMBS/vivado/vivado.srcs/sources_1/bd/zybo_design/zybo_design.bd
   set_param project.isImplRun false
 OPTRACE "read constraints: implementation" START { }
-  read_xdc /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vivado/vivado.srcs/constrs_1/imports/hardware/zybo_z7_hdmi.xdc
+  read_xdc /home/tomster12/files/EMBS/vivado/vivado.srcs/constrs_1/imports/hardware/zybo_z7_hdmi.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }

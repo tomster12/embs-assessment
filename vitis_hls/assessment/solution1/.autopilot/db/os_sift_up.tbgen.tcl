@@ -13,10 +13,10 @@ set C_modelName {os_sift_up}
 set C_modelType { void 0 }
 set C_modelArgList {
 	{ idx uint 16 regular  }
-	{ open_set_heap_f_score_V int 11 regular {array 5000 { 2 } 1 1 } {global 2}  }
-	{ open_set_heap_g_score_V int 11 regular {array 5000 { 2 } 1 1 } {global 2}  }
-	{ open_set_heap_x_V int 9 regular {array 5000 { 2 } 1 1 } {global 2}  }
-	{ open_set_heap_y_V int 9 regular {array 5000 { 2 } 1 1 } {global 2}  }
+	{ open_set_heap_f_score_V int 11 regular {array 3500 { 2 } 1 1 } {global 2}  }
+	{ open_set_heap_g_score_V int 11 regular {array 3500 { 2 } 1 1 } {global 2}  }
+	{ open_set_heap_x_V int 9 regular {array 3500 { 2 } 1 1 } {global 2}  }
+	{ open_set_heap_y_V int 9 regular {array 3500 { 2 } 1 1 } {global 2}  }
 }
 set C_modelArgMapList {[ 
 	{ "Name" : "idx", "interface" : "wire", "bitwidth" : 16, "direction" : "READONLY"} , 
@@ -34,22 +34,22 @@ set portList {
 	{ ap_idle sc_out sc_logic 1 done -1 } 
 	{ ap_ready sc_out sc_logic 1 ready -1 } 
 	{ idx sc_in sc_lv 16 signal 0 } 
-	{ open_set_heap_f_score_V_address0 sc_out sc_lv 13 signal 1 } 
+	{ open_set_heap_f_score_V_address0 sc_out sc_lv 12 signal 1 } 
 	{ open_set_heap_f_score_V_ce0 sc_out sc_logic 1 signal 1 } 
 	{ open_set_heap_f_score_V_we0 sc_out sc_logic 1 signal 1 } 
 	{ open_set_heap_f_score_V_d0 sc_out sc_lv 11 signal 1 } 
 	{ open_set_heap_f_score_V_q0 sc_in sc_lv 11 signal 1 } 
-	{ open_set_heap_g_score_V_address0 sc_out sc_lv 13 signal 2 } 
+	{ open_set_heap_g_score_V_address0 sc_out sc_lv 12 signal 2 } 
 	{ open_set_heap_g_score_V_ce0 sc_out sc_logic 1 signal 2 } 
 	{ open_set_heap_g_score_V_we0 sc_out sc_logic 1 signal 2 } 
 	{ open_set_heap_g_score_V_d0 sc_out sc_lv 11 signal 2 } 
 	{ open_set_heap_g_score_V_q0 sc_in sc_lv 11 signal 2 } 
-	{ open_set_heap_x_V_address0 sc_out sc_lv 13 signal 3 } 
+	{ open_set_heap_x_V_address0 sc_out sc_lv 12 signal 3 } 
 	{ open_set_heap_x_V_ce0 sc_out sc_logic 1 signal 3 } 
 	{ open_set_heap_x_V_we0 sc_out sc_logic 1 signal 3 } 
 	{ open_set_heap_x_V_d0 sc_out sc_lv 9 signal 3 } 
 	{ open_set_heap_x_V_q0 sc_in sc_lv 9 signal 3 } 
-	{ open_set_heap_y_V_address0 sc_out sc_lv 13 signal 4 } 
+	{ open_set_heap_y_V_address0 sc_out sc_lv 12 signal 4 } 
 	{ open_set_heap_y_V_ce0 sc_out sc_logic 1 signal 4 } 
 	{ open_set_heap_y_V_we0 sc_out sc_logic 1 signal 4 } 
 	{ open_set_heap_y_V_d0 sc_out sc_lv 9 signal 4 } 
@@ -63,22 +63,22 @@ set NewPortList {[
  	{ "name": "ap_idle", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "done", "bundle":{"name": "ap_idle", "role": "default" }} , 
  	{ "name": "ap_ready", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "ready", "bundle":{"name": "ap_ready", "role": "default" }} , 
  	{ "name": "idx", "direction": "in", "datatype": "sc_lv", "bitwidth":16, "type": "signal", "bundle":{"name": "idx", "role": "default" }} , 
- 	{ "name": "open_set_heap_f_score_V_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":13, "type": "signal", "bundle":{"name": "open_set_heap_f_score_V", "role": "address0" }} , 
+ 	{ "name": "open_set_heap_f_score_V_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":12, "type": "signal", "bundle":{"name": "open_set_heap_f_score_V", "role": "address0" }} , 
  	{ "name": "open_set_heap_f_score_V_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "open_set_heap_f_score_V", "role": "ce0" }} , 
  	{ "name": "open_set_heap_f_score_V_we0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "open_set_heap_f_score_V", "role": "we0" }} , 
  	{ "name": "open_set_heap_f_score_V_d0", "direction": "out", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "open_set_heap_f_score_V", "role": "d0" }} , 
  	{ "name": "open_set_heap_f_score_V_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "open_set_heap_f_score_V", "role": "q0" }} , 
- 	{ "name": "open_set_heap_g_score_V_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":13, "type": "signal", "bundle":{"name": "open_set_heap_g_score_V", "role": "address0" }} , 
+ 	{ "name": "open_set_heap_g_score_V_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":12, "type": "signal", "bundle":{"name": "open_set_heap_g_score_V", "role": "address0" }} , 
  	{ "name": "open_set_heap_g_score_V_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "open_set_heap_g_score_V", "role": "ce0" }} , 
  	{ "name": "open_set_heap_g_score_V_we0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "open_set_heap_g_score_V", "role": "we0" }} , 
  	{ "name": "open_set_heap_g_score_V_d0", "direction": "out", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "open_set_heap_g_score_V", "role": "d0" }} , 
  	{ "name": "open_set_heap_g_score_V_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "open_set_heap_g_score_V", "role": "q0" }} , 
- 	{ "name": "open_set_heap_x_V_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":13, "type": "signal", "bundle":{"name": "open_set_heap_x_V", "role": "address0" }} , 
+ 	{ "name": "open_set_heap_x_V_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":12, "type": "signal", "bundle":{"name": "open_set_heap_x_V", "role": "address0" }} , 
  	{ "name": "open_set_heap_x_V_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "open_set_heap_x_V", "role": "ce0" }} , 
  	{ "name": "open_set_heap_x_V_we0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "open_set_heap_x_V", "role": "we0" }} , 
  	{ "name": "open_set_heap_x_V_d0", "direction": "out", "datatype": "sc_lv", "bitwidth":9, "type": "signal", "bundle":{"name": "open_set_heap_x_V", "role": "d0" }} , 
  	{ "name": "open_set_heap_x_V_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":9, "type": "signal", "bundle":{"name": "open_set_heap_x_V", "role": "q0" }} , 
- 	{ "name": "open_set_heap_y_V_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":13, "type": "signal", "bundle":{"name": "open_set_heap_y_V", "role": "address0" }} , 
+ 	{ "name": "open_set_heap_y_V_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":12, "type": "signal", "bundle":{"name": "open_set_heap_y_V", "role": "address0" }} , 
  	{ "name": "open_set_heap_y_V_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "open_set_heap_y_V", "role": "ce0" }} , 
  	{ "name": "open_set_heap_y_V_we0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "open_set_heap_y_V", "role": "we0" }} , 
  	{ "name": "open_set_heap_y_V_d0", "direction": "out", "datatype": "sc_lv", "bitwidth":9, "type": "signal", "bundle":{"name": "open_set_heap_y_V", "role": "d0" }} , 
@@ -132,8 +132,8 @@ set PipelineEnableSignalInfo {[
 
 set Spec2ImplPortList { 
 	idx { ap_none {  { idx in_data 0 16 } } }
-	open_set_heap_f_score_V { ap_memory {  { open_set_heap_f_score_V_address0 mem_address 1 13 }  { open_set_heap_f_score_V_ce0 mem_ce 1 1 }  { open_set_heap_f_score_V_we0 mem_we 1 1 }  { open_set_heap_f_score_V_d0 mem_din 1 11 }  { open_set_heap_f_score_V_q0 mem_dout 0 11 } } }
-	open_set_heap_g_score_V { ap_memory {  { open_set_heap_g_score_V_address0 mem_address 1 13 }  { open_set_heap_g_score_V_ce0 mem_ce 1 1 }  { open_set_heap_g_score_V_we0 mem_we 1 1 }  { open_set_heap_g_score_V_d0 mem_din 1 11 }  { open_set_heap_g_score_V_q0 mem_dout 0 11 } } }
-	open_set_heap_x_V { ap_memory {  { open_set_heap_x_V_address0 mem_address 1 13 }  { open_set_heap_x_V_ce0 mem_ce 1 1 }  { open_set_heap_x_V_we0 mem_we 1 1 }  { open_set_heap_x_V_d0 mem_din 1 9 }  { open_set_heap_x_V_q0 mem_dout 0 9 } } }
-	open_set_heap_y_V { ap_memory {  { open_set_heap_y_V_address0 mem_address 1 13 }  { open_set_heap_y_V_ce0 mem_ce 1 1 }  { open_set_heap_y_V_we0 mem_we 1 1 }  { open_set_heap_y_V_d0 mem_din 1 9 }  { open_set_heap_y_V_q0 mem_dout 0 9 } } }
+	open_set_heap_f_score_V { ap_memory {  { open_set_heap_f_score_V_address0 mem_address 1 12 }  { open_set_heap_f_score_V_ce0 mem_ce 1 1 }  { open_set_heap_f_score_V_we0 mem_we 1 1 }  { open_set_heap_f_score_V_d0 mem_din 1 11 }  { open_set_heap_f_score_V_q0 mem_dout 0 11 } } }
+	open_set_heap_g_score_V { ap_memory {  { open_set_heap_g_score_V_address0 mem_address 1 12 }  { open_set_heap_g_score_V_ce0 mem_ce 1 1 }  { open_set_heap_g_score_V_we0 mem_we 1 1 }  { open_set_heap_g_score_V_d0 mem_din 1 11 }  { open_set_heap_g_score_V_q0 mem_dout 0 11 } } }
+	open_set_heap_x_V { ap_memory {  { open_set_heap_x_V_address0 mem_address 1 12 }  { open_set_heap_x_V_ce0 mem_ce 1 1 }  { open_set_heap_x_V_we0 mem_we 1 1 }  { open_set_heap_x_V_d0 mem_din 1 9 }  { open_set_heap_x_V_q0 mem_dout 0 9 } } }
+	open_set_heap_y_V { ap_memory {  { open_set_heap_y_V_address0 mem_address 1 12 }  { open_set_heap_y_V_ce0 mem_ce 1 1 }  { open_set_heap_y_V_we0 mem_we 1 1 }  { open_set_heap_y_V_d0 mem_din 1 9 }  { open_set_heap_y_V_q0 mem_dout 0 9 } } }
 }

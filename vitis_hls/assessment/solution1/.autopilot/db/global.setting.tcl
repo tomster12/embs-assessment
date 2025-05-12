@@ -44,7 +44,7 @@ set SCTraceOption all
 set TargetInfo xc7z010:-clg400:-1
 set SourceFiles {sc {} c ../toplevel.cpp}
 set SourceFlags {sc {} c {{}}}
-set DirectiveFile /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis_hls/assessment/solution1/solution1.directive
+set DirectiveFile /home/tomster12/files/EMBS/vitis_hls/assessment/solution1/solution1.directive
 set TBFiles {verilog ../testbench.cpp bc ../testbench.cpp vhdl ../testbench.cpp sc ../testbench.cpp cas ../testbench.cpp c {}}
 set SpecLanguage C
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

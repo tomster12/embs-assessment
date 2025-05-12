@@ -1,14 +1,14 @@
-Fri May  9 09:48:43 2025: Server was asked to start on port: '39247'
-Fri May  9 09:48:43 2025: Server is using token UUID: 'f739a829-34c8-48d8-9d76-14de3f73b580'
-Fri May  9 09:48:43 2025: Attempting to start server on port '39247'
-Fri May  9 09:48:43 2025: XRC main fifo: created main fifo '/tmp/xrcmainf739a829-34c8-48d8-9d76-14de3f73b580', fd read = 11
-Fri May  9 09:48:43 2025: Running Rule Check Server
-Fri May  9 09:48:43 2025: Version 1.6.1
-Fri May  9 09:48:43 2025: Rule Check Server: Accepted socket connection from client
-Fri May  9 09:48:43 2025: EXCHANGE_TOKEN received, server token: f739a829-34c8-48d8-9d76-14de3f73b580, passed token: f739a829-34c8-48d8-9d76-14de3f73b580
-Fri May  9 12:35:34 2025: STOP_SERVER received, server token: f739a829-34c8-48d8-9d76-14de3f73b580, passed token: f739a829-34c8-48d8-9d76-14de3f73b580
-Fri May  9 12:35:34 2025: Socket received request to stop server.
-Fri May  9 12:35:34 2025: SERVER: destructor for server bound to port 39247
-Fri May  9 12:35:34 2025: XRC main fifo: Good unlink of /tmp/xrcmainf739a829-34c8-48d8-9d76-14de3f73b580
-Fri May  9 12:35:34 2025: Server exiting with status 0.
-Fri May  9 12:35:34 2025: Closing log file.
+Mon May 12 17:14:29 2025: Server was asked to start on port: '40337'
+Mon May 12 17:14:29 2025: Server is using token UUID: 'c9f46a4c-24fb-4ec6-8665-68c5a5d5b20c'
+Mon May 12 17:14:29 2025: Attempting to start server on port '40337'
+Mon May 12 17:14:29 2025: XRC main fifo: created main fifo '/tmp/xrcmainc9f46a4c-24fb-4ec6-8665-68c5a5d5b20c', fd read = 11
+Mon May 12 17:14:29 2025: Running Rule Check Server
+Mon May 12 17:14:29 2025: Version 1.6.1
+Mon May 12 17:14:29 2025: Rule Check Server: Accepted socket connection from client
+Mon May 12 17:14:29 2025: EXCHANGE_TOKEN received, server token: c9f46a4c-24fb-4ec6-8665-68c5a5d5b20c, passed token: c9f46a4c-24fb-4ec6-8665-68c5a5d5b20c
+Mon May 12 23:22:10 2025: STOP_SERVER received, server token: c9f46a4c-24fb-4ec6-8665-68c5a5d5b20c, passed token: c9f46a4c-24fb-4ec6-8665-68c5a5d5b20c
+Mon May 12 23:22:10 2025: Socket received request to stop server.
+Mon May 12 23:22:10 2025: SERVER: destructor for server bound to port 40337
+Mon May 12 23:22:10 2025: XRC main fifo: Good unlink of /tmp/xrcmainc9f46a4c-24fb-4ec6-8665-68c5a5d5b20c
+Mon May 12 23:22:10 2025: Server exiting with status 0.
+Mon May 12 23:22:10 2025: Closing log file.

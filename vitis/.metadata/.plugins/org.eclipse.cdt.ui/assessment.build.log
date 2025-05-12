@@ -1,4 +1,4 @@
-12:33:01 **** Incremental Build of configuration Release for project assessment ****
+23:15:40 **** Incremental Build of configuration Release for project assessment ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
@@ -6,30 +6,30 @@ a9-linaro-pre-build-step
 make --no-print-directory main-build
 Building file: ../src/zybo_z7_hdmi/display_ctrl.c
 Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/zybo_z7_hdmi/display_ctrl.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/sw/zybo_design_wrapper/freertos10_xilinx_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/zybo_z7_hdmi/display_ctrl.d" -MT"src/zybo_z7_hdmi/display_ctrl.o" -o "src/zybo_z7_hdmi/display_ctrl.o" "../src/zybo_z7_hdmi/display_ctrl.c"
+arm-none-eabi-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/zybo_z7_hdmi/display_ctrl.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I/home/tomster12/files/EMBS/vitis/zybo_design_wrapper/export/zybo_design_wrapper/sw/zybo_design_wrapper/freertos10_xilinx_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/zybo_z7_hdmi/display_ctrl.d" -MT"src/zybo_z7_hdmi/display_ctrl.o" -o "src/zybo_z7_hdmi/display_ctrl.o" "../src/zybo_z7_hdmi/display_ctrl.c"
 Finished building: ../src/zybo_z7_hdmi/display_ctrl.c
  
 Building file: ../src/zybo_z7_hdmi/dynclk.c
 Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/zybo_z7_hdmi/dynclk.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/sw/zybo_design_wrapper/freertos10_xilinx_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/zybo_z7_hdmi/dynclk.d" -MT"src/zybo_z7_hdmi/dynclk.o" -o "src/zybo_z7_hdmi/dynclk.o" "../src/zybo_z7_hdmi/dynclk.c"
+arm-none-eabi-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/zybo_z7_hdmi/dynclk.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I/home/tomster12/files/EMBS/vitis/zybo_design_wrapper/export/zybo_design_wrapper/sw/zybo_design_wrapper/freertos10_xilinx_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/zybo_z7_hdmi/dynclk.d" -MT"src/zybo_z7_hdmi/dynclk.o" -o "src/zybo_z7_hdmi/dynclk.o" "../src/zybo_z7_hdmi/dynclk.c"
 Finished building: ../src/zybo_z7_hdmi/dynclk.c
  
 Building file: ../src/main.c
 Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/sw/zybo_design_wrapper/freertos10_xilinx_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+arm-none-eabi-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I/home/tomster12/files/EMBS/vitis/zybo_design_wrapper/export/zybo_design_wrapper/sw/zybo_design_wrapper/freertos10_xilinx_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
 Finished building: ../src/main.c
  
 Building target: assessment.elf
 Invoking: ARM v7 gcc linker
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L/home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/sw/zybo_design_wrapper/freertos10_xilinx_ps7_cortexa9_0/bsplib/lib -o "assessment.elf" ./src/zybo_z7_hdmi/display_ctrl.o ./src/zybo_z7_hdmi/dynclk.o  ./src/main.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L/home/tomster12/files/EMBS/vitis/zybo_design_wrapper/export/zybo_design_wrapper/sw/zybo_design_wrapper/freertos10_xilinx_ps7_cortexa9_0/bsplib/lib -o "assessment.elf" ./src/zybo_z7_hdmi/display_ctrl.o ./src/zybo_z7_hdmi/dynclk.o  ./src/main.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
 Finished building target: assessment.elf
  
 Invoking: ARM v7 Print Size
 arm-none-eabi-size assessment.elf  |tee "assessment.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 191328	   3544	12638256	12833128	 c3d168	assessment.elf
+ 191732	   3544	12638256	12833532	 c3d2fc	assessment.elf
 Finished building: assessment.elf.size
  
 
-12:33:03 Build Finished (took 1s.632ms)
+23:15:41 Build Finished (took 872ms)
 

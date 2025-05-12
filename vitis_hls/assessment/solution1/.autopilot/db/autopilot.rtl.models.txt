@@ -4,9 +4,9 @@ toplevel_os_sift_up_moves_target
 toplevel_mul_mul_16ns_16ns_18_4_1
 toplevel_mul_mul_16ns_9ns_18_4_1
 toplevel_mac_muladd_16ns_9ns_9ns_18_4_1
-toplevel_local_world
+toplevel_world_blocked
 toplevel_waypoints_x_V
-toplevel_grid_info_V
+toplevel_world_dir
 toplevel_open_set_heap_f_score_V
 toplevel_open_set_heap_x_V
 toplevel_dx

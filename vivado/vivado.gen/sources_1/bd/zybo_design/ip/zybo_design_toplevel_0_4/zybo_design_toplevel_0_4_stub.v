@@ -1,10 +1,10 @@
-// Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+// Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2020.2.2 (lin64) Build 3118627 Tue Feb  9 05:13:49 MST 2021
-// Date        : Fri May  9 12:24:44 2025
-// Host        : cse168pc05 running 64-bit Ubuntu 24.04.2 LTS
+// Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+// Date        : Mon May 12 23:06:18 2025
+// Host        : DESKTOP-Q62E4QT running 64-bit Ubuntu 22.04.5 LTS
 // Command     : write_verilog -force -mode synth_stub
-//               /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vivado/vivado.gen/sources_1/bd/zybo_design/ip/zybo_design_toplevel_0_4/zybo_design_toplevel_0_4_stub.v
+//               /home/tomster12/files/EMBS/vivado/vivado.gen/sources_1/bd/zybo_design/ip/zybo_design_toplevel_0_4/zybo_design_toplevel_0_4_stub.v
 // Design      : zybo_design_toplevel_0_4
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z010clg400-1
@@ -13,7 +13,7 @@
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
-(* X_CORE_INFO = "toplevel,Vivado 2020.2.2" *)
+(* X_CORE_INFO = "toplevel,Vivado 2020.2" *)
 module zybo_design_toplevel_0_4(s_axi_AXILiteS_AWADDR, 
   s_axi_AXILiteS_AWVALID, s_axi_AXILiteS_AWREADY, s_axi_AXILiteS_WDATA, 
   s_axi_AXILiteS_WSTRB, s_axi_AXILiteS_WVALID, s_axi_AXILiteS_WREADY, 

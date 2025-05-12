@@ -1,9 +1,9 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'toplevel'" level="0">
-<item name = "Date">Fri May  9 12:17:43 2025
+<item name = "Date">Mon May 12 22:50:48 2025
 </item>
-<item name = "Version">2020.2.2 (Build 3118627 on Tue Feb  9 05:13:49 MST 2021)</item>
+<item name = "Version">2020.2 (Build 3064766 on Wed Nov 18 09:12:47 MST 2020)</item>
 <item name = "Project">assessment</item>
 <item name = "Solution">solution1 (Vivado IP Flow Target)</item>
 <item name = "Product family">zynq</item>
@@ -37,16 +37,15 @@
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
 <column name="- COPY_RAM_LOOP">7814, 7814, 3, 1, 1, 7813, yes</column>
 <column name="- WAYPOINT_EXTRACT_LOOP">?, ?, 3, 1, 1, ?, yes</column>
-<column name="- WAYPOINT_LOOP">?, ?, ?, -, -, ?, no</column>
-<column name=" + EMPTY_GRID_INFO_LOOP">1, 250000, 1, 1, 1, 1 ~ 250000, yes</column>
-<column name=" + RESET_WORLD_LOOP">7814, 7814, 3, 1, 1, 7813, yes</column>
-<column name=" + AS_SEARCH_LOOP">?, ?, 14 ~ 60390, -, -, ?, no</column>
+<column name="- OUTER_SEARCH_LOOP">?, ?, ?, -, -, ?, no</column>
+<column name=" + RESET_WORLD_LOOP">7813, 7813, 1, 1, 1, 7813, yes</column>
+<column name=" + INNER_SEARCH_LOOP">?, ?, 14 ~ 14398, -, -, ?, no</column>
 <column name="  ++ SIFT_DOWN_COPY_LOOP">2, 32, 2, -, -, 1 ~ 16, no</column>
-<column name="  ++ OS_FIND_LOOP">3, 15002, 3, -, -, 1 ~ 5000, no</column>
-<column name="  ++ OS_FIND_LOOP">3, 15002, 3, -, -, 1 ~ 5000, no</column>
-<column name="  ++ OS_FIND_LOOP">3, 15002, 3, -, -, 1 ~ 5000, no</column>
-<column name="  ++ OS_FIND_LOOP">3, 15002, 3, -, -, 1 ~ 5000, no</column>
-<column name=" + MAKE_PATH_LOOP">8, 16384, 8, -, -, 1 ~ 2048, no</column>
+<column name="  ++ OS_FIND_LOOP">1, 3500, 2, 1, 1, 1 ~ 3500, yes</column>
+<column name="  ++ OS_FIND_LOOP">1, 3500, 2, 1, 1, 1 ~ 3500, yes</column>
+<column name="  ++ OS_FIND_LOOP">1, 3500, 2, 1, 1, 1 ~ 3500, yes</column>
+<column name="  ++ OS_FIND_LOOP">1, 3500, 2, 1, 1, 1 ~ 3500, yes</column>
+<column name=" + WRITE_PATH_LOOP">8, 16384, 8, -, -, 1 ~ 2048, no</column>
 </table>
 </item>
 </section>

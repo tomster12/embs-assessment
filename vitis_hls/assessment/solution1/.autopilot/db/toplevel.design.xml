@@ -5,10 +5,10 @@
 <ModuleName>toplevel</ModuleName>
 <InstancesList>
 <Instance>
-<InstName>grp_os_sift_up_fu_3919</InstName>
+<InstName>grp_os_sift_up_fu_3983</InstName>
 <ModuleName>os_sift_up</ModuleName>
 <IsCompInst>true</IsCompInst>
-<ID>3919</ID>
+<ID>3983</ID>
 </Instance>
 </InstancesList>
 </TopModule>
@@ -55,10 +55,10 @@
 <BRAM_18K>0</BRAM_18K>
 <AVAIL_BRAM>120</AVAIL_BRAM>
 <UTIL_BRAM>0</UTIL_BRAM>
-<FF>930</FF>
+<FF>909</FF>
 <AVAIL_FF>35200</AVAIL_FF>
 <UTIL_FF>2</UTIL_FF>
-<LUT>3543</LUT>
+<LUT>3533</LUT>
 <AVAIL_LUT>17600</AVAIL_LUT>
 <UTIL_LUT>20</UTIL_LUT>
 <DSP>0</DSP>
@@ -155,7 +155,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>13</Bits>
+<Bits>12</Bits>
 <Attribute>address</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -210,7 +210,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>13</Bits>
+<Bits>12</Bits>
 <Attribute>address</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -265,7 +265,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>13</Bits>
+<Bits>12</Bits>
 <Attribute>address</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -320,7 +320,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>13</Bits>
+<Bits>12</Bits>
 <Attribute>address</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -404,46 +404,33 @@
 <PipelineII>1</PipelineII>
 <PipelineDepth>3</PipelineDepth>
 </WAYPOINT_EXTRACT_LOOP>
-<WAYPOINT_LOOP>
-<Name>WAYPOINT_LOOP</Name>
+<OUTER_SEARCH_LOOP>
+<Name>OUTER_SEARCH_LOOP</Name>
 <TripCount>undef</TripCount>
 <Latency>undef</Latency>
 <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
 <IterationLatency>undef</IterationLatency>
 <PipelineDepth>undef</PipelineDepth>
-<EMPTY_GRID_INFO_LOOP>
-<Name>EMPTY_GRID_INFO_LOOP</Name>
-<TripCount>
-<range>
-<min>1</min>
-<max>250000</max>
-</range>
-</TripCount>
-<Latency>1 ~ 250000</Latency>
-<AbsoluteTimeLatency>10.000 ns ~ 2.500 ms</AbsoluteTimeLatency>
-<PipelineII>1</PipelineII>
-<PipelineDepth>1</PipelineDepth>
-</EMPTY_GRID_INFO_LOOP>
 <RESET_WORLD_LOOP>
 <Name>RESET_WORLD_LOOP</Name>
 <TripCount>7813</TripCount>
-<Latency>7814</Latency>
-<AbsoluteTimeLatency>78.140 us</AbsoluteTimeLatency>
+<Latency>7813</Latency>
+<AbsoluteTimeLatency>78.130 us</AbsoluteTimeLatency>
 <PipelineII>1</PipelineII>
-<PipelineDepth>3</PipelineDepth>
+<PipelineDepth>1</PipelineDepth>
 </RESET_WORLD_LOOP>
-<AS_SEARCH_LOOP>
-<Name>AS_SEARCH_LOOP</Name>
+<INNER_SEARCH_LOOP>
+<Name>INNER_SEARCH_LOOP</Name>
 <TripCount>undef</TripCount>
 <Latency>undef</Latency>
 <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
 <IterationLatency>
 <range>
 <min>14</min>
-<max>60390</max>
+<max>14398</max>
 </range>
 </IterationLatency>
-<PipelineDepth>14 ~ 60390</PipelineDepth>
+<PipelineDepth>14 ~ 14398</PipelineDepth>
 <SIFT_DOWN_COPY_LOOP>
 <Name>SIFT_DOWN_COPY_LOOP</Name>
 <TripCount>
@@ -462,56 +449,56 @@
 <TripCount>
 <range>
 <min>1</min>
-<max>5000</max>
+<max>3500</max>
 </range>
 </TripCount>
-<Latency>3 ~ 15002</Latency>
-<AbsoluteTimeLatency>30.000 ns ~ 0.150 ms</AbsoluteTimeLatency>
-<IterationLatency>3</IterationLatency>
-<PipelineDepth>3</PipelineDepth>
+<Latency>1 ~ 3500</Latency>
+<AbsoluteTimeLatency>10.000 ns ~ 35.000 us</AbsoluteTimeLatency>
+<PipelineII>1</PipelineII>
+<PipelineDepth>2</PipelineDepth>
 </OS_FIND_LOOP>
 <OS_FIND_LOOP>
 <Name>OS_FIND_LOOP</Name>
 <TripCount>
 <range>
 <min>1</min>
-<max>5000</max>
+<max>3500</max>
 </range>
 </TripCount>
-<Latency>3 ~ 15002</Latency>
-<AbsoluteTimeLatency>30.000 ns ~ 0.150 ms</AbsoluteTimeLatency>
-<IterationLatency>3</IterationLatency>
-<PipelineDepth>3</PipelineDepth>
+<Latency>1 ~ 3500</Latency>
+<AbsoluteTimeLatency>10.000 ns ~ 35.000 us</AbsoluteTimeLatency>
+<PipelineII>1</PipelineII>
+<PipelineDepth>2</PipelineDepth>
 </OS_FIND_LOOP>
 <OS_FIND_LOOP>
 <Name>OS_FIND_LOOP</Name>
 <TripCount>
 <range>
 <min>1</min>
-<max>5000</max>
+<max>3500</max>
 </range>
 </TripCount>
-<Latency>3 ~ 15002</Latency>
-<AbsoluteTimeLatency>30.000 ns ~ 0.150 ms</AbsoluteTimeLatency>
-<IterationLatency>3</IterationLatency>
-<PipelineDepth>3</PipelineDepth>
+<Latency>1 ~ 3500</Latency>
+<AbsoluteTimeLatency>10.000 ns ~ 35.000 us</AbsoluteTimeLatency>
+<PipelineII>1</PipelineII>
+<PipelineDepth>2</PipelineDepth>
 </OS_FIND_LOOP>
 <OS_FIND_LOOP>
 <Name>OS_FIND_LOOP</Name>
 <TripCount>
 <range>
 <min>1</min>
-<max>5000</max>
+<max>3500</max>
 </range>
 </TripCount>
-<Latency>3 ~ 15002</Latency>
-<AbsoluteTimeLatency>30.000 ns ~ 0.150 ms</AbsoluteTimeLatency>
-<IterationLatency>3</IterationLatency>
-<PipelineDepth>3</PipelineDepth>
+<Latency>1 ~ 3500</Latency>
+<AbsoluteTimeLatency>10.000 ns ~ 35.000 us</AbsoluteTimeLatency>
+<PipelineII>1</PipelineII>
+<PipelineDepth>2</PipelineDepth>
 </OS_FIND_LOOP>
-</AS_SEARCH_LOOP>
-<MAKE_PATH_LOOP>
-<Name>MAKE_PATH_LOOP</Name>
+</INNER_SEARCH_LOOP>
+<WRITE_PATH_LOOP>
+<Name>WRITE_PATH_LOOP</Name>
 <TripCount>
 <range>
 <min>1</min>
@@ -522,24 +509,24 @@
 <AbsoluteTimeLatency>80.000 ns ~ 0.164 ms</AbsoluteTimeLatency>
 <IterationLatency>8</IterationLatency>
 <PipelineDepth>8</PipelineDepth>
-</MAKE_PATH_LOOP>
-</WAYPOINT_LOOP>
+</WRITE_PATH_LOOP>
+</OUTER_SEARCH_LOOP>
 </SummaryOfLoopLatency>
 </PerformanceEstimates>
 <AreaEstimates>
 <Resources>
-<BRAM_18K>66</BRAM_18K>
+<BRAM_18K>82</BRAM_18K>
 <AVAIL_BRAM>120</AVAIL_BRAM>
-<UTIL_BRAM>55</UTIL_BRAM>
+<UTIL_BRAM>68</UTIL_BRAM>
 <DSP>5</DSP>
 <AVAIL_DSP>80</AVAIL_DSP>
 <UTIL_DSP>6</UTIL_DSP>
-<FF>5816</FF>
+<FF>6054</FF>
 <AVAIL_FF>35200</AVAIL_FF>
-<UTIL_FF>16</UTIL_FF>
-<LUT>17624</LUT>
+<UTIL_FF>17</UTIL_FF>
+<LUT>20068</LUT>
 <AVAIL_LUT>17600</AVAIL_LUT>
-<UTIL_LUT>100</UTIL_LUT>
+<UTIL_LUT>114</UTIL_LUT>
 <URAM>0</URAM>
 <AVAIL_URAM>0</AVAIL_URAM>
 <UTIL_URAM>0</UTIL_URAM>

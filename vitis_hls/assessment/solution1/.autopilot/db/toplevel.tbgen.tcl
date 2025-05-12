@@ -191,7 +191,7 @@ set NewPortList {[
  	{ "name": "m_axi_MAXI_BUSER", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "MAXI", "role": "BUSER" }}  ]}
 
 set RtlHierarchyInfo {[
-	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "25", "26", "27", "28", "29"],
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "27", "28", "29", "30", "31"],
 		"CDFG" : "toplevel",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
@@ -214,44 +214,48 @@ set RtlHierarchyInfo {[
 					{"Name" : "MAXI_blk_n_B", "Type" : "RtlSignal"}]},
 			{"Name" : "ram", "Type" : "None", "Direction" : "I"},
 			{"Name" : "code", "Type" : "Vld", "Direction" : "O"},
-			{"Name" : "local_world", "Type" : "Memory", "Direction" : "IO"},
+			{"Name" : "world_blocked", "Type" : "Memory", "Direction" : "IO"},
 			{"Name" : "waypoint_count", "Type" : "OVld", "Direction" : "IO"},
 			{"Name" : "waypoints_x_V", "Type" : "Memory", "Direction" : "IO"},
 			{"Name" : "waypoints_y_V", "Type" : "Memory", "Direction" : "IO"},
-			{"Name" : "grid_info_V", "Type" : "Memory", "Direction" : "IO"},
+			{"Name" : "world_open", "Type" : "Memory", "Direction" : "IO"},
+			{"Name" : "world_closed", "Type" : "Memory", "Direction" : "IO"},
+			{"Name" : "world_dir", "Type" : "Memory", "Direction" : "IO"},
 			{"Name" : "open_set_heap_f_score_V", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "19", "SubInstance" : "grp_os_sift_up_fu_3919", "Port" : "open_set_heap_f_score_V"}]},
+					{"ID" : "21", "SubInstance" : "grp_os_sift_up_fu_3983", "Port" : "open_set_heap_f_score_V"}]},
 			{"Name" : "open_set_heap_g_score_V", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "19", "SubInstance" : "grp_os_sift_up_fu_3919", "Port" : "open_set_heap_g_score_V"}]},
+					{"ID" : "21", "SubInstance" : "grp_os_sift_up_fu_3983", "Port" : "open_set_heap_g_score_V"}]},
 			{"Name" : "open_set_heap_x_V", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "19", "SubInstance" : "grp_os_sift_up_fu_3919", "Port" : "open_set_heap_x_V"}]},
+					{"ID" : "21", "SubInstance" : "grp_os_sift_up_fu_3983", "Port" : "open_set_heap_x_V"}]},
 			{"Name" : "open_set_heap_y_V", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "19", "SubInstance" : "grp_os_sift_up_fu_3919", "Port" : "open_set_heap_y_V"}]},
+					{"ID" : "21", "SubInstance" : "grp_os_sift_up_fu_3983", "Port" : "open_set_heap_y_V"}]},
 			{"Name" : "dx", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "dy", "Type" : "Memory", "Direction" : "I"}]},
-	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.local_world_U", "Parent" : "0"},
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.world_blocked_U", "Parent" : "0"},
 	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.waypoints_x_V_U", "Parent" : "0"},
 	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.waypoints_y_V_U", "Parent" : "0"},
-	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grid_info_V_U", "Parent" : "0"},
-	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.open_set_heap_f_score_V_U", "Parent" : "0"},
-	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.open_set_heap_g_score_V_U", "Parent" : "0"},
-	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.open_set_heap_x_V_U", "Parent" : "0"},
-	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.open_set_heap_y_V_U", "Parent" : "0"},
-	{"ID" : "9", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.dx_U", "Parent" : "0"},
-	{"ID" : "10", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.dy_U", "Parent" : "0"},
-	{"ID" : "11", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.AXILiteS_s_axi_U", "Parent" : "0"},
-	{"ID" : "12", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.control_s_axi_U", "Parent" : "0"},
-	{"ID" : "13", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.MAXI_m_axi_U", "Parent" : "0"},
-	{"ID" : "14", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.moves_node_f_score_V_U", "Parent" : "0"},
-	{"ID" : "15", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.moves_node_g_score_V_U", "Parent" : "0"},
-	{"ID" : "16", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.moves_node_x_V_U", "Parent" : "0"},
-	{"ID" : "17", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.moves_node_y_V_U", "Parent" : "0"},
-	{"ID" : "18", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.moves_target_U", "Parent" : "0"},
-	{"ID" : "19", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_os_sift_up_fu_3919", "Parent" : "0", "Child" : ["20", "21", "22", "23", "24"],
+	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.world_open_U", "Parent" : "0"},
+	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.world_closed_U", "Parent" : "0"},
+	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.world_dir_U", "Parent" : "0"},
+	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.open_set_heap_f_score_V_U", "Parent" : "0"},
+	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.open_set_heap_g_score_V_U", "Parent" : "0"},
+	{"ID" : "9", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.open_set_heap_x_V_U", "Parent" : "0"},
+	{"ID" : "10", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.open_set_heap_y_V_U", "Parent" : "0"},
+	{"ID" : "11", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.dx_U", "Parent" : "0"},
+	{"ID" : "12", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.dy_U", "Parent" : "0"},
+	{"ID" : "13", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.AXILiteS_s_axi_U", "Parent" : "0"},
+	{"ID" : "14", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.control_s_axi_U", "Parent" : "0"},
+	{"ID" : "15", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.MAXI_m_axi_U", "Parent" : "0"},
+	{"ID" : "16", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.moves_node_f_score_V_U", "Parent" : "0"},
+	{"ID" : "17", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.moves_node_g_score_V_U", "Parent" : "0"},
+	{"ID" : "18", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.moves_node_x_V_U", "Parent" : "0"},
+	{"ID" : "19", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.moves_node_y_V_U", "Parent" : "0"},
+	{"ID" : "20", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.moves_target_U", "Parent" : "0"},
+	{"ID" : "21", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_os_sift_up_fu_3983", "Parent" : "0", "Child" : ["22", "23", "24", "25", "26"],
 		"CDFG" : "os_sift_up",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
@@ -270,16 +274,16 @@ set RtlHierarchyInfo {[
 			{"Name" : "open_set_heap_g_score_V", "Type" : "Memory", "Direction" : "IO"},
 			{"Name" : "open_set_heap_x_V", "Type" : "Memory", "Direction" : "IO"},
 			{"Name" : "open_set_heap_y_V", "Type" : "Memory", "Direction" : "IO"}]},
-	{"ID" : "20", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_os_sift_up_fu_3919.moves_node_f_score_V_U", "Parent" : "19"},
-	{"ID" : "21", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_os_sift_up_fu_3919.moves_node_g_score_V_U", "Parent" : "19"},
-	{"ID" : "22", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_os_sift_up_fu_3919.moves_node_x_V_U", "Parent" : "19"},
-	{"ID" : "23", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_os_sift_up_fu_3919.moves_node_y_V_U", "Parent" : "19"},
-	{"ID" : "24", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_os_sift_up_fu_3919.moves_target_U", "Parent" : "19"},
-	{"ID" : "25", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_mul_16ns_16ns_18_4_1_U9", "Parent" : "0"},
-	{"ID" : "26", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_mul_16ns_9ns_18_4_1_U10", "Parent" : "0"},
-	{"ID" : "27", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_16ns_9ns_9ns_18_4_1_U11", "Parent" : "0"},
-	{"ID" : "28", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_16ns_9ns_9ns_18_4_1_U12", "Parent" : "0"},
-	{"ID" : "29", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_16ns_9ns_9ns_18_4_1_U13", "Parent" : "0"}]}
+	{"ID" : "22", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_os_sift_up_fu_3983.moves_node_f_score_V_U", "Parent" : "21"},
+	{"ID" : "23", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_os_sift_up_fu_3983.moves_node_g_score_V_U", "Parent" : "21"},
+	{"ID" : "24", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_os_sift_up_fu_3983.moves_node_x_V_U", "Parent" : "21"},
+	{"ID" : "25", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_os_sift_up_fu_3983.moves_node_y_V_U", "Parent" : "21"},
+	{"ID" : "26", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_os_sift_up_fu_3983.moves_target_U", "Parent" : "21"},
+	{"ID" : "27", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_mul_16ns_16ns_18_4_1_U9", "Parent" : "0"},
+	{"ID" : "28", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_mul_16ns_9ns_18_4_1_U10", "Parent" : "0"},
+	{"ID" : "29", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_16ns_9ns_9ns_18_4_1_U11", "Parent" : "0"},
+	{"ID" : "30", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_16ns_9ns_9ns_18_4_1_U12", "Parent" : "0"},
+	{"ID" : "31", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_16ns_9ns_9ns_18_4_1_U13", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
@@ -287,11 +291,13 @@ set ArgLastReadFirstWriteLatency {
 		MAXI {Type IO LastRead 170 FirstWrite 19}
 		ram {Type I LastRead 0 FirstWrite -1}
 		code {Type O LastRead -1 FirstWrite 174}
-		local_world {Type IO LastRead -1 FirstWrite -1}
+		world_blocked {Type IO LastRead -1 FirstWrite -1}
 		waypoint_count {Type IO LastRead -1 FirstWrite -1}
 		waypoints_x_V {Type IO LastRead -1 FirstWrite -1}
 		waypoints_y_V {Type IO LastRead -1 FirstWrite -1}
-		grid_info_V {Type IO LastRead -1 FirstWrite -1}
+		world_open {Type IO LastRead -1 FirstWrite -1}
+		world_closed {Type IO LastRead -1 FirstWrite -1}
+		world_dir {Type IO LastRead -1 FirstWrite -1}
 		open_set_heap_f_score_V {Type IO LastRead -1 FirstWrite -1}
 		open_set_heap_g_score_V {Type IO LastRead -1 FirstWrite -1}
 		open_set_heap_x_V {Type IO LastRead -1 FirstWrite -1}
@@ -316,6 +322,9 @@ set PipelineEnableSignalInfo {[
 	{"Pipeline" : "0", "EnableSignal" : "ap_enable_pp0"}
 	{"Pipeline" : "1", "EnableSignal" : "ap_enable_pp1"}
 	{"Pipeline" : "3", "EnableSignal" : "ap_enable_pp3"}
+	{"Pipeline" : "4", "EnableSignal" : "ap_enable_pp4"}
+	{"Pipeline" : "5", "EnableSignal" : "ap_enable_pp5"}
+	{"Pipeline" : "6", "EnableSignal" : "ap_enable_pp6"}
 ]}
 
 set Spec2ImplPortList { 

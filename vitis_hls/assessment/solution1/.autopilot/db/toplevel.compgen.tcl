@@ -291,7 +291,7 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your p
 # Memory (RAM/ROM)  definition:
 set ID 17
 set hasByteEnable 0
-set MemName toplevel_local_world
+set MemName toplevel_world_blocked
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
 set DataWd 32
@@ -463,12 +463,12 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 # Memory (RAM/ROM)  definition:
 set ID 19
 set hasByteEnable 0
-set MemName toplevel_grid_info_V
+set MemName toplevel_world_dir
 set CoreName ap_simcore_mem
-set PortList { 2 3 }
-set DataWd 3
-set AddrRange 250000
-set AddrWd 18
+set PortList { 2 0 }
+set DataWd 32
+set AddrRange 15626
+set AddrWd 14
 set impl_style block
 set TrueReset 0
 set IsROM 0
@@ -553,8 +553,8 @@ set MemName toplevel_open_set_heap_f_score_V
 set CoreName ap_simcore_mem
 set PortList { 2 }
 set DataWd 11
-set AddrRange 5000
-set AddrWd 13
+set AddrRange 3500
+set AddrWd 12
 set impl_style distributed
 set TrueReset 0
 set IsROM 0
@@ -639,8 +639,8 @@ set MemName toplevel_open_set_heap_x_V
 set CoreName ap_simcore_mem
 set PortList { 2 }
 set DataWd 9
-set AddrRange 5000
-set AddrWd 13
+set AddrRange 3500
+set AddrWd 12
 set impl_style distributed
 set TrueReset 0
 set IsROM 0

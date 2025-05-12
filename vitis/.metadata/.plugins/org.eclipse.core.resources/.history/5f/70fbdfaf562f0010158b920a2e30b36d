@@ -1,0 +1,633 @@
+#include <stdint.h>
+#include "xil_printf.h"
+#include "xil_cache.h"
+#include "xscutimer.h"
+#include "xtoplevel.h"
+#include "xparameters.h"
+#include "xuartps_hw.h"
+#include "FreeRTOS.h"
+#include "task.h"
+#include "semphr.h"
+#include "netif/xadapter.h"
+#include "lwip/dhcp.h"
+#include "lwip/sockets.h"
+#include "lwipopts.h"
+#include "zybo_z7_hdmi/display_ctrl.h"
+
+// ================================= DECLARATION =================================
+
+// RAM Layout (32-bit words)
+// -----------------------------
+// [0]     = world_size | waypoint_count
+// [1..A]  = waypoints (MAX_WORLD_WAYPOINTS)
+// [A..B]  = world bitmask (1 bit per cell, row-major order, MAX_WORLD_SIZE * MAX_WORLD_SIZE)
+// [A..B]  = world path bitmask (1 bit per cell, row-major order, MAX_WORLD_SIZE * MAX_WORLD_SIZE)
+//
+// For a 500x500 world this is meta (1 words) + waypoints (16 words) + grid (ceil(250000 / 32) = 7813 words) * 2 = 15643 words
+
+#define MAX_WORLD_WAYPOINTS 16
+#define MAX_WORLD_WALLS 240
+#define MAX_WORLD_SIZE 500
+#define MAX_PATH_WORDS 2000
+#define PACKED_WORLD_WORDS ((MAX_WORLD_SIZE * MAX_WORLD_SIZE + 31) / 32)
+#define RAM_META_WORDS 2
+#define RAM_WAYPOINT_WORDS MAX_WORLD_WAYPOINTS
+#define RAM_DATA_WORDS 8000 // Needs to be >PACKED_WORLD_WORDS and >MAX_PATH_WORDS
+#define RAM_MAX_WORDS (RAM_META_WORDS + RAM_WAYPOINT_WORDS + RAM_DATA_WORDS)
+#define MAX_OUTPUT_WORLD_SIZE 40
+#define THREAD_STACKSIZE 1024
+#define FRAME_RES (1440*900) // 1440x900 based on 4x8 bits for 32-bit colours
+#define FRAME_STRIDE (1440*4)
+#define UDP_RECV_BUF_MAX (1 << 11) // 2048 bytes (max response is 8 + 240 * 6 = 1448 bytes)
+#define UART_IN_BUF_MAX (1 << 9) // 512 bytes
+#define RECV_PORT 51050
+#define WORLD_SERVER_PORT 51050
+#define WS_IPV4_ADDR(v) IP4_ADDR(&(v), 192, 168, 10, 1)
+
+typedef struct __attribute__((packed)) { uint8_t type; uint32_t seed; uint16_t size; } WorldRequest; // Big-endian data required
+typedef struct __attribute__((packed)) { uint16_t x; uint16_t y; uint8_t length; uint8_t direction; } WorldWall;
+typedef struct __attribute__((packed)) { uint16_t x; uint16_t y; } WorldWaypoint;
+typedef struct __attribute__((packed)) { uint8_t type; uint32_t seed; uint16_t size; uint8_t num_walls; WorldWall walls[MAX_WORLD_WALLS]; } WorldWalls;
+typedef struct __attribute__((packed)) { uint8_t type; uint32_t seed; uint16_t size; uint8_t num_waypoints; WorldWaypoint waypoints[MAX_WORLD_WAYPOINTS]; } WorldWaypoints;
+typedef struct __attribute__((packed)) { uint8_t type; uint32_t seed; uint16_t size; uint32_t answer; } WorldSolutionAttempt;
+typedef struct __attribute__((packed)) { uint8_t type; uint32_t seed; uint16_t size; uint8_t answer; } WorldSolutionResponse;
+
+TaskHandle_t h_lwip_startup_task, h_lwip_dhcp_task, h_lwip_input_task, h_app_task;
+uint8_t my_mac_addr[] = { 0x00, 0x11, 0x22, 0x33, 0x00, 0x52 };
+struct netif my_net_if;
+ip_addr_t world_server_ip;
+struct udp_pcb *udp_pcb;
+SemaphoreHandle_t udp_recv_sem;
+uint8_t udp_recv_buf[UDP_RECV_BUF_MAX];
+uint16_t udp_recv_buf_len;
+char uart_in_buf[UART_IN_BUF_MAX];
+uint16_t uart_in_buf_len;
+WorldRequest world_request;
+WorldWalls world_walls;
+WorldWaypoints world_waypoints;
+WorldSolutionAttempt world_solution_attempt;
+WorldSolutionResponse world_solution_response;
+XScuTimer timer;
+XScuTimer_Config *timercfg;
+XToplevel hls;
+uint32_t hw_ram[RAM_MAX_WORDS];
+char char_world[MAX_WORLD_SIZE * MAX_WORLD_SIZE];
+DisplayCtrl gx_dsp_ctrl;
+uint32_t gx_frame_buf[DISPLAY_NUM_FRAMES][FRAME_RES] __attribute__((aligned(0x20))); // 2 frame buffers of size FRAME_RES aligned to 32-bits + pointers
+void *gx_frame_ptrs[DISPLAY_NUM_FRAMES];
+
+void lwip_init();
+void lwip_startup_task();
+void lwip_dhcp_task();
+void print_ip(char *msg, ip_addr_t *ip);
+void app_task();
+int udp_send_msg(struct udp_pcb *pcb, const ip_addr_t *ip, uint16_t port, void *msg, uint16_t len);
+void udp_recv_msg(void *arg, struct udp_pcb *pcb, struct pbuf *p, const ip_addr_t *addr, uint16_t port);
+int udp_recv_block(uint16_t time);
+void read_uart_line(char *msg);
+int parse_world_walls(uint8_t *data, uint16_t data_len, WorldWalls *res);
+int parse_world_waypoints(uint8_t *data, uint16_t data_len, WorldWaypoints *res);
+int parse_world_solution_response(uint8_t *data, uint16_t data_len, WorldSolutionResponse *res);
+int get_world_closed(uint32_t *world, uint16_t world_size, uint16_t x, uint16_t y);
+int set_world_closed(uint32_t *world, uint16_t world_size, uint16_t x, uint16_t y, uint8_t value);
+int write_world_to_ram();
+void dump_ram();
+int perform_pathfinding();
+void update_char_world(uint8_t type);
+void print_char_world();
+void display_char_world();
+
+// ================================= DEFINITION/MAIN =================================
+
+int main(void) {
+	xil_printf("\033[2J");
+	xil_printf("\033[H");
+	xil_printf("\r\n⎯⎯⎯⎯⎯⎯⎯⎯ Assessment Program Started ⎯⎯⎯⎯⎯⎯⎯⎯\r\n\r\n");
+
+	// Start lwip_startup_task which will startup lwip_main_task and app_task
+	xTaskCreate(lwip_startup_task, "lwip_startup_task", THREAD_STACKSIZE, NULL, DEFAULT_THREAD_PRIO, &h_lwip_startup_task);
+
+	// Then start scheduler and run until finished
+	vTaskStartScheduler();
+
+	xil_printf("⎯⎯⎯⎯⎯⎯⎯⎯ Assessment program finished ⎯⎯⎯⎯⎯⎯⎯⎯\r\n");
+	return 0;
+}
+
+// ================================= DEFINITION/NETWORK =================================
+
+void lwip_startup_task()
+{
+	xil_printf("[⏳ TASK] lwip_startup_task started\r\n");
+
+	// Initialize LWIP
+    lwip_init();
+
+    // Set my network interface as default
+    ip_addr_t ipaddr, netmask, gw;
+	ipaddr.addr = 0;
+	netmask.addr = 0;
+	gw.addr = 0;
+
+	if (!xemac_add(&my_net_if, &ipaddr, &netmask, &gw, my_mac_addr, XPAR_XEMACPS_0_BASEADDR)) {
+    	xil_printf("Error adding network interface\r\n");
+    	return;
+    }
+
+    netif_set_default(&my_net_if);
+    netif_set_up(&my_net_if);
+
+    // Start LWIP input task
+    xTaskCreate((void(*)(void*))xemacif_input_thread, "xemacif_lwip_input_task", THREAD_STACKSIZE, &my_net_if, DEFAULT_THREAD_PRIO, &h_lwip_input_task);
+
+    // Start DHCP task
+    dhcp_start(&my_net_if);
+    xTaskCreate(lwip_dhcp_task, "lwip_dhcp_task", THREAD_STACKSIZE, NULL, DEFAULT_THREAD_PRIO, &h_lwip_dhcp_task);
+
+    // Wait until we get an IP address
+    xil_printf("Waiting for DHCP...\r\n");
+    while (my_net_if.ip_addr.addr == 0) {
+    	vTaskDelay(DHCP_FINE_TIMER_MSECS / portTICK_RATE_MS);
+	}
+
+	xil_printf("DHCP request successful.\r\n");
+	print_ip("Board IP : ", &my_net_if.ip_addr);
+	print_ip("Netmask  : ", &my_net_if.netmask);
+	print_ip("Gateway  : ", &my_net_if.gw);
+
+	// Start app task and close this task
+	xTaskCreate(app_task, "app_task", THREAD_STACKSIZE, NULL, DEFAULT_THREAD_PRIO, &h_app_task);
+
+    vTaskDelete(NULL);
+}
+
+void lwip_dhcp_task()
+{
+    // DCHP with periodic dhcp_fine_tmr and dhcp_coars_tmr
+	xil_printf("[⏳ TASK] lwip_dhcp_task started\r\n");
+
+    int mscnt = 0;
+    while (1) {
+		vTaskDelay(DHCP_FINE_TIMER_MSECS / portTICK_RATE_MS);
+		dhcp_fine_tmr();
+		mscnt += DHCP_FINE_TIMER_MSECS;
+		if (mscnt >= DHCP_COARSE_TIMER_SECS*1000) {
+			dhcp_coarse_tmr();
+			mscnt = 0;
+		}
+	}
+}
+
+void print_ip(char *msg, ip_addr_t *ip)
+{
+	xil_printf(msg);
+	xil_printf("%d.%d.%d.%d\r\n", ip4_addr1(ip), ip4_addr2(ip), ip4_addr3(ip), ip4_addr4(ip));
+}
+
+// ================================= DEFINITION/APP =================================
+
+void app_task() {
+	xil_printf("[⏳ TASK] app_task started\r\n");
+
+	// Setup the main UDP PCB bound to the server and recv logic
+	udp_pcb = udp_new();
+	if (!udp_pcb) {
+		xil_printf("Error creating UDP PCB\r\n");
+		return;
+	}
+	WS_IPV4_ADDR(world_server_ip);
+	udp_bind(udp_pcb, IP_ADDR_ANY, RECV_PORT);
+	udp_recv(udp_pcb, udp_recv_msg, NULL);
+	udp_recv_sem = xSemaphoreCreateBinary();
+	xil_printf("UDP Ininitialized on Port %d.\r\n", RECV_PORT);
+
+	// Setup the hardware device
+    XToplevel_Initialize(&hls, XPAR_TOPLEVEL_0_DEVICE_ID);
+    timercfg = XScuTimer_LookupConfig(XPAR_SCUTIMER_DEVICE_ID);
+    XScuTimer_CfgInitialize(&timer, timercfg, timercfg->BaseAddr);
+    XScuTimer_DisableAutoReload(&timer);
+	xil_printf("Hardware 'toplevel' device '%lu' Initialized.\r\n", XPAR_TOPLEVEL_0_DEVICE_ID);
+
+    // Setup the graphics (set to frame 0, set resolution, start output)
+	for (int i = 0; i < DISPLAY_NUM_FRAMES; i++)
+		gx_frame_ptrs[i] = gx_frame_buf[i];
+	DisplayInitialize(&gx_dsp_ctrl, XPAR_AXIVDMA_0_DEVICE_ID, XPAR_VTC_0_DEVICE_ID, XPAR_HDMI_AXI_DYNCLK_0_BASEADDR, gx_frame_ptrs, FRAME_STRIDE);
+	DisplayChangeFrame(&gx_dsp_ctrl, 0);
+	DisplaySetMode(&gx_dsp_ctrl, &VMODE_1440x900);
+	DisplayStart(&gx_dsp_ctrl);
+	printf("HDMI Initialized: resolution = %s, pixel clock frequency = %.3fMHz.\r\n", gx_dsp_ctrl.vMode.label, gx_dsp_ctrl.pxlFreq);
+
+	while (1) {
+		xil_printf("\r\n⎯⎯⎯⎯ Pathfinding Request ⎯⎯⎯⎯\r\n\r\n");
+
+		// Prompt the user for world params
+		read_uart_line("Enter World Seed: ");
+		uint32_t world_seed = (uint32_t)strtoul((char *)uart_in_buf, NULL, 10);
+		read_uart_line("Enter World Size: ");
+		uint16_t world_size = (uint16_t)strtoul((char *)uart_in_buf, NULL, 10);
+
+		if (world_size > MAX_WORLD_SIZE) {
+			xil_printf("\r\n❗ Error: Inputted world size too large %lu > %lu\r\n", world_size, MAX_WORLD_SIZE);
+			continue;
+		}
+
+		// Request the walls and the waypoints from the server and parse
+		xil_printf("\r\nRequesting world from server...\r\n");
+
+		world_request.type = 0x01;
+		world_request.seed = htonl(world_seed);
+		world_request.size = htons(world_size);
+		xil_printf("World wall request: { %lu, %lu, %lu }\r\n", world_request.type, world_seed, world_size);
+		if (udp_send_msg(udp_pcb, &world_server_ip, WORLD_SERVER_PORT, &world_request, sizeof(world_request)) == -1) continue;
+		if (udp_recv_block(5000) == 1) continue;
+		if (parse_world_walls(udp_recv_buf, udp_recv_buf_len, &world_walls) == -1) continue;
+
+		world_request.type = 0x03;
+		xil_printf("World waypoint request: { %lu, %lu, %lu }\r\n", world_request.type, world_seed, world_size);
+		if (udp_send_msg(udp_pcb, &world_server_ip, WORLD_SERVER_PORT, &world_request, sizeof(world_request)) == -1) continue;
+		if (udp_recv_block(5000) == 1) continue;
+		if (parse_world_waypoints(udp_recv_buf, udp_recv_buf_len, &world_waypoints) == -1) continue;
+
+		xil_printf("World received and parsed successfully!\r\n");
+
+		// Write to ram, update world, read from ram
+		write_world_to_ram();
+		update_char_world(0);
+		display_char_world();
+
+		xil_printf("\r\nPathfinding with hardware...\r\n");
+		perform_pathfinding();
+
+
+		xil_printf("\r\nOutputting solution...\r\n");
+		update_char_world(1);
+		display_char_world();
+		print_char_world();
+
+		// Send world solution attempt
+		xil_printf("\r\nVerifying with server...\r\n");
+		world_solution_attempt.type = 0x05;
+		world_solution_attempt.seed = htonl(world_seed);
+		world_solution_attempt.size = htons(world_size);
+		world_solution_attempt.answer = htonl(hw_ram[1]);
+		xil_printf("World solution request: { %lu, %lu, %lu, %lu }\r\n", 0x05, world_seed, world_size, hw_ram[1]);
+		if (udp_send_msg(udp_pcb, &world_server_ip, WORLD_SERVER_PORT, &world_solution_attempt, sizeof(world_solution_attempt)) == -1) continue;
+		if (udp_recv_block(5000) == 1) continue;
+		if (parse_world_solution_response(udp_recv_buf, udp_recv_buf_len, &world_solution_response) == -1) continue;
+
+		if (world_solution_response.answer == 1) {
+			xil_printf("\r\n    ✅ Pathfinding success!\r\n");
+		} else {
+			xil_printf("\r\n    ❌ Pathfinding failed.\r\n");
+		}
+	}
+
+	// Finally free up this task
+	vTaskDelete(NULL);
+}
+
+int udp_send_msg(struct udp_pcb *pcb, const ip_addr_t *ip, uint16_t port, void *msg, u16_t len) {
+	struct pbuf *p = pbuf_alloc(PBUF_TRANSPORT, len, PBUF_RAM);
+    if (p == NULL) {
+    	xil_printf("\r\n❗ Error: udp_send_msg pbuf == NULL\r\n");
+    	return -1;
+    }
+
+    memcpy(p->payload, msg, len);
+    xil_printf("[📡 UDP] -> | Sending %u bytes\r\n", len);
+	udp_sendto(pcb, p, ip, port);
+	pbuf_free(p);
+    return 0;
+}
+
+void udp_recv_msg(void *arg, struct udp_pcb *pcb, struct pbuf *p, const ip_addr_t *addr, uint16_t port) {
+    if (p == NULL) {
+    	xil_printf("\r\n❗ Error: udp_recv_msg pbuf == NULL\r\n");
+    	return;
+    }
+
+    udp_recv_buf_len = p->len > UDP_RECV_BUF_MAX ? UDP_RECV_BUF_MAX : p->len;
+    memcpy(udp_recv_buf, p->payload, udp_recv_buf_len);
+    pbuf_free(p);
+    xil_printf("[📡 UDP] <- | Received %lu bytes\r\n", udp_recv_buf_len);
+    xSemaphoreGiveFromISR(udp_recv_sem, NULL);
+}
+
+int udp_recv_block(uint16_t time) {
+	if (xSemaphoreTake(udp_recv_sem, pdMS_TO_TICKS(time)) != pdTRUE) {
+		xil_printf("\r\n❗ Error: Semamphore timeout (%us)\r\n", time);
+		return -1;
+	}
+	return 0;
+}
+
+void read_uart_line(char *msg)
+{
+	xil_printf("%s", msg);
+    uart_in_buf_len = 0;
+    while (uart_in_buf_len < UART_IN_BUF_MAX)
+    {
+        if (XUartPs_IsReceiveData(STDIN_BASEADDRESS)) {
+        	uint8_t c = XUartPs_RecvByte(STDIN_BASEADDRESS);
+            if (c == '\r' || c == '\n') break;
+			xil_printf("%c", c);
+			uart_in_buf[uart_in_buf_len++] = c;
+        }
+    }
+    uart_in_buf[uart_in_buf_len] = '\0';
+    xil_printf("\r\n");
+}
+
+int parse_world_walls(uint8_t *data, uint16_t data_len, WorldWalls *res) {
+	if (data_len < 8) {
+    	xil_printf("\r\n❗ Error: parse_world_walls data_len < 8, actual = %lu\r\n", data_len);
+		return -1;
+	}
+	if (data[0] != 2) {
+    	xil_printf("\r\n❗ Error: parse_world_walls type != 2, actual = %lu (%s)\r\n", data[0], data);
+		return -1;
+	}
+
+	res->type = data[0];
+    res->seed = ntohl(*(uint32_t *)(data + 1));
+    res->size = ntohs(*(uint16_t *)(data + 5));
+	res->num_walls = data[7];
+
+	for (uint8_t i = 0; i < res->num_walls; ++i) {
+		res->walls[i].x = ntohs(*(uint16_t *)(data + 8 + i * 6 + 0));
+		res->walls[i].y = ntohs(*(uint16_t *)(data + 8 + i * 6 + 2));
+		res->walls[i].length = data[8 + i * 6 + 4];
+		res->walls[i].direction = data[8 + i * 6 + 5];
+	}
+
+	xil_printf("World walls parsed: { %lu, %lu, %lu, %lu }\r\n", res->type, res->seed, res->size, res->num_walls);
+	return 0;
+}
+
+int parse_world_waypoints(uint8_t *data, uint16_t data_len, WorldWaypoints *res) {
+	if (data_len < 8) {
+    	xil_printf("\r\n❗ Error: parse_world_waypoints data_len < 8, actual = %lu\r\n", data_len);
+		return -1;
+	}
+	if (data[0] != 4) {
+    	xil_printf("\r\n❗ Error: parse_world_waypoints type != 4, actual = %lu (%s)\r\n", data[0], data);
+		return -1;
+	}
+
+	res->type = data[0];
+    res->seed = ntohl(*(uint32_t *)(data + 1));
+    res->size = ntohs(*(uint16_t *)(data + 5));
+	res->num_waypoints = data[7];
+
+	for (uint8_t i = 0; i < res->num_waypoints; ++i) {
+		res->waypoints[i].x = ntohs(*(uint16_t *)(data + 8 + i * 4 + 0));
+		res->waypoints[i].y = ntohs(*(uint16_t *)(data + 8 + i * 4 + 2));
+	}
+
+	xil_printf("World waypoints parsed: { %lu, %lu, %lu, %lu }\r\n", res->type, res->seed, res->size, res->num_waypoints);
+	return 0;
+}
+
+int parse_world_solution_response(uint8_t *data, uint16_t data_len, WorldSolutionResponse *res) {
+	if (data_len != 8) {
+    	xil_printf("\r\n❗ Error: parse_world_solution_response data_len != 8, actual = %lu\r\n", data_len);
+		return -1;
+	}
+	if (data[0] != 6) {
+    	xil_printf("\r\n❗ Error: parse_world_solution_response type != 6, actual = %lu (%s)\r\n", data[0], data);
+		return -1;
+	}
+
+	res->type = data[0];
+    res->seed = ntohl(*(uint32_t *)(data + 1));
+    res->size = ntohs(*(uint16_t *)(data + 5));
+	res->answer = data[7];
+
+	xil_printf("World solution response parsed: { %lu, %lu, %lu, %lu }\r\n", res->type, res->seed, res->size, res->answer);
+	return 0;
+}
+
+int get_world_closed(uint32_t *world, uint16_t world_size, uint16_t x, uint16_t y) {
+    if (x >= world_size || y >= world_size) return -1;
+    uint32_t idx = x + y * world_size;
+    uint16_t word = idx / 32;
+    uint8_t bit = idx % 32;
+    return (world[word] >> bit) & 1;
+}
+
+int set_world_closed(uint32_t *world, uint16_t world_size, uint16_t x, uint16_t y, uint8_t value) {
+	// This is an expected error case due to walls going out of bounds
+    if (x >= world_size || y >= world_size) return 1;
+    uint32_t idx = x + y * world_size;
+    uint16_t word = idx / 32;
+    uint8_t bit = idx % 32;
+    world[word] |= (value << bit);
+    return 0;
+}
+
+int write_world_to_ram() {
+	memset(hw_ram, 0, RAM_MAX_WORDS * sizeof(uint32_t));
+
+	// See RAM schema in definitions section
+    uint16_t world_size = world_waypoints.size;
+    hw_ram[0] = (world_size << 16) | world_waypoints.num_waypoints;
+
+    uint32_t *ram_waypoints = &hw_ram[RAM_META_WORDS];
+	for (uint8_t i = 0; i < world_waypoints.num_waypoints; ++i) {
+        uint16_t x = world_waypoints.waypoints[i].x;
+        uint16_t y = world_waypoints.waypoints[i].y;
+        ram_waypoints[i] = (x << 16) | (y);
+	}
+
+    uint32_t *ram_world = &hw_ram[RAM_META_WORDS + RAM_WAYPOINT_WORDS];
+    for (uint8_t i = 0; i < world_walls.num_walls; ++i) {
+        uint16_t x = world_walls.walls[i].x;
+        uint16_t y = world_walls.walls[i].y;
+        uint8_t len = world_walls.walls[i].length;
+        uint8_t dir = world_walls.walls[i].direction;
+        for (uint8_t j = 0; j < len; j++) {
+            uint16_t px = x + (dir == 0 ? 0 : j);
+            uint16_t py = y + (dir == 0 ? j : 0);
+            set_world_closed(ram_world, world_size, px, py, 1);
+        }
+    }
+
+	return 0;
+}
+
+void dump_ram() {
+	uint16_t world_size = (hw_ram[0] >> 16) & 0xFFFF;
+	uint16_t length = RAM_META_WORDS + RAM_WAYPOINT_WORDS + ((world_size * world_size + 31) / 32);
+
+    xil_printf("uint32_t hw_ram[RAM_MAX_WORDS] = {");
+    for (uint16_t i = 0; i < length; ++i) {
+    	xil_printf("0x%08X%s", hw_ram[i], (i < length - 1) ? "," : "");
+    }
+    xil_printf("};\r\n");
+}
+
+int perform_pathfinding() {
+    XToplevel_Set_ram(&hls, (uintptr_t)hw_ram);
+    Xil_DCacheFlushRange((uintptr_t)hw_ram, RAM_MAX_WORDS);
+
+    XScuTimer_Stop(&timer);
+    XScuTimer_LoadTimer(&timer, 0xFFFFFFFF);
+    XScuTimer_Start(&timer);
+
+    XToplevel_Start(&hls);
+    while (!XToplevel_IsDone(&hls));
+
+    XScuTimer_Stop(&timer);
+	u32 elapsed = 0xFFFFFFFF - XScuTimer_GetCounterValue(&timer);
+	u32 elapsed_ms = elapsed / (XPAR_CPU_CORTEXA9_0_CPU_CLK_FREQ_HZ / 1000);
+    uint32_t code = XToplevel_Get_code(&hls);
+    xil_printf("Hardware finished in %lu ms: length = %lu, code = %lu\r\n", elapsed_ms, hw_ram[1], code);
+
+    return 0;
+}
+
+// ================================= DEFINITION/ HDMI =================================
+
+void update_char_world(uint8_t type) {
+	uint16_t world_size = (hw_ram[0] >> 16) & 0xFFFF;
+	uint16_t num_waypoints = hw_ram[0] & 0xFFFF;
+	uint16_t path_length = hw_ram[1];
+
+    uint32_t *hw_ram_wp = &hw_ram[RAM_META_WORDS];
+    uint32_t *hw_ram_data = &hw_ram[RAM_META_WORDS + RAM_WAYPOINT_WORDS];
+
+    if (type == 0) {
+        for (uint16_t x = 0; x < world_size; ++x) {
+        	for (uint16_t y = 0; y < world_size; ++y) {
+                int is_closed = get_world_closed(hw_ram_data, world_size, x, y);
+                char_world[x + y * world_size] = is_closed == 1 ? 'O' : ' ';
+            }
+        }
+    }
+    else if (type == 1) {
+    	if (path_length > RAM_DATA_WORDS) {
+    		xil_printf("Not updating path it is too long (%lu > %lu)\r\n", path_length, RAM_DATA_WORDS);
+    	} else {
+            for (uint32_t i = 0; i < path_length; ++i) {
+            	uint16_t x = (hw_ram_data[i] >> 16) & 0xFFFF;
+            	uint16_t y = (hw_ram_data[i]) & 0xFFFF;
+            	char_world[x + y * world_size] = '.';
+            }
+    	}
+    }
+    for (uint8_t i = 0; i < num_waypoints; ++i) {
+    	uint16_t x = (hw_ram_wp[i] >> 16) & 0xFFFF;
+    	uint16_t y = hw_ram_wp[i] & 0xFFFF;
+    	char_world[x + y * world_size] = 'x';
+    }
+}
+
+void print_char_world() {
+	uint16_t world_size = (hw_ram[0] >> 16) & 0xFFFF;
+	uint16_t num_waypoints = hw_ram[0] & 0xFFFF;
+	uint16_t path_length = hw_ram[1];
+
+	xil_printf("World | size=%u, waypoints=%lu, length=%lu.\r\n", world_size, num_waypoints, path_length);
+
+	xil_printf("Waypoints: ");
+	uint32_t *hw_ram_waypoints = &hw_ram[RAM_META_WORDS];
+	for (uint8_t i = 0; i < num_waypoints; ++i) {
+		uint16_t x = (hw_ram_waypoints[i] >> 16) & 0xFFFF;
+		uint16_t y = (hw_ram_waypoints[i]) & 0xFFFF;
+		xil_printf("%lu:(%lu, %lu) ", i, x, y);
+	}
+	xil_printf("\r\n");
+
+	if (world_size > MAX_OUTPUT_WORLD_SIZE) {
+		xil_printf("Not drawing world because it is too big (%lu > %lu)\r\n", world_size, MAX_OUTPUT_WORLD_SIZE);
+	} else {
+		xil_printf("    |");
+		for (uint16_t x = 0; x < world_size; ++x) {
+			xil_printf("%lu", x % 10);
+		}
+		xil_printf("\r\n");
+		for (uint16_t x = 0; x < world_size + 3; ++x) {
+			xil_printf("-");
+		}
+		xil_printf("\r\n");
+		for (uint16_t y = 0; y < world_size; ++y) {
+			xil_printf("  %lu |", y % 10);
+			for (uint16_t x = 0; x < world_size; ++x) {
+				xil_printf("%c", char_world[x + y * world_size]);
+			}
+			xil_printf("\r\n");
+		}
+	}
+}
+
+void display_background(
+		uint32_t *frame, uint32_t stride, uint32_t width, uint32_t height,
+		uint8_t red, uint8_t green, uint8_t blue) {
+	for (uint16_t y = 0; y < height; y++) {
+		for (uint16_t x = 0; x < width; x++) {
+			frame[y * stride + x] = (red << BIT_DISPLAY_RED) | (green << BIT_DISPLAY_GREEN) | (blue << BIT_DISPLAY_BLUE);
+		}
+	}
+}
+
+void display_square(
+		uint32_t *frame, uint32_t stride, uint32_t width, uint32_t height,
+		uint16_t px, uint16_t py, uint16_t sx, uint16_t sy,
+		uint8_t red, uint8_t green, uint8_t blue) {
+	for (uint16_t offset_y = 0; offset_y < sy; offset_y++) {
+		for (uint16_t offset_x = 0; offset_x < sx; offset_x++) {
+			uint16_t screen_x = px + offset_x;
+			uint16_t screen_y = py + offset_y;
+			if (screen_x >= 0 && screen_x < width && screen_y >= 0 && screen_y < height) {
+				frame[screen_y * stride + screen_x] = (red << BIT_DISPLAY_RED) | (green << BIT_DISPLAY_GREEN) | (blue << BIT_DISPLAY_BLUE);
+			}
+		}
+	}
+}
+
+void display_char_world() {
+	// Swap to the other frame
+	DisplayChangeFrame(&gx_dsp_ctrl, !gx_dsp_ctrl.curFrame);
+	DisplayWaitForSync(&gx_dsp_ctrl);
+
+	// Get parameters from display controller struct
+	uint32_t *frame = (uint32_t *)gx_dsp_ctrl.framePtr[gx_dsp_ctrl.curFrame];
+	uint32_t stride = gx_dsp_ctrl.stride / 4;
+	uint32_t width = gx_dsp_ctrl.vMode.width;
+	uint32_t height = gx_dsp_ctrl.vMode.height;
+
+	// Calculate and draw world
+	uint16_t world_size = (hw_ram[0] >> 16) & 0xFFFF;
+	uint16_t out_total_size = (height * 2) / 3;
+	uint16_t out_cell_size = out_total_size / world_size;
+	uint16_t out_x = (width - out_total_size) / 2;
+	uint16_t out_y = (height - out_total_size) / 2;
+
+	display_background(frame, stride, width, height,
+			0x1A, 0x1A, 0x1A);
+
+	display_square(frame, stride, width, height,
+			out_x, out_y, out_total_size, out_total_size,
+			0xFF, 0x00, 0x00);
+
+    // Draw char world to HDMI
+    for (uint16_t y = 0; y < world_size; ++y) {
+        for (uint16_t x = 0; x < world_size; ++x) {
+        	uint16_t cell_x = out_x + out_cell_size * x;
+        	uint16_t cell_y = out_y + out_cell_size * y;
+
+        	char c = char_world[x + y * world_size];
+        	uint8_t red = c == ' ' ? 0xBB : (c == 'O' ? 0x44 : (c == '.' ? 0xDD : (c == 'x' ? 0x44 : 0xFF)));
+        	uint8_t green = c == ' ' ? 0xBB : (c == 'O' ? 0x44 : (c == '.' ? 0x44 : (c == 'x' ? 0xDD : 0xFF)));
+        	uint8_t blue = c == ' ' ? 0xBB : (c == 'O' ? 0x44 : (c == '.' ? 0x44 : (c == 'x' ? 0x44 : 0x00)));
+
+        	display_square(frame, stride, width, height,
+        			cell_x, cell_y, out_cell_size, out_cell_size,
+        			red, green, blue);
+        }
+    }
+
+	// Flush to DDR so the Video DMA core sees the changes and draws them
+	Xil_DCacheFlush();
+	xil_printf("[💻 HDMI] World drawn to graphics frame %d\r\n", gx_dsp_ctrl.curFrame);
+}
