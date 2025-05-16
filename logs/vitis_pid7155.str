@@ -1,0 +1,101 @@
+/*
+
+Xilinx Vitis v2020.2.0 (64-bit) [Major: 2020, Minor: 2]
+SW Build 3118170 on 2021-02-09-05:15:52
+
+Process ID (PID): 7155
+License: Customer
+
+Current time: 	Fri May 16 14:22:09 BST 2025
+Time zone: 	Greenwich Mean Time (Europe/London)
+
+OS: Ubuntu
+OS Version: 6.8.0-60-generic
+OS Architecture: amd64
+Available processors (cores): 12
+
+Display: :0
+Screen size: 2560x1440
+Available screens: 1
+Available disk space: 473 GB
+
+Java version: 	11.0.2 64-bit
+Java home: 	/opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vitis/2020.2/tps/lnx64/jre11.0.2
+Java executable location: 	/opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vitis/2020.2/tps/lnx64/jre11.0.2/bin/java
+Java initial memory (-Xms): 	64 MB
+Java maximum memory (-Xmx):	 1,024 MB
+
+Java library paths: /opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vitis/2020.2/tps/lnx64/javafx-sdk-11.0.2/lib:/opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vitis/2020.2/lib/lnx64.o/Ubuntu:/opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vitis/2020.2/lib/lnx64.o:/opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vitis/2020.2/tps/lnx64/jre11.0.2/lib/:/opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vitis/2020.2/tps/lnx64/jre11.0.2/lib//server:/opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vitis/2020.2/lib/lnx64.o:/opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vitis/2020.2/lib/lnx64.o/Ubuntu:/opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vitis/2020.2/lib/lnx64.o:/opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vitis/2020.2/tps/lnx64/python-3.8.3/lib:/opt/york/cs/hdd/lib:/opt/york/cs/net/lib:/opt/moterunner/linux64/bin:/opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vivado/2020.2/bin/../lnx64/tools/dot/lib:/opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vitis/2020.2/bin/../lnx64/tools/dot/lib:/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib
+
+Java class paths: /opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vitis/2020.2/eclipse/lnx64.o//plugins/org.eclipse.equinox.launcher_1.5.700.v20200207-2156.jar
+LD_LIBRARY_PATH: /opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vitis
+
+User name: 	tb1262
+User home directory: /home/userfs/t/tb1262
+User working directory: /home/userfs/t/tb1262/Files/EMBS/embs-assessment/logs
+User country: 	GB
+User language: 	en
+User locale: 	en_GB
+
+RDI_BASEROOT: /opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vitis
+HDI_APPROOT: /opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vitis/2020.2
+RDI_DATADIR: /opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vitis/2020.2/data
+RDI_BINDIR: /opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vitis/2020.2/bin
+
+Vitis preferences directory: /home/userfs/t/tb1262/.Xilinx/Vitis/2020.2/
+Vitis workspace directory: /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis
+Vitis workspace log file location: /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/.metadata/.log
+Engine tmp dir: 	
+
+Xilinx Environment Variables
+----------------------------
+XILINX_DSP: 
+XILINX_HLS: /opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1//Vitis_HLS/2020.2
+XILINX_PLANAHEAD: /opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vitis/2020.2
+XILINX_SDK: /opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vitis/2020.2
+XILINX_VITIS: /opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vitis/2020.2
+XILINX_VIVADO: /opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vivado/2020.2
+XILINX_VIVADO_HLS: /opt/york/cs/net/xilinx_vivado-2020.2_ise-14.7_x86-64-1/Vivado/2020.2
+_RDI_DONT_SET_XILINX_AS_PATH: True
+
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+selectTreeTable("assessment_system", "Assistant", "SDXAssistantView", "TreeViewer.AssistantContentProvider");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectToolBarButton("Run Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_RELEASE_FOR");
+selectTreeTable("Release", "assessment_system > assessment", "Assistant", "SDXAssistantView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Release", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Run Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_RELEASE_FOR");
+selectMenuItem("Assessment System", "Assistant", "WorkbenchWindow", "MenuItem.ASSESSMENT_SYSTEM");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectToolBarButton("Run Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_RELEASE_FOR");
+selectMenuItem("Assessment System", "Assistant", "WorkbenchWindow", "MenuItem.ASSESSMENT_SYSTEM");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectToolBarButton("Minimize", "Progress", "ProgressView", "ToolItem.MINIMIZE");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Release", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Problems", "ProblemsView", "CTabItem.PROBLEMS");
+selectProblemsView("out_total_size undeclared", "Errors", EventType.DOUBLE_CLICK, "ProblemsView", "TreeViewer.MarkerViewerContentProvider");
+selectTreeTable("Release", "assessment_system > assessment", "main.c", "CEditor", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Build Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.BUILD_RELEASE_FOR");
+activateView("Console", "ConsoleView", "CTabItem.CONSOLE");
+selectTreeTable("Release", "assessment_system > assessment", "Console", "ConsoleView", "TreeViewer.NavigatorContentServiceContentProvider");
+activateView("Assistant", "SDXAssistantView", "CTabItem.ASSISTANT");
+selectToolBarButton("Run Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_RELEASE_FOR");
+selectMenuItem("Assessment System", "Assistant", "WorkbenchWindow", "MenuItem.ASSESSMENT_SYSTEM");
+selectToolBarButton("Restore", "assessment_system", "WorkbenchWindow", "ToolItem.RESTORE");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectToolBarButton("Run Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_RELEASE_FOR");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");
+selectToolBarButton("Run Release for project assessment_system", "Assistant", "SDXAssistantView", "ToolItem.RUN_RELEASE_FOR");
+selectMenuItem("Assessment System", "Assistant", "WorkbenchWindow", "MenuItem.ASSESSMENT_SYSTEM");
+activateView("Progress", "ProgressView", "CTabItem.PROGRESS");

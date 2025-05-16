@@ -13,7 +13,7 @@ connect -url tcp:127.0.0.1:3121
 targets -set -nocase -filter {name =~"APU*"}
 rst -system
 after 3000
-targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78039A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A78039A-13722093-0"}
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A780D3A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A780D3A-13722093-0"}
 fpga -file /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/assessment/_ide/bitstream/zybo_design_wrapper.bit
 targets -set -nocase -filter {name =~"APU*"}
 loadhw -hw /home/userfs/t/tb1262/Files/EMBS/embs-assessment/vitis/zybo_design_wrapper/export/zybo_design_wrapper/hw/zybo_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs

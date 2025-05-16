@@ -598,8 +598,9 @@ void display_char_world() {
 
 	// Calculate and draw world
 	uint16_t world_size = (hw_ram[0] >> 16) & 0xFFFF;
-	uint16_t out_total_size = (height * 2) / 3;
-	uint16_t out_cell_size = out_total_size / world_size;
+	uint16_t out_target_size = (height * 3) / 4;
+	uint16_t out_cell_size = out_target_size / world_size;
+	uint16_t out_total_size = out_cell_size * world_size;
 	uint16_t out_x = (width - out_total_size) / 2;
 	uint16_t out_y = (height - out_total_size) / 2;
 
